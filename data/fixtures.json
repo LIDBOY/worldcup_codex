@@ -1,0 +1,950 @@
+{
+  "schema_version": 2,
+  "stage": "research",
+  "generated_at": "2026-06-24T17:26:41Z",
+  "window": {
+    "start_date": "2026-06-24",
+    "days": 5,
+    "timezone": "UTC"
+  },
+  "source": {
+    "fixture_provider": "ESPN public scoreboard",
+    "league": "fifa.world",
+    "urls": [
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260624",
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260625",
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260626",
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260627",
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260628"
+    ]
+  },
+  "warnings": [],
+  "fixture_count": 25,
+  "fixtures": [
+    {
+      "id": "760462",
+      "match_name": "波黑 vs 卡塔尔",
+      "match_name_en": "Qatar at Bosnia-Herzegovina",
+      "kickoff_utc": "2026-06-24T19:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "波黑",
+          "name_en": "Bosnia-Herzegovina",
+          "abbreviation": "BIH",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "卡塔尔",
+          "name_en": "Qatar",
+          "abbreviation": "QAT",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Lumen Field",
+        "city": "Seattle, Washington",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760462"
+      }
+    },
+    {
+      "id": "760463",
+      "match_name": "瑞士 vs 加拿大",
+      "match_name_en": "Canada at Switzerland",
+      "kickoff_utc": "2026-06-24T19:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "瑞士",
+          "name_en": "Switzerland",
+          "abbreviation": "SUI",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "加拿大",
+          "name_en": "Canada",
+          "abbreviation": "CAN",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "BC Place",
+        "city": "Vancouver",
+        "country": "Canada"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760463"
+      }
+    },
+    {
+      "id": "760464",
+      "match_name": "摩洛哥 vs 海地",
+      "match_name_en": "Haiti at Morocco",
+      "kickoff_utc": "2026-06-24T22:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "摩洛哥",
+          "name_en": "Morocco",
+          "abbreviation": "MAR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "海地",
+          "name_en": "Haiti",
+          "abbreviation": "HAI",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Mercedes-Benz Stadium",
+        "city": "Atlanta, Georgia",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760464"
+      }
+    },
+    {
+      "id": "760465",
+      "match_name": "苏格兰 vs 巴西",
+      "match_name_en": "Brazil at Scotland",
+      "kickoff_utc": "2026-06-24T22:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "苏格兰",
+          "name_en": "Scotland",
+          "abbreviation": "SCO",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "巴西",
+          "name_en": "Brazil",
+          "abbreviation": "BRA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Hard Rock Stadium",
+        "city": "Miami Gardens, Florida",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760465"
+      }
+    },
+    {
+      "id": "760467",
+      "match_name": "捷克 vs 墨西哥",
+      "match_name_en": "Mexico at Czechia",
+      "kickoff_utc": "2026-06-25T01:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "捷克",
+          "name_en": "Czechia",
+          "abbreviation": "CZE",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "墨西哥",
+          "name_en": "Mexico",
+          "abbreviation": "MEX",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Estadio Banorte",
+        "city": "Mexico City",
+        "country": "Mexico"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760467"
+      }
+    },
+    {
+      "id": "760466",
+      "match_name": "南非 vs 韩国",
+      "match_name_en": "South Korea at South Africa",
+      "kickoff_utc": "2026-06-25T01:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "南非",
+          "name_en": "South Africa",
+          "abbreviation": "RSA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "韩国",
+          "name_en": "South Korea",
+          "abbreviation": "KOR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Estadio BBVA",
+        "city": "Guadalupe",
+        "country": "Mexico"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760466"
+      }
+    },
+    {
+      "id": "760473",
+      "match_name": "库拉索 vs 科特迪瓦",
+      "match_name_en": "Ivory Coast at Curaçao",
+      "kickoff_utc": "2026-06-25T20:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "库拉索",
+          "name_en": "Curaçao",
+          "abbreviation": "CUW",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "科特迪瓦",
+          "name_en": "Ivory Coast",
+          "abbreviation": "CIV",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Lincoln Financial Field",
+        "city": "Philadelphia, Pennsylvania",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760473"
+      }
+    },
+    {
+      "id": "760468",
+      "match_name": "厄瓜多尔 vs 德国",
+      "match_name_en": "Germany at Ecuador",
+      "kickoff_utc": "2026-06-25T20:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "厄瓜多尔",
+          "name_en": "Ecuador",
+          "abbreviation": "ECU",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "德国",
+          "name_en": "Germany",
+          "abbreviation": "GER",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "MetLife Stadium",
+        "city": "East Rutherford, New Jersey",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760468"
+      }
+    },
+    {
+      "id": "760471",
+      "match_name": "日本 vs 瑞典",
+      "match_name_en": "Sweden at Japan",
+      "kickoff_utc": "2026-06-25T23:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "日本",
+          "name_en": "Japan",
+          "abbreviation": "JPN",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "瑞典",
+          "name_en": "Sweden",
+          "abbreviation": "SWE",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "AT&T Stadium",
+        "city": "Arlington, Texas",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760471"
+      }
+    },
+    {
+      "id": "760472",
+      "match_name": "突尼斯 vs 荷兰",
+      "match_name_en": "Netherlands at Tunisia",
+      "kickoff_utc": "2026-06-25T23:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "突尼斯",
+          "name_en": "Tunisia",
+          "abbreviation": "TUN",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/tun.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "荷兰",
+          "name_en": "Netherlands",
+          "abbreviation": "NED",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "GEHA Field at Arrowhead Stadium",
+        "city": "Kansas City, Missouri",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760472"
+      }
+    },
+    {
+      "id": "760469",
+      "match_name": "巴拉圭 vs 澳大利亚",
+      "match_name_en": "Australia at Paraguay",
+      "kickoff_utc": "2026-06-26T02:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "巴拉圭",
+          "name_en": "Paraguay",
+          "abbreviation": "PAR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "澳大利亚",
+          "name_en": "Australia",
+          "abbreviation": "AUS",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Levi's Stadium",
+        "city": "Santa Clara, California",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760469"
+      }
+    },
+    {
+      "id": "760470",
+      "match_name": "土耳其 vs 美国",
+      "match_name_en": "United States at Türkiye",
+      "kickoff_utc": "2026-06-26T02:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "土耳其",
+          "name_en": "Türkiye",
+          "abbreviation": "TUR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "美国",
+          "name_en": "United States",
+          "abbreviation": "USA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "SoFi Stadium",
+        "city": "Inglewood, California",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760470"
+      }
+    },
+    {
+      "id": "760475",
+      "match_name": "挪威 vs 法国",
+      "match_name_en": "France at Norway",
+      "kickoff_utc": "2026-06-26T19:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "挪威",
+          "name_en": "Norway",
+          "abbreviation": "NOR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "法国",
+          "name_en": "France",
+          "abbreviation": "FRA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Gillette Stadium",
+        "city": "Foxborough, Massachusetts",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760475"
+      }
+    },
+    {
+      "id": "760474",
+      "match_name": "塞内加尔 vs 伊拉克",
+      "match_name_en": "Iraq at Senegal",
+      "kickoff_utc": "2026-06-26T19:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "塞内加尔",
+          "name_en": "Senegal",
+          "abbreviation": "SEN",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "伊拉克",
+          "name_en": "Iraq",
+          "abbreviation": "IRQ",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/irq.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "BMO Field",
+        "city": "Toronto",
+        "country": "Canada"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760474"
+      }
+    },
+    {
+      "id": "760478",
+      "match_name": "佛得角 vs 沙特阿拉伯",
+      "match_name_en": "Saudi Arabia at Cape Verde",
+      "kickoff_utc": "2026-06-27T00:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "佛得角",
+          "name_en": "Cape Verde",
+          "abbreviation": "CPV",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "沙特阿拉伯",
+          "name_en": "Saudi Arabia",
+          "abbreviation": "KSA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "NRG Stadium",
+        "city": "Houston, Texas",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760478"
+      }
+    },
+    {
+      "id": "760479",
+      "match_name": "乌拉圭 vs 西班牙",
+      "match_name_en": "Spain at Uruguay",
+      "kickoff_utc": "2026-06-27T00:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "乌拉圭",
+          "name_en": "Uruguay",
+          "abbreviation": "URU",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "西班牙",
+          "name_en": "Spain",
+          "abbreviation": "ESP",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Estadio Akron",
+        "city": "Guadalajara",
+        "country": "Mexico"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760479"
+      }
+    },
+    {
+      "id": "760476",
+      "match_name": "埃及 vs 伊朗",
+      "match_name_en": "Iran at Egypt",
+      "kickoff_utc": "2026-06-27T03:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "埃及",
+          "name_en": "Egypt",
+          "abbreviation": "EGY",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "伊朗",
+          "name_en": "Iran",
+          "abbreviation": "IRN",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Lumen Field",
+        "city": "Seattle, Washington",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760476"
+      }
+    },
+    {
+      "id": "760477",
+      "match_name": "新西兰 vs 比利时",
+      "match_name_en": "Belgium at New Zealand",
+      "kickoff_utc": "2026-06-27T03:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "新西兰",
+          "name_en": "New Zealand",
+          "abbreviation": "NZL",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "比利时",
+          "name_en": "Belgium",
+          "abbreviation": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "BC Place",
+        "city": "Vancouver",
+        "country": "Canada"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760477"
+      }
+    },
+    {
+      "id": "760480",
+      "match_name": "克罗地亚 vs 加纳",
+      "match_name_en": "Ghana at Croatia",
+      "kickoff_utc": "2026-06-27T21:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "克罗地亚",
+          "name_en": "Croatia",
+          "abbreviation": "CRO",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "加纳",
+          "name_en": "Ghana",
+          "abbreviation": "GHA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Lincoln Financial Field",
+        "city": "Philadelphia, Pennsylvania",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760480"
+      }
+    },
+    {
+      "id": "760485",
+      "match_name": "巴拿马 vs 英格兰",
+      "match_name_en": "England at Panama",
+      "kickoff_utc": "2026-06-27T21:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "巴拿马",
+          "name_en": "Panama",
+          "abbreviation": "PAN",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "英格兰",
+          "name_en": "England",
+          "abbreviation": "ENG",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "MetLife Stadium",
+        "city": "East Rutherford, New Jersey",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760485"
+      }
+    },
+    {
+      "id": "760481",
+      "match_name": "哥伦比亚 vs 葡萄牙",
+      "match_name_en": "Portugal at Colombia",
+      "kickoff_utc": "2026-06-27T23:30:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "哥伦比亚",
+          "name_en": "Colombia",
+          "abbreviation": "COL",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "葡萄牙",
+          "name_en": "Portugal",
+          "abbreviation": "POR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Hard Rock Stadium",
+        "city": "Miami Gardens, Florida",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760481"
+      }
+    },
+    {
+      "id": "760482",
+      "match_name": "刚果民主共和国 vs 乌兹别克斯坦",
+      "match_name_en": "Uzbekistan at Congo DR",
+      "kickoff_utc": "2026-06-27T23:30:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "刚果民主共和国",
+          "name_en": "Congo DR",
+          "abbreviation": "COD",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "乌兹别克斯坦",
+          "name_en": "Uzbekistan",
+          "abbreviation": "UZB",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Mercedes-Benz Stadium",
+        "city": "Atlanta, Georgia",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760482"
+      }
+    },
+    {
+      "id": "760484",
+      "match_name": "阿尔及利亚 vs 奥地利",
+      "match_name_en": "Austria at Algeria",
+      "kickoff_utc": "2026-06-28T02:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "阿尔及利亚",
+          "name_en": "Algeria",
+          "abbreviation": "ALG",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "奥地利",
+          "name_en": "Austria",
+          "abbreviation": "AUT",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "GEHA Field at Arrowhead Stadium",
+        "city": "Kansas City, Missouri",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760484"
+      }
+    },
+    {
+      "id": "760483",
+      "match_name": "约旦 vs 阿根廷",
+      "match_name_en": "Argentina at Jordan",
+      "kickoff_utc": "2026-06-28T02:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "约旦",
+          "name_en": "Jordan",
+          "abbreviation": "JOR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
+          "score": "0"
+        },
+        "away": {
+          "name": "阿根廷",
+          "name_en": "Argentina",
+          "abbreviation": "ARG",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "AT&T Stadium",
+        "city": "Arlington, Texas",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760483"
+      }
+    },
+    {
+      "id": "760486",
+      "match_name": "A组第二名 vs B组第二名",
+      "match_name_en": "Group B 2nd Place at Group A 2nd Place",
+      "kickoff_utc": "2026-06-28T19:00:00Z",
+      "competition": "FIFA World Cup",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "home": {
+          "name": "A组第二名",
+          "name_en": "Group A 2nd Place",
+          "abbreviation": "2A",
+          "logo": null,
+          "score": "0"
+        },
+        "away": {
+          "name": "B组第二名",
+          "name_en": "Group B 2nd Place",
+          "abbreviation": "2B",
+          "logo": null,
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "SoFi Stadium",
+        "city": "Inglewood, California",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760486"
+      }
+    }
+  ]
+}

@@ -6,66 +6,83 @@ from pathlib import Path
 from typing import Any
 
 
+REQUIRED_ANALYSIS_MODEL = "deepseek-v4-pro"
+REQUIRED_RENDER_MODEL = "deepseek-v4-flash"
+
+
+def validate_usage(usage: dict[str, Any], prefix: str, errors: list[str]) -> None:
+    for key in ("input_tokens", "output_tokens", "total_tokens"):
+        if not isinstance(usage.get(key), int) or usage[key] < 0:
+            errors.append(f"{prefix}.{key} must be a non-negative integer")
+    if usage.get("total_tokens") != usage.get("input_tokens", 0) + usage.get("output_tokens", 0):
+        errors.append(f"{prefix}.total_tokens must equal input_tokens + output_tokens")
+    cost = usage.get("cost_estimate")
+    if not isinstance(cost, (int, float)) or cost < 0:
+        errors.append(f"{prefix}.cost_estimate must be a non-negative number")
+    expected = round(int(usage.get("total_tokens", 0)) * 0.00001, 6)
+    if isinstance(cost, (int, float)) and abs(float(cost) - expected) > 0.000001:
+        errors.append(f"{prefix}.cost_estimate must equal total_tokens * 0.00001")
+
+
+def prediction_list(analysis: dict[str, Any]) -> list[dict[str, Any]]:
+    predictions = analysis.get("predictions")
+    return predictions if isinstance(predictions, list) else []
+
+
+def validate_probabilities(analysis: dict[str, Any], errors: list[str]) -> None:
+    for index, prediction in enumerate(prediction_list(analysis)):
+        probs = prediction.get("win_draw_loss") or {}
+        keys = ("home_win", "draw", "away_win")
+        if any(key not in probs for key in keys):
+            errors.append(f"analysis.predictions[{index}].win_draw_loss missing required keys")
+            continue
+        try:
+            values = [float(probs[key]) for key in keys]
+        except (TypeError, ValueError):
+            errors.append(f"analysis.predictions[{index}].win_draw_loss values must be numeric")
+            continue
+        if any(value < 0 or value > 100 for value in values):
+            errors.append(f"analysis.predictions[{index}].win_draw_loss values must be between 0 and 100")
+        if abs(sum(values) - 100.0) > 0.25:
+            errors.append(f"analysis.predictions[{index}].win_draw_loss must sum to 100")
+        score = prediction.get("predicted_score") or {}
+        if not isinstance(score.get("home"), int) or not isinstance(score.get("away"), int):
+            errors.append(f"analysis.predictions[{index}].predicted_score must include integer home/away")
+
+
 def validate(data: dict[str, Any]) -> tuple[bool, list[str]]:
     errors: list[str] = []
 
-    if data.get("schema_version") != 1:
-        errors.append("schema_version must be 1")
-    if not data.get("generated_at"):
-        errors.append("generated_at is required")
-    if data.get("status") not in {"ready", "no_verified_fixtures", "source_unavailable"}:
-        errors.append("status must be ready, no_verified_fixtures, or source_unavailable")
+    analysis = data.get("analysis")
+    render = data.get("render")
+    usage = data.get("usage")
+    model = data.get("model") or {}
 
-    matches = data.get("matches")
-    if not isinstance(matches, list):
-        errors.append("matches must be a list")
-        return False, errors
+    if not isinstance(analysis, dict):
+        errors.append("analysis must be an object")
+    if not isinstance(render, str) or "<html" not in render.lower():
+        errors.append("render must be a complete HTML string")
+    if not isinstance(usage, dict):
+        errors.append("usage must be an object")
+    else:
+        validate_usage(usage, "usage", errors)
 
-    if data.get("status") == "ready" and not matches:
-        errors.append("ready payloads must contain at least one verified fixture")
+    if model.get("analysis_model") != REQUIRED_ANALYSIS_MODEL:
+        errors.append("model.analysis_model must be deepseek-v4-pro")
+    if model.get("render_model") != REQUIRED_RENDER_MODEL:
+        errors.append("model.render_model must be deepseek-v4-flash")
 
-    seen_ids: set[str] = set()
-    for index, match in enumerate(matches):
-        prefix = f"matches[{index}]"
-        match_id = str(match.get("id") or "")
-        if not match_id:
-            errors.append(f"{prefix}.id is required")
-        elif match_id in seen_ids:
-            errors.append(f"{prefix}.id duplicates {match_id}")
-        seen_ids.add(match_id)
+    if isinstance(analysis, dict):
+        validate_probabilities(analysis, errors)
 
-        if not match.get("kickoff_utc"):
-            errors.append(f"{prefix}.kickoff_utc is required")
-        if not (match.get("source") or {}).get("event_url"):
-            errors.append(f"{prefix}.source.event_url is required")
-
-        teams = match.get("teams") or {}
-        team_a = (teams.get("team_a") or {}).get("name")
-        team_b = (teams.get("team_b") or {}).get("name")
-        if not team_a or not team_b:
-            errors.append(f"{prefix} must include both team names")
-
-        state = ((match.get("status") or {}).get("state") or "pre").lower()
-        prediction = match.get("prediction")
-        if state != "post":
-            if not prediction:
-                errors.append(f"{prefix}.prediction is required for non-completed matches")
-                continue
-            probabilities = prediction.get("probabilities") or {}
-            keys = {"team_a_win", "draw", "team_b_win"}
-            if set(probabilities) != keys:
-                errors.append(f"{prefix}.prediction.probabilities must contain {sorted(keys)}")
-                continue
-            try:
-                total = sum(float(probabilities[key]) for key in keys)
-            except (TypeError, ValueError):
-                errors.append(f"{prefix}.prediction probabilities must be numeric")
-                continue
-            if abs(total - 100.0) > 0.15:
-                errors.append(f"{prefix}.prediction probabilities sum to {total:.2f}, not 100")
-
-    if data.get("match_count") != len(matches):
-        errors.append("match_count must equal len(matches)")
+    if isinstance(render, str):
+        if not any(fragment in render for fragment in ("Token", "token", "令牌")):
+            errors.append("render must visibly include token usage")
+        if not any(fragment in render for fragment in ("Cost", "cost", "成本", "费用")):
+            errors.append("render must visibly include cost estimate")
+        for fragment in ("胜", "平", "负"):
+            if fragment not in render:
+                errors.append(f"render must visibly include {fragment}")
 
     return not errors, errors
 
@@ -75,7 +92,7 @@ def load(path: Path) -> dict[str, Any]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Validate generated World Cup prediction data.")
+    parser = argparse.ArgumentParser(description="Validate DeepSeek V4 World Cup prediction data.")
     parser.add_argument("path", nargs="?", type=Path, default=Path("data/latest.json"))
     args = parser.parse_args()
 
