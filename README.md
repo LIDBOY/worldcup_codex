@@ -25,6 +25,6 @@ The pipeline uses only the Python standard library.
 Two workflows are configured:
 
 - `.github/workflows/research.yml` runs daily, validates `data/latest.json`, and commits changed research data.
-- `.github/workflows/publish.yml` deploys `docs/` to GitHub Pages through the official Pages artifact workflow.
+- `.github/workflows/publish.yml` renders and commits `docs/` so GitHub Pages can publish from the `main` branch `/docs` directory.
 
-After the first successful `daily-publish` run, the site URL is available from the workflow environment output.
+The live site is published from `docs/index.html`.
