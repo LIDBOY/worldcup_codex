@@ -1,0 +1,13 @@
+Validate football prediction report.
+
+Ensure:
+- probabilities sum to 100
+- fixtures are real
+- no hallucinated data
+
+Output:
+- JSON
+- HTML
+- publish decision
+
+NO NEW FACTS.

@@ -1,0 +1,1251 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-06-24T14:55:50Z",
+  "window": {
+    "start_date": "2026-06-24",
+    "days": 5,
+    "timezone": "UTC"
+  },
+  "status": "ready",
+  "source": {
+    "fixture_provider": "ESPN public scoreboard",
+    "league": "fifa.world",
+    "urls": [
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260624",
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260625",
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260626",
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260627",
+      "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260628"
+    ]
+  },
+  "warnings": [],
+  "match_count": 25,
+  "matches": [
+    {
+      "id": "760462",
+      "name": "Qatar at Bosnia-Herzegovina",
+      "short_name": "QAT @ BIH",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-24T19:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Bosnia-Herzegovina",
+          "abbreviation": "BIH",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Qatar",
+          "abbreviation": "QAT",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Lumen Field",
+        "city": "Seattle, Washington",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760462"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 36.9,
+          "draw": 28.3,
+          "team_b_win": 34.8
+        },
+        "inputs": {
+          "team_a_rating": 1540,
+          "team_b_rating": 1525,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760463",
+      "name": "Canada at Switzerland",
+      "short_name": "CAN @ SUI",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-24T19:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Switzerland",
+          "abbreviation": "SUI",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Canada",
+          "abbreviation": "CAN",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "BC Place",
+        "city": "Vancouver",
+        "country": "Canada"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760463"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 40.0,
+          "draw": 26.9,
+          "team_b_win": 33.1
+        },
+        "inputs": {
+          "team_a_rating": 1705,
+          "team_b_rating": 1655,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760464",
+      "name": "Haiti at Morocco",
+      "short_name": "HAI @ MAR",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-24T22:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Morocco",
+          "abbreviation": "MAR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Haiti",
+          "abbreviation": "HAI",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Mercedes-Benz Stadium",
+        "city": "Atlanta, Georgia",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760464"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 56.7,
+          "draw": 21.6,
+          "team_b_win": 21.7
+        },
+        "inputs": {
+          "team_a_rating": 1715,
+          "team_b_rating": 1465,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760465",
+      "name": "Brazil at Scotland",
+      "short_name": "BRA @ SCO",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-24T22:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Scotland",
+          "abbreviation": "SCO",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Brazil",
+          "abbreviation": "BRA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Hard Rock Stadium",
+        "city": "Miami Gardens, Florida",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760465"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 20.9,
+          "draw": 21.3,
+          "team_b_win": 57.8
+        },
+        "inputs": {
+          "team_a_rating": 1570,
+          "team_b_rating": 1835,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760467",
+      "name": "Mexico at Czechia",
+      "short_name": "MEX @ CZE",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-25T01:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Czechia",
+          "abbreviation": "CZE",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Mexico",
+          "abbreviation": "MEX",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Estadio Banorte",
+        "city": "Mexico City",
+        "country": "Mexico"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760467"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 27.7,
+          "draw": 23.9,
+          "team_b_win": 48.4
+        },
+        "inputs": {
+          "team_a_rating": 1560,
+          "team_b_rating": 1705,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760466",
+      "name": "South Korea at South Africa",
+      "short_name": "KOR @ RSA",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-25T01:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "South Africa",
+          "abbreviation": "RSA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "South Korea",
+          "abbreviation": "KOR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Estadio BBVA",
+        "city": "Guadalupe",
+        "country": "Mexico"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760466"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 30.0,
+          "draw": 25.0,
+          "team_b_win": 45.0
+        },
+        "inputs": {
+          "team_a_rating": 1535,
+          "team_b_rating": 1640,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760473",
+      "name": "Ivory Coast at Curaçao",
+      "short_name": "CIV @ CUW",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-25T20:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Curaçao",
+          "abbreviation": "CUW",
+          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Ivory Coast",
+          "abbreviation": "CIV",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Lincoln Financial Field",
+        "city": "Philadelphia, Pennsylvania",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760473"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 34.8,
+          "draw": 28.3,
+          "team_b_win": 36.9
+        },
+        "inputs": {
+          "team_a_rating": 1540,
+          "team_b_rating": 1555,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760468",
+      "name": "Germany at Ecuador",
+      "short_name": "GER @ ECU",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-25T20:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Ecuador",
+          "abbreviation": "ECU",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Germany",
+          "abbreviation": "GER",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "MetLife Stadium",
+        "city": "East Rutherford, New Jersey",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760468"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 28.0,
+          "draw": 24.0,
+          "team_b_win": 48.0
+        },
+        "inputs": {
+          "team_a_rating": 1655,
+          "team_b_rating": 1795,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760471",
+      "name": "Sweden at Japan",
+      "short_name": "SWE @ JPN",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-25T23:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Japan",
+          "abbreviation": "JPN",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Sweden",
+          "abbreviation": "SWE",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "AT&T Stadium",
+        "city": "Arlington, Texas",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760471"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 46.7,
+          "draw": 24.4,
+          "team_b_win": 28.9
+        },
+        "inputs": {
+          "team_a_rating": 1690,
+          "team_b_rating": 1565,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760472",
+      "name": "Netherlands at Tunisia",
+      "short_name": "NED @ TUN",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-25T23:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Tunisia",
+          "abbreviation": "TUN",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/tun.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Netherlands",
+          "abbreviation": "NED",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "GEHA Field at Arrowhead Stadium",
+        "city": "Kansas City, Missouri",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760472"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 23.7,
+          "draw": 22.2,
+          "team_b_win": 54.1
+        },
+        "inputs": {
+          "team_a_rating": 1590,
+          "team_b_rating": 1805,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760469",
+      "name": "Australia at Paraguay",
+      "short_name": "AUS @ PAR",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-26T02:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Paraguay",
+          "abbreviation": "PAR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Australia",
+          "abbreviation": "AUS",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Levi's Stadium",
+        "city": "Santa Clara, California",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760469"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 33.3,
+          "draw": 27.1,
+          "team_b_win": 39.6
+        },
+        "inputs": {
+          "team_a_rating": 1580,
+          "team_b_rating": 1625,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760470",
+      "name": "United States at Türkiye",
+      "short_name": "USA @ TUR",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-26T02:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Türkiye",
+          "abbreviation": "TUR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "United States",
+          "abbreviation": "USA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "SoFi Stadium",
+        "city": "Inglewood, California",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760470"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 25.7,
+          "draw": 23.0,
+          "team_b_win": 51.3
+        },
+        "inputs": {
+          "team_a_rating": 1540,
+          "team_b_rating": 1720,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760475",
+      "name": "France at Norway",
+      "short_name": "FRA @ NOR",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-26T19:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Norway",
+          "abbreviation": "NOR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "France",
+          "abbreviation": "FRA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Gillette Stadium",
+        "city": "Foxborough, Massachusetts",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760475"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 20.6,
+          "draw": 21.2,
+          "team_b_win": 58.2
+        },
+        "inputs": {
+          "team_a_rating": 1615,
+          "team_b_rating": 1885,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760474",
+      "name": "Iraq at Senegal",
+      "short_name": "IRQ @ SEN",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-26T19:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Senegal",
+          "abbreviation": "SEN",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Iraq",
+          "abbreviation": "IRQ",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/irq.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "BMO Field",
+        "city": "Toronto",
+        "country": "Canada"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760474"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 49.6,
+          "draw": 23.5,
+          "team_b_win": 26.9
+        },
+        "inputs": {
+          "team_a_rating": 1665,
+          "team_b_rating": 1505,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760478",
+      "name": "Saudi Arabia at Cape Verde",
+      "short_name": "KSA @ CPV",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-27T00:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Cape Verde",
+          "abbreviation": "CPV",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Saudi Arabia",
+          "abbreviation": "KSA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "NRG Stadium",
+        "city": "Houston, Texas",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760478"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 30.6,
+          "draw": 25.3,
+          "team_b_win": 44.1
+        },
+        "inputs": {
+          "team_a_rating": 1480,
+          "team_b_rating": 1575,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760479",
+      "name": "Spain at Uruguay",
+      "short_name": "ESP @ URU",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-27T00:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Uruguay",
+          "abbreviation": "URU",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Spain",
+          "abbreviation": "ESP",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Estadio Akron",
+        "city": "Guadalajara",
+        "country": "Mexico"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760479"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 31.2,
+          "draw": 25.7,
+          "team_b_win": 43.1
+        },
+        "inputs": {
+          "team_a_rating": 1770,
+          "team_b_rating": 1855,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760476",
+      "name": "Iran at Egypt",
+      "short_name": "IRN @ EGY",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-27T03:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Egypt",
+          "abbreviation": "EGY",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Iran",
+          "abbreviation": "IRN",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Lumen Field",
+        "city": "Seattle, Washington",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760476"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 33.6,
+          "draw": 27.3,
+          "team_b_win": 39.1
+        },
+        "inputs": {
+          "team_a_rating": 1605,
+          "team_b_rating": 1645,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760477",
+      "name": "Belgium at New Zealand",
+      "short_name": "BEL @ NZL",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-27T03:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "New Zealand",
+          "abbreviation": "NZL",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Belgium",
+          "abbreviation": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "BC Place",
+        "city": "Vancouver",
+        "country": "Canada"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760477"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 19.3,
+          "draw": 20.9,
+          "team_b_win": 59.8
+        },
+        "inputs": {
+          "team_a_rating": 1485,
+          "team_b_rating": 1780,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760480",
+      "name": "Ghana at Croatia",
+      "short_name": "GHA @ CRO",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-27T21:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Croatia",
+          "abbreviation": "CRO",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Ghana",
+          "abbreviation": "GHA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Lincoln Financial Field",
+        "city": "Philadelphia, Pennsylvania",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760480"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 52.9,
+          "draw": 22.6,
+          "team_b_win": 24.5
+        },
+        "inputs": {
+          "team_a_rating": 1750,
+          "team_b_rating": 1550,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760485",
+      "name": "England at Panama",
+      "short_name": "ENG @ PAN",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-27T21:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Panama",
+          "abbreviation": "PAN",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "England",
+          "abbreviation": "ENG",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "MetLife Stadium",
+        "city": "East Rutherford, New Jersey",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760485"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 16.3,
+          "draw": 20.1,
+          "team_b_win": 63.6
+        },
+        "inputs": {
+          "team_a_rating": 1490,
+          "team_b_rating": 1845,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760481",
+      "name": "Portugal at Colombia",
+      "short_name": "POR @ COL",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-27T23:30:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Colombia",
+          "abbreviation": "COL",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Portugal",
+          "abbreviation": "POR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Hard Rock Stadium",
+        "city": "Miami Gardens, Florida",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760481"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 32.8,
+          "draw": 26.7,
+          "team_b_win": 40.5
+        },
+        "inputs": {
+          "team_a_rating": 1760,
+          "team_b_rating": 1815,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760482",
+      "name": "Uzbekistan at Congo DR",
+      "short_name": "UZB @ COD",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-27T23:30:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Congo DR",
+          "abbreviation": "COD",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Uzbekistan",
+          "abbreviation": "UZB",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "Mercedes-Benz Stadium",
+        "city": "Atlanta, Georgia",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760482"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 37.8,
+          "draw": 27.9,
+          "team_b_win": 34.3
+        },
+        "inputs": {
+          "team_a_rating": 1540,
+          "team_b_rating": 1515,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760484",
+      "name": "Austria at Algeria",
+      "short_name": "AUT @ ALG",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-28T02:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Algeria",
+          "abbreviation": "ALG",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Austria",
+          "abbreviation": "AUT",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "GEHA Field at Arrowhead Stadium",
+        "city": "Kansas City, Missouri",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760484"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 31.7,
+          "draw": 26.0,
+          "team_b_win": 42.3
+        },
+        "inputs": {
+          "team_a_rating": 1585,
+          "team_b_rating": 1660,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760483",
+      "name": "Argentina at Jordan",
+      "short_name": "ARG @ JOR",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-28T02:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Jordan",
+          "abbreviation": "JOR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Argentina",
+          "abbreviation": "ARG",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "AT&T Stadium",
+        "city": "Arlington, Texas",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760483"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 14.3,
+          "draw": 19.6,
+          "team_b_win": 66.1
+        },
+        "inputs": {
+          "team_a_rating": 1495,
+          "team_b_rating": 1895,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    },
+    {
+      "id": "760486",
+      "name": "Group B 2nd Place at Group A 2nd Place",
+      "short_name": "2B @ 2A",
+      "competition": "FIFA World Cup",
+      "kickoff_utc": "2026-06-28T19:00:00Z",
+      "status": {
+        "state": "pre",
+        "detail": "Scheduled",
+        "completed": false
+      },
+      "teams": {
+        "team_a": {
+          "name": "Group A 2nd Place",
+          "abbreviation": "2A",
+          "logo": null,
+          "score": "0"
+        },
+        "team_b": {
+          "name": "Group B 2nd Place",
+          "abbreviation": "2B",
+          "logo": null,
+          "score": "0"
+        }
+      },
+      "venue": {
+        "name": "SoFi Stadium",
+        "city": "Inglewood, California",
+        "country": "USA"
+      },
+      "source": {
+        "name": "ESPN public scoreboard",
+        "event_url": "https://www.espn.com/soccer/match/_/gameId/760486"
+      },
+      "prediction": {
+        "model": "deterministic-strength-prior-v1",
+        "probabilities": {
+          "team_a_win": 35.5,
+          "draw": 29.0,
+          "team_b_win": 35.5
+        },
+        "inputs": {
+          "team_a_rating": 1540,
+          "team_b_rating": 1540,
+          "host_adjustment_points": 35
+        },
+        "note": "Editorial model estimate from team-strength priors; not betting advice."
+      }
+    }
+  ],
+  "disclaimer": "Forecasts are deterministic editorial estimates for verified fixtures, not betting advice."
+}

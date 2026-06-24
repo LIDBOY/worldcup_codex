@@ -1,0 +1,13 @@
+Football deep research task.
+
+Window: {{WINDOW}}
+
+Rules:
+- Verify FIFA World Cup fixtures
+- No hallucinated matches
+- Strict factual consistency
+
+Output:
+- report
+- structured JSON
+- summary

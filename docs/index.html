@@ -1,0 +1,1353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily FIFA World Cup Predictions</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17201d;
+      --muted: #60706a;
+      --line: #d8e0dc;
+      --paper: #f7faf8;
+      --panel: #ffffff;
+      --accent: #147a4a;
+      --accent-2: #c83f31;
+      --accent-3: #1c6aa7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      letter-spacing: 0;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .topbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      padding: 30px 0 24px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.02;
+      font-weight: 800;
+    }
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+      line-height: 1.5;
+    }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f1f6f3;
+      color: var(--accent);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      padding: 18px 0 26px;
+    }
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 14px 16px;
+      min-height: 86px;
+    }
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+    main { padding: 24px 0 42px; }
+    .notice {
+      border: 1px solid #e3c7bd;
+      border-left: 4px solid var(--accent-2);
+      border-radius: 8px;
+      background: #fff8f5;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+    }
+    .notice h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+    .notice p { margin: 0 0 8px; color: var(--muted); }
+    .notice ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+    .source-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+    a { color: var(--accent-3); text-decoration: none; font-weight: 650; }
+    a:hover { text-decoration: underline; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+      gap: 16px;
+    }
+    .match-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 16px;
+      min-height: 292px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .match-meta, .match-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .match-footer {
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+      margin-top: auto;
+    }
+    .teams {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 54px minmax(0, 1fr);
+      align-items: center;
+      gap: 10px;
+    }
+    .team {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .team.right {
+      justify-content: flex-end;
+      text-align: right;
+    }
+    .team strong {
+      font-size: 17px;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+    .team-logo, .team-initial {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: #edf3ef;
+      object-fit: contain;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .versus, .score {
+      min-width: 54px;
+      text-align: center;
+      font-weight: 800;
+      color: var(--muted);
+    }
+    .score { color: var(--ink); }
+    .probabilities {
+      display: grid;
+      gap: 10px;
+    }
+    .prob-row {
+      display: grid;
+      grid-template-columns: minmax(92px, 1fr) minmax(92px, 1.4fr) 56px;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+    }
+    .prob-row span:first-child {
+      overflow-wrap: anywhere;
+    }
+    .prob-track {
+      height: 10px;
+      border-radius: 999px;
+      background: #e9efec;
+      overflow: hidden;
+    }
+    .prob-track span {
+      display: block;
+      height: 100%;
+      background: var(--accent);
+    }
+    .prob-row:nth-child(2) .prob-track span { background: var(--accent-3); }
+    .prob-row:nth-child(3) .prob-track span { background: var(--accent-2); }
+    .empty {
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 24px;
+      color: var(--muted);
+    }
+    .muted { color: var(--muted); }
+    .compact { margin: 0; }
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding: 22px 0 30px;
+      background: var(--panel);
+      font-size: 13px;
+    }
+    @media (max-width: 700px) {
+      .topbar, .stats {
+        grid-template-columns: 1fr;
+      }
+      .status-pill {
+        justify-content: center;
+        width: 100%;
+      }
+      .section-head {
+        display: block;
+      }
+      .source-links {
+        justify-content: flex-start;
+        margin-top: 10px;
+      }
+      .teams {
+        grid-template-columns: 1fr;
+      }
+      .versus, .score {
+        min-width: 0;
+        text-align: left;
+      }
+      .team.right {
+        justify-content: flex-start;
+        text-align: left;
+      }
+      .prob-row {
+        grid-template-columns: 1fr 52px;
+      }
+      .prob-track {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <div>
+          <h1>Daily FIFA World Cup Predictions</h1>
+          <p class="subtitle">Verified fixtures feed the daily model. The page publishes only source-backed matches and keeps the raw JSON beside the HTML for auditability.</p>
+        </div>
+        <span class="status-pill">ready</span>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>Generated</span><strong>2026-06-24T14:55:50Z</strong></div>
+        <div class="stat"><span>Window</span><strong>2026-06-24 / 5 days</strong></div>
+        <div class="stat"><span>Verified Fixtures</span><strong>25</strong></div>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    
+    <div class="section-head">
+      <h2>Upcoming Matches</h2>
+      <div class="source-links"><a href="https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260624" rel="noopener" target="_blank">source 1</a> <a href="https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260625" rel="noopener" target="_blank">source 2</a> <a href="https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260626" rel="noopener" target="_blank">source 3</a> <a href="https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260627" rel="noopener" target="_blank">source 4</a> <a href="https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260628" rel="noopener" target="_blank">source 5</a><a href="latest.json">latest.json</a></div>
+    </div>
+    <section class="grid">
+      
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-24T19:00:00Z">2026-06-24T19:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/bih.png" alt="Bosnia-Herzegovina logo" loading="lazy"><strong>Bosnia-Herzegovina</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/qat.png" alt="Qatar logo" loading="lazy"><strong>Qatar</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Bosnia-Herzegovina win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 36.9%"></span></div>
+        <strong>36.9%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 28.3%"></span></div>
+        <strong>28.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Qatar win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 34.8%"></span></div>
+        <strong>34.8%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Lumen Field - Seattle, Washington - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760462" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-24T19:00:00Z">2026-06-24T19:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/sui.png" alt="Switzerland logo" loading="lazy"><strong>Switzerland</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/can.png" alt="Canada logo" loading="lazy"><strong>Canada</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Switzerland win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 40.0%"></span></div>
+        <strong>40.0%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 26.9%"></span></div>
+        <strong>26.9%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Canada win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 33.1%"></span></div>
+        <strong>33.1%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>BC Place - Vancouver - Canada</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760463" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-24T22:00:00Z">2026-06-24T22:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/mar.png" alt="Morocco logo" loading="lazy"><strong>Morocco</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/hai.png" alt="Haiti logo" loading="lazy"><strong>Haiti</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Morocco win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 56.7%"></span></div>
+        <strong>56.7%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 21.6%"></span></div>
+        <strong>21.6%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Haiti win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 21.7%"></span></div>
+        <strong>21.7%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Mercedes-Benz Stadium - Atlanta, Georgia - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760464" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-24T22:00:00Z">2026-06-24T22:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/sco.png" alt="Scotland logo" loading="lazy"><strong>Scotland</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/bra.png" alt="Brazil logo" loading="lazy"><strong>Brazil</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Scotland win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 20.9%"></span></div>
+        <strong>20.9%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 21.3%"></span></div>
+        <strong>21.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Brazil win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 57.8%"></span></div>
+        <strong>57.8%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Hard Rock Stadium - Miami Gardens, Florida - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760465" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-25T01:00:00Z">2026-06-25T01:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/cze.png" alt="Czechia logo" loading="lazy"><strong>Czechia</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="Mexico logo" loading="lazy"><strong>Mexico</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Czechia win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 27.7%"></span></div>
+        <strong>27.7%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 23.9%"></span></div>
+        <strong>23.9%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Mexico win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 48.4%"></span></div>
+        <strong>48.4%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Estadio Banorte - Mexico City - Mexico</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760467" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-25T01:00:00Z">2026-06-25T01:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/rsa.png" alt="South Africa logo" loading="lazy"><strong>South Africa</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/kors.png" alt="South Korea logo" loading="lazy"><strong>South Korea</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>South Africa win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 30.0%"></span></div>
+        <strong>30.0%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 25.0%"></span></div>
+        <strong>25.0%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>South Korea win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 45.0%"></span></div>
+        <strong>45.0%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Estadio BBVA - Guadalupe - Mexico</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760466" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-25T20:00:00Z">2026-06-25T20:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/11678.png" alt="Curaçao logo" loading="lazy"><strong>Curaçao</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/civ.png" alt="Ivory Coast logo" loading="lazy"><strong>Ivory Coast</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Curaçao win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 34.8%"></span></div>
+        <strong>34.8%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 28.3%"></span></div>
+        <strong>28.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Ivory Coast win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 36.9%"></span></div>
+        <strong>36.9%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Lincoln Financial Field - Philadelphia, Pennsylvania - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760473" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-25T20:00:00Z">2026-06-25T20:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ecu.png" alt="Ecuador logo" loading="lazy"><strong>Ecuador</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ger.png" alt="Germany logo" loading="lazy"><strong>Germany</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Ecuador win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 28.0%"></span></div>
+        <strong>28.0%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 24.0%"></span></div>
+        <strong>24.0%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Germany win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 48.0%"></span></div>
+        <strong>48.0%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>MetLife Stadium - East Rutherford, New Jersey - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760468" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-25T23:00:00Z">2026-06-25T23:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/jpn.png" alt="Japan logo" loading="lazy"><strong>Japan</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/swe.png" alt="Sweden logo" loading="lazy"><strong>Sweden</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Japan win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 46.7%"></span></div>
+        <strong>46.7%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 24.4%"></span></div>
+        <strong>24.4%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Sweden win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 28.9%"></span></div>
+        <strong>28.9%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>AT&amp;T Stadium - Arlington, Texas - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760471" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-25T23:00:00Z">2026-06-25T23:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/tun.png" alt="Tunisia logo" loading="lazy"><strong>Tunisia</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ned.png" alt="Netherlands logo" loading="lazy"><strong>Netherlands</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Tunisia win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 23.7%"></span></div>
+        <strong>23.7%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 22.2%"></span></div>
+        <strong>22.2%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Netherlands win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 54.1%"></span></div>
+        <strong>54.1%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>GEHA Field at Arrowhead Stadium - Kansas City, Missouri - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760472" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-26T02:00:00Z">2026-06-26T02:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/par.png" alt="Paraguay logo" loading="lazy"><strong>Paraguay</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/aus.png" alt="Australia logo" loading="lazy"><strong>Australia</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Paraguay win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 33.3%"></span></div>
+        <strong>33.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 27.1%"></span></div>
+        <strong>27.1%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Australia win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 39.6%"></span></div>
+        <strong>39.6%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Levi&#x27;s Stadium - Santa Clara, California - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760469" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-26T02:00:00Z">2026-06-26T02:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/tur.png" alt="Türkiye logo" loading="lazy"><strong>Türkiye</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/usa.png" alt="United States logo" loading="lazy"><strong>United States</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Türkiye win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 25.7%"></span></div>
+        <strong>25.7%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 23.0%"></span></div>
+        <strong>23.0%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>United States win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 51.3%"></span></div>
+        <strong>51.3%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>SoFi Stadium - Inglewood, California - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760470" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-26T19:00:00Z">2026-06-26T19:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/nor.png" alt="Norway logo" loading="lazy"><strong>Norway</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/fra.png" alt="France logo" loading="lazy"><strong>France</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Norway win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 20.6%"></span></div>
+        <strong>20.6%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 21.2%"></span></div>
+        <strong>21.2%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>France win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 58.2%"></span></div>
+        <strong>58.2%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Gillette Stadium - Foxborough, Massachusetts - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760475" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-26T19:00:00Z">2026-06-26T19:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/sen.png" alt="Senegal logo" loading="lazy"><strong>Senegal</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/irq.png" alt="Iraq logo" loading="lazy"><strong>Iraq</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Senegal win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 49.6%"></span></div>
+        <strong>49.6%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 23.5%"></span></div>
+        <strong>23.5%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Iraq win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 26.9%"></span></div>
+        <strong>26.9%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>BMO Field - Toronto - Canada</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760474" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T00:00:00Z">2026-06-27T00:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/cpv.png" alt="Cape Verde logo" loading="lazy"><strong>Cape Verde</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ksa.png" alt="Saudi Arabia logo" loading="lazy"><strong>Saudi Arabia</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Cape Verde win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 30.6%"></span></div>
+        <strong>30.6%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 25.3%"></span></div>
+        <strong>25.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Saudi Arabia win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 44.1%"></span></div>
+        <strong>44.1%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>NRG Stadium - Houston, Texas - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760478" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T00:00:00Z">2026-06-27T00:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/uru.png" alt="Uruguay logo" loading="lazy"><strong>Uruguay</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/esp.png" alt="Spain logo" loading="lazy"><strong>Spain</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Uruguay win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 31.2%"></span></div>
+        <strong>31.2%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 25.7%"></span></div>
+        <strong>25.7%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Spain win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 43.1%"></span></div>
+        <strong>43.1%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Estadio Akron - Guadalajara - Mexico</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760479" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T03:00:00Z">2026-06-27T03:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/egy.png" alt="Egypt logo" loading="lazy"><strong>Egypt</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/irn.png" alt="Iran logo" loading="lazy"><strong>Iran</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Egypt win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 33.6%"></span></div>
+        <strong>33.6%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 27.3%"></span></div>
+        <strong>27.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Iran win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 39.1%"></span></div>
+        <strong>39.1%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Lumen Field - Seattle, Washington - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760476" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T03:00:00Z">2026-06-27T03:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/nzl.png" alt="New Zealand logo" loading="lazy"><strong>New Zealand</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/bel.png" alt="Belgium logo" loading="lazy"><strong>Belgium</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>New Zealand win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 19.3%"></span></div>
+        <strong>19.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 20.9%"></span></div>
+        <strong>20.9%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Belgium win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 59.8%"></span></div>
+        <strong>59.8%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>BC Place - Vancouver - Canada</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760477" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T21:00:00Z">2026-06-27T21:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/cro.png" alt="Croatia logo" loading="lazy"><strong>Croatia</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/gha.png" alt="Ghana logo" loading="lazy"><strong>Ghana</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Croatia win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 52.9%"></span></div>
+        <strong>52.9%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 22.6%"></span></div>
+        <strong>22.6%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Ghana win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 24.5%"></span></div>
+        <strong>24.5%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Lincoln Financial Field - Philadelphia, Pennsylvania - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760480" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T21:00:00Z">2026-06-27T21:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/pan.png" alt="Panama logo" loading="lazy"><strong>Panama</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/eng.png" alt="England logo" loading="lazy"><strong>England</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Panama win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 16.3%"></span></div>
+        <strong>16.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 20.1%"></span></div>
+        <strong>20.1%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>England win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 63.6%"></span></div>
+        <strong>63.6%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>MetLife Stadium - East Rutherford, New Jersey - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760485" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T23:30:00Z">2026-06-27T23:30:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="Colombia logo" loading="lazy"><strong>Colombia</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/por.png" alt="Portugal logo" loading="lazy"><strong>Portugal</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Colombia win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 32.8%"></span></div>
+        <strong>32.8%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 26.7%"></span></div>
+        <strong>26.7%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Portugal win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 40.5%"></span></div>
+        <strong>40.5%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Hard Rock Stadium - Miami Gardens, Florida - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760481" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T23:30:00Z">2026-06-27T23:30:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/rdc.png" alt="Congo DR logo" loading="lazy"><strong>Congo DR</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/uzb.png" alt="Uzbekistan logo" loading="lazy"><strong>Uzbekistan</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Congo DR win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 37.8%"></span></div>
+        <strong>37.8%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 27.9%"></span></div>
+        <strong>27.9%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Uzbekistan win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 34.3%"></span></div>
+        <strong>34.3%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Mercedes-Benz Stadium - Atlanta, Georgia - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760482" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-28T02:00:00Z">2026-06-28T02:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/alg.png" alt="Algeria logo" loading="lazy"><strong>Algeria</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/aut.png" alt="Austria logo" loading="lazy"><strong>Austria</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Algeria win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 31.7%"></span></div>
+        <strong>31.7%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 26.0%"></span></div>
+        <strong>26.0%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Austria win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 42.3%"></span></div>
+        <strong>42.3%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>GEHA Field at Arrowhead Stadium - Kansas City, Missouri - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760484" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-28T02:00:00Z">2026-06-28T02:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/jor.png" alt="Jordan logo" loading="lazy"><strong>Jordan</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="Argentina logo" loading="lazy"><strong>Argentina</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Jordan win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 14.3%"></span></div>
+        <strong>14.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 19.6%"></span></div>
+        <strong>19.6%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Argentina win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 66.1%"></span></div>
+        <strong>66.1%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>AT&amp;T Stadium - Arlington, Texas - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760483" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-28T19:00:00Z">2026-06-28T19:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><span class="team-initial">GA2</span><strong>Group A 2nd Place</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><span class="team-initial">GB2</span><strong>Group B 2nd Place</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>Group A 2nd Place win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 35.5%"></span></div>
+        <strong>35.5%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Draw</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 29.0%"></span></div>
+        <strong>29.0%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>Group B 2nd Place win</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 35.5%"></span></div>
+        <strong>35.5%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>SoFi Stadium - Inglewood, California - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760486" rel="noopener" target="_blank">source</a>
+        </div>
+      </article>
+    
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">Forecasts are deterministic editorial estimates for verified fixtures, not betting advice.</div>
+  </footer>
+</body>
+</html>
