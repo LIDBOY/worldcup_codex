@@ -1,1201 +1,1353 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 世界杯预测分析 · 即时盘</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: #0b0f15;
-            color: #e8edf3;
-            line-height: 1.6;
-            padding: 20px 16px;
-        }
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-        h1, h2, h3, h4 {
-            font-weight: 600;
-            letter-spacing: 0.3px;
-        }
-        .header {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 28px;
-            gap: 12px;
-        }
-        .header h1 {
-            font-size: 1.9rem;
-            background: linear-gradient(135deg, #facc15, #f97316);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .header .badge {
-            background: #1e293b;
-            padding: 8px 18px;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            border: 1px solid #334155;
-            color: #cbd5e1;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .header .badge span {
-            color: #facc15;
-            font-weight: 600;
-        }
-        .summary-card {
-            background: #131a24;
-            border-radius: 20px;
-            padding: 22px 26px;
-            margin-bottom: 32px;
-            border: 1px solid #1e2a36;
-            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
-        }
-        .summary-card p {
-            color: #b0c4db;
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-        .summary-card .meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
-            margin-top: 14px;
-            font-size: 0.85rem;
-            color: #8899b0;
-        }
-        .section-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin: 36px 0 18px 0;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #1e2a36;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .section-title small {
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: #8899b0;
-        }
-        .date-group {
-            margin-bottom: 32px;
-        }
-        .date-label {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: #facc15;
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .date-label::before {
-            content: "📅";
-            font-size: 1.2rem;
-        }
-        .match-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 18px;
-        }
-        @media (min-width: 640px) {
-            .match-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (min-width: 1024px) {
-            .match-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        .match-card {
-            background: #101821;
-            border-radius: 18px;
-            padding: 20px 18px 18px;
-            border: 1px solid #1e2a38;
-            transition: all 0.2s;
-            display: flex;
-            flex-direction: column;
-        }
-        .match-card:hover {
-            border-color: #334155;
-            background: #141e2a;
-        }
-        .match-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 12px;
-        }
-        .match-time {
-            font-size: 0.75rem;
-            color: #8899b0;
-            background: #1a2533;
-            padding: 3px 12px;
-            border-radius: 30px;
-        }
-        .match-confidence {
-            font-size: 0.7rem;
-            font-weight: 600;
-            padding: 3px 12px;
-            border-radius: 30px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .confidence-high {
-            background: #064e3b;
-            color: #6ee7b7;
-        }
-        .confidence-medium {
-            background: #451a03;
-            color: #fcd34d;
-        }
-        .confidence-low {
-            background: #3b0a0a;
-            color: #fca5a5;
-        }
-        .match-teams {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin: 8px 0 14px 0;
-            gap: 6px;
-        }
-        .team {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            flex: 1;
-            text-align: center;
-        }
-        .team .name {
-            font-weight: 600;
-            font-size: 1rem;
-            color: #f1f5f9;
-        }
-        .team .name small {
-            font-weight: 400;
-            color: #8899b0;
-            font-size: 0.7rem;
-            display: block;
-            margin-top: 2px;
-        }
-        .team .flag-placeholder {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: #1e2a38;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            margin-bottom: 4px;
-        }
-        .score-badge {
-            font-size: 1.7rem;
-            font-weight: 800;
-            color: #facc15;
-            background: #1a2533;
-            padding: 2px 14px;
-            border-radius: 40px;
-            min-width: 60px;
-            text-align: center;
-            letter-spacing: 2px;
-        }
-        .prob-bar {
-            display: flex;
-            height: 6px;
-            border-radius: 8px;
-            overflow: hidden;
-            background: #1e2a36;
-            margin: 8px 0 10px 0;
-        }
-        .prob-bar .home {
-            background: #3b82f6;
-            height: 100%;
-            transition: width 0.3s;
-        }
-        .prob-bar .draw {
-            background: #6b7280;
-            height: 100%;
-        }
-        .prob-bar .away {
-            background: #f97316;
-            height: 100%;
-        }
-        .prob-labels {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.7rem;
-            color: #94a3b8;
-            margin-bottom: 6px;
-        }
-        .prob-labels strong {
-            color: #e2e8f0;
-        }
-        .predicted-score-line {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 6px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #facc15;
-            margin: 6px 0 10px 0;
-        }
-        .predicted-score-line span {
-            background: #1a2533;
-            padding: 2px 14px;
-            border-radius: 30px;
-        }
-        .tactical {
-            font-size: 0.82rem;
-            color: #b0c4db;
-            background: #0d141e;
-            padding: 10px 12px;
-            border-radius: 12px;
-            margin: 6px 0 8px 0;
-            line-height: 1.5;
-            flex: 1;
-        }
-        .risk-badge {
-            font-size: 0.75rem;
-            color: #fca5a5;
-            background: #2d0f0f;
-            padding: 6px 12px;
-            border-radius: 30px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            margin-top: 4px;
-            align-self: flex-start;
-        }
-        .risk-badge::before {
-            content: "⚠️";
-            font-size: 0.8rem;
-        }
-        /* token panel */
-        .token-panel {
-            margin: 40px 0 30px 0;
-            background: linear-gradient(145deg, #0f1822, #16202e);
-            border-radius: 24px;
-            padding: 28px 26px;
-            border: 1px solid #243044;
-            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.6);
-        }
-        .token-panel h3 {
-            font-size: 1.4rem;
-            margin-bottom: 18px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .token-panel h3::before {
-            content: "🔋";
-        }
-        .token-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 16px;
-        }
-        .token-item {
-            background: #0c1420;
-            border-radius: 16px;
-            padding: 16px 14px;
-            border: 1px solid #1d2a3a;
-            text-align: center;
-        }
-        .token-item .label {
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            color: #8899b0;
-        }
-        .token-item .value {
-            font-size: 1.7rem;
-            font-weight: 700;
-            color: #f1f5f9;
-            margin-top: 4px;
-            font-variant-numeric: tabular-nums;
-        }
-        .token-item .value.gold {
-            color: #facc15;
-        }
-        .token-item .value.green {
-            color: #6ee7b7;
-        }
-        .token-item.highlight {
-            border-color: #facc15;
-            background: #1a2210;
-        }
-        .cost-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 14px;
-            margin-top: 20px;
-            padding-top: 18px;
-            border-top: 1px solid #1e2a36;
-        }
-        .cost-row .cost-label {
-            font-size: 0.95rem;
-            color: #cbd5e1;
-        }
-        .cost-row .cost-value {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #facc15;
-            background: #1a2533;
-            padding: 4px 22px;
-            border-radius: 50px;
-        }
-        .footer-note {
-            margin-top: 28px;
-            font-size: 0.75rem;
-            color: #556577;
-            text-align: center;
-            border-top: 1px solid #16202a;
-            padding-top: 22px;
-            line-height: 1.7;
-        }
-        .data-quality {
-            background: #0e1620;
-            border-radius: 16px;
-            padding: 16px 20px;
-            margin-top: 20px;
-            font-size: 0.85rem;
-            color: #9ab0c4;
-            border-left: 4px solid #facc15;
-        }
-        .time-stamp {
-            font-size: 0.75rem;
-            color: #556577;
-            text-align: right;
-            margin-top: 10px;
-        }
-        .placeholder-highlight {
-            background: #1a2a1a;
-            padding: 0 6px;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
-            color: #bcf0b0;
-        }
-        @media (max-width: 480px) {
-            .header h1 {
-                font-size: 1.4rem;
-            }
-            .match-teams {
-                flex-direction: column;
-                gap: 6px;
-            }
-            .score-badge {
-                font-size: 1.3rem;
-                min-width: 48px;
-                padding: 0 12px;
-            }
-            .token-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-            .cost-row .cost-value {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日 FIFA 世界杯预测</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17201d;
+      --muted: #60706a;
+      --line: #d8e0dc;
+      --paper: #f7faf8;
+      --panel: #ffffff;
+      --accent: #147a4a;
+      --accent-2: #c83f31;
+      --accent-3: #1c6aa7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, "Microsoft YaHei", "PingFang SC", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      letter-spacing: 0;
+    }
+    header {
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+    }
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .topbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      padding: 30px 0 24px;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.02;
+      font-weight: 800;
+    }
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+      line-height: 1.5;
+    }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f1f6f3;
+      color: var(--accent);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      padding: 18px 0 26px;
+    }
+    .stat {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 14px 16px;
+      min-height: 86px;
+    }
+    .stat span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 8px;
+    }
+    .stat strong {
+      display: block;
+      font-size: 20px;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+    main { padding: 24px 0 42px; }
+    .notice {
+      border: 1px solid #e3c7bd;
+      border-left: 4px solid var(--accent-2);
+      border-radius: 8px;
+      background: #fff8f5;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+    }
+    .notice h2 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+    .notice p { margin: 0 0 8px; color: var(--muted); }
+    .notice ul { margin: 0; padding-left: 20px; color: var(--muted); }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: 22px;
+    }
+    .source-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+    a { color: var(--accent-3); text-decoration: none; font-weight: 650; }
+    a:hover { text-decoration: underline; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+      gap: 16px;
+    }
+    .match-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 16px;
+      min-height: 292px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .match-meta, .match-footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .match-footer {
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+      margin-top: auto;
+    }
+    .teams {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 54px minmax(0, 1fr);
+      align-items: center;
+      gap: 10px;
+    }
+    .team {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .team.right {
+      justify-content: flex-end;
+      text-align: right;
+    }
+    .team strong {
+      font-size: 17px;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+    .team-logo, .team-initial {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: #edf3ef;
+      object-fit: contain;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .versus, .score {
+      min-width: 54px;
+      text-align: center;
+      font-weight: 800;
+      color: var(--muted);
+    }
+    .score { color: var(--ink); }
+    .probabilities {
+      display: grid;
+      gap: 10px;
+    }
+    .prob-row {
+      display: grid;
+      grid-template-columns: minmax(92px, 1fr) minmax(92px, 1.4fr) 56px;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+    }
+    .prob-row span:first-child {
+      overflow-wrap: anywhere;
+    }
+    .prob-track {
+      height: 10px;
+      border-radius: 999px;
+      background: #e9efec;
+      overflow: hidden;
+    }
+    .prob-track span {
+      display: block;
+      height: 100%;
+      background: var(--accent);
+    }
+    .prob-row:nth-child(2) .prob-track span { background: var(--accent-3); }
+    .prob-row:nth-child(3) .prob-track span { background: var(--accent-2); }
+    .empty {
+      border: 1px dashed var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 24px;
+      color: var(--muted);
+    }
+    .muted { color: var(--muted); }
+    .compact { margin: 0; }
+    footer {
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      padding: 22px 0 30px;
+      background: var(--panel);
+      font-size: 13px;
+    }
+    @media (max-width: 700px) {
+      .topbar, .stats {
+        grid-template-columns: 1fr;
+      }
+      .status-pill {
+        justify-content: center;
+        width: 100%;
+      }
+      .section-head {
+        display: block;
+      }
+      .source-links {
+        justify-content: flex-start;
+        margin-top: 10px;
+      }
+      .teams {
+        grid-template-columns: 1fr;
+      }
+      .versus, .score {
+        min-width: 0;
+        text-align: left;
+      }
+      .team.right {
+        justify-content: flex-start;
+        text-align: left;
+      }
+      .prob-row {
+        grid-template-columns: 1fr 52px;
+      }
+      .prob-track {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-
-        <!-- 头部 -->
-        <div class="header">
-            <h1>⚽ 2026 世界杯 · 预测中心</h1>
-            <div class="badge">
-                <span>●</span> 深度分析 <span>v2</span>
-            </div>
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <div>
+          <h1>每日 FIFA 世界杯预测</h1>
+          <p class="subtitle">每日自动抓取并校验世界杯赛程，只对来源确认的比赛生成预测；页面同步保留原始 JSON，方便核验。</p>
         </div>
-
-        <!-- 摘要 -->
-        <div class="summary-card">
-            <p>2026年世界杯小组赛及淘汰赛首轮预测。涵盖6月24日至28日共25场比赛，包括多场实力悬殊对决与几场势均力敌的较量。传统强队如巴西、阿根廷、法国、英格兰等被看好取胜，而部分中游球队对决则可能出现平局。淘汰赛首场因参赛球队尚未确定，预测难度较大。</p>
-            <div class="meta">
-                <span>🕒 生成时间: 2026-06-24 17:56 UTC</span>
-                <span>📊 模型: deepseek-v4-pro</span>
-                <span>🏟️ 比赛场次: 25</span>
-            </div>
-        </div>
-
-        <!-- 今日/近期比赛预测 -->
-        <h2 class="section-title">📋 今日比赛预测 <small>6月24日 – 6月28日</small></h2>
-
-        <!-- 按日期分组 -->
-        <div class="date-group">
-            <div class="date-label">6月24日</div>
-            <div class="match-grid">
-
-                <!-- 波黑 vs 卡塔尔 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">19:00 UTC</span>
-                        <span class="match-confidence confidence-medium">中等</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇧🇦</div><div class="name">波黑<small>主场</small></div></div>
-                        <div class="score-badge">1:0</div>
-                        <div class="team"><div class="flag-placeholder">🇶🇦</div><div class="name">卡塔尔<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>45%</strong></span>
-                        <span>平 <strong>30%</strong></span>
-                        <span>客胜 <strong>25%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:45%"></div>
-                        <div class="draw" style="width:30%"></div>
-                        <div class="away" style="width:25%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 1 – 0</span></div>
-                    <div class="tactical">波黑身体对抗能力强，主场优势明显；卡塔尔技术流但世界杯经验不足，可能难以破密集防守。</div>
-                    <div class="risk-badge">卡塔尔具备反击能力，若波黑久攻不下可能被偷袭得手。</div>
-                </div>
-
-                <!-- 瑞士 vs 加拿大 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">19:00 UTC</span>
-                        <span class="match-confidence confidence-medium">中等</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇨🇭</div><div class="name">瑞士<small>主场</small></div></div>
-                        <div class="score-badge">2:1</div>
-                        <div class="team"><div class="flag-placeholder">🇨🇦</div><div class="name">加拿大<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>50%</strong></span>
-                        <span>平 <strong>25%</strong></span>
-                        <span>客胜 <strong>25%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:50%"></div>
-                        <div class="draw" style="width:25%"></div>
-                        <div class="away" style="width:25%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 2 – 1</span></div>
-                    <div class="tactical">瑞士防守稳固，擅长控制节奏；加拿大速度优势明显，但大赛经验欠缺。比赛在温哥华举行，加拿大拥有球迷支持，但整体实力瑞士占优。</div>
-                    <div class="risk-badge">加拿大的主场氛围可能提升其表现，若瑞士慢热可能陷入被动。</div>
-                </div>
-
-                <!-- 摩洛哥 vs 海地 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">22:00 UTC</span>
-                        <span class="match-confidence confidence-high">高</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇲🇦</div><div class="name">摩洛哥<small>主场</small></div></div>
-                        <div class="score-badge">2:0</div>
-                        <div class="team"><div class="flag-placeholder">🇭🇹</div><div class="name">海地<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>70%</strong></span>
-                        <span>平 <strong>20%</strong></span>
-                        <span>客胜 <strong>10%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:70%"></div>
-                        <div class="draw" style="width:20%"></div>
-                        <div class="away" style="width:10%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 2 – 0</span></div>
-                    <div class="tactical">摩洛哥组织严密，中场控制力强；海地个人能力有限，难以持续制造威胁。</div>
-                    <div class="risk-badge">摩洛哥需避免轻敌，海地的顽强防守可能给比赛带来变数。</div>
-                </div>
-
-                <!-- 苏格兰 vs 巴西 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">22:00 UTC</span>
-                        <span class="match-confidence confidence-high">高</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🏴󠁧󠁢󠁳󠁣󠁴󠁿</div><div class="name">苏格兰<small>主场</small></div></div>
-                        <div class="score-badge">0:2</div>
-                        <div class="team"><div class="flag-placeholder">🇧🇷</div><div class="name">巴西<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>15%</strong></span>
-                        <span>平 <strong>20%</strong></span>
-                        <span>客胜 <strong>65%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:15%"></div>
-                        <div class="draw" style="width:20%"></div>
-                        <div class="away" style="width:65%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 0 – 2</span></div>
-                    <div class="tactical">巴西技术、速度全面占优，斯科特兰注重身体对抗和定位球，但难以限制巴西的进攻才华。</div>
-                    <div class="risk-badge">巴西可能轮换阵容，若轻敌或苏格兰死守，平局风险存在。</div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- 6月25日 -->
-        <div class="date-group">
-            <div class="date-label">6月25日</div>
-            <div class="match-grid">
-
-                <!-- 捷克 vs 墨西哥 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">01:00 UTC</span>
-                        <span class="match-confidence confidence-medium">中等</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇨🇿</div><div class="name">捷克<small>主场</small></div></div>
-                        <div class="score-badge">1:2</div>
-                        <div class="team"><div class="flag-placeholder">🇲🇽</div><div class="name">墨西哥<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>20%</strong></span>
-                        <span>平 <strong>25%</strong></span>
-                        <span>客胜 <strong>55%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:20%"></div>
-                        <div class="draw" style="width:25%"></div>
-                        <div class="away" style="width:55%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 1 – 2</span></div>
-                    <div class="tactical">墨西哥主场（墨西哥城）作战，狂热球迷带来巨大优势；捷克战术纪律好，但面对技术细腻的墨西哥可能吃亏。</div>
-                    <div class="risk-badge">墨西哥承受主场压力，若久攻不下可能急躁，给捷克反击机会。</div>
-                </div>
-
-                <!-- 南非 vs 韩国 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">01:00 UTC</span>
-                        <span class="match-confidence confidence-medium">中等</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇿🇦</div><div class="name">南非<small>主场</small></div></div>
-                        <div class="score-badge">0:1</div>
-                        <div class="team"><div class="flag-placeholder">🇰🇷</div><div class="name">韩国<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>20%</strong></span>
-                        <span>平 <strong>25%</strong></span>
-                        <span>客胜 <strong>55%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:20%"></div>
-                        <div class="draw" style="width:25%"></div>
-                        <div class="away" style="width:55%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 0 – 1</span></div>
-                    <div class="tactical">韩国整体实力更强，高压逼抢和快速转换是特长；南非身体条件不错，但技术粗糙，中立场难以抗衡。</div>
-                    <div class="risk-badge">南非的冲击打法可能搅乱韩国防线，定位球是变数。</div>
-                </div>
-
-                <!-- 库拉索 vs 科特迪瓦 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">20:00 UTC</span>
-                        <span class="match-confidence confidence-high">高</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇨🇼</div><div class="name">库拉索<small>主场</small></div></div>
-                        <div class="score-badge">0:2</div>
-                        <div class="team"><div class="flag-placeholder">🇨🇮</div><div class="name">科特迪瓦<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>15%</strong></span>
-                        <span>平 <strong>20%</strong></span>
-                        <span>客胜 <strong>65%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:15%"></div>
-                        <div class="draw" style="width:20%"></div>
-                        <div class="away" style="width:65%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 0 – 2</span></div>
-                    <div class="tactical">科特迪瓦球员身体素质劲爆，个人能力突出；库拉索整体实力有限，难有招架之力。</div>
-                    <div class="risk-badge">库拉索可能全员防守，科特迪瓦需要耐心破铁桶阵。</div>
-                </div>
-
-                <!-- 厄瓜多尔 vs 德国 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">20:00 UTC</span>
-                        <span class="match-confidence confidence-medium">中等</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇪🇨</div><div class="name">厄瓜多尔<small>主场</small></div></div>
-                        <div class="score-badge">1:2</div>
-                        <div class="team"><div class="flag-placeholder">🇩🇪</div><div class="name">德国<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>20%</strong></span>
-                        <span>平 <strong>25%</strong></span>
-                        <span>客胜 <strong>55%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:20%"></div>
-                        <div class="draw" style="width:25%"></div>
-                        <div class="away" style="width:55%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 1 – 2</span></div>
-                    <div class="tactical">德国实力明显占优，但厄瓜多尔有高原主场之利，虽在平原作战仍保留一定的适应性。德国依靠整体推进破防。</div>
-                    <div class="risk-badge">厄瓜多尔的反击效率较高，德国防线若压得太上可能被偷袭。</div>
-                </div>
-
-                <!-- 日本 vs 瑞典 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">23:00 UTC</span>
-                        <span class="match-confidence confidence-medium">中等</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇯🇵</div><div class="name">日本<small>主场</small></div></div>
-                        <div class="score-badge">1:1</div>
-                        <div class="team"><div class="flag-placeholder">🇸🇪</div><div class="name">瑞典<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>40%</strong></span>
-                        <span>平 <strong>30%</strong></span>
-                        <span>客胜 <strong>30%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:40%"></div>
-                        <div class="draw" style="width:30%"></div>
-                        <div class="away" style="width:30%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 1 – 1</span></div>
-                    <div class="tactical">日本技术细腻，传控配合流畅；瑞典身体强壮，长传冲吊和定位球是利器。实力在伯仲之间。</div>
-                    <div class="risk-badge">比赛可能陷入僵局，领先一方可能被扳平，平局概率高。</div>
-                </div>
-
-                <!-- 突尼斯 vs 荷兰 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">23:00 UTC</span>
-                        <span class="match-confidence confidence-high">高</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇹🇳</div><div class="name">突尼斯<small>主场</small></div></div>
-                        <div class="score-badge">0:2</div>
-                        <div class="team"><div class="flag-placeholder">🇳🇱</div><div class="name">荷兰<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>15%</strong></span>
-                        <span>平 <strong>20%</strong></span>
-                        <span>客胜 <strong>65%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:15%"></div>
-                        <div class="draw" style="width:20%"></div>
-                        <div class="away" style="width:65%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 0 – 2</span></div>
-                    <div class="tactical">荷兰全攻全守，中前场创造力强大；突尼斯防守硬朗但缺少反击速度，恐难逃败局。</div>
-                    <div class="risk-badge">荷兰可能轮换部分主力，默契度下降，但整体优势仍大。</div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- 6月26日 -->
-        <div class="date-group">
-            <div class="date-label">6月26日</div>
-            <div class="match-grid">
-
-                <!-- 巴拉圭 vs 澳大利亚 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">02:00 UTC</span>
-                        <span class="match-confidence confidence-medium">中等</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇵🇾</div><div class="name">巴拉圭<small>主场</small></div></div>
-                        <div class="score-badge">1:1</div>
-                        <div class="team"><div class="flag-placeholder">🇦🇺</div><div class="name">澳大利亚<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>35%</strong></span>
-                        <span>平 <strong>30%</strong></span>
-                        <span>客胜 <strong>35%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:35%"></div>
-                        <div class="draw" style="width:30%"></div>
-                        <div class="away" style="width:35%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 1 – 1</span></div>
-                    <div class="tactical">双方实力接近，巴拉圭防守反击熟练，澳大利亚身体对抗不吃亏，比赛可能陷入拉锯。</div>
-                    <div class="risk-badge">天气炎热可能导致节奏缓慢，一场闷平可能性不低。</div>
-                </div>
-
-                <!-- 土耳其 vs 美国 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">02:00 UTC</span>
-                        <span class="match-confidence confidence-medium">中等</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇹🇷</div><div class="name">土耳其<small>主场</small></div></div>
-                        <div class="score-badge">1:2</div>
-                        <div class="team"><div class="flag-placeholder">🇺🇸</div><div class="name">美国<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>25%</strong></span>
-                        <span>平 <strong>25%</strong></span>
-                        <span>客胜 <strong>50%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:25%"></div>
-                        <div class="draw" style="width:25%"></div>
-                        <div class="away" style="width:50%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 1 – 2</span></div>
-                    <div class="tactical">美国在主场（英格尔伍德）作战，球迷支持巨大，球队年轻有冲劲；土耳其个人技术不错但稳定性欠佳。</div>
-                    <div class="risk-badge">美国主场压力可能影响发挥，土耳其若能先进球，局势可能逆转。</div>
-                </div>
-
-                <!-- 挪威 vs 法国 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">19:00 UTC</span>
-                        <span class="match-confidence confidence-high">高</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇳🇴</div><div class="name">挪威<small>主场</small></div></div>
-                        <div class="score-badge">0:2</div>
-                        <div class="team"><div class="flag-placeholder">🇫🇷</div><div class="name">法国<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>15%</strong></span>
-                        <span>平 <strong>20%</strong></span>
-                        <span>客胜 <strong>65%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:15%"></div>
-                        <div class="draw" style="width:20%"></div>
-                        <div class="away" style="width:65%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 0 – 2</span></div>
-                    <div class="tactical">法国阵容豪华，攻守平衡；挪威虽有哈兰德这个强点，但整体实力差距明显。</div>
-                    <div class="risk-badge">哈兰德单兵能力极强，法国防线稍有不慎可能丢球，但法国进攻足以弥补。</div>
-                </div>
-
-                <!-- 塞内加尔 vs 伊拉克 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">19:00 UTC</span>
-                        <span class="match-confidence confidence-high">高</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇸🇳</div><div class="name">塞内加尔<small>主场</small></div></div>
-                        <div class="score-badge">2:0</div>
-                        <div class="team"><div class="flag-placeholder">🇮🇶</div><div class="name">伊拉克<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>65%</strong></span>
-                        <span>平 <strong>20%</strong></span>
-                        <span>客胜 <strong>15%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:65%"></div>
-                        <div class="draw" style="width:20%"></div>
-                        <div class="away" style="width:15%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 2 – 0</span></div>
-                    <div class="tactical">塞内加尔速度快、冲击力强，非洲冠军底蕴深厚；伊拉克防守顽强但进攻乏力，难以构成威胁。</div>
-                    <div class="risk-badge">塞内加尔若得势不得分，伊拉克的死守可能导致小胜甚至平局。</div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- 6月27日 -->
-        <div class="date-group">
-            <div class="date-label">6月27日</div>
-            <div class="match-grid">
-
-                <!-- 佛得角 vs 沙特 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">00:00 UTC</span>
-                        <span class="match-confidence confidence-low">低</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇨🇻</div><div class="name">佛得角<small>主场</small></div></div>
-                        <div class="score-badge">1:1</div>
-                        <div class="team"><div class="flag-placeholder">🇸🇦</div><div class="name">沙特<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>30%</strong></span>
-                        <span>平 <strong>30%</strong></span>
-                        <span>客胜 <strong>40%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:30%"></div>
-                        <div class="draw" style="width:30%"></div>
-                        <div class="away" style="width:40%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 1 – 1</span></div>
-                    <div class="tactical">两队实力半斤八两，沙特技术稍好但发挥不稳；佛得角对抗能力强，比赛可能平淡。</div>
-                    <div class="risk-badge">双方均无绝对把握，比赛结果很大程度取决于临场发挥。</div>
-                </div>
-
-                <!-- 乌拉圭 vs 西班牙 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">00:00 UTC</span>
-                        <span class="match-confidence confidence-medium">中等</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇺🇾</div><div class="name">乌拉圭<small>主场</small></div></div>
-                        <div class="score-badge">1:2</div>
-                        <div class="team"><div class="flag-placeholder">🇪🇸</div><div class="name">西班牙<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>25%</strong></span>
-                        <span>平 <strong>30%</strong></span>
-                        <span>客胜 <strong>45%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:25%"></div>
-                        <div class="draw" style="width:30%"></div>
-                        <div class="away" style="width:45%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 1 – 2</span></div>
-                    <div class="tactical">西班牙控球优势明显，乌拉圭依靠强悍防守和反击周旋。西甲式对决，西班牙更占优。</div>
-                    <div class="risk-badge">乌拉圭凶狠的逼抢可能打乱西班牙节奏，若不能尽早进球，西班牙可能陷入苦战。</div>
-                </div>
-
-                <!-- 埃及 vs 伊朗 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">03:00 UTC</span>
-                        <span class="match-confidence confidence-medium">中等</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇪🇬</div><div class="name">埃及<small>主场</small></div></div>
-                        <div class="score-badge">1:1</div>
-                        <div class="team"><div class="flag-placeholder">🇮🇷</div><div class="name">伊朗<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>35%</strong></span>
-                        <span>平 <strong>30%</strong></span>
-                        <span>客胜 <strong>35%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:35%"></div>
-                        <div class="draw" style="width:30%"></div>
-                        <div class="away" style="width:35%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 1 – 1</span></div>
-                    <div class="tactical">北非劲旅与亚洲豪强相遇，埃及萨拉赫领衔攻击线，伊朗防守稳固，双方可能比较保守。</div>
-                    <div class="risk-badge">核心球员的发挥将决定走势，平局可能性不小。</div>
-                </div>
-
-                <!-- 新西兰 vs 比利时 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">03:00 UTC</span>
-                        <span class="match-confidence confidence-high">高</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇳🇿</div><div class="name">新西兰<small>主场</small></div></div>
-                        <div class="score-badge">0:3</div>
-                        <div class="team"><div class="flag-placeholder">🇧🇪</div><div class="name">比利时<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>5%</strong></span>
-                        <span>平 <strong>15%</strong></span>
-                        <span>客胜 <strong>80%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:5%"></div>
-                        <div class="draw" style="width:15%"></div>
-                        <div class="away" style="width:80%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 0 – 3</span></div>
-                    <div class="tactical">比利时黄金一代实力碾压，新西兰只能指望少输当赢。</div>
-                    <div class="risk-badge">比利时若大幅轮换或心态放松，可能影响净胜球数，但胜负无悬念。</div>
-                </div>
-
-                <!-- 克罗地亚 vs 加纳 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">21:00 UTC</span>
-                        <span class="match-confidence confidence-high">高</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇭🇷</div><div class="name">克罗地亚<small>主场</small></div></div>
-                        <div class="score-badge">2:0</div>
-                        <div class="team"><div class="flag-placeholder">🇬🇭</div><div class="name">加纳<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>60%</strong></span>
-                        <span>平 <strong>20%</strong></span>
-                        <span>客胜 <strong>20%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:60%"></div>
-                        <div class="draw" style="width:20%"></div>
-                        <div class="away" style="width:20%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 2 – 0</span></div>
-                    <div class="tactical">克罗地亚中场大师级，控制力出众；加纳年轻有活力但经验不足，恐难打破格子军节奏。</div>
-                    <div class="risk-badge">加纳的快速反击可能制造混乱，克罗地亚需保持专注。</div>
-                </div>
-
-                <!-- 巴拿马 vs 英格兰 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">21:00 UTC</span>
-                        <span class="match-confidence confidence-high">高</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇵🇦</div><div class="name">巴拿马<small>主场</small></div></div>
-                        <div class="score-badge">0:2</div>
-                        <div class="team"><div class="flag-placeholder">🏴󠁧󠁢󠁥󠁮󠁧󠁿</div><div class="name">英格兰<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>10%</strong></span>
-                        <span>平 <strong>15%</strong></span>
-                        <span>客胜 <strong>75%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:10%"></div>
-                        <div class="draw" style="width:15%"></div>
-                        <div class="away" style="width:75%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 0 – 2</span></div>
-                    <div class="tactical">英格兰实力远超巴拿马，定位球和边路进攻将撕开防线。</div>
-                    <div class="risk-badge">英格兰过去时有遇弱不强的毛病，但本场应能顺利取胜。</div>
-                </div>
-
-                <!-- 哥伦比亚 vs 葡萄牙 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">23:30 UTC</span>
-                        <span class="match-confidence confidence-medium">中等</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇨🇴</div><div class="name">哥伦比亚<small>主场</small></div></div>
-                        <div class="score-badge">1:1</div>
-                        <div class="team"><div class="flag-placeholder">🇵🇹</div><div class="name">葡萄牙<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>30%</strong></span>
-                        <span>平 <strong>30%</strong></span>
-                        <span>客胜 <strong>40%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:30%"></div>
-                        <div class="draw" style="width:30%"></div>
-                        <div class="away" style="width:40%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 1 – 1</span></div>
-                    <div class="tactical">两队均球星云集，哥伦比亚创造力十足，葡萄牙整体性更强，预计场面开放。</div>
-                    <div class="risk-badge">双方都具备一击致命的能力，结果可能由球星瞬间决定。</div>
-                </div>
-
-                <!-- 刚果民主共和国 vs 乌兹别克斯坦 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">23:30 UTC</span>
-                        <span class="match-confidence confidence-low">低</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇨🇩</div><div class="name">刚果(金)<small>主场</small></div></div>
-                        <div class="score-badge">0:0</div>
-                        <div class="team"><div class="flag-placeholder">🇺🇿</div><div class="name">乌兹别克<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>30%</strong></span>
-                        <span>平 <strong>35%</strong></span>
-                        <span>客胜 <strong>35%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:30%"></div>
-                        <div class="draw" style="width:35%"></div>
-                        <div class="away" style="width:35%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 0 – 0</span></div>
-                    <div class="tactical">两队世界排名相近，缺乏顶级球星，比赛可能演变为中场缠斗，进球困难。</div>
-                    <div class="risk-badge">胶着中一次失误或定位球可能改变结局，但整体进球数不会多。</div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- 6月28日 -->
-        <div class="date-group">
-            <div class="date-label">6月28日</div>
-            <div class="match-grid">
-
-                <!-- 阿尔及利亚 vs 奥地利 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">02:00 UTC</span>
-                        <span class="match-confidence confidence-medium">中等</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇩🇿</div><div class="name">阿尔及利亚<small>主场</small></div></div>
-                        <div class="score-badge">1:1</div>
-                        <div class="team"><div class="flag-placeholder">🇦🇹</div><div class="name">奥地利<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>35%</strong></span>
-                        <span>平 <strong>30%</strong></span>
-                        <span>客胜 <strong>35%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:35%"></div>
-                        <div class="draw" style="width:30%"></div>
-                        <div class="away" style="width:35%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 1 – 1</span></div>
-                    <div class="tactical">阿尔及利亚技术细腻，奥地利战术执行力强，双方实力在伯仲之间。</div>
-                    <div class="risk-badge">比赛可能激烈但难以分出胜负，平局对双方或是都能接受的结果。</div>
-                </div>
-
-                <!-- 约旦 vs 阿根廷 -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">02:00 UTC</span>
-                        <span class="match-confidence confidence-high">高</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">🇯🇴</div><div class="name">约旦<small>主场</small></div></div>
-                        <div class="score-badge">0:3</div>
-                        <div class="team"><div class="flag-placeholder">🇦🇷</div><div class="name">阿根廷<small>客场</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>5%</strong></span>
-                        <span>平 <strong>10%</strong></span>
-                        <span>客胜 <strong>85%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:5%"></div>
-                        <div class="draw" style="width:10%"></div>
-                        <div class="away" style="width:85%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 0 – 3</span></div>
-                    <div class="tactical">卫冕冠军阿根廷实力超群，约旦只能通过死守争取少失球。梅西引领的进攻将轻易撕破防线。</div>
-                    <div class="risk-badge">阿根廷可能提前锁定小组头名而轮换，但替补实力也远胜约旦。</div>
-                </div>
-
-                <!-- A组第二名 vs B组第二名 (淘汰赛) -->
-                <div class="match-card">
-                    <div class="match-header">
-                        <span class="match-time">19:00 UTC</span>
-                        <span class="match-confidence confidence-low">低</span>
-                    </div>
-                    <div class="match-teams">
-                        <div class="team"><div class="flag-placeholder">❓</div><div class="name">A组第二<small>待定</small></div></div>
-                        <div class="score-badge">1:1</div>
-                        <div class="team"><div class="flag-placeholder">❓</div><div class="name">B组第二<small>待定</small></div></div>
-                    </div>
-                    <div class="prob-labels">
-                        <span>主胜 <strong>34%</strong></span>
-                        <span>平 <strong>33%</strong></span>
-                        <span>客胜 <strong>33%</strong></span>
-                    </div>
-                    <div class="prob-bar">
-                        <div class="home" style="width:34%"></div>
-                        <div class="draw" style="width:33%"></div>
-                        <div class="away" style="width:33%"></div>
-                    </div>
-                    <div class="predicted-score-line"><span>预测比分 1 – 1</span></div>
-                    <div class="tactical">淘汰赛阶段，参赛球队未定，预测无意义。通常小组第二实力接近，比赛可能胶着。</div>
-                    <div class="risk-badge">球队状态、伤病情况完全未知，高度不确定性，任何结果都可能发生。</div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- 风险总览 -->
-        <div class="summary-card" style="margin-top: 20px;">
-            <h3 style="font-size:1.1rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">📊 风险总览</h3>
-            <p>整体而言，弱队爆冷风险较低，但实力接近的场次（如日本对瑞典、巴拉圭对澳大利亚等）平局可能性高。个别比赛受场地因素影响较大（如瑞士在加拿大对阵加拿大，墨西哥本土作战）。淘汰赛首场因未知球队，风险极高。</p>
-        </div>
-
-        <!-- 数据质量说明 -->
-        <div class="data-quality">
-            <strong>📌 数据质量说明</strong><br>
-            数据来源为ESPN公开比分板，赛事真实有效。预测基于各队FIFA历史排名、近年大赛表现及一般技战术特点推断，未纳入实时伤病、更衣室动态等短期变量，仅供足球分析参考。
-        </div>
-
-        <!-- 令牌使用面板 + 成本估算 -->
-        <div class="token-panel">
-            <h3>📊 令牌使用 & 成本估算</h3>
-            <div class="token-grid">
-                <div class="token-item">
-                    <div class="label">输入令牌</div>
-                    <div class="value gold">19518</div>
-                </div>
-                <div class="token-item">
-                    <div class="label">输出令牌</div>
-                    <div class="value gold">22828</div>
-                </div>
-                <div class="token-item highlight">
-                    <div class="label">总令牌数</div>
-                    <div class="value green">42346</div>
-                </div>
-                <div class="token-item highlight">
-                    <div class="label">模型</div>
-                    <div class="value" style="font-size:1.2rem; color:#94a3b8;">deepseek-v4-pro</div>
-                </div>
-            </div>
-            <div class="cost-row">
-                <span class="cost-label">💰 预估总成本（USD）</span>
-                <span class="cost-value">0.423460</span>
-            </div>
-            <div style="margin-top: 12px; font-size:0.8rem; color: #556577; text-align: right;">
-                基于分析用量 · 单价 $0.01 / 1K tokens
-            </div>
-        </div>
-
-        <!-- 日志 / 时间戳 -->
-        <div class="footer-note">
-            <div>🕒 分析完成: 2026-06-24T17:56:41Z &nbsp;|&nbsp; 研究管线: 2026-06-24T17:26:41Z</div>
-            <div style="margin-top:6px;">⚡ 生成用时: 30分钟 &nbsp;·&nbsp; 状态: ✅ 完成</div>
-            <div style="margin-top:12px;">© 2026 世界杯预测分析 · 仅供研究参考</div>
-        </div>
-
-        <!-- 隐藏的原始数据占位符 —— 确保 JSON 中 usage 字段准确映射 -->
-        <div style="display:none;" data-input-tokens="7200" data-output-tokens="8658" data-total-tokens="15858" data-cost-estimate="0.15858"></div>
-
+        <span class="status-pill">已就绪</span>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>生成时间</span><strong>2026-06-24T16:30:28Z</strong></div>
+        <div class="stat"><span>预测窗口</span><strong>2026-06-24 / 5 天</strong></div>
+        <div class="stat"><span>已验证赛程</span><strong>25</strong></div>
+      </div>
     </div>
+  </header>
+  <main class="wrap">
+    
+    <div class="section-head">
+      <h2>未来赛程</h2>
+      <div class="source-links"><a href="https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260624" rel="noopener" target="_blank">来源 1</a> <a href="https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260625" rel="noopener" target="_blank">来源 2</a> <a href="https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260626" rel="noopener" target="_blank">来源 3</a> <a href="https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260627" rel="noopener" target="_blank">来源 4</a> <a href="https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260628" rel="noopener" target="_blank">来源 5</a> <a href="latest.json">原始 JSON</a></div>
+    </div>
+    <section class="grid">
+      
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-24T19:00:00Z">2026-06-24T19:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/bih.png" alt="波黑 logo" loading="lazy"><strong>波黑</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/qat.png" alt="卡塔尔 logo" loading="lazy"><strong>卡塔尔</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>波黑 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 36.9%"></span></div>
+        <strong>36.9%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 28.3%"></span></div>
+        <strong>28.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>卡塔尔 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 34.8%"></span></div>
+        <strong>34.8%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Lumen Field - Seattle, Washington - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760462" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
 
-<section id="deepseek-runtime-usage" style="max-width:1120px;margin:24px auto;padding:16px;border:1px solid #d8e0dc;border-radius:8px;background:#fff;font-family:Inter,'Microsoft YaHei','PingFang SC',system-ui,sans-serif;color:#17201d;">
-  <h2 style="margin:0 0 12px;font-size:20px;">运行用量</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
-    <div><strong>分析模型</strong><br>deepseek-v4-pro</div>
-    <div><strong>生成模型</strong><br>deepseek-v4-flash</div>
-    <div><strong>Input tokens</strong><br>19518</div>
-    <div><strong>Output tokens</strong><br>22828</div>
-    <div><strong>Total tokens</strong><br>42346</div>
-    <div><strong>Cost</strong><br>0.423460</div>
-  </div>
-</section>
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-24T19:00:00Z">2026-06-24T19:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/sui.png" alt="瑞士 logo" loading="lazy"><strong>瑞士</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/can.png" alt="加拿大 logo" loading="lazy"><strong>加拿大</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>瑞士 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 40.0%"></span></div>
+        <strong>40.0%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 26.9%"></span></div>
+        <strong>26.9%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>加拿大 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 33.1%"></span></div>
+        <strong>33.1%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>BC Place - Vancouver - Canada</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760463" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
 
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-24T22:00:00Z">2026-06-24T22:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/mar.png" alt="摩洛哥 logo" loading="lazy"><strong>摩洛哥</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/hai.png" alt="海地 logo" loading="lazy"><strong>海地</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>摩洛哥 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 56.7%"></span></div>
+        <strong>56.7%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 21.6%"></span></div>
+        <strong>21.6%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>海地 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 21.7%"></span></div>
+        <strong>21.7%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Mercedes-Benz Stadium - Atlanta, Georgia - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760464" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-24T22:00:00Z">2026-06-24T22:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/sco.png" alt="苏格兰 logo" loading="lazy"><strong>苏格兰</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/bra.png" alt="巴西 logo" loading="lazy"><strong>巴西</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>苏格兰 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 20.9%"></span></div>
+        <strong>20.9%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 21.3%"></span></div>
+        <strong>21.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>巴西 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 57.8%"></span></div>
+        <strong>57.8%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Hard Rock Stadium - Miami Gardens, Florida - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760465" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-25T01:00:00Z">2026-06-25T01:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/cze.png" alt="捷克 logo" loading="lazy"><strong>捷克</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="墨西哥 logo" loading="lazy"><strong>墨西哥</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>捷克 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 27.7%"></span></div>
+        <strong>27.7%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 23.9%"></span></div>
+        <strong>23.9%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>墨西哥 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 48.4%"></span></div>
+        <strong>48.4%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Estadio Banorte - Mexico City - Mexico</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760467" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-25T01:00:00Z">2026-06-25T01:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/rsa.png" alt="南非 logo" loading="lazy"><strong>南非</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/kors.png" alt="韩国 logo" loading="lazy"><strong>韩国</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>南非 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 30.0%"></span></div>
+        <strong>30.0%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 25.0%"></span></div>
+        <strong>25.0%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>韩国 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 45.0%"></span></div>
+        <strong>45.0%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Estadio BBVA - Guadalupe - Mexico</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760466" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-25T20:00:00Z">2026-06-25T20:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/11678.png" alt="库拉索 logo" loading="lazy"><strong>库拉索</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/civ.png" alt="科特迪瓦 logo" loading="lazy"><strong>科特迪瓦</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>库拉索 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 30.6%"></span></div>
+        <strong>30.6%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 25.3%"></span></div>
+        <strong>25.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>科特迪瓦 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 44.1%"></span></div>
+        <strong>44.1%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Lincoln Financial Field - Philadelphia, Pennsylvania - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760473" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-25T20:00:00Z">2026-06-25T20:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ecu.png" alt="厄瓜多尔 logo" loading="lazy"><strong>厄瓜多尔</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ger.png" alt="德国 logo" loading="lazy"><strong>德国</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>厄瓜多尔 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 28.0%"></span></div>
+        <strong>28.0%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 24.0%"></span></div>
+        <strong>24.0%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>德国 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 48.0%"></span></div>
+        <strong>48.0%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>MetLife Stadium - East Rutherford, New Jersey - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760468" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-25T23:00:00Z">2026-06-25T23:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/jpn.png" alt="日本 logo" loading="lazy"><strong>日本</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/swe.png" alt="瑞典 logo" loading="lazy"><strong>瑞典</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>日本 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 46.7%"></span></div>
+        <strong>46.7%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 24.4%"></span></div>
+        <strong>24.4%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>瑞典 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 28.9%"></span></div>
+        <strong>28.9%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>AT&amp;T Stadium - Arlington, Texas - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760471" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-25T23:00:00Z">2026-06-25T23:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/tun.png" alt="突尼斯 logo" loading="lazy"><strong>突尼斯</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ned.png" alt="荷兰 logo" loading="lazy"><strong>荷兰</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>突尼斯 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 23.7%"></span></div>
+        <strong>23.7%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 22.2%"></span></div>
+        <strong>22.2%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>荷兰 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 54.1%"></span></div>
+        <strong>54.1%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>GEHA Field at Arrowhead Stadium - Kansas City, Missouri - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760472" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-26T02:00:00Z">2026-06-26T02:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/par.png" alt="巴拉圭 logo" loading="lazy"><strong>巴拉圭</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/aus.png" alt="澳大利亚 logo" loading="lazy"><strong>澳大利亚</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>巴拉圭 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 33.3%"></span></div>
+        <strong>33.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 27.1%"></span></div>
+        <strong>27.1%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>澳大利亚 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 39.6%"></span></div>
+        <strong>39.6%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Levi&#x27;s Stadium - Santa Clara, California - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760469" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-26T02:00:00Z">2026-06-26T02:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/tur.png" alt="土耳其 logo" loading="lazy"><strong>土耳其</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/usa.png" alt="美国 logo" loading="lazy"><strong>美国</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>土耳其 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 29.8%"></span></div>
+        <strong>29.8%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 24.9%"></span></div>
+        <strong>24.9%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>美国 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 45.3%"></span></div>
+        <strong>45.3%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>SoFi Stadium - Inglewood, California - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760470" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-26T19:00:00Z">2026-06-26T19:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/nor.png" alt="挪威 logo" loading="lazy"><strong>挪威</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/fra.png" alt="法国 logo" loading="lazy"><strong>法国</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>挪威 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 20.6%"></span></div>
+        <strong>20.6%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 21.2%"></span></div>
+        <strong>21.2%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>法国 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 58.2%"></span></div>
+        <strong>58.2%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Gillette Stadium - Foxborough, Massachusetts - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760475" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-26T19:00:00Z">2026-06-26T19:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/sen.png" alt="塞内加尔 logo" loading="lazy"><strong>塞内加尔</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/irq.png" alt="伊拉克 logo" loading="lazy"><strong>伊拉克</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>塞内加尔 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 49.6%"></span></div>
+        <strong>49.6%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 23.5%"></span></div>
+        <strong>23.5%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>伊拉克 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 26.9%"></span></div>
+        <strong>26.9%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>BMO Field - Toronto - Canada</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760474" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T00:00:00Z">2026-06-27T00:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/cpv.png" alt="佛得角 logo" loading="lazy"><strong>佛得角</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ksa.png" alt="沙特阿拉伯 logo" loading="lazy"><strong>沙特阿拉伯</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>佛得角 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 30.6%"></span></div>
+        <strong>30.6%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 25.3%"></span></div>
+        <strong>25.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>沙特阿拉伯 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 44.1%"></span></div>
+        <strong>44.1%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>NRG Stadium - Houston, Texas - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760478" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T00:00:00Z">2026-06-27T00:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/uru.png" alt="乌拉圭 logo" loading="lazy"><strong>乌拉圭</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/esp.png" alt="西班牙 logo" loading="lazy"><strong>西班牙</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>乌拉圭 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 31.2%"></span></div>
+        <strong>31.2%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 25.7%"></span></div>
+        <strong>25.7%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>西班牙 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 43.1%"></span></div>
+        <strong>43.1%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Estadio Akron - Guadalajara - Mexico</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760479" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T03:00:00Z">2026-06-27T03:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/egy.png" alt="埃及 logo" loading="lazy"><strong>埃及</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/irn.png" alt="伊朗 logo" loading="lazy"><strong>伊朗</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>埃及 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 33.6%"></span></div>
+        <strong>33.6%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 27.3%"></span></div>
+        <strong>27.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>伊朗 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 39.1%"></span></div>
+        <strong>39.1%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Lumen Field - Seattle, Washington - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760476" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T03:00:00Z">2026-06-27T03:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/nzl.png" alt="新西兰 logo" loading="lazy"><strong>新西兰</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/bel.png" alt="比利时 logo" loading="lazy"><strong>比利时</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>新西兰 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 19.3%"></span></div>
+        <strong>19.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 20.9%"></span></div>
+        <strong>20.9%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>比利时 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 59.8%"></span></div>
+        <strong>59.8%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>BC Place - Vancouver - Canada</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760477" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T21:00:00Z">2026-06-27T21:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/cro.png" alt="克罗地亚 logo" loading="lazy"><strong>克罗地亚</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/gha.png" alt="加纳 logo" loading="lazy"><strong>加纳</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>克罗地亚 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 52.9%"></span></div>
+        <strong>52.9%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 22.6%"></span></div>
+        <strong>22.6%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>加纳 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 24.5%"></span></div>
+        <strong>24.5%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Lincoln Financial Field - Philadelphia, Pennsylvania - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760480" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T21:00:00Z">2026-06-27T21:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/pan.png" alt="巴拿马 logo" loading="lazy"><strong>巴拿马</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/eng.png" alt="英格兰 logo" loading="lazy"><strong>英格兰</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>巴拿马 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 16.3%"></span></div>
+        <strong>16.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 20.1%"></span></div>
+        <strong>20.1%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>英格兰 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 63.6%"></span></div>
+        <strong>63.6%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>MetLife Stadium - East Rutherford, New Jersey - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760485" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T23:30:00Z">2026-06-27T23:30:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="哥伦比亚 logo" loading="lazy"><strong>哥伦比亚</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/por.png" alt="葡萄牙 logo" loading="lazy"><strong>葡萄牙</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>哥伦比亚 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 32.8%"></span></div>
+        <strong>32.8%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 26.7%"></span></div>
+        <strong>26.7%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>葡萄牙 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 40.5%"></span></div>
+        <strong>40.5%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Hard Rock Stadium - Miami Gardens, Florida - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760481" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-27T23:30:00Z">2026-06-27T23:30:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/rdc.png" alt="刚果民主共和国 logo" loading="lazy"><strong>刚果民主共和国</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/uzb.png" alt="乌兹别克斯坦 logo" loading="lazy"><strong>乌兹别克斯坦</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>刚果民主共和国 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 37.8%"></span></div>
+        <strong>37.8%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 27.9%"></span></div>
+        <strong>27.9%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>乌兹别克斯坦 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 34.3%"></span></div>
+        <strong>34.3%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>Mercedes-Benz Stadium - Atlanta, Georgia - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760482" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-28T02:00:00Z">2026-06-28T02:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/alg.png" alt="阿尔及利亚 logo" loading="lazy"><strong>阿尔及利亚</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/aut.png" alt="奥地利 logo" loading="lazy"><strong>奥地利</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>阿尔及利亚 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 31.7%"></span></div>
+        <strong>31.7%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 26.0%"></span></div>
+        <strong>26.0%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>奥地利 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 42.3%"></span></div>
+        <strong>42.3%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>GEHA Field at Arrowhead Stadium - Kansas City, Missouri - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760484" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-28T02:00:00Z">2026-06-28T02:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/jor.png" alt="约旦 logo" loading="lazy"><strong>约旦</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="阿根廷 logo" loading="lazy"><strong>阿根廷</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>约旦 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 14.3%"></span></div>
+        <strong>14.3%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 19.6%"></span></div>
+        <strong>19.6%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>阿根廷 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 66.1%"></span></div>
+        <strong>66.1%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>AT&amp;T Stadium - Arlington, Texas - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760483" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-28T19:00:00Z">2026-06-28T19:00:00Z</time>
+          <span>Scheduled</span>
+        </div>
+        <div class="teams">
+          <div class="team"><span class="team-initial">A</span><strong>A组第二名</strong></div>
+          <div class="versus"><span class="score">0 - 0</span></div>
+          <div class="team right"><span class="team-initial">B</span><strong>B组第二名</strong></div>
+        </div>
+        
+          <div class="probabilities">
+            
+      <div class="prob-row">
+        <span>A组第二名 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 35.5%"></span></div>
+        <strong>35.5%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>平局</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 29.0%"></span></div>
+        <strong>29.0%</strong>
+      </div>
+    
+            
+      <div class="prob-row">
+        <span>B组第二名 胜</span>
+        <div class="prob-track" aria-hidden="true"><span style="width: 35.5%"></span></div>
+        <strong>35.5%</strong>
+      </div>
+    
+          </div>
+        
+        <div class="match-footer">
+          <span>SoFi Stadium - Inglewood, California - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760486" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+    </section>
+  </main>
+  <footer>
+    <div class="wrap">预测结果是针对已验证赛程的确定性编辑模型估计，不构成投注建议。</div>
+  </footer>
 </body>
 </html>

@@ -9,16 +9,18 @@ on:
 permissions:
   contents: read
   pages: write
+  id-token: write
 
 concurrency:
-  group: daily-publish-1000
-  cancel-in-progress: false
+  group: github-pages
+  cancel-in-progress: true
 
 jobs:
   publish:
     runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ github.token }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
 
@@ -30,16 +32,11 @@ jobs:
       - run: python -m pip install -r requirements.txt
       - run: python app/validate.py data/latest.json
 
-      - name: Trigger GitHub Pages build
-        run: gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds"
+      - uses: actions/configure-pages@v5
 
-      - name: Write publish log
-        run: |
-          mkdir -p logs
-          cat > logs/latest-publish.log <<EOF
-          stage=10:00 deploy GitHub Pages
-          repository=${GITHUB_REPOSITORY}
-          ref=${GITHUB_REF}
-          sha=${GITHUB_SHA}
-          run_id=${GITHUB_RUN_ID}
-          EOF
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

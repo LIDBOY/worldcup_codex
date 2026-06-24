@@ -26,7 +26,7 @@ All cron values are UTC, aligned to Asia/Shanghai local time:
 - 08:15 CST: `.github/workflows/research.yml` fetches verified fixtures and writes `data/fixtures.json`.
 - 09:40 CST: `.github/workflows/analysis.yml` calls `deepseek-v4-pro` and writes `data/analysis.json`.
 - 09:45 CST: `.github/workflows/render.yml` calls `deepseek-v4-flash`, writes `data/latest.json`, `docs/index.html`, and `docs/latest.json`.
-- 10:00 CST: `.github/workflows/publish.yml` validates `data/latest.json` and triggers a GitHub Pages build.
+- 10:00 CST: `.github/workflows/publish.yml` validates `data/latest.json` and deploys `docs/` through the official GitHub Pages artifact flow.
 
 ## Output Contract
 
