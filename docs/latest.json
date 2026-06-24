@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-06-24T15:56:37Z",
+  "generated_at": "2026-06-24T16:30:28Z",
   "window": {
     "start_date": "2026-06-24",
     "days": 5,
@@ -23,8 +23,10 @@
   "matches": [
     {
       "id": "760462",
-      "name": "Qatar at Bosnia-Herzegovina",
-      "short_name": "QAT @ BIH",
+      "name": "波黑 对阵 卡塔尔",
+      "name_en": "Qatar at Bosnia-Herzegovina",
+      "short_name": "波黑 vs 卡塔尔",
+      "short_name_en": "QAT @ BIH",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-24T19:00:00Z",
       "status": {
@@ -34,13 +36,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Bosnia-Herzegovina",
+          "name": "波黑",
+          "name_en": "Bosnia-Herzegovina",
           "abbreviation": "BIH",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Qatar",
+          "name": "卡塔尔",
+          "name_en": "Qatar",
           "abbreviation": "QAT",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
           "score": "0"
@@ -72,8 +76,10 @@
     },
     {
       "id": "760463",
-      "name": "Canada at Switzerland",
-      "short_name": "CAN @ SUI",
+      "name": "瑞士 对阵 加拿大",
+      "name_en": "Canada at Switzerland",
+      "short_name": "瑞士 vs 加拿大",
+      "short_name_en": "CAN @ SUI",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-24T19:00:00Z",
       "status": {
@@ -83,13 +89,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Switzerland",
+          "name": "瑞士",
+          "name_en": "Switzerland",
           "abbreviation": "SUI",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Canada",
+          "name": "加拿大",
+          "name_en": "Canada",
           "abbreviation": "CAN",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
           "score": "0"
@@ -121,8 +129,10 @@
     },
     {
       "id": "760464",
-      "name": "Haiti at Morocco",
-      "short_name": "HAI @ MAR",
+      "name": "摩洛哥 对阵 海地",
+      "name_en": "Haiti at Morocco",
+      "short_name": "摩洛哥 vs 海地",
+      "short_name_en": "HAI @ MAR",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-24T22:00:00Z",
       "status": {
@@ -132,13 +142,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Morocco",
+          "name": "摩洛哥",
+          "name_en": "Morocco",
           "abbreviation": "MAR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Haiti",
+          "name": "海地",
+          "name_en": "Haiti",
           "abbreviation": "HAI",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
           "score": "0"
@@ -170,8 +182,10 @@
     },
     {
       "id": "760465",
-      "name": "Brazil at Scotland",
-      "short_name": "BRA @ SCO",
+      "name": "苏格兰 对阵 巴西",
+      "name_en": "Brazil at Scotland",
+      "short_name": "苏格兰 vs 巴西",
+      "short_name_en": "BRA @ SCO",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-24T22:00:00Z",
       "status": {
@@ -181,13 +195,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Scotland",
+          "name": "苏格兰",
+          "name_en": "Scotland",
           "abbreviation": "SCO",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Brazil",
+          "name": "巴西",
+          "name_en": "Brazil",
           "abbreviation": "BRA",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
           "score": "0"
@@ -219,8 +235,10 @@
     },
     {
       "id": "760467",
-      "name": "Mexico at Czechia",
-      "short_name": "MEX @ CZE",
+      "name": "捷克 对阵 墨西哥",
+      "name_en": "Mexico at Czechia",
+      "short_name": "捷克 vs 墨西哥",
+      "short_name_en": "MEX @ CZE",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-25T01:00:00Z",
       "status": {
@@ -230,13 +248,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Czechia",
+          "name": "捷克",
+          "name_en": "Czechia",
           "abbreviation": "CZE",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Mexico",
+          "name": "墨西哥",
+          "name_en": "Mexico",
           "abbreviation": "MEX",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
           "score": "0"
@@ -268,8 +288,10 @@
     },
     {
       "id": "760466",
-      "name": "South Korea at South Africa",
-      "short_name": "KOR @ RSA",
+      "name": "南非 对阵 韩国",
+      "name_en": "South Korea at South Africa",
+      "short_name": "南非 vs 韩国",
+      "short_name_en": "KOR @ RSA",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-25T01:00:00Z",
       "status": {
@@ -279,13 +301,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "South Africa",
+          "name": "南非",
+          "name_en": "South Africa",
           "abbreviation": "RSA",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
           "score": "0"
         },
         "team_b": {
-          "name": "South Korea",
+          "name": "韩国",
+          "name_en": "South Korea",
           "abbreviation": "KOR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
           "score": "0"
@@ -317,8 +341,10 @@
     },
     {
       "id": "760473",
-      "name": "Ivory Coast at Curaçao",
-      "short_name": "CIV @ CUW",
+      "name": "库拉索 对阵 科特迪瓦",
+      "name_en": "Ivory Coast at Curaçao",
+      "short_name": "库拉索 vs 科特迪瓦",
+      "short_name_en": "CIV @ CUW",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-25T20:00:00Z",
       "status": {
@@ -328,13 +354,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Curaçao",
+          "name": "库拉索",
+          "name_en": "Curaçao",
           "abbreviation": "CUW",
           "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Ivory Coast",
+          "name": "科特迪瓦",
+          "name_en": "Ivory Coast",
           "abbreviation": "CIV",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
           "score": "0"
@@ -352,12 +380,12 @@
       "prediction": {
         "model": "deterministic-strength-prior-v1",
         "probabilities": {
-          "team_a_win": 34.8,
-          "draw": 28.3,
-          "team_b_win": 36.9
+          "team_a_win": 30.6,
+          "draw": 25.3,
+          "team_b_win": 44.1
         },
         "inputs": {
-          "team_a_rating": 1540,
+          "team_a_rating": 1460,
           "team_b_rating": 1555,
           "host_adjustment_points": 35
         },
@@ -366,8 +394,10 @@
     },
     {
       "id": "760468",
-      "name": "Germany at Ecuador",
-      "short_name": "GER @ ECU",
+      "name": "厄瓜多尔 对阵 德国",
+      "name_en": "Germany at Ecuador",
+      "short_name": "厄瓜多尔 vs 德国",
+      "short_name_en": "GER @ ECU",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-25T20:00:00Z",
       "status": {
@@ -377,13 +407,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Ecuador",
+          "name": "厄瓜多尔",
+          "name_en": "Ecuador",
           "abbreviation": "ECU",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Germany",
+          "name": "德国",
+          "name_en": "Germany",
           "abbreviation": "GER",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
           "score": "0"
@@ -415,8 +447,10 @@
     },
     {
       "id": "760471",
-      "name": "Sweden at Japan",
-      "short_name": "SWE @ JPN",
+      "name": "日本 对阵 瑞典",
+      "name_en": "Sweden at Japan",
+      "short_name": "日本 vs 瑞典",
+      "short_name_en": "SWE @ JPN",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-25T23:00:00Z",
       "status": {
@@ -426,13 +460,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Japan",
+          "name": "日本",
+          "name_en": "Japan",
           "abbreviation": "JPN",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Sweden",
+          "name": "瑞典",
+          "name_en": "Sweden",
           "abbreviation": "SWE",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
           "score": "0"
@@ -464,8 +500,10 @@
     },
     {
       "id": "760472",
-      "name": "Netherlands at Tunisia",
-      "short_name": "NED @ TUN",
+      "name": "突尼斯 对阵 荷兰",
+      "name_en": "Netherlands at Tunisia",
+      "short_name": "突尼斯 vs 荷兰",
+      "short_name_en": "NED @ TUN",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-25T23:00:00Z",
       "status": {
@@ -475,13 +513,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Tunisia",
+          "name": "突尼斯",
+          "name_en": "Tunisia",
           "abbreviation": "TUN",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/tun.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Netherlands",
+          "name": "荷兰",
+          "name_en": "Netherlands",
           "abbreviation": "NED",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
           "score": "0"
@@ -513,8 +553,10 @@
     },
     {
       "id": "760469",
-      "name": "Australia at Paraguay",
-      "short_name": "AUS @ PAR",
+      "name": "巴拉圭 对阵 澳大利亚",
+      "name_en": "Australia at Paraguay",
+      "short_name": "巴拉圭 vs 澳大利亚",
+      "short_name_en": "AUS @ PAR",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-26T02:00:00Z",
       "status": {
@@ -524,13 +566,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Paraguay",
+          "name": "巴拉圭",
+          "name_en": "Paraguay",
           "abbreviation": "PAR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Australia",
+          "name": "澳大利亚",
+          "name_en": "Australia",
           "abbreviation": "AUS",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
           "score": "0"
@@ -562,8 +606,10 @@
     },
     {
       "id": "760470",
-      "name": "United States at Türkiye",
-      "short_name": "USA @ TUR",
+      "name": "土耳其 对阵 美国",
+      "name_en": "United States at Türkiye",
+      "short_name": "土耳其 vs 美国",
+      "short_name_en": "USA @ TUR",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-26T02:00:00Z",
       "status": {
@@ -573,13 +619,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Türkiye",
+          "name": "土耳其",
+          "name_en": "Türkiye",
           "abbreviation": "TUR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
           "score": "0"
         },
         "team_b": {
-          "name": "United States",
+          "name": "美国",
+          "name_en": "United States",
           "abbreviation": "USA",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
           "score": "0"
@@ -597,12 +645,12 @@
       "prediction": {
         "model": "deterministic-strength-prior-v1",
         "probabilities": {
-          "team_a_win": 25.7,
-          "draw": 23.0,
-          "team_b_win": 51.3
+          "team_a_win": 29.8,
+          "draw": 24.9,
+          "team_b_win": 45.3
         },
         "inputs": {
-          "team_a_rating": 1540,
+          "team_a_rating": 1610,
           "team_b_rating": 1720,
           "host_adjustment_points": 35
         },
@@ -611,8 +659,10 @@
     },
     {
       "id": "760475",
-      "name": "France at Norway",
-      "short_name": "FRA @ NOR",
+      "name": "挪威 对阵 法国",
+      "name_en": "France at Norway",
+      "short_name": "挪威 vs 法国",
+      "short_name_en": "FRA @ NOR",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-26T19:00:00Z",
       "status": {
@@ -622,13 +672,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Norway",
+          "name": "挪威",
+          "name_en": "Norway",
           "abbreviation": "NOR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
           "score": "0"
         },
         "team_b": {
-          "name": "France",
+          "name": "法国",
+          "name_en": "France",
           "abbreviation": "FRA",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
           "score": "0"
@@ -660,8 +712,10 @@
     },
     {
       "id": "760474",
-      "name": "Iraq at Senegal",
-      "short_name": "IRQ @ SEN",
+      "name": "塞内加尔 对阵 伊拉克",
+      "name_en": "Iraq at Senegal",
+      "short_name": "塞内加尔 vs 伊拉克",
+      "short_name_en": "IRQ @ SEN",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-26T19:00:00Z",
       "status": {
@@ -671,13 +725,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Senegal",
+          "name": "塞内加尔",
+          "name_en": "Senegal",
           "abbreviation": "SEN",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Iraq",
+          "name": "伊拉克",
+          "name_en": "Iraq",
           "abbreviation": "IRQ",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/irq.png",
           "score": "0"
@@ -709,8 +765,10 @@
     },
     {
       "id": "760478",
-      "name": "Saudi Arabia at Cape Verde",
-      "short_name": "KSA @ CPV",
+      "name": "佛得角 对阵 沙特阿拉伯",
+      "name_en": "Saudi Arabia at Cape Verde",
+      "short_name": "佛得角 vs 沙特阿拉伯",
+      "short_name_en": "KSA @ CPV",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-27T00:00:00Z",
       "status": {
@@ -720,13 +778,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Cape Verde",
+          "name": "佛得角",
+          "name_en": "Cape Verde",
           "abbreviation": "CPV",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Saudi Arabia",
+          "name": "沙特阿拉伯",
+          "name_en": "Saudi Arabia",
           "abbreviation": "KSA",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
           "score": "0"
@@ -758,8 +818,10 @@
     },
     {
       "id": "760479",
-      "name": "Spain at Uruguay",
-      "short_name": "ESP @ URU",
+      "name": "乌拉圭 对阵 西班牙",
+      "name_en": "Spain at Uruguay",
+      "short_name": "乌拉圭 vs 西班牙",
+      "short_name_en": "ESP @ URU",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-27T00:00:00Z",
       "status": {
@@ -769,13 +831,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Uruguay",
+          "name": "乌拉圭",
+          "name_en": "Uruguay",
           "abbreviation": "URU",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Spain",
+          "name": "西班牙",
+          "name_en": "Spain",
           "abbreviation": "ESP",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
           "score": "0"
@@ -807,8 +871,10 @@
     },
     {
       "id": "760476",
-      "name": "Iran at Egypt",
-      "short_name": "IRN @ EGY",
+      "name": "埃及 对阵 伊朗",
+      "name_en": "Iran at Egypt",
+      "short_name": "埃及 vs 伊朗",
+      "short_name_en": "IRN @ EGY",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-27T03:00:00Z",
       "status": {
@@ -818,13 +884,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Egypt",
+          "name": "埃及",
+          "name_en": "Egypt",
           "abbreviation": "EGY",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Iran",
+          "name": "伊朗",
+          "name_en": "Iran",
           "abbreviation": "IRN",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
           "score": "0"
@@ -856,8 +924,10 @@
     },
     {
       "id": "760477",
-      "name": "Belgium at New Zealand",
-      "short_name": "BEL @ NZL",
+      "name": "新西兰 对阵 比利时",
+      "name_en": "Belgium at New Zealand",
+      "short_name": "新西兰 vs 比利时",
+      "short_name_en": "BEL @ NZL",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-27T03:00:00Z",
       "status": {
@@ -867,13 +937,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "New Zealand",
+          "name": "新西兰",
+          "name_en": "New Zealand",
           "abbreviation": "NZL",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Belgium",
+          "name": "比利时",
+          "name_en": "Belgium",
           "abbreviation": "BEL",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
           "score": "0"
@@ -905,8 +977,10 @@
     },
     {
       "id": "760480",
-      "name": "Ghana at Croatia",
-      "short_name": "GHA @ CRO",
+      "name": "克罗地亚 对阵 加纳",
+      "name_en": "Ghana at Croatia",
+      "short_name": "克罗地亚 vs 加纳",
+      "short_name_en": "GHA @ CRO",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-27T21:00:00Z",
       "status": {
@@ -916,13 +990,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Croatia",
+          "name": "克罗地亚",
+          "name_en": "Croatia",
           "abbreviation": "CRO",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Ghana",
+          "name": "加纳",
+          "name_en": "Ghana",
           "abbreviation": "GHA",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
           "score": "0"
@@ -954,8 +1030,10 @@
     },
     {
       "id": "760485",
-      "name": "England at Panama",
-      "short_name": "ENG @ PAN",
+      "name": "巴拿马 对阵 英格兰",
+      "name_en": "England at Panama",
+      "short_name": "巴拿马 vs 英格兰",
+      "short_name_en": "ENG @ PAN",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-27T21:00:00Z",
       "status": {
@@ -965,13 +1043,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Panama",
+          "name": "巴拿马",
+          "name_en": "Panama",
           "abbreviation": "PAN",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
           "score": "0"
         },
         "team_b": {
-          "name": "England",
+          "name": "英格兰",
+          "name_en": "England",
           "abbreviation": "ENG",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
           "score": "0"
@@ -1003,8 +1083,10 @@
     },
     {
       "id": "760481",
-      "name": "Portugal at Colombia",
-      "short_name": "POR @ COL",
+      "name": "哥伦比亚 对阵 葡萄牙",
+      "name_en": "Portugal at Colombia",
+      "short_name": "哥伦比亚 vs 葡萄牙",
+      "short_name_en": "POR @ COL",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-27T23:30:00Z",
       "status": {
@@ -1014,13 +1096,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Colombia",
+          "name": "哥伦比亚",
+          "name_en": "Colombia",
           "abbreviation": "COL",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Portugal",
+          "name": "葡萄牙",
+          "name_en": "Portugal",
           "abbreviation": "POR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
           "score": "0"
@@ -1052,8 +1136,10 @@
     },
     {
       "id": "760482",
-      "name": "Uzbekistan at Congo DR",
-      "short_name": "UZB @ COD",
+      "name": "刚果民主共和国 对阵 乌兹别克斯坦",
+      "name_en": "Uzbekistan at Congo DR",
+      "short_name": "刚果民主共和国 vs 乌兹别克斯坦",
+      "short_name_en": "UZB @ COD",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-27T23:30:00Z",
       "status": {
@@ -1063,13 +1149,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Congo DR",
+          "name": "刚果民主共和国",
+          "name_en": "Congo DR",
           "abbreviation": "COD",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Uzbekistan",
+          "name": "乌兹别克斯坦",
+          "name_en": "Uzbekistan",
           "abbreviation": "UZB",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
           "score": "0"
@@ -1101,8 +1189,10 @@
     },
     {
       "id": "760484",
-      "name": "Austria at Algeria",
-      "short_name": "AUT @ ALG",
+      "name": "阿尔及利亚 对阵 奥地利",
+      "name_en": "Austria at Algeria",
+      "short_name": "阿尔及利亚 vs 奥地利",
+      "short_name_en": "AUT @ ALG",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-28T02:00:00Z",
       "status": {
@@ -1112,13 +1202,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Algeria",
+          "name": "阿尔及利亚",
+          "name_en": "Algeria",
           "abbreviation": "ALG",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Austria",
+          "name": "奥地利",
+          "name_en": "Austria",
           "abbreviation": "AUT",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
           "score": "0"
@@ -1150,8 +1242,10 @@
     },
     {
       "id": "760483",
-      "name": "Argentina at Jordan",
-      "short_name": "ARG @ JOR",
+      "name": "约旦 对阵 阿根廷",
+      "name_en": "Argentina at Jordan",
+      "short_name": "约旦 vs 阿根廷",
+      "short_name_en": "ARG @ JOR",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-28T02:00:00Z",
       "status": {
@@ -1161,13 +1255,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Jordan",
+          "name": "约旦",
+          "name_en": "Jordan",
           "abbreviation": "JOR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
           "score": "0"
         },
         "team_b": {
-          "name": "Argentina",
+          "name": "阿根廷",
+          "name_en": "Argentina",
           "abbreviation": "ARG",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
           "score": "0"
@@ -1199,8 +1295,10 @@
     },
     {
       "id": "760486",
-      "name": "Group B 2nd Place at Group A 2nd Place",
-      "short_name": "2B @ 2A",
+      "name": "A组第二名 对阵 B组第二名",
+      "name_en": "Group B 2nd Place at Group A 2nd Place",
+      "short_name": "A组第二名 vs B组第二名",
+      "short_name_en": "2B @ 2A",
       "competition": "FIFA World Cup",
       "kickoff_utc": "2026-06-28T19:00:00Z",
       "status": {
@@ -1210,13 +1308,15 @@
       },
       "teams": {
         "team_a": {
-          "name": "Group A 2nd Place",
+          "name": "A组第二名",
+          "name_en": "Group A 2nd Place",
           "abbreviation": "2A",
           "logo": null,
           "score": "0"
         },
         "team_b": {
-          "name": "Group B 2nd Place",
+          "name": "B组第二名",
+          "name_en": "Group B 2nd Place",
           "abbreviation": "2B",
           "logo": null,
           "score": "0"

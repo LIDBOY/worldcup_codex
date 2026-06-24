@@ -97,7 +97,7 @@ def render_match(match: dict[str, Any]) -> str:
         </div>
         <div class="teams">
           <div class="team">{logo_or_initial(team_a)}<strong>{esc(team_a_name)}</strong></div>
-          <div class="versus">{score or "vs"}</div>
+          <div class="versus">{score or "对阵"}</div>
           <div class="team right">{logo_or_initial(team_b)}<strong>{esc(team_b_name)}</strong></div>
         </div>
         {prediction_html}

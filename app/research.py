@@ -6,7 +6,9 @@ import hashlib
 import json
 import math
 import os
+import re
 import time
+import unicodedata
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlencode
@@ -67,7 +69,7 @@ TEAM_RATINGS = {
     "czechia": 1560,
     "czech republic": 1560,
     "ivory coast": 1555,
-    "cote d'ivoire": 1555,
+    "cote d ivoire": 1555,
     "ghana": 1550,
     "south africa": 1535,
     "qatar": 1525,
@@ -82,6 +84,64 @@ TEAM_RATINGS = {
 }
 
 HOST_TEAMS = {"canada", "mexico", "united states", "usa"}
+
+TEAM_NAME_ZH = {
+    "algeria": "阿尔及利亚",
+    "argentina": "阿根廷",
+    "australia": "澳大利亚",
+    "austria": "奥地利",
+    "belgium": "比利时",
+    "bosnia herzegovina": "波黑",
+    "brazil": "巴西",
+    "canada": "加拿大",
+    "cape verde": "佛得角",
+    "colombia": "哥伦比亚",
+    "congo dr": "刚果民主共和国",
+    "croatia": "克罗地亚",
+    "curacao": "库拉索",
+    "czechia": "捷克",
+    "czech republic": "捷克",
+    "denmark": "丹麦",
+    "ecuador": "厄瓜多尔",
+    "egypt": "埃及",
+    "england": "英格兰",
+    "france": "法国",
+    "germany": "德国",
+    "ghana": "加纳",
+    "haiti": "海地",
+    "iran": "伊朗",
+    "iraq": "伊拉克",
+    "italy": "意大利",
+    "ivory coast": "科特迪瓦",
+    "cote d ivoire": "科特迪瓦",
+    "japan": "日本",
+    "jordan": "约旦",
+    "korea republic": "韩国",
+    "south korea": "韩国",
+    "mexico": "墨西哥",
+    "morocco": "摩洛哥",
+    "netherlands": "荷兰",
+    "new zealand": "新西兰",
+    "norway": "挪威",
+    "panama": "巴拿马",
+    "paraguay": "巴拉圭",
+    "portugal": "葡萄牙",
+    "qatar": "卡塔尔",
+    "saudi arabia": "沙特阿拉伯",
+    "scotland": "苏格兰",
+    "senegal": "塞内加尔",
+    "south africa": "南非",
+    "spain": "西班牙",
+    "sweden": "瑞典",
+    "switzerland": "瑞士",
+    "tunisia": "突尼斯",
+    "turkiye": "土耳其",
+    "turkey": "土耳其",
+    "united states": "美国",
+    "usa": "美国",
+    "uruguay": "乌拉圭",
+    "uzbekistan": "乌兹别克斯坦",
+}
 
 
 def utc_now() -> dt.datetime:
@@ -99,18 +159,41 @@ def parse_date(value: str) -> dt.datetime:
 
 
 def normalize_team(name: str) -> str:
-    cleaned = " ".join(name.lower().replace(".", "").split())
+    ascii_name = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode("ascii")
+    cleaned = re.sub(r"[^a-z0-9]+", " ", ascii_name.lower()).strip()
     aliases = {
         "us": "usa",
-        "u.s.": "usa",
+        "u s": "usa",
         "united states of america": "united states",
         "korea": "south korea",
         "republic of korea": "south korea",
-        "cote divoire": "cote d'ivoire",
-        "cote d ivoire": "cote d'ivoire",
+        "cote divoire": "cote d ivoire",
         "cabo verde": "cape verde",
+        "bosnia and herzegovina": "bosnia herzegovina",
+        "bosnia herz": "bosnia herzegovina",
+        "dr congo": "congo dr",
+        "democratic republic of congo": "congo dr",
+        "democratic republic of the congo": "congo dr",
     }
     return aliases.get(cleaned, cleaned)
+
+
+def team_name_zh(name: str) -> str:
+    normalized = normalize_team(name)
+    group_match = re.fullmatch(r"group ([a-z]) (1st|2nd|3rd|4th|first|second|third|fourth) place", normalized)
+    if group_match:
+        place = {
+            "1st": "第一名",
+            "first": "第一名",
+            "2nd": "第二名",
+            "second": "第二名",
+            "3rd": "第三名",
+            "third": "第三名",
+            "4th": "第四名",
+            "fourth": "第四名",
+        }[group_match.group(2)]
+        return f"{group_match.group(1).upper()}组{place}"
+    return TEAM_NAME_ZH.get(normalized, name)
 
 
 def team_rating(name: str) -> int:
@@ -252,6 +335,8 @@ def transform_event(event: dict[str, Any]) -> dict[str, Any] | None:
     team_a_raw, team_b_raw = pair
     team_a = competitor_name(team_a_raw)
     team_b = competitor_name(team_b_raw)
+    team_a_zh = team_name_zh(team_a)
+    team_b_zh = team_name_zh(team_b)
     event_id = str(event.get("id") or stable_id(event))
     competition = (event.get("competitions") or [{}])[0]
     status_type = (event.get("status") or {}).get("type") or {}
@@ -262,8 +347,10 @@ def transform_event(event: dict[str, Any]) -> dict[str, Any] | None:
 
     return {
         "id": event_id,
-        "name": event.get("name") or f"{team_a} vs {team_b}",
-        "short_name": event.get("shortName") or f"{team_a} vs {team_b}",
+        "name": f"{team_a_zh} 对阵 {team_b_zh}",
+        "name_en": event.get("name") or f"{team_a} vs {team_b}",
+        "short_name": f"{team_a_zh} vs {team_b_zh}",
+        "short_name_en": event.get("shortName") or f"{team_a} vs {team_b}",
         "competition": (event.get("league") or {}).get("name") or "FIFA World Cup",
         "kickoff_utc": iso_utc(kickoff),
         "status": {
@@ -273,13 +360,15 @@ def transform_event(event: dict[str, Any]) -> dict[str, Any] | None:
         },
         "teams": {
             "team_a": {
-                "name": team_a,
+                "name": team_a_zh,
+                "name_en": team_a,
                 "abbreviation": (team_a_raw.get("team") or {}).get("abbreviation"),
                 "logo": competitor_logo(team_a_raw),
                 "score": team_a_raw.get("score"),
             },
             "team_b": {
-                "name": team_b,
+                "name": team_b_zh,
+                "name_en": team_b,
                 "abbreviation": (team_b_raw.get("team") or {}).get("abbreviation"),
                 "logo": competitor_logo(team_b_raw),
                 "score": team_b_raw.get("score"),
