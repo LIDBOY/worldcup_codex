@@ -363,7 +363,7 @@ def deepseek_chat(model: str, messages: list[dict[str, str]], *, json_object: bo
         payload["response_format"] = {"type": "json_object"}
     if analysis_layer:
         payload["reasoning_effort"] = "high"
-        payload["thinking"] = "enabled"
+        payload["thinking"] = {"type": "enabled"}
     response = request_json(
         f"{DEEPSEEK_BASE_URL}/chat/completions",
         headers={"Authorization": f"Bearer {api_key}"},
