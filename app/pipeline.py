@@ -509,6 +509,27 @@ def inject_usage(html: str, usage: dict[str, Any]) -> str:
     return html
 
 
+def append_runtime_panel(html: str, usage: dict[str, Any]) -> str:
+    panel = f"""
+<section id="deepseek-runtime-usage" style="max-width:1120px;margin:24px auto;padding:16px;border:1px solid #d8e0dc;border-radius:8px;background:#fff;font-family:Inter,'Microsoft YaHei','PingFang SC',system-ui,sans-serif;color:#17201d;">
+  <h2 style="margin:0 0 12px;font-size:20px;">\u8fd0\u884c\u7528\u91cf</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
+    <div><strong>\u5206\u6790\u6a21\u578b</strong><br>{ANALYSIS_MODEL}</div>
+    <div><strong>\u751f\u6210\u6a21\u578b</strong><br>{RENDER_MODEL}</div>
+    <div><strong>Input tokens</strong><br>{usage["input_tokens"]}</div>
+    <div><strong>Output tokens</strong><br>{usage["output_tokens"]}</div>
+    <div><strong>Total tokens</strong><br>{usage["total_tokens"]}</div>
+    <div><strong>Cost</strong><br>{usage["cost_estimate"]:.6f}</div>
+  </div>
+</section>
+"""
+    if 'id="deepseek-runtime-usage"' in html:
+        return html
+    if "</body>" in html:
+        return html.replace("</body>", panel + "\n</body>", 1)
+    return html + panel
+
+
 def run_render(analysis_path: Path = ANALYSIS_PATH, latest_path: Path = LATEST_PATH,
                docs_dir: Path = DOCS_DIR) -> dict[str, Any]:
     analysis_payload = read_json(analysis_path)
@@ -519,7 +540,7 @@ def run_render(analysis_path: Path = ANALYSIS_PATH, latest_path: Path = LATEST_P
     )
     analysis_usage = analysis_payload.get("usage") or zero_usage()
     total_usage = combine_usage(analysis_usage, render_usage)
-    html = inject_usage(extract_html(content), total_usage)
+    html = append_runtime_panel(inject_usage(extract_html(content), total_usage), total_usage)
 
     payload = {
         "analysis": analysis_payload["analysis"],
