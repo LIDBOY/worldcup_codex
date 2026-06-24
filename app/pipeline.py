@@ -25,6 +25,7 @@ TOKEN_COST_RATE = float(os.getenv("DEEPSEEK_TOKEN_COST_RATE", "0.00001"))
 DEFAULT_LEAGUE = os.getenv("WORLDCUP_ESPN_LEAGUE", "fifa.world")
 DEFAULT_DAYS = int(os.getenv("WORLDCUP_WINDOW_DAYS", "5"))
 REQUEST_TIMEOUT = int(os.getenv("WORLDCUP_REQUEST_TIMEOUT", "20"))
+DEEPSEEK_REQUEST_TIMEOUT = int(os.getenv("DEEPSEEK_REQUEST_TIMEOUT", "180"))
 
 DATA_DIR = Path("data")
 DOCS_DIR = Path("docs")
@@ -158,7 +159,8 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
 
 
 def request_json(url: str, *, params: dict[str, str] | None = None, headers: dict[str, str] | None = None,
-                 body: dict[str, Any] | None = None, retries: int = 3) -> dict[str, Any]:
+                 body: dict[str, Any] | None = None, retries: int = 3,
+                 timeout: int = REQUEST_TIMEOUT) -> dict[str, Any]:
     full_url = f"{url}?{urlencode(params)}" if params else url
     data = json.dumps(body).encode("utf-8") if body is not None else None
     request_headers = {"User-Agent": "worldcup-deepseek-pages/2.0", **(headers or {})}
@@ -169,7 +171,7 @@ def request_json(url: str, *, params: dict[str, str] | None = None, headers: dic
     for attempt in range(1, retries + 1):
         try:
             request = Request(full_url, data=data, headers=request_headers)
-            with urlopen(request, timeout=REQUEST_TIMEOUT) as response:  # noqa: S310 - configured sources only
+            with urlopen(request, timeout=timeout) as response:  # noqa: S310 - configured sources only
                 return json.loads(response.read().decode("utf-8"))
         except HTTPError as exc:
             detail = exc.read().decode("utf-8", "replace")
@@ -368,6 +370,7 @@ def deepseek_chat(model: str, messages: list[dict[str, str]], *, json_object: bo
         f"{DEEPSEEK_BASE_URL}/chat/completions",
         headers={"Authorization": f"Bearer {api_key}"},
         body=payload,
+        timeout=DEEPSEEK_REQUEST_TIMEOUT,
     )
     choices = response.get("choices") or []
     if not choices:
