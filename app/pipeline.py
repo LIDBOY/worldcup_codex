@@ -469,8 +469,8 @@ def render_messages(analysis_payload: dict[str, Any]) -> list[dict[str, str]]:
             "content": (
                 "You are the mandatory HTML generation layer for a FIFA World Cup prediction system. "
                 "Use model deepseek-v4-flash. Convert the supplied analysis JSON into a production-ready "
-                "single-file GitHub Pages HTML document. Return strict JSON only with one key: html. "
-                "Write all visible UI text in Simplified Chinese."
+                "single-file GitHub Pages HTML document. Return raw HTML only, starting with <!doctype html>. "
+                "Do not wrap the HTML in JSON or markdown fences. Write all visible UI text in Simplified Chinese."
             ),
         },
         {
@@ -487,12 +487,13 @@ def render_messages(analysis_payload: dict[str, Any]) -> list[dict[str, str]]:
     ]
 
 
-def extract_html(render_payload: dict[str, Any], raw_content: str) -> str:
-    html = render_payload.get("html")
-    if isinstance(html, str) and html.strip():
-        return html.strip()
-    if "<html" in raw_content.lower():
-        return raw_content.strip()
+def extract_html(raw_content: str) -> str:
+    html = raw_content.strip()
+    if html.startswith("```"):
+        html = re.sub(r"^```(?:html)?\s*", "", html)
+        html = re.sub(r"\s*```$", "", html).strip()
+    if "<html" in html.lower():
+        return html
     raise RuntimeError("DeepSeek V4-Flash render response did not contain HTML")
 
 
@@ -514,12 +515,11 @@ def run_render(analysis_path: Path = ANALYSIS_PATH, latest_path: Path = LATEST_P
     content, render_usage, _response = deepseek_chat(
         RENDER_MODEL,
         render_messages(analysis_payload),
-        json_object=True,
+        json_object=False,
     )
-    parsed = parse_json_content(content)
     analysis_usage = analysis_payload.get("usage") or zero_usage()
     total_usage = combine_usage(analysis_usage, render_usage)
-    html = inject_usage(extract_html(parsed, content), total_usage)
+    html = inject_usage(extract_html(content), total_usage)
 
     payload = {
         "analysis": analysis_payload["analysis"],
