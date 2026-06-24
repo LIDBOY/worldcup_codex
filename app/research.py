@@ -240,7 +240,7 @@ def prediction_for(team_a: str, team_b: str, status_state: str) -> dict[str, Any
             "team_b_rating": rating_b,
             "host_adjustment_points": 35,
         },
-        "note": "Editorial model estimate from team-strength priors; not betting advice.",
+        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。",
     }
 
 
@@ -328,7 +328,7 @@ def build_payload(start: dt.date, days: int) -> dict[str, Any]:
         "warnings": warnings,
         "match_count": len(matches),
         "matches": matches,
-        "disclaimer": "Forecasts are deterministic editorial estimates for verified fixtures, not betting advice.",
+        "disclaimer": "预测结果是针对已验证赛程的确定性编辑模型估计，不构成投注建议。",
     }
 
 

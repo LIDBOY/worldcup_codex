@@ -12,6 +12,13 @@ DEFAULT_DATA = Path("data/latest.json")
 DEFAULT_OUTPUT_DIR = Path("docs")
 
 
+STATUS_LABELS = {
+    "ready": "已就绪",
+    "no_verified_fixtures": "暂无已验证赛程",
+    "source_unavailable": "数据源暂不可用",
+}
+
+
 def esc(value: Any) -> str:
     return html.escape("" if value is None else str(value), quote=True)
 
@@ -71,13 +78,13 @@ def render_match(match: dict[str, Any]) -> str:
     if probabilities:
         prediction_html = f"""
           <div class="probabilities">
-            {render_probability(f"{team_a_name} win", probabilities.get("team_a_win"))}
-            {render_probability("Draw", probabilities.get("draw"))}
-            {render_probability(f"{team_b_name} win", probabilities.get("team_b_win"))}
+            {render_probability(f"{team_a_name} 胜", probabilities.get("team_a_win"))}
+            {render_probability("平局", probabilities.get("draw"))}
+            {render_probability(f"{team_b_name} 胜", probabilities.get("team_b_win"))}
           </div>
         """
     else:
-        prediction_html = '<p class="muted compact">Prediction closed for completed match.</p>'
+        prediction_html = '<p class="muted compact">已完赛，预测关闭。</p>'
 
     location_bits = [venue.get("name"), venue.get("city"), venue.get("country")]
     location = " - ".join(str(bit) for bit in location_bits if bit)
@@ -95,8 +102,8 @@ def render_match(match: dict[str, Any]) -> str:
         </div>
         {prediction_html}
         <div class="match-footer">
-          <span>{esc(location or "Venue TBA")}</span>
-          <a href="{esc((match.get("source") or {}).get("event_url"))}" rel="noopener" target="_blank">source</a>
+          <span>{esc(location or "场地待定")}</span>
+          <a href="{esc((match.get("source") or {}).get("event_url"))}" rel="noopener" target="_blank">来源</a>
         </div>
       </article>
     """
@@ -109,11 +116,11 @@ def render_status(data: dict[str, Any]) -> str:
     warnings = data.get("warnings") or []
     warning_items = "".join(f"<li>{esc(item)}</li>" for item in warnings[:4])
     if not warning_items:
-        warning_items = "<li>No verified fixtures were returned for the selected window.</li>"
+        warning_items = "<li>当前预测窗口内没有返回已验证赛程。</li>"
     return f"""
       <section class="notice">
-        <h2>Fixture Status</h2>
-        <p>The site is live, but predictions are only published when fixtures are verified by the configured source.</p>
+        <h2>赛程状态</h2>
+        <p>网站已上线，但只会发布经配置数据源验证过的比赛预测。</p>
         <ul>{warning_items}</ul>
       </section>
     """
@@ -123,20 +130,23 @@ def render(data: dict[str, Any]) -> str:
     matches = data.get("matches") or []
     cards = "\n".join(render_match(match) for match in matches)
     if not cards:
-        cards = '<p class="empty">No verified World Cup fixtures are available in the current window.</p>'
+        cards = '<p class="empty">当前窗口暂无已验证的世界杯赛程。</p>'
 
     source_urls = (data.get("source") or {}).get("urls") or []
     source_links = " ".join(
-        f'<a href="{esc(url)}" rel="noopener" target="_blank">source {index + 1}</a>'
+        f'<a href="{esc(url)}" rel="noopener" target="_blank">来源 {index + 1}</a>'
         for index, url in enumerate(source_urls[:5])
     )
+    if source_links:
+        source_links += " "
+    status_label = STATUS_LABELS.get(data.get("status"), str(data.get("status", "未知状态")).replace("_", " "))
 
     return f"""<!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Daily FIFA World Cup Predictions</title>
+  <title>每日 FIFA 世界杯预测</title>
   <style>
     :root {{
       color-scheme: light;
@@ -152,7 +162,7 @@ def render(data: dict[str, Any]) -> str:
     * {{ box-sizing: border-box; }}
     body {{
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Inter, "Microsoft YaHei", "PingFang SC", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--ink);
       background: var(--paper);
       letter-spacing: 0;
@@ -408,23 +418,23 @@ def render(data: dict[str, Any]) -> str:
     <div class="wrap">
       <div class="topbar">
         <div>
-          <h1>Daily FIFA World Cup Predictions</h1>
-          <p class="subtitle">Verified fixtures feed the daily model. The page publishes only source-backed matches and keeps the raw JSON beside the HTML for auditability.</p>
+          <h1>每日 FIFA 世界杯预测</h1>
+          <p class="subtitle">每日自动抓取并校验世界杯赛程，只对来源确认的比赛生成预测；页面同步保留原始 JSON，方便核验。</p>
         </div>
-        <span class="status-pill">{esc(data.get("status", "unknown")).replace("_", " ")}</span>
+        <span class="status-pill">{esc(status_label)}</span>
       </div>
       <div class="stats">
-        <div class="stat"><span>Generated</span><strong>{esc(data.get("generated_at"))}</strong></div>
-        <div class="stat"><span>Window</span><strong>{esc((data.get("window") or {}).get("start_date"))} / {esc((data.get("window") or {}).get("days"))} days</strong></div>
-        <div class="stat"><span>Verified Fixtures</span><strong>{esc(data.get("match_count", 0))}</strong></div>
+        <div class="stat"><span>生成时间</span><strong>{esc(data.get("generated_at"))}</strong></div>
+        <div class="stat"><span>预测窗口</span><strong>{esc((data.get("window") or {}).get("start_date"))} / {esc((data.get("window") or {}).get("days"))} 天</strong></div>
+        <div class="stat"><span>已验证赛程</span><strong>{esc(data.get("match_count", 0))}</strong></div>
       </div>
     </div>
   </header>
   <main class="wrap">
     {render_status(data)}
     <div class="section-head">
-      <h2>Upcoming Matches</h2>
-      <div class="source-links">{source_links}<a href="latest.json">latest.json</a></div>
+      <h2>未来赛程</h2>
+      <div class="source-links">{source_links}<a href="latest.json">原始 JSON</a></div>
     </div>
     <section class="grid">
       {cards}
