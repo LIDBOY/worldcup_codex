@@ -1,12 +1,713 @@
 {
-  "schema_version": 1,
-  "generated_at": "2026-06-24T16:30:28Z",
-  "window": {
-    "start_date": "2026-06-24",
-    "days": 5,
-    "timezone": "UTC"
+  "analysis": {
+    "generated_at": "2026-06-24T17:30:00Z",
+    "summary": "2026年世界杯小组赛及淘汰赛首轮预测。涵盖6月24日至28日共25场比赛，包括多场实力悬殊对决与几场势均力敌的较量。传统强队如巴西、阿根廷、法国、英格兰等被看好取胜，而部分中游球队对决则可能出现平局。淘汰赛首场因参赛球队尚未确定，预测难度较大。",
+    "predictions": [
+      {
+        "fixture_id": "760462",
+        "match_name": "波黑 vs 卡塔尔",
+        "kickoff_utc": "2026-06-24T19:00:00Z",
+        "teams": {
+          "home": {
+            "name": "波黑",
+            "name_en": "Bosnia-Herzegovina"
+          },
+          "away": {
+            "name": "卡塔尔",
+            "name_en": "Qatar"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 45,
+          "draw": 30,
+          "away_win": 25
+        },
+        "predicted_score": {
+          "home": 1,
+          "away": 0
+        },
+        "tactical_analysis": "波黑身体对抗能力强，主场优势明显；卡塔尔技术流但世界杯经验不足，可能难以破密集防守。",
+        "risk_analysis": "卡塔尔具备反击能力，若波黑久攻不下可能被偷袭得手。",
+        "confidence": "medium"
+      },
+      {
+        "fixture_id": "760463",
+        "match_name": "瑞士 vs 加拿大",
+        "kickoff_utc": "2026-06-24T19:00:00Z",
+        "teams": {
+          "home": {
+            "name": "瑞士",
+            "name_en": "Switzerland"
+          },
+          "away": {
+            "name": "加拿大",
+            "name_en": "Canada"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 50,
+          "draw": 25,
+          "away_win": 25
+        },
+        "predicted_score": {
+          "home": 2,
+          "away": 1
+        },
+        "tactical_analysis": "瑞士防守稳固，擅长控制节奏；加拿大速度优势明显，但大赛经验欠缺。比赛在温哥华举行，加拿大拥有球迷支持，但整体实力瑞士占优。",
+        "risk_analysis": "加拿大的主场氛围可能提升其表现，若瑞士慢热可能陷入被动。",
+        "confidence": "medium"
+      },
+      {
+        "fixture_id": "760464",
+        "match_name": "摩洛哥 vs 海地",
+        "kickoff_utc": "2026-06-24T22:00:00Z",
+        "teams": {
+          "home": {
+            "name": "摩洛哥",
+            "name_en": "Morocco"
+          },
+          "away": {
+            "name": "海地",
+            "name_en": "Haiti"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 70,
+          "draw": 20,
+          "away_win": 10
+        },
+        "predicted_score": {
+          "home": 2,
+          "away": 0
+        },
+        "tactical_analysis": "摩洛哥组织严密，中场控制力强；海地个人能力有限，难以持续制造威胁。",
+        "risk_analysis": "摩洛哥需避免轻敌，海地的顽强防守可能给比赛带来变数。",
+        "confidence": "high"
+      },
+      {
+        "fixture_id": "760465",
+        "match_name": "苏格兰 vs 巴西",
+        "kickoff_utc": "2026-06-24T22:00:00Z",
+        "teams": {
+          "home": {
+            "name": "苏格兰",
+            "name_en": "Scotland"
+          },
+          "away": {
+            "name": "巴西",
+            "name_en": "Brazil"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 15,
+          "draw": 20,
+          "away_win": 65
+        },
+        "predicted_score": {
+          "home": 0,
+          "away": 2
+        },
+        "tactical_analysis": "巴西技术、速度全面占优，斯科特兰注重身体对抗和定位球，但难以限制巴西的进攻才华。",
+        "risk_analysis": "巴西可能轮换阵容，若轻敌或苏格兰死守，平局风险存在。",
+        "confidence": "high"
+      },
+      {
+        "fixture_id": "760467",
+        "match_name": "捷克 vs 墨西哥",
+        "kickoff_utc": "2026-06-25T01:00:00Z",
+        "teams": {
+          "home": {
+            "name": "捷克",
+            "name_en": "Czechia"
+          },
+          "away": {
+            "name": "墨西哥",
+            "name_en": "Mexico"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 20,
+          "draw": 25,
+          "away_win": 55
+        },
+        "predicted_score": {
+          "home": 1,
+          "away": 2
+        },
+        "tactical_analysis": "墨西哥主场（墨西哥城）作战，狂热球迷带来巨大优势；捷克战术纪律好，但面对技术细腻的墨西哥可能吃亏。",
+        "risk_analysis": "墨西哥承受主场压力，若久攻不下可能急躁，给捷克反击机会。",
+        "confidence": "medium"
+      },
+      {
+        "fixture_id": "760466",
+        "match_name": "南非 vs 韩国",
+        "kickoff_utc": "2026-06-25T01:00:00Z",
+        "teams": {
+          "home": {
+            "name": "南非",
+            "name_en": "South Africa"
+          },
+          "away": {
+            "name": "韩国",
+            "name_en": "South Korea"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 20,
+          "draw": 25,
+          "away_win": 55
+        },
+        "predicted_score": {
+          "home": 0,
+          "away": 1
+        },
+        "tactical_analysis": "韩国整体实力更强，高压逼抢和快速转换是特长；南非身体条件不错，但技术粗糙，中立场难以抗衡。",
+        "risk_analysis": "南非的冲击打法可能搅乱韩国防线，定位球是变数。",
+        "confidence": "medium"
+      },
+      {
+        "fixture_id": "760473",
+        "match_name": "库拉索 vs 科特迪瓦",
+        "kickoff_utc": "2026-06-25T20:00:00Z",
+        "teams": {
+          "home": {
+            "name": "库拉索",
+            "name_en": "Curaçao"
+          },
+          "away": {
+            "name": "科特迪瓦",
+            "name_en": "Ivory Coast"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 15,
+          "draw": 20,
+          "away_win": 65
+        },
+        "predicted_score": {
+          "home": 0,
+          "away": 2
+        },
+        "tactical_analysis": "科特迪瓦球员身体素质劲爆，个人能力突出；库拉索整体实力有限，难有招架之力。",
+        "risk_analysis": "库拉索可能全员防守，科特迪瓦需要耐心破铁桶阵。",
+        "confidence": "high"
+      },
+      {
+        "fixture_id": "760468",
+        "match_name": "厄瓜多尔 vs 德国",
+        "kickoff_utc": "2026-06-25T20:00:00Z",
+        "teams": {
+          "home": {
+            "name": "厄瓜多尔",
+            "name_en": "Ecuador"
+          },
+          "away": {
+            "name": "德国",
+            "name_en": "Germany"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 20,
+          "draw": 25,
+          "away_win": 55
+        },
+        "predicted_score": {
+          "home": 1,
+          "away": 2
+        },
+        "tactical_analysis": "德国实力明显占优，但厄瓜多尔有高原主场之利，虽在平原作战仍保留一定的适应性。德国依靠整体推进破防。",
+        "risk_analysis": "厄瓜多尔的反击效率较高，德国防线若压得太上可能被偷袭。",
+        "confidence": "medium"
+      },
+      {
+        "fixture_id": "760471",
+        "match_name": "日本 vs 瑞典",
+        "kickoff_utc": "2026-06-25T23:00:00Z",
+        "teams": {
+          "home": {
+            "name": "日本",
+            "name_en": "Japan"
+          },
+          "away": {
+            "name": "瑞典",
+            "name_en": "Sweden"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 40,
+          "draw": 30,
+          "away_win": 30
+        },
+        "predicted_score": {
+          "home": 1,
+          "away": 1
+        },
+        "tactical_analysis": "日本技术细腻，传控配合流畅；瑞典身体强壮，长传冲吊和定位球是利器。实力在伯仲之间。",
+        "risk_analysis": "比赛可能陷入僵局，领先一方可能被扳平，平局概率高。",
+        "confidence": "medium"
+      },
+      {
+        "fixture_id": "760472",
+        "match_name": "突尼斯 vs 荷兰",
+        "kickoff_utc": "2026-06-25T23:00:00Z",
+        "teams": {
+          "home": {
+            "name": "突尼斯",
+            "name_en": "Tunisia"
+          },
+          "away": {
+            "name": "荷兰",
+            "name_en": "Netherlands"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 15,
+          "draw": 20,
+          "away_win": 65
+        },
+        "predicted_score": {
+          "home": 0,
+          "away": 2
+        },
+        "tactical_analysis": "荷兰全攻全守，中前场创造力强大；突尼斯防守硬朗但缺少反击速度，恐难逃败局。",
+        "risk_analysis": "荷兰可能轮换部分主力，默契度下降，但整体优势仍大。",
+        "confidence": "high"
+      },
+      {
+        "fixture_id": "760469",
+        "match_name": "巴拉圭 vs 澳大利亚",
+        "kickoff_utc": "2026-06-26T02:00:00Z",
+        "teams": {
+          "home": {
+            "name": "巴拉圭",
+            "name_en": "Paraguay"
+          },
+          "away": {
+            "name": "澳大利亚",
+            "name_en": "Australia"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 35,
+          "draw": 30,
+          "away_win": 35
+        },
+        "predicted_score": {
+          "home": 1,
+          "away": 1
+        },
+        "tactical_analysis": "双方实力接近，巴拉圭防守反击熟练，澳大利亚身体对抗不吃亏，比赛可能陷入拉锯。",
+        "risk_analysis": "天气炎热可能导致节奏缓慢，一场闷平可能性不低。",
+        "confidence": "medium"
+      },
+      {
+        "fixture_id": "760470",
+        "match_name": "土耳其 vs 美国",
+        "kickoff_utc": "2026-06-26T02:00:00Z",
+        "teams": {
+          "home": {
+            "name": "土耳其",
+            "name_en": "Türkiye"
+          },
+          "away": {
+            "name": "美国",
+            "name_en": "United States"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 25,
+          "draw": 25,
+          "away_win": 50
+        },
+        "predicted_score": {
+          "home": 1,
+          "away": 2
+        },
+        "tactical_analysis": "美国在主场（英格尔伍德）作战，球迷支持巨大，球队年轻有冲劲；土耳其个人技术不错但稳定性欠佳。",
+        "risk_analysis": "美国主场压力可能影响发挥，土耳其若能先进球，局势可能逆转。",
+        "confidence": "medium"
+      },
+      {
+        "fixture_id": "760475",
+        "match_name": "挪威 vs 法国",
+        "kickoff_utc": "2026-06-26T19:00:00Z",
+        "teams": {
+          "home": {
+            "name": "挪威",
+            "name_en": "Norway"
+          },
+          "away": {
+            "name": "法国",
+            "name_en": "France"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 15,
+          "draw": 20,
+          "away_win": 65
+        },
+        "predicted_score": {
+          "home": 0,
+          "away": 2
+        },
+        "tactical_analysis": "法国阵容豪华，攻守平衡；挪威虽有哈兰德这个强点，但整体实力差距明显。",
+        "risk_analysis": "哈兰德单兵能力极强，法国防线稍有不慎可能丢球，但法国进攻足以弥补。",
+        "confidence": "high"
+      },
+      {
+        "fixture_id": "760474",
+        "match_name": "塞内加尔 vs 伊拉克",
+        "kickoff_utc": "2026-06-26T19:00:00Z",
+        "teams": {
+          "home": {
+            "name": "塞内加尔",
+            "name_en": "Senegal"
+          },
+          "away": {
+            "name": "伊拉克",
+            "name_en": "Iraq"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 65,
+          "draw": 20,
+          "away_win": 15
+        },
+        "predicted_score": {
+          "home": 2,
+          "away": 0
+        },
+        "tactical_analysis": "塞内加尔速度快、冲击力强，非洲冠军底蕴深厚；伊拉克防守顽强但进攻乏力，难以构成威胁。",
+        "risk_analysis": "塞内加尔若得势不得分，伊拉克的死守可能导致小胜甚至平局。",
+        "confidence": "high"
+      },
+      {
+        "fixture_id": "760478",
+        "match_name": "佛得角 vs 沙特阿拉伯",
+        "kickoff_utc": "2026-06-27T00:00:00Z",
+        "teams": {
+          "home": {
+            "name": "佛得角",
+            "name_en": "Cape Verde"
+          },
+          "away": {
+            "name": "沙特阿拉伯",
+            "name_en": "Saudi Arabia"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 30,
+          "draw": 30,
+          "away_win": 40
+        },
+        "predicted_score": {
+          "home": 1,
+          "away": 1
+        },
+        "tactical_analysis": "两队实力半斤八两，沙特技术稍好但发挥不稳；佛得角对抗能力强，比赛可能平淡。",
+        "risk_analysis": "双方均无绝对把握，比赛结果很大程度取决于临场发挥。",
+        "confidence": "low"
+      },
+      {
+        "fixture_id": "760479",
+        "match_name": "乌拉圭 vs 西班牙",
+        "kickoff_utc": "2026-06-27T00:00:00Z",
+        "teams": {
+          "home": {
+            "name": "乌拉圭",
+            "name_en": "Uruguay"
+          },
+          "away": {
+            "name": "西班牙",
+            "name_en": "Spain"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 25,
+          "draw": 30,
+          "away_win": 45
+        },
+        "predicted_score": {
+          "home": 1,
+          "away": 2
+        },
+        "tactical_analysis": "西班牙控球优势明显，乌拉圭依靠强悍防守和反击周旋。西甲式对决，西班牙更占优。",
+        "risk_analysis": "乌拉圭凶狠的逼抢可能打乱西班牙节奏，若不能尽早进球，西班牙可能陷入苦战。",
+        "confidence": "medium"
+      },
+      {
+        "fixture_id": "760476",
+        "match_name": "埃及 vs 伊朗",
+        "kickoff_utc": "2026-06-27T03:00:00Z",
+        "teams": {
+          "home": {
+            "name": "埃及",
+            "name_en": "Egypt"
+          },
+          "away": {
+            "name": "伊朗",
+            "name_en": "Iran"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 35,
+          "draw": 30,
+          "away_win": 35
+        },
+        "predicted_score": {
+          "home": 1,
+          "away": 1
+        },
+        "tactical_analysis": "北非劲旅与亚洲豪强相遇，埃及萨拉赫领衔攻击线，伊朗防守稳固，双方可能比较保守。",
+        "risk_analysis": "核心球员的发挥将决定走势，平局可能性不小。",
+        "confidence": "medium"
+      },
+      {
+        "fixture_id": "760477",
+        "match_name": "新西兰 vs 比利时",
+        "kickoff_utc": "2026-06-27T03:00:00Z",
+        "teams": {
+          "home": {
+            "name": "新西兰",
+            "name_en": "New Zealand"
+          },
+          "away": {
+            "name": "比利时",
+            "name_en": "Belgium"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 5,
+          "draw": 15,
+          "away_win": 80
+        },
+        "predicted_score": {
+          "home": 0,
+          "away": 3
+        },
+        "tactical_analysis": "比利时黄金一代实力碾压，新西兰只能指望少输当赢。",
+        "risk_analysis": "比利时若大幅轮换或心态放松，可能影响净胜球数，但胜负无悬念。",
+        "confidence": "high"
+      },
+      {
+        "fixture_id": "760480",
+        "match_name": "克罗地亚 vs 加纳",
+        "kickoff_utc": "2026-06-27T21:00:00Z",
+        "teams": {
+          "home": {
+            "name": "克罗地亚",
+            "name_en": "Croatia"
+          },
+          "away": {
+            "name": "加纳",
+            "name_en": "Ghana"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 60,
+          "draw": 20,
+          "away_win": 20
+        },
+        "predicted_score": {
+          "home": 2,
+          "away": 0
+        },
+        "tactical_analysis": "克罗地亚中场大师级，控制力出众；加纳年轻有活力但经验不足，恐难打破格子军节奏。",
+        "risk_analysis": "加纳的快速反击可能制造混乱，克罗地亚需保持专注。",
+        "confidence": "high"
+      },
+      {
+        "fixture_id": "760485",
+        "match_name": "巴拿马 vs 英格兰",
+        "kickoff_utc": "2026-06-27T21:00:00Z",
+        "teams": {
+          "home": {
+            "name": "巴拿马",
+            "name_en": "Panama"
+          },
+          "away": {
+            "name": "英格兰",
+            "name_en": "England"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 10,
+          "draw": 15,
+          "away_win": 75
+        },
+        "predicted_score": {
+          "home": 0,
+          "away": 2
+        },
+        "tactical_analysis": "英格兰实力远超巴拿马，定位球和边路进攻将撕开防线。",
+        "risk_analysis": "英格兰过去时有遇弱不强的毛病，但本场应能顺利取胜。",
+        "confidence": "high"
+      },
+      {
+        "fixture_id": "760481",
+        "match_name": "哥伦比亚 vs 葡萄牙",
+        "kickoff_utc": "2026-06-27T23:30:00Z",
+        "teams": {
+          "home": {
+            "name": "哥伦比亚",
+            "name_en": "Colombia"
+          },
+          "away": {
+            "name": "葡萄牙",
+            "name_en": "Portugal"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 30,
+          "draw": 30,
+          "away_win": 40
+        },
+        "predicted_score": {
+          "home": 1,
+          "away": 1
+        },
+        "tactical_analysis": "两队均球星云集，哥伦比亚创造力十足，葡萄牙整体性更强，预计场面开放。",
+        "risk_analysis": "双方都具备一击致命的能力，结果可能由球星瞬间决定。",
+        "confidence": "medium"
+      },
+      {
+        "fixture_id": "760482",
+        "match_name": "刚果民主共和国 vs 乌兹别克斯坦",
+        "kickoff_utc": "2026-06-27T23:30:00Z",
+        "teams": {
+          "home": {
+            "name": "刚果民主共和国",
+            "name_en": "Congo DR"
+          },
+          "away": {
+            "name": "乌兹别克斯坦",
+            "name_en": "Uzbekistan"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 30,
+          "draw": 35,
+          "away_win": 35
+        },
+        "predicted_score": {
+          "home": 0,
+          "away": 0
+        },
+        "tactical_analysis": "两队世界排名相近，缺乏顶级球星，比赛可能演变为中场缠斗，进球困难。",
+        "risk_analysis": "胶着中一次失误或定位球可能改变结局，但整体进球数不会多。",
+        "confidence": "low"
+      },
+      {
+        "fixture_id": "760484",
+        "match_name": "阿尔及利亚 vs 奥地利",
+        "kickoff_utc": "2026-06-28T02:00:00Z",
+        "teams": {
+          "home": {
+            "name": "阿尔及利亚",
+            "name_en": "Algeria"
+          },
+          "away": {
+            "name": "奥地利",
+            "name_en": "Austria"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 35,
+          "draw": 30,
+          "away_win": 35
+        },
+        "predicted_score": {
+          "home": 1,
+          "away": 1
+        },
+        "tactical_analysis": "阿尔及利亚技术细腻，奥地利战术执行力强，双方实力在伯仲之间。",
+        "risk_analysis": "比赛可能激烈但难以分出胜负，平局对双方或是都能接受的结果。",
+        "confidence": "medium"
+      },
+      {
+        "fixture_id": "760483",
+        "match_name": "约旦 vs 阿根廷",
+        "kickoff_utc": "2026-06-28T02:00:00Z",
+        "teams": {
+          "home": {
+            "name": "约旦",
+            "name_en": "Jordan"
+          },
+          "away": {
+            "name": "阿根廷",
+            "name_en": "Argentina"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 5,
+          "draw": 10,
+          "away_win": 85
+        },
+        "predicted_score": {
+          "home": 0,
+          "away": 3
+        },
+        "tactical_analysis": "卫冕冠军阿根廷实力超群，约旦只能通过死守争取少失球。梅西引领的进攻将轻易撕破防线。",
+        "risk_analysis": "阿根廷可能提前锁定小组头名而轮换，但替补实力也远胜约旦。",
+        "confidence": "high"
+      },
+      {
+        "fixture_id": "760486",
+        "match_name": "A组第二名 vs B组第二名",
+        "kickoff_utc": "2026-06-28T19:00:00Z",
+        "teams": {
+          "home": {
+            "name": "A组第二名",
+            "name_en": "Group A 2nd Place"
+          },
+          "away": {
+            "name": "B组第二名",
+            "name_en": "Group B 2nd Place"
+          }
+        },
+        "win_draw_loss": {
+          "home_win": 34,
+          "draw": 33,
+          "away_win": 33
+        },
+        "predicted_score": {
+          "home": 1,
+          "away": 1
+        },
+        "tactical_analysis": "淘汰赛阶段，参赛球队未定，预测无意义。通常小组第二实力接近，比赛可能胶着。",
+        "risk_analysis": "球队状态、伤病情况完全未知，高度不确定性，任何结果都可能发生。",
+        "confidence": "low"
+      }
+    ],
+    "risk_overview": "整体而言，弱队爆冷风险较低，但实力接近的场次（如日本对瑞典、巴拉圭对澳大利亚等）平局可能性高。个别比赛受场地因素影响较大（如瑞士在加拿大对阵加拿大，墨西哥本土作战）。淘汰赛首场因未知球队，风险极高。",
+    "data_quality": "数据来源为ESPN公开比分板，赛事真实有效。预测基于各队FIFA历史排名、近年大赛表现及一般技战术特点推断，未纳入实时伤病、更衣室动态等短期变量，仅供足球分析参考。"
   },
-  "status": "ready",
+  "render": "<!doctype html>\n<html lang=\"zh-CN\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>2026 世界杯智能预测系统 · 深度分析面板</title>\n    <style>\n        * {\n            margin: 0;\n            padding: 0;\n            box-sizing: border-box;\n        }\n        body {\n            background: #0b0e14;\n            font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, -apple-system, sans-serif;\n            color: #e8edf5;\n            padding: 24px 20px 40px;\n            min-height: 100vh;\n        }\n        .container {\n            max-width: 1480px;\n            margin: 0 auto;\n        }\n\n        /* header */\n        .header {\n            display: flex;\n            flex-wrap: wrap;\n            justify-content: space-between;\n            align-items: center;\n            margin-bottom: 32px;\n            border-bottom: 1px solid #2a3346;\n            padding-bottom: 20px;\n        }\n        .header h1 {\n            font-size: 1.9rem;\n            font-weight: 700;\n            background: linear-gradient(135deg, #f0c27f, #fc5c7d);\n            -webkit-background-clip: text;\n            -webkit-text-fill-color: transparent;\n            background-clip: text;\n            letter-spacing: 1px;\n        }\n        .header .sub {\n            color: #8899bb;\n            font-size: 0.95rem;\n            display: flex;\n            align-items: center;\n            gap: 12px;\n            flex-wrap: wrap;\n        }\n        .header .sub span {\n            background: #1e2638;\n            padding: 6px 14px;\n            border-radius: 30px;\n            font-size: 0.8rem;\n            color: #b8c7e0;\n        }\n        .badge {\n            display: inline-block;\n            background: #2a3346;\n            padding: 4px 16px;\n            border-radius: 40px;\n            font-size: 0.7rem;\n            color: #b0c4de;\n            border: 1px solid #3d4a66;\n        }\n\n        /* Token panel */\n        .token-panel {\n            background: #141c2b;\n            border-radius: 24px;\n            padding: 22px 30px;\n            margin-bottom: 32px;\n            border: 1px solid #2a3346;\n            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);\n            display: flex;\n            flex-wrap: wrap;\n            align-items: center;\n            justify-content: space-between;\n        }\n        .token-panel .title-section {\n            display: flex;\n            align-items: center;\n            gap: 14px;\n        }\n        .token-panel .title-section h2 {\n            font-size: 1.1rem;\n            font-weight: 500;\n            color: #ccddfa;\n        }\n        .token-grid {\n            display: flex;\n            flex-wrap: wrap;\n            gap: 20px 36px;\n            align-items: center;\n        }\n        .token-item {\n            display: flex;\n            align-items: baseline;\n            gap: 6px;\n        }\n        .token-item .label {\n            font-size: 0.8rem;\n            color: #7a8aa8;\n        }\n        .token-item .value {\n            font-weight: 600;\n            font-size: 1.15rem;\n            color: #f0e6c5;\n            font-variant-numeric: tabular-nums;\n        }\n        .token-item .value.highlight {\n            color: #ffd700;\n        }\n        .cost-badge {\n            background: #1f2b3f;\n            padding: 8px 22px;\n            border-radius: 60px;\n            border-left: 3px solid #fcb045;\n            font-weight: 500;\n        }\n        .cost-badge .cost-value {\n            color: #fcd77a;\n            font-size: 1.1rem;\n        }\n\n        /* summary */\n        .summary-card {\n            background: #101826;\n            border-radius: 20px;\n            padding: 22px 28px;\n            margin-bottom: 30px;\n            border-left: 4px solid #f0c27f;\n            line-height: 1.7;\n            color: #c8d6f0;\n            font-size: 0.98rem;\n        }\n        .summary-card strong {\n            color: #f0d89f;\n        }\n\n        /* match grid */\n        .match-grid {\n            display: grid;\n            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));\n            gap: 24px;\n            margin-bottom: 40px;\n        }\n        .match-card {\n            background: #131b2b;\n            border-radius: 20px;\n            padding: 20px 20px 22px;\n            border: 1px solid #253040;\n            transition: all 0.25s;\n            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);\n            display: flex;\n            flex-direction: column;\n        }\n        .match-card:hover {\n            border-color: #4a6080;\n            transform: translateY(-3px);\n            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);\n        }\n        .match-header {\n            display: flex;\n            justify-content: space-between;\n            align-items: center;\n            margin-bottom: 16px;\n            font-size: 0.8rem;\n            color: #8a9fc0;\n            border-bottom: 1px solid #1f2a3c;\n            padding-bottom: 10px;\n        }\n        .match-header .date {\n            background: #1e283e;\n            padding: 2px 12px;\n            border-radius: 30px;\n            font-size: 0.7rem;\n        }\n        .match-teams {\n            display: flex;\n            justify-content: space-between;\n            align-items: center;\n            margin-bottom: 14px;\n        }\n        .team {\n            display: flex;\n            flex-direction: column;\n            align-items: center;\n            gap: 4px;\n            width: 38%;\n        }\n        .team .name {\n            font-weight: 600;\n            font-size: 1rem;\n            text-align: center;\n            line-height: 1.3;\n        }\n        .team .name small {\n            font-weight: 400;\n            opacity: 0.6;\n            font-size: 0.65rem;\n            display: block;\n        }\n        .team .logo {\n            width: 40px;\n            height: 40px;\n            object-fit: contain;\n            border-radius: 50%;\n            background: #1c263a;\n            padding: 4px;\n        }\n        .vs {\n            font-weight: 700;\n            font-size: 1.3rem;\n            color: #5d7da0;\n        }\n        .score-pred {\n            background: #1a2438;\n            border-radius: 60px;\n            padding: 6px 18px;\n            font-weight: 700;\n            font-size: 1.2rem;\n            color: #ffd966;\n            text-align: center;\n            margin: 4px 0 12px;\n            align-self: center;\n        }\n        .prob-bar-wrapper {\n            display: flex;\n            gap: 4px;\n            height: 6px;\n            border-radius: 20px;\n            overflow: hidden;\n            background: #1f2a3c;\n            margin: 6px 0 12px;\n        }\n        .prob-bar-wrapper .bar-home {\n            background: #3b82f6;\n            height: 100%;\n            border-radius: 20px 0 0 20px;\n        }\n        .prob-bar-wrapper .bar-draw {\n            background: #8b8fa3;\n            height: 100%;\n        }\n        .prob-bar-wrapper .bar-away {\n            background: #a855f7;\n            height: 100%;\n            border-radius: 0 20px 20px 0;\n        }\n        .prob-labels {\n            display: flex;\n            justify-content: space-between;\n            font-size: 0.7rem;\n            color: #95aacf;\n            margin-bottom: 8px;\n        }\n        .prob-labels span b {\n            color: #d6e2ff;\n            font-weight: 600;\n        }\n        .tactical {\n            font-size: 0.8rem;\n            color: #b0c2dd;\n            background: #0e1522;\n            padding: 10px 12px;\n            border-radius: 14px;\n            margin: 8px 0 6px;\n            line-height: 1.5;\n            border-left: 2px solid #3d5a80;\n        }\n        .risk-tag {\n            display: inline-flex;\n            align-items: center;\n            gap: 6px;\n            font-size: 0.75rem;\n            padding: 4px 14px 4px 10px;\n            border-radius: 30px;\n            background: #1f2a3c;\n            margin-top: 6px;\n            width: fit-content;\n        }\n        .risk-tag .dot {\n            width: 8px;\n            height: 8px;\n            border-radius: 50%;\n            display: inline-block;\n        }\n        .risk-tag .dot.low {\n            background: #4ade80;\n        }\n        .risk-tag .dot.medium {\n            background: #fbbf24;\n        }\n        .risk-tag .dot.high {\n            background: #f87171;\n        }\n        .confidence-badge {\n            margin-left: auto;\n            font-size: 0.65rem;\n            background: #1e2a40;\n            padding: 2px 12px;\n            border-radius: 30px;\n            color: #b8cae5;\n            border: 1px solid #2f405a;\n        }\n\n        /* risk overview */\n        .risk-overview {\n            background: #101826;\n            border-radius: 20px;\n            padding: 22px 28px;\n            margin: 20px 0 30px;\n            border-right: 4px solid #fbbf24;\n            color: #c8d6f0;\n            font-size: 0.95rem;\n            line-height: 1.7;\n        }\n        .risk-overview strong {\n            color: #fcd34d;\n        }\n\n        /* footer */\n        .footer {\n            text-align: center;\n            margin-top: 40px;\n            padding-top: 20px;\n            border-top: 1px solid #1f2a3c;\n            color: #5e7395;\n            font-size: 0.75rem;\n            display: flex;\n            flex-wrap: wrap;\n            justify-content: center;\n            gap: 16px 30px;\n        }\n        .footer .model {\n            color: #8899bb;\n        }\n\n        /* responsive */\n        @media (max-width: 640px) {\n            body {\n                padding: 16px 12px;\n            }\n            .header h1 {\n                font-size: 1.4rem;\n            }\n            .token-panel {\n                flex-direction: column;\n                align-items: stretch;\n                gap: 14px;\n                padding: 18px 18px;\n            }\n            .token-grid {\n                gap: 12px 20px;\n                justify-content: space-between;\n            }\n            .token-item .value {\n                font-size: 1rem;\n            }\n            .match-grid {\n                grid-template-columns: 1fr;\n                gap: 18px;\n            }\n            .match-teams .team .name {\n                font-size: 0.85rem;\n            }\n            .team .logo {\n                width: 32px;\n                height: 32px;\n            }\n            .summary-card,\n            .risk-overview {\n                padding: 18px 16px;\n            }\n            .cost-badge {\n                padding: 6px 16px;\n                font-size: 0.85rem;\n            }\n        }\n\n        /* tooltip / extra */\n        .data-quality-note {\n            background: #0f1624;\n            padding: 14px 20px;\n            border-radius: 16px;\n            margin: 10px 0 0;\n            font-size: 0.8rem;\n            color: #7d8fae;\n            border: 1px solid #202b3e;\n        }\n        .fixture-count {\n            color: #88a0c8;\n        }\n\n        /* fix for empty logos */\n        .team .logo[src=\"\"],\n        .team .logo:not([src]) {\n            display: none;\n        }\n        .team .logo-placeholder {\n            width: 40px;\n            height: 40px;\n            border-radius: 50%;\n            background: #1d293f;\n            display: inline-flex;\n            align-items: center;\n            justify-content: center;\n            font-size: 0.7rem;\n            color: #5c7192;\n        }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n\n        <!-- header -->\n        <div class=\"header\">\n            <div>\n                <h1>⚽ 世界杯 · 预测中心</h1>\n                <div class=\"sub\" style=\"margin-top:6px;\">\n                    <span>2026 · 小组赛 &amp; 淘汰赛首轮</span>\n                    <span class=\"badge\">25 场比赛</span>\n                    <span class=\"badge\">分析版 v2</span>\n                </div>\n            </div>\n            <div class=\"sub\">\n                <span>📅 生成于 2026-06-24 17:56 UTC</span>\n                <span>🔍 数据源: ESPN</span>\n            </div>\n        </div>\n\n        <!-- token usage panel -->\n        <div class=\"token-panel\">\n            <div class=\"title-section\">\n                <h2>🧠 模型用量</h2>\n                <span class=\"badge\" style=\"background:#26334d;\">deepseek-v4-pro</span>\n            </div>\n            <div class=\"token-grid\">\n                <div class=\"token-item\">\n                    <span class=\"label\">输入</span>\n                    <span class=\"value\">19518</span>\n                </div>\n                <div class=\"token-item\">\n                    <span class=\"label\">输出</span>\n                    <span class=\"value\">23383</span>\n                </div>\n                <div class=\"token-item\">\n                    <span class=\"label\">总计</span>\n                    <span class=\"value highlight\">42901</span>\n                </div>\n                <div class=\"cost-badge\">\n                    💰 预估成本 <span class=\"cost-value\">0.429010</span> USD\n                </div>\n            </div>\n        </div>\n\n        <!-- summary -->\n        <div class=\"summary-card\">\n            <strong>📋 预测摘要</strong><br>\n            2026年世界杯小组赛及淘汰赛首轮预测。涵盖6月24日至28日共25场比赛，包括多场实力悬殊对决与几场势均力敌的较量。传统强队如巴西、阿根廷、法国、英格兰等被看好取胜，而部分中游球队对决则可能出现平局。淘汰赛首场因参赛球队尚未确定，预测难度较大。\n        </div>\n\n        <!-- match predictions grid -->\n        <div style=\"display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:6px;\">\n            <h2 style=\"font-size:1.3rem;font-weight:500;color:#d0def5;\">📊 今日及未来比赛预测</h2>\n            <span class=\"fixture-count\">共 25 场 · 滚动更新</span>\n        </div>\n\n        <div class=\"match-grid\">\n            <!-- 波黑 vs 卡塔尔 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\">\n                    <span>🏟️ 波黑 vs 卡塔尔</span>\n                    <span class=\"date\">06-24 19:00</span>\n                </div>\n                <div class=\"match-teams\">\n                    <div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/bih.png\" alt=\"波黑\" onerror=\"this.style.display='none'\"><span class=\"name\">波黑</span></div>\n                    <span class=\"vs\">vs</span>\n                    <div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/qat.png\" alt=\"卡塔尔\" onerror=\"this.style.display='none'\"><span class=\"name\">卡塔尔</span></div>\n                </div>\n                <div class=\"score-pred\">1 : 0</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>45%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>25%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:45%\"></div><div class=\"bar-draw\" style=\"width:30%\"></div><div class=\"bar-away\" style=\"width:25%\"></div></div>\n                <div class=\"tactical\">波黑身体对抗能力强，主场优势明显；卡塔尔技术流但世界杯经验不足，可能难以破密集防守。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\">\n                    <span class=\"risk-tag\"><span class=\"dot medium\"></span> 风险: 卡塔尔具备反击能力，若波黑久攻不下可能被偷袭得手。</span>\n                    <span class=\"confidence-badge\">信心: 中</span>\n                </div>\n            </div>\n\n            <!-- 瑞士 vs 加拿大 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 瑞士 vs 加拿大</span><span class=\"date\">06-24 19:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/sui.png\" alt=\"瑞士\"><span class=\"name\">瑞士</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/can.png\" alt=\"加拿大\"><span class=\"name\">加拿大</span></div></div>\n                <div class=\"score-pred\">2 : 1</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>50%</b></span><span>⚖️ 平 <b>25%</b></span><span>✈️ 客胜 <b>25%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:50%\"></div><div class=\"bar-draw\" style=\"width:25%\"></div><div class=\"bar-away\" style=\"width:25%\"></div></div>\n                <div class=\"tactical\">瑞士防守稳固，擅长控制节奏；加拿大速度优势明显，但大赛经验欠缺。比赛在温哥华举行，加拿大拥有球迷支持，但整体实力瑞士占优。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot medium\"></span> 风险: 加拿大的主场氛围可能提升其表现，若瑞士慢热可能陷入被动。</span><span class=\"confidence-badge\">信心: 中</span></div>\n            </div>\n\n            <!-- 摩洛哥 vs 海地 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 摩洛哥 vs 海地</span><span class=\"date\">06-24 22:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/mar.png\" alt=\"摩洛哥\"><span class=\"name\">摩洛哥</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/hai.png\" alt=\"海地\"><span class=\"name\">海地</span></div></div>\n                <div class=\"score-pred\">2 : 0</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>70%</b></span><span>⚖️ 平 <b>20%</b></span><span>✈️ 客胜 <b>10%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:70%\"></div><div class=\"bar-draw\" style=\"width:20%\"></div><div class=\"bar-away\" style=\"width:10%\"></div></div>\n                <div class=\"tactical\">摩洛哥组织严密，中场控制力强；海地个人能力有限，难以持续制造威胁。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot low\"></span> 风险: 摩洛哥需避免轻敌，海地的顽强防守可能给比赛带来变数。</span><span class=\"confidence-badge\">信心: 高</span></div>\n            </div>\n\n            <!-- 苏格兰 vs 巴西 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 苏格兰 vs 巴西</span><span class=\"date\">06-24 22:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/sco.png\" alt=\"苏格兰\"><span class=\"name\">苏格兰</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/bra.png\" alt=\"巴西\"><span class=\"name\">巴西</span></div></div>\n                <div class=\"score-pred\">0 : 2</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>15%</b></span><span>⚖️ 平 <b>20%</b></span><span>✈️ 客胜 <b>65%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:15%\"></div><div class=\"bar-draw\" style=\"width:20%\"></div><div class=\"bar-away\" style=\"width:65%\"></div></div>\n                <div class=\"tactical\">巴西技术、速度全面占优，斯科特兰注重身体对抗和定位球，但难以限制巴西的进攻才华。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot medium\"></span> 风险: 巴西可能轮换阵容，若轻敌或苏格兰死守，平局风险存在。</span><span class=\"confidence-badge\">信心: 高</span></div>\n            </div>\n\n            <!-- 捷克 vs 墨西哥 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 捷克 vs 墨西哥</span><span class=\"date\">06-25 01:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/cze.png\" alt=\"捷克\"><span class=\"name\">捷克</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/mex.png\" alt=\"墨西哥\"><span class=\"name\">墨西哥</span></div></div>\n                <div class=\"score-pred\">1 : 2</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>20%</b></span><span>⚖️ 平 <b>25%</b></span><span>✈️ 客胜 <b>55%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:20%\"></div><div class=\"bar-draw\" style=\"width:25%\"></div><div class=\"bar-away\" style=\"width:55%\"></div></div>\n                <div class=\"tactical\">墨西哥主场（墨西哥城）作战，狂热球迷带来巨大优势；捷克战术纪律好，但面对技术细腻的墨西哥可能吃亏。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot medium\"></span> 风险: 墨西哥承受主场压力，若久攻不下可能急躁，给捷克反击机会。</span><span class=\"confidence-badge\">信心: 中</span></div>\n            </div>\n\n            <!-- 南非 vs 韩国 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 南非 vs 韩国</span><span class=\"date\">06-25 01:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/rsa.png\" alt=\"南非\"><span class=\"name\">南非</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/kors.png\" alt=\"韩国\"><span class=\"name\">韩国</span></div></div>\n                <div class=\"score-pred\">0 : 1</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>20%</b></span><span>⚖️ 平 <b>25%</b></span><span>✈️ 客胜 <b>55%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:20%\"></div><div class=\"bar-draw\" style=\"width:25%\"></div><div class=\"bar-away\" style=\"width:55%\"></div></div>\n                <div class=\"tactical\">韩国整体实力更强，高压逼抢和快速转换是特长；南非身体条件不错，但技术粗糙，中立场难以抗衡。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot medium\"></span> 风险: 南非的冲击打法可能搅乱韩国防线，定位球是变数。</span><span class=\"confidence-badge\">信心: 中</span></div>\n            </div>\n\n            <!-- 库拉索 vs 科特迪瓦 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 库拉索 vs 科特迪瓦</span><span class=\"date\">06-25 20:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/soccer/500/11678.png\" alt=\"库拉索\"><span class=\"name\">库拉索</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/civ.png\" alt=\"科特迪瓦\"><span class=\"name\">科特迪瓦</span></div></div>\n                <div class=\"score-pred\">0 : 2</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>15%</b></span><span>⚖️ 平 <b>20%</b></span><span>✈️ 客胜 <b>65%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:15%\"></div><div class=\"bar-draw\" style=\"width:20%\"></div><div class=\"bar-away\" style=\"width:65%\"></div></div>\n                <div class=\"tactical\">科特迪瓦球员身体素质劲爆，个人能力突出；库拉索整体实力有限，难有招架之力。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot low\"></span> 风险: 库拉索可能全员防守，科特迪瓦需要耐心破铁桶阵。</span><span class=\"confidence-badge\">信心: 高</span></div>\n            </div>\n\n            <!-- 厄瓜多尔 vs 德国 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 厄瓜多尔 vs 德国</span><span class=\"date\">06-25 20:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/ecu.png\" alt=\"厄瓜多尔\"><span class=\"name\">厄瓜多尔</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/ger.png\" alt=\"德国\"><span class=\"name\">德国</span></div></div>\n                <div class=\"score-pred\">1 : 2</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>20%</b></span><span>⚖️ 平 <b>25%</b></span><span>✈️ 客胜 <b>55%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:20%\"></div><div class=\"bar-draw\" style=\"width:25%\"></div><div class=\"bar-away\" style=\"width:55%\"></div></div>\n                <div class=\"tactical\">德国实力明显占优，但厄瓜多尔有高原主场之利，虽在平原作战仍保留一定的适应性。德国依靠整体推进破防。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot medium\"></span> 风险: 厄瓜多尔的反击效率较高，德国防线若压得太上可能被偷袭。</span><span class=\"confidence-badge\">信心: 中</span></div>\n            </div>\n\n            <!-- 日本 vs 瑞典 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 日本 vs 瑞典</span><span class=\"date\">06-25 23:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/jpn.png\" alt=\"日本\"><span class=\"name\">日本</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/swe.png\" alt=\"瑞典\"><span class=\"name\">瑞典</span></div></div>\n                <div class=\"score-pred\">1 : 1</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>40%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>30%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:40%\"></div><div class=\"bar-draw\" style=\"width:30%\"></div><div class=\"bar-away\" style=\"width:30%\"></div></div>\n                <div class=\"tactical\">日本技术细腻，传控配合流畅；瑞典身体强壮，长传冲吊和定位球是利器。实力在伯仲之间。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot medium\"></span> 风险: 比赛可能陷入僵局，领先一方可能被扳平，平局概率高。</span><span class=\"confidence-badge\">信心: 中</span></div>\n            </div>\n\n            <!-- 突尼斯 vs 荷兰 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 突尼斯 vs 荷兰</span><span class=\"date\">06-25 23:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/tun.png\" alt=\"突尼斯\"><span class=\"name\">突尼斯</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/ned.png\" alt=\"荷兰\"><span class=\"name\">荷兰</span></div></div>\n                <div class=\"score-pred\">0 : 2</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>15%</b></span><span>⚖️ 平 <b>20%</b></span><span>✈️ 客胜 <b>65%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:15%\"></div><div class=\"bar-draw\" style=\"width:20%\"></div><div class=\"bar-away\" style=\"width:65%\"></div></div>\n                <div class=\"tactical\">荷兰全攻全守，中前场创造力强大；突尼斯防守硬朗但缺少反击速度，恐难逃败局。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot low\"></span> 风险: 荷兰可能轮换部分主力，默契度下降，但整体优势仍大。</span><span class=\"confidence-badge\">信心: 高</span></div>\n            </div>\n\n            <!-- 巴拉圭 vs 澳大利亚 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 巴拉圭 vs 澳大利亚</span><span class=\"date\">06-26 02:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/par.png\" alt=\"巴拉圭\"><span class=\"name\">巴拉圭</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/aus.png\" alt=\"澳大利亚\"><span class=\"name\">澳大利亚</span></div></div>\n                <div class=\"score-pred\">1 : 1</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>35%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>35%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:35%\"></div><div class=\"bar-draw\" style=\"width:30%\"></div><div class=\"bar-away\" style=\"width:35%\"></div></div>\n                <div class=\"tactical\">双方实力接近，巴拉圭防守反击熟练，澳大利亚身体对抗不吃亏，比赛可能陷入拉锯。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot medium\"></span> 风险: 天气炎热可能导致节奏缓慢，一场闷平可能性不低。</span><span class=\"confidence-badge\">信心: 中</span></div>\n            </div>\n\n            <!-- 土耳其 vs 美国 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 土耳其 vs 美国</span><span class=\"date\">06-26 02:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/tur.png\" alt=\"土耳其\"><span class=\"name\">土耳其</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/usa.png\" alt=\"美国\"><span class=\"name\">美国</span></div></div>\n                <div class=\"score-pred\">1 : 2</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>25%</b></span><span>⚖️ 平 <b>25%</b></span><span>✈️ 客胜 <b>50%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:25%\"></div><div class=\"bar-draw\" style=\"width:25%\"></div><div class=\"bar-away\" style=\"width:50%\"></div></div>\n                <div class=\"tactical\">美国在主场（英格尔伍德）作战，球迷支持巨大，球队年轻有冲劲；土耳其个人技术不错但稳定性欠佳。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot medium\"></span> 风险: 美国主场压力可能影响发挥，土耳其若能先进球，局势可能逆转。</span><span class=\"confidence-badge\">信心: 中</span></div>\n            </div>\n\n            <!-- 挪威 vs 法国 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 挪威 vs 法国</span><span class=\"date\">06-26 19:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/nor.png\" alt=\"挪威\"><span class=\"name\">挪威</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/fra.png\" alt=\"法国\"><span class=\"name\">法国</span></div></div>\n                <div class=\"score-pred\">0 : 2</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>15%</b></span><span>⚖️ 平 <b>20%</b></span><span>✈️ 客胜 <b>65%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:15%\"></div><div class=\"bar-draw\" style=\"width:20%\"></div><div class=\"bar-away\" style=\"width:65%\"></div></div>\n                <div class=\"tactical\">法国阵容豪华，攻守平衡；挪威虽有哈兰德这个强点，但整体实力差距明显。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot medium\"></span> 风险: 哈兰德单兵能力极强，法国防线稍有不慎可能丢球，但法国进攻足以弥补。</span><span class=\"confidence-badge\">信心: 高</span></div>\n            </div>\n\n            <!-- 塞内加尔 vs 伊拉克 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 塞内加尔 vs 伊拉克</span><span class=\"date\">06-26 19:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/sen.png\" alt=\"塞内加尔\"><span class=\"name\">塞内加尔</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/irq.png\" alt=\"伊拉克\"><span class=\"name\">伊拉克</span></div></div>\n                <div class=\"score-pred\">2 : 0</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>65%</b></span><span>⚖️ 平 <b>20%</b></span><span>✈️ 客胜 <b>15%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:65%\"></div><div class=\"bar-draw\" style=\"width:20%\"></div><div class=\"bar-away\" style=\"width:15%\"></div></div>\n                <div class=\"tactical\">塞内加尔速度快、冲击力强，非洲冠军底蕴深厚；伊拉克防守顽强但进攻乏力，难以构成威胁。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot low\"></span> 风险: 塞内加尔若得势不得分，伊拉克的死守可能导致小胜甚至平局。</span><span class=\"confidence-badge\">信心: 高</span></div>\n            </div>\n\n            <!-- 佛得角 vs 沙特阿拉伯 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 佛得角 vs 沙特</span><span class=\"date\">06-27 00:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/cpv.png\" alt=\"佛得角\"><span class=\"name\">佛得角</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/ksa.png\" alt=\"沙特阿拉伯\"><span class=\"name\">沙特</span></div></div>\n                <div class=\"score-pred\">1 : 1</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>30%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>40%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:30%\"></div><div class=\"bar-draw\" style=\"width:30%\"></div><div class=\"bar-away\" style=\"width:40%\"></div></div>\n                <div class=\"tactical\">两队实力半斤八两，沙特技术稍好但发挥不稳；佛得角对抗能力强，比赛可能平淡。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot high\"></span> 风险: 双方均无绝对把握，比赛结果很大程度取决于临场发挥。</span><span class=\"confidence-badge\">信心: 低</span></div>\n            </div>\n\n            <!-- 乌拉圭 vs 西班牙 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 乌拉圭 vs 西班牙</span><span class=\"date\">06-27 00:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/uru.png\" alt=\"乌拉圭\"><span class=\"name\">乌拉圭</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/esp.png\" alt=\"西班牙\"><span class=\"name\">西班牙</span></div></div>\n                <div class=\"score-pred\">1 : 2</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>25%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>45%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:25%\"></div><div class=\"bar-draw\" style=\"width:30%\"></div><div class=\"bar-away\" style=\"width:45%\"></div></div>\n                <div class=\"tactical\">西班牙控球优势明显，乌拉圭依靠强悍防守和反击周旋。西甲式对决，西班牙更占优。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot medium\"></span> 风险: 乌拉圭凶狠的逼抢可能打乱西班牙节奏，若不能尽早进球，西班牙可能陷入苦战。</span><span class=\"confidence-badge\">信心: 中</span></div>\n            </div>\n\n            <!-- 埃及 vs 伊朗 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 埃及 vs 伊朗</span><span class=\"date\">06-27 03:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/egy.png\" alt=\"埃及\"><span class=\"name\">埃及</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/irn.png\" alt=\"伊朗\"><span class=\"name\">伊朗</span></div></div>\n                <div class=\"score-pred\">1 : 1</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>35%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>35%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:35%\"></div><div class=\"bar-draw\" style=\"width:30%\"></div><div class=\"bar-away\" style=\"width:35%\"></div></div>\n                <div class=\"tactical\">北非劲旅与亚洲豪强相遇，埃及萨拉赫领衔攻击线，伊朗防守稳固，双方可能比较保守。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot medium\"></span> 风险: 核心球员的发挥将决定走势，平局可能性不小。</span><span class=\"confidence-badge\">信心: 中</span></div>\n            </div>\n\n            <!-- 新西兰 vs 比利时 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 新西兰 vs 比利时</span><span class=\"date\">06-27 03:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/nzl.png\" alt=\"新西兰\"><span class=\"name\">新西兰</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/bel.png\" alt=\"比利时\"><span class=\"name\">比利时</span></div></div>\n                <div class=\"score-pred\">0 : 3</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>5%</b></span><span>⚖️ 平 <b>15%</b></span><span>✈️ 客胜 <b>80%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:5%\"></div><div class=\"bar-draw\" style=\"width:15%\"></div><div class=\"bar-away\" style=\"width:80%\"></div></div>\n                <div class=\"tactical\">比利时黄金一代实力碾压，新西兰只能指望少输当赢。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot low\"></span> 风险: 比利时若大幅轮换或心态放松，可能影响净胜球数，但胜负无悬念。</span><span class=\"confidence-badge\">信心: 高</span></div>\n            </div>\n\n            <!-- 克罗地亚 vs 加纳 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 克罗地亚 vs 加纳</span><span class=\"date\">06-27 21:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/cro.png\" alt=\"克罗地亚\"><span class=\"name\">克罗地亚</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/gha.png\" alt=\"加纳\"><span class=\"name\">加纳</span></div></div>\n                <div class=\"score-pred\">2 : 0</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>60%</b></span><span>⚖️ 平 <b>20%</b></span><span>✈️ 客胜 <b>20%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:60%\"></div><div class=\"bar-draw\" style=\"width:20%\"></div><div class=\"bar-away\" style=\"width:20%\"></div></div>\n                <div class=\"tactical\">克罗地亚中场大师级，控制力出众；加纳年轻有活力但经验不足，恐难打破格子军节奏。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot low\"></span> 风险: 加纳的快速反击可能制造混乱，克罗地亚需保持专注。</span><span class=\"confidence-badge\">信心: 高</span></div>\n            </div>\n\n            <!-- 巴拿马 vs 英格兰 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 巴拿马 vs 英格兰</span><span class=\"date\">06-27 21:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/pan.png\" alt=\"巴拿马\"><span class=\"name\">巴拿马</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/eng.png\" alt=\"英格兰\"><span class=\"name\">英格兰</span></div></div>\n                <div class=\"score-pred\">0 : 2</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>10%</b></span><span>⚖️ 平 <b>15%</b></span><span>✈️ 客胜 <b>75%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:10%\"></div><div class=\"bar-draw\" style=\"width:15%\"></div><div class=\"bar-away\" style=\"width:75%\"></div></div>\n                <div class=\"tactical\">英格兰实力远超巴拿马，定位球和边路进攻将撕开防线。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot low\"></span> 风险: 英格兰过去时有遇弱不强的毛病，但本场应能顺利取胜。</span><span class=\"confidence-badge\">信心: 高</span></div>\n            </div>\n\n            <!-- 哥伦比亚 vs 葡萄牙 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 哥伦比亚 vs 葡萄牙</span><span class=\"date\">06-27 23:30</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/col.png\" alt=\"哥伦比亚\"><span class=\"name\">哥伦比亚</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/por.png\" alt=\"葡萄牙\"><span class=\"name\">葡萄牙</span></div></div>\n                <div class=\"score-pred\">1 : 1</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>30%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>40%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:30%\"></div><div class=\"bar-draw\" style=\"width:30%\"></div><div class=\"bar-away\" style=\"width:40%\"></div></div>\n                <div class=\"tactical\">两队均球星云集，哥伦比亚创造力十足，葡萄牙整体性更强，预计场面开放。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot medium\"></span> 风险: 双方都具备一击致命的能力，结果可能由球星瞬间决定。</span><span class=\"confidence-badge\">信心: 中</span></div>\n            </div>\n\n            <!-- 刚果民主共和国 vs 乌兹别克斯坦 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 刚果(金) vs 乌兹别克</span><span class=\"date\">06-27 23:30</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/rdc.png\" alt=\"刚果民主共和国\"><span class=\"name\">刚果(金)</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/uzb.png\" alt=\"乌兹别克斯坦\"><span class=\"name\">乌兹别克</span></div></div>\n                <div class=\"score-pred\">0 : 0</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>30%</b></span><span>⚖️ 平 <b>35%</b></span><span>✈️ 客胜 <b>35%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:30%\"></div><div class=\"bar-draw\" style=\"width:35%\"></div><div class=\"bar-away\" style=\"width:35%\"></div></div>\n                <div class=\"tactical\">两队世界排名相近，缺乏顶级球星，比赛可能演变为中场缠斗，进球困难。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot high\"></span> 风险: 胶着中一次失误或定位球可能改变结局，但整体进球数不会多。</span><span class=\"confidence-badge\">信心: 低</span></div>\n            </div>\n\n            <!-- 阿尔及利亚 vs 奥地利 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 阿尔及利亚 vs 奥地利</span><span class=\"date\">06-28 02:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/alg.png\" alt=\"阿尔及利亚\"><span class=\"name\">阿尔及利亚</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/aut.png\" alt=\"奥地利\"><span class=\"name\">奥地利</span></div></div>\n                <div class=\"score-pred\">1 : 1</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>35%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>35%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:35%\"></div><div class=\"bar-draw\" style=\"width:30%\"></div><div class=\"bar-away\" style=\"width:35%\"></div></div>\n                <div class=\"tactical\">阿尔及利亚技术细腻，奥地利战术执行力强，双方实力在伯仲之间。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot medium\"></span> 风险: 比赛可能激烈但难以分出胜负，平局对双方或是都能接受的结果。</span><span class=\"confidence-badge\">信心: 中</span></div>\n            </div>\n\n            <!-- 约旦 vs 阿根廷 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ 约旦 vs 阿根廷</span><span class=\"date\">06-28 02:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/jor.png\" alt=\"约旦\"><span class=\"name\">约旦</span></div><span class=\"vs\">vs</span><div class=\"team\"><img class=\"logo\" src=\"https://a.espncdn.com/i/teamlogos/countries/500/arg.png\" alt=\"阿根廷\"><span class=\"name\">阿根廷</span></div></div>\n                <div class=\"score-pred\">0 : 3</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>5%</b></span><span>⚖️ 平 <b>10%</b></span><span>✈️ 客胜 <b>85%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:5%\"></div><div class=\"bar-draw\" style=\"width:10%\"></div><div class=\"bar-away\" style=\"width:85%\"></div></div>\n                <div class=\"tactical\">卫冕冠军阿根廷实力超群，约旦只能通过死守争取少失球。梅西引领的进攻将轻易撕破防线。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot low\"></span> 风险: 阿根廷可能提前锁定小组头名而轮换，但替补实力也远胜约旦。</span><span class=\"confidence-badge\">信心: 高</span></div>\n            </div>\n\n            <!-- A组第二名 vs B组第二名 -->\n            <div class=\"match-card\">\n                <div class=\"match-header\"><span>🏟️ A2 vs B2 (淘汰赛)</span><span class=\"date\">06-28 19:00</span></div>\n                <div class=\"match-teams\"><div class=\"team\"><span class=\"name\">A组第二</span></div><span class=\"vs\">vs</span><div class=\"team\"><span class=\"name\">B组第二</span></div></div>\n                <div class=\"score-pred\">1 : 1</div>\n                <div class=\"prob-labels\"><span>🏠 主胜 <b>34%</b></span><span>⚖️ 平 <b>33%</b></span><span>✈️ 客胜 <b>33%</b></span></div>\n                <div class=\"prob-bar-wrapper\"><div class=\"bar-home\" style=\"width:34%\"></div><div class=\"bar-draw\" style=\"width:33%\"></div><div class=\"bar-away\" style=\"width:33%\"></div></div>\n                <div class=\"tactical\">淘汰赛阶段，参赛球队未定，预测无意义。通常小组第二实力接近，比赛可能胶着。</div>\n                <div style=\"display:flex;align-items:center;margin-top:4px;\"><span class=\"risk-tag\"><span class=\"dot high\"></span> 风险: 球队状态、伤病情况完全未知，高度不确定性，任何结果都可能发生。</span><span class=\"confidence-badge\">信心: 低</span></div>\n            </div>\n        </div>\n\n        <!-- risk overview -->\n        <div class=\"risk-overview\">\n            <strong>⚠️ 风险总览</strong><br>\n            整体而言，弱队爆冷风险较低，但实力接近的场次（如日本对瑞典、巴拉圭对澳大利亚等）平局可能性高。个别比赛受场地因素影响较大（如瑞士在加拿大对阵加拿大，墨西哥本土作战）。淘汰赛首场因未知球队，风险极高。\n        </div>\n\n        <!-- data quality -->\n        <div class=\"data-quality-note\">\n            📌 数据质量说明：数据来源为ESPN公开比分板，赛事真实有效。预测基于各队FIFA历史排名、近年大赛表现及一般技战术特点推断，未纳入实时伤病、更衣室动态等短期变量，仅供足球分析参考。\n        </div>\n\n        <!-- footer -->\n        <div class=\"footer\">\n            <span>© 2026 世界杯智能预测 · 深度求索版</span>\n            <span class=\"model\">模型: deepseek-v4-pro · 分析版 v2</span>\n            <span>生成于 2026-06-24 17:56 UTC</span>\n        </div>\n\n    </div>\n\n<section id=\"deepseek-runtime-usage\" style=\"max-width:1120px;margin:24px auto;padding:16px;border:1px solid #d8e0dc;border-radius:8px;background:#fff;font-family:Inter,'Microsoft YaHei','PingFang SC',system-ui,sans-serif;color:#17201d;\">\n  <h2 style=\"margin:0 0 12px;font-size:20px;\">运行用量</h2>\n  <div style=\"display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;\">\n    <div><strong>分析模型</strong><br>deepseek-v4-pro</div>\n    <div><strong>生成模型</strong><br>deepseek-v4-flash</div>\n    <div><strong>Input tokens</strong><br>19518</div>\n    <div><strong>Output tokens</strong><br>23383</div>\n    <div><strong>Total tokens</strong><br>42901</div>\n    <div><strong>Cost</strong><br>0.429010</div>\n  </div>\n</section>\n\n</body>\n</html>",
+  "usage": {
+    "input_tokens": 19518,
+    "output_tokens": 23383,
+    "total_tokens": 42901,
+    "cost_estimate": 0.42901
+  },
+  "usage_breakdown": {
+    "analysis": {
+      "input_tokens": 7200,
+      "output_tokens": 8658,
+      "total_tokens": 15858,
+      "cost_estimate": 0.15858
+    },
+    "render": {
+      "input_tokens": 12318,
+      "output_tokens": 14725,
+      "total_tokens": 27043,
+      "cost_estimate": 0.27043
+    }
+  },
+  "model": {
+    "analysis_model": "deepseek-v4-pro",
+    "render_model": "deepseek-v4-flash"
+  },
+  "generated_at": "2026-06-24T19:13:19Z",
   "source": {
     "fixture_provider": "ESPN public scoreboard",
     "league": "fifa.world",
@@ -18,1334 +719,21 @@
       "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260628"
     ]
   },
-  "warnings": [],
-  "match_count": 25,
-  "matches": [
+  "daily_log": [
     {
-      "id": "760462",
-      "name": "波黑 对阵 卡塔尔",
-      "name_en": "Qatar at Bosnia-Herzegovina",
-      "short_name": "波黑 vs 卡塔尔",
-      "short_name_en": "QAT @ BIH",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-24T19:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "波黑",
-          "name_en": "Bosnia-Herzegovina",
-          "abbreviation": "BIH",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "卡塔尔",
-          "name_en": "Qatar",
-          "abbreviation": "QAT",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "Lumen Field",
-        "city": "Seattle, Washington",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760462"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 36.9,
-          "draw": 28.3,
-          "team_b_win": 34.8
-        },
-        "inputs": {
-          "team_a_rating": 1540,
-          "team_b_rating": 1525,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
+      "time": "2026-06-24T17:26:41Z",
+      "stage": "08:15 research pipeline",
+      "status": "completed"
     },
     {
-      "id": "760463",
-      "name": "瑞士 对阵 加拿大",
-      "name_en": "Canada at Switzerland",
-      "short_name": "瑞士 vs 加拿大",
-      "short_name_en": "CAN @ SUI",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-24T19:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "瑞士",
-          "name_en": "Switzerland",
-          "abbreviation": "SUI",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "加拿大",
-          "name_en": "Canada",
-          "abbreviation": "CAN",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "BC Place",
-        "city": "Vancouver",
-        "country": "Canada"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760463"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 40.0,
-          "draw": 26.9,
-          "team_b_win": 33.1
-        },
-        "inputs": {
-          "team_a_rating": 1705,
-          "team_b_rating": 1655,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
+      "time": "2026-06-24T17:56:41Z",
+      "stage": "09:40 analysis completed",
+      "status": "completed"
     },
     {
-      "id": "760464",
-      "name": "摩洛哥 对阵 海地",
-      "name_en": "Haiti at Morocco",
-      "short_name": "摩洛哥 vs 海地",
-      "short_name_en": "HAI @ MAR",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-24T22:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "摩洛哥",
-          "name_en": "Morocco",
-          "abbreviation": "MAR",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "海地",
-          "name_en": "Haiti",
-          "abbreviation": "HAI",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "Mercedes-Benz Stadium",
-        "city": "Atlanta, Georgia",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760464"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 56.7,
-          "draw": 21.6,
-          "team_b_win": 21.7
-        },
-        "inputs": {
-          "team_a_rating": 1715,
-          "team_b_rating": 1465,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760465",
-      "name": "苏格兰 对阵 巴西",
-      "name_en": "Brazil at Scotland",
-      "short_name": "苏格兰 vs 巴西",
-      "short_name_en": "BRA @ SCO",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-24T22:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "苏格兰",
-          "name_en": "Scotland",
-          "abbreviation": "SCO",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "巴西",
-          "name_en": "Brazil",
-          "abbreviation": "BRA",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "Hard Rock Stadium",
-        "city": "Miami Gardens, Florida",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760465"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 20.9,
-          "draw": 21.3,
-          "team_b_win": 57.8
-        },
-        "inputs": {
-          "team_a_rating": 1570,
-          "team_b_rating": 1835,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760467",
-      "name": "捷克 对阵 墨西哥",
-      "name_en": "Mexico at Czechia",
-      "short_name": "捷克 vs 墨西哥",
-      "short_name_en": "MEX @ CZE",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-25T01:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "捷克",
-          "name_en": "Czechia",
-          "abbreviation": "CZE",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "墨西哥",
-          "name_en": "Mexico",
-          "abbreviation": "MEX",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "Estadio Banorte",
-        "city": "Mexico City",
-        "country": "Mexico"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760467"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 27.7,
-          "draw": 23.9,
-          "team_b_win": 48.4
-        },
-        "inputs": {
-          "team_a_rating": 1560,
-          "team_b_rating": 1705,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760466",
-      "name": "南非 对阵 韩国",
-      "name_en": "South Korea at South Africa",
-      "short_name": "南非 vs 韩国",
-      "short_name_en": "KOR @ RSA",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-25T01:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "南非",
-          "name_en": "South Africa",
-          "abbreviation": "RSA",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "韩国",
-          "name_en": "South Korea",
-          "abbreviation": "KOR",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "Estadio BBVA",
-        "city": "Guadalupe",
-        "country": "Mexico"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760466"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 30.0,
-          "draw": 25.0,
-          "team_b_win": 45.0
-        },
-        "inputs": {
-          "team_a_rating": 1535,
-          "team_b_rating": 1640,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760473",
-      "name": "库拉索 对阵 科特迪瓦",
-      "name_en": "Ivory Coast at Curaçao",
-      "short_name": "库拉索 vs 科特迪瓦",
-      "short_name_en": "CIV @ CUW",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-25T20:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "库拉索",
-          "name_en": "Curaçao",
-          "abbreviation": "CUW",
-          "logo": "https://a.espncdn.com/i/teamlogos/soccer/500/11678.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "科特迪瓦",
-          "name_en": "Ivory Coast",
-          "abbreviation": "CIV",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "Lincoln Financial Field",
-        "city": "Philadelphia, Pennsylvania",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760473"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 30.6,
-          "draw": 25.3,
-          "team_b_win": 44.1
-        },
-        "inputs": {
-          "team_a_rating": 1460,
-          "team_b_rating": 1555,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760468",
-      "name": "厄瓜多尔 对阵 德国",
-      "name_en": "Germany at Ecuador",
-      "short_name": "厄瓜多尔 vs 德国",
-      "short_name_en": "GER @ ECU",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-25T20:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "厄瓜多尔",
-          "name_en": "Ecuador",
-          "abbreviation": "ECU",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "德国",
-          "name_en": "Germany",
-          "abbreviation": "GER",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "MetLife Stadium",
-        "city": "East Rutherford, New Jersey",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760468"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 28.0,
-          "draw": 24.0,
-          "team_b_win": 48.0
-        },
-        "inputs": {
-          "team_a_rating": 1655,
-          "team_b_rating": 1795,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760471",
-      "name": "日本 对阵 瑞典",
-      "name_en": "Sweden at Japan",
-      "short_name": "日本 vs 瑞典",
-      "short_name_en": "SWE @ JPN",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-25T23:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "日本",
-          "name_en": "Japan",
-          "abbreviation": "JPN",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "瑞典",
-          "name_en": "Sweden",
-          "abbreviation": "SWE",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "AT&T Stadium",
-        "city": "Arlington, Texas",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760471"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 46.7,
-          "draw": 24.4,
-          "team_b_win": 28.9
-        },
-        "inputs": {
-          "team_a_rating": 1690,
-          "team_b_rating": 1565,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760472",
-      "name": "突尼斯 对阵 荷兰",
-      "name_en": "Netherlands at Tunisia",
-      "short_name": "突尼斯 vs 荷兰",
-      "short_name_en": "NED @ TUN",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-25T23:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "突尼斯",
-          "name_en": "Tunisia",
-          "abbreviation": "TUN",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/tun.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "荷兰",
-          "name_en": "Netherlands",
-          "abbreviation": "NED",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "GEHA Field at Arrowhead Stadium",
-        "city": "Kansas City, Missouri",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760472"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 23.7,
-          "draw": 22.2,
-          "team_b_win": 54.1
-        },
-        "inputs": {
-          "team_a_rating": 1590,
-          "team_b_rating": 1805,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760469",
-      "name": "巴拉圭 对阵 澳大利亚",
-      "name_en": "Australia at Paraguay",
-      "short_name": "巴拉圭 vs 澳大利亚",
-      "short_name_en": "AUS @ PAR",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-26T02:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "巴拉圭",
-          "name_en": "Paraguay",
-          "abbreviation": "PAR",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "澳大利亚",
-          "name_en": "Australia",
-          "abbreviation": "AUS",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/aus.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "Levi's Stadium",
-        "city": "Santa Clara, California",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760469"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 33.3,
-          "draw": 27.1,
-          "team_b_win": 39.6
-        },
-        "inputs": {
-          "team_a_rating": 1580,
-          "team_b_rating": 1625,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760470",
-      "name": "土耳其 对阵 美国",
-      "name_en": "United States at Türkiye",
-      "short_name": "土耳其 vs 美国",
-      "short_name_en": "USA @ TUR",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-26T02:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "土耳其",
-          "name_en": "Türkiye",
-          "abbreviation": "TUR",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "美国",
-          "name_en": "United States",
-          "abbreviation": "USA",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "SoFi Stadium",
-        "city": "Inglewood, California",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760470"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 29.8,
-          "draw": 24.9,
-          "team_b_win": 45.3
-        },
-        "inputs": {
-          "team_a_rating": 1610,
-          "team_b_rating": 1720,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760475",
-      "name": "挪威 对阵 法国",
-      "name_en": "France at Norway",
-      "short_name": "挪威 vs 法国",
-      "short_name_en": "FRA @ NOR",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-26T19:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "挪威",
-          "name_en": "Norway",
-          "abbreviation": "NOR",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "法国",
-          "name_en": "France",
-          "abbreviation": "FRA",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "Gillette Stadium",
-        "city": "Foxborough, Massachusetts",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760475"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 20.6,
-          "draw": 21.2,
-          "team_b_win": 58.2
-        },
-        "inputs": {
-          "team_a_rating": 1615,
-          "team_b_rating": 1885,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760474",
-      "name": "塞内加尔 对阵 伊拉克",
-      "name_en": "Iraq at Senegal",
-      "short_name": "塞内加尔 vs 伊拉克",
-      "short_name_en": "IRQ @ SEN",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-26T19:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "塞内加尔",
-          "name_en": "Senegal",
-          "abbreviation": "SEN",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "伊拉克",
-          "name_en": "Iraq",
-          "abbreviation": "IRQ",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/irq.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "BMO Field",
-        "city": "Toronto",
-        "country": "Canada"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760474"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 49.6,
-          "draw": 23.5,
-          "team_b_win": 26.9
-        },
-        "inputs": {
-          "team_a_rating": 1665,
-          "team_b_rating": 1505,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760478",
-      "name": "佛得角 对阵 沙特阿拉伯",
-      "name_en": "Saudi Arabia at Cape Verde",
-      "short_name": "佛得角 vs 沙特阿拉伯",
-      "short_name_en": "KSA @ CPV",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-27T00:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "佛得角",
-          "name_en": "Cape Verde",
-          "abbreviation": "CPV",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/cpv.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "沙特阿拉伯",
-          "name_en": "Saudi Arabia",
-          "abbreviation": "KSA",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ksa.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "NRG Stadium",
-        "city": "Houston, Texas",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760478"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 30.6,
-          "draw": 25.3,
-          "team_b_win": 44.1
-        },
-        "inputs": {
-          "team_a_rating": 1480,
-          "team_b_rating": 1575,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760479",
-      "name": "乌拉圭 对阵 西班牙",
-      "name_en": "Spain at Uruguay",
-      "short_name": "乌拉圭 vs 西班牙",
-      "short_name_en": "ESP @ URU",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-27T00:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "乌拉圭",
-          "name_en": "Uruguay",
-          "abbreviation": "URU",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "西班牙",
-          "name_en": "Spain",
-          "abbreviation": "ESP",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "Estadio Akron",
-        "city": "Guadalajara",
-        "country": "Mexico"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760479"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 31.2,
-          "draw": 25.7,
-          "team_b_win": 43.1
-        },
-        "inputs": {
-          "team_a_rating": 1770,
-          "team_b_rating": 1855,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760476",
-      "name": "埃及 对阵 伊朗",
-      "name_en": "Iran at Egypt",
-      "short_name": "埃及 vs 伊朗",
-      "short_name_en": "IRN @ EGY",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-27T03:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "埃及",
-          "name_en": "Egypt",
-          "abbreviation": "EGY",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "伊朗",
-          "name_en": "Iran",
-          "abbreviation": "IRN",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "Lumen Field",
-        "city": "Seattle, Washington",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760476"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 33.6,
-          "draw": 27.3,
-          "team_b_win": 39.1
-        },
-        "inputs": {
-          "team_a_rating": 1605,
-          "team_b_rating": 1645,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760477",
-      "name": "新西兰 对阵 比利时",
-      "name_en": "Belgium at New Zealand",
-      "short_name": "新西兰 vs 比利时",
-      "short_name_en": "BEL @ NZL",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-27T03:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "新西兰",
-          "name_en": "New Zealand",
-          "abbreviation": "NZL",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nzl.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "比利时",
-          "name_en": "Belgium",
-          "abbreviation": "BEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "BC Place",
-        "city": "Vancouver",
-        "country": "Canada"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760477"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 19.3,
-          "draw": 20.9,
-          "team_b_win": 59.8
-        },
-        "inputs": {
-          "team_a_rating": 1485,
-          "team_b_rating": 1780,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760480",
-      "name": "克罗地亚 对阵 加纳",
-      "name_en": "Ghana at Croatia",
-      "short_name": "克罗地亚 vs 加纳",
-      "short_name_en": "GHA @ CRO",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-27T21:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "克罗地亚",
-          "name_en": "Croatia",
-          "abbreviation": "CRO",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/cro.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "加纳",
-          "name_en": "Ghana",
-          "abbreviation": "GHA",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/gha.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "Lincoln Financial Field",
-        "city": "Philadelphia, Pennsylvania",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760480"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 52.9,
-          "draw": 22.6,
-          "team_b_win": 24.5
-        },
-        "inputs": {
-          "team_a_rating": 1750,
-          "team_b_rating": 1550,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760485",
-      "name": "巴拿马 对阵 英格兰",
-      "name_en": "England at Panama",
-      "short_name": "巴拿马 vs 英格兰",
-      "short_name_en": "ENG @ PAN",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-27T21:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "巴拿马",
-          "name_en": "Panama",
-          "abbreviation": "PAN",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/pan.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "英格兰",
-          "name_en": "England",
-          "abbreviation": "ENG",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "MetLife Stadium",
-        "city": "East Rutherford, New Jersey",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760485"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 16.3,
-          "draw": 20.1,
-          "team_b_win": 63.6
-        },
-        "inputs": {
-          "team_a_rating": 1490,
-          "team_b_rating": 1845,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760481",
-      "name": "哥伦比亚 对阵 葡萄牙",
-      "name_en": "Portugal at Colombia",
-      "short_name": "哥伦比亚 vs 葡萄牙",
-      "short_name_en": "POR @ COL",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-27T23:30:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "哥伦比亚",
-          "name_en": "Colombia",
-          "abbreviation": "COL",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "葡萄牙",
-          "name_en": "Portugal",
-          "abbreviation": "POR",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "Hard Rock Stadium",
-        "city": "Miami Gardens, Florida",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760481"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 32.8,
-          "draw": 26.7,
-          "team_b_win": 40.5
-        },
-        "inputs": {
-          "team_a_rating": 1760,
-          "team_b_rating": 1815,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760482",
-      "name": "刚果民主共和国 对阵 乌兹别克斯坦",
-      "name_en": "Uzbekistan at Congo DR",
-      "short_name": "刚果民主共和国 vs 乌兹别克斯坦",
-      "short_name_en": "UZB @ COD",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-27T23:30:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "刚果民主共和国",
-          "name_en": "Congo DR",
-          "abbreviation": "COD",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "乌兹别克斯坦",
-          "name_en": "Uzbekistan",
-          "abbreviation": "UZB",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "Mercedes-Benz Stadium",
-        "city": "Atlanta, Georgia",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760482"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 37.8,
-          "draw": 27.9,
-          "team_b_win": 34.3
-        },
-        "inputs": {
-          "team_a_rating": 1540,
-          "team_b_rating": 1515,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760484",
-      "name": "阿尔及利亚 对阵 奥地利",
-      "name_en": "Austria at Algeria",
-      "short_name": "阿尔及利亚 vs 奥地利",
-      "short_name_en": "AUT @ ALG",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-28T02:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "阿尔及利亚",
-          "name_en": "Algeria",
-          "abbreviation": "ALG",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/alg.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "奥地利",
-          "name_en": "Austria",
-          "abbreviation": "AUT",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/aut.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "GEHA Field at Arrowhead Stadium",
-        "city": "Kansas City, Missouri",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760484"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 31.7,
-          "draw": 26.0,
-          "team_b_win": 42.3
-        },
-        "inputs": {
-          "team_a_rating": 1585,
-          "team_b_rating": 1660,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760483",
-      "name": "约旦 对阵 阿根廷",
-      "name_en": "Argentina at Jordan",
-      "short_name": "约旦 vs 阿根廷",
-      "short_name_en": "ARG @ JOR",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-28T02:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "约旦",
-          "name_en": "Jordan",
-          "abbreviation": "JOR",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/jor.png",
-          "score": "0"
-        },
-        "team_b": {
-          "name": "阿根廷",
-          "name_en": "Argentina",
-          "abbreviation": "ARG",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "AT&T Stadium",
-        "city": "Arlington, Texas",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760483"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 14.3,
-          "draw": 19.6,
-          "team_b_win": 66.1
-        },
-        "inputs": {
-          "team_a_rating": 1495,
-          "team_b_rating": 1895,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
-    },
-    {
-      "id": "760486",
-      "name": "A组第二名 对阵 B组第二名",
-      "name_en": "Group B 2nd Place at Group A 2nd Place",
-      "short_name": "A组第二名 vs B组第二名",
-      "short_name_en": "2B @ 2A",
-      "competition": "FIFA World Cup",
-      "kickoff_utc": "2026-06-28T19:00:00Z",
-      "status": {
-        "state": "pre",
-        "detail": "Scheduled",
-        "completed": false
-      },
-      "teams": {
-        "team_a": {
-          "name": "A组第二名",
-          "name_en": "Group A 2nd Place",
-          "abbreviation": "2A",
-          "logo": null,
-          "score": "0"
-        },
-        "team_b": {
-          "name": "B组第二名",
-          "name_en": "Group B 2nd Place",
-          "abbreviation": "2B",
-          "logo": null,
-          "score": "0"
-        }
-      },
-      "venue": {
-        "name": "SoFi Stadium",
-        "city": "Inglewood, California",
-        "country": "USA"
-      },
-      "source": {
-        "name": "ESPN public scoreboard",
-        "event_url": "https://www.espn.com/soccer/match/_/gameId/760486"
-      },
-      "prediction": {
-        "model": "deterministic-strength-prior-v1",
-        "probabilities": {
-          "team_a_win": 35.5,
-          "draw": 29.0,
-          "team_b_win": 35.5
-        },
-        "inputs": {
-          "team_a_rating": 1540,
-          "team_b_rating": 1540,
-          "host_adjustment_points": 35
-        },
-        "note": "基于球队强度先验生成的编辑模型估计，不构成投注建议。"
-      }
+      "time": "2026-06-24T19:13:19Z",
+      "stage": "09:45 flash render HTML",
+      "status": "completed"
     }
-  ],
-  "disclaimer": "预测结果是针对已验证赛程的确定性编辑模型估计，不构成投注建议。"
+  ]
 }
