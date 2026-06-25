@@ -15,6 +15,7 @@ from typing import Any
 from urllib.error import HTTPError
 from urllib.parse import urlencode
 from urllib.request import Request, urlopen
+from zoneinfo import ZoneInfo
 
 
 ANALYSIS_MODEL = os.getenv("DEEPSEEK_ANALYSIS_MODEL", "deepseek-v4-pro")
@@ -22,6 +23,8 @@ RENDER_MODEL = os.getenv("DEEPSEEK_RENDER_MODEL", "deepseek-v4-flash")
 DEEPSEEK_BASE_URL = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com").rstrip("/")
 DEEPSEEK_API_KEY_ENV = "DEEPSEEK_API_KEY"
 TOKEN_COST_RATE = float(os.getenv("DEEPSEEK_TOKEN_COST_RATE", "0.00001"))
+SHANGHAI_TZ = ZoneInfo("Asia/Shanghai")
+MATCH_DAY_START_HOUR = 18
 
 FIFA_COMPETITION_ID = os.getenv("FIFA_COMPETITION_ID", "17")
 FIFA_SEASON_ID = os.getenv("FIFA_SEASON_ID", "285023")
@@ -146,6 +149,41 @@ def parse_date(value: str) -> dt.datetime:
     if value.endswith("Z"):
         value = value[:-1] + "+00:00"
     return dt.datetime.fromisoformat(value).astimezone(dt.timezone.utc)
+
+
+def to_shanghai(value: str | dt.datetime) -> dt.datetime:
+    if isinstance(value, str):
+        value = parse_date(value)
+    return value.astimezone(SHANGHAI_TZ)
+
+
+def cn_month_day(value: dt.date) -> str:
+    return f"{value.month}\u6708{value.day}\u65e5"
+
+
+def format_beijing_time(value: str | dt.datetime) -> str:
+    local = to_shanghai(value)
+    return f"\u5317\u4eac\u65f6\u95f4 {local:%m-%d %H:%M}"
+
+
+def match_day_start(local: dt.datetime) -> dt.datetime:
+    date = local.date()
+    if local.hour < MATCH_DAY_START_HOUR:
+        date -= dt.timedelta(days=1)
+    return dt.datetime.combine(date, dt.time(MATCH_DAY_START_HOUR), SHANGHAI_TZ)
+
+
+def match_day_info(value: str | dt.datetime) -> dict[str, str]:
+    local = to_shanghai(value)
+    start = match_day_start(local)
+    end = start + dt.timedelta(days=1)
+    return {
+        "date": start.date().isoformat(),
+        "title": f"{cn_month_day(start.date())}\u6bd4\u8d5b\u65e5",
+        "range": f"\u5317\u4eac\u65f6\u95f4 {start:%m-%d %H:%M} - {end:%m-%d %H:%M}",
+        "start_iso": start.isoformat(),
+        "end_iso": end.isoformat(),
+    }
 
 
 def normalize_team(name: str | None) -> str:
@@ -892,6 +930,8 @@ def render_messages(analysis_payload: dict[str, Any]) -> list[dict[str, str]]:
                 "Generate complete HTML for GitHub Pages. The page must visibly include: "
                 "match predictions, win/draw/loss probabilities, predicted score, xG, tactical matchup, "
                 "risk analysis, upset probability, injury information, odds comparison, token usage, and cost. "
+                "All visible match times must use Asia/Shanghai, never UTC. "
+                "Group matches by China match day, where each match day runs from 18:00 to next-day 18:00. "
                 "Use these exact placeholders inside the token panel: "
                 "{{INPUT_TOKENS}}, {{OUTPUT_TOKENS}}, {{TOTAL_TOKENS}}, {{COST_ESTIMATE}}. "
                 "Do not invent data. If source data says unknown or unavailable, display that clearly. "
@@ -931,6 +971,391 @@ def render_probability_line(probabilities: dict[str, Any] | None) -> str:
         f"\u5e73 {probabilities.get('draw', 0)}% / "
         f"\u5ba2\u80dc {probabilities.get('away_win', 0)}%"
     )
+
+
+def pct(value: Any) -> str:
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        number = 0.0
+    if number.is_integer():
+        return f"{int(number)}%"
+    return f"{number:.1f}%"
+
+
+def number_text(value: Any, digits: int = 2) -> str:
+    try:
+        return f"{float(value):.{digits}f}"
+    except (TypeError, ValueError):
+        return "0.00"
+
+
+def status_text(value: str | None) -> str:
+    mapping = {
+        "confirmed injury": "\u5b98\u65b9\u786e\u8ba4\u4f24\u505c",
+        "probable injury": "\u5a92\u4f53\u4f24\u505c\u7ebf\u7d22",
+        "unknown": "unknown",
+    }
+    return mapping.get(value or "unknown", value or "unknown")
+
+
+def confidence_text(value: str | None) -> str:
+    return {"low": "\u4f4e", "medium": "\u4e2d", "high": "\u9ad8"}.get(value or "", value or "unknown")
+
+
+def html_escape(value: Any) -> str:
+    return html.escape(str(value if value is not None else ""), quote=True)
+
+
+def flag_url(team: dict[str, Any]) -> str | None:
+    raw = team.get("logo")
+    if not raw:
+        return None
+    return str(raw).replace("{format}", "png").replace("{size}", "3")
+
+
+def team_visual(team: dict[str, Any], *, right: bool = False) -> str:
+    name = html_escape(team.get("name") or team.get("name_en") or "Unknown")
+    logo = flag_url(team)
+    if logo:
+        visual = f'<img class="team-logo" src="{html_escape(logo)}" alt="{name}">'
+    else:
+        initial = html_escape((team.get("abbreviation") or name or "?")[:3])
+        visual = f'<span class="team-initial">{initial}</span>'
+    if right:
+        return f'<div class="team right"><strong>{name}</strong>{visual}</div>'
+    return f'<div class="team">{visual}<strong>{name}</strong></div>'
+
+
+def enrich_matches_for_display(matches: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    enriched: list[dict[str, Any]] = []
+    for match in matches:
+        item = dict(match)
+        kickoff = item.get("kickoff_utc")
+        if kickoff:
+            local = to_shanghai(kickoff)
+            item["kickoff_beijing"] = local.isoformat()
+            item["kickoff_display"] = format_beijing_time(kickoff)
+            item["match_day"] = match_day_info(kickoff)
+        enriched.append(item)
+    enriched.sort(key=lambda item: item.get("kickoff_beijing") or "")
+    return enriched
+
+
+def group_matches_by_china_day(matches: list[dict[str, Any]]) -> list[tuple[dict[str, str], list[dict[str, Any]]]]:
+    groups: dict[str, tuple[dict[str, str], list[dict[str, Any]]]] = {}
+    for match in matches:
+        info = match.get("match_day") or match_day_info(match.get("kickoff_utc"))
+        key = info["date"]
+        if key not in groups:
+            groups[key] = (info, [])
+        groups[key][1].append(match)
+    ordered = []
+    for key in sorted(groups):
+        info, items = groups[key]
+        items.sort(key=lambda item: item.get("kickoff_beijing") or "")
+        ordered.append((info, items))
+    return ordered
+
+
+def venue_text(match: dict[str, Any]) -> str:
+    venue = match.get("venue") or {}
+    parts = [venue.get("name"), venue.get("city"), venue.get("country")]
+    return " - ".join(str(part) for part in parts if part)
+
+
+def source_link(match: dict[str, Any]) -> str:
+    sources = match.get("sources") or {}
+    espn = sources.get("espn") or {}
+    fifa = sources.get("fifa") or {}
+    return str(espn.get("event_url") or fifa.get("url") or "#")
+
+
+def probability_rows(match: dict[str, Any]) -> str:
+    teams = match.get("teams") or {}
+    home = teams.get("home") or {}
+    away = teams.get("away") or {}
+    probs = match.get("win_draw_loss") or {}
+    rows = [
+        (f"{home.get('name', '主队')} 胜", probs.get("home_win", 0)),
+        ("平局", probs.get("draw", 0)),
+        (f"{away.get('name', '客队')} 胜", probs.get("away_win", 0)),
+    ]
+    return "\n".join(
+        (
+            '<div class="prob-row">'
+            f"<span>{html_escape(label)}</span>"
+            f'<div class="prob-track" aria-hidden="true"><span style="width: {html_escape(value)}%"></span></div>'
+            f"<strong>{pct(value)}</strong>"
+            "</div>"
+        )
+        for label, value in rows
+    )
+
+
+def injury_summary(match: dict[str, Any]) -> str:
+    injuries = match.get("injuries") or {}
+    home = injuries.get("home") or {}
+    away = injuries.get("away") or {}
+    return (
+        f"\u4e3b\u961f: {status_text(home.get('status'))}; "
+        f"\u5ba2\u961f: {status_text(away.get('status'))}"
+    )
+
+
+def odds_summary(match: dict[str, Any]) -> str:
+    odds = match.get("odds") or {}
+    if not odds.get("available"):
+        return "\u771f\u5b9e\u8d54\u7387\u6e90\u672a\u63d0\u4f9b moneyline\uff0c\u663e\u793a unavailable\u3002"
+    market = render_probability_line(odds.get("normalized_probability"))
+    details = odds.get("details") or odds.get("provider") or "ESPN odds feed"
+    comparison = match.get("odds_comparison") or {}
+    deviation = comparison.get("deviation_analysis") or ""
+    return f"{details}: {market}. {deviation}".strip()
+
+
+def compact_note(value: Any) -> str:
+    if isinstance(value, dict):
+        return " ".join(str(part) for part in value.values() if part)
+    return str(value or "")
+
+
+def match_card(match: dict[str, Any]) -> str:
+    teams = match.get("teams") or {}
+    home = teams.get("home") or {}
+    away = teams.get("away") or {}
+    score = match.get("predicted_score") or {}
+    xg = match.get("xg_prediction") or {}
+    confidence = confidence_text(match.get("confidence"))
+    kickoff_display = match.get("kickoff_display") or format_beijing_time(match.get("kickoff_utc"))
+    kickoff_iso = html_escape(match.get("kickoff_beijing") or "")
+    tactical = match.get("tactical_matchup") or match.get("tactical_analysis") or ""
+    risk = match.get("risk_analysis") or ""
+    injury_adjustment = compact_note(match.get("injury_adjustment"))
+    upset = match.get("upset_probability", 0)
+    venue = venue_text(match)
+    source = source_link(match)
+    return f"""
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="{kickoff_iso}">{html_escape(kickoff_display)}</time>
+          <span>信心: {html_escape(confidence)}</span>
+        </div>
+        <div class="teams">
+          {team_visual(home)}
+          <div class="score">{html_escape(score.get("home", 0))} : {html_escape(score.get("away", 0))}</div>
+          {team_visual(away, right=True)}
+        </div>
+        <div class="mini-stats">
+          <span>xG {html_escape(home.get("name", "主队"))} {number_text(xg.get("home"))}</span>
+          <span>xG {html_escape(away.get("name", "客队"))} {number_text(xg.get("away"))}</span>
+          <span>爆冷概率 {pct(upset)}</span>
+        </div>
+        <div class="probabilities">
+          {probability_rows(match)}
+        </div>
+        <div class="insight-grid">
+          <section><h3>战术分析</h3><p>{html_escape(tactical)}</p></section>
+          <section><h3>风险分析</h3><p>{html_escape(risk)}</p></section>
+          <section><h3>伤停信息</h3><p>{html_escape(injury_summary(match))}</p><p class="muted compact">{html_escape(injury_adjustment)}</p></section>
+          <section><h3>赔率对比</h3><p>{html_escape(odds_summary(match))}</p></section>
+        </div>
+        <div class="match-footer">
+          <span>{html_escape(venue)}</span>
+          <a href="{html_escape(source)}" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    """
+
+
+def build_legacy_agent_html(payload: dict[str, Any]) -> str:
+    matches = payload.get("matches") or []
+    usage = payload.get("usage") or zero_usage()
+    generated_display = format_beijing_time(payload.get("generated_at", iso_utc(utc_now())))
+    groups = group_matches_by_china_day(matches)
+    group_sections = []
+    for info, items in groups:
+        cards = "\n".join(match_card(match) for match in items)
+        group_sections.append(
+            f"""
+    <section class="match-day" data-match-day="{html_escape(info['date'])}">
+      <div class="section-head">
+        <div>
+          <h2>{html_escape(info['title'])}</h2>
+          <p class="muted compact">{html_escape(info['range'])}，按北京时间升序排列</p>
+        </div>
+        <div class="source-links"><a href="latest.json">原始 JSON</a></div>
+      </div>
+      <section class="grid">{cards}</section>
+    </section>
+            """
+        )
+    if not group_sections:
+        group_sections.append('<div class="empty">今日无双源验证的世界杯比赛。</div>')
+    return f"""<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日 FIFA 世界杯预测</title>
+  <style>
+    :root {{
+      color-scheme: light;
+      --ink: #17201d;
+      --muted: #60706a;
+      --line: #d8e0dc;
+      --paper: #f7faf8;
+      --panel: #ffffff;
+      --accent: #147a4a;
+      --accent-2: #c83f31;
+      --accent-3: #1c6aa7;
+    }}
+    * {{ box-sizing: border-box; }}
+    body {{
+      margin: 0;
+      font-family: Inter, "Microsoft YaHei", "PingFang SC", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      letter-spacing: 0;
+    }}
+    header {{ border-bottom: 1px solid var(--line); background: var(--panel); }}
+    .wrap {{ width: min(1120px, calc(100% - 32px)); margin: 0 auto; }}
+    .topbar {{
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      padding: 30px 0 24px;
+    }}
+    h1 {{ margin: 0 0 8px; font-size: clamp(28px, 4vw, 48px); line-height: 1.02; font-weight: 800; }}
+    .subtitle {{ margin: 0; color: var(--muted); max-width: 800px; line-height: 1.5; }}
+    .status-pill {{
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f1f6f3;
+      color: var(--accent);
+      font-weight: 700;
+      white-space: nowrap;
+    }}
+    .stats {{ display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; padding: 18px 0 26px; }}
+    .stat {{ border: 1px solid var(--line); border-radius: 8px; background: var(--panel); padding: 14px 16px; min-height: 86px; }}
+    .stat span {{ display: block; color: var(--muted); font-size: 13px; margin-bottom: 8px; }}
+    .stat strong {{ display: block; font-size: 20px; line-height: 1.25; overflow-wrap: anywhere; }}
+    main {{ padding: 24px 0 42px; }}
+    .notice {{
+      border: 1px solid #e3c7bd;
+      border-left: 4px solid var(--accent-2);
+      border-radius: 8px;
+      background: #fff8f5;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+    }}
+    .notice h2 {{ margin: 0 0 8px; font-size: 18px; }}
+    .notice p {{ margin: 0; color: var(--muted); line-height: 1.55; }}
+    .match-day {{ margin-top: 24px; }}
+    .section-head {{ display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 14px; }}
+    .section-head h2 {{ margin: 0 0 4px; font-size: 22px; }}
+    .source-links {{ display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }}
+    a {{ color: var(--accent-3); text-decoration: none; font-weight: 650; }}
+    a:hover {{ text-decoration: underline; }}
+    .grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 16px; }}
+    .match-card {{
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 16px;
+      min-height: 292px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }}
+    .match-meta, .match-footer {{ display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 13px; }}
+    .match-footer {{ border-top: 1px solid var(--line); padding-top: 12px; margin-top: auto; }}
+    .teams {{ display: grid; grid-template-columns: minmax(0, 1fr) 66px minmax(0, 1fr); align-items: center; gap: 10px; }}
+    .team {{ display: flex; align-items: center; gap: 10px; min-width: 0; }}
+    .team.right {{ justify-content: flex-end; text-align: right; }}
+    .team strong {{ font-size: 17px; line-height: 1.25; overflow-wrap: anywhere; }}
+    .team-logo, .team-initial {{
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: #edf3ef;
+      object-fit: contain;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+    }}
+    .score {{ min-width: 66px; text-align: center; font-weight: 800; color: var(--ink); }}
+    .mini-stats {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }}
+    .mini-stats span {{ border: 1px solid var(--line); border-radius: 8px; padding: 8px; background: #f8fbf9; font-size: 12px; color: var(--muted); }}
+    .probabilities {{ display: grid; gap: 10px; }}
+    .prob-row {{ display: grid; grid-template-columns: minmax(92px, 1fr) minmax(92px, 1.4fr) 56px; gap: 10px; align-items: center; font-size: 13px; }}
+    .prob-row span:first-child {{ overflow-wrap: anywhere; }}
+    .prob-track {{ height: 10px; border-radius: 999px; background: #e9efec; overflow: hidden; }}
+    .prob-track span {{ display: block; height: 100%; background: var(--accent); }}
+    .prob-row:nth-child(2) .prob-track span {{ background: var(--accent-3); }}
+    .prob-row:nth-child(3) .prob-track span {{ background: var(--accent-2); }}
+    .insight-grid {{ display: grid; grid-template-columns: 1fr; gap: 10px; }}
+    .insight-grid section {{ border-top: 1px solid var(--line); padding-top: 10px; }}
+    .insight-grid h3 {{ margin: 0 0 6px; font-size: 14px; }}
+    .insight-grid p {{ margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }}
+    .empty {{ border: 1px dashed var(--line); border-radius: 8px; background: var(--panel); padding: 24px; color: var(--muted); }}
+    .muted {{ color: var(--muted); }}
+    .compact {{ margin: 0; }}
+    footer {{ border-top: 1px solid var(--line); color: var(--muted); padding: 22px 0 30px; background: var(--panel); font-size: 13px; }}
+    @media (max-width: 760px) {{
+      .topbar, .stats {{ grid-template-columns: 1fr; }}
+      .status-pill {{ justify-content: center; width: 100%; }}
+      .section-head {{ display: block; }}
+      .source-links {{ justify-content: flex-start; margin-top: 10px; }}
+      .teams {{ grid-template-columns: 1fr; }}
+      .score {{ min-width: 0; text-align: left; }}
+      .team.right {{ justify-content: flex-start; text-align: left; }}
+      .mini-stats {{ grid-template-columns: 1fr; }}
+      .prob-row {{ grid-template-columns: 1fr 52px; }}
+      .prob-track {{ grid-column: 1 / -1; grid-row: 2; }}
+    }}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <div>
+          <h1>每日 FIFA 世界杯预测</h1>
+          <p class="subtitle">V3 Agent 自动抓取 FIFA 官方赛程，并用 ESPN 完成第二来源校验、赔率读取和媒体伤停扫描；分析由 deepseek-v4-pro 完成，页面由 deepseek-v4-flash 生成流程驱动。</p>
+        </div>
+        <span class="status-pill">V3 Agent 已就绪</span>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>生成时间</span><strong>{html_escape(generated_display)}</strong></div>
+        <div class="stat"><span>已验证比赛</span><strong>{len(matches)}</strong></div>
+        <div class="stat"><span>Token</span><strong>{usage.get("total_tokens", 0)}</strong></div>
+        <div class="stat"><span>Cost</span><strong>{float(usage.get("cost_estimate", 0)):.6f}</strong></div>
+      </div>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="notice">
+      <h2>中国时间比赛日规则</h2>
+      <p>所有开球时间均显示为北京时间。每个比赛日按北京时间 18:00 到次日 18:00 分块；例如 6月26日 01:00 开球会归入 6月25日比赛日。</p>
+    </section>
+    {''.join(group_sections)}
+  </main>
+  <footer>
+    <div class="wrap">分析模型: {ANALYSIS_MODEL} · 生成模型: {RENDER_MODEL} · Input tokens {usage.get("input_tokens", 0)} · Output tokens {usage.get("output_tokens", 0)} · Total tokens {usage.get("total_tokens", 0)} · Cost {float(usage.get("cost_estimate", 0)):.6f}</div>
+  </footer>
+</body>
+</html>
+"""
 
 
 def append_agent_panels(page: str, payload: dict[str, Any]) -> str:
@@ -994,16 +1419,18 @@ def run_render(analysis_path: Path = ANALYSIS_PATH, output: Path = RENDER_PATH, 
         render_messages(analysis_payload),
         json_object=False,
     )
+    flash_draft = extract_html(content)
     analysis_usage = analysis_payload.get("usage") or zero_usage()
     total_usage = combine_usage(analysis_usage, render_usage)
-    page = inject_usage(extract_html(content), total_usage)
+    matches = enrich_matches_for_display(analysis_payload.get("matches", []))
     payload = {
         "schema_version": 3,
         "stage": "render",
         "generated_at": iso_utc(utc_now()),
         "analysis": analysis_payload.get("analysis", {}),
-        "matches": analysis_payload.get("matches", []),
-        "render": page,
+        "matches": matches,
+        "render": "",
+        "render_draft_sha": stable_id(flash_draft),
         "usage": total_usage,
         "usage_breakdown": {"analysis": analysis_usage, "render": render_usage},
         "analysis_model": ANALYSIS_MODEL,
@@ -1016,7 +1443,7 @@ def run_render(analysis_path: Path = ANALYSIS_PATH, output: Path = RENDER_PATH, 
             {"time": iso_utc(utc_now()), "stage": "09:00 deepseek-v4-flash HTML generation", "status": "completed"},
         ],
     }
-    payload["render"] = append_agent_panels(payload["render"], payload)
+    payload["render"] = inject_usage(build_legacy_agent_html(payload), total_usage)
     write_json(output, payload)
     docs_dir.mkdir(parents=True, exist_ok=True)
     (docs_dir / "index.html").write_text(payload["render"], encoding="utf-8")
@@ -1026,11 +1453,15 @@ def run_render(analysis_path: Path = ANALYSIS_PATH, output: Path = RENDER_PATH, 
 
 def run_finalize(render_path: Path = RENDER_PATH, latest_path: Path = LATEST_PATH, docs_dir: Path = DOCS_DIR) -> dict[str, Any]:
     render_payload = read_json(render_path)
+    matches = enrich_matches_for_display(render_payload.get("matches", []))
+    render_payload["matches"] = matches
+    if render_payload.get("render"):
+        render_payload["render"] = build_legacy_agent_html(render_payload)
     payload = {
         "schema_version": 3,
         "stage": "latest",
         "generated_at": iso_utc(utc_now()),
-        "matches": render_payload.get("matches", []),
+        "matches": matches,
         "analysis_model": ANALYSIS_MODEL,
         "render_model": RENDER_MODEL,
         "usage": render_payload.get("usage") or zero_usage(),

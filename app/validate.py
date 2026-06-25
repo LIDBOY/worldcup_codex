@@ -106,6 +106,11 @@ def validate(data: dict[str, Any]) -> tuple[bool, list[str]]:
         for fragment in ("Token", "Cost", "\u98ce\u9669", "\u4f24\u505c", "\u8d54\u7387"):
             if fragment not in render:
                 errors.append(f"render must visibly include {fragment}")
+        for fragment in ("\u5317\u4eac\u65f6\u95f4", "\u6bd4\u8d5b\u65e5", "18:00"):
+            if fragment not in render:
+                errors.append(f"render must visibly include China match-day fragment {fragment}")
+        if "UTC" in render or "Z</time>" in render:
+            errors.append("render must not visibly display UTC time")
 
     return not errors, errors
 
