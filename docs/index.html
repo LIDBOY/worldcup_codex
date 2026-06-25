@@ -3,788 +3,971 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 世界杯智能预测系统 · 深度分析面板</title>
+    <title>2026 世界杯预测分析</title>
     <style>
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #16213e;
+            --accent: #e94560;
+            --accent2: #0f3460;
+            --gold: #f5c518;
+            --green: #2ecc71;
+            --yellow: #f39c12;
+            --red: #e74c3c;
+            --blue: #3498db;
+            --gray: #7f8c8d;
+            --light-gray: #ecf0f1;
+            --card-bg: #1e2a3a;
+            --text: #f0f0f0;
+            --text-muted: #a0aab4;
+            --border-radius: 12px;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
-            background: #0b0e14;
-            font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, -apple-system, sans-serif;
-            color: #e8edf5;
-            padding: 24px 20px 40px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans SC', sans-serif;
+            background: var(--primary);
+            color: var(--text);
+            line-height: 1.6;
             min-height: 100vh;
         }
+
         .container {
-            max-width: 1480px;
+            max-width: 1400px;
             margin: 0 auto;
+            padding: 16px;
         }
 
-        /* header */
+        /* Header */
         .header {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 32px;
-            border-bottom: 1px solid #2a3346;
-            padding-bottom: 20px;
+            background: linear-gradient(135deg, var(--secondary), var(--accent2));
+            padding: 24px 28px;
+            border-radius: var(--border-radius);
+            margin-bottom: 24px;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
+
         .header h1 {
-            font-size: 1.9rem;
+            font-size: 1.8rem;
             font-weight: 700;
-            background: linear-gradient(135deg, #f0c27f, #fc5c7d);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: 1px;
-        }
-        .header .sub {
-            color: #8899bb;
-            font-size: 0.95rem;
+            color: #fff;
             display: flex;
             align-items: center;
             gap: 12px;
             flex-wrap: wrap;
         }
-        .header .sub span {
-            background: #1e2638;
-            padding: 6px 14px;
-            border-radius: 30px;
-            font-size: 0.8rem;
-            color: #b8c7e0;
-        }
-        .badge {
-            display: inline-block;
-            background: #2a3346;
-            padding: 4px 16px;
-            border-radius: 40px;
-            font-size: 0.7rem;
-            color: #b0c4de;
-            border: 1px solid #3d4a66;
+
+        .header h1 small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--gold);
+            background: rgba(245, 197, 24, 0.15);
+            padding: 2px 14px;
+            border-radius: 20px;
         }
 
-        /* Token panel */
-        .token-panel {
-            background: #141c2b;
-            border-radius: 24px;
-            padding: 22px 30px;
-            margin-bottom: 32px;
-            border: 1px solid #2a3346;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+        .header .subtitle {
+            margin-top: 8px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
             display: flex;
             flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .header .subtitle span {
+            display: inline-flex;
             align-items: center;
-            justify-content: space-between;
-        }
-        .token-panel .title-section {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-        .token-panel .title-section h2 {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #ccddfa;
-        }
-        .token-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px 36px;
-            align-items: center;
-        }
-        .token-item {
-            display: flex;
-            align-items: baseline;
             gap: 6px;
         }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .badge-high {
+            background: rgba(46, 204, 113, 0.2);
+            color: #2ecc71;
+        }
+        .badge-medium {
+            background: rgba(243, 156, 18, 0.2);
+            color: #f39c12;
+        }
+        .badge-low {
+            background: rgba(231, 76, 60, 0.2);
+            color: #e74c3c;
+        }
+
+        /* Summary */
+        .summary-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: var(--shadow);
+        }
+
+        .summary-card h2 {
+            font-size: 1.2rem;
+            color: var(--gold);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .summary-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* Token & Cost Panel */
+        .token-panel {
+            background: linear-gradient(135deg, #0d1b2a, #1b2838);
+            border-radius: var(--border-radius);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(245, 197, 24, 0.15);
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 16px;
+        }
+
+        .token-item {
+            text-align: center;
+            padding: 12px 8px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
         .token-item .label {
             font-size: 0.8rem;
-            color: #7a8aa8;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
         }
+
         .token-item .value {
-            font-weight: 600;
-            font-size: 1.15rem;
-            color: #f0e6c5;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #fff;
             font-variant-numeric: tabular-nums;
         }
-        .token-item .value.highlight {
-            color: #ffd700;
+
+        .token-item .value.gold {
+            color: var(--gold);
         }
-        .cost-badge {
-            background: #1f2b3f;
-            padding: 8px 22px;
-            border-radius: 60px;
-            border-left: 3px solid #fcb045;
-            font-weight: 500;
+        .token-item .value.green {
+            color: var(--green);
         }
-        .cost-badge .cost-value {
-            color: #fcd77a;
+        .token-item .value.blue {
+            color: var(--blue);
+        }
+        .token-item .value.accent {
+            color: var(--accent);
+        }
+
+        /* Risk Overview */
+        .risk-overview {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: var(--shadow);
+        }
+
+        .risk-overview h3 {
             font-size: 1.1rem;
+            color: var(--yellow);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        /* summary */
-        .summary-card {
-            background: #101826;
-            border-radius: 20px;
-            padding: 22px 28px;
-            margin-bottom: 30px;
-            border-left: 4px solid #f0c27f;
-            line-height: 1.7;
-            color: #c8d6f0;
-            font-size: 0.98rem;
-        }
-        .summary-card strong {
-            color: #f0d89f;
+        .risk-overview p {
+            color: var(--text-muted);
+            font-size: 0.93rem;
         }
 
-        /* match grid */
+        .data-quality {
+            margin-top: 12px;
+            padding: 10px 14px;
+            background: rgba(52, 152, 219, 0.08);
+            border-radius: 8px;
+            border-left: 3px solid var(--blue);
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        .data-quality strong {
+            color: var(--blue);
+        }
+
+        /* Match Grid */
         .match-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-            gap: 24px;
-            margin-bottom: 40px;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 32px;
         }
+
+        @media (min-width: 640px) {
+            .match-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .match-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .match-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
         .match-card {
-            background: #131b2b;
-            border-radius: 20px;
-            padding: 20px 20px 22px;
-            border: 1px solid #253040;
-            transition: all 0.25s;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
             display: flex;
             flex-direction: column;
         }
+
         .match-card:hover {
-            border-color: #4a6080;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
         }
+
         .match-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-            font-size: 0.8rem;
-            color: #8a9fc0;
-            border-bottom: 1px solid #1f2a3c;
-            padding-bottom: 10px;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            gap: 8px;
         }
-        .match-header .date {
-            background: #1e283e;
-            padding: 2px 12px;
-            border-radius: 30px;
-            font-size: 0.7rem;
+
+        .match-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            line-height: 1.3;
         }
-        .match-teams {
+
+        .match-time {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 10px;
+            border-radius: 12px;
+        }
+
+        .teams-row {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             margin-bottom: 14px;
+            gap: 8px;
         }
+
         .team {
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4px;
-            width: 38%;
+            flex: 1;
+            text-align: center;
         }
+
         .team .name {
-            font-weight: 600;
-            font-size: 1rem;
-            text-align: center;
-            line-height: 1.3;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text);
+            margin-top: 4px;
+            line-height: 1.2;
         }
-        .team .name small {
-            font-weight: 400;
-            opacity: 0.6;
-            font-size: 0.65rem;
-            display: block;
+
+        .team .score-pred {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1;
+            margin-top: 2px;
         }
-        .team .logo {
-            width: 40px;
-            height: 40px;
-            object-fit: contain;
-            border-radius: 50%;
-            background: #1c263a;
-            padding: 4px;
-        }
+
         .vs {
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: #5d7da0;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 600;
+            padding: 0 4px;
         }
-        .score-pred {
-            background: #1a2438;
-            border-radius: 60px;
-            padding: 6px 18px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: #ffd966;
-            text-align: center;
-            margin: 4px 0 12px;
-            align-self: center;
+
+        .score-colon {
+            font-size: 1.4rem;
+            color: var(--text-muted);
+            font-weight: 300;
         }
-        .prob-bar-wrapper {
-            display: flex;
-            gap: 4px;
-            height: 6px;
-            border-radius: 20px;
-            overflow: hidden;
-            background: #1f2a3c;
-            margin: 6px 0 12px;
+
+        /* Win/Draw/Loss bars */
+        .prob-section {
+            margin-bottom: 14px;
         }
-        .prob-bar-wrapper .bar-home {
-            background: #3b82f6;
-            height: 100%;
-            border-radius: 20px 0 0 20px;
-        }
-        .prob-bar-wrapper .bar-draw {
-            background: #8b8fa3;
-            height: 100%;
-        }
-        .prob-bar-wrapper .bar-away {
-            background: #a855f7;
-            height: 100%;
-            border-radius: 0 20px 20px 0;
-        }
-        .prob-labels {
+
+        .prob-section .prob-label {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
             display: flex;
             justify-content: space-between;
-            font-size: 0.7rem;
-            color: #95aacf;
-            margin-bottom: 8px;
         }
-        .prob-labels span b {
-            color: #d6e2ff;
+
+        .prob-bar-container {
+            display: flex;
+            height: 8px;
+            border-radius: 6px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .prob-bar {
+            height: 100%;
+            transition: width 0.4s ease;
+        }
+
+        .prob-bar.home {
+            background: var(--green);
+        }
+        .prob-bar.draw {
+            background: var(--yellow);
+        }
+        .prob-bar.away {
+            background: var(--red);
+        }
+
+        .prob-values {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.72rem;
+            margin-top: 4px;
+            color: var(--text-muted);
+        }
+
+        .prob-values .home-v {
+            color: var(--green);
+        }
+        .prob-values .draw-v {
+            color: var(--yellow);
+        }
+        .prob-values .away-v {
+            color: var(--red);
+        }
+
+        /* Tactical & Risk */
+        .detail-section {
+            margin-bottom: 10px;
+            flex: 1;
+        }
+
+        .detail-section .detail-title {
+            font-size: 0.75rem;
             font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            margin-bottom: 4px;
         }
-        .tactical {
-            font-size: 0.8rem;
-            color: #b0c2dd;
-            background: #0e1522;
-            padding: 10px 12px;
-            border-radius: 14px;
-            margin: 8px 0 6px;
+
+        .detail-section p {
+            font-size: 0.82rem;
+            color: var(--text);
             line-height: 1.5;
-            border-left: 2px solid #3d5a80;
         }
-        .risk-tag {
-            display: inline-flex;
+
+        .detail-section .risk-text {
+            color: var(--yellow);
+        }
+
+        .match-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .match-footer .confidence {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            display: flex;
             align-items: center;
             gap: 6px;
-            font-size: 0.75rem;
-            padding: 4px 14px 4px 10px;
-            border-radius: 30px;
-            background: #1f2a3c;
-            margin-top: 6px;
-            width: fit-content;
         }
-        .risk-tag .dot {
-            width: 8px;
-            height: 8px;
+
+        /* Legend */
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 20px;
+            padding: 12px 16px;
+            background: var(--card-bg);
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend-dot {
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             display: inline-block;
         }
-        .risk-tag .dot.low {
-            background: #4ade80;
+
+        .legend-dot.home {
+            background: var(--green);
         }
-        .risk-tag .dot.medium {
-            background: #fbbf24;
+        .legend-dot.draw {
+            background: var(--yellow);
         }
-        .risk-tag .dot.high {
-            background: #f87171;
-        }
-        .confidence-badge {
-            margin-left: auto;
-            font-size: 0.65rem;
-            background: #1e2a40;
-            padding: 2px 12px;
-            border-radius: 30px;
-            color: #b8cae5;
-            border: 1px solid #2f405a;
+        .legend-dot.away {
+            background: var(--red);
         }
 
-        /* risk overview */
-        .risk-overview {
-            background: #101826;
-            border-radius: 20px;
-            padding: 22px 28px;
-            margin: 20px 0 30px;
-            border-right: 4px solid #fbbf24;
-            color: #c8d6f0;
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-        .risk-overview strong {
-            color: #fcd34d;
-        }
-
-        /* footer */
+        /* Footer */
         .footer {
             text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #1f2a3c;
-            color: #5e7395;
-            font-size: 0.75rem;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px 30px;
-        }
-        .footer .model {
-            color: #8899bb;
+            padding: 20px 0;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 8px;
         }
 
-        /* responsive */
-        @media (max-width: 640px) {
-            body {
-                padding: 16px 12px;
-            }
+        .footer a {
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        /* Confidence badge inline */
+        .conf-badge {
+            display: inline-block;
+            padding: 1px 10px;
+            border-radius: 10px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .conf-badge.high {
+            background: rgba(46, 204, 113, 0.15);
+            color: #2ecc71;
+        }
+        .conf-badge.medium {
+            background: rgba(243, 156, 18, 0.15);
+            color: #f39c12;
+        }
+        .conf-badge.low {
+            background: rgba(231, 76, 60, 0.15);
+            color: #e74c3c;
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 480px) {
             .header h1 {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
             .token-panel {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 14px;
-                padding: 18px 18px;
-            }
-            .token-grid {
-                gap: 12px 20px;
-                justify-content: space-between;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                padding: 16px;
             }
             .token-item .value {
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
-            .match-grid {
-                grid-template-columns: 1fr;
-                gap: 18px;
+            .match-card {
+                padding: 16px;
             }
-            .match-teams .team .name {
-                font-size: 0.85rem;
+            .team .score-pred {
+                font-size: 1.4rem;
             }
-            .team .logo {
-                width: 32px;
-                height: 32px;
-            }
-            .summary-card,
-            .risk-overview {
-                padding: 18px 16px;
-            }
-            .cost-badge {
-                padding: 6px 16px;
-                font-size: 0.85rem;
+            .container {
+                padding: 10px;
             }
         }
 
-        /* tooltip / extra */
-        .data-quality-note {
-            background: #0f1624;
-            padding: 14px 20px;
-            border-radius: 16px;
-            margin: 10px 0 0;
-            font-size: 0.8rem;
-            color: #7d8fae;
-            border: 1px solid #202b3e;
-        }
-        .fixture-count {
-            color: #88a0c8;
+        /* Scrollable token values for placeholders */
+        .placeholder-highlight {
+            background: rgba(245, 197, 24, 0.08);
+            border-radius: 4px;
+            padding: 0 4px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
         }
 
-        /* fix for empty logos */
-        .team .logo[src=""],
-        .team .logo:not([src]) {
-            display: none;
-        }
-        .team .logo-placeholder {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #1d293f;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.7rem;
-            color: #5c7192;
+        /* loading shimmer for placeholders (just visual) */
+        .placeholder-highlight {
+            color: var(--gold);
         }
     </style>
 </head>
 <body>
     <div class="container">
 
-        <!-- header -->
-        <div class="header">
-            <div>
-                <h1>⚽ 世界杯 · 预测中心</h1>
-                <div class="sub" style="margin-top:6px;">
-                    <span>2026 · 小组赛 &amp; 淘汰赛首轮</span>
-                    <span class="badge">25 场比赛</span>
-                    <span class="badge">分析版 v2</span>
-                </div>
+        <!-- Header -->
+        <header class="header">
+            <h1>
+                ⚽ 2026 世界杯 · 预测分析
+                <small>6月25日–30日</small>
+            </h1>
+            <div class="subtitle">
+                <span>📅 生成时间: 2026-06-25 02:32 UTC</span>
+                <span>🧠 模型: deepseek-v4-pro</span>
+                <span>🏟️ 共 22 场预测</span>
             </div>
-            <div class="sub">
-                <span>📅 生成于 2026-06-24 17:56 UTC</span>
-                <span>🔍 数据源: ESPN</span>
-            </div>
-        </div>
+        </header>
 
-        <!-- token usage panel -->
-        <div class="token-panel">
-            <div class="title-section">
-                <h2>🧠 模型用量</h2>
-                <span class="badge" style="background:#26334d;">deepseek-v4-pro</span>
-            </div>
-            <div class="token-grid">
-                <div class="token-item">
-                    <span class="label">输入</span>
-                    <span class="value">19518</span>
-                </div>
-                <div class="token-item">
-                    <span class="label">输出</span>
-                    <span class="value">23383</span>
-                </div>
-                <div class="token-item">
-                    <span class="label">总计</span>
-                    <span class="value highlight">42901</span>
-                </div>
-                <div class="cost-badge">
-                    💰 预估成本 <span class="cost-value">0.429010</span> USD
-                </div>
-            </div>
-        </div>
-
-        <!-- summary -->
+        <!-- Summary -->
         <div class="summary-card">
-            <strong>📋 预测摘要</strong><br>
-            2026年世界杯小组赛及淘汰赛首轮预测。涵盖6月24日至28日共25场比赛，包括多场实力悬殊对决与几场势均力敌的较量。传统强队如巴西、阿根廷、法国、英格兰等被看好取胜，而部分中游球队对决则可能出现平局。淘汰赛首场因参赛球队尚未确定，预测难度较大。
+            <h2>📊 总览</h2>
+            <p>2026年6月25日至30日共22场世界杯比赛预测分析。基于球队历史表现和当前实力评估，包含小组赛和部分淘汰赛。淘汰赛阶段部分对手未定，预测不确定性较高。</p>
         </div>
 
-        <!-- match predictions grid -->
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:6px;">
-            <h2 style="font-size:1.3rem;font-weight:500;color:#d0def5;">📊 今日及未来比赛预测</h2>
-            <span class="fixture-count">共 25 场 · 滚动更新</span>
-        </div>
-
-        <div class="match-grid">
-            <!-- 波黑 vs 卡塔尔 -->
-            <div class="match-card">
-                <div class="match-header">
-                    <span>🏟️ 波黑 vs 卡塔尔</span>
-                    <span class="date">06-24 19:00</span>
-                </div>
-                <div class="match-teams">
-                    <div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/bih.png" alt="波黑" onerror="this.style.display='none'"><span class="name">波黑</span></div>
-                    <span class="vs">vs</span>
-                    <div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/qat.png" alt="卡塔尔" onerror="this.style.display='none'"><span class="name">卡塔尔</span></div>
-                </div>
-                <div class="score-pred">1 : 0</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>45%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>25%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:45%"></div><div class="bar-draw" style="width:30%"></div><div class="bar-away" style="width:25%"></div></div>
-                <div class="tactical">波黑身体对抗能力强，主场优势明显；卡塔尔技术流但世界杯经验不足，可能难以破密集防守。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;">
-                    <span class="risk-tag"><span class="dot medium"></span> 风险: 卡塔尔具备反击能力，若波黑久攻不下可能被偷袭得手。</span>
-                    <span class="confidence-badge">信心: 中</span>
-                </div>
+        <!-- Token & Cost Panel -->
+        <div class="token-panel">
+            <div class="token-item">
+                <div class="label">🔤 输入 Token</div>
+                <div class="value blue">17378</div>
             </div>
-
-            <!-- 瑞士 vs 加拿大 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 瑞士 vs 加拿大</span><span class="date">06-24 19:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/sui.png" alt="瑞士"><span class="name">瑞士</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/can.png" alt="加拿大"><span class="name">加拿大</span></div></div>
-                <div class="score-pred">2 : 1</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>50%</b></span><span>⚖️ 平 <b>25%</b></span><span>✈️ 客胜 <b>25%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:50%"></div><div class="bar-draw" style="width:25%"></div><div class="bar-away" style="width:25%"></div></div>
-                <div class="tactical">瑞士防守稳固，擅长控制节奏；加拿大速度优势明显，但大赛经验欠缺。比赛在温哥华举行，加拿大拥有球迷支持，但整体实力瑞士占优。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot medium"></span> 风险: 加拿大的主场氛围可能提升其表现，若瑞士慢热可能陷入被动。</span><span class="confidence-badge">信心: 中</span></div>
+            <div class="token-item">
+                <div class="label">🔤 输出 Token</div>
+                <div class="value green">16936</div>
             </div>
-
-            <!-- 摩洛哥 vs 海地 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 摩洛哥 vs 海地</span><span class="date">06-24 22:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/mar.png" alt="摩洛哥"><span class="name">摩洛哥</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/hai.png" alt="海地"><span class="name">海地</span></div></div>
-                <div class="score-pred">2 : 0</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>70%</b></span><span>⚖️ 平 <b>20%</b></span><span>✈️ 客胜 <b>10%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:70%"></div><div class="bar-draw" style="width:20%"></div><div class="bar-away" style="width:10%"></div></div>
-                <div class="tactical">摩洛哥组织严密，中场控制力强；海地个人能力有限，难以持续制造威胁。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot low"></span> 风险: 摩洛哥需避免轻敌，海地的顽强防守可能给比赛带来变数。</span><span class="confidence-badge">信心: 高</span></div>
+            <div class="token-item">
+                <div class="label">🔤 总 Token</div>
+                <div class="value gold">34314</div>
             </div>
-
-            <!-- 苏格兰 vs 巴西 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 苏格兰 vs 巴西</span><span class="date">06-24 22:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/sco.png" alt="苏格兰"><span class="name">苏格兰</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/bra.png" alt="巴西"><span class="name">巴西</span></div></div>
-                <div class="score-pred">0 : 2</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>15%</b></span><span>⚖️ 平 <b>20%</b></span><span>✈️ 客胜 <b>65%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:15%"></div><div class="bar-draw" style="width:20%"></div><div class="bar-away" style="width:65%"></div></div>
-                <div class="tactical">巴西技术、速度全面占优，斯科特兰注重身体对抗和定位球，但难以限制巴西的进攻才华。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot medium"></span> 风险: 巴西可能轮换阵容，若轻敌或苏格兰死守，平局风险存在。</span><span class="confidence-badge">信心: 高</span></div>
-            </div>
-
-            <!-- 捷克 vs 墨西哥 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 捷克 vs 墨西哥</span><span class="date">06-25 01:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/cze.png" alt="捷克"><span class="name">捷克</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="墨西哥"><span class="name">墨西哥</span></div></div>
-                <div class="score-pred">1 : 2</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>20%</b></span><span>⚖️ 平 <b>25%</b></span><span>✈️ 客胜 <b>55%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:20%"></div><div class="bar-draw" style="width:25%"></div><div class="bar-away" style="width:55%"></div></div>
-                <div class="tactical">墨西哥主场（墨西哥城）作战，狂热球迷带来巨大优势；捷克战术纪律好，但面对技术细腻的墨西哥可能吃亏。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot medium"></span> 风险: 墨西哥承受主场压力，若久攻不下可能急躁，给捷克反击机会。</span><span class="confidence-badge">信心: 中</span></div>
-            </div>
-
-            <!-- 南非 vs 韩国 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 南非 vs 韩国</span><span class="date">06-25 01:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/rsa.png" alt="南非"><span class="name">南非</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/kors.png" alt="韩国"><span class="name">韩国</span></div></div>
-                <div class="score-pred">0 : 1</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>20%</b></span><span>⚖️ 平 <b>25%</b></span><span>✈️ 客胜 <b>55%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:20%"></div><div class="bar-draw" style="width:25%"></div><div class="bar-away" style="width:55%"></div></div>
-                <div class="tactical">韩国整体实力更强，高压逼抢和快速转换是特长；南非身体条件不错，但技术粗糙，中立场难以抗衡。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot medium"></span> 风险: 南非的冲击打法可能搅乱韩国防线，定位球是变数。</span><span class="confidence-badge">信心: 中</span></div>
-            </div>
-
-            <!-- 库拉索 vs 科特迪瓦 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 库拉索 vs 科特迪瓦</span><span class="date">06-25 20:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/soccer/500/11678.png" alt="库拉索"><span class="name">库拉索</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/civ.png" alt="科特迪瓦"><span class="name">科特迪瓦</span></div></div>
-                <div class="score-pred">0 : 2</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>15%</b></span><span>⚖️ 平 <b>20%</b></span><span>✈️ 客胜 <b>65%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:15%"></div><div class="bar-draw" style="width:20%"></div><div class="bar-away" style="width:65%"></div></div>
-                <div class="tactical">科特迪瓦球员身体素质劲爆，个人能力突出；库拉索整体实力有限，难有招架之力。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot low"></span> 风险: 库拉索可能全员防守，科特迪瓦需要耐心破铁桶阵。</span><span class="confidence-badge">信心: 高</span></div>
-            </div>
-
-            <!-- 厄瓜多尔 vs 德国 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 厄瓜多尔 vs 德国</span><span class="date">06-25 20:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ecu.png" alt="厄瓜多尔"><span class="name">厄瓜多尔</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ger.png" alt="德国"><span class="name">德国</span></div></div>
-                <div class="score-pred">1 : 2</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>20%</b></span><span>⚖️ 平 <b>25%</b></span><span>✈️ 客胜 <b>55%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:20%"></div><div class="bar-draw" style="width:25%"></div><div class="bar-away" style="width:55%"></div></div>
-                <div class="tactical">德国实力明显占优，但厄瓜多尔有高原主场之利，虽在平原作战仍保留一定的适应性。德国依靠整体推进破防。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot medium"></span> 风险: 厄瓜多尔的反击效率较高，德国防线若压得太上可能被偷袭。</span><span class="confidence-badge">信心: 中</span></div>
-            </div>
-
-            <!-- 日本 vs 瑞典 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 日本 vs 瑞典</span><span class="date">06-25 23:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/jpn.png" alt="日本"><span class="name">日本</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/swe.png" alt="瑞典"><span class="name">瑞典</span></div></div>
-                <div class="score-pred">1 : 1</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>40%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>30%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:40%"></div><div class="bar-draw" style="width:30%"></div><div class="bar-away" style="width:30%"></div></div>
-                <div class="tactical">日本技术细腻，传控配合流畅；瑞典身体强壮，长传冲吊和定位球是利器。实力在伯仲之间。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot medium"></span> 风险: 比赛可能陷入僵局，领先一方可能被扳平，平局概率高。</span><span class="confidence-badge">信心: 中</span></div>
-            </div>
-
-            <!-- 突尼斯 vs 荷兰 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 突尼斯 vs 荷兰</span><span class="date">06-25 23:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/tun.png" alt="突尼斯"><span class="name">突尼斯</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ned.png" alt="荷兰"><span class="name">荷兰</span></div></div>
-                <div class="score-pred">0 : 2</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>15%</b></span><span>⚖️ 平 <b>20%</b></span><span>✈️ 客胜 <b>65%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:15%"></div><div class="bar-draw" style="width:20%"></div><div class="bar-away" style="width:65%"></div></div>
-                <div class="tactical">荷兰全攻全守，中前场创造力强大；突尼斯防守硬朗但缺少反击速度，恐难逃败局。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot low"></span> 风险: 荷兰可能轮换部分主力，默契度下降，但整体优势仍大。</span><span class="confidence-badge">信心: 高</span></div>
-            </div>
-
-            <!-- 巴拉圭 vs 澳大利亚 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 巴拉圭 vs 澳大利亚</span><span class="date">06-26 02:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/par.png" alt="巴拉圭"><span class="name">巴拉圭</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/aus.png" alt="澳大利亚"><span class="name">澳大利亚</span></div></div>
-                <div class="score-pred">1 : 1</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>35%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>35%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:35%"></div><div class="bar-draw" style="width:30%"></div><div class="bar-away" style="width:35%"></div></div>
-                <div class="tactical">双方实力接近，巴拉圭防守反击熟练，澳大利亚身体对抗不吃亏，比赛可能陷入拉锯。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot medium"></span> 风险: 天气炎热可能导致节奏缓慢，一场闷平可能性不低。</span><span class="confidence-badge">信心: 中</span></div>
-            </div>
-
-            <!-- 土耳其 vs 美国 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 土耳其 vs 美国</span><span class="date">06-26 02:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/tur.png" alt="土耳其"><span class="name">土耳其</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/usa.png" alt="美国"><span class="name">美国</span></div></div>
-                <div class="score-pred">1 : 2</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>25%</b></span><span>⚖️ 平 <b>25%</b></span><span>✈️ 客胜 <b>50%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:25%"></div><div class="bar-draw" style="width:25%"></div><div class="bar-away" style="width:50%"></div></div>
-                <div class="tactical">美国在主场（英格尔伍德）作战，球迷支持巨大，球队年轻有冲劲；土耳其个人技术不错但稳定性欠佳。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot medium"></span> 风险: 美国主场压力可能影响发挥，土耳其若能先进球，局势可能逆转。</span><span class="confidence-badge">信心: 中</span></div>
-            </div>
-
-            <!-- 挪威 vs 法国 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 挪威 vs 法国</span><span class="date">06-26 19:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/nor.png" alt="挪威"><span class="name">挪威</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/fra.png" alt="法国"><span class="name">法国</span></div></div>
-                <div class="score-pred">0 : 2</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>15%</b></span><span>⚖️ 平 <b>20%</b></span><span>✈️ 客胜 <b>65%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:15%"></div><div class="bar-draw" style="width:20%"></div><div class="bar-away" style="width:65%"></div></div>
-                <div class="tactical">法国阵容豪华，攻守平衡；挪威虽有哈兰德这个强点，但整体实力差距明显。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot medium"></span> 风险: 哈兰德单兵能力极强，法国防线稍有不慎可能丢球，但法国进攻足以弥补。</span><span class="confidence-badge">信心: 高</span></div>
-            </div>
-
-            <!-- 塞内加尔 vs 伊拉克 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 塞内加尔 vs 伊拉克</span><span class="date">06-26 19:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/sen.png" alt="塞内加尔"><span class="name">塞内加尔</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/irq.png" alt="伊拉克"><span class="name">伊拉克</span></div></div>
-                <div class="score-pred">2 : 0</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>65%</b></span><span>⚖️ 平 <b>20%</b></span><span>✈️ 客胜 <b>15%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:65%"></div><div class="bar-draw" style="width:20%"></div><div class="bar-away" style="width:15%"></div></div>
-                <div class="tactical">塞内加尔速度快、冲击力强，非洲冠军底蕴深厚；伊拉克防守顽强但进攻乏力，难以构成威胁。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot low"></span> 风险: 塞内加尔若得势不得分，伊拉克的死守可能导致小胜甚至平局。</span><span class="confidence-badge">信心: 高</span></div>
-            </div>
-
-            <!-- 佛得角 vs 沙特阿拉伯 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 佛得角 vs 沙特</span><span class="date">06-27 00:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/cpv.png" alt="佛得角"><span class="name">佛得角</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/ksa.png" alt="沙特阿拉伯"><span class="name">沙特</span></div></div>
-                <div class="score-pred">1 : 1</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>30%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>40%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:30%"></div><div class="bar-draw" style="width:30%"></div><div class="bar-away" style="width:40%"></div></div>
-                <div class="tactical">两队实力半斤八两，沙特技术稍好但发挥不稳；佛得角对抗能力强，比赛可能平淡。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot high"></span> 风险: 双方均无绝对把握，比赛结果很大程度取决于临场发挥。</span><span class="confidence-badge">信心: 低</span></div>
-            </div>
-
-            <!-- 乌拉圭 vs 西班牙 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 乌拉圭 vs 西班牙</span><span class="date">06-27 00:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/uru.png" alt="乌拉圭"><span class="name">乌拉圭</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/esp.png" alt="西班牙"><span class="name">西班牙</span></div></div>
-                <div class="score-pred">1 : 2</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>25%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>45%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:25%"></div><div class="bar-draw" style="width:30%"></div><div class="bar-away" style="width:45%"></div></div>
-                <div class="tactical">西班牙控球优势明显，乌拉圭依靠强悍防守和反击周旋。西甲式对决，西班牙更占优。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot medium"></span> 风险: 乌拉圭凶狠的逼抢可能打乱西班牙节奏，若不能尽早进球，西班牙可能陷入苦战。</span><span class="confidence-badge">信心: 中</span></div>
-            </div>
-
-            <!-- 埃及 vs 伊朗 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 埃及 vs 伊朗</span><span class="date">06-27 03:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/egy.png" alt="埃及"><span class="name">埃及</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/irn.png" alt="伊朗"><span class="name">伊朗</span></div></div>
-                <div class="score-pred">1 : 1</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>35%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>35%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:35%"></div><div class="bar-draw" style="width:30%"></div><div class="bar-away" style="width:35%"></div></div>
-                <div class="tactical">北非劲旅与亚洲豪强相遇，埃及萨拉赫领衔攻击线，伊朗防守稳固，双方可能比较保守。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot medium"></span> 风险: 核心球员的发挥将决定走势，平局可能性不小。</span><span class="confidence-badge">信心: 中</span></div>
-            </div>
-
-            <!-- 新西兰 vs 比利时 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 新西兰 vs 比利时</span><span class="date">06-27 03:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/nzl.png" alt="新西兰"><span class="name">新西兰</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/bel.png" alt="比利时"><span class="name">比利时</span></div></div>
-                <div class="score-pred">0 : 3</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>5%</b></span><span>⚖️ 平 <b>15%</b></span><span>✈️ 客胜 <b>80%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:5%"></div><div class="bar-draw" style="width:15%"></div><div class="bar-away" style="width:80%"></div></div>
-                <div class="tactical">比利时黄金一代实力碾压，新西兰只能指望少输当赢。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot low"></span> 风险: 比利时若大幅轮换或心态放松，可能影响净胜球数，但胜负无悬念。</span><span class="confidence-badge">信心: 高</span></div>
-            </div>
-
-            <!-- 克罗地亚 vs 加纳 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 克罗地亚 vs 加纳</span><span class="date">06-27 21:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/cro.png" alt="克罗地亚"><span class="name">克罗地亚</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/gha.png" alt="加纳"><span class="name">加纳</span></div></div>
-                <div class="score-pred">2 : 0</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>60%</b></span><span>⚖️ 平 <b>20%</b></span><span>✈️ 客胜 <b>20%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:60%"></div><div class="bar-draw" style="width:20%"></div><div class="bar-away" style="width:20%"></div></div>
-                <div class="tactical">克罗地亚中场大师级，控制力出众；加纳年轻有活力但经验不足，恐难打破格子军节奏。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot low"></span> 风险: 加纳的快速反击可能制造混乱，克罗地亚需保持专注。</span><span class="confidence-badge">信心: 高</span></div>
-            </div>
-
-            <!-- 巴拿马 vs 英格兰 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 巴拿马 vs 英格兰</span><span class="date">06-27 21:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/pan.png" alt="巴拿马"><span class="name">巴拿马</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/eng.png" alt="英格兰"><span class="name">英格兰</span></div></div>
-                <div class="score-pred">0 : 2</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>10%</b></span><span>⚖️ 平 <b>15%</b></span><span>✈️ 客胜 <b>75%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:10%"></div><div class="bar-draw" style="width:15%"></div><div class="bar-away" style="width:75%"></div></div>
-                <div class="tactical">英格兰实力远超巴拿马，定位球和边路进攻将撕开防线。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot low"></span> 风险: 英格兰过去时有遇弱不强的毛病，但本场应能顺利取胜。</span><span class="confidence-badge">信心: 高</span></div>
-            </div>
-
-            <!-- 哥伦比亚 vs 葡萄牙 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 哥伦比亚 vs 葡萄牙</span><span class="date">06-27 23:30</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="哥伦比亚"><span class="name">哥伦比亚</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/por.png" alt="葡萄牙"><span class="name">葡萄牙</span></div></div>
-                <div class="score-pred">1 : 1</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>30%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>40%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:30%"></div><div class="bar-draw" style="width:30%"></div><div class="bar-away" style="width:40%"></div></div>
-                <div class="tactical">两队均球星云集，哥伦比亚创造力十足，葡萄牙整体性更强，预计场面开放。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot medium"></span> 风险: 双方都具备一击致命的能力，结果可能由球星瞬间决定。</span><span class="confidence-badge">信心: 中</span></div>
-            </div>
-
-            <!-- 刚果民主共和国 vs 乌兹别克斯坦 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 刚果(金) vs 乌兹别克</span><span class="date">06-27 23:30</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/rdc.png" alt="刚果民主共和国"><span class="name">刚果(金)</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/uzb.png" alt="乌兹别克斯坦"><span class="name">乌兹别克</span></div></div>
-                <div class="score-pred">0 : 0</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>30%</b></span><span>⚖️ 平 <b>35%</b></span><span>✈️ 客胜 <b>35%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:30%"></div><div class="bar-draw" style="width:35%"></div><div class="bar-away" style="width:35%"></div></div>
-                <div class="tactical">两队世界排名相近，缺乏顶级球星，比赛可能演变为中场缠斗，进球困难。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot high"></span> 风险: 胶着中一次失误或定位球可能改变结局，但整体进球数不会多。</span><span class="confidence-badge">信心: 低</span></div>
-            </div>
-
-            <!-- 阿尔及利亚 vs 奥地利 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 阿尔及利亚 vs 奥地利</span><span class="date">06-28 02:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/alg.png" alt="阿尔及利亚"><span class="name">阿尔及利亚</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/aut.png" alt="奥地利"><span class="name">奥地利</span></div></div>
-                <div class="score-pred">1 : 1</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>35%</b></span><span>⚖️ 平 <b>30%</b></span><span>✈️ 客胜 <b>35%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:35%"></div><div class="bar-draw" style="width:30%"></div><div class="bar-away" style="width:35%"></div></div>
-                <div class="tactical">阿尔及利亚技术细腻，奥地利战术执行力强，双方实力在伯仲之间。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot medium"></span> 风险: 比赛可能激烈但难以分出胜负，平局对双方或是都能接受的结果。</span><span class="confidence-badge">信心: 中</span></div>
-            </div>
-
-            <!-- 约旦 vs 阿根廷 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ 约旦 vs 阿根廷</span><span class="date">06-28 02:00</span></div>
-                <div class="match-teams"><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/jor.png" alt="约旦"><span class="name">约旦</span></div><span class="vs">vs</span><div class="team"><img class="logo" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="阿根廷"><span class="name">阿根廷</span></div></div>
-                <div class="score-pred">0 : 3</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>5%</b></span><span>⚖️ 平 <b>10%</b></span><span>✈️ 客胜 <b>85%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:5%"></div><div class="bar-draw" style="width:10%"></div><div class="bar-away" style="width:85%"></div></div>
-                <div class="tactical">卫冕冠军阿根廷实力超群，约旦只能通过死守争取少失球。梅西引领的进攻将轻易撕破防线。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot low"></span> 风险: 阿根廷可能提前锁定小组头名而轮换，但替补实力也远胜约旦。</span><span class="confidence-badge">信心: 高</span></div>
-            </div>
-
-            <!-- A组第二名 vs B组第二名 -->
-            <div class="match-card">
-                <div class="match-header"><span>🏟️ A2 vs B2 (淘汰赛)</span><span class="date">06-28 19:00</span></div>
-                <div class="match-teams"><div class="team"><span class="name">A组第二</span></div><span class="vs">vs</span><div class="team"><span class="name">B组第二</span></div></div>
-                <div class="score-pred">1 : 1</div>
-                <div class="prob-labels"><span>🏠 主胜 <b>34%</b></span><span>⚖️ 平 <b>33%</b></span><span>✈️ 客胜 <b>33%</b></span></div>
-                <div class="prob-bar-wrapper"><div class="bar-home" style="width:34%"></div><div class="bar-draw" style="width:33%"></div><div class="bar-away" style="width:33%"></div></div>
-                <div class="tactical">淘汰赛阶段，参赛球队未定，预测无意义。通常小组第二实力接近，比赛可能胶着。</div>
-                <div style="display:flex;align-items:center;margin-top:4px;"><span class="risk-tag"><span class="dot high"></span> 风险: 球队状态、伤病情况完全未知，高度不确定性，任何结果都可能发生。</span><span class="confidence-badge">信心: 低</span></div>
+            <div class="token-item">
+                <div class="label">💰 预估成本</div>
+                <div class="value accent">0.343140</div>
             </div>
         </div>
 
-        <!-- risk overview -->
+        <!-- Risk Overview -->
         <div class="risk-overview">
-            <strong>⚠️ 风险总览</strong><br>
-            整体而言，弱队爆冷风险较低，但实力接近的场次（如日本对瑞典、巴拉圭对澳大利亚等）平局可能性高。个别比赛受场地因素影响较大（如瑞士在加拿大对阵加拿大，墨西哥本土作战）。淘汰赛首场因未知球队，风险极高。
+            <h3>⚠️ 风险概览</h3>
+            <p>整体风险可控，已确定队伍的比赛预测置信度较高。淘汰赛阶段存在多个未知对手，预测不确定性显著增加，需结合小组赛结果动态调整。建议重点关注强队对阵弱旅的比赛，冷门概率较低；实力接近的比赛平局可能性较大。</p>
+            <div class="data-quality">
+                <strong>📋 数据质量说明</strong>：数据来源为ESPN公开比分板，赛程已验证。预测基于历史数据和一般实力评估，未考虑实时伤病等突发因素。
+            </div>
         </div>
 
-        <!-- data quality -->
-        <div class="data-quality-note">
-            📌 数据质量说明：数据来源为ESPN公开比分板，赛事真实有效。预测基于各队FIFA历史排名、近年大赛表现及一般技战术特点推断，未纳入实时伤病、更衣室动态等短期变量，仅供足球分析参考。
+        <!-- Legend -->
+        <div class="legend">
+            <span class="legend-item"><span class="legend-dot home"></span> 主胜</span>
+            <span class="legend-item"><span class="legend-dot draw"></span> 平局</span>
+            <span class="legend-item"><span class="legend-dot away"></span> 客胜</span>
+            <span class="legend-item">🏅 预测比分</span>
+            <span class="legend-item">📈 置信度: <span class="conf-badge high">高</span> <span class="conf-badge medium">中</span> <span class="conf-badge low">低</span></span>
         </div>
 
-        <!-- footer -->
+        <!-- Match Predictions Grid -->
+        <div class="match-grid" id="matchGrid">
+            <!-- Cards will be injected by JavaScript -->
+        </div>
+
+        <!-- Footer -->
         <div class="footer">
-            <span>© 2026 世界杯智能预测 · 深度求索版</span>
-            <span class="model">模型: deepseek-v4-pro · 分析版 v2</span>
-            <span>生成于 2026-06-24 17:56 UTC</span>
+            <p>⚽ 2026 FIFA World Cup 预测分析 · 数据来源 ESPN · 由 deepseek-v4-pro 生成</p>
+            <p style="margin-top:4px; font-size:0.75rem;">预测仅供参考，实际赛果以比赛为准。</p>
         </div>
 
     </div>
+
+    <script>
+        (function() {
+            // ---- Data from payload ----
+            const predictions = [
+                {
+                    "fixture_id": "760473",
+                    "match_name": "库拉索 vs 科特迪瓦",
+                    "kickoff_utc": "2026-06-25T20:00:00Z",
+                    "teams": { "home": { "name": "库拉索" }, "away": { "name": "科特迪瓦" } },
+                    "win_draw_loss": { "home_win": 10, "draw": 20, "away_win": 70 },
+                    "predicted_score": { "home": 0, "away": 2 },
+                    "tactical_analysis": "科特迪瓦整体实力明显占优，预计掌控中场并利用速度优势突破库拉索防线。库拉索可能采取密集防守策略，但难以抵挡持续的攻势。",
+                    "risk_analysis": "库拉索可能通过定位球制造威胁，但科特迪瓦攻击线效率高，若久攻不下可能心态急躁。",
+                    "confidence": "medium"
+                },
+                {
+                    "fixture_id": "760468",
+                    "match_name": "厄瓜多尔 vs 德国",
+                    "kickoff_utc": "2026-06-25T20:00:00Z",
+                    "teams": { "home": { "name": "厄瓜多尔" }, "away": { "name": "德国" } },
+                    "win_draw_loss": { "home_win": 15, "draw": 25, "away_win": 60 },
+                    "predicted_score": { "home": 0, "away": 2 },
+                    "tactical_analysis": "德国队控球和进攻组织能力更强，厄瓜多尔可能依靠高原主场优势已无，需通过快速反击寻找机会。德国边路突破将考验厄瓜多尔防线。",
+                    "risk_analysis": "厄瓜多尔如果专注防守可能逼平，但德国板凳深度充足，后程发力可能性高。",
+                    "confidence": "medium"
+                },
+                {
+                    "fixture_id": "760471",
+                    "match_name": "日本 vs 瑞典",
+                    "kickoff_utc": "2026-06-25T23:00:00Z",
+                    "teams": { "home": { "name": "日本" }, "away": { "name": "瑞典" } },
+                    "win_draw_loss": { "home_win": 30, "draw": 40, "away_win": 30 },
+                    "predicted_score": { "home": 1, "away": 1 },
+                    "tactical_analysis": "两队实力接近，日本队技术细腻，瑞典队身体对抗和定位球优势明显。比赛可能胶着，中场争夺成为关键。",
+                    "risk_analysis": "日本队防线身高劣势可能被瑞典利用，但日本传控能力可化解部分压力。平局概率较高。",
+                    "confidence": "low"
+                },
+                {
+                    "fixture_id": "760472",
+                    "match_name": "突尼斯 vs 荷兰",
+                    "kickoff_utc": "2026-06-25T23:00:00Z",
+                    "teams": { "home": { "name": "突尼斯" }, "away": { "name": "荷兰" } },
+                    "win_draw_loss": { "home_win": 10, "draw": 20, "away_win": 70 },
+                    "predicted_score": { "home": 0, "away": 2 },
+                    "tactical_analysis": "荷兰队整体技战术水平高于突尼斯，预计掌控比赛节奏。突尼斯可能采取稳守反击策略，但荷兰后防线较为稳固。",
+                    "risk_analysis": "突尼斯若过早丢球可能崩盘，荷兰需警惕对方的零星反击。",
+                    "confidence": "medium"
+                },
+                {
+                    "fixture_id": "760469",
+                    "match_name": "巴拉圭 vs 澳大利亚",
+                    "kickoff_utc": "2026-06-26T02:00:00Z",
+                    "teams": { "home": { "name": "巴拉圭" }, "away": { "name": "澳大利亚" } },
+                    "win_draw_loss": { "home_win": 40, "draw": 30, "away_win": 30 },
+                    "predicted_score": { "home": 1, "away": 0 },
+                    "tactical_analysis": "巴拉圭防守坚韧，澳大利亚身体对抗不落下风但技术稍逊。比赛可能沉闷，定位球或成胜负手。",
+                    "risk_analysis": "巴拉圭进攻效率不高，若澳大利亚先进球，比赛可能逆转。",
+                    "confidence": "low"
+                },
+                {
+                    "fixture_id": "760470",
+                    "match_name": "土耳其 vs 美国",
+                    "kickoff_utc": "2026-06-26T02:00:00Z",
+                    "teams": { "home": { "name": "土耳其" }, "away": { "name": "美国" } },
+                    "win_draw_loss": { "home_win": 25, "draw": 35, "away_win": 40 },
+                    "predicted_score": { "home": 1, "away": 1 },
+                    "tactical_analysis": "美国队拥有主场和年轻活力优势，土耳其经验更丰富。双方可能展开对攻，中场拼抢激烈。",
+                    "risk_analysis": "美国队锋线速度可能威胁土耳其防线，但土耳其反击同样犀利。平局可能性较大。",
+                    "confidence": "low"
+                },
+                {
+                    "fixture_id": "760475",
+                    "match_name": "挪威 vs 法国",
+                    "kickoff_utc": "2026-06-26T19:00:00Z",
+                    "teams": { "home": { "name": "挪威" }, "away": { "name": "法国" } },
+                    "win_draw_loss": { "home_win": 20, "draw": 25, "away_win": 55 },
+                    "predicted_score": { "home": 1, "away": 2 },
+                    "tactical_analysis": "法国队阵容豪华，挪威依赖哈兰德个人能力。法国可能通过整体压制限制哈兰德，挪威需中场支持才能制造威胁。",
+                    "risk_analysis": "挪威若让哈兰德孤立，进攻将瘫痪；法国队若轻敌，可能被反击得手。",
+                    "confidence": "medium"
+                },
+                {
+                    "fixture_id": "760474",
+                    "match_name": "塞内加尔 vs 伊拉克",
+                    "kickoff_utc": "2026-06-26T19:00:00Z",
+                    "teams": { "home": { "name": "塞内加尔" }, "away": { "name": "伊拉克" } },
+                    "win_draw_loss": { "home_win": 65, "draw": 20, "away_win": 15 },
+                    "predicted_score": { "home": 2, "away": 0 },
+                    "tactical_analysis": "塞内加尔身体和技术均占优，预计主导进攻。伊拉克可能全力防守但难以抵挡持续冲击。",
+                    "risk_analysis": "塞内加尔需避免心态急躁，否则可能久攻不下被偷袭。",
+                    "confidence": "medium"
+                },
+                {
+                    "fixture_id": "760478",
+                    "match_name": "佛得角 vs 沙特阿拉伯",
+                    "kickoff_utc": "2026-06-27T00:00:00Z",
+                    "teams": { "home": { "name": "佛得角" }, "away": { "name": "沙特阿拉伯" } },
+                    "win_draw_loss": { "home_win": 30, "draw": 30, "away_win": 40 },
+                    "predicted_score": { "home": 0, "away": 1 },
+                    "tactical_analysis": "沙特阿拉伯技术稍优，佛得角可能依靠力量和速度。比赛可能在中场纠缠，沙特队进攻组织更有序。",
+                    "risk_analysis": "佛得角定位球有威胁，沙特需避免失误。比赛可能一球定胜负。",
+                    "confidence": "low"
+                },
+                {
+                    "fixture_id": "760479",
+                    "match_name": "乌拉圭 vs 西班牙",
+                    "kickoff_utc": "2026-06-27T00:00:00Z",
+                    "teams": { "home": { "name": "乌拉圭" }, "away": { "name": "西班牙" } },
+                    "win_draw_loss": { "home_win": 25, "draw": 30, "away_win": 45 },
+                    "predicted_score": { "home": 1, "away": 2 },
+                    "tactical_analysis": "西班牙传控打法对阵乌拉圭硬朗防守。西班牙需利用宽度拉扯防线，乌拉圭则寻求反击和定位球。",
+                    "risk_analysis": "西班牙控球率虽高，但可能被乌拉圭反击破门；乌拉圭体能下半场是关键。",
+                    "confidence": "medium"
+                },
+                {
+                    "fixture_id": "760476",
+                    "match_name": "埃及 vs 伊朗",
+                    "kickoff_utc": "2026-06-27T03:00:00Z",
+                    "teams": { "home": { "name": "埃及" }, "away": { "name": "伊朗" } },
+                    "win_draw_loss": { "home_win": 40, "draw": 30, "away_win": 30 },
+                    "predicted_score": { "home": 1, "away": 0 },
+                    "tactical_analysis": "埃及队整体配合默契，伊朗队防守顽强。比赛可能激烈但进球不多，埃及球星萨拉赫的发挥至关重要。",
+                    "risk_analysis": "伊朗可能通过强硬防守逼平，埃及进攻效率若不高将陷入苦战。",
+                    "confidence": "low"
+                },
+                {
+                    "fixture_id": "760477",
+                    "match_name": "新西兰 vs 比利时",
+                    "kickoff_utc": "2026-06-27T03:00:00Z",
+                    "teams": { "home": { "name": "新西兰" }, "away": { "name": "比利时" } },
+                    "win_draw_loss": { "home_win": 10, "draw": 20, "away_win": 70 },
+                    "predicted_score": { "home": 0, "away": 2 },
+                    "tactical_analysis": "比利时实力远超新西兰，预计轻松控制比赛。新西兰可能通过身体对抗和长传冲吊制造混乱。",
+                    "risk_analysis": "比利时若早早进球可锁定胜局，但需防范新西兰的高空球。",
+                    "confidence": "medium"
+                },
+                {
+                    "fixture_id": "760480",
+                    "match_name": "克罗地亚 vs 加纳",
+                    "kickoff_utc": "2026-06-27T21:00:00Z",
+                    "teams": { "home": { "name": "克罗地亚" }, "away": { "name": "加纳" } },
+                    "win_draw_loss": { "home_win": 45, "draw": 30, "away_win": 25 },
+                    "predicted_score": { "home": 2, "away": 1 },
+                    "tactical_analysis": "克罗地亚经验丰富，中场控制力强；加纳速度优势明显，反击犀利。比赛可能成为攻防转换战。",
+                    "risk_analysis": "克罗地亚体能或成隐患，加纳若先进球可能死守。",
+                    "confidence": "medium"
+                },
+                {
+                    "fixture_id": "760485",
+                    "match_name": "巴拿马 vs 英格兰",
+                    "kickoff_utc": "2026-06-27T21:00:00Z",
+                    "teams": { "home": { "name": "巴拿马" }, "away": { "name": "英格兰" } },
+                    "win_draw_loss": { "home_win": 5, "draw": 15, "away_win": 80 },
+                    "predicted_score": { "home": 0, "away": 3 },
+                    "tactical_analysis": "英格兰实力碾压，巴拿马可能全线退守。英格兰需利用定位球和边路传中打破密集防守。",
+                    "risk_analysis": "英格兰若久攻不下可能急躁，但实力差距过大，冷门概率极低。",
+                    "confidence": "high"
+                },
+                {
+                    "fixture_id": "760481",
+                    "match_name": "哥伦比亚 vs 葡萄牙",
+                    "kickoff_utc": "2026-06-27T23:30:00Z",
+                    "teams": { "home": { "name": "哥伦比亚" }, "away": { "name": "葡萄牙" } },
+                    "win_draw_loss": { "home_win": 25, "draw": 30, "away_win": 45 },
+                    "predicted_score": { "home": 1, "away": 2 },
+                    "tactical_analysis": "葡萄牙整体更强，C罗领衔锋线；哥伦比亚技术出色但防守不稳。比赛可能开放，进球机会较多。",
+                    "risk_analysis": "哥伦比亚主场氛围浓厚可能超常发挥，葡萄牙需保持专注。",
+                    "confidence": "medium"
+                },
+                {
+                    "fixture_id": "760482",
+                    "match_name": "刚果民主共和国 vs 乌兹别克斯坦",
+                    "kickoff_utc": "2026-06-27T23:30:00Z",
+                    "teams": { "home": { "name": "刚果民主共和国" }, "away": { "name": "乌兹别克斯坦" } },
+                    "win_draw_loss": { "home_win": 30, "draw": 40, "away_win": 30 },
+                    "predicted_score": { "home": 1, "away": 1 },
+                    "tactical_analysis": "两队实力接近，刚果身体更强，乌兹别克斯坦整体性更好。比赛可能平淡，平局可能性高。",
+                    "risk_analysis": "双方进攻效率都不高，可能各进一球后趋于保守。",
+                    "confidence": "low"
+                },
+                {
+                    "fixture_id": "760484",
+                    "match_name": "阿尔及利亚 vs 奥地利",
+                    "kickoff_utc": "2026-06-28T02:00:00Z",
+                    "teams": { "home": { "name": "阿尔及利亚" }, "away": { "name": "奥地利" } },
+                    "win_draw_loss": { "home_win": 25, "draw": 30, "away_win": 45 },
+                    "predicted_score": { "home": 0, "away": 1 },
+                    "tactical_analysis": "奥地利整体实力稍强，阿尔及利亚技术细腻但防守有漏洞。奥地利可能通过整体压迫取胜。",
+                    "risk_analysis": "阿尔及利亚若发挥个人能力可能爆冷，但奥地利稳定性更高。",
+                    "confidence": "medium"
+                },
+                {
+                    "fixture_id": "760483",
+                    "match_name": "约旦 vs 阿根廷",
+                    "kickoff_utc": "2026-06-28T02:00:00Z",
+                    "teams": { "home": { "name": "约旦" }, "away": { "name": "阿根廷" } },
+                    "win_draw_loss": { "home_win": 5, "draw": 10, "away_win": 85 },
+                    "predicted_score": { "home": 0, "away": 3 },
+                    "tactical_analysis": "阿根廷卫冕冠军实力碾压，约旦可能艰难防守。梅西领衔的阿根廷进攻线将创造大量机会。",
+                    "risk_analysis": "约旦若摆大巴可能小负，但阿根廷破密集防守能力突出。",
+                    "confidence": "high"
+                },
+                {
+                    "fixture_id": "760486",
+                    "match_name": "A组第二名 vs 加拿大",
+                    "kickoff_utc": "2026-06-28T19:00:00Z",
+                    "teams": { "home": { "name": "A组第二名" }, "away": { "name": "加拿大" } },
+                    "win_draw_loss": { "home_win": 40, "draw": 30, "away_win": 30 },
+                    "predicted_score": { "home": 1, "away": 2 },
+                    "tactical_analysis": "A组第二名球队实力应略强于加拿大，但加拿大有主场优势。比赛可能势均力敌，A组第二经验更丰富。",
+                    "risk_analysis": "A组第二身份未定，若为强队则胜算更高；加拿大速度可能制造意外。",
+                    "confidence": "low"
+                },
+                {
+                    "fixture_id": "760487",
+                    "match_name": "巴西 vs F组第二名",
+                    "kickoff_utc": "2026-06-29T17:00:00Z",
+                    "teams": { "home": { "name": "巴西" }, "away": { "name": "F组第二名" } },
+                    "win_draw_loss": { "home_win": 70, "draw": 20, "away_win": 10 },
+                    "predicted_score": { "home": 2, "away": 0 },
+                    "tactical_analysis": "巴西队作为夺冠热门，实力远超F组可能的第二名。巴西将主导控球并创造多次得分机会。",
+                    "risk_analysis": "F组第二名若防守顽强可能小负，但巴西进攻才华难以完全限制。",
+                    "confidence": "medium"
+                },
+                {
+                    "fixture_id": "760489",
+                    "match_name": "德国 vs Third Place Group A/B/C/D/F",
+                    "kickoff_utc": "2026-06-29T20:30:00Z",
+                    "teams": { "home": { "name": "德国" }, "away": { "name": "Third Place Group A/B/C/D/F" } },
+                    "win_draw_loss": { "home_win": 75, "draw": 15, "away_win": 10 },
+                    "predicted_score": { "home": 2, "away": 0 },
+                    "tactical_analysis": "德国队面对可能的小组第三，实力优势明显。德国将掌控场面，对手可能全力防守寻求反击。",
+                    "risk_analysis": "小组第三身份不确定，若为欧洲中等队可能增加变数，但德国胜面极大。",
+                    "confidence": "medium"
+                },
+                {
+                    "fixture_id": "760488",
+                    "match_name": "Group F Winner vs 摩洛哥",
+                    "kickoff_utc": "2026-06-30T01:00:00Z",
+                    "teams": { "home": { "name": "Group F Winner" }, "away": { "name": "摩洛哥" } },
+                    "win_draw_loss": { "home_win": 45, "draw": 30, "away_win": 25 },
+                    "predicted_score": { "home": 2, "away": 1 },
+                    "tactical_analysis": "假设F组头名为巴西或强队，摩洛哥防守坚韧。比赛可能胶着，F组胜者进攻火力将受考验。",
+                    "risk_analysis": "摩洛哥可能重现2022年铁血防守，若F组胜者不是超一流强队可能爆冷。",
+                    "confidence": "low"
+                }
+            ];
+
+            // Helper: format UTC time to readable
+            function formatTime(utcStr) {
+                const d = new Date(utcStr);
+                const month = String(d.getUTCMonth() + 1).padStart(2, '0');
+                const day = String(d.getUTCDate()).padStart(2, '0');
+                const hours = String(d.getUTCHours()).padStart(2, '0');
+                const minutes = String(d.getUTCMinutes()).padStart(2, '0');
+                return `${month}/${day} ${hours}:${minutes}`;
+            }
+
+            // Confidence badge
+            function confBadge(level) {
+                const cls = level === 'high' ? 'high' : level === 'medium' ? 'medium' : 'low';
+                const label = level === 'high' ? '高' : level === 'medium' ? '中' : '低';
+                return `<span class="conf-badge ${cls}">${label}</span>`;
+            }
+
+            // Build card HTML
+            function buildCard(p) {
+                const hw = p.win_draw_loss.home_win;
+                const dw = p.win_draw_loss.draw;
+                const aw = p.win_draw_loss.away_win;
+                const homeScore = p.predicted_score.home;
+                const awayScore = p.predicted_score.away;
+                const timeStr = formatTime(p.kickoff_utc);
+                const homeName = p.teams.home.name;
+                const awayName = p.teams.away.name;
+                const conf = p.confidence;
+
+                return `
+                    <div class="match-card">
+                        <div class="match-header">
+                            <div class="match-name">${homeName} vs ${awayName}</div>
+                            <div class="match-time">${timeStr}</div>
+                        </div>
+                        <div class="teams-row">
+                            <div class="team">
+                                <div class="name">${homeName}</div>
+                                <div class="score-pred">${homeScore}</div>
+                            </div>
+                            <div class="vs">
+                                <span class="score-colon">:</span>
+                            </div>
+                            <div class="team">
+                                <div class="name">${awayName}</div>
+                                <div class="score-pred">${awayScore}</div>
+                            </div>
+                        </div>
+                        <div class="prob-section">
+                            <div class="prob-label">
+                                <span>🏠 主胜 ${hw}%</span>
+                                <span>⚖️ 平 ${dw}%</span>
+                                <span>✈️ 客胜 ${aw}%</span>
+                            </div>
+                            <div class="prob-bar-container">
+                                <div class="prob-bar home" style="width:${hw}%"></div>
+                                <div class="prob-bar draw" style="width:${dw}%"></div>
+                                <div class="prob-bar away" style="width:${aw}%"></div>
+                            </div>
+                            <div class="prob-values">
+                                <span class="home-v">${hw}%</span>
+                                <span class="draw-v">${dw}%</span>
+                                <span class="away-v">${aw}%</span>
+                            </div>
+                        </div>
+                        <div class="detail-section">
+                            <div class="detail-title">🧠 战术分析</div>
+                            <p>${p.tactical_analysis}</p>
+                        </div>
+                        <div class="detail-section">
+                            <div class="detail-title">⚠️ 风险分析</div>
+                            <p class="risk-text">${p.risk_analysis}</p>
+                        </div>
+                        <div class="match-footer">
+                            <div class="confidence">
+                                📊 置信度 ${confBadge(conf)}
+                            </div>
+                            <div style="font-size:0.7rem; color:var(--text-muted);">
+                                ID: ${p.fixture_id}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Render all cards
+            const grid = document.getElementById('matchGrid');
+            if (grid) {
+                predictions.forEach(p => {
+                    grid.insertAdjacentHTML('beforeend', buildCard(p));
+                });
+            }
+
+            // Also set token placeholders (they remain as {{...}} in HTML, but we also set them in data attributes)
+            // The placeholders are already in the HTML as text.
+
+        })();
+    </script>
 
 <section id="deepseek-runtime-usage" style="max-width:1120px;margin:24px auto;padding:16px;border:1px solid #d8e0dc;border-radius:8px;background:#fff;font-family:Inter,'Microsoft YaHei','PingFang SC',system-ui,sans-serif;color:#17201d;">
   <h2 style="margin:0 0 12px;font-size:20px;">运行用量</h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
     <div><strong>分析模型</strong><br>deepseek-v4-pro</div>
     <div><strong>生成模型</strong><br>deepseek-v4-flash</div>
-    <div><strong>Input tokens</strong><br>19518</div>
-    <div><strong>Output tokens</strong><br>23383</div>
-    <div><strong>Total tokens</strong><br>42901</div>
-    <div><strong>Cost</strong><br>0.429010</div>
+    <div><strong>Input tokens</strong><br>17378</div>
+    <div><strong>Output tokens</strong><br>16936</div>
+    <div><strong>Total tokens</strong><br>34314</div>
+    <div><strong>Cost</strong><br>0.343140</div>
   </div>
 </section>
 
