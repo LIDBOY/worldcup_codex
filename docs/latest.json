@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "stage": "latest",
-  "generated_at": "2026-06-25T13:29:20Z",
+  "generated_at": "2026-06-25T14:23:56Z",
   "matches": [
     {
       "id": "400021468",
@@ -61,22 +61,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+1500",
+          "home": "+1400",
           "draw": "+700",
-          "away": "-575"
+          "away": "-550"
         },
         "implied_probability": {
-          "home_win": 6.25,
+          "home_win": 6.67,
           "draw": 12.5,
-          "away_win": 85.19
+          "away_win": 84.62
         },
         "normalized_probability": {
-          "home_win": 6.01,
-          "draw": 12.03,
-          "away_win": 81.96
+          "home_win": 6.42,
+          "draw": 12.04,
+          "away_win": 81.53
         },
-        "overround": 3.94,
-        "details": "CIV -575"
+        "overround": 3.78,
+        "details": "CIV -550"
       },
       "injuries": {
         "home": {
@@ -96,40 +96,40 @@
       },
       "match_id": "400021468",
       "win_draw_loss": {
-        "home_win": 6,
-        "draw": 12,
-        "away_win": 82
+        "home_win": 6.43,
+        "draw": 12.04,
+        "away_win": 81.53
       },
       "xg_prediction": {
-        "home": 0.4,
-        "away": 2.6
+        "home": 0.6,
+        "away": 2.8
       },
       "predicted_score": {
         "home": 0,
-        "away": 2
+        "away": 3
       },
-      "tactical_matchup": "库拉索密集防守快速反击，科特迪瓦依靠身体优势和边路突破控制比赛。",
+      "tactical_matchup": "科特迪瓦实力占优，凭借多名欧洲联赛球员在身体对抗和速度上具有明显优势，库拉索整体实力较弱，预计将采取密集防守与快速反击。",
       "injury_adjustment": {
-        "home": "伤病情况未知",
-        "away": "伤病情况未知",
-        "summary": "两队均无明确伤病报告，可视为全主力出战。"
+        "home": "库拉索队内伤病情况未知",
+        "away": "科特迪瓦队内伤病情况未知",
+        "summary": "两队均无可用伤病信息，不做阵容调整"
       },
-      "risk_analysis": "科特迪瓦实力碾压，但库拉索定位球可能偷袭，若科特迪瓦久攻不下，平局风险小幅上升。",
-      "upset_probability": 18,
+      "risk_analysis": "科特迪瓦胜率极高，几乎无悬念；唯一风险在于科特迪瓦可能因轻敌或战术不当未能攻破密集防守，但库拉索爆冷概率极低。",
+      "upset_probability": 6,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 6.01,
-          "draw": 12.03,
-          "away_win": 81.96
+          "home_win": 6.67,
+          "draw": 12.5,
+          "away_win": 84.62
         },
         "model_edge": {
-          "home_win": -0.01,
-          "draw": -0.03,
-          "away_win": 0.04
+          "home_win": 6.43,
+          "draw": 12.04,
+          "away_win": 81.53
         },
-        "deviation_analysis": "模型概率与市场几乎一致，无显著偏差。"
+        "deviation_analysis": "模型概率较市场隐含概率整体下调，主要去除了约3.78%的overround，各结果概率均小幅降低，差值约0.2～3.1个百分点。"
       },
-      "confidence": "medium",
+      "confidence": "high",
       "kickoff_beijing": "2026-06-26T04:00:00+08:00",
       "kickoff_display": "北京时间 06-26 04:00",
       "match_day": {
@@ -198,22 +198,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+425",
-          "draw": "+390",
-          "away": "-185"
+          "home": "+400",
+          "draw": "+360",
+          "away": "-165"
         },
         "implied_probability": {
-          "home_win": 19.05,
-          "draw": 20.41,
-          "away_win": 64.91
+          "home_win": 20.0,
+          "draw": 21.74,
+          "away_win": 62.26
         },
         "normalized_probability": {
-          "home_win": 18.25,
-          "draw": 19.55,
-          "away_win": 62.2
+          "home_win": 19.23,
+          "draw": 20.9,
+          "away_win": 59.87
         },
-        "overround": 4.37,
-        "details": "GER -185"
+        "overround": 4.0,
+        "details": "GER -165"
       },
       "injuries": {
         "home": {
@@ -233,9 +233,9 @@
       },
       "match_id": "400021466",
       "win_draw_loss": {
-        "home_win": 18,
-        "draw": 20,
-        "away_win": 62
+        "home_win": 19.23,
+        "draw": 20.9,
+        "away_win": 59.87
       },
       "xg_prediction": {
         "home": 1.0,
@@ -245,26 +245,26 @@
         "home": 1,
         "away": 2
       },
-      "tactical_matchup": "厄瓜多尔注重反击与定位球，德国控球主导，利用中场创造力渗透。",
+      "tactical_matchup": "德国队传统控球进攻，厄瓜多尔擅长防守反击，比赛在中立场地进行，速度与对抗将影响节奏。",
       "injury_adjustment": {
-        "home": "伤病情况未知",
-        "away": "伤病情况未知",
-        "summary": "暂无伤病影响，双方可排出强阵。"
+        "home": "厄瓜多尔队内伤病情况未知",
+        "away": "德国队内伤病情况未知",
+        "summary": "两队均无伤病报告"
       },
-      "risk_analysis": "德国纸面实力占优，但厄瓜多尔在高原主场以外依然具备韧性，平局概率不低。",
-      "upset_probability": 38,
+      "risk_analysis": "德国实力占优但并非绝对碾压，厄瓜多尔有一定抵抗力；若德国无法把握机会，存在平局风险。",
+      "upset_probability": 19,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 18.25,
-          "draw": 19.55,
-          "away_win": 62.2
+          "home_win": 20.0,
+          "draw": 21.74,
+          "away_win": 62.26
         },
         "model_edge": {
-          "home_win": -0.25,
-          "draw": 0.45,
-          "away_win": -0.2
+          "home_win": 19.23,
+          "draw": 20.9,
+          "away_win": 59.87
         },
-        "deviation_analysis": "模型略微高估平局可能，认为市场对德国胜稍显乐观。"
+        "deviation_analysis": "模型概率较市场略有下调，主胜和平局微幅下降，客胜下调约2.4个百分点，反映去除4.0% overround。"
       },
       "confidence": "medium",
       "kickoff_beijing": "2026-06-26T04:00:00+08:00",
@@ -336,21 +336,21 @@
         "provider": "DraftKings",
         "moneyline_american": {
           "home": "+2500",
-          "draw": "+1000",
-          "away": "-1100"
+          "draw": "+950",
+          "away": "-1000"
         },
         "implied_probability": {
           "home_win": 3.85,
-          "draw": 9.09,
-          "away_win": 91.67
+          "draw": 9.52,
+          "away_win": 90.91
         },
         "normalized_probability": {
-          "home_win": 3.68,
-          "draw": 8.69,
-          "away_win": 87.63
+          "home_win": 3.69,
+          "draw": 9.13,
+          "away_win": 87.18
         },
-        "overround": 4.6,
-        "details": "NED -1100"
+        "overround": 4.28,
+        "details": "NED -1000"
       },
       "injuries": {
         "home": {
@@ -393,40 +393,40 @@
       },
       "match_id": "400021473",
       "win_draw_loss": {
-        "home_win": 4,
-        "draw": 9,
-        "away_win": 87
+        "home_win": 3.69,
+        "draw": 9.13,
+        "away_win": 87.18
       },
       "xg_prediction": {
         "home": 0.3,
-        "away": 3.0
+        "away": 3.2
       },
       "predicted_score": {
         "home": 0,
         "away": 3
       },
-      "tactical_matchup": "突尼斯防守收缩寻求反击，荷兰全面压制，边中结合频繁冲击。",
+      "tactical_matchup": "荷兰实力强大，注重传控与进攻宽度；突尼斯防守顽强，但面对强敌可能难以招架。",
       "injury_adjustment": {
-        "home": "可能受伤，但无具体球员信息",
-        "away": "可能受伤，但无具体球员信息",
-        "summary": "两队均有疑似伤病，但缺乏具体名单，无法评估影响。"
+        "home": "突尼斯存在潜在伤病（具体球员未知）",
+        "away": "荷兰存在潜在伤病（具体球员未知）",
+        "summary": "两队均报有潜在伤病，但无具体名单，整体影响难以评估，不做显著调整。"
       },
-      "risk_analysis": "荷兰优势巨大，突尼斯几乎无爆冷资本，除非红牌或极端意外。",
-      "upset_probability": 13,
+      "risk_analysis": "荷兰实力碾压，胜率极高；主要风险是自身可能轮换或伤病影响配合，但即使如此仍应轻松取胜。",
+      "upset_probability": 4,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 3.68,
-          "draw": 8.69,
-          "away_win": 87.63
+          "home_win": 3.85,
+          "draw": 9.52,
+          "away_win": 90.91
         },
         "model_edge": {
-          "home_win": 0.32,
-          "draw": 0.31,
-          "away_win": -0.63
+          "home_win": 3.69,
+          "draw": 9.13,
+          "away_win": 87.18
         },
-        "deviation_analysis": "模型对荷兰胜的定价略低于市场，但差异极小。"
+        "deviation_analysis": "模型概率较市场下调，去除了约4.28%的overround，客胜概率降低3.73个百分点。"
       },
-      "confidence": "low",
+      "confidence": "high",
       "kickoff_beijing": "2026-06-26T07:00:00+08:00",
       "kickoff_display": "北京时间 06-26 07:00",
       "match_day": {
@@ -496,20 +496,20 @@
         "provider": "DraftKings",
         "moneyline_american": {
           "home": "-110",
-          "draw": "+250",
-          "away": "+340"
+          "draw": "+245",
+          "away": "+320"
         },
         "implied_probability": {
           "home_win": 52.38,
-          "draw": 28.57,
-          "away_win": 22.73
+          "draw": 28.99,
+          "away_win": 23.81
         },
         "normalized_probability": {
-          "home_win": 50.52,
+          "home_win": 49.8,
           "draw": 27.56,
-          "away_win": 21.92
+          "away_win": 22.64
         },
-        "overround": 3.68,
+        "overround": 5.18,
         "details": "JPN -110"
       },
       "injuries": {
@@ -530,40 +530,40 @@
       },
       "match_id": "400021471",
       "win_draw_loss": {
-        "home_win": 51,
-        "draw": 28,
-        "away_win": 21
+        "home_win": 49.8,
+        "draw": 27.56,
+        "away_win": 22.64
       },
       "xg_prediction": {
-        "home": 1.8,
-        "away": 1.2
+        "home": 1.6,
+        "away": 1.1
       },
       "predicted_score": {
         "home": 2,
         "away": 1
       },
-      "tactical_matchup": "日本技术控制与高位压迫，瑞典依靠身体优势和定位球威胁。",
+      "tactical_matchup": "日本技术细腻，控球能力突出；瑞典身体对抗出色，擅长定位球，预计比赛激烈且节奏较快。",
       "injury_adjustment": {
-        "home": "伤病情况未知",
-        "away": "伤病情况未知",
-        "summary": "无伤病报告，双方均可全主力出战。"
+        "home": "日本队内伤病情况未知",
+        "away": "瑞典队内伤病情况未知",
+        "summary": "两队均无伤病报告"
       },
-      "risk_analysis": "日本技术层面占优，但瑞典高空轰炸可能改变局势，比赛充满变数。",
-      "upset_probability": 49,
+      "risk_analysis": "双方实力接近，日本略占优势但瑞典反击高效，胜负不确定性大，平局可能性不低。",
+      "upset_probability": 23,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 50.52,
-          "draw": 27.56,
-          "away_win": 21.92
+          "home_win": 52.38,
+          "draw": 28.99,
+          "away_win": 23.81
         },
         "model_edge": {
-          "home_win": 0.48,
-          "draw": 0.44,
-          "away_win": -0.92
+          "home_win": 49.8,
+          "draw": 27.56,
+          "away_win": 22.64
         },
-        "deviation_analysis": "模型对日本胜的倾向略高于市场，但优势微弱。"
+        "deviation_analysis": "模型概率整体低于市场，主胜下调约2.6个百分点，反映了5.18%的高overround。"
       },
-      "confidence": "medium",
+      "confidence": "low",
       "kickoff_beijing": "2026-06-26T07:00:00+08:00",
       "kickoff_display": "北京时间 06-26 07:00",
       "match_day": {
@@ -632,22 +632,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+170",
+          "home": "+165",
           "draw": "+130",
-          "away": "+320"
+          "away": "+330"
         },
         "implied_probability": {
-          "home_win": 37.04,
+          "home_win": 37.74,
           "draw": 43.48,
-          "away_win": 23.81
+          "away_win": 23.26
         },
         "normalized_probability": {
-          "home_win": 35.5,
-          "draw": 41.68,
-          "away_win": 22.82
+          "home_win": 36.12,
+          "draw": 41.62,
+          "away_win": 22.26
         },
-        "overround": 4.32,
-        "details": "PAR +170"
+        "overround": 4.47,
+        "details": "PAR +165"
       },
       "injuries": {
         "home": {
@@ -667,40 +667,177 @@
       },
       "match_id": "400021461",
       "win_draw_loss": {
-        "home_win": 36,
-        "draw": 42,
-        "away_win": 22
+        "home_win": 36.12,
+        "draw": 41.62,
+        "away_win": 22.26
       },
       "xg_prediction": {
-        "home": 1.2,
-        "away": 1.1
+        "home": 1.3,
+        "away": 0.9
       },
       "predicted_score": {
         "home": 1,
         "away": 1
       },
-      "tactical_matchup": "巴拉圭注重防守组织与反击，澳大利亚身体对抗强硬，均势局。",
+      "tactical_matchup": "巴拉圭防守稳固，澳大利亚身体优势明显，可能采取高空轰炸，双方整体实力相当。",
       "injury_adjustment": {
-        "home": "伤病情况未知",
-        "away": "伤病情况未知",
-        "summary": "暂无伤病影响，双方实力接近。"
+        "home": "巴拉圭队内伤病情况未知",
+        "away": "澳大利亚队内伤病情况未知",
+        "summary": "两队均无伤病报告"
       },
-      "risk_analysis": "任何一方都难言稳胜，平局可能性最高，需警惕定位球打破平衡。",
-      "upset_probability": 64,
+      "risk_analysis": "双方均无明显优势，平局可能性最高；任意一方稍占上风即可改变局势，变数较大。",
+      "upset_probability": 22,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 35.5,
-          "draw": 41.68,
-          "away_win": 22.82
+          "home_win": 37.74,
+          "draw": 43.48,
+          "away_win": 23.26
         },
         "model_edge": {
-          "home_win": 0.5,
-          "draw": 0.32,
-          "away_win": -0.82
+          "home_win": 36.12,
+          "draw": 41.62,
+          "away_win": 22.26
         },
-        "deviation_analysis": "模型稍看好巴拉圭不败，但整体与市场一致。"
+        "deviation_analysis": "模型概率略低于市场，去除了4.47%的overround，平局下调1.86个百分点。"
       },
-      "confidence": "medium",
+      "confidence": "low",
+      "kickoff_beijing": "2026-06-26T10:00:00+08:00",
+      "kickoff_display": "北京时间 06-26 10:00",
+      "match_day": {
+        "date": "2026-06-25",
+        "title": "6月25日比赛日",
+        "range": "北京时间 06-25 18:00 - 06-26 18:00",
+        "start_iso": "2026-06-25T18:00:00+08:00",
+        "end_iso": "2026-06-26T18:00:00+08:00"
+      }
+    },
+    {
+      "id": "400021459",
+      "fifa_match_id": "400021459",
+      "match_name": "土耳其 vs 美国",
+      "match_name_en": "Türkiye vs USA",
+      "kickoff_utc": "2026-06-26T02:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group D",
+      "match_number": 59,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "土耳其",
+          "name_en": "Türkiye"
+        },
+        "away": {
+          "name": "美国",
+          "name_en": "USA"
+        }
+      },
+      "venue": {
+        "name": "Los Angeles Stadium",
+        "city": "Los Angeles",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021459"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760470"
+        }
+      },
+      "espn_event_id": "760470",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+280",
+          "draw": "+300",
+          "away": "-115"
+        },
+        "implied_probability": {
+          "home_win": 26.32,
+          "draw": 25.0,
+          "away_win": 53.49
+        },
+        "normalized_probability": {
+          "home_win": 25.11,
+          "draw": 23.85,
+          "away_win": 51.04
+        },
+        "overround": 4.8,
+        "details": "USA -115"
+      },
+      "injuries": {
+        "home": {
+          "team": "土耳其",
+          "team_en": "Türkiye",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "美国",
+          "team_en": "USA",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      },
+      "match_id": "400021459",
+      "win_draw_loss": {
+        "home_win": 25.11,
+        "draw": 23.85,
+        "away_win": 51.04
+      },
+      "xg_prediction": {
+        "home": 1.0,
+        "away": 1.8
+      },
+      "predicted_score": {
+        "home": 1,
+        "away": 2
+      },
+      "tactical_matchup": "美国队作为东道主拥有一定优势，整体实力稍强；土耳其韧性十足，对抗激烈。",
+      "injury_adjustment": {
+        "home": "土耳其队内伤病情况未知",
+        "away": "美国队内伤病情况未知",
+        "summary": "两队均无伤病报告"
+      },
+      "risk_analysis": "美国队被市场看好但优势有限，土耳其有机会取得好结果；比赛可能胶着，平局不可忽视。",
+      "upset_probability": 25,
+      "odds_comparison": {
+        "market_implied": {
+          "home_win": 26.32,
+          "draw": 25.0,
+          "away_win": 53.49
+        },
+        "model_edge": {
+          "home_win": 25.11,
+          "draw": 23.85,
+          "away_win": 51.04
+        },
+        "deviation_analysis": "模型概率低于市场，去除4.8%的overround，客胜下调2.45个百分点。"
+      },
+      "confidence": "low",
       "kickoff_beijing": "2026-06-26T10:00:00+08:00",
       "kickoff_display": "北京时间 06-26 10:00",
       "match_day": {
@@ -804,40 +941,40 @@
       },
       "match_id": "400021493",
       "win_draw_loss": {
-        "home_win": 78,
-        "draw": 14,
-        "away_win": 8
+        "home_win": 78.34,
+        "draw": 13.68,
+        "away_win": 7.98
       },
       "xg_prediction": {
-        "home": 2.2,
-        "away": 0.6
+        "home": 2.5,
+        "away": 0.5
       },
       "predicted_score": {
         "home": 2,
         "away": 0
       },
-      "tactical_matchup": "塞内加尔身体对抗与速度优势明显，伊拉克密集防守寻求零星反击。",
+      "tactical_matchup": "塞内加尔身体素质出众，整体实力远超伊拉克；伊拉克可能采取密集防守，但恐难抵挡。",
       "injury_adjustment": {
-        "home": "伤病情况未知",
-        "away": "伤病情况未知",
-        "summary": "无伤病报告，塞内加尔实力碾压。"
+        "home": "塞内加尔队内伤病情况未知",
+        "away": "伊拉克队内伤病情况未知",
+        "summary": "两队均无伤病报告"
       },
-      "risk_analysis": "伊拉克爆冷概率极低，塞内加尔早进球可能打出大比分。",
-      "upset_probability": 22,
+      "risk_analysis": "塞内加尔实力碾压，取胜几无悬念；仅存风险是自身状态不佳或轻敌。",
+      "upset_probability": 8,
       "odds_comparison": {
         "market_implied": {
+          "home_win": 81.82,
+          "draw": 14.29,
+          "away_win": 8.33
+        },
+        "model_edge": {
           "home_win": 78.34,
           "draw": 13.68,
           "away_win": 7.98
         },
-        "model_edge": {
-          "home_win": -0.34,
-          "draw": 0.32,
-          "away_win": 0.02
-        },
-        "deviation_analysis": "模型概率几乎完全贴合市场，无明显偏差。"
+        "deviation_analysis": "模型概率大幅低于市场，主胜下调约3.5个百分点，去除了4.44%的overround。"
       },
-      "confidence": "medium",
+      "confidence": "high",
       "kickoff_beijing": "2026-06-27T03:00:00+08:00",
       "kickoff_display": "北京时间 06-27 03:00",
       "match_day": {
@@ -941,38 +1078,38 @@
       },
       "match_id": "400021489",
       "win_draw_loss": {
-        "home_win": 19,
-        "draw": 22,
-        "away_win": 59
+        "home_win": 19.18,
+        "draw": 21.8,
+        "away_win": 59.02
       },
       "xg_prediction": {
         "home": 1.0,
-        "away": 2.2
+        "away": 2.0
       },
       "predicted_score": {
         "home": 1,
         "away": 2
       },
-      "tactical_matchup": "挪威依赖哈兰德个人能力与反击，法国整体技术优势压制约性。",
+      "tactical_matchup": "法国拥有顶尖攻击线，整体实力占优；挪威依赖哈兰德等明星球员，可能通过反击制造威胁。",
       "injury_adjustment": {
-        "home": "伤病情况未知",
-        "away": "伤病情况未知",
-        "summary": "无伤病报告，法国实力占优。"
+        "home": "挪威队内伤病情况未知",
+        "away": "法国队内伤病情况未知",
+        "summary": "两队均无伤病报告"
       },
-      "risk_analysis": "法国队稳定性高，但挪威锋线个人能力可能制造意外，平局需防范。",
-      "upset_probability": 41,
+      "risk_analysis": "法国实力占优但挪威有爆冷潜力，哈兰德个人能力突出，法国需防范防守反击。",
+      "upset_probability": 19,
       "odds_comparison": {
         "market_implied": {
+          "home_win": 20.0,
+          "draw": 22.73,
+          "away_win": 61.54
+        },
+        "model_edge": {
           "home_win": 19.18,
           "draw": 21.8,
           "away_win": 59.02
         },
-        "model_edge": {
-          "home_win": -0.18,
-          "draw": 0.2,
-          "away_win": -0.02
-        },
-        "deviation_analysis": "模型与市场几无分歧，法国胜赔合理。"
+        "deviation_analysis": "模型概率较市场略微下调，去除4.27%的overround，客胜下调2.52个百分点。"
       },
       "confidence": "medium",
       "kickoff_beijing": "2026-06-27T03:00:00+08:00",
@@ -1078,38 +1215,38 @@
       },
       "match_id": "400021484",
       "win_draw_loss": {
-        "home_win": 13,
-        "draw": 23,
-        "away_win": 64
+        "home_win": 12.78,
+        "draw": 22.81,
+        "away_win": 64.41
       },
       "xg_prediction": {
         "home": 0.7,
-        "away": 2.3
+        "away": 2.5
       },
       "predicted_score": {
-        "home": 0,
+        "home": 1,
         "away": 2
       },
-      "tactical_matchup": "乌拉圭防守韧性与反击速度挑战西班牙传控体系，中场争夺关键。",
+      "tactical_matchup": "西班牙传控细腻，乌拉圭防守硬朗，风格对比鲜明，西班牙控球优势明显。",
       "injury_adjustment": {
-        "home": "伤病情况未知",
-        "away": "伤病情况未知",
-        "summary": "暂无伤病影响，西班牙技术优势明显。"
+        "home": "乌拉圭队内伤病情况未知",
+        "away": "西班牙队内伤病情况未知",
+        "summary": "两队均无伤病报告"
       },
-      "risk_analysis": "乌拉圭铁血防守可能限制西班牙进球数，但爆冷获胜难度极大。",
-      "upset_probability": 36,
+      "risk_analysis": "西班牙实力明显占优，但乌拉圭防守坚韧，存在逼平可能；若西班牙久攻不下，可能陷入苦战。",
+      "upset_probability": 13,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 12.78,
-          "draw": 22.82,
-          "away_win": 64.41
+          "home_win": 13.33,
+          "draw": 23.81,
+          "away_win": 67.21
         },
         "model_edge": {
-          "home_win": 0.22,
-          "draw": 0.18,
-          "away_win": -0.41
+          "home_win": 12.78,
+          "draw": 22.81,
+          "away_win": 64.41
         },
-        "deviation_analysis": "模型小幅低估西班牙胜率，但整体偏差不大。"
+        "deviation_analysis": "模型概率略低于市场，去除4.36%的overround，客胜下调2.8个百分点。"
       },
       "confidence": "medium",
       "kickoff_beijing": "2026-06-27T08:00:00+08:00",
@@ -1215,9 +1352,9 @@
       },
       "match_id": "400021485",
       "win_draw_loss": {
-        "home_win": 38,
-        "draw": 29,
-        "away_win": 33
+        "home_win": 37.65,
+        "draw": 28.66,
+        "away_win": 33.69
       },
       "xg_prediction": {
         "home": 1.3,
@@ -1227,28 +1364,28 @@
         "home": 1,
         "away": 1
       },
-      "tactical_matchup": "双方实力接近，佛得角依靠归化球员个人能力，沙特技术整体性稍优。",
+      "tactical_matchup": "两队实力接近，佛得角略占主场之利，沙特技术相对细腻，整体攻防相当。",
       "injury_adjustment": {
-        "home": "伤病情况未知",
-        "away": "伤病情况未知",
-        "summary": "无伤病报告，五五开对抗。"
+        "home": "佛得角队内伤病情况未知",
+        "away": "沙特阿拉伯队内伤病情况未知",
+        "summary": "两队均无伤病报告"
       },
-      "risk_analysis": "比赛结果难以预测，任何赛果都属正常，平局和双方进球可能性高。",
-      "upset_probability": 62,
+      "risk_analysis": "双方实力均衡，任何结果都有可能，平局概率不低，胜负手在于临场发挥。",
+      "upset_probability": 34,
       "odds_comparison": {
         "market_implied": {
+          "home_win": 39.22,
+          "draw": 29.85,
+          "away_win": 35.09
+        },
+        "model_edge": {
           "home_win": 37.65,
           "draw": 28.66,
           "away_win": 33.69
         },
-        "model_edge": {
-          "home_win": 0.35,
-          "draw": 0.34,
-          "away_win": -0.69
-        },
-        "deviation_analysis": "模型认为市场可能略微高估沙特不败的概率。"
+        "deviation_analysis": "模型概率低于市场，去除4.15%的overround，各结果下调1.6～1.2个百分点。"
       },
-      "confidence": "medium",
+      "confidence": "low",
       "kickoff_beijing": "2026-06-27T08:00:00+08:00",
       "kickoff_display": "北京时间 06-27 08:00",
       "match_day": {
@@ -1352,40 +1489,177 @@
       },
       "match_id": "400021481",
       "win_draw_loss": {
-        "home_win": 6,
-        "draw": 11,
-        "away_win": 83
+        "home_win": 5.64,
+        "draw": 11.28,
+        "away_win": 83.08
       },
       "xg_prediction": {
-        "home": 0.4,
-        "away": 2.8
+        "home": 0.3,
+        "away": 3.0
       },
       "predicted_score": {
         "home": 0,
         "away": 3
       },
-      "tactical_matchup": "新西兰长传冲吊与身体对抗，比利时技术碾压，控球率悬殊。",
+      "tactical_matchup": "比利时实力远超新西兰，新西兰可能密集防守，但比利时攻击线强大，破防能力足。",
       "injury_adjustment": {
-        "home": "伤病情况未知",
-        "away": "伤病情况未知",
-        "summary": "无伤病报告，比利时全主力轻松应战。"
+        "home": "新西兰队内伤病情况未知",
+        "away": "比利时队内伤病情况未知",
+        "summary": "两队均无伤病报告"
       },
-      "risk_analysis": "新西兰几乎无爆冷可能，比利时大概率轻松取胜，关注净胜球。",
-      "upset_probability": 17,
+      "risk_analysis": "比利时取胜几乎无悬念，新西兰爆冷概率极低；主要风险为比利时提前懈怠或过度轮换。",
+      "upset_probability": 6,
       "odds_comparison": {
         "market_implied": {
+          "home_win": 5.88,
+          "draw": 11.76,
+          "away_win": 86.67
+        },
+        "model_edge": {
           "home_win": 5.64,
           "draw": 11.28,
           "away_win": 83.08
         },
-        "model_edge": {
-          "home_win": 0.36,
-          "draw": -0.28,
-          "away_win": -0.08
-        },
-        "deviation_analysis": "模型与市场高度一致，比利时胜无悬念。"
+        "deviation_analysis": "模型概率小幅下调，去除4.31%的overround，客胜下调3.59个百分点。"
       },
-      "confidence": "medium",
+      "confidence": "high",
+      "kickoff_beijing": "2026-06-27T11:00:00+08:00",
+      "kickoff_display": "北京时间 06-27 11:00",
+      "match_day": {
+        "date": "2026-06-26",
+        "title": "6月26日比赛日",
+        "range": "北京时间 06-26 18:00 - 06-27 18:00",
+        "start_iso": "2026-06-26T18:00:00+08:00",
+        "end_iso": "2026-06-27T18:00:00+08:00"
+      }
+    },
+    {
+      "id": "400021479",
+      "fifa_match_id": "400021479",
+      "match_name": "埃及 vs 伊朗",
+      "match_name_en": "Egypt vs IR Iran",
+      "kickoff_utc": "2026-06-27T03:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group G",
+      "match_number": 63,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "埃及",
+          "name_en": "Egypt"
+        },
+        "away": {
+          "name": "伊朗",
+          "name_en": "IR Iran"
+        }
+      },
+      "venue": {
+        "name": "Seattle Stadium",
+        "city": "Seattle",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021479"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760476"
+        }
+      },
+      "espn_event_id": "760476",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+150",
+          "draw": "+165",
+          "away": "+280"
+        },
+        "implied_probability": {
+          "home_win": 40.0,
+          "draw": 37.74,
+          "away_win": 26.32
+        },
+        "normalized_probability": {
+          "home_win": 38.44,
+          "draw": 36.27,
+          "away_win": 25.29
+        },
+        "overround": 4.05,
+        "details": "EGY +150"
+      },
+      "injuries": {
+        "home": {
+          "team": "埃及",
+          "team_en": "Egypt",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "伊朗",
+          "team_en": "IR Iran",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      },
+      "match_id": "400021479",
+      "win_draw_loss": {
+        "home_win": 38.44,
+        "draw": 36.27,
+        "away_win": 25.29
+      },
+      "xg_prediction": {
+        "home": 1.4,
+        "away": 1.1
+      },
+      "predicted_score": {
+        "home": 1,
+        "away": 1
+      },
+      "tactical_matchup": "两队实力相当，埃及可能依靠萨拉赫等球星，伊朗防守严密，比赛可能较为沉闷。",
+      "injury_adjustment": {
+        "home": "埃及队内伤病情况未知",
+        "away": "伊朗队内伤病情况未知",
+        "summary": "两队均无伤病报告"
+      },
+      "risk_analysis": "双方均无绝对优势，胜负难料，平局可能性较高，球星的个人发挥至关重要。",
+      "upset_probability": 25,
+      "odds_comparison": {
+        "market_implied": {
+          "home_win": 40.0,
+          "draw": 37.74,
+          "away_win": 26.32
+        },
+        "model_edge": {
+          "home_win": 38.44,
+          "draw": 36.27,
+          "away_win": 25.29
+        },
+        "deviation_analysis": "模型概率较市场下调，去除4.05%的overround，各结果下调1.5～1.0个百分点。"
+      },
+      "confidence": "low",
       "kickoff_beijing": "2026-06-27T11:00:00+08:00",
       "kickoff_display": "北京时间 06-27 11:00",
       "match_day": {
@@ -1400,20 +1674,20 @@
   "analysis_model": "deepseek-v4-pro",
   "render_model": "deepseek-v4-flash",
   "usage": {
-    "input_tokens": 53696,
-    "output_tokens": 19046,
-    "total_tokens": 72742,
-    "cost_estimate": 0.72742
+    "input_tokens": 63827,
+    "output_tokens": 24459,
+    "total_tokens": 88286,
+    "cost_estimate": 0.88286
   },
   "data_sources": {
     "fifa": true,
     "injury": true,
     "odds": true
   },
-  "render": "<!doctype html>\n<html lang=\"zh-CN\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>2026 世界杯 · 预测分析</title>\n  <style>\n    :root {\n      color-scheme: dark;\n      --bg: #10111f;\n      --bg-2: #141727;\n      --panel: #1b2838;\n      --panel-2: #202d3d;\n      --panel-3: #172232;\n      --line: rgba(104, 136, 174, 0.28);\n      --line-hot: rgba(83, 171, 255, 0.58);\n      --text: #f5f7fb;\n      --muted: #a5afc1;\n      --green: #2bd16f;\n      --yellow: #f6bd27;\n      --red: #ef5049;\n      --blue: #66aaff;\n      --pink: #f05b78;\n      --shadow: 0 18px 48px rgba(0, 0, 0, 0.42);\n    }\n    * { box-sizing: border-box; }\n    html { background: var(--bg); }\n    body {\n      margin: 0;\n      font-family: Inter, \"Microsoft YaHei\", \"PingFang SC\", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;\n      color: var(--text);\n      background:\n        radial-gradient(circle at 50% -20%, rgba(32, 93, 156, 0.32), transparent 38%),\n        linear-gradient(180deg, #171729 0%, #10111f 42%, #0c0f19 100%);\n      letter-spacing: 0;\n      min-height: 100vh;\n    }\n    body::before {\n      content: \"\";\n      position: fixed;\n      inset: 0;\n      pointer-events: none;\n      background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);\n      background-size: 42px 42px;\n      mask-image: linear-gradient(180deg, rgba(0,0,0,0.85), transparent 70%);\n    }\n    a { color: var(--blue); text-decoration: none; font-weight: 700; transition: color .18s ease, text-shadow .18s ease; }\n    a:hover { color: #91c4ff; text-shadow: 0 0 16px rgba(102, 170, 255, .45); }\n    .page { width: min(980px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 44px; }\n    .night-card {\n      position: relative;\n      border: 1px solid var(--line);\n      border-radius: 22px;\n      background: linear-gradient(145deg, rgba(31, 46, 66, .96), rgba(24, 35, 51, .96));\n      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.04);\n      overflow: hidden;\n    }\n    .night-card::before {\n      content: \"\";\n      position: absolute;\n      inset: 0;\n      pointer-events: none;\n      background: linear-gradient(120deg, rgba(86, 169, 255, .18), transparent 36%, rgba(43, 209, 111, .08));\n      opacity: .55;\n    }\n    .hero {\n      padding: 30px;\n      margin-bottom: 24px;\n    }\n    .hero > * { position: relative; z-index: 1; }\n    .hero h1 { margin: 0 0 18px; font-size: clamp(30px, 7vw, 46px); line-height: 1.08; font-weight: 850; }\n    .range-pill {\n      display: inline-flex;\n      align-items: center;\n      max-width: 100%;\n      min-height: 40px;\n      padding: 0 18px;\n      border-radius: 999px;\n      background: rgba(246, 189, 39, .13);\n      color: #ffdb54;\n      border: 1px solid rgba(246, 189, 39, .28);\n      font-weight: 800;\n      overflow-wrap: anywhere;\n    }\n    .hero-meta {\n      display: grid;\n      grid-template-columns: repeat(2, minmax(0, 1fr));\n      gap: 14px 22px;\n      margin: 26px 0 0;\n    }\n    .hero-meta div { color: var(--muted); line-height: 1.55; min-width: 0; overflow-wrap: anywhere; }\n    .hero-meta strong { display: block; color: var(--text); font-weight: 780; }\n    .overview {\n      padding: 24px;\n      margin-bottom: 24px;\n    }\n    .overview h2, .usage-panel h2, .match-day h2 { margin: 0; font-size: 24px; color: #ffd64a; }\n    .overview p { position: relative; z-index: 1; margin: 14px 0 0; color: var(--muted); line-height: 1.8; font-size: 16px; }\n    .usage-panel {\n      padding: 22px;\n      margin-bottom: 24px;\n      border-color: rgba(246, 189, 39, .24);\n    }\n    .usage-grid {\n      position: relative;\n      z-index: 1;\n      display: grid;\n      grid-template-columns: repeat(4, minmax(0, 1fr));\n      gap: 14px;\n      margin-top: 18px;\n    }\n    .usage-card {\n      border: 1px solid var(--line);\n      border-radius: 14px;\n      background: rgba(24, 35, 51, .72);\n      padding: 18px;\n      min-height: 116px;\n      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;\n    }\n    .usage-card:hover { transform: translateY(-2px); border-color: var(--line-hot); box-shadow: 0 0 22px rgba(83, 171, 255, .14); }\n    .usage-card span { display: block; color: var(--muted); letter-spacing: .08em; font-size: 13px; margin-bottom: 14px; }\n    .usage-card strong { font-size: clamp(26px, 6vw, 36px); line-height: 1; overflow-wrap: anywhere; }\n    .usage-card.input strong { color: var(--blue); }\n    .usage-card.output strong { color: var(--green); }\n    .usage-card.total strong { color: #ffd64a; }\n    .usage-card.cost strong { color: var(--pink); }\n    .legend {\n      display: flex;\n      flex-wrap: wrap;\n      align-items: center;\n      gap: 14px 22px;\n      padding: 18px 20px;\n      margin-bottom: 28px;\n    }\n    .legend span { position: relative; z-index: 1; color: var(--muted); font-weight: 700; }\n    .dot {\n      display: inline-block;\n      width: 11px;\n      height: 11px;\n      border-radius: 50%;\n      margin-right: 7px;\n      box-shadow: 0 0 14px currentColor;\n      vertical-align: middle;\n    }\n    .dot.home { background: var(--green); color: var(--green); }\n    .dot.draw { background: var(--yellow); color: var(--yellow); }\n    .dot.away { background: var(--red); color: var(--red); }\n    .match-day { margin-top: 28px; }\n    .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 14px; }\n    .section-head p { margin-top: 8px; line-height: 1.5; }\n    .day-count {\n      flex: 0 0 auto;\n      border: 1px solid var(--line);\n      border-radius: 999px;\n      padding: 8px 14px;\n      color: #ffdb54;\n      background: rgba(246, 189, 39, .12);\n      font-weight: 800;\n    }\n    .match-grid { display: grid; grid-template-columns: 1fr; gap: 22px; }\n    .match-card {\n      border: 1px solid var(--line);\n      border-radius: 20px;\n      background: linear-gradient(145deg, rgba(30, 43, 59, .97), rgba(23, 34, 50, .98));\n      padding: 22px;\n      min-height: 360px;\n      display: flex;\n      flex-direction: column;\n      gap: 18px;\n      box-shadow: 0 14px 38px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.035);\n      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;\n    }\n    .match-card:hover {\n      transform: translateY(-4px);\n      border-color: var(--line-hot);\n      box-shadow: 0 22px 58px rgba(0,0,0,.45), 0 0 24px rgba(83, 171, 255, .18), inset 0 1px 0 rgba(255,255,255,.06);\n    }\n    .match-card:hover .prob-stack .seg { filter: brightness(1.12) saturate(1.08); }\n    .match-topline { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 14px; }\n    .match-topline h3 { margin: 0; font-size: clamp(22px, 5vw, 32px); line-height: 1.2; overflow-wrap: anywhere; }\n    .match-topline time {\n      border-radius: 999px;\n      background: rgba(255,255,255,.06);\n      border: 1px solid rgba(255,255,255,.06);\n      color: var(--muted);\n      padding: 8px 14px;\n      white-space: nowrap;\n      font-weight: 750;\n    }\n    .scoreboard { display: grid; grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr); align-items: center; gap: 12px; text-align: center; }\n    .score-side span { display: block; color: var(--text); font-size: 18px; font-weight: 760; overflow-wrap: anywhere; }\n    .score-side strong { display: block; margin-top: 6px; font-size: clamp(42px, 12vw, 62px); line-height: .95; color: #ffd11e; }\n    .score-separator { color: var(--muted); font-size: 34px; font-weight: 600; }\n    .probability-panel { display: grid; gap: 10px; }\n    .prob-heading { color: var(--muted); font-weight: 760; }\n    .prob-labels, .prob-values { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; color: var(--muted); font-weight: 700; }\n    .prob-labels span:nth-child(2), .prob-values span:nth-child(2) { text-align: center; }\n    .prob-labels span:nth-child(3), .prob-values span:nth-child(3) { text-align: right; }\n    .prob-values span:nth-child(1) { color: var(--green); }\n    .prob-values span:nth-child(2) { color: var(--yellow); }\n    .prob-values span:nth-child(3) { color: var(--red); }\n    .prob-stack {\n      display: flex;\n      height: 16px;\n      border-radius: 999px;\n      overflow: hidden;\n      background: rgba(255,255,255,.08);\n      box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);\n    }\n    .prob-stack .seg { min-width: 2px; transition: filter .18s ease, transform .18s ease; }\n    .prob-stack .home { background: var(--green); }\n    .prob-stack .draw { background: var(--yellow); }\n    .prob-stack .away { background: var(--red); }\n    .metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }\n    .metric-grid span {\n      border: 1px solid var(--line);\n      border-radius: 13px;\n      background: rgba(18, 28, 42, .62);\n      color: var(--muted);\n      min-height: 72px;\n      padding: 12px;\n      line-height: 1.45;\n      overflow-wrap: anywhere;\n    }\n    .metric-grid b { display: block; color: var(--text); margin-bottom: 4px; }\n    .analysis-block { display: grid; gap: 14px; }\n    .analysis-block section { border-top: 1px solid var(--line); padding-top: 14px; }\n    .analysis-block h4 { margin: 0 0 8px; font-size: 17px; color: var(--muted); }\n    .analysis-block p { margin: 0; color: #d8deea; font-size: 15px; line-height: 1.75; }\n    .analysis-block .risk-text { color: #ffbd35; }\n    .match-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; border-top: 1px solid var(--line); padding-top: 14px; margin-top: auto; color: var(--muted); }\n    .confidence { display: inline-flex; align-items: center; min-width: 38px; justify-content: center; border-radius: 999px; padding: 4px 11px; margin-left: 4px; }\n    .confidence.high { color: var(--green); background: rgba(43,209,111,.13); }\n    .confidence.medium { color: var(--yellow); background: rgba(246,189,39,.13); }\n    .confidence.low { color: var(--red); background: rgba(239,80,73,.13); }\n    .source-link { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }\n    .venue-line { margin: -6px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }\n    .empty { border: 1px dashed var(--line); border-radius: 18px; background: rgba(27,40,56,.68); padding: 24px; color: var(--muted); }\n    .muted { color: var(--muted); }\n    .compact { margin: 0; }\n    .page-footer { color: var(--muted); padding-top: 30px; font-size: 13px; line-height: 1.8; }\n    @media (min-width: 1080px) {\n      .match-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }\n    }\n    @media (max-width: 760px) {\n      .page { width: min(100% - 24px, 640px); padding-top: 18px; }\n      .hero, .overview, .usage-panel, .match-card { border-radius: 20px; padding: 20px; }\n      .hero-meta, .usage-grid, .metric-grid { grid-template-columns: 1fr 1fr; }\n      .section-head, .match-topline { display: block; }\n      .day-count { display: inline-flex; margin-top: 12px; }\n      .match-topline time { display: inline-flex; margin-top: 12px; white-space: normal; }\n      .scoreboard { grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr); gap: 6px; }\n      .score-side span { font-size: 16px; }\n      .prob-labels { font-size: 14px; }\n      .match-footer { display: grid; grid-template-columns: 1fr; }\n    }\n    @media (max-width: 460px) {\n      .hero-meta, .usage-grid, .metric-grid { grid-template-columns: 1fr; }\n      .prob-labels { grid-template-columns: 1fr; gap: 6px; }\n      .prob-labels span, .prob-labels span:nth-child(2), .prob-labels span:nth-child(3) { text-align: left; }\n    }\n  </style>\n</head>\n<body class=\"night-shell\">\n  <main class=\"page\">\n    <header class=\"hero night-card\">\n      <h1>2026 世界杯 · 预测分析</h1>\n      <span class=\"range-pill\">6月25日比赛日 - 6月26日比赛日 · 北京时间 06-25 18:00 - 06-27 18:00</span>\n      <div class=\"hero-meta\">\n        <div>生成时间<strong>北京时间 06-25 20:48</strong></div>\n        <div>总比赛场次<strong>10 场</strong></div>\n        <div>分析模型<strong>deepseek-v4-pro</strong></div>\n        <div>生成模型<strong>deepseek-v4-flash</strong></div>\n      </div>\n    </header>\n\n    <section class=\"overview night-card\">\n      <h2>总览</h2>\n      <p>本报告覆盖2026年6月25日至27日（北京时间）共10场已验证世界杯小组赛，基于FIFA官方赛程与ESPN交叉验证，赔率数据来自DraftKings。伤病信息有限，多数球队状态未知。整体实力差距明显的比赛冷门概率低，但部分场次如日本对瑞典、佛得角对沙特存在较高不确定性。</p>\n    </section>\n\n    <section class=\"usage-panel night-card\">\n      <h2>Token / Cost</h2>\n      <div class=\"usage-grid\">\n        <div class=\"usage-card input\"><span>输入 TOKEN</span><strong>53696</strong></div>\n        <div class=\"usage-card output\"><span>输出 TOKEN</span><strong>19046</strong></div>\n        <div class=\"usage-card total\"><span>总 TOKEN</span><strong>72742</strong></div>\n        <div class=\"usage-card cost\"><span>预计成本</span><strong>0.727420</strong></div>\n      </div>\n    </section>\n\n    <section class=\"overview night-card\">\n      <h2>风险概览</h2>\n      <p>本轮比赛冷门概率整体偏低，日本vs瑞典、巴拉圭vs澳大利亚、佛得角vs沙特三场存在较大不确定性，其余场次实力差距明显。伤病信息不足是主要风险源，若赛前有主力缺阵可能改变局势。</p>\n    </section>\n\n    <section class=\"legend night-card\">\n      <span><i class=\"dot home\"></i>主胜</span>\n      <span><i class=\"dot draw\"></i>平局</span>\n      <span><i class=\"dot away\"></i>客胜</span>\n      <span>置信度：高 / 中 / 低</span>\n      <span><a href=\"latest.json\">查看 data/latest.json</a></span>\n    </section>\n    \n    <section class=\"match-day\" data-match-day=\"2026-06-25\">\n      <div class=\"section-head\">\n        <div>\n          <h2>6月25日比赛日</h2>\n          <p class=\"muted compact\">北京时间 06-25 18:00 - 06-26 18:00，按北京时间升序排列</p>\n        </div>\n        <div class=\"day-count\">5 场</div>\n      </div>\n      <section class=\"match-grid\">\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>库拉索 vs 科特迪瓦</h3>\n          <time datetime=\"2026-06-26T04:00:00+08:00\">北京时间 06-26 04:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>库拉索</span>\n            <strong>0</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>科特迪瓦</span>\n            <strong>2</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 6%</span>\n        <span><i class=\"dot draw\"></i>平局 12%</span>\n        <span><i class=\"dot away\"></i>客胜 82%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:6.000%\"></span>\n        <span class=\"seg draw\" style=\"width:12.000%\"></span>\n        <span class=\"seg away\" style=\"width:82.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>6%</span>\n        <span>12%</span>\n        <span>82%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>库拉索 0.40</span>\n          <span><b>xG</b>科特迪瓦 2.60</span>\n          <span><b>爆冷概率</b>18%</span>\n          <span><b>赔率</b>主胜 6.01% / 平 12.03% / 客胜 81.96%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>库拉索密集防守快速反击，科特迪瓦依靠身体优势和边路突破控制比赛。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">科特迪瓦实力碾压，但库拉索定位球可能偷袭，若科特迪瓦久攻不下，平局风险小幅上升。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">伤病情况未知 伤病情况未知 两队均无明确伤病报告，可视为全主力出战。</p></section>\n          <section><h4>赔率对比</h4><p>CIV -575: 主胜 6.01% / 平 12.03% / 客胜 81.96%. 模型概率与市场几乎一致，无显著偏差。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence medium\">中</b></span>\n          <span>比赛 ID: 400021468</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760473\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Philadelphia Stadium - Philadelphia - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>厄瓜多尔 vs 德国</h3>\n          <time datetime=\"2026-06-26T04:00:00+08:00\">北京时间 06-26 04:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>厄瓜多尔</span>\n            <strong>1</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>德国</span>\n            <strong>2</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 18%</span>\n        <span><i class=\"dot draw\"></i>平局 20%</span>\n        <span><i class=\"dot away\"></i>客胜 62%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:18.000%\"></span>\n        <span class=\"seg draw\" style=\"width:20.000%\"></span>\n        <span class=\"seg away\" style=\"width:62.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>18%</span>\n        <span>20%</span>\n        <span>62%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>厄瓜多尔 1.00</span>\n          <span><b>xG</b>德国 2.00</span>\n          <span><b>爆冷概率</b>38%</span>\n          <span><b>赔率</b>主胜 18.25% / 平 19.55% / 客胜 62.2%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>厄瓜多尔注重反击与定位球，德国控球主导，利用中场创造力渗透。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">德国纸面实力占优，但厄瓜多尔在高原主场以外依然具备韧性，平局概率不低。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">伤病情况未知 伤病情况未知 暂无伤病影响，双方可排出强阵。</p></section>\n          <section><h4>赔率对比</h4><p>GER -185: 主胜 18.25% / 平 19.55% / 客胜 62.2%. 模型略微高估平局可能，认为市场对德国胜稍显乐观。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence medium\">中</b></span>\n          <span>比赛 ID: 400021466</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760468\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">New York/New Jersey Stadium - New Jersey - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>突尼斯 vs 荷兰</h3>\n          <time datetime=\"2026-06-26T07:00:00+08:00\">北京时间 06-26 07:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>突尼斯</span>\n            <strong>0</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>荷兰</span>\n            <strong>3</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 4%</span>\n        <span><i class=\"dot draw\"></i>平局 9%</span>\n        <span><i class=\"dot away\"></i>客胜 87%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:4.000%\"></span>\n        <span class=\"seg draw\" style=\"width:9.000%\"></span>\n        <span class=\"seg away\" style=\"width:87.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>4%</span>\n        <span>9%</span>\n        <span>87%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>突尼斯 0.30</span>\n          <span><b>xG</b>荷兰 3.00</span>\n          <span><b>爆冷概率</b>13%</span>\n          <span><b>赔率</b>主胜 3.68% / 平 8.69% / 客胜 87.63%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>突尼斯防守收缩寻求反击，荷兰全面压制，边中结合频繁冲击。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">荷兰优势巨大，突尼斯几乎无爆冷资本，除非红牌或极端意外。</p></section>\n          <section><h4>伤停信息</h4><p>主队: 媒体伤停线索; 客队: 媒体伤停线索</p><p class=\"muted compact\">可能受伤，但无具体球员信息 可能受伤，但无具体球员信息 两队均有疑似伤病，但缺乏具体名单，无法评估影响。</p></section>\n          <section><h4>赔率对比</h4><p>NED -1100: 主胜 3.68% / 平 8.69% / 客胜 87.63%. 模型对荷兰胜的定价略低于市场，但差异极小。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence low\">低</b></span>\n          <span>比赛 ID: 400021473</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760472\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Kansas City Stadium - Kansas City - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>日本 vs 瑞典</h3>\n          <time datetime=\"2026-06-26T07:00:00+08:00\">北京时间 06-26 07:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>日本</span>\n            <strong>2</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>瑞典</span>\n            <strong>1</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 51%</span>\n        <span><i class=\"dot draw\"></i>平局 28%</span>\n        <span><i class=\"dot away\"></i>客胜 21%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:51.000%\"></span>\n        <span class=\"seg draw\" style=\"width:28.000%\"></span>\n        <span class=\"seg away\" style=\"width:21.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>51%</span>\n        <span>28%</span>\n        <span>21%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>日本 1.80</span>\n          <span><b>xG</b>瑞典 1.20</span>\n          <span><b>爆冷概率</b>49%</span>\n          <span><b>赔率</b>主胜 50.52% / 平 27.56% / 客胜 21.92%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>日本技术控制与高位压迫，瑞典依靠身体优势和定位球威胁。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">日本技术层面占优，但瑞典高空轰炸可能改变局势，比赛充满变数。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">伤病情况未知 伤病情况未知 无伤病报告，双方均可全主力出战。</p></section>\n          <section><h4>赔率对比</h4><p>JPN -110: 主胜 50.52% / 平 27.56% / 客胜 21.92%. 模型对日本胜的倾向略高于市场，但优势微弱。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence medium\">中</b></span>\n          <span>比赛 ID: 400021471</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760471\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Dallas Stadium - Dallas - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>巴拉圭 vs 澳大利亚</h3>\n          <time datetime=\"2026-06-26T10:00:00+08:00\">北京时间 06-26 10:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>巴拉圭</span>\n            <strong>1</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>澳大利亚</span>\n            <strong>1</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 36%</span>\n        <span><i class=\"dot draw\"></i>平局 42%</span>\n        <span><i class=\"dot away\"></i>客胜 22%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:36.000%\"></span>\n        <span class=\"seg draw\" style=\"width:42.000%\"></span>\n        <span class=\"seg away\" style=\"width:22.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>36%</span>\n        <span>42%</span>\n        <span>22%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>巴拉圭 1.20</span>\n          <span><b>xG</b>澳大利亚 1.10</span>\n          <span><b>爆冷概率</b>64%</span>\n          <span><b>赔率</b>主胜 35.5% / 平 41.68% / 客胜 22.82%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>巴拉圭注重防守组织与反击，澳大利亚身体对抗强硬，均势局。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">任何一方都难言稳胜，平局可能性最高，需警惕定位球打破平衡。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">伤病情况未知 伤病情况未知 暂无伤病影响，双方实力接近。</p></section>\n          <section><h4>赔率对比</h4><p>PAR +170: 主胜 35.5% / 平 41.68% / 客胜 22.82%. 模型稍看好巴拉圭不败，但整体与市场一致。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence medium\">中</b></span>\n          <span>比赛 ID: 400021461</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760469\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">San Francisco Bay Area Stadium - San Francisco Bay Area - USA</p>\n      </article>\n    </section>\n    </section>\n            \n    <section class=\"match-day\" data-match-day=\"2026-06-26\">\n      <div class=\"section-head\">\n        <div>\n          <h2>6月26日比赛日</h2>\n          <p class=\"muted compact\">北京时间 06-26 18:00 - 06-27 18:00，按北京时间升序排列</p>\n        </div>\n        <div class=\"day-count\">5 场</div>\n      </div>\n      <section class=\"match-grid\">\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>塞内加尔 vs 伊拉克</h3>\n          <time datetime=\"2026-06-27T03:00:00+08:00\">北京时间 06-27 03:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>塞内加尔</span>\n            <strong>2</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>伊拉克</span>\n            <strong>0</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 78%</span>\n        <span><i class=\"dot draw\"></i>平局 14%</span>\n        <span><i class=\"dot away\"></i>客胜 8%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:78.000%\"></span>\n        <span class=\"seg draw\" style=\"width:14.000%\"></span>\n        <span class=\"seg away\" style=\"width:8.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>78%</span>\n        <span>14%</span>\n        <span>8%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>塞内加尔 2.20</span>\n          <span><b>xG</b>伊拉克 0.60</span>\n          <span><b>爆冷概率</b>22%</span>\n          <span><b>赔率</b>主胜 78.34% / 平 13.68% / 客胜 7.98%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>塞内加尔身体对抗与速度优势明显，伊拉克密集防守寻求零星反击。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">伊拉克爆冷概率极低，塞内加尔早进球可能打出大比分。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">伤病情况未知 伤病情况未知 无伤病报告，塞内加尔实力碾压。</p></section>\n          <section><h4>赔率对比</h4><p>SEN -450: 主胜 78.34% / 平 13.68% / 客胜 7.98%. 模型概率几乎完全贴合市场，无明显偏差。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence medium\">中</b></span>\n          <span>比赛 ID: 400021493</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760474\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Toronto Stadium - Toronto - CAN</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>挪威 vs 法国</h3>\n          <time datetime=\"2026-06-27T03:00:00+08:00\">北京时间 06-27 03:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>挪威</span>\n            <strong>1</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>法国</span>\n            <strong>2</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 19%</span>\n        <span><i class=\"dot draw\"></i>平局 22%</span>\n        <span><i class=\"dot away\"></i>客胜 59%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:19.000%\"></span>\n        <span class=\"seg draw\" style=\"width:22.000%\"></span>\n        <span class=\"seg away\" style=\"width:59.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>19%</span>\n        <span>22%</span>\n        <span>59%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>挪威 1.00</span>\n          <span><b>xG</b>法国 2.20</span>\n          <span><b>爆冷概率</b>41%</span>\n          <span><b>赔率</b>主胜 19.18% / 平 21.8% / 客胜 59.02%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>挪威依赖哈兰德个人能力与反击，法国整体技术优势压制约性。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">法国队稳定性高，但挪威锋线个人能力可能制造意外，平局需防范。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">伤病情况未知 伤病情况未知 无伤病报告，法国实力占优。</p></section>\n          <section><h4>赔率对比</h4><p>FRA -160: 主胜 19.18% / 平 21.8% / 客胜 59.02%. 模型与市场几无分歧，法国胜赔合理。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence medium\">中</b></span>\n          <span>比赛 ID: 400021489</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760475\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Boston Stadium - Boston - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>乌拉圭 vs 西班牙</h3>\n          <time datetime=\"2026-06-27T08:00:00+08:00\">北京时间 06-27 08:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>乌拉圭</span>\n            <strong>0</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>西班牙</span>\n            <strong>2</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 13%</span>\n        <span><i class=\"dot draw\"></i>平局 23%</span>\n        <span><i class=\"dot away\"></i>客胜 64%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:13.000%\"></span>\n        <span class=\"seg draw\" style=\"width:23.000%\"></span>\n        <span class=\"seg away\" style=\"width:64.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>13%</span>\n        <span>23%</span>\n        <span>64%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>乌拉圭 0.70</span>\n          <span><b>xG</b>西班牙 2.30</span>\n          <span><b>爆冷概率</b>36%</span>\n          <span><b>赔率</b>主胜 12.78% / 平 22.82% / 客胜 64.41%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>乌拉圭防守韧性与反击速度挑战西班牙传控体系，中场争夺关键。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">乌拉圭铁血防守可能限制西班牙进球数，但爆冷获胜难度极大。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">伤病情况未知 伤病情况未知 暂无伤病影响，西班牙技术优势明显。</p></section>\n          <section><h4>赔率对比</h4><p>ESP -205: 主胜 12.78% / 平 22.82% / 客胜 64.41%. 模型小幅低估西班牙胜率，但整体偏差不大。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence medium\">中</b></span>\n          <span>比赛 ID: 400021484</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760479\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Guadalajara Stadium - Guadalajara - MEX</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>佛得角 vs 沙特阿拉伯</h3>\n          <time datetime=\"2026-06-27T08:00:00+08:00\">北京时间 06-27 08:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>佛得角</span>\n            <strong>1</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>沙特阿拉伯</span>\n            <strong>1</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 38%</span>\n        <span><i class=\"dot draw\"></i>平局 29%</span>\n        <span><i class=\"dot away\"></i>客胜 33%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:38.000%\"></span>\n        <span class=\"seg draw\" style=\"width:29.000%\"></span>\n        <span class=\"seg away\" style=\"width:33.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>38%</span>\n        <span>29%</span>\n        <span>33%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>佛得角 1.30</span>\n          <span><b>xG</b>沙特阿拉伯 1.20</span>\n          <span><b>爆冷概率</b>62%</span>\n          <span><b>赔率</b>主胜 37.65% / 平 28.66% / 客胜 33.69%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>双方实力接近，佛得角依靠归化球员个人能力，沙特技术整体性稍优。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">比赛结果难以预测，任何赛果都属正常，平局和双方进球可能性高。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">伤病情况未知 伤病情况未知 无伤病报告，五五开对抗。</p></section>\n          <section><h4>赔率对比</h4><p>CPV +155: 主胜 37.65% / 平 28.66% / 客胜 33.69%. 模型认为市场可能略微高估沙特不败的概率。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence medium\">中</b></span>\n          <span>比赛 ID: 400021485</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760478\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Houston Stadium - Houston - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>新西兰 vs 比利时</h3>\n          <time datetime=\"2026-06-27T11:00:00+08:00\">北京时间 06-27 11:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>新西兰</span>\n            <strong>0</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>比利时</span>\n            <strong>3</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 6%</span>\n        <span><i class=\"dot draw\"></i>平局 11%</span>\n        <span><i class=\"dot away\"></i>客胜 83%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:6.000%\"></span>\n        <span class=\"seg draw\" style=\"width:11.000%\"></span>\n        <span class=\"seg away\" style=\"width:83.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>6%</span>\n        <span>11%</span>\n        <span>83%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>新西兰 0.40</span>\n          <span><b>xG</b>比利时 2.80</span>\n          <span><b>爆冷概率</b>17%</span>\n          <span><b>赔率</b>主胜 5.64% / 平 11.28% / 客胜 83.08%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>新西兰长传冲吊与身体对抗，比利时技术碾压，控球率悬殊。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">新西兰几乎无爆冷可能，比利时大概率轻松取胜，关注净胜球。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">伤病情况未知 伤病情况未知 无伤病报告，比利时全主力轻松应战。</p></section>\n          <section><h4>赔率对比</h4><p>BEL -650: 主胜 5.64% / 平 11.28% / 客胜 83.08%. 模型与市场高度一致，比利时胜无悬念。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence medium\">中</b></span>\n          <span>比赛 ID: 400021481</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760477\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">BC Place Vancouver - Vancouver - CAN</p>\n      </article>\n    </section>\n    </section>\n            \n    <footer class=\"page-footer\">\n      V3 Agent：FIFA 官方赛程为主源，ESPN 用于第二来源校验和赔率；伤停无可靠来源时显示 unknown，赔率无真实源时显示 unavailable。所有可见比赛时间均为北京时间，比赛日按 18:00 至次日 18:00 划分。\n    </footer>\n  </main>\n</body>\n</html>\n",
+  "render": "<!doctype html>\n<html lang=\"zh-CN\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>2026 世界杯 · 预测分析</title>\n  <style>\n    :root {\n      color-scheme: dark;\n      --bg: #10111f;\n      --bg-2: #141727;\n      --panel: #1b2838;\n      --panel-2: #202d3d;\n      --panel-3: #172232;\n      --line: rgba(104, 136, 174, 0.28);\n      --line-hot: rgba(83, 171, 255, 0.58);\n      --text: #f5f7fb;\n      --muted: #a5afc1;\n      --green: #2bd16f;\n      --yellow: #f6bd27;\n      --red: #ef5049;\n      --blue: #66aaff;\n      --pink: #f05b78;\n      --shadow: 0 18px 48px rgba(0, 0, 0, 0.42);\n    }\n    * { box-sizing: border-box; }\n    html { background: var(--bg); }\n    body {\n      margin: 0;\n      font-family: Inter, \"Microsoft YaHei\", \"PingFang SC\", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;\n      color: var(--text);\n      background:\n        radial-gradient(circle at 50% -20%, rgba(32, 93, 156, 0.32), transparent 38%),\n        linear-gradient(180deg, #171729 0%, #10111f 42%, #0c0f19 100%);\n      letter-spacing: 0;\n      min-height: 100vh;\n    }\n    body::before {\n      content: \"\";\n      position: fixed;\n      inset: 0;\n      pointer-events: none;\n      background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);\n      background-size: 42px 42px;\n      mask-image: linear-gradient(180deg, rgba(0,0,0,0.85), transparent 70%);\n    }\n    a { color: var(--blue); text-decoration: none; font-weight: 700; transition: color .18s ease, text-shadow .18s ease; }\n    a:hover { color: #91c4ff; text-shadow: 0 0 16px rgba(102, 170, 255, .45); }\n    .page { width: min(980px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 44px; }\n    .night-card {\n      position: relative;\n      border: 1px solid var(--line);\n      border-radius: 22px;\n      background: linear-gradient(145deg, rgba(31, 46, 66, .96), rgba(24, 35, 51, .96));\n      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.04);\n      overflow: hidden;\n    }\n    .night-card::before {\n      content: \"\";\n      position: absolute;\n      inset: 0;\n      pointer-events: none;\n      background: linear-gradient(120deg, rgba(86, 169, 255, .18), transparent 36%, rgba(43, 209, 111, .08));\n      opacity: .55;\n    }\n    .hero {\n      padding: 30px;\n      margin-bottom: 24px;\n    }\n    .hero > * { position: relative; z-index: 1; }\n    .hero h1 { margin: 0 0 18px; font-size: clamp(30px, 7vw, 46px); line-height: 1.08; font-weight: 850; }\n    .range-pill {\n      display: inline-flex;\n      align-items: center;\n      max-width: 100%;\n      min-height: 40px;\n      padding: 0 18px;\n      border-radius: 999px;\n      background: rgba(246, 189, 39, .13);\n      color: #ffdb54;\n      border: 1px solid rgba(246, 189, 39, .28);\n      font-weight: 800;\n      overflow-wrap: anywhere;\n    }\n    .hero-meta {\n      display: grid;\n      grid-template-columns: repeat(2, minmax(0, 1fr));\n      gap: 14px 22px;\n      margin: 26px 0 0;\n    }\n    .hero-meta div { color: var(--muted); line-height: 1.55; min-width: 0; overflow-wrap: anywhere; }\n    .hero-meta strong { display: block; color: var(--text); font-weight: 780; }\n    .overview {\n      padding: 24px;\n      margin-bottom: 24px;\n    }\n    .overview h2, .usage-panel h2, .match-day h2 { margin: 0; font-size: 24px; color: #ffd64a; }\n    .overview p { position: relative; z-index: 1; margin: 14px 0 0; color: var(--muted); line-height: 1.8; font-size: 16px; }\n    .usage-panel {\n      padding: 22px;\n      margin-bottom: 24px;\n      border-color: rgba(246, 189, 39, .24);\n    }\n    .usage-grid {\n      position: relative;\n      z-index: 1;\n      display: grid;\n      grid-template-columns: repeat(4, minmax(0, 1fr));\n      gap: 14px;\n      margin-top: 18px;\n    }\n    .usage-card {\n      border: 1px solid var(--line);\n      border-radius: 14px;\n      background: rgba(24, 35, 51, .72);\n      padding: 18px;\n      min-height: 116px;\n      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;\n    }\n    .usage-card:hover { transform: translateY(-2px); border-color: var(--line-hot); box-shadow: 0 0 22px rgba(83, 171, 255, .14); }\n    .usage-card span { display: block; color: var(--muted); letter-spacing: .08em; font-size: 13px; margin-bottom: 14px; }\n    .usage-card strong { font-size: clamp(26px, 6vw, 36px); line-height: 1; overflow-wrap: anywhere; }\n    .usage-card.input strong { color: var(--blue); }\n    .usage-card.output strong { color: var(--green); }\n    .usage-card.total strong { color: #ffd64a; }\n    .usage-card.cost strong { color: var(--pink); }\n    .legend {\n      display: flex;\n      flex-wrap: wrap;\n      align-items: center;\n      gap: 14px 22px;\n      padding: 18px 20px;\n      margin-bottom: 28px;\n    }\n    .legend span { position: relative; z-index: 1; color: var(--muted); font-weight: 700; }\n    .dot {\n      display: inline-block;\n      width: 11px;\n      height: 11px;\n      border-radius: 50%;\n      margin-right: 7px;\n      box-shadow: 0 0 14px currentColor;\n      vertical-align: middle;\n    }\n    .dot.home { background: var(--green); color: var(--green); }\n    .dot.draw { background: var(--yellow); color: var(--yellow); }\n    .dot.away { background: var(--red); color: var(--red); }\n    .match-day { margin-top: 28px; }\n    .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 14px; }\n    .section-head p { margin-top: 8px; line-height: 1.5; }\n    .day-count {\n      flex: 0 0 auto;\n      border: 1px solid var(--line);\n      border-radius: 999px;\n      padding: 8px 14px;\n      color: #ffdb54;\n      background: rgba(246, 189, 39, .12);\n      font-weight: 800;\n    }\n    .match-grid { display: grid; grid-template-columns: 1fr; gap: 22px; }\n    .match-card {\n      border: 1px solid var(--line);\n      border-radius: 20px;\n      background: linear-gradient(145deg, rgba(30, 43, 59, .97), rgba(23, 34, 50, .98));\n      padding: 22px;\n      min-height: 360px;\n      display: flex;\n      flex-direction: column;\n      gap: 18px;\n      box-shadow: 0 14px 38px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.035);\n      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;\n    }\n    .match-card:hover {\n      transform: translateY(-4px);\n      border-color: var(--line-hot);\n      box-shadow: 0 22px 58px rgba(0,0,0,.45), 0 0 24px rgba(83, 171, 255, .18), inset 0 1px 0 rgba(255,255,255,.06);\n    }\n    .match-card:hover .prob-stack .seg { filter: brightness(1.12) saturate(1.08); }\n    .match-topline { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 14px; }\n    .match-topline h3 { margin: 0; font-size: clamp(22px, 5vw, 32px); line-height: 1.2; overflow-wrap: anywhere; }\n    .match-topline time {\n      border-radius: 999px;\n      background: rgba(255,255,255,.06);\n      border: 1px solid rgba(255,255,255,.06);\n      color: var(--muted);\n      padding: 8px 14px;\n      white-space: nowrap;\n      font-weight: 750;\n    }\n    .scoreboard { display: grid; grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr); align-items: center; gap: 12px; text-align: center; }\n    .score-side span { display: block; color: var(--text); font-size: 18px; font-weight: 760; overflow-wrap: anywhere; }\n    .score-side strong { display: block; margin-top: 6px; font-size: clamp(42px, 12vw, 62px); line-height: .95; color: #ffd11e; }\n    .score-separator { color: var(--muted); font-size: 34px; font-weight: 600; }\n    .probability-panel { display: grid; gap: 10px; }\n    .prob-heading { color: var(--muted); font-weight: 760; }\n    .prob-labels, .prob-values { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; color: var(--muted); font-weight: 700; }\n    .prob-labels span:nth-child(2), .prob-values span:nth-child(2) { text-align: center; }\n    .prob-labels span:nth-child(3), .prob-values span:nth-child(3) { text-align: right; }\n    .prob-values span:nth-child(1) { color: var(--green); }\n    .prob-values span:nth-child(2) { color: var(--yellow); }\n    .prob-values span:nth-child(3) { color: var(--red); }\n    .prob-stack {\n      display: flex;\n      height: 16px;\n      border-radius: 999px;\n      overflow: hidden;\n      background: rgba(255,255,255,.08);\n      box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);\n    }\n    .prob-stack .seg { min-width: 2px; transition: filter .18s ease, transform .18s ease; }\n    .prob-stack .home { background: var(--green); }\n    .prob-stack .draw { background: var(--yellow); }\n    .prob-stack .away { background: var(--red); }\n    .metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }\n    .metric-grid span {\n      border: 1px solid var(--line);\n      border-radius: 13px;\n      background: rgba(18, 28, 42, .62);\n      color: var(--muted);\n      min-height: 72px;\n      padding: 12px;\n      line-height: 1.45;\n      overflow-wrap: anywhere;\n    }\n    .metric-grid b { display: block; color: var(--text); margin-bottom: 4px; }\n    .analysis-block { display: grid; gap: 14px; }\n    .analysis-block section { border-top: 1px solid var(--line); padding-top: 14px; }\n    .analysis-block h4 { margin: 0 0 8px; font-size: 17px; color: var(--muted); }\n    .analysis-block p { margin: 0; color: #d8deea; font-size: 15px; line-height: 1.75; }\n    .analysis-block .risk-text { color: #ffbd35; }\n    .match-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; border-top: 1px solid var(--line); padding-top: 14px; margin-top: auto; color: var(--muted); }\n    .confidence { display: inline-flex; align-items: center; min-width: 38px; justify-content: center; border-radius: 999px; padding: 4px 11px; margin-left: 4px; }\n    .confidence.high { color: var(--green); background: rgba(43,209,111,.13); }\n    .confidence.medium { color: var(--yellow); background: rgba(246,189,39,.13); }\n    .confidence.low { color: var(--red); background: rgba(239,80,73,.13); }\n    .source-link { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }\n    .venue-line { margin: -6px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }\n    .empty { border: 1px dashed var(--line); border-radius: 18px; background: rgba(27,40,56,.68); padding: 24px; color: var(--muted); }\n    .muted { color: var(--muted); }\n    .compact { margin: 0; }\n    .page-footer { color: var(--muted); padding-top: 30px; font-size: 13px; line-height: 1.8; }\n    @media (min-width: 1080px) {\n      .match-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }\n    }\n    @media (max-width: 760px) {\n      .page { width: min(100% - 24px, 640px); padding-top: 18px; }\n      .hero, .overview, .usage-panel, .match-card { border-radius: 20px; padding: 20px; }\n      .hero-meta, .usage-grid, .metric-grid { grid-template-columns: 1fr 1fr; }\n      .section-head, .match-topline { display: block; }\n      .day-count { display: inline-flex; margin-top: 12px; }\n      .match-topline time { display: inline-flex; margin-top: 12px; white-space: normal; }\n      .scoreboard { grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr); gap: 6px; }\n      .score-side span { font-size: 16px; }\n      .prob-labels { font-size: 14px; }\n      .match-footer { display: grid; grid-template-columns: 1fr; }\n    }\n    @media (max-width: 460px) {\n      .hero-meta, .usage-grid, .metric-grid { grid-template-columns: 1fr; }\n      .prob-labels { grid-template-columns: 1fr; gap: 6px; }\n      .prob-labels span, .prob-labels span:nth-child(2), .prob-labels span:nth-child(3) { text-align: left; }\n    }\n  </style>\n</head>\n<body class=\"night-shell\">\n  <main class=\"page\">\n    <header class=\"hero night-card\">\n      <h1>2026 世界杯 · 预测分析</h1>\n      <span class=\"range-pill\">6月25日比赛日 - 6月26日比赛日 · 北京时间 06-25 18:00 - 06-27 18:00</span>\n      <div class=\"hero-meta\">\n        <div>生成时间<strong>北京时间 06-25 22:21</strong></div>\n        <div>总比赛场次<strong>12 场</strong></div>\n        <div>分析模型<strong>deepseek-v4-pro</strong></div>\n        <div>生成模型<strong>deepseek-v4-flash</strong></div>\n      </div>\n    </header>\n\n    <section class=\"overview night-card\">\n      <h2>总览</h2>\n      <p>本分析覆盖2026年6月25日至27日的12场世界杯小组赛，基于 DraftKings 赔率经去 overround 归一化后的概率，结合有限的伤病信息（大部分未知），生成胜平负概率、预期进球、比分预测及风险评估。强队如荷兰、比利时、塞内加尔优势明显，但日本对瑞典、巴拉圭对澳大利亚等比赛实力接近，不确定性高。伤病数据极度缺乏，影响预测精度。</p>\n    </section>\n\n    <section class=\"usage-panel night-card\">\n      <h2>Token / Cost</h2>\n      <div class=\"usage-grid\">\n        <div class=\"usage-card input\"><span>输入 TOKEN</span><strong>63827</strong></div>\n        <div class=\"usage-card output\"><span>输出 TOKEN</span><strong>24459</strong></div>\n        <div class=\"usage-card total\"><span>总 TOKEN</span><strong>88286</strong></div>\n        <div class=\"usage-card cost\"><span>预计成本</span><strong>0.882860</strong></div>\n      </div>\n    </section>\n\n    <section class=\"overview night-card\">\n      <h2>风险概览</h2>\n      <p>整体风险：强队比赛风险较低，但几场实力接近的比赛（日本vs瑞典、巴拉圭vs澳大利亚、佛得角vs沙特等）存在较高不确定性，结果难以预料。伤病数据严重缺失，部分场次报有潜在伤病但无详细信息，可能成为意外因素。</p>\n    </section>\n\n    <section class=\"legend night-card\">\n      <span><i class=\"dot home\"></i>主胜</span>\n      <span><i class=\"dot draw\"></i>平局</span>\n      <span><i class=\"dot away\"></i>客胜</span>\n      <span>置信度：高 / 中 / 低</span>\n      <span><a href=\"latest.json\">查看 data/latest.json</a></span>\n    </section>\n    \n    <section class=\"match-day\" data-match-day=\"2026-06-25\">\n      <div class=\"section-head\">\n        <div>\n          <h2>6月25日比赛日</h2>\n          <p class=\"muted compact\">北京时间 06-25 18:00 - 06-26 18:00，按北京时间升序排列</p>\n        </div>\n        <div class=\"day-count\">6 场</div>\n      </div>\n      <section class=\"match-grid\">\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>库拉索 vs 科特迪瓦</h3>\n          <time datetime=\"2026-06-26T04:00:00+08:00\">北京时间 06-26 04:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>库拉索</span>\n            <strong>0</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>科特迪瓦</span>\n            <strong>3</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 6.4%</span>\n        <span><i class=\"dot draw\"></i>平局 12.0%</span>\n        <span><i class=\"dot away\"></i>客胜 81.5%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:6.430%\"></span>\n        <span class=\"seg draw\" style=\"width:12.040%\"></span>\n        <span class=\"seg away\" style=\"width:81.530%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>6.4%</span>\n        <span>12.0%</span>\n        <span>81.5%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>库拉索 0.60</span>\n          <span><b>xG</b>科特迪瓦 2.80</span>\n          <span><b>爆冷概率</b>6%</span>\n          <span><b>赔率</b>主胜 6.42% / 平 12.04% / 客胜 81.53%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>科特迪瓦实力占优，凭借多名欧洲联赛球员在身体对抗和速度上具有明显优势，库拉索整体实力较弱，预计将采取密集防守与快速反击。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">科特迪瓦胜率极高，几乎无悬念；唯一风险在于科特迪瓦可能因轻敌或战术不当未能攻破密集防守，但库拉索爆冷概率极低。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">库拉索队内伤病情况未知 科特迪瓦队内伤病情况未知 两队均无可用伤病信息，不做阵容调整</p></section>\n          <section><h4>赔率对比</h4><p>CIV -550: 主胜 6.42% / 平 12.04% / 客胜 81.53%. 模型概率较市场隐含概率整体下调，主要去除了约3.78%的overround，各结果概率均小幅降低，差值约0.2～3.1个百分点。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence high\">高</b></span>\n          <span>比赛 ID: 400021468</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760473\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Philadelphia Stadium - Philadelphia - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>厄瓜多尔 vs 德国</h3>\n          <time datetime=\"2026-06-26T04:00:00+08:00\">北京时间 06-26 04:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>厄瓜多尔</span>\n            <strong>1</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>德国</span>\n            <strong>2</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 19.2%</span>\n        <span><i class=\"dot draw\"></i>平局 20.9%</span>\n        <span><i class=\"dot away\"></i>客胜 59.9%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:19.230%\"></span>\n        <span class=\"seg draw\" style=\"width:20.900%\"></span>\n        <span class=\"seg away\" style=\"width:59.870%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>19.2%</span>\n        <span>20.9%</span>\n        <span>59.9%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>厄瓜多尔 1.00</span>\n          <span><b>xG</b>德国 2.00</span>\n          <span><b>爆冷概率</b>19%</span>\n          <span><b>赔率</b>主胜 19.23% / 平 20.9% / 客胜 59.87%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>德国队传统控球进攻，厄瓜多尔擅长防守反击，比赛在中立场地进行，速度与对抗将影响节奏。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">德国实力占优但并非绝对碾压，厄瓜多尔有一定抵抗力；若德国无法把握机会，存在平局风险。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">厄瓜多尔队内伤病情况未知 德国队内伤病情况未知 两队均无伤病报告</p></section>\n          <section><h4>赔率对比</h4><p>GER -165: 主胜 19.23% / 平 20.9% / 客胜 59.87%. 模型概率较市场略有下调，主胜和平局微幅下降，客胜下调约2.4个百分点，反映去除4.0% overround。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence medium\">中</b></span>\n          <span>比赛 ID: 400021466</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760468\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">New York/New Jersey Stadium - New Jersey - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>突尼斯 vs 荷兰</h3>\n          <time datetime=\"2026-06-26T07:00:00+08:00\">北京时间 06-26 07:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>突尼斯</span>\n            <strong>0</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>荷兰</span>\n            <strong>3</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 3.7%</span>\n        <span><i class=\"dot draw\"></i>平局 9.1%</span>\n        <span><i class=\"dot away\"></i>客胜 87.2%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:3.690%\"></span>\n        <span class=\"seg draw\" style=\"width:9.130%\"></span>\n        <span class=\"seg away\" style=\"width:87.180%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>3.7%</span>\n        <span>9.1%</span>\n        <span>87.2%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>突尼斯 0.30</span>\n          <span><b>xG</b>荷兰 3.20</span>\n          <span><b>爆冷概率</b>4%</span>\n          <span><b>赔率</b>主胜 3.69% / 平 9.13% / 客胜 87.18%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>荷兰实力强大，注重传控与进攻宽度；突尼斯防守顽强，但面对强敌可能难以招架。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">荷兰实力碾压，胜率极高；主要风险是自身可能轮换或伤病影响配合，但即使如此仍应轻松取胜。</p></section>\n          <section><h4>伤停信息</h4><p>主队: 媒体伤停线索; 客队: 媒体伤停线索</p><p class=\"muted compact\">突尼斯存在潜在伤病（具体球员未知） 荷兰存在潜在伤病（具体球员未知） 两队均报有潜在伤病，但无具体名单，整体影响难以评估，不做显著调整。</p></section>\n          <section><h4>赔率对比</h4><p>NED -1000: 主胜 3.69% / 平 9.13% / 客胜 87.18%. 模型概率较市场下调，去除了约4.28%的overround，客胜概率降低3.73个百分点。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence high\">高</b></span>\n          <span>比赛 ID: 400021473</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760472\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Kansas City Stadium - Kansas City - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>日本 vs 瑞典</h3>\n          <time datetime=\"2026-06-26T07:00:00+08:00\">北京时间 06-26 07:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>日本</span>\n            <strong>2</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>瑞典</span>\n            <strong>1</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 49.8%</span>\n        <span><i class=\"dot draw\"></i>平局 27.6%</span>\n        <span><i class=\"dot away\"></i>客胜 22.6%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:49.800%\"></span>\n        <span class=\"seg draw\" style=\"width:27.560%\"></span>\n        <span class=\"seg away\" style=\"width:22.640%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>49.8%</span>\n        <span>27.6%</span>\n        <span>22.6%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>日本 1.60</span>\n          <span><b>xG</b>瑞典 1.10</span>\n          <span><b>爆冷概率</b>23%</span>\n          <span><b>赔率</b>主胜 49.8% / 平 27.56% / 客胜 22.64%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>日本技术细腻，控球能力突出；瑞典身体对抗出色，擅长定位球，预计比赛激烈且节奏较快。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">双方实力接近，日本略占优势但瑞典反击高效，胜负不确定性大，平局可能性不低。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">日本队内伤病情况未知 瑞典队内伤病情况未知 两队均无伤病报告</p></section>\n          <section><h4>赔率对比</h4><p>JPN -110: 主胜 49.8% / 平 27.56% / 客胜 22.64%. 模型概率整体低于市场，主胜下调约2.6个百分点，反映了5.18%的高overround。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence low\">低</b></span>\n          <span>比赛 ID: 400021471</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760471\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Dallas Stadium - Dallas - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>巴拉圭 vs 澳大利亚</h3>\n          <time datetime=\"2026-06-26T10:00:00+08:00\">北京时间 06-26 10:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>巴拉圭</span>\n            <strong>1</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>澳大利亚</span>\n            <strong>1</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 36.1%</span>\n        <span><i class=\"dot draw\"></i>平局 41.6%</span>\n        <span><i class=\"dot away\"></i>客胜 22.3%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:36.120%\"></span>\n        <span class=\"seg draw\" style=\"width:41.620%\"></span>\n        <span class=\"seg away\" style=\"width:22.260%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>36.1%</span>\n        <span>41.6%</span>\n        <span>22.3%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>巴拉圭 1.30</span>\n          <span><b>xG</b>澳大利亚 0.90</span>\n          <span><b>爆冷概率</b>22%</span>\n          <span><b>赔率</b>主胜 36.12% / 平 41.62% / 客胜 22.26%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>巴拉圭防守稳固，澳大利亚身体优势明显，可能采取高空轰炸，双方整体实力相当。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">双方均无明显优势，平局可能性最高；任意一方稍占上风即可改变局势，变数较大。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">巴拉圭队内伤病情况未知 澳大利亚队内伤病情况未知 两队均无伤病报告</p></section>\n          <section><h4>赔率对比</h4><p>PAR +165: 主胜 36.12% / 平 41.62% / 客胜 22.26%. 模型概率略低于市场，去除了4.47%的overround，平局下调1.86个百分点。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence low\">低</b></span>\n          <span>比赛 ID: 400021461</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760469\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">San Francisco Bay Area Stadium - San Francisco Bay Area - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>土耳其 vs 美国</h3>\n          <time datetime=\"2026-06-26T10:00:00+08:00\">北京时间 06-26 10:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>土耳其</span>\n            <strong>1</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>美国</span>\n            <strong>2</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 25.1%</span>\n        <span><i class=\"dot draw\"></i>平局 23.9%</span>\n        <span><i class=\"dot away\"></i>客胜 51.0%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:25.110%\"></span>\n        <span class=\"seg draw\" style=\"width:23.850%\"></span>\n        <span class=\"seg away\" style=\"width:51.040%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>25.1%</span>\n        <span>23.9%</span>\n        <span>51.0%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>土耳其 1.00</span>\n          <span><b>xG</b>美国 1.80</span>\n          <span><b>爆冷概率</b>25%</span>\n          <span><b>赔率</b>主胜 25.11% / 平 23.85% / 客胜 51.04%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>美国队作为东道主拥有一定优势，整体实力稍强；土耳其韧性十足，对抗激烈。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">美国队被市场看好但优势有限，土耳其有机会取得好结果；比赛可能胶着，平局不可忽视。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">土耳其队内伤病情况未知 美国队内伤病情况未知 两队均无伤病报告</p></section>\n          <section><h4>赔率对比</h4><p>USA -115: 主胜 25.11% / 平 23.85% / 客胜 51.04%. 模型概率低于市场，去除4.8%的overround，客胜下调2.45个百分点。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence low\">低</b></span>\n          <span>比赛 ID: 400021459</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760470\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Los Angeles Stadium - Los Angeles - USA</p>\n      </article>\n    </section>\n    </section>\n            \n    <section class=\"match-day\" data-match-day=\"2026-06-26\">\n      <div class=\"section-head\">\n        <div>\n          <h2>6月26日比赛日</h2>\n          <p class=\"muted compact\">北京时间 06-26 18:00 - 06-27 18:00，按北京时间升序排列</p>\n        </div>\n        <div class=\"day-count\">6 场</div>\n      </div>\n      <section class=\"match-grid\">\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>塞内加尔 vs 伊拉克</h3>\n          <time datetime=\"2026-06-27T03:00:00+08:00\">北京时间 06-27 03:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>塞内加尔</span>\n            <strong>2</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>伊拉克</span>\n            <strong>0</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 78.3%</span>\n        <span><i class=\"dot draw\"></i>平局 13.7%</span>\n        <span><i class=\"dot away\"></i>客胜 8.0%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:78.340%\"></span>\n        <span class=\"seg draw\" style=\"width:13.680%\"></span>\n        <span class=\"seg away\" style=\"width:7.980%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>78.3%</span>\n        <span>13.7%</span>\n        <span>8.0%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>塞内加尔 2.50</span>\n          <span><b>xG</b>伊拉克 0.50</span>\n          <span><b>爆冷概率</b>8%</span>\n          <span><b>赔率</b>主胜 78.34% / 平 13.68% / 客胜 7.98%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>塞内加尔身体素质出众，整体实力远超伊拉克；伊拉克可能采取密集防守，但恐难抵挡。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">塞内加尔实力碾压，取胜几无悬念；仅存风险是自身状态不佳或轻敌。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">塞内加尔队内伤病情况未知 伊拉克队内伤病情况未知 两队均无伤病报告</p></section>\n          <section><h4>赔率对比</h4><p>SEN -450: 主胜 78.34% / 平 13.68% / 客胜 7.98%. 模型概率大幅低于市场，主胜下调约3.5个百分点，去除了4.44%的overround。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence high\">高</b></span>\n          <span>比赛 ID: 400021493</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760474\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Toronto Stadium - Toronto - CAN</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>挪威 vs 法国</h3>\n          <time datetime=\"2026-06-27T03:00:00+08:00\">北京时间 06-27 03:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>挪威</span>\n            <strong>1</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>法国</span>\n            <strong>2</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 19.2%</span>\n        <span><i class=\"dot draw\"></i>平局 21.8%</span>\n        <span><i class=\"dot away\"></i>客胜 59.0%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:19.180%\"></span>\n        <span class=\"seg draw\" style=\"width:21.800%\"></span>\n        <span class=\"seg away\" style=\"width:59.020%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>19.2%</span>\n        <span>21.8%</span>\n        <span>59.0%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>挪威 1.00</span>\n          <span><b>xG</b>法国 2.00</span>\n          <span><b>爆冷概率</b>19%</span>\n          <span><b>赔率</b>主胜 19.18% / 平 21.8% / 客胜 59.02%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>法国拥有顶尖攻击线，整体实力占优；挪威依赖哈兰德等明星球员，可能通过反击制造威胁。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">法国实力占优但挪威有爆冷潜力，哈兰德个人能力突出，法国需防范防守反击。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">挪威队内伤病情况未知 法国队内伤病情况未知 两队均无伤病报告</p></section>\n          <section><h4>赔率对比</h4><p>FRA -160: 主胜 19.18% / 平 21.8% / 客胜 59.02%. 模型概率较市场略微下调，去除4.27%的overround，客胜下调2.52个百分点。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence medium\">中</b></span>\n          <span>比赛 ID: 400021489</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760475\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Boston Stadium - Boston - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>乌拉圭 vs 西班牙</h3>\n          <time datetime=\"2026-06-27T08:00:00+08:00\">北京时间 06-27 08:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>乌拉圭</span>\n            <strong>1</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>西班牙</span>\n            <strong>2</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 12.8%</span>\n        <span><i class=\"dot draw\"></i>平局 22.8%</span>\n        <span><i class=\"dot away\"></i>客胜 64.4%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:12.780%\"></span>\n        <span class=\"seg draw\" style=\"width:22.810%\"></span>\n        <span class=\"seg away\" style=\"width:64.410%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>12.8%</span>\n        <span>22.8%</span>\n        <span>64.4%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>乌拉圭 0.70</span>\n          <span><b>xG</b>西班牙 2.50</span>\n          <span><b>爆冷概率</b>13%</span>\n          <span><b>赔率</b>主胜 12.78% / 平 22.82% / 客胜 64.41%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>西班牙传控细腻，乌拉圭防守硬朗，风格对比鲜明，西班牙控球优势明显。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">西班牙实力明显占优，但乌拉圭防守坚韧，存在逼平可能；若西班牙久攻不下，可能陷入苦战。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">乌拉圭队内伤病情况未知 西班牙队内伤病情况未知 两队均无伤病报告</p></section>\n          <section><h4>赔率对比</h4><p>ESP -205: 主胜 12.78% / 平 22.82% / 客胜 64.41%. 模型概率略低于市场，去除4.36%的overround，客胜下调2.8个百分点。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence medium\">中</b></span>\n          <span>比赛 ID: 400021484</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760479\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Guadalajara Stadium - Guadalajara - MEX</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>佛得角 vs 沙特阿拉伯</h3>\n          <time datetime=\"2026-06-27T08:00:00+08:00\">北京时间 06-27 08:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>佛得角</span>\n            <strong>1</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>沙特阿拉伯</span>\n            <strong>1</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 37.6%</span>\n        <span><i class=\"dot draw\"></i>平局 28.7%</span>\n        <span><i class=\"dot away\"></i>客胜 33.7%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:37.650%\"></span>\n        <span class=\"seg draw\" style=\"width:28.660%\"></span>\n        <span class=\"seg away\" style=\"width:33.690%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>37.6%</span>\n        <span>28.7%</span>\n        <span>33.7%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>佛得角 1.30</span>\n          <span><b>xG</b>沙特阿拉伯 1.20</span>\n          <span><b>爆冷概率</b>34%</span>\n          <span><b>赔率</b>主胜 37.65% / 平 28.66% / 客胜 33.69%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>两队实力接近，佛得角略占主场之利，沙特技术相对细腻，整体攻防相当。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">双方实力均衡，任何结果都有可能，平局概率不低，胜负手在于临场发挥。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">佛得角队内伤病情况未知 沙特阿拉伯队内伤病情况未知 两队均无伤病报告</p></section>\n          <section><h4>赔率对比</h4><p>CPV +155: 主胜 37.65% / 平 28.66% / 客胜 33.69%. 模型概率低于市场，去除4.15%的overround，各结果下调1.6～1.2个百分点。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence low\">低</b></span>\n          <span>比赛 ID: 400021485</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760478\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Houston Stadium - Houston - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>新西兰 vs 比利时</h3>\n          <time datetime=\"2026-06-27T11:00:00+08:00\">北京时间 06-27 11:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>新西兰</span>\n            <strong>0</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>比利时</span>\n            <strong>3</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 5.6%</span>\n        <span><i class=\"dot draw\"></i>平局 11.3%</span>\n        <span><i class=\"dot away\"></i>客胜 83.1%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:5.640%\"></span>\n        <span class=\"seg draw\" style=\"width:11.280%\"></span>\n        <span class=\"seg away\" style=\"width:83.080%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>5.6%</span>\n        <span>11.3%</span>\n        <span>83.1%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>新西兰 0.30</span>\n          <span><b>xG</b>比利时 3.00</span>\n          <span><b>爆冷概率</b>6%</span>\n          <span><b>赔率</b>主胜 5.64% / 平 11.28% / 客胜 83.08%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>比利时实力远超新西兰，新西兰可能密集防守，但比利时攻击线强大，破防能力足。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">比利时取胜几乎无悬念，新西兰爆冷概率极低；主要风险为比利时提前懈怠或过度轮换。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">新西兰队内伤病情况未知 比利时队内伤病情况未知 两队均无伤病报告</p></section>\n          <section><h4>赔率对比</h4><p>BEL -650: 主胜 5.64% / 平 11.28% / 客胜 83.08%. 模型概率小幅下调，去除4.31%的overround，客胜下调3.59个百分点。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence high\">高</b></span>\n          <span>比赛 ID: 400021481</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760477\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">BC Place Vancouver - Vancouver - CAN</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>埃及 vs 伊朗</h3>\n          <time datetime=\"2026-06-27T11:00:00+08:00\">北京时间 06-27 11:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>埃及</span>\n            <strong>1</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>伊朗</span>\n            <strong>1</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 38.4%</span>\n        <span><i class=\"dot draw\"></i>平局 36.3%</span>\n        <span><i class=\"dot away\"></i>客胜 25.3%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:38.440%\"></span>\n        <span class=\"seg draw\" style=\"width:36.270%\"></span>\n        <span class=\"seg away\" style=\"width:25.290%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>38.4%</span>\n        <span>36.3%</span>\n        <span>25.3%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>埃及 1.40</span>\n          <span><b>xG</b>伊朗 1.10</span>\n          <span><b>爆冷概率</b>25%</span>\n          <span><b>赔率</b>主胜 38.44% / 平 36.27% / 客胜 25.29%</span>\n        </div>\n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>两队实力相当，埃及可能依靠萨拉赫等球星，伊朗防守严密，比赛可能较为沉闷。</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">双方均无绝对优势，胜负难料，平局可能性较高，球星的个人发挥至关重要。</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">埃及队内伤病情况未知 伊朗队内伤病情况未知 两队均无伤病报告</p></section>\n          <section><h4>赔率对比</h4><p>EGY +150: 主胜 38.44% / 平 36.27% / 客胜 25.29%. 模型概率较市场下调，去除4.05%的overround，各结果下调1.5～1.0个百分点。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence low\">低</b></span>\n          <span>比赛 ID: 400021479</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760476\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Seattle Stadium - Seattle - USA</p>\n      </article>\n    </section>\n    </section>\n            \n    <footer class=\"page-footer\">\n      V3 Agent：FIFA 官方赛程为主源，ESPN 用于第二来源校验和赔率；伤停无可靠来源时显示 unknown，赔率无真实源时显示 unavailable。所有可见比赛时间均为北京时间，比赛日按 18:00 至次日 18:00 划分。\n    </footer>\n  </main>\n</body>\n</html>\n",
   "analysis": {
-    "generated_at": "2026-06-25T11:57:16Z",
-    "summary": "本报告覆盖2026年6月25日至27日（北京时间）共10场已验证世界杯小组赛，基于FIFA官方赛程与ESPN交叉验证，赔率数据来自DraftKings。伤病信息有限，多数球队状态未知。整体实力差距明显的比赛冷门概率低，但部分场次如日本对瑞典、佛得角对沙特存在较高不确定性。",
+    "generated_at": "2026-06-25T13:59:04Z",
+    "summary": "本分析覆盖2026年6月25日至27日的12场世界杯小组赛，基于 DraftKings 赔率经去 overround 归一化后的概率，结合有限的伤病信息（大部分未知），生成胜平负概率、预期进球、比分预测及风险评估。强队如荷兰、比利时、塞内加尔优势明显，但日本对瑞典、巴拉圭对澳大利亚等比赛实力接近，不确定性高。伤病数据极度缺乏，影响预测精度。",
     "matches": [
       {
         "id": "400021468",
@@ -1473,22 +1747,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+1500",
+            "home": "+1400",
             "draw": "+700",
-            "away": "-575"
+            "away": "-550"
           },
           "implied_probability": {
-            "home_win": 6.25,
+            "home_win": 6.67,
             "draw": 12.5,
-            "away_win": 85.19
+            "away_win": 84.62
           },
           "normalized_probability": {
-            "home_win": 6.01,
-            "draw": 12.03,
-            "away_win": 81.96
+            "home_win": 6.42,
+            "draw": 12.04,
+            "away_win": 81.53
           },
-          "overround": 3.94,
-          "details": "CIV -575"
+          "overround": 3.78,
+          "details": "CIV -550"
         },
         "injuries": {
           "home": {
@@ -1508,40 +1782,40 @@
         },
         "match_id": "400021468",
         "win_draw_loss": {
-          "home_win": 6,
-          "draw": 12,
-          "away_win": 82
+          "home_win": 6.43,
+          "draw": 12.04,
+          "away_win": 81.53
         },
         "xg_prediction": {
-          "home": 0.4,
-          "away": 2.6
+          "home": 0.6,
+          "away": 2.8
         },
         "predicted_score": {
           "home": 0,
-          "away": 2
+          "away": 3
         },
-        "tactical_matchup": "库拉索密集防守快速反击，科特迪瓦依靠身体优势和边路突破控制比赛。",
+        "tactical_matchup": "科特迪瓦实力占优，凭借多名欧洲联赛球员在身体对抗和速度上具有明显优势，库拉索整体实力较弱，预计将采取密集防守与快速反击。",
         "injury_adjustment": {
-          "home": "伤病情况未知",
-          "away": "伤病情况未知",
-          "summary": "两队均无明确伤病报告，可视为全主力出战。"
+          "home": "库拉索队内伤病情况未知",
+          "away": "科特迪瓦队内伤病情况未知",
+          "summary": "两队均无可用伤病信息，不做阵容调整"
         },
-        "risk_analysis": "科特迪瓦实力碾压，但库拉索定位球可能偷袭，若科特迪瓦久攻不下，平局风险小幅上升。",
-        "upset_probability": 18,
+        "risk_analysis": "科特迪瓦胜率极高，几乎无悬念；唯一风险在于科特迪瓦可能因轻敌或战术不当未能攻破密集防守，但库拉索爆冷概率极低。",
+        "upset_probability": 6,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 6.01,
-            "draw": 12.03,
-            "away_win": 81.96
+            "home_win": 6.67,
+            "draw": 12.5,
+            "away_win": 84.62
           },
           "model_edge": {
-            "home_win": -0.01,
-            "draw": -0.03,
-            "away_win": 0.04
+            "home_win": 6.43,
+            "draw": 12.04,
+            "away_win": 81.53
           },
-          "deviation_analysis": "模型概率与市场几乎一致，无显著偏差。"
+          "deviation_analysis": "模型概率较市场隐含概率整体下调，主要去除了约3.78%的overround，各结果概率均小幅降低，差值约0.2～3.1个百分点。"
         },
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "id": "400021466",
@@ -1601,22 +1875,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+425",
-            "draw": "+390",
-            "away": "-185"
+            "home": "+400",
+            "draw": "+360",
+            "away": "-165"
           },
           "implied_probability": {
-            "home_win": 19.05,
-            "draw": 20.41,
-            "away_win": 64.91
+            "home_win": 20.0,
+            "draw": 21.74,
+            "away_win": 62.26
           },
           "normalized_probability": {
-            "home_win": 18.25,
-            "draw": 19.55,
-            "away_win": 62.2
+            "home_win": 19.23,
+            "draw": 20.9,
+            "away_win": 59.87
           },
-          "overround": 4.37,
-          "details": "GER -185"
+          "overround": 4.0,
+          "details": "GER -165"
         },
         "injuries": {
           "home": {
@@ -1636,9 +1910,9 @@
         },
         "match_id": "400021466",
         "win_draw_loss": {
-          "home_win": 18,
-          "draw": 20,
-          "away_win": 62
+          "home_win": 19.23,
+          "draw": 20.9,
+          "away_win": 59.87
         },
         "xg_prediction": {
           "home": 1.0,
@@ -1648,26 +1922,26 @@
           "home": 1,
           "away": 2
         },
-        "tactical_matchup": "厄瓜多尔注重反击与定位球，德国控球主导，利用中场创造力渗透。",
+        "tactical_matchup": "德国队传统控球进攻，厄瓜多尔擅长防守反击，比赛在中立场地进行，速度与对抗将影响节奏。",
         "injury_adjustment": {
-          "home": "伤病情况未知",
-          "away": "伤病情况未知",
-          "summary": "暂无伤病影响，双方可排出强阵。"
+          "home": "厄瓜多尔队内伤病情况未知",
+          "away": "德国队内伤病情况未知",
+          "summary": "两队均无伤病报告"
         },
-        "risk_analysis": "德国纸面实力占优，但厄瓜多尔在高原主场以外依然具备韧性，平局概率不低。",
-        "upset_probability": 38,
+        "risk_analysis": "德国实力占优但并非绝对碾压，厄瓜多尔有一定抵抗力；若德国无法把握机会，存在平局风险。",
+        "upset_probability": 19,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 18.25,
-            "draw": 19.55,
-            "away_win": 62.2
+            "home_win": 20.0,
+            "draw": 21.74,
+            "away_win": 62.26
           },
           "model_edge": {
-            "home_win": -0.25,
-            "draw": 0.45,
-            "away_win": -0.2
+            "home_win": 19.23,
+            "draw": 20.9,
+            "away_win": 59.87
           },
-          "deviation_analysis": "模型略微高估平局可能，认为市场对德国胜稍显乐观。"
+          "deviation_analysis": "模型概率较市场略有下调，主胜和平局微幅下降，客胜下调约2.4个百分点，反映去除4.0% overround。"
         },
         "confidence": "medium"
       },
@@ -1730,21 +2004,21 @@
           "provider": "DraftKings",
           "moneyline_american": {
             "home": "+2500",
-            "draw": "+1000",
-            "away": "-1100"
+            "draw": "+950",
+            "away": "-1000"
           },
           "implied_probability": {
             "home_win": 3.85,
-            "draw": 9.09,
-            "away_win": 91.67
+            "draw": 9.52,
+            "away_win": 90.91
           },
           "normalized_probability": {
-            "home_win": 3.68,
-            "draw": 8.69,
-            "away_win": 87.63
+            "home_win": 3.69,
+            "draw": 9.13,
+            "away_win": 87.18
           },
-          "overround": 4.6,
-          "details": "NED -1100"
+          "overround": 4.28,
+          "details": "NED -1000"
         },
         "injuries": {
           "home": {
@@ -1787,40 +2061,40 @@
         },
         "match_id": "400021473",
         "win_draw_loss": {
-          "home_win": 4,
-          "draw": 9,
-          "away_win": 87
+          "home_win": 3.69,
+          "draw": 9.13,
+          "away_win": 87.18
         },
         "xg_prediction": {
           "home": 0.3,
-          "away": 3.0
+          "away": 3.2
         },
         "predicted_score": {
           "home": 0,
           "away": 3
         },
-        "tactical_matchup": "突尼斯防守收缩寻求反击，荷兰全面压制，边中结合频繁冲击。",
+        "tactical_matchup": "荷兰实力强大，注重传控与进攻宽度；突尼斯防守顽强，但面对强敌可能难以招架。",
         "injury_adjustment": {
-          "home": "可能受伤，但无具体球员信息",
-          "away": "可能受伤，但无具体球员信息",
-          "summary": "两队均有疑似伤病，但缺乏具体名单，无法评估影响。"
+          "home": "突尼斯存在潜在伤病（具体球员未知）",
+          "away": "荷兰存在潜在伤病（具体球员未知）",
+          "summary": "两队均报有潜在伤病，但无具体名单，整体影响难以评估，不做显著调整。"
         },
-        "risk_analysis": "荷兰优势巨大，突尼斯几乎无爆冷资本，除非红牌或极端意外。",
-        "upset_probability": 13,
+        "risk_analysis": "荷兰实力碾压，胜率极高；主要风险是自身可能轮换或伤病影响配合，但即使如此仍应轻松取胜。",
+        "upset_probability": 4,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 3.68,
-            "draw": 8.69,
-            "away_win": 87.63
+            "home_win": 3.85,
+            "draw": 9.52,
+            "away_win": 90.91
           },
           "model_edge": {
-            "home_win": 0.32,
-            "draw": 0.31,
-            "away_win": -0.63
+            "home_win": 3.69,
+            "draw": 9.13,
+            "away_win": 87.18
           },
-          "deviation_analysis": "模型对荷兰胜的定价略低于市场，但差异极小。"
+          "deviation_analysis": "模型概率较市场下调，去除了约4.28%的overround，客胜概率降低3.73个百分点。"
         },
-        "confidence": "low"
+        "confidence": "high"
       },
       {
         "id": "400021471",
@@ -1881,20 +2155,20 @@
           "provider": "DraftKings",
           "moneyline_american": {
             "home": "-110",
-            "draw": "+250",
-            "away": "+340"
+            "draw": "+245",
+            "away": "+320"
           },
           "implied_probability": {
             "home_win": 52.38,
-            "draw": 28.57,
-            "away_win": 22.73
+            "draw": 28.99,
+            "away_win": 23.81
           },
           "normalized_probability": {
-            "home_win": 50.52,
+            "home_win": 49.8,
             "draw": 27.56,
-            "away_win": 21.92
+            "away_win": 22.64
           },
-          "overround": 3.68,
+          "overround": 5.18,
           "details": "JPN -110"
         },
         "injuries": {
@@ -1915,40 +2189,40 @@
         },
         "match_id": "400021471",
         "win_draw_loss": {
-          "home_win": 51,
-          "draw": 28,
-          "away_win": 21
+          "home_win": 49.8,
+          "draw": 27.56,
+          "away_win": 22.64
         },
         "xg_prediction": {
-          "home": 1.8,
-          "away": 1.2
+          "home": 1.6,
+          "away": 1.1
         },
         "predicted_score": {
           "home": 2,
           "away": 1
         },
-        "tactical_matchup": "日本技术控制与高位压迫，瑞典依靠身体优势和定位球威胁。",
+        "tactical_matchup": "日本技术细腻，控球能力突出；瑞典身体对抗出色，擅长定位球，预计比赛激烈且节奏较快。",
         "injury_adjustment": {
-          "home": "伤病情况未知",
-          "away": "伤病情况未知",
-          "summary": "无伤病报告，双方均可全主力出战。"
+          "home": "日本队内伤病情况未知",
+          "away": "瑞典队内伤病情况未知",
+          "summary": "两队均无伤病报告"
         },
-        "risk_analysis": "日本技术层面占优，但瑞典高空轰炸可能改变局势，比赛充满变数。",
-        "upset_probability": 49,
+        "risk_analysis": "双方实力接近，日本略占优势但瑞典反击高效，胜负不确定性大，平局可能性不低。",
+        "upset_probability": 23,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 50.52,
-            "draw": 27.56,
-            "away_win": 21.92
+            "home_win": 52.38,
+            "draw": 28.99,
+            "away_win": 23.81
           },
           "model_edge": {
-            "home_win": 0.48,
-            "draw": 0.44,
-            "away_win": -0.92
+            "home_win": 49.8,
+            "draw": 27.56,
+            "away_win": 22.64
           },
-          "deviation_analysis": "模型对日本胜的倾向略高于市场，但优势微弱。"
+          "deviation_analysis": "模型概率整体低于市场，主胜下调约2.6个百分点，反映了5.18%的高overround。"
         },
-        "confidence": "medium"
+        "confidence": "low"
       },
       {
         "id": "400021461",
@@ -2008,22 +2282,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+170",
+            "home": "+165",
             "draw": "+130",
-            "away": "+320"
+            "away": "+330"
           },
           "implied_probability": {
-            "home_win": 37.04,
+            "home_win": 37.74,
             "draw": 43.48,
-            "away_win": 23.81
+            "away_win": 23.26
           },
           "normalized_probability": {
-            "home_win": 35.5,
-            "draw": 41.68,
-            "away_win": 22.82
+            "home_win": 36.12,
+            "draw": 41.62,
+            "away_win": 22.26
           },
-          "overround": 4.32,
-          "details": "PAR +170"
+          "overround": 4.47,
+          "details": "PAR +165"
         },
         "injuries": {
           "home": {
@@ -2043,40 +2317,168 @@
         },
         "match_id": "400021461",
         "win_draw_loss": {
-          "home_win": 36,
-          "draw": 42,
-          "away_win": 22
+          "home_win": 36.12,
+          "draw": 41.62,
+          "away_win": 22.26
         },
         "xg_prediction": {
-          "home": 1.2,
-          "away": 1.1
+          "home": 1.3,
+          "away": 0.9
         },
         "predicted_score": {
           "home": 1,
           "away": 1
         },
-        "tactical_matchup": "巴拉圭注重防守组织与反击，澳大利亚身体对抗强硬，均势局。",
+        "tactical_matchup": "巴拉圭防守稳固，澳大利亚身体优势明显，可能采取高空轰炸，双方整体实力相当。",
         "injury_adjustment": {
-          "home": "伤病情况未知",
-          "away": "伤病情况未知",
-          "summary": "暂无伤病影响，双方实力接近。"
+          "home": "巴拉圭队内伤病情况未知",
+          "away": "澳大利亚队内伤病情况未知",
+          "summary": "两队均无伤病报告"
         },
-        "risk_analysis": "任何一方都难言稳胜，平局可能性最高，需警惕定位球打破平衡。",
-        "upset_probability": 64,
+        "risk_analysis": "双方均无明显优势，平局可能性最高；任意一方稍占上风即可改变局势，变数较大。",
+        "upset_probability": 22,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 35.5,
-            "draw": 41.68,
-            "away_win": 22.82
+            "home_win": 37.74,
+            "draw": 43.48,
+            "away_win": 23.26
           },
           "model_edge": {
-            "home_win": 0.5,
-            "draw": 0.32,
-            "away_win": -0.82
+            "home_win": 36.12,
+            "draw": 41.62,
+            "away_win": 22.26
           },
-          "deviation_analysis": "模型稍看好巴拉圭不败，但整体与市场一致。"
+          "deviation_analysis": "模型概率略低于市场，去除了4.47%的overround，平局下调1.86个百分点。"
         },
-        "confidence": "medium"
+        "confidence": "low"
+      },
+      {
+        "id": "400021459",
+        "fifa_match_id": "400021459",
+        "match_name": "土耳其 vs 美国",
+        "match_name_en": "Türkiye vs USA",
+        "kickoff_utc": "2026-06-26T02:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "First Stage",
+        "group": "Group D",
+        "match_number": 59,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "teams": {
+          "home": {
+            "name": "土耳其",
+            "name_en": "Türkiye"
+          },
+          "away": {
+            "name": "美国",
+            "name_en": "USA"
+          }
+        },
+        "venue": {
+          "name": "Los Angeles Stadium",
+          "city": "Los Angeles",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021459"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760470"
+          }
+        },
+        "espn_event_id": "760470",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "+280",
+            "draw": "+300",
+            "away": "-115"
+          },
+          "implied_probability": {
+            "home_win": 26.32,
+            "draw": 25.0,
+            "away_win": 53.49
+          },
+          "normalized_probability": {
+            "home_win": 25.11,
+            "draw": 23.85,
+            "away_win": 51.04
+          },
+          "overround": 4.8,
+          "details": "USA -115"
+        },
+        "injuries": {
+          "home": {
+            "team": "土耳其",
+            "team_en": "Türkiye",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "美国",
+            "team_en": "USA",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
+        },
+        "match_id": "400021459",
+        "win_draw_loss": {
+          "home_win": 25.11,
+          "draw": 23.85,
+          "away_win": 51.04
+        },
+        "xg_prediction": {
+          "home": 1.0,
+          "away": 1.8
+        },
+        "predicted_score": {
+          "home": 1,
+          "away": 2
+        },
+        "tactical_matchup": "美国队作为东道主拥有一定优势，整体实力稍强；土耳其韧性十足，对抗激烈。",
+        "injury_adjustment": {
+          "home": "土耳其队内伤病情况未知",
+          "away": "美国队内伤病情况未知",
+          "summary": "两队均无伤病报告"
+        },
+        "risk_analysis": "美国队被市场看好但优势有限，土耳其有机会取得好结果；比赛可能胶着，平局不可忽视。",
+        "upset_probability": 25,
+        "odds_comparison": {
+          "market_implied": {
+            "home_win": 26.32,
+            "draw": 25.0,
+            "away_win": 53.49
+          },
+          "model_edge": {
+            "home_win": 25.11,
+            "draw": 23.85,
+            "away_win": 51.04
+          },
+          "deviation_analysis": "模型概率低于市场，去除4.8%的overround，客胜下调2.45个百分点。"
+        },
+        "confidence": "low"
       },
       {
         "id": "400021493",
@@ -2171,40 +2573,40 @@
         },
         "match_id": "400021493",
         "win_draw_loss": {
-          "home_win": 78,
-          "draw": 14,
-          "away_win": 8
+          "home_win": 78.34,
+          "draw": 13.68,
+          "away_win": 7.98
         },
         "xg_prediction": {
-          "home": 2.2,
-          "away": 0.6
+          "home": 2.5,
+          "away": 0.5
         },
         "predicted_score": {
           "home": 2,
           "away": 0
         },
-        "tactical_matchup": "塞内加尔身体对抗与速度优势明显，伊拉克密集防守寻求零星反击。",
+        "tactical_matchup": "塞内加尔身体素质出众，整体实力远超伊拉克；伊拉克可能采取密集防守，但恐难抵挡。",
         "injury_adjustment": {
-          "home": "伤病情况未知",
-          "away": "伤病情况未知",
-          "summary": "无伤病报告，塞内加尔实力碾压。"
+          "home": "塞内加尔队内伤病情况未知",
+          "away": "伊拉克队内伤病情况未知",
+          "summary": "两队均无伤病报告"
         },
-        "risk_analysis": "伊拉克爆冷概率极低，塞内加尔早进球可能打出大比分。",
-        "upset_probability": 22,
+        "risk_analysis": "塞内加尔实力碾压，取胜几无悬念；仅存风险是自身状态不佳或轻敌。",
+        "upset_probability": 8,
         "odds_comparison": {
           "market_implied": {
+            "home_win": 81.82,
+            "draw": 14.29,
+            "away_win": 8.33
+          },
+          "model_edge": {
             "home_win": 78.34,
             "draw": 13.68,
             "away_win": 7.98
           },
-          "model_edge": {
-            "home_win": -0.34,
-            "draw": 0.32,
-            "away_win": 0.02
-          },
-          "deviation_analysis": "模型概率几乎完全贴合市场，无明显偏差。"
+          "deviation_analysis": "模型概率大幅低于市场，主胜下调约3.5个百分点，去除了4.44%的overround。"
         },
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "id": "400021489",
@@ -2299,38 +2701,38 @@
         },
         "match_id": "400021489",
         "win_draw_loss": {
-          "home_win": 19,
-          "draw": 22,
-          "away_win": 59
+          "home_win": 19.18,
+          "draw": 21.8,
+          "away_win": 59.02
         },
         "xg_prediction": {
           "home": 1.0,
-          "away": 2.2
+          "away": 2.0
         },
         "predicted_score": {
           "home": 1,
           "away": 2
         },
-        "tactical_matchup": "挪威依赖哈兰德个人能力与反击，法国整体技术优势压制约性。",
+        "tactical_matchup": "法国拥有顶尖攻击线，整体实力占优；挪威依赖哈兰德等明星球员，可能通过反击制造威胁。",
         "injury_adjustment": {
-          "home": "伤病情况未知",
-          "away": "伤病情况未知",
-          "summary": "无伤病报告，法国实力占优。"
+          "home": "挪威队内伤病情况未知",
+          "away": "法国队内伤病情况未知",
+          "summary": "两队均无伤病报告"
         },
-        "risk_analysis": "法国队稳定性高，但挪威锋线个人能力可能制造意外，平局需防范。",
-        "upset_probability": 41,
+        "risk_analysis": "法国实力占优但挪威有爆冷潜力，哈兰德个人能力突出，法国需防范防守反击。",
+        "upset_probability": 19,
         "odds_comparison": {
           "market_implied": {
+            "home_win": 20.0,
+            "draw": 22.73,
+            "away_win": 61.54
+          },
+          "model_edge": {
             "home_win": 19.18,
             "draw": 21.8,
             "away_win": 59.02
           },
-          "model_edge": {
-            "home_win": -0.18,
-            "draw": 0.2,
-            "away_win": -0.02
-          },
-          "deviation_analysis": "模型与市场几无分歧，法国胜赔合理。"
+          "deviation_analysis": "模型概率较市场略微下调，去除4.27%的overround，客胜下调2.52个百分点。"
         },
         "confidence": "medium"
       },
@@ -2427,38 +2829,38 @@
         },
         "match_id": "400021484",
         "win_draw_loss": {
-          "home_win": 13,
-          "draw": 23,
-          "away_win": 64
+          "home_win": 12.78,
+          "draw": 22.81,
+          "away_win": 64.41
         },
         "xg_prediction": {
           "home": 0.7,
-          "away": 2.3
+          "away": 2.5
         },
         "predicted_score": {
-          "home": 0,
+          "home": 1,
           "away": 2
         },
-        "tactical_matchup": "乌拉圭防守韧性与反击速度挑战西班牙传控体系，中场争夺关键。",
+        "tactical_matchup": "西班牙传控细腻，乌拉圭防守硬朗，风格对比鲜明，西班牙控球优势明显。",
         "injury_adjustment": {
-          "home": "伤病情况未知",
-          "away": "伤病情况未知",
-          "summary": "暂无伤病影响，西班牙技术优势明显。"
+          "home": "乌拉圭队内伤病情况未知",
+          "away": "西班牙队内伤病情况未知",
+          "summary": "两队均无伤病报告"
         },
-        "risk_analysis": "乌拉圭铁血防守可能限制西班牙进球数，但爆冷获胜难度极大。",
-        "upset_probability": 36,
+        "risk_analysis": "西班牙实力明显占优，但乌拉圭防守坚韧，存在逼平可能；若西班牙久攻不下，可能陷入苦战。",
+        "upset_probability": 13,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 12.78,
-            "draw": 22.82,
-            "away_win": 64.41
+            "home_win": 13.33,
+            "draw": 23.81,
+            "away_win": 67.21
           },
           "model_edge": {
-            "home_win": 0.22,
-            "draw": 0.18,
-            "away_win": -0.41
+            "home_win": 12.78,
+            "draw": 22.81,
+            "away_win": 64.41
           },
-          "deviation_analysis": "模型小幅低估西班牙胜率，但整体偏差不大。"
+          "deviation_analysis": "模型概率略低于市场，去除4.36%的overround，客胜下调2.8个百分点。"
         },
         "confidence": "medium"
       },
@@ -2555,9 +2957,9 @@
         },
         "match_id": "400021485",
         "win_draw_loss": {
-          "home_win": 38,
-          "draw": 29,
-          "away_win": 33
+          "home_win": 37.65,
+          "draw": 28.66,
+          "away_win": 33.69
         },
         "xg_prediction": {
           "home": 1.3,
@@ -2567,28 +2969,28 @@
           "home": 1,
           "away": 1
         },
-        "tactical_matchup": "双方实力接近，佛得角依靠归化球员个人能力，沙特技术整体性稍优。",
+        "tactical_matchup": "两队实力接近，佛得角略占主场之利，沙特技术相对细腻，整体攻防相当。",
         "injury_adjustment": {
-          "home": "伤病情况未知",
-          "away": "伤病情况未知",
-          "summary": "无伤病报告，五五开对抗。"
+          "home": "佛得角队内伤病情况未知",
+          "away": "沙特阿拉伯队内伤病情况未知",
+          "summary": "两队均无伤病报告"
         },
-        "risk_analysis": "比赛结果难以预测，任何赛果都属正常，平局和双方进球可能性高。",
-        "upset_probability": 62,
+        "risk_analysis": "双方实力均衡，任何结果都有可能，平局概率不低，胜负手在于临场发挥。",
+        "upset_probability": 34,
         "odds_comparison": {
           "market_implied": {
+            "home_win": 39.22,
+            "draw": 29.85,
+            "away_win": 35.09
+          },
+          "model_edge": {
             "home_win": 37.65,
             "draw": 28.66,
             "away_win": 33.69
           },
-          "model_edge": {
-            "home_win": 0.35,
-            "draw": 0.34,
-            "away_win": -0.69
-          },
-          "deviation_analysis": "模型认为市场可能略微高估沙特不败的概率。"
+          "deviation_analysis": "模型概率低于市场，去除4.15%的overround，各结果下调1.6～1.2个百分点。"
         },
-        "confidence": "medium"
+        "confidence": "low"
       },
       {
         "id": "400021481",
@@ -2683,57 +3085,185 @@
         },
         "match_id": "400021481",
         "win_draw_loss": {
-          "home_win": 6,
-          "draw": 11,
-          "away_win": 83
+          "home_win": 5.64,
+          "draw": 11.28,
+          "away_win": 83.08
         },
         "xg_prediction": {
-          "home": 0.4,
-          "away": 2.8
+          "home": 0.3,
+          "away": 3.0
         },
         "predicted_score": {
           "home": 0,
           "away": 3
         },
-        "tactical_matchup": "新西兰长传冲吊与身体对抗，比利时技术碾压，控球率悬殊。",
+        "tactical_matchup": "比利时实力远超新西兰，新西兰可能密集防守，但比利时攻击线强大，破防能力足。",
         "injury_adjustment": {
-          "home": "伤病情况未知",
-          "away": "伤病情况未知",
-          "summary": "无伤病报告，比利时全主力轻松应战。"
+          "home": "新西兰队内伤病情况未知",
+          "away": "比利时队内伤病情况未知",
+          "summary": "两队均无伤病报告"
         },
-        "risk_analysis": "新西兰几乎无爆冷可能，比利时大概率轻松取胜，关注净胜球。",
-        "upset_probability": 17,
+        "risk_analysis": "比利时取胜几乎无悬念，新西兰爆冷概率极低；主要风险为比利时提前懈怠或过度轮换。",
+        "upset_probability": 6,
         "odds_comparison": {
           "market_implied": {
+            "home_win": 5.88,
+            "draw": 11.76,
+            "away_win": 86.67
+          },
+          "model_edge": {
             "home_win": 5.64,
             "draw": 11.28,
             "away_win": 83.08
           },
-          "model_edge": {
-            "home_win": 0.36,
-            "draw": -0.28,
-            "away_win": -0.08
-          },
-          "deviation_analysis": "模型与市场高度一致，比利时胜无悬念。"
+          "deviation_analysis": "模型概率小幅下调，去除4.31%的overround，客胜下调3.59个百分点。"
         },
-        "confidence": "medium"
+        "confidence": "high"
+      },
+      {
+        "id": "400021479",
+        "fifa_match_id": "400021479",
+        "match_name": "埃及 vs 伊朗",
+        "match_name_en": "Egypt vs IR Iran",
+        "kickoff_utc": "2026-06-27T03:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "First Stage",
+        "group": "Group G",
+        "match_number": 63,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "teams": {
+          "home": {
+            "name": "埃及",
+            "name_en": "Egypt"
+          },
+          "away": {
+            "name": "伊朗",
+            "name_en": "IR Iran"
+          }
+        },
+        "venue": {
+          "name": "Seattle Stadium",
+          "city": "Seattle",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021479"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760476"
+          }
+        },
+        "espn_event_id": "760476",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "+150",
+            "draw": "+165",
+            "away": "+280"
+          },
+          "implied_probability": {
+            "home_win": 40.0,
+            "draw": 37.74,
+            "away_win": 26.32
+          },
+          "normalized_probability": {
+            "home_win": 38.44,
+            "draw": 36.27,
+            "away_win": 25.29
+          },
+          "overround": 4.05,
+          "details": "EGY +150"
+        },
+        "injuries": {
+          "home": {
+            "team": "埃及",
+            "team_en": "Egypt",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "伊朗",
+            "team_en": "IR Iran",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
+        },
+        "match_id": "400021479",
+        "win_draw_loss": {
+          "home_win": 38.44,
+          "draw": 36.27,
+          "away_win": 25.29
+        },
+        "xg_prediction": {
+          "home": 1.4,
+          "away": 1.1
+        },
+        "predicted_score": {
+          "home": 1,
+          "away": 1
+        },
+        "tactical_matchup": "两队实力相当，埃及可能依靠萨拉赫等球星，伊朗防守严密，比赛可能较为沉闷。",
+        "injury_adjustment": {
+          "home": "埃及队内伤病情况未知",
+          "away": "伊朗队内伤病情况未知",
+          "summary": "两队均无伤病报告"
+        },
+        "risk_analysis": "双方均无绝对优势，胜负难料，平局可能性较高，球星的个人发挥至关重要。",
+        "upset_probability": 25,
+        "odds_comparison": {
+          "market_implied": {
+            "home_win": 40.0,
+            "draw": 37.74,
+            "away_win": 26.32
+          },
+          "model_edge": {
+            "home_win": 38.44,
+            "draw": 36.27,
+            "away_win": 25.29
+          },
+          "deviation_analysis": "模型概率较市场下调，去除4.05%的overround，各结果下调1.5～1.0个百分点。"
+        },
+        "confidence": "low"
       }
     ],
-    "risk_overview": "本轮比赛冷门概率整体偏低，日本vs瑞典、巴拉圭vs澳大利亚、佛得角vs沙特三场存在较大不确定性，其余场次实力差距明显。伤病信息不足是主要风险源，若赛前有主力缺阵可能改变局势。",
-    "data_quality": "数据来源可靠：FIFA官方赛程与ESPN比分板双重验证，赔率来自DraftKings。伤病信息仅通过ESPN新闻间接获取，且部分队伍状态标记为未知，存在不确定性。"
+    "risk_overview": "整体风险：强队比赛风险较低，但几场实力接近的比赛（日本vs瑞典、巴拉圭vs澳大利亚、佛得角vs沙特等）存在较高不确定性，结果难以预料。伤病数据严重缺失，部分场次报有潜在伤病但无详细信息，可能成为意外因素。",
+    "data_quality": "比赛数据经FIFA官方赛历和ESPN比分板双重验证，可靠性高；赔率数据来自DraftKings，可能存在时滞；绝大部分球队伤病状态未知，仅一场报潜在伤病但关联新闻不直接相关，可信度低。分析主要依赖市场概率，缺乏球队状态、阵容深度等详细信息，预测有一定参考价值，但准确度有限。"
   },
   "usage_breakdown": {
     "analysis": {
-      "input_tokens": 17244,
-      "output_tokens": 6915,
-      "total_tokens": 24159,
-      "cost_estimate": 0.24159
+      "input_tokens": 20129,
+      "output_tokens": 12810,
+      "total_tokens": 32939,
+      "cost_estimate": 0.32939
     },
     "render": {
-      "input_tokens": 36452,
-      "output_tokens": 12131,
-      "total_tokens": 48583,
-      "cost_estimate": 0.48583
+      "input_tokens": 43698,
+      "output_tokens": 11649,
+      "total_tokens": 55347,
+      "cost_estimate": 0.55347
     }
   },
   "model": {
@@ -2813,22 +3343,22 @@
   },
   "daily_log": [
     {
-      "time": "2026-06-25T11:57:16Z",
+      "time": "2026-06-25T13:59:04Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research",
       "status": "completed"
     },
     {
-      "time": "2026-06-25T12:11:35Z",
+      "time": "2026-06-25T14:05:48Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     },
     {
-      "time": "2026-06-25T12:48:10Z",
+      "time": "2026-06-25T14:21:03Z",
       "stage": "09:00 deepseek-v4-flash HTML generation",
       "status": "completed"
     },
     {
-      "time": "2026-06-25T13:29:20Z",
+      "time": "2026-06-25T14:23:56Z",
       "stage": "09:30 write JSON + token statistics",
       "status": "completed"
     }
