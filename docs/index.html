@@ -1,844 +1,381 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2026 世界杯 AI 预测分析报告 — 2026-06-25</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f4f7fc;
-            color: #1a2332;
-            padding: 24px 16px;
-            line-height: 1.5;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* header */
-        .header {
-            background: linear-gradient(135deg, #0b1a2e 0%, #1a3a5c 100%);
-            color: white;
-            border-radius: 20px;
-            padding: 28px 32px;
-            margin-bottom: 28px;
-            box-shadow: 0 8px 32px rgba(0, 20, 40, 0.18);
-        }
-        .header h1 {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: -0.3px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .header .badge {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 4px 14px;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: 500;
-            backdrop-filter: blur(4px);
-        }
-        .header .sub {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-top: 10px;
-            font-size: 14px;
-            opacity: 0.85;
-        }
-        .header .sub span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        /* summary */
-        .summary-box {
-            background: white;
-            border-radius: 16px;
-            padding: 24px 28px;
-            margin-bottom: 28px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
-            border-left: 5px solid #1a3a5c;
-        }
-        .summary-box h2 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #0b1a2e;
-        }
-        .summary-box p {
-            font-size: 15px;
-            line-height: 1.7;
-            color: #2c3e50;
-        }
-
-        /* grid */
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 24px;
-        }
-        @media (min-width: 768px) {
-            .grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        /* card */
-        .card {
-            background: white;
-            border-radius: 18px;
-            padding: 24px;
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
-            transition: transform 0.1s ease;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-        }
-        .card.completed {
-            border-left: 5px solid #10b981;
-        }
-        .card.upcoming {
-            border-left: 5px solid #3b82f6;
-        }
-        .card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 16px;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .card-header .teams {
-            font-size: 18px;
-            font-weight: 700;
-            color: #0b1a2e;
-        }
-        .card-header .teams .vs {
-            font-weight: 400;
-            color: #8a9bb5;
-            margin: 0 4px;
-        }
-        .card-header .meta {
-            font-size: 13px;
-            color: #6b7f9a;
-            text-align: right;
-        }
-        .card-header .meta .status-tag {
-            display: inline-block;
-            background: #eef2f7;
-            padding: 2px 12px;
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: 500;
-            color: #1a3a5c;
-        }
-        .card-header .meta .status-tag.ended {
-            background: #d1fae5;
-            color: #065f46;
-        }
-        .card-header .meta .status-tag.scheduled {
-            background: #dbeafe;
-            color: #1e40af;
-        }
-
-        .score-display {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 16px;
-            margin: 6px 0 16px 0;
-            font-size: 28px;
-            font-weight: 700;
-        }
-        .score-display .score-num {
-            background: #f1f5f9;
-            padding: 6px 20px;
-            border-radius: 12px;
-            min-width: 48px;
-            text-align: center;
-            font-variant-numeric: tabular-nums;
-        }
-        .score-display .score-num.home-win {
-            background: #d1fae5;
-            color: #065f46;
-        }
-        .score-display .score-num.away-win {
-            background: #fee2e2;
-            color: #991b1b;
-        }
-        .score-display .score-num.draw-bg {
-            background: #fef3c7;
-            color: #92400e;
-        }
-
-        .prob-bar {
-            display: flex;
-            height: 10px;
-            border-radius: 30px;
-            overflow: hidden;
-            margin: 10px 0 6px 0;
-            background: #eef2f7;
-        }
-        .prob-bar .seg {
-            height: 100%;
-            transition: width 0.3s;
-        }
-        .prob-bar .seg.home {
-            background: #3b82f6;
-        }
-        .prob-bar .seg.draw {
-            background: #f59e0b;
-        }
-        .prob-bar .seg.away {
-            background: #ef4444;
-        }
-        .prob-labels {
-            display: flex;
-            justify-content: space-between;
-            font-size: 13px;
-            font-weight: 500;
-            color: #1a2332;
-            margin-bottom: 8px;
-        }
-        .prob-labels .pr {
-            text-align: center;
-            flex: 1;
-        }
-        .prob-labels .pr .pct {
-            font-size: 12px;
-            color: #6b7f9a;
-            font-weight: 400;
-        }
-
-        .detail-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 14px;
-            font-size: 14px;
-        }
-        .detail-grid .item {
-            background: #f8faff;
-            padding: 8px 12px;
-            border-radius: 10px;
-            display: flex;
-            flex-direction: column;
-        }
-        .detail-grid .item .label {
-            font-size: 11px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            color: #6b7f9a;
-        }
-        .detail-grid .item .value {
-            font-weight: 600;
-            color: #0b1a2e;
-            margin-top: 2px;
-        }
-        .detail-grid .item .value.unknown {
-            color: #9ca3af;
-            font-style: italic;
-        }
-
-        .section-title {
-            font-weight: 600;
-            font-size: 15px;
-            color: #0b1a2e;
-            margin: 18px 0 8px 0;
-            padding-bottom: 4px;
-            border-bottom: 2px solid #eef2f7;
-        }
-
-        .text-block {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #2c3e50;
-            background: #f8faff;
-            padding: 12px 16px;
-            border-radius: 12px;
-            margin: 6px 0;
-        }
-        .text-block.unknown {
-            color: #9ca3af;
-            font-style: italic;
-        }
-
-        .odds-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-            margin: 6px 0;
-        }
-        .odds-table th {
-            text-align: left;
-            font-weight: 600;
-            color: #6b7f9a;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            padding: 4px 8px;
-            border-bottom: 1px solid #eef2f7;
-        }
-        .odds-table td {
-            padding: 6px 8px;
-            border-bottom: 1px solid #f1f5f9;
-        }
-        .odds-table td.num {
-            text-align: right;
-            font-variant-numeric: tabular-nums;
-        }
-
-        .injuries-list {
-            margin: 4px 0;
-        }
-        .injuries-list li {
-            font-size: 13px;
-            margin-bottom: 4px;
-            list-style: none;
-            padding-left: 0;
-        }
-        .injuries-list li .badge-inj {
-            display: inline-block;
-            background: #fef3c7;
-            color: #92400e;
-            font-size: 11px;
-            padding: 0 8px;
-            border-radius: 30px;
-            font-weight: 500;
-        }
-        .injuries-list li .badge-ok {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        .confidence-tag {
-            display: inline-block;
-            padding: 2px 14px;
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        .confidence-tag.low {
-            background: #fee2e2;
-            color: #991b1b;
-        }
-        .confidence-tag.medium {
-            background: #fef3c7;
-            color: #92400e;
-        }
-        .confidence-tag.high {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        /* token panel */
-        .token-panel {
-            background: white;
-            border-radius: 18px;
-            padding: 24px 28px;
-            margin-top: 28px;
-            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-        }
-        .token-panel h2 {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: #0b1a2e;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .token-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-        @media (min-width: 600px) {
-            .token-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-        .token-item {
-            background: #f8faff;
-            border-radius: 12px;
-            padding: 16px;
-            text-align: center;
-        }
-        .token-item .label {
-            font-size: 12px;
-            font-weight: 600;
-            color: #6b7f9a;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-        }
-        .token-item .number {
-            font-size: 26px;
-            font-weight: 700;
-            color: #0b1a2e;
-            margin-top: 4px;
-            font-variant-numeric: tabular-nums;
-        }
-        .token-item .number.placeholder {
-            color: #3b82f6;
-        }
-
-        .footer {
-            text-align: center;
-            margin-top: 32px;
-            font-size: 13px;
-            color: #8a9bb5;
-        }
-
-        hr {
-            border: none;
-            border-top: 1px solid #eef2f7;
-            margin: 14px 0;
-        }
-
-        /* risk overview */
-        .risk-overview {
-            background: #fef9ee;
-            border-radius: 14px;
-            padding: 18px 22px;
-            margin-bottom: 20px;
-            border-left: 4px solid #f59e0b;
-        }
-        .risk-overview h3 {
-            font-size: 15px;
-            font-weight: 600;
-            color: #92400e;
-            margin-bottom: 6px;
-        }
-        .risk-overview p {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #5c4a1f;
-        }
-
-        .data-quality {
-            background: #eef2f7;
-            border-radius: 14px;
-            padding: 18px 22px;
-            margin-bottom: 20px;
-        }
-        .data-quality h3 {
-            font-size: 15px;
-            font-weight: 600;
-            color: #1a3a5c;
-            margin-bottom: 6px;
-        }
-        .data-quality p {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #2c3e50;
-        }
-
-        .small-note {
-            font-size: 12px;
-            color: #8a9bb5;
-            margin-top: 4px;
-        }
-
-        .match-group-label {
-            font-size: 16px;
-            font-weight: 600;
-            color: #1a3a5c;
-            margin: 20px 0 12px 0;
-            padding-left: 4px;
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日 FIFA 世界杯预测</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17201d;
+      --muted: #60706a;
+      --line: #d8e0dc;
+      --paper: #f7faf8;
+      --panel: #ffffff;
+      --accent: #147a4a;
+      --accent-2: #c83f31;
+      --accent-3: #1c6aa7;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, "Microsoft YaHei", "PingFang SC", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      letter-spacing: 0;
+    }
+    header { border-bottom: 1px solid var(--line); background: var(--panel); }
+    .wrap { width: min(1120px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      padding: 30px 0 24px;
+    }
+    h1 { margin: 0 0 8px; font-size: clamp(28px, 4vw, 48px); line-height: 1.02; font-weight: 800; }
+    .subtitle { margin: 0; color: var(--muted); max-width: 800px; line-height: 1.5; }
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f1f6f3;
+      color: var(--accent);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; padding: 18px 0 26px; }
+    .stat { border: 1px solid var(--line); border-radius: 8px; background: var(--panel); padding: 14px 16px; min-height: 86px; }
+    .stat span { display: block; color: var(--muted); font-size: 13px; margin-bottom: 8px; }
+    .stat strong { display: block; font-size: 20px; line-height: 1.25; overflow-wrap: anywhere; }
+    main { padding: 24px 0 42px; }
+    .notice {
+      border: 1px solid #e3c7bd;
+      border-left: 4px solid var(--accent-2);
+      border-radius: 8px;
+      background: #fff8f5;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+    }
+    .notice h2 { margin: 0 0 8px; font-size: 18px; }
+    .notice p { margin: 0; color: var(--muted); line-height: 1.55; }
+    .match-day { margin-top: 24px; }
+    .section-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 14px; }
+    .section-head h2 { margin: 0 0 4px; font-size: 22px; }
+    .source-links { display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+    a { color: var(--accent-3); text-decoration: none; font-weight: 650; }
+    a:hover { text-decoration: underline; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 16px; }
+    .match-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 16px;
+      min-height: 292px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .match-meta, .match-footer { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 13px; }
+    .match-footer { border-top: 1px solid var(--line); padding-top: 12px; margin-top: auto; }
+    .teams { display: grid; grid-template-columns: minmax(0, 1fr) 66px minmax(0, 1fr); align-items: center; gap: 10px; }
+    .team { display: flex; align-items: center; gap: 10px; min-width: 0; }
+    .team.right { justify-content: flex-end; text-align: right; }
+    .team strong { font-size: 17px; line-height: 1.25; overflow-wrap: anywhere; }
+    .team-logo, .team-initial {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: #edf3ef;
+      object-fit: contain;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .score { min-width: 66px; text-align: center; font-weight: 800; color: var(--ink); }
+    .mini-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+    .mini-stats span { border: 1px solid var(--line); border-radius: 8px; padding: 8px; background: #f8fbf9; font-size: 12px; color: var(--muted); }
+    .probabilities { display: grid; gap: 10px; }
+    .prob-row { display: grid; grid-template-columns: minmax(92px, 1fr) minmax(92px, 1.4fr) 56px; gap: 10px; align-items: center; font-size: 13px; }
+    .prob-row span:first-child { overflow-wrap: anywhere; }
+    .prob-track { height: 10px; border-radius: 999px; background: #e9efec; overflow: hidden; }
+    .prob-track span { display: block; height: 100%; background: var(--accent); }
+    .prob-row:nth-child(2) .prob-track span { background: var(--accent-3); }
+    .prob-row:nth-child(3) .prob-track span { background: var(--accent-2); }
+    .insight-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
+    .insight-grid section { border-top: 1px solid var(--line); padding-top: 10px; }
+    .insight-grid h3 { margin: 0 0 6px; font-size: 14px; }
+    .insight-grid p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .empty { border: 1px dashed var(--line); border-radius: 8px; background: var(--panel); padding: 24px; color: var(--muted); }
+    .muted { color: var(--muted); }
+    .compact { margin: 0; }
+    footer { border-top: 1px solid var(--line); color: var(--muted); padding: 22px 0 30px; background: var(--panel); font-size: 13px; }
+    @media (max-width: 760px) {
+      .topbar, .stats { grid-template-columns: 1fr; }
+      .status-pill { justify-content: center; width: 100%; }
+      .section-head { display: block; }
+      .source-links { justify-content: flex-start; margin-top: 10px; }
+      .teams { grid-template-columns: 1fr; }
+      .score { min-width: 0; text-align: left; }
+      .team.right { justify-content: flex-start; text-align: left; }
+      .mini-stats { grid-template-columns: 1fr; }
+      .prob-row { grid-template-columns: 1fr 52px; }
+      .prob-track { grid-column: 1 / -1; grid-row: 2; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-
-        <!-- header -->
-        <div class="header">
-            <h1>
-                ⚽ 2026 世界杯 AI 预测分析
-                <span class="badge">2026-06-25</span>
-            </h1>
-            <div class="sub">
-                <span>📅 生成时间: 2026-06-25 04:56 UTC</span>
-                <span>🤖 模型: deepseek-v4-pro</span>
-                <span>📊 共 6 场比赛 · 赔率可用 4 场</span>
-            </div>
+  <header>
+    <div class="wrap">
+      <div class="topbar">
+        <div>
+          <h1>每日 FIFA 世界杯预测</h1>
+          <p class="subtitle">V3 Agent 自动抓取 FIFA 官方赛程，并用 ESPN 完成第二来源校验、赔率读取和媒体伤停扫描；分析由 deepseek-v4-pro 完成，页面由 deepseek-v4-flash 生成流程驱动。</p>
         </div>
-
-        <!-- summary -->
-        <div class="summary-box">
-            <h2>📋 分析综述</h2>
-            <p>2026年6月25日世界杯小组赛共6场比赛，其中两场已完赛（南非1-0韩国，捷克0-3墨西哥），四场即将进行。当日焦点战为日本对瑞典，实力接近；德国与厄瓜多尔较量也值得关注。赔率数据对部分场次缺失，伤病信息总体模糊，分析可信度受限。</p>
-        </div>
-
-        <!-- risk overview & data quality -->
-        <div class="risk-overview">
-            <h3>⚠️ 整体风险评估</h3>
-            <p>整体风险较高：两场比赛无赔率参考（南非vs韩国、捷克vs墨西哥）；多场比赛伤病报告来源不明确且交叉引用；科特迪瓦和荷兰场次赔率极度偏向强队，存在大热倒灶可能；德国与日本场次竞争性较强，结果不确定性大。数据质量方面，FIFA与ESPN双源验证可靠，但赔率提供商DraftKings报价仅覆盖4场，且部分伤病新闻关联性低。</p>
-        </div>
-        <div class="data-quality">
-            <h3>📡 数据质量说明</h3>
-            <p>数据源：FIFA官方日历API与ESPN记分板双重验证，均可信。赔率数据由DraftKings提供，仅4场可用，2场无赔率。伤病信息来自ESPN世界杯新闻，但部分提及的比赛与受伤球队不匹配（如厄瓜多尔伤病引自巴西比赛报道），信息有效性存疑。</p>
-        </div>
-
-        <!-- match cards -->
-        <div class="grid">
-
-            <!-- 1. 南非 vs 韩国 (completed) -->
-            <div class="card completed">
-                <div class="card-header">
-                    <div class="teams">
-                        南非 <span class="vs">vs</span> 韩国
-                    </div>
-                    <div class="meta">
-                        <span class="status-tag ended">✅ 已完赛</span>
-                        <div style="font-size:12px;margin-top:4px;">Group A · 蒙特雷</div>
-                    </div>
-                </div>
-                <div class="score-display">
-                    <span class="score-num home-win">1</span>
-                    <span style="color:#8a9bb5;font-size:18px;">:</span>
-                    <span class="score-num">0</span>
-                </div>
-                <div style="text-align:center;font-size:14px;color:#065f46;font-weight:500;margin-bottom:10px;">南非胜</div>
-
-                <div class="prob-labels">
-                    <span class="pr">主胜 <span class="pct">25%</span></span>
-                    <span class="pr">平局 <span class="pct">30%</span></span>
-                    <span class="pr">客胜 <span class="pct">45%</span></span>
-                </div>
-                <div class="prob-bar"><div class="seg home" style="width:25%"></div><div class="seg draw" style="width:30%"></div><div class="seg away" style="width:45%"></div></div>
-
-                <div class="detail-grid">
-                    <div class="item"><span class="label">预测比分</span><span class="value">1 : 1</span></div>
-                    <div class="item"><span class="label">xG 预期进球</span><span class="value">1.0 — 1.3</span></div>
-                    <div class="item"><span class="label">冷门概率</span><span class="value">25%</span></div>
-                    <div class="item"><span class="label">可信度</span><span class="value"><span class="confidence-tag low">低</span></span></div>
-                </div>
-
-                <div class="section-title">🧠 战术对位</div>
-                <div class="text-block">南非4-2-3-1阵型对阵韩国3-4-3，南非可能利用中场人数优势控制，韩国边翼卫攻击力强但防守可能留下空当。</div>
-
-                <div class="section-title">⚠️ 伤病调整</div>
-                <div class="text-block">主队: 未知 / 客队: 可能伤病（来源ESPN报道，但具体球员和影响未知）<br><span class="small-note">韩国队可能有关键球员受伤，但细节不明，可能影响阵容深度。</span></div>
-
-                <div class="section-title">📊 赔率对比</div>
-                <table class="odds-table">
-                    <tr><th></th><th>主胜</th><th>平局</th><th>客胜</th></tr>
-                    <tr><td>市场隐含</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
-                    <tr><td>模型预测</td><td class="num">25%</td><td class="num">30%</td><td class="num">45%</td></tr>
-                </table>
-                <div class="small-note">赔率数据不可用，无法进行偏差分析。</div>
-
-                <div class="section-title">🔍 风险分析</div>
-                <div class="text-block">赔率数据不可用，韩国队伤病情况不明，比赛结果不确定性高。</div>
-            </div>
-
-            <!-- 2. 捷克 vs 墨西哥 (completed) -->
-            <div class="card completed">
-                <div class="card-header">
-                    <div class="teams">
-                        捷克 <span class="vs">vs</span> 墨西哥
-                    </div>
-                    <div class="meta">
-                        <span class="status-tag ended">✅ 已完赛</span>
-                        <div style="font-size:12px;margin-top:4px;">Group A · 墨西哥城</div>
-                    </div>
-                </div>
-                <div class="score-display">
-                    <span class="score-num">0</span>
-                    <span style="color:#8a9bb5;font-size:18px;">:</span>
-                    <span class="score-num away-win">3</span>
-                </div>
-                <div style="text-align:center;font-size:14px;color:#991b1b;font-weight:500;margin-bottom:10px;">墨西哥胜</div>
-
-                <div class="prob-labels">
-                    <span class="pr">主胜 <span class="pct">15%</span></span>
-                    <span class="pr">平局 <span class="pct">20%</span></span>
-                    <span class="pr">客胜 <span class="pct">65%</span></span>
-                </div>
-                <div class="prob-bar"><div class="seg home" style="width:15%"></div><div class="seg draw" style="width:20%"></div><div class="seg away" style="width:65%"></div></div>
-
-                <div class="detail-grid">
-                    <div class="item"><span class="label">预测比分</span><span class="value">0 : 2</span></div>
-                    <div class="item"><span class="label">xG 预期进球</span><span class="value">0.7 — 2.0</span></div>
-                    <div class="item"><span class="label">冷门概率</span><span class="value">15%</span></div>
-                    <div class="item"><span class="label">可信度</span><span class="value"><span class="confidence-tag low">低</span></span></div>
-                </div>
-
-                <div class="section-title">🧠 战术对位</div>
-                <div class="text-block">捷克5-2-3阵型防守为主，墨西哥4-1-2-3攻击阵型，墨西哥主场优势明显，利用边路进攻冲击捷克防线。</div>
-
-                <div class="section-title">⚠️ 伤病调整</div>
-                <div class="text-block">双方均无已知伤病信息，可全员出战。</div>
-
-                <div class="section-title">📊 赔率对比</div>
-                <table class="odds-table">
-                    <tr><th></th><th>主胜</th><th>平局</th><th>客胜</th></tr>
-                    <tr><td>市场隐含</td><td class="num">—</td><td class="num">—</td><td class="num">—</td></tr>
-                    <tr><td>模型预测</td><td class="num">15%</td><td class="num">20%</td><td class="num">65%</td></tr>
-                </table>
-                <div class="small-note">赔率数据不可用，无法进行偏差分析。</div>
-
-                <div class="section-title">🔍 风险分析</div>
-                <div class="text-block">赔率不可用，实力差距明显但缺少市场参照，墨西哥主场氛围可能增加额外压力。</div>
-            </div>
-
-            <!-- 3. 库拉索 vs 科特迪瓦 (upcoming) -->
-            <div class="card upcoming">
-                <div class="card-header">
-                    <div class="teams">
-                        库拉索 <span class="vs">vs</span> 科特迪瓦
-                    </div>
-                    <div class="meta">
-                        <span class="status-tag scheduled">📅 待赛</span>
-                        <div style="font-size:12px;margin-top:4px;">Group E · 费城 · 20:00 UTC</div>
-                    </div>
-                </div>
-
-                <div class="prob-labels">
-                    <span class="pr">主胜 <span class="pct">5%</span></span>
-                    <span class="pr">平局 <span class="pct">12%</span></span>
-                    <span class="pr">客胜 <span class="pct">83%</span></span>
-                </div>
-                <div class="prob-bar"><div class="seg home" style="width:5%"></div><div class="seg draw" style="width:12%"></div><div class="seg away" style="width:83%"></div></div>
-
-                <div class="detail-grid">
-                    <div class="item"><span class="label">预测比分</span><span class="value">0 : 3</span></div>
-                    <div class="item"><span class="label">xG 预期进球</span><span class="value">0.4 — 2.6</span></div>
-                    <div class="item"><span class="label">冷门概率</span><span class="value">5%</span></div>
-                    <div class="item"><span class="label">可信度</span><span class="value"><span class="confidence-tag medium">中</span></span></div>
-                </div>
-
-                <div class="section-title">🧠 战术对位</div>
-                <div class="text-block">战术未知，库拉索整体实力偏弱，科特迪瓦预计主导控球与进攻，边路速度优势明显。</div>
-
-                <div class="section-title">⚠️ 伤病调整</div>
-                <div class="text-block">无伤病信息。</div>
-
-                <div class="section-title">📊 赔率对比</div>
-                <table class="odds-table">
-                    <tr><th></th><th>主胜</th><th>平局</th><th>客胜</th></tr>
-                    <tr><td>市场隐含 (DraftKings)</td><td class="num">5.08%</td><td class="num">11.35%</td><td class="num">83.58%</td></tr>
-                    <tr><td>模型预测</td><td class="num">5%</td><td class="num">12%</td><td class="num">83%</td></tr>
-                </table>
-                <div class="small-note">模型略微下调科特迪瓦胜率（-0.58%），微调平局与主胜，反映对极端赔率下波动风险的考量。</div>
-
-                <div class="section-title">🔍 风险分析</div>
-                <div class="text-block">科特迪瓦实力碾压，但赔率隐含概率极高（&gt;80%），需考虑高估风险；库拉索作为黑马可能制造意外。</div>
-            </div>
-
-            <!-- 4. 厄瓜多尔 vs 德国 (upcoming) -->
-            <div class="card upcoming">
-                <div class="card-header">
-                    <div class="teams">
-                        厄瓜多尔 <span class="vs">vs</span> 德国
-                    </div>
-                    <div class="meta">
-                        <span class="status-tag scheduled">📅 待赛</span>
-                        <div style="font-size:12px;margin-top:4px;">Group E · 新泽西 · 20:00 UTC</div>
-                    </div>
-                </div>
-
-                <div class="prob-labels">
-                    <span class="pr">主胜 <span class="pct">18%</span></span>
-                    <span class="pr">平局 <span class="pct">20%</span></span>
-                    <span class="pr">客胜 <span class="pct">62%</span></span>
-                </div>
-                <div class="prob-bar"><div class="seg home" style="width:18%"></div><div class="seg draw" style="width:20%"></div><div class="seg away" style="width:62%"></div></div>
-
-                <div class="detail-grid">
-                    <div class="item"><span class="label">预测比分</span><span class="value">1 : 2</span></div>
-                    <div class="item"><span class="label">xG 预期进球</span><span class="value">0.9 — 2.1</span></div>
-                    <div class="item"><span class="label">冷门概率</span><span class="value">18%</span></div>
-                    <div class="item"><span class="label">可信度</span><span class="value"><span class="confidence-tag medium">中</span></span></div>
-                </div>
-
-                <div class="section-title">🧠 战术对位</div>
-                <div class="text-block">战术未知，厄瓜多尔善用高原主场优势（本场中立），德国整体实力与大赛经验占优，中场控制是关键。</div>
-
-                <div class="section-title">⚠️ 伤病调整</div>
-                <div class="text-block">主队: 可能伤病（来源ESPN报道，但报道主要关于巴西比赛，未明确厄瓜多尔球员）<br>客队: 可能伤病（来源ESPN报道，但报道主要关于美国队，未明确德国球员）<br><span class="small-note">两队均有不确定的伤病报告，信息不明确，影响评估困难。</span></div>
-
-                <div class="section-title">📊 赔率对比</div>
-                <table class="odds-table">
-                    <tr><th></th><th>主胜</th><th>平局</th><th>客胜</th></tr>
-                    <tr><td>市场隐含 (DraftKings)</td><td class="num">17.46%</td><td class="num">19.60%</td><td class="num">62.93%</td></tr>
-                    <tr><td>模型预测</td><td class="num">18%</td><td class="num">20%</td><td class="num">62%</td></tr>
-                </table>
-                <div class="small-note">模型微调至整数，小幅提升厄瓜多尔胜率与平局，德国胜率略降，考虑伤病不确定性与杯赛冷门可能。</div>
-
-                <div class="section-title">🔍 风险分析</div>
-                <div class="text-block">两队均有不确定伤病，德国作为热门但厄瓜多尔有一定竞争力，平局概率不低。</div>
-            </div>
-
-            <!-- 5. 突尼斯 vs 荷兰 (upcoming) -->
-            <div class="card upcoming">
-                <div class="card-header">
-                    <div class="teams">
-                        突尼斯 <span class="vs">vs</span> 荷兰
-                    </div>
-                    <div class="meta">
-                        <span class="status-tag scheduled">📅 待赛</span>
-                        <div style="font-size:12px;margin-top:4px;">Group F · 堪萨斯城 · 23:00 UTC</div>
-                    </div>
-                </div>
-
-                <div class="prob-labels">
-                    <span class="pr">主胜 <span class="pct">4%</span></span>
-                    <span class="pr">平局 <span class="pct">9%</span></span>
-                    <span class="pr">客胜 <span class="pct">87%</span></span>
-                </div>
-                <div class="prob-bar"><div class="seg home" style="width:4%"></div><div class="seg draw" style="width:9%"></div><div class="seg away" style="width:87%"></div></div>
-
-                <div class="detail-grid">
-                    <div class="item"><span class="label">预测比分</span><span class="value">0 : 3</span></div>
-                    <div class="item"><span class="label">xG 预期进球</span><span class="value">0.3 — 2.8</span></div>
-                    <div class="item"><span class="label">冷门概率</span><span class="value">4%</span></div>
-                    <div class="item"><span class="label">可信度</span><span class="value"><span class="confidence-tag medium">中</span></span></div>
-                </div>
-
-                <div class="section-title">🧠 战术对位</div>
-                <div class="text-block">战术未知，荷兰全攻全守风格，突尼斯防守反击为主，实力差距明显，荷兰有望早早确立优势。</div>
-
-                <div class="section-title">⚠️ 伤病调整</div>
-                <div class="text-block">主队: 可能伤病（来源ESPN南非胜韩报道，不相关）<br>客队: 可能伤病（同上）<br><span class="small-note">两份伤病报告来源相同且不相关，可信度低，伤病影响未知。</span></div>
-
-                <div class="section-title">📊 赔率对比</div>
-                <table class="odds-table">
-                    <tr><th></th><th>主胜</th><th>平局</th><th>客胜</th></tr>
-                    <tr><td>市场隐含 (DraftKings)</td><td class="num">3.68%</td><td class="num">8.69%</td><td class="num">87.63%</td></tr>
-                    <tr><td>模型预测</td><td class="num">4%</td><td class="num">9%</td><td class="num">87%</td></tr>
-                </table>
-                <div class="small-note">模型微调至整数，基本跟随市场，小额提升平局与主胜概率，反映对极高赔率下偶尔偏差的缓冲。</div>
-
-                <div class="section-title">🔍 风险分析</div>
-                <div class="text-block">荷兰实力绝对优势，但突尼斯上届世界杯有韧性表现，大热必死风险存在。</div>
-            </div>
-
-            <!-- 6. 日本 vs 瑞典 (upcoming) -->
-            <div class="card upcoming">
-                <div class="card-header">
-                    <div class="teams">
-                        日本 <span class="vs">vs</span> 瑞典
-                    </div>
-                    <div class="meta">
-                        <span class="status-tag scheduled">📅 待赛</span>
-                        <div style="font-size:12px;margin-top:4px;">Group F · 达拉斯 · 23:00 UTC</div>
-                    </div>
-                </div>
-
-                <div class="prob-labels">
-                    <span class="pr">主胜 <span class="pct">50%</span></span>
-                    <span class="pr">平局 <span class="pct">28%</span></span>
-                    <span class="pr">客胜 <span class="pct">22%</span></span>
-                </div>
-                <div class="prob-bar"><div class="seg home" style="width:50%"></div><div class="seg draw" style="width:28%"></div><div class="seg away" style="width:22%"></div></div>
-
-                <div class="detail-grid">
-                    <div class="item"><span class="label">预测比分</span><span class="value">2 : 1</span></div>
-                    <div class="item"><span class="label">xG 预期进球</span><span class="value">1.6 — 1.1</span></div>
-                    <div class="item"><span class="label">冷门概率</span><span class="value">22%</span></div>
-                    <div class="item"><span class="label">可信度</span><span class="value"><span class="confidence-tag medium">中</span></span></div>
-                </div>
-
-                <div class="section-title">🧠 战术对位</div>
-                <div class="text-block">战术未知，日本技术流控球，瑞典身体素质与高空球优势，日本需限制瑞典定位球，整体更看好日本小胜。</div>
-
-                <div class="section-title">⚠️ 伤病调整</div>
-                <div class="text-block">无伤病信息。</div>
-
-                <div class="section-title">📊 赔率对比</div>
-                <table class="odds-table">
-                    <tr><th></th><th>主胜</th><th>平局</th><th>客胜</th></tr>
-                    <tr><td>市场隐含 (DraftKings)</td><td class="num">51.49%</td><td class="num">27.12%</td><td class="num">21.39%</td></tr>
-                    <tr><td>模型预测</td><td class="num">50%</td><td class="num">28%</td><td class="num">22%</td></tr>
-                </table>
-                <div class="small-note">模型基本吻合市场，略微调低日本胜率，增加平局和瑞典胜率，考虑双方实力均衡，倾向保守。</div>
-
-                <div class="section-title">🔍 风险分析</div>
-                <div class="text-block">实力接近，日本稍占优，赔率波动可能反映市场摇摆，临场发挥决定结果。</div>
-            </div>
-
-        </div>
-
-        <!-- token panel -->
-        <div class="token-panel">
-            <h2>🔧 Token 使用与成本</h2>
-            <div class="token-grid">
-                <div class="token-item">
-                    <div class="label">输入 Token</div>
-                    <div class="number placeholder">34120</div>
-                </div>
-                <div class="token-item">
-                    <div class="label">输出 Token</div>
-                    <div class="number placeholder">17608</div>
-                </div>
-                <div class="token-item">
-                    <div class="label">总 Token</div>
-                    <div class="number placeholder">51728</div>
-                </div>
-                <div class="token-item">
-                    <div class="label">预估成本 (USD)</div>
-                    <div class="number placeholder">0.517280</div>
-                </div>
-            </div>
-            <div style="margin-top:12px;font-size:13px;color:#6b7f9a;text-align:center;">
-                原始数据: 输入 10,949 · 输出 8,152 · 合计 19,101 · 成本 $0.19101
-            </div>
-        </div>
-
-        <!-- footer -->
-        <div class="footer">
-            FIFA World Cup 2026™ AI 预测分析 · 由 deepseek-v4-pro 生成<br>
-            数据来源: FIFA 官方日历 API · ESPN 记分板 · DraftKings 赔率<br>
-            报告时间: 2026-06-25 04:56 UTC
-        </div>
-
+        <span class="status-pill">V3 Agent 已就绪</span>
+      </div>
+      <div class="stats">
+        <div class="stat"><span>生成时间</span><strong>北京时间 06-25 19:04</strong></div>
+        <div class="stat"><span>已验证比赛</span><strong>6</strong></div>
+        <div class="stat"><span>Token</span><strong>52484</strong></div>
+        <div class="stat"><span>Cost</span><strong>0.524840</strong></div>
+      </div>
     </div>
+  </header>
+  <main class="wrap">
+    <section class="notice">
+      <h2>中国时间比赛日规则</h2>
+      <p>所有开球时间均显示为北京时间。每个比赛日按北京时间 18:00 到次日 18:00 分块；例如 6月26日 01:00 开球会归入 6月25日比赛日。</p>
+    </section>
+    
+    <section class="match-day" data-match-day="2026-06-24">
+      <div class="section-head">
+        <div>
+          <h2>6月24日比赛日</h2>
+          <p class="muted compact">北京时间 06-24 18:00 - 06-25 18:00，按北京时间升序排列</p>
+        </div>
+        <div class="source-links"><a href="latest.json">原始 JSON</a></div>
+      </div>
+      <section class="grid">
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-25T09:00:00+08:00">北京时间 06-25 09:00</time>
+          <span>信心: 低</span>
+        </div>
+        <div class="teams">
+          <div class="team"><span class="team-initial">南非</span><strong>南非</strong></div>
+          <div class="score">0 : 1</div>
+          <div class="team right"><strong>韩国</strong><span class="team-initial">韩国</span></div>
+        </div>
+        <div class="mini-stats">
+          <span>xG 南非 0.90</span>
+          <span>xG 韩国 1.30</span>
+          <span>爆冷概率 30%</span>
+        </div>
+        <div class="probabilities">
+          <div class="prob-row"><span>南非 胜</span><div class="prob-track" aria-hidden="true"><span style="width: 25%"></span></div><strong>25%</strong></div>
+<div class="prob-row"><span>平局</span><div class="prob-track" aria-hidden="true"><span style="width: 30%"></span></div><strong>30%</strong></div>
+<div class="prob-row"><span>韩国 胜</span><div class="prob-track" aria-hidden="true"><span style="width: 45%"></span></div><strong>45%</strong></div>
+        </div>
+        <div class="insight-grid">
+          <section><h3>战术分析</h3><p>南非4-2-3-1对阵韩国3-4-3。韩国3-4-3注重边翼进攻，南非4-2-3-1中场拦截能力一般，可能被韩国边路突破。但南非防守反击有一定威胁。</p></section>
+          <section><h3>风险分析</h3><p>韩国实力占优但存在伤病隐患，南非防守反击可能制造惊喜。</p></section>
+          <section><h3>伤停信息</h3><p>主队: unknown; 客队: 媒体伤停线索</p><p class="muted compact">南非伤停情况未知 韩国可能存在伤停影响 韩国队存在概率性伤病，可能影响阵容稳定性，但整体实力仍占优。</p></section>
+          <section><h3>赔率对比</h3><p>真实赔率源未提供 moneyline，显示 unavailable。</p></section>
+        </div>
+        <div class="match-footer">
+          <span>Monterrey Stadium - Monterrey - MEX</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760466" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
 
-<section id="deepseek-agent-runtime" style="max-width:1120px;margin:24px auto;padding:16px;border:1px solid #d8e0dc;border-radius:8px;background:#fff;font-family:Inter,'Microsoft YaHei','PingFang SC',system-ui,sans-serif;color:#17201d;">
-  <h2 style="margin:0 0 12px;font-size:20px;">运行用量</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
-    <div><strong>分析模型</strong><br>deepseek-v4-pro</div>
-    <div><strong>生成模型</strong><br>deepseek-v4-flash</div>
-    <div><strong>Input tokens</strong><br>34120</div>
-    <div><strong>Output tokens</strong><br>17608</div>
-    <div><strong>Total tokens</strong><br>51728</div>
-    <div><strong>Cost</strong><br>0.517280</div>
-  </div>
-  <h2 style="margin:20px 0 12px;font-size:20px;">数据源与Agent校验</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
-    <div><strong>FIFA</strong><br>true</div>
-    <div><strong>伤停信息</strong><br>true</div>
-    <div><strong>赔率对比</strong><br>true</div>
-  </div>
-  <h2 style="margin:20px 0 12px;font-size:20px;">伤停信息 / 赔率对比</h2>
-  <div style="overflow:auto;">
-    <table style="width:100%;border-collapse:collapse;font-size:14px;">
-      <thead><tr><th style="text-align:left;border-bottom:1px solid #d8e0dc;padding:8px;">比赛</th><th style="text-align:left;border-bottom:1px solid #d8e0dc;padding:8px;">主队伤停</th><th style="text-align:left;border-bottom:1px solid #d8e0dc;padding:8px;">客队伤停</th><th style="text-align:left;border-bottom:1px solid #d8e0dc;padding:8px;">隐含概率</th></tr></thead>
-      <tbody><tr><td>南非 vs 韩国</td><td>unknown</td><td>probable injury</td><td>不可用</td></tr>
-<tr><td>捷克 vs 墨西哥</td><td>unknown</td><td>unknown</td><td>不可用</td></tr>
-<tr><td>库拉索 vs 科特迪瓦</td><td>unknown</td><td>unknown</td><td>主胜 5.08% / 平 11.35% / 客胜 83.58%</td></tr>
-<tr><td>厄瓜多尔 vs 德国</td><td>probable injury</td><td>probable injury</td><td>主胜 17.46% / 平 19.6% / 客胜 62.93%</td></tr>
-<tr><td>突尼斯 vs 荷兰</td><td>probable injury</td><td>probable injury</td><td>主胜 3.68% / 平 8.69% / 客胜 87.63%</td></tr>
-<tr><td>日本 vs 瑞典</td><td>unknown</td><td>unknown</td><td>主胜 51.49% / 平 27.12% / 客胜 21.39%</td></tr></tbody>
-    </table>
-  </div>
-</section>
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-25T09:00:00+08:00">北京时间 06-25 09:00</time>
+          <span>信心: 中</span>
+        </div>
+        <div class="teams">
+          <div class="team"><span class="team-initial">捷克</span><strong>捷克</strong></div>
+          <div class="score">0 : 2</div>
+          <div class="team right"><strong>墨西哥</strong><span class="team-initial">墨西哥</span></div>
+        </div>
+        <div class="mini-stats">
+          <span>xG 捷克 0.60</span>
+          <span>xG 墨西哥 1.80</span>
+          <span>爆冷概率 20%</span>
+        </div>
+        <div class="probabilities">
+          <div class="prob-row"><span>捷克 胜</span><div class="prob-track" aria-hidden="true"><span style="width: 15%"></span></div><strong>15%</strong></div>
+<div class="prob-row"><span>平局</span><div class="prob-track" aria-hidden="true"><span style="width: 20%"></span></div><strong>20%</strong></div>
+<div class="prob-row"><span>墨西哥 胜</span><div class="prob-track" aria-hidden="true"><span style="width: 65%"></span></div><strong>65%</strong></div>
+        </div>
+        <div class="insight-grid">
+          <section><h3>战术分析</h3><p>捷克5-2-3对阵墨西哥4-1-2-3。墨西哥主场优势，4-1-2-3攻击力强，捷克5-2-3防守密集但可能无法抵挡墨西哥的攻势。</p></section>
+          <section><h3>风险分析</h3><p>墨西哥作为东道主之一，优势明显，捷克难以爆冷。</p></section>
+          <section><h3>伤停信息</h3><p>主队: 媒体伤停线索; 客队: 媒体伤停线索</p><p class="muted compact">捷克可能存在伤停影响 墨西哥可能存在伤停影响 双方都有概率性伤病，但墨西哥实力和主场优势明显。</p></section>
+          <section><h3>赔率对比</h3><p>真实赔率源未提供 moneyline，显示 unavailable。</p></section>
+        </div>
+        <div class="match-footer">
+          <span>Mexico City Stadium - Mexico City - MEX</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760467" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    </section>
+    </section>
+            
+    <section class="match-day" data-match-day="2026-06-25">
+      <div class="section-head">
+        <div>
+          <h2>6月25日比赛日</h2>
+          <p class="muted compact">北京时间 06-25 18:00 - 06-26 18:00，按北京时间升序排列</p>
+        </div>
+        <div class="source-links"><a href="latest.json">原始 JSON</a></div>
+      </div>
+      <section class="grid">
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-26T04:00:00+08:00">北京时间 06-26 04:00</time>
+          <span>信心: 高</span>
+        </div>
+        <div class="teams">
+          <div class="team"><span class="team-initial">库拉索</span><strong>库拉索</strong></div>
+          <div class="score">0 : 3</div>
+          <div class="team right"><strong>科特迪瓦</strong><span class="team-initial">科特迪</span></div>
+        </div>
+        <div class="mini-stats">
+          <span>xG 库拉索 0.30</span>
+          <span>xG 科特迪瓦 2.30</span>
+          <span>爆冷概率 5%</span>
+        </div>
+        <div class="probabilities">
+          <div class="prob-row"><span>库拉索 胜</span><div class="prob-track" aria-hidden="true"><span style="width: 6.01%"></span></div><strong>6.0%</strong></div>
+<div class="prob-row"><span>平局</span><div class="prob-track" aria-hidden="true"><span style="width: 12.03%"></span></div><strong>12.0%</strong></div>
+<div class="prob-row"><span>科特迪瓦 胜</span><div class="prob-track" aria-hidden="true"><span style="width: 81.96%"></span></div><strong>82.0%</strong></div>
+        </div>
+        <div class="insight-grid">
+          <section><h3>战术分析</h3><p>双方阵型未知。科特迪瓦实力远超库拉索，预计将控制比赛。</p></section>
+          <section><h3>风险分析</h3><p>科特迪瓦优势巨大，库拉索爆冷概率极低。</p></section>
+          <section><h3>伤停信息</h3><p>主队: unknown; 客队: unknown</p><p class="muted compact">伤停情况未知 伤停情况未知 双方伤病情况不明，对预测影响较小。</p></section>
+          <section><h3>赔率对比</h3><p>CIV -575: 主胜 6.01% / 平 12.03% / 客胜 81.96%. 模型预测与市场一致，无明显偏离。</p></section>
+        </div>
+        <div class="match-footer">
+          <span>Philadelphia Stadium - Philadelphia - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760473" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
 
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-26T04:00:00+08:00">北京时间 06-26 04:00</time>
+          <span>信心: 中</span>
+        </div>
+        <div class="teams">
+          <div class="team"><span class="team-initial">厄瓜多</span><strong>厄瓜多尔</strong></div>
+          <div class="score">0 : 2</div>
+          <div class="team right"><strong>德国</strong><span class="team-initial">德国</span></div>
+        </div>
+        <div class="mini-stats">
+          <span>xG 厄瓜多尔 0.80</span>
+          <span>xG 德国 1.90</span>
+          <span>爆冷概率 25%</span>
+        </div>
+        <div class="probabilities">
+          <div class="prob-row"><span>厄瓜多尔 胜</span><div class="prob-track" aria-hidden="true"><span style="width: 18.25%"></span></div><strong>18.2%</strong></div>
+<div class="prob-row"><span>平局</span><div class="prob-track" aria-hidden="true"><span style="width: 19.55%"></span></div><strong>19.6%</strong></div>
+<div class="prob-row"><span>德国 胜</span><div class="prob-track" aria-hidden="true"><span style="width: 62.2%"></span></div><strong>62.2%</strong></div>
+        </div>
+        <div class="insight-grid">
+          <section><h3>战术分析</h3><p>双方阵型未知。德国实力占优，厄瓜多尔或采取防守反击。</p></section>
+          <section><h3>风险分析</h3><p>德国明显占优，但厄瓜多尔有爆冷能力，平局可能性不低。</p></section>
+          <section><h3>伤停信息</h3><p>主队: unknown; 客队: unknown</p><p class="muted compact">伤停情况未知 伤停情况未知 无明确伤病信息。</p></section>
+          <section><h3>赔率对比</h3><p>GER -185: 主胜 18.25% / 平 19.55% / 客胜 62.2%. 模型预测与市场一致。</p></section>
+        </div>
+        <div class="match-footer">
+          <span>New York/New Jersey Stadium - New Jersey - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760468" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-26T07:00:00+08:00">北京时间 06-26 07:00</time>
+          <span>信心: 高</span>
+        </div>
+        <div class="teams">
+          <div class="team"><span class="team-initial">突尼斯</span><strong>突尼斯</strong></div>
+          <div class="score">0 : 3</div>
+          <div class="team right"><strong>荷兰</strong><span class="team-initial">荷兰</span></div>
+        </div>
+        <div class="mini-stats">
+          <span>xG 突尼斯 0.30</span>
+          <span>xG 荷兰 2.80</span>
+          <span>爆冷概率 2%</span>
+        </div>
+        <div class="probabilities">
+          <div class="prob-row"><span>突尼斯 胜</span><div class="prob-track" aria-hidden="true"><span style="width: 3.68%"></span></div><strong>3.7%</strong></div>
+<div class="prob-row"><span>平局</span><div class="prob-track" aria-hidden="true"><span style="width: 8.69%"></span></div><strong>8.7%</strong></div>
+<div class="prob-row"><span>荷兰 胜</span><div class="prob-track" aria-hidden="true"><span style="width: 87.63%"></span></div><strong>87.6%</strong></div>
+        </div>
+        <div class="insight-grid">
+          <section><h3>战术分析</h3><p>阵型未知。荷兰实力碾压，突尼斯难有作为。</p></section>
+          <section><h3>风险分析</h3><p>荷兰获胜几乎无悬念，关注净胜球。</p></section>
+          <section><h3>伤停信息</h3><p>主队: 媒体伤停线索; 客队: 媒体伤停线索</p><p class="muted compact">突尼斯可能存在伤停影响 荷兰可能存在伤停影响 双方都有概率性伤病，但对荷兰影响有限。</p></section>
+          <section><h3>赔率对比</h3><p>NED -1100: 主胜 3.68% / 平 8.69% / 客胜 87.63%. 模型与市场无偏差。</p></section>
+        </div>
+        <div class="match-footer">
+          <span>Kansas City Stadium - Kansas City - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760472" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-meta">
+          <time datetime="2026-06-26T07:00:00+08:00">北京时间 06-26 07:00</time>
+          <span>信心: 中</span>
+        </div>
+        <div class="teams">
+          <div class="team"><span class="team-initial">日本</span><strong>日本</strong></div>
+          <div class="score">2 : 1</div>
+          <div class="team right"><strong>瑞典</strong><span class="team-initial">瑞典</span></div>
+        </div>
+        <div class="mini-stats">
+          <span>xG 日本 1.50</span>
+          <span>xG 瑞典 1.00</span>
+          <span>爆冷概率 30%</span>
+        </div>
+        <div class="probabilities">
+          <div class="prob-row"><span>日本 胜</span><div class="prob-track" aria-hidden="true"><span style="width: 50.52%"></span></div><strong>50.5%</strong></div>
+<div class="prob-row"><span>平局</span><div class="prob-track" aria-hidden="true"><span style="width: 27.56%"></span></div><strong>27.6%</strong></div>
+<div class="prob-row"><span>瑞典 胜</span><div class="prob-track" aria-hidden="true"><span style="width: 21.92%"></span></div><strong>21.9%</strong></div>
+        </div>
+        <div class="insight-grid">
+          <section><h3>战术分析</h3><p>阵型未知。日本技术优势，瑞典身体对抗强，预计激烈。</p></section>
+          <section><h3>风险分析</h3><p>日本稍占优，但瑞典有定位球威胁，平局可能。</p></section>
+          <section><h3>伤停信息</h3><p>主队: unknown; 客队: unknown</p><p class="muted compact">伤停情况未知 伤停情况未知 无明确伤病信息。</p></section>
+          <section><h3>赔率对比</h3><p>JPN -110: 主胜 50.52% / 平 27.56% / 客胜 21.92%. 模型与市场一致。</p></section>
+        </div>
+        <div class="match-footer">
+          <span>Dallas Stadium - Dallas - USA</span>
+          <a href="https://www.espn.com/soccer/match/_/gameId/760471" rel="noopener" target="_blank">来源</a>
+        </div>
+      </article>
+    </section>
+    </section>
+            
+  </main>
+  <footer>
+    <div class="wrap">分析模型: deepseek-v4-pro · 生成模型: deepseek-v4-flash · Input tokens 34572 · Output tokens 17912 · Total tokens 52484 · Cost 0.524840</div>
+  </footer>
 </body>
 </html>
