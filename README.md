@@ -1,14 +1,28 @@
-# Daily FIFA World Cup Predictions
+# Daily FIFA World Cup AI Agent
 
 Production GitHub Pages system for daily FIFA World Cup predictions.
 
-## DeepSeek V4 Model Strategy
+## V3 Agent Architecture
 
-- Analysis engine: `deepseek-v4-pro`
-  - Used for football match analysis, win/draw/loss probabilities, score prediction, tactical analysis, and risk analysis.
-  - Request parameters include `reasoning_effort = "high"` and `thinking = "enabled"`.
-- Generation engine: `deepseek-v4-flash`
-  - Used for HTML generation, output formatting, JSON organization, and token/cost UI.
+Data layer:
+
+- FIFA official calendar API is the primary fixture source.
+- ESPN FIFA World Cup scoreboard is the second source used to verify match authenticity.
+- ESPN odds feed is used for moneyline odds and implied probability conversion when available.
+- FIFA official search plus ESPN World Cup news are scanned for injury/suspension signals.
+- Injury labels are source-bound: `confirmed injury` requires an official FIFA article, `probable injury` requires media evidence, and `unknown` means no supported source was found.
+
+Analysis layer:
+
+- Model: `deepseek-v4-pro`
+- Purpose: match analysis, tactical matchup, win/draw/loss probabilities, xG, injury adjustment, risk, and upset probability.
+- Parameters: `reasoning_effort = "high"` and `thinking = enabled`.
+- No other model is used for match analysis.
+
+Generation layer:
+
+- Model: `deepseek-v4-flash`
+- Purpose: HTML page generation, JSON shaping, visible token usage, and cost UI.
 
 API configuration:
 
@@ -17,34 +31,37 @@ base_url = https://api.deepseek.com
 api_key = os.environ["DEEPSEEK_API_KEY"]
 ```
 
-The pipeline never fabricates fixtures or DeepSeek responses. ESPN's public FIFA World Cup scoreboard is used only as the verified fixture source.
+The pipeline fails instead of producing mock data when required upstream data or DeepSeek credentials are unavailable.
 
 ## Daily Schedule
 
 All cron values are UTC, aligned to Asia/Shanghai local time:
 
-- 08:15 CST: `.github/workflows/research.yml` fetches verified fixtures and writes `data/fixtures.json`.
-- 09:40 CST: `.github/workflows/analysis.yml` calls `deepseek-v4-pro` and writes `data/analysis.json`.
-- 09:45 CST: `.github/workflows/render.yml` calls `deepseek-v4-flash`, writes `data/latest.json`, `docs/index.html`, and `docs/latest.json`.
-- 10:00 CST: `.github/workflows/publish.yml` validates `data/latest.json` and deploys `docs/` through the official GitHub Pages artifact flow.
+- 08:15 CST: `.github/workflows/research.yml` fetches FIFA fixtures, verifies ESPN source, scans injuries, and extracts odds.
+- 08:30 CST: `.github/workflows/analysis.yml` calls `deepseek-v4-pro`.
+- 09:00 CST: `.github/workflows/render.yml` calls `deepseek-v4-flash` and writes HTML.
+- 09:30 CST: `.github/workflows/finalize.yml` writes `data/latest.json`, token usage, and Pages JSON.
+- 10:00 CST: `.github/workflows/publish.yml` validates and deploys GitHub Pages.
 
 ## Output Contract
 
-`data/latest.json` uses this top-level contract:
+`data/latest.json` contains:
 
 ```json
 {
-  "analysis": {},
-  "render": "<!doctype html>...",
+  "matches": [],
+  "analysis_model": "deepseek-v4-pro",
+  "render_model": "deepseek-v4-flash",
   "usage": {
     "input_tokens": 0,
     "output_tokens": 0,
     "total_tokens": 0,
     "cost_estimate": 0
   },
-  "model": {
-    "analysis_model": "deepseek-v4-pro",
-    "render_model": "deepseek-v4-flash"
+  "data_sources": {
+    "fifa": true,
+    "injury": true,
+    "odds": true
   }
 }
 ```
@@ -61,17 +78,12 @@ total_tokens * 0.00001
 python app/pipeline.py research
 python app/pipeline.py analysis
 python app/pipeline.py render
+python app/pipeline.py finalize
 python app/validate.py data/latest.json
 ```
 
 Running `analysis`, `render`, or `full` requires `DEEPSEEK_API_KEY`.
 
-## GitHub Secret
+## Project Requirements Log
 
-Set repository secret:
-
-```text
-DEEPSEEK_API_KEY
-```
-
-Without this secret, the analysis/render workflows fail intentionally instead of producing mock data.
+The upgrade/build history is tracked in `项目基本要求.md`. Every future system update should append a dated entry there.

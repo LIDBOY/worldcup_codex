@@ -5,7 +5,7 @@ import pipeline
 
 def main() -> int:
     payload = pipeline.run_render()
-    print(f"render completed model={payload['model']['render_model']} tokens={payload['usage']['total_tokens']}")
+    print(f"render completed model={payload['render_model']} tokens={payload['usage']['total_tokens']}")
     return 0
 
 

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import hashlib
+import html
 import json
 import os
 import re
@@ -22,20 +23,36 @@ DEEPSEEK_BASE_URL = os.getenv("DEEPSEEK_BASE_URL", "https://api.deepseek.com").r
 DEEPSEEK_API_KEY_ENV = "DEEPSEEK_API_KEY"
 TOKEN_COST_RATE = float(os.getenv("DEEPSEEK_TOKEN_COST_RATE", "0.00001"))
 
+FIFA_COMPETITION_ID = os.getenv("FIFA_COMPETITION_ID", "17")
+FIFA_SEASON_ID = os.getenv("FIFA_SEASON_ID", "285023")
+FIFA_LANGUAGE = os.getenv("FIFA_LANGUAGE", "en")
+FIFA_SEARCH_KEY = os.getenv(
+    "FIFA_SEARCH_KEY",
+    "2kD9zRYRT7xN6kSGs6EoHcvSyKOyK0B4YaKTf1Ygeaw8PM6bgfR6SQ==",
+)
+
 DEFAULT_LEAGUE = os.getenv("WORLDCUP_ESPN_LEAGUE", "fifa.world")
-DEFAULT_DAYS = int(os.getenv("WORLDCUP_WINDOW_DAYS", "5"))
-REQUEST_TIMEOUT = int(os.getenv("WORLDCUP_REQUEST_TIMEOUT", "20"))
+DEFAULT_DAYS = int(os.getenv("WORLDCUP_WINDOW_DAYS", "1"))
+REQUEST_TIMEOUT = int(os.getenv("WORLDCUP_REQUEST_TIMEOUT", "25"))
 DEEPSEEK_REQUEST_TIMEOUT = int(os.getenv("DEEPSEEK_REQUEST_TIMEOUT", "180"))
+INJURY_LOOKBACK_DAYS = int(os.getenv("WORLDCUP_INJURY_LOOKBACK_DAYS", "180"))
 
 DATA_DIR = Path("data")
 DOCS_DIR = Path("docs")
 FIXTURES_PATH = DATA_DIR / "fixtures.json"
 ANALYSIS_PATH = DATA_DIR / "analysis.json"
+RENDER_PATH = DATA_DIR / "render.json"
 LATEST_PATH = DATA_DIR / "latest.json"
 
+FIFA_CALENDAR = "https://api.fifa.com/api/v3/calendar/matches"
+FIFA_SEARCH = "https://cxm-api.fifa.com/fifacxmsearch/api/results"
 ESPN_SCOREBOARD = (
     "https://site.api.espn.com/apis/site/v2/sports/soccer/"
     f"{DEFAULT_LEAGUE}/scoreboard"
+)
+ESPN_NEWS = (
+    "https://site.api.espn.com/apis/site/v2/sports/soccer/"
+    f"{DEFAULT_LEAGUE}/news"
 )
 
 TEAM_NAME_ZH = {
@@ -96,6 +113,26 @@ TEAM_NAME_ZH = {
     "uzbekistan": "\u4e4c\u5179\u522b\u514b\u65af\u5766",
 }
 
+INJURY_KEYWORDS = (
+    "injury",
+    "injured",
+    "injuries",
+    "fitness",
+    "doubt",
+    "doubtful",
+    "ruled out",
+    "out of",
+    "misses",
+    "withdrawn",
+    "hamstring",
+    "ankle",
+    "knee",
+    "calf",
+    "groin",
+    "suspension",
+    "suspended",
+)
+
 
 def utc_now() -> dt.datetime:
     return dt.datetime.now(dt.timezone.utc).replace(microsecond=0)
@@ -111,7 +148,9 @@ def parse_date(value: str) -> dt.datetime:
     return dt.datetime.fromisoformat(value).astimezone(dt.timezone.utc)
 
 
-def normalize_team(name: str) -> str:
+def normalize_team(name: str | None) -> str:
+    if not name:
+        return ""
     ascii_name = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode("ascii")
     cleaned = re.sub(r"[^a-z0-9]+", " ", ascii_name.lower()).strip()
     aliases = {
@@ -119,8 +158,10 @@ def normalize_team(name: str) -> str:
         "u s": "usa",
         "united states of america": "united states",
         "korea": "south korea",
+        "korea republic": "south korea",
         "republic of korea": "south korea",
-        "cote divoire": "cote d ivoire",
+        "cote d ivoire": "ivory coast",
+        "cote divoire": "ivory coast",
         "cabo verde": "cape verde",
         "bosnia and herzegovina": "bosnia herzegovina",
         "bosnia herz": "bosnia herzegovina",
@@ -158,12 +199,18 @@ def write_json(path: Path, payload: dict[str, Any]) -> None:
     path.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
-def request_json(url: str, *, params: dict[str, str] | None = None, headers: dict[str, str] | None = None,
-                 body: dict[str, Any] | None = None, retries: int = 3,
-                 timeout: int = REQUEST_TIMEOUT) -> dict[str, Any]:
+def request_json(
+    url: str,
+    *,
+    params: dict[str, str] | None = None,
+    headers: dict[str, str] | None = None,
+    body: dict[str, Any] | None = None,
+    retries: int = 3,
+    timeout: int = REQUEST_TIMEOUT,
+) -> dict[str, Any]:
     full_url = f"{url}?{urlencode(params)}" if params else url
     data = json.dumps(body).encode("utf-8") if body is not None else None
-    request_headers = {"User-Agent": "worldcup-deepseek-pages/2.0", **(headers or {})}
+    request_headers = {"User-Agent": "worldcup-agent-pages/3.0", **(headers or {})}
     if body is not None:
         request_headers["Content-Type"] = "application/json"
 
@@ -171,7 +218,7 @@ def request_json(url: str, *, params: dict[str, str] | None = None, headers: dic
     for attempt in range(1, retries + 1):
         try:
             request = Request(full_url, data=data, headers=request_headers)
-            with urlopen(request, timeout=timeout) as response:  # noqa: S310 - configured sources only
+            with urlopen(request, timeout=timeout) as response:  # noqa: S310 - fixed upstream APIs
                 return json.loads(response.read().decode("utf-8"))
         except HTTPError as exc:
             detail = exc.read().decode("utf-8", "replace")
@@ -183,15 +230,117 @@ def request_json(url: str, *, params: dict[str, str] | None = None, headers: dic
     raise RuntimeError(f"failed to fetch {full_url}: {last_error}")
 
 
+def stable_id(value: Any) -> str:
+    raw = json.dumps(value, sort_keys=True, ensure_ascii=True)
+    return hashlib.sha256(raw.encode("utf-8")).hexdigest()[:16]
+
+
+def localized(values: Any, default: str = "") -> str:
+    if isinstance(values, list):
+        for item in values:
+            if not isinstance(item, dict):
+                continue
+            locale = str(item.get("Locale") or "").lower()
+            if locale.startswith("en") and item.get("Description"):
+                return str(item["Description"])
+        for item in values:
+            if isinstance(item, dict) and item.get("Description"):
+                return str(item["Description"])
+    if isinstance(values, str):
+        return values
+    return default
+
+
+def team_from_fifa(raw: dict[str, Any], placeholder: str | None = None) -> dict[str, Any]:
+    name_en = localized(raw.get("TeamName"), raw.get("ShortClubName") or placeholder or "Unknown team")
+    if not name_en or name_en == "Unknown team":
+        name_en = placeholder or "Unknown team"
+    return {
+        "name": team_name_zh(name_en),
+        "name_en": name_en,
+        "abbreviation": raw.get("Abbreviation") or raw.get("IdCountry") or placeholder,
+        "id_team": raw.get("IdTeam"),
+        "id_country": raw.get("IdCountry"),
+        "logo": raw.get("PictureUrl"),
+        "score": raw.get("Score"),
+        "tactics": raw.get("Tactics"),
+    }
+
+
+def fetch_fifa_matches(start: dt.date, days: int) -> tuple[list[dict[str, Any]], str, list[str]]:
+    end = start + dt.timedelta(days=max(days, 1))
+    params = {
+        "from": start.isoformat(),
+        "to": end.isoformat(),
+        "language": FIFA_LANGUAGE,
+        "count": "500",
+        "idCompetition": FIFA_COMPETITION_ID,
+        "idSeason": FIFA_SEASON_ID,
+    }
+    url = f"{FIFA_CALENDAR}?{urlencode(params)}"
+    warnings: list[str] = []
+    payload = request_json(FIFA_CALENDAR, params=params)
+    matches = []
+    for item in payload.get("Results", []) or []:
+        if str(item.get("IdCompetition")) != FIFA_COMPETITION_ID:
+            continue
+        competition_name = localized(item.get("CompetitionName"))
+        if "World Cup" not in competition_name:
+            warnings.append(f"filtered non-world-cup FIFA match {item.get('IdMatch')}")
+            continue
+        matches.append(transform_fifa_match(item))
+    return matches, url, warnings
+
+
+def transform_fifa_match(item: dict[str, Any]) -> dict[str, Any]:
+    home = team_from_fifa(item.get("Home") or {}, item.get("PlaceHolderA"))
+    away = team_from_fifa(item.get("Away") or {}, item.get("PlaceHolderB"))
+    kickoff = parse_date(item["Date"]) if item.get("Date") else utc_now()
+    stadium = item.get("Stadium") or {}
+    match_id = str(item.get("IdMatch") or stable_id(item))
+    return {
+        "id": match_id,
+        "fifa_match_id": match_id,
+        "match_name": f"{home['name']} vs {away['name']}",
+        "match_name_en": f"{home['name_en']} vs {away['name_en']}",
+        "kickoff_utc": iso_utc(kickoff),
+        "competition": localized(item.get("CompetitionName"), "FIFA World Cup"),
+        "season": localized(item.get("SeasonName"), "FIFA World Cup 2026"),
+        "stage": localized(item.get("StageName")),
+        "group": localized(item.get("GroupName")),
+        "match_number": item.get("MatchNumber"),
+        "status": {
+            "match_status": item.get("MatchStatus"),
+            "officiality_status": item.get("OfficialityStatus"),
+            "result_type": item.get("ResultType"),
+        },
+        "teams": {"home": home, "away": away},
+        "venue": {
+            "name": localized(stadium.get("Name")),
+            "city": localized(stadium.get("CityName")),
+            "country": stadium.get("IdCountry"),
+        },
+        "sources": {
+            "fifa": {
+                "name": "FIFA official calendar API",
+                "url": FIFA_CALENDAR,
+                "id_competition": item.get("IdCompetition"),
+                "id_season": item.get("IdSeason"),
+                "id_match": match_id,
+            }
+        },
+    }
+
+
 def espn_date_url(day: dt.date) -> str:
-    return f"{ESPN_SCOREBOARD}?dates={day:%Y%m%d}"
+    return f"{ESPN_SCOREBOARD}?dates={day:%Y%m%d}&limit=100"
 
 
 def fetch_espn_events(start: dt.date, days: int) -> tuple[list[dict[str, Any]], list[str], list[str]]:
     events: dict[str, dict[str, Any]] = {}
     urls: list[str] = []
     warnings: list[str] = []
-    for offset in range(days):
+    for offset in range(max(days, 1)):
         day = start + dt.timedelta(days=offset)
         params = {"dates": f"{day:%Y%m%d}", "limit": "100"}
         urls.append(espn_date_url(day))
@@ -206,11 +355,6 @@ def fetch_espn_events(start: dt.date, days: int) -> tuple[list[dict[str, Any]], 
     return list(events.values()), urls, warnings
 
 
-def stable_id(value: Any) -> str:
-    raw = json.dumps(value, sort_keys=True, ensure_ascii=True)
-    return hashlib.sha256(raw.encode("utf-8")).hexdigest()[:16]
-
-
 def competitor_name(competitor: dict[str, Any]) -> str:
     team = competitor.get("team") or {}
     return (
@@ -222,18 +366,6 @@ def competitor_name(competitor: dict[str, Any]) -> str:
     )
 
 
-def competitor_logo(competitor: dict[str, Any]) -> str | None:
-    team = competitor.get("team") or {}
-    logo = team.get("logo")
-    if logo:
-        return str(logo)
-    logos = team.get("logos") or []
-    if logos:
-        href = logos[0].get("href")
-        return str(href) if href else None
-    return None
-
-
 def pick_competitors(event: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]] | None:
     competitions = event.get("competitions") or []
     if not competitions:
@@ -243,79 +375,313 @@ def pick_competitors(event: dict[str, Any]) -> tuple[dict[str, Any], dict[str, A
         return None
     home = next((item for item in competitors if item.get("homeAway") == "home"), None)
     away = next((item for item in competitors if item.get("homeAway") == "away"), None)
-    if home and away:
-        return home, away
-    return competitors[0], competitors[1]
+    return (home, away) if home and away else (competitors[0], competitors[1])
 
 
-def transform_event(event: dict[str, Any]) -> dict[str, Any] | None:
+def american_to_probability(value: Any) -> float | None:
+    if value is None:
+        return None
+    text = str(value).strip().upper()
+    if text in {"EVEN", "EVENS"}:
+        return 0.5
+    match = re.search(r"[-+]?\d+", text)
+    if not match:
+        return None
+    odds = int(match.group(0))
+    if odds > 0:
+        return 100 / (odds + 100)
+    if odds < 0:
+        return abs(odds) / (abs(odds) + 100)
+    return None
+
+
+def odds_value(node: dict[str, Any] | None) -> str | None:
+    if not isinstance(node, dict):
+        return None
+    market = node.get("close") or node.get("open") or node
+    if not isinstance(market, dict):
+        return None
+    raw = market.get("odds")
+    return str(raw) if raw is not None else None
+
+
+def extract_odds(competition: dict[str, Any]) -> dict[str, Any]:
+    for offer in competition.get("odds", []) or []:
+        if not isinstance(offer, dict):
+            continue
+        moneyline = offer.get("moneyline") or {}
+        home = odds_value(moneyline.get("home"))
+        draw = odds_value(moneyline.get("draw"))
+        away = odds_value(moneyline.get("away"))
+        raw_probs = {
+            "home_win": american_to_probability(home),
+            "draw": american_to_probability(draw),
+            "away_win": american_to_probability(away),
+        }
+        if any(value is None for value in raw_probs.values()):
+            continue
+        total = sum(float(value) for value in raw_probs.values())
+        implied = {key: round(float(value) * 100, 2) for key, value in raw_probs.items() if value is not None}
+        normalized = {key: round(float(value) / total * 100, 2) for key, value in raw_probs.items()}
+        provider = offer.get("provider") or {}
+        return {
+            "available": True,
+            "source": "ESPN odds feed",
+            "provider": provider.get("name") or offer.get("details") or "ESPN listed sportsbook",
+            "moneyline_american": {"home": home, "draw": draw, "away": away},
+            "implied_probability": implied,
+            "normalized_probability": normalized,
+            "overround": round(total * 100 - 100, 2),
+            "details": offer.get("details"),
+        }
+    return {"available": False, "source": "ESPN odds feed", "reason": "moneyline odds unavailable"}
+
+
+def transform_espn_event(event: dict[str, Any]) -> dict[str, Any] | None:
     pair = pick_competitors(event)
     if not pair:
         return None
     home_raw, away_raw = pair
-    home_en = competitor_name(home_raw)
-    away_en = competitor_name(away_raw)
-    home_zh = team_name_zh(home_en)
-    away_zh = team_name_zh(away_en)
-    event_id = str(event.get("id") or stable_id(event))
     competition = (event.get("competitions") or [{}])[0]
-    status_type = (event.get("status") or {}).get("type") or {}
-    kickoff = parse_date(event["date"]) if event.get("date") else utc_now()
-    venue = competition.get("venue") or {}
-    address = venue.get("address") or {}
+    event_id = str(event.get("id") or stable_id(event))
     return {
         "id": event_id,
-        "match_name": f"{home_zh} vs {away_zh}",
-        "match_name_en": event.get("name") or f"{home_en} vs {away_en}",
-        "kickoff_utc": iso_utc(kickoff),
-        "competition": (event.get("league") or {}).get("name") or "FIFA World Cup",
-        "status": {
-            "state": status_type.get("state") or "pre",
-            "detail": status_type.get("description") or status_type.get("detail") or "scheduled",
-            "completed": bool(status_type.get("completed")),
-        },
+        "kickoff_utc": iso_utc(parse_date(event["date"])) if event.get("date") else None,
         "teams": {
             "home": {
-                "name": home_zh,
-                "name_en": home_en,
+                "name_en": competitor_name(home_raw),
                 "abbreviation": (home_raw.get("team") or {}).get("abbreviation"),
-                "logo": competitor_logo(home_raw),
-                "score": home_raw.get("score"),
             },
             "away": {
-                "name": away_zh,
-                "name_en": away_en,
+                "name_en": competitor_name(away_raw),
                 "abbreviation": (away_raw.get("team") or {}).get("abbreviation"),
-                "logo": competitor_logo(away_raw),
-                "score": away_raw.get("score"),
             },
         },
-        "venue": {
-            "name": venue.get("fullName") or venue.get("name"),
-            "city": address.get("city"),
-            "country": address.get("country"),
-        },
+        "odds": extract_odds(competition),
         "source": {
-            "name": "ESPN public scoreboard",
+            "name": "ESPN public FIFA World Cup scoreboard",
             "event_url": f"https://www.espn.com/soccer/match/_/gameId/{event_id}",
         },
     }
 
 
+def team_pair_key(match: dict[str, Any]) -> frozenset[str]:
+    teams = match.get("teams") or {}
+    return frozenset(
+        normalize_team((teams.get(side) or {}).get("name_en") or (teams.get(side) or {}).get("name"))
+        for side in ("home", "away")
+    )
+
+
+def find_espn_match(fifa_match: dict[str, Any], espn_matches: list[dict[str, Any]]) -> dict[str, Any] | None:
+    fifa_key = team_pair_key(fifa_match)
+    fifa_time = parse_date(fifa_match["kickoff_utc"])
+    best: tuple[float, dict[str, Any]] | None = None
+    for espn_match in espn_matches:
+        if team_pair_key(espn_match) != fifa_key:
+            continue
+        if not espn_match.get("kickoff_utc"):
+            continue
+        delta = abs((parse_date(espn_match["kickoff_utc"]) - fifa_time).total_seconds())
+        if delta <= 12 * 3600 and (best is None or delta < best[0]):
+            best = (delta, espn_match)
+    return best[1] if best else None
+
+
+def fetch_espn_news() -> tuple[list[dict[str, Any]], str, list[str]]:
+    params = {"limit": "100"}
+    url = f"{ESPN_NEWS}?{urlencode(params)}"
+    try:
+        payload = request_json(ESPN_NEWS, params=params)
+    except RuntimeError as exc:
+        return [], url, [str(exc)]
+    return payload.get("articles", []) or [], url, []
+
+
+def fifa_search_articles(query: str) -> tuple[list[dict[str, Any]], list[str]]:
+    params = {
+        "locale": "en",
+        "searchString": query,
+        "clientType": "fifaplus",
+        "type": "search",
+        "context": "default",
+        "dateFrom": (utc_now().date() - dt.timedelta(days=INJURY_LOOKBACK_DAYS)).isoformat(),
+        "size": "5",
+        "from": "0",
+        "contentType": "article",
+        "sort": "relevance",
+    }
+    headers = {"X-Functions-Key": FIFA_SEARCH_KEY, "Content-Type": "application/json"}
+    try:
+        payload = request_json(FIFA_SEARCH, params=params, headers=headers)
+    except RuntimeError as exc:
+        return [], [str(exc)]
+    return (payload.get("hits") or {}).get("hits", []) or [], []
+
+
+def compact_fifa_article(hit: dict[str, Any]) -> dict[str, Any]:
+    source = hit.get("_source") or {}
+    extra = source.get("additionalInformation")
+    url = None
+    if isinstance(extra, str):
+        try:
+            url = json.loads(extra).get("RelativeUrl")
+        except json.JSONDecodeError:
+            url = None
+    return {
+        "source": "FIFA official search",
+        "title": source.get("title"),
+        "description": source.get("description") or source.get("summary"),
+        "published": source.get("date") or source.get("publicationDate"),
+        "url": f"https://www.fifa.com{url}" if url and url.startswith("/") else url,
+    }
+
+
+def compact_espn_article(article: dict[str, Any]) -> dict[str, Any]:
+    links = article.get("links") or {}
+    web = links.get("web") or {}
+    return {
+        "source": "ESPN World Cup news",
+        "title": article.get("headline"),
+        "description": article.get("description"),
+        "published": article.get("published") or article.get("lastModified"),
+        "url": web.get("href") or article.get("link"),
+    }
+
+
+def text_has_injury_signal(text: str) -> bool:
+    lowered = text.lower()
+    return any(keyword in lowered for keyword in INJURY_KEYWORDS)
+
+
+def text_mentions_team(text: str, team: dict[str, Any]) -> bool:
+    normalized_text = normalize_team(text)
+    candidates = {
+        normalize_team(team.get("name_en")),
+        normalize_team(team.get("name")),
+        normalize_team(team.get("abbreviation")),
+    }
+    return any(candidate and candidate in normalized_text for candidate in candidates)
+
+
+def article_text(article: dict[str, Any]) -> str:
+    return " ".join(str(article.get(key) or "") for key in ("title", "headline", "description", "summary"))
+
+
+def injury_record_for_team(
+    team: dict[str, Any],
+    fifa_hits: list[dict[str, Any]],
+    espn_articles: list[dict[str, Any]],
+) -> dict[str, Any]:
+    official_records = []
+    for hit in fifa_hits:
+        article = compact_fifa_article(hit)
+        if text_has_injury_signal(article_text(article)):
+            official_records.append(article)
+
+    media_records = []
+    for raw in espn_articles:
+        article = compact_espn_article(raw)
+        text = article_text(article)
+        if text_has_injury_signal(text) and text_mentions_team(text, team):
+            media_records.append(article)
+
+    if official_records:
+        status = "confirmed injury"
+        records = official_records[:3]
+    elif media_records:
+        status = "probable injury"
+        records = media_records[:3]
+    else:
+        status = "unknown"
+        records = []
+    return {
+        "team": team.get("name"),
+        "team_en": team.get("name_en"),
+        "status": status,
+        "records": records,
+        "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown",
+    }
+
+
+def attach_injuries(matches: list[dict[str, Any]], espn_articles: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], list[str]]:
+    warnings: list[str] = []
+    cache: dict[str, list[dict[str, Any]]] = {}
+    for match in matches:
+        for side in ("home", "away"):
+            team = (match.get("teams") or {}).get(side) or {}
+            key = normalize_team(team.get("name_en"))
+            if key and key not in cache:
+                hits, errors = fifa_search_articles(f"{team.get('name_en', '')} injury")
+                cache[key] = hits
+                warnings.extend(errors)
+            match.setdefault("injuries", {})[side] = injury_record_for_team(team, cache.get(key, []), espn_articles)
+    return matches, warnings
+
+
 def run_research(output: Path = FIXTURES_PATH, start: dt.date | None = None, days: int = DEFAULT_DAYS) -> dict[str, Any]:
     start_date = start or utc_now().date()
-    raw_events, source_urls, warnings = fetch_espn_events(start_date, days)
-    fixtures = [fixture for event in raw_events if (fixture := transform_event(event))]
-    fixtures.sort(key=lambda item: item["kickoff_utc"])
+    fifa_matches, fifa_url, fifa_warnings = fetch_fifa_matches(start_date, days)
+    espn_raw_events, espn_urls, espn_warnings = fetch_espn_events(start_date - dt.timedelta(days=1), days + 2)
+    espn_matches = [match for event in espn_raw_events if (match := transform_espn_event(event))]
+
+    verified: list[dict[str, Any]] = []
+    unverified: list[str] = []
+    for fifa_match in fifa_matches:
+        espn_match = find_espn_match(fifa_match, espn_matches)
+        if not espn_match:
+            unverified.append(fifa_match["match_name_en"])
+            continue
+        fifa_match["espn_event_id"] = espn_match["id"]
+        fifa_match["sources"]["espn"] = espn_match["source"]
+        fifa_match["source_verification"] = {
+            "verified": True,
+            "sources": ["FIFA official calendar API", "ESPN public FIFA World Cup scoreboard"],
+            "method": "team-pair and kickoff-time cross-check",
+        }
+        fifa_match["odds"] = espn_match["odds"]
+        verified.append(fifa_match)
+
+    espn_articles, news_url, news_warnings = fetch_espn_news()
+    verified, injury_warnings = attach_injuries(verified, espn_articles)
+    odds_available = sum(1 for match in verified if (match.get("odds") or {}).get("available"))
+
+    warnings = [*fifa_warnings, *espn_warnings, *news_warnings, *injury_warnings]
     payload = {
-        "schema_version": 2,
+        "schema_version": 3,
         "stage": "research",
         "generated_at": iso_utc(utc_now()),
         "window": {"start_date": start_date.isoformat(), "days": days, "timezone": "UTC"},
-        "source": {"fixture_provider": "ESPN public scoreboard", "league": DEFAULT_LEAGUE, "urls": source_urls},
+        "data_sources": {
+            "fifa": True,
+            "injury": True,
+            "odds": True,
+            "verification": True,
+        },
+        "source": {
+            "fifa": {"name": "FIFA official calendar API", "url": fifa_url},
+            "verification": {"name": "ESPN public FIFA World Cup scoreboard", "urls": espn_urls},
+            "injury": {
+                "official": "FIFA official search API",
+                "media": "ESPN World Cup news API",
+                "media_url": news_url,
+            },
+            "odds": {"name": "ESPN odds feed", "urls": espn_urls},
+        },
         "warnings": warnings,
-        "fixture_count": len(fixtures),
-        "fixtures": fixtures,
+        "unverified_fifa_matches": unverified,
+        "fixture_count": len(verified),
+        "fifa_fixture_count": len(fifa_matches),
+        "odds_available_count": odds_available,
+        "matches": verified,
+        "fixtures": verified,
+        "daily_log": [
+            {
+                "time": iso_utc(utc_now()),
+                "stage": "08:15 automatic FIFA schedule + injury + odds research",
+                "status": "completed",
+            }
+        ],
     }
     write_json(output, payload)
     return payload
@@ -350,8 +716,13 @@ def combine_usage(*items: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def deepseek_chat(model: str, messages: list[dict[str, str]], *, json_object: bool = False,
-                  analysis_layer: bool = False) -> tuple[str, dict[str, Any], dict[str, Any]]:
+def deepseek_chat(
+    model: str,
+    messages: list[dict[str, str]],
+    *,
+    json_object: bool = False,
+    analysis_layer: bool = False,
+) -> tuple[str, dict[str, Any], dict[str, Any]]:
     api_key = os.environ.get(DEEPSEEK_API_KEY_ENV)
     if not api_key:
         raise RuntimeError(f"{DEEPSEEK_API_KEY_ENV} is required for DeepSeek production pipeline")
@@ -396,66 +767,108 @@ def parse_json_content(content: str) -> dict[str, Any]:
         return json.loads(text[start:end + 1])
 
 
-def analysis_messages(fixtures_payload: dict[str, Any]) -> list[dict[str, str]]:
+def analysis_messages(research_payload: dict[str, Any]) -> list[dict[str, str]]:
     return [
         {
             "role": "system",
             "content": (
-                "You are the mandatory analysis layer for a FIFA World Cup prediction system. "
-                "Use model deepseek-v4-pro with high reasoning. Analyze only the verified fixtures "
-                "provided by the user. Do not invent fixtures, teams, injuries, results, odds, or facts. "
-                "Return strict JSON only. Write user-facing text in Simplified Chinese."
+                "You are the only analysis layer for a FIFA World Cup AI Agent. "
+                "You must use deepseek-v4-pro reasoning only. Do not invent fixtures, injuries, odds, results, "
+                "or sources. Use only the verified FIFA/ESPN/injury/odds payload provided. "
+                "Return strict JSON only. Write all user-facing analysis in Simplified Chinese."
             ),
         },
         {
             "role": "user",
             "content": (
-                "Analyze these verified fixtures and return JSON with this exact shape: "
+                "Analyze every verified match and return JSON with this exact shape: "
                 "{"
                 "\"generated_at\":\"ISO-8601\","
                 "\"summary\":\"Chinese summary\","
-                "\"predictions\":[{"
-                "\"fixture_id\":\"string\","
+                "\"matches\":[{"
+                "\"match_id\":\"string\","
                 "\"match_name\":\"Chinese home vs away\","
                 "\"kickoff_utc\":\"ISO-8601\","
                 "\"teams\":{\"home\":{\"name\":\"Chinese\",\"name_en\":\"English\"},"
                 "\"away\":{\"name\":\"Chinese\",\"name_en\":\"English\"}},"
                 "\"win_draw_loss\":{\"home_win\":0,\"draw\":0,\"away_win\":0},"
+                "\"xg_prediction\":{\"home\":0.0,\"away\":0.0},"
                 "\"predicted_score\":{\"home\":0,\"away\":0},"
-                "\"tactical_analysis\":\"Chinese tactical analysis\","
+                "\"tactical_matchup\":\"Chinese tactical matchup\","
+                "\"injury_adjustment\":{\"home\":\"Chinese note\",\"away\":\"Chinese note\",\"summary\":\"Chinese note\"},"
                 "\"risk_analysis\":\"Chinese risk analysis\","
+                "\"upset_probability\":0,"
+                "\"odds_comparison\":{\"market_implied\":{\"home_win\":0,\"draw\":0,\"away_win\":0},"
+                "\"model_edge\":{\"home_win\":0,\"draw\":0,\"away_win\":0},"
+                "\"deviation_analysis\":\"Chinese odds deviation analysis\"},"
                 "\"confidence\":\"low|medium|high\""
                 "}],"
                 "\"risk_overview\":\"Chinese risk overview\","
                 "\"data_quality\":\"Chinese source quality note\""
-                "}. Probabilities must be percentages and sum to 100 for every fixture. "
-                "If fixtures is empty, return an empty predictions array and explain no verified fixtures. "
-                f"Verified fixture payload:\n{json.dumps(fixtures_payload, ensure_ascii=False)}"
+                "}. Win/draw/loss probabilities must be percentages and sum exactly to 100 for every match. "
+                "xG must be numeric. upset_probability is percentage 0-100. "
+                "If injury status is unknown, say it is unknown; do not invent player names. "
+                "If odds are unavailable, say odds are unavailable; do not invent market prices. "
+                f"Verified Agent research payload:\n{json.dumps(research_payload, ensure_ascii=False)}"
             ),
         },
     ]
 
 
+def match_id_of(match: dict[str, Any]) -> str:
+    return str(match.get("match_id") or match.get("fixture_id") or match.get("id") or match.get("fifa_match_id") or "")
+
+
+def merge_analysis_matches(analysis: dict[str, Any], research_payload: dict[str, Any]) -> list[dict[str, Any]]:
+    source_matches = {str(item.get("id")): item for item in research_payload.get("matches", [])}
+    analyzed = analysis.get("matches")
+    if not isinstance(analyzed, list):
+        analyzed = analysis.get("predictions") if isinstance(analysis.get("predictions"), list) else []
+    merged: list[dict[str, Any]] = []
+    for item in analyzed:
+        if not isinstance(item, dict):
+            continue
+        match_id = match_id_of(item)
+        source = source_matches.get(match_id, {})
+        merged_item = {**source, **item}
+        merged_item["match_id"] = match_id or str(source.get("id") or "")
+        if source:
+            merged_item.setdefault("match_name", source.get("match_name"))
+            merged_item.setdefault("kickoff_utc", source.get("kickoff_utc"))
+            merged_item.setdefault("teams", source.get("teams"))
+            merged_item["injuries"] = source.get("injuries", {})
+            merged_item["odds"] = source.get("odds", {"available": False})
+            merged_item["source_verification"] = source.get("source_verification", {})
+            merged_item["sources"] = source.get("sources", {})
+        merged.append(merged_item)
+    return merged
+
+
 def run_analysis(fixtures_path: Path = FIXTURES_PATH, output: Path = ANALYSIS_PATH) -> dict[str, Any]:
-    fixtures_payload = read_json(fixtures_path) if fixtures_path.exists() else run_research(fixtures_path)
+    research_payload = read_json(fixtures_path) if fixtures_path.exists() else run_research(fixtures_path)
     content, usage, _response = deepseek_chat(
         ANALYSIS_MODEL,
-        analysis_messages(fixtures_payload),
+        analysis_messages(research_payload),
         json_object=True,
         analysis_layer=True,
     )
     analysis = parse_json_content(content)
+    matches = merge_analysis_matches(analysis, research_payload)
+    analysis["matches"] = matches
     payload = {
-        "schema_version": 2,
+        "schema_version": 3,
         "stage": "analysis",
         "generated_at": iso_utc(utc_now()),
         "analysis": analysis,
-        "fixtures": fixtures_payload,
+        "matches": matches,
+        "research": research_payload,
         "usage": usage,
+        "analysis_model": ANALYSIS_MODEL,
         "model": {"analysis_model": ANALYSIS_MODEL},
+        "data_sources": research_payload.get("data_sources", {}),
         "daily_log": [
-            {"time": fixtures_payload.get("generated_at"), "stage": "08:15 research pipeline", "status": "completed"},
-            {"time": iso_utc(utc_now()), "stage": "09:40 analysis completed", "status": "completed"},
+            *research_payload.get("daily_log", []),
+            {"time": iso_utc(utc_now()), "stage": "08:30 deepseek-v4-pro analysis", "status": "completed"},
         ],
     }
     write_json(output, payload)
@@ -467,37 +880,38 @@ def render_messages(analysis_payload: dict[str, Any]) -> list[dict[str, str]]:
         {
             "role": "system",
             "content": (
-                "You are the mandatory HTML generation layer for a FIFA World Cup prediction system. "
-                "Use model deepseek-v4-flash. Convert the supplied analysis JSON into a production-ready "
-                "single-file GitHub Pages HTML document. Return raw HTML only, starting with <!doctype html>. "
-                "Do not wrap the HTML in JSON or markdown fences. Write all visible UI text in Simplified Chinese."
+                "You are the GitHub Pages generation layer for the FIFA World Cup AI Agent. "
+                "Use deepseek-v4-flash. Convert the supplied analysis JSON into one complete responsive HTML file. "
+                "Return raw HTML only, starting with <!doctype html>. Do not wrap HTML in JSON or markdown fences. "
+                "All visible UI text must be Simplified Chinese."
             ),
         },
         {
             "role": "user",
             "content": (
-                "Generate complete responsive HTML. The page must visibly include: "
-                "today match predictions, win/draw/loss probabilities, predicted scores, risk analysis, "
-                "a token usage panel, and cost estimate. Use these exact placeholders inside the token panel: "
+                "Generate complete HTML for GitHub Pages. The page must visibly include: "
+                "match predictions, win/draw/loss probabilities, predicted score, xG, tactical matchup, "
+                "risk analysis, upset probability, injury information, odds comparison, token usage, and cost. "
+                "Use these exact placeholders inside the token panel: "
                 "{{INPUT_TOKENS}}, {{OUTPUT_TOKENS}}, {{TOTAL_TOKENS}}, {{COST_ESTIMATE}}. "
-                "Do not use markdown fences. Analysis payload:\n"
-                f"{json.dumps(analysis_payload, ensure_ascii=False)}"
+                "Do not invent data. If source data says unknown or unavailable, display that clearly. "
+                f"Analysis payload:\n{json.dumps(analysis_payload, ensure_ascii=False)}"
             ),
         },
     ]
 
 
 def extract_html(raw_content: str) -> str:
-    html = raw_content.strip()
-    if html.startswith("```"):
-        html = re.sub(r"^```(?:html)?\s*", "", html)
-        html = re.sub(r"\s*```$", "", html).strip()
-    if "<html" in html.lower():
-        return html
+    page = raw_content.strip()
+    if page.startswith("```"):
+        page = re.sub(r"^```(?:html)?\s*", "", page)
+        page = re.sub(r"\s*```$", "", page).strip()
+    if "<html" in page.lower():
+        return page
     raise RuntimeError("DeepSeek V4-Flash render response did not contain HTML")
 
 
-def inject_usage(html: str, usage: dict[str, Any]) -> str:
+def inject_usage(page: str, usage: dict[str, Any]) -> str:
     replacements = {
         "{{INPUT_TOKENS}}": str(usage["input_tokens"]),
         "{{OUTPUT_TOKENS}}": str(usage["output_tokens"]),
@@ -505,13 +919,45 @@ def inject_usage(html: str, usage: dict[str, Any]) -> str:
         "{{COST_ESTIMATE}}": f"{usage['cost_estimate']:.6f}",
     }
     for marker, value in replacements.items():
-        html = html.replace(marker, value)
-    return html
+        page = page.replace(marker, value)
+    return page
 
 
-def append_runtime_panel(html: str, usage: dict[str, Any]) -> str:
+def render_probability_line(probabilities: dict[str, Any] | None) -> str:
+    if not probabilities:
+        return "\u4e0d\u53ef\u7528"
+    return (
+        f"\u4e3b\u80dc {probabilities.get('home_win', 0)}% / "
+        f"\u5e73 {probabilities.get('draw', 0)}% / "
+        f"\u5ba2\u80dc {probabilities.get('away_win', 0)}%"
+    )
+
+
+def append_agent_panels(page: str, payload: dict[str, Any]) -> str:
+    if 'id="deepseek-agent-runtime"' in page:
+        return page
+    usage = payload["usage"]
+    sources = payload.get("data_sources") or {}
+    rows = []
+    for match in payload.get("matches", []):
+        injuries = match.get("injuries") or {}
+        odds = match.get("odds") or {}
+        home_injury = (injuries.get("home") or {}).get("status", "unknown")
+        away_injury = (injuries.get("away") or {}).get("status", "unknown")
+        odds_text = "\u4e0d\u53ef\u7528"
+        if odds.get("available"):
+            odds_text = render_probability_line(odds.get("normalized_probability"))
+        rows.append(
+            "<tr>"
+            f"<td>{html.escape(str(match.get('match_name') or ''))}</td>"
+            f"<td>{html.escape(str(home_injury))}</td>"
+            f"<td>{html.escape(str(away_injury))}</td>"
+            f"<td>{html.escape(odds_text)}</td>"
+            "</tr>"
+        )
+    table = "\n".join(rows) if rows else "<tr><td colspan=\"4\">\u4eca\u65e5\u65e0\u53cc\u6e90\u9a8c\u8bc1\u7684\u4e16\u754c\u676f\u6bd4\u8d5b</td></tr>"
     panel = f"""
-<section id="deepseek-runtime-usage" style="max-width:1120px;margin:24px auto;padding:16px;border:1px solid #d8e0dc;border-radius:8px;background:#fff;font-family:Inter,'Microsoft YaHei','PingFang SC',system-ui,sans-serif;color:#17201d;">
+<section id="deepseek-agent-runtime" style="max-width:1120px;margin:24px auto;padding:16px;border:1px solid #d8e0dc;border-radius:8px;background:#fff;font-family:Inter,'Microsoft YaHei','PingFang SC',system-ui,sans-serif;color:#17201d;">
   <h2 style="margin:0 0 12px;font-size:20px;">\u8fd0\u884c\u7528\u91cf</h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
     <div><strong>\u5206\u6790\u6a21\u578b</strong><br>{ANALYSIS_MODEL}</div>
@@ -521,17 +967,27 @@ def append_runtime_panel(html: str, usage: dict[str, Any]) -> str:
     <div><strong>Total tokens</strong><br>{usage["total_tokens"]}</div>
     <div><strong>Cost</strong><br>{usage["cost_estimate"]:.6f}</div>
   </div>
+  <h2 style="margin:20px 0 12px;font-size:20px;">\u6570\u636e\u6e90\u4e0eAgent\u6821\u9a8c</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
+    <div><strong>FIFA</strong><br>{str(bool(sources.get("fifa"))).lower()}</div>
+    <div><strong>\u4f24\u505c\u4fe1\u606f</strong><br>{str(bool(sources.get("injury"))).lower()}</div>
+    <div><strong>\u8d54\u7387\u5bf9\u6bd4</strong><br>{str(bool(sources.get("odds"))).lower()}</div>
+  </div>
+  <h2 style="margin:20px 0 12px;font-size:20px;">\u4f24\u505c\u4fe1\u606f / \u8d54\u7387\u5bf9\u6bd4</h2>
+  <div style="overflow:auto;">
+    <table style="width:100%;border-collapse:collapse;font-size:14px;">
+      <thead><tr><th style="text-align:left;border-bottom:1px solid #d8e0dc;padding:8px;">\u6bd4\u8d5b</th><th style="text-align:left;border-bottom:1px solid #d8e0dc;padding:8px;">\u4e3b\u961f\u4f24\u505c</th><th style="text-align:left;border-bottom:1px solid #d8e0dc;padding:8px;">\u5ba2\u961f\u4f24\u505c</th><th style="text-align:left;border-bottom:1px solid #d8e0dc;padding:8px;">\u9690\u542b\u6982\u7387</th></tr></thead>
+      <tbody>{table}</tbody>
+    </table>
+  </div>
 </section>
 """
-    if 'id="deepseek-runtime-usage"' in html:
-        return html
-    if "</body>" in html:
-        return html.replace("</body>", panel + "\n</body>", 1)
-    return html + panel
+    if "</body>" in page:
+        return page.replace("</body>", panel + "\n</body>", 1)
+    return page + panel
 
 
-def run_render(analysis_path: Path = ANALYSIS_PATH, latest_path: Path = LATEST_PATH,
-               docs_dir: Path = DOCS_DIR) -> dict[str, Any]:
+def run_render(analysis_path: Path = ANALYSIS_PATH, output: Path = RENDER_PATH, docs_dir: Path = DOCS_DIR) -> dict[str, Any]:
     analysis_payload = read_json(analysis_path)
     content, render_usage, _response = deepseek_chat(
         RENDER_MODEL,
@@ -540,24 +996,62 @@ def run_render(analysis_path: Path = ANALYSIS_PATH, latest_path: Path = LATEST_P
     )
     analysis_usage = analysis_payload.get("usage") or zero_usage()
     total_usage = combine_usage(analysis_usage, render_usage)
-    html = append_runtime_panel(inject_usage(extract_html(content), total_usage), total_usage)
-
+    page = inject_usage(extract_html(content), total_usage)
     payload = {
-        "analysis": analysis_payload["analysis"],
-        "render": html,
+        "schema_version": 3,
+        "stage": "render",
+        "generated_at": iso_utc(utc_now()),
+        "analysis": analysis_payload.get("analysis", {}),
+        "matches": analysis_payload.get("matches", []),
+        "render": page,
         "usage": total_usage,
         "usage_breakdown": {"analysis": analysis_usage, "render": render_usage},
+        "analysis_model": ANALYSIS_MODEL,
+        "render_model": RENDER_MODEL,
         "model": {"analysis_model": ANALYSIS_MODEL, "render_model": RENDER_MODEL},
-        "generated_at": iso_utc(utc_now()),
-        "source": analysis_payload.get("fixtures", {}).get("source", {}),
+        "data_sources": analysis_payload.get("data_sources", {}),
+        "source": (analysis_payload.get("research") or {}).get("source", {}),
         "daily_log": [
             *analysis_payload.get("daily_log", []),
-            {"time": iso_utc(utc_now()), "stage": "09:45 flash render HTML", "status": "completed"},
+            {"time": iso_utc(utc_now()), "stage": "09:00 deepseek-v4-flash HTML generation", "status": "completed"},
+        ],
+    }
+    payload["render"] = append_agent_panels(payload["render"], payload)
+    write_json(output, payload)
+    docs_dir.mkdir(parents=True, exist_ok=True)
+    (docs_dir / "index.html").write_text(payload["render"], encoding="utf-8")
+    (docs_dir / ".nojekyll").write_text("\n", encoding="utf-8")
+    return payload
+
+
+def run_finalize(render_path: Path = RENDER_PATH, latest_path: Path = LATEST_PATH, docs_dir: Path = DOCS_DIR) -> dict[str, Any]:
+    render_payload = read_json(render_path)
+    payload = {
+        "schema_version": 3,
+        "stage": "latest",
+        "generated_at": iso_utc(utc_now()),
+        "matches": render_payload.get("matches", []),
+        "analysis_model": ANALYSIS_MODEL,
+        "render_model": RENDER_MODEL,
+        "usage": render_payload.get("usage") or zero_usage(),
+        "data_sources": {
+            "fifa": bool((render_payload.get("data_sources") or {}).get("fifa")),
+            "injury": bool((render_payload.get("data_sources") or {}).get("injury")),
+            "odds": bool((render_payload.get("data_sources") or {}).get("odds")),
+        },
+        "render": render_payload.get("render", ""),
+        "analysis": render_payload.get("analysis", {}),
+        "usage_breakdown": render_payload.get("usage_breakdown", {}),
+        "model": {"analysis_model": ANALYSIS_MODEL, "render_model": RENDER_MODEL},
+        "source": render_payload.get("source", {}),
+        "daily_log": [
+            *render_payload.get("daily_log", []),
+            {"time": iso_utc(utc_now()), "stage": "09:30 write JSON + token statistics", "status": "completed"},
         ],
     }
     write_json(latest_path, payload)
     docs_dir.mkdir(parents=True, exist_ok=True)
-    (docs_dir / "index.html").write_text(html, encoding="utf-8")
+    (docs_dir / "index.html").write_text(payload["render"], encoding="utf-8")
     shutil.copyfile(latest_path, docs_dir / "latest.json")
     (docs_dir / ".nojekyll").write_text("\n", encoding="utf-8")
     return payload
@@ -566,11 +1060,12 @@ def run_render(analysis_path: Path = ANALYSIS_PATH, latest_path: Path = LATEST_P
 def run_full() -> dict[str, Any]:
     run_research()
     run_analysis()
-    return run_render()
+    run_render()
+    return run_finalize()
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="DeepSeek V4 dual-model World Cup pipeline.")
+    parser = argparse.ArgumentParser(description="DeepSeek V4 Agent World Cup pipeline.")
     subparsers = parser.add_subparsers(dest="stage", required=True)
 
     research_parser = subparsers.add_parser("research")
@@ -579,22 +1074,26 @@ def main() -> int:
 
     subparsers.add_parser("analysis")
     subparsers.add_parser("render")
+    subparsers.add_parser("finalize")
     subparsers.add_parser("full")
 
     args = parser.parse_args()
     if args.stage == "research":
         start = dt.date.fromisoformat(args.start_date) if args.start_date else None
         payload = run_research(start=start, days=args.days)
-        print(f"research completed fixtures={payload['fixture_count']}")
+        print(f"research completed fixtures={payload['fixture_count']} odds={payload['odds_available_count']}")
     elif args.stage == "analysis":
         payload = run_analysis()
-        print(f"analysis completed model={payload['model']['analysis_model']}")
+        print(f"analysis completed model={payload['analysis_model']} matches={len(payload['matches'])}")
     elif args.stage == "render":
         payload = run_render()
-        print(f"render completed model={payload['model']['render_model']} tokens={payload['usage']['total_tokens']}")
+        print(f"render completed model={payload['render_model']} tokens={payload['usage']['total_tokens']}")
+    elif args.stage == "finalize":
+        payload = run_finalize()
+        print(f"finalize completed matches={len(payload['matches'])} tokens={payload['usage']['total_tokens']}")
     elif args.stage == "full":
         payload = run_full()
-        print(f"full pipeline completed tokens={payload['usage']['total_tokens']}")
+        print(f"full pipeline completed matches={len(payload['matches'])} tokens={payload['usage']['total_tokens']}")
     return 0
 
 
