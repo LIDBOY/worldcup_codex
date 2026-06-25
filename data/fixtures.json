@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "stage": "research",
-  "generated_at": "2026-06-25T11:57:16Z",
+  "generated_at": "2026-06-25T13:59:04Z",
   "window": {
     "start_date": "2026-06-25",
     "days": 3,
@@ -86,14 +86,11 @@
     }
   },
   "warnings": [],
-  "unverified_fifa_matches": [
-    "Türkiye vs USA",
-    "Egypt vs IR Iran"
-  ],
-  "fixture_count": 10,
+  "unverified_fifa_matches": [],
+  "fixture_count": 12,
   "fifa_fixture_count": 12,
   "raw_fifa_fixture_count": 18,
-  "odds_available_count": 10,
+  "odds_available_count": 12,
   "matches": [
     {
       "id": "400021468",
@@ -165,22 +162,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+1500",
+          "home": "+1400",
           "draw": "+700",
-          "away": "-575"
+          "away": "-550"
         },
         "implied_probability": {
-          "home_win": 6.25,
+          "home_win": 6.67,
           "draw": 12.5,
-          "away_win": 85.19
+          "away_win": 84.62
         },
         "normalized_probability": {
-          "home_win": 6.01,
-          "draw": 12.03,
-          "away_win": 81.96
+          "home_win": 6.42,
+          "draw": 12.04,
+          "away_win": 81.53
         },
-        "overround": 3.94,
-        "details": "CIV -575"
+        "overround": 3.78,
+        "details": "CIV -550"
       },
       "injuries": {
         "home": {
@@ -269,22 +266,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+425",
-          "draw": "+390",
-          "away": "-185"
+          "home": "+400",
+          "draw": "+360",
+          "away": "-165"
         },
         "implied_probability": {
-          "home_win": 19.05,
-          "draw": 20.41,
-          "away_win": 64.91
+          "home_win": 20.0,
+          "draw": 21.74,
+          "away_win": 62.26
         },
         "normalized_probability": {
-          "home_win": 18.25,
-          "draw": 19.55,
-          "away_win": 62.2
+          "home_win": 19.23,
+          "draw": 20.9,
+          "away_win": 59.87
         },
-        "overround": 4.37,
-        "details": "GER -185"
+        "overround": 4.0,
+        "details": "GER -165"
       },
       "injuries": {
         "home": {
@@ -374,21 +371,21 @@
         "provider": "DraftKings",
         "moneyline_american": {
           "home": "+2500",
-          "draw": "+1000",
-          "away": "-1100"
+          "draw": "+950",
+          "away": "-1000"
         },
         "implied_probability": {
           "home_win": 3.85,
-          "draw": 9.09,
-          "away_win": 91.67
+          "draw": 9.52,
+          "away_win": 90.91
         },
         "normalized_probability": {
-          "home_win": 3.68,
-          "draw": 8.69,
-          "away_win": 87.63
+          "home_win": 3.69,
+          "draw": 9.13,
+          "away_win": 87.18
         },
-        "overround": 4.6,
-        "details": "NED -1100"
+        "overround": 4.28,
+        "details": "NED -1000"
       },
       "injuries": {
         "home": {
@@ -501,20 +498,20 @@
         "provider": "DraftKings",
         "moneyline_american": {
           "home": "-110",
-          "draw": "+250",
-          "away": "+340"
+          "draw": "+245",
+          "away": "+320"
         },
         "implied_probability": {
           "home_win": 52.38,
-          "draw": 28.57,
-          "away_win": 22.73
+          "draw": 28.99,
+          "away_win": 23.81
         },
         "normalized_probability": {
-          "home_win": 50.52,
+          "home_win": 49.8,
           "draw": 27.56,
-          "away_win": 21.92
+          "away_win": 22.64
         },
-        "overround": 3.68,
+        "overround": 5.18,
         "details": "JPN -110"
       },
       "injuries": {
@@ -604,22 +601,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+170",
+          "home": "+165",
           "draw": "+130",
-          "away": "+320"
+          "away": "+330"
         },
         "implied_probability": {
-          "home_win": 37.04,
+          "home_win": 37.74,
           "draw": 43.48,
-          "away_win": 23.81
+          "away_win": 23.26
         },
         "normalized_probability": {
-          "home_win": 35.5,
-          "draw": 41.68,
-          "away_win": 22.82
+          "home_win": 36.12,
+          "draw": 41.62,
+          "away_win": 22.26
         },
-        "overround": 4.32,
-        "details": "PAR +170"
+        "overround": 4.47,
+        "details": "PAR +165"
       },
       "injuries": {
         "home": {
@@ -632,6 +629,110 @@
         "away": {
           "team": "澳大利亚",
           "team_en": "Australia",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021459",
+      "fifa_match_id": "400021459",
+      "match_name": "土耳其 vs 美国",
+      "match_name_en": "Türkiye vs USA",
+      "kickoff_utc": "2026-06-26T02:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group D",
+      "match_number": 59,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "土耳其",
+          "name_en": "Türkiye",
+          "abbreviation": "TUR",
+          "id_team": "43972",
+          "id_country": "TUR",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/TUR",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "美国",
+          "name_en": "USA",
+          "abbreviation": "USA",
+          "id_team": "43921",
+          "id_country": "USA",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/USA",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "Los Angeles Stadium",
+        "city": "Los Angeles",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021459"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760470"
+        }
+      },
+      "espn_event_id": "760470",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+280",
+          "draw": "+300",
+          "away": "-115"
+        },
+        "implied_probability": {
+          "home_win": 26.32,
+          "draw": 25.0,
+          "away_win": 53.49
+        },
+        "normalized_probability": {
+          "home_win": 25.11,
+          "draw": 23.85,
+          "away_win": 51.04
+        },
+        "overround": 4.8,
+        "details": "USA -115"
+      },
+      "injuries": {
+        "home": {
+          "team": "土耳其",
+          "team_en": "Türkiye",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "美国",
+          "team_en": "USA",
           "status": "unknown",
           "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -1152,6 +1253,110 @@
         "away": {
           "team": "比利时",
           "team_en": "Belgium",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021479",
+      "fifa_match_id": "400021479",
+      "match_name": "埃及 vs 伊朗",
+      "match_name_en": "Egypt vs IR Iran",
+      "kickoff_utc": "2026-06-27T03:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group G",
+      "match_number": 63,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "埃及",
+          "name_en": "Egypt",
+          "abbreviation": "EGY",
+          "id_team": "43855",
+          "id_country": "EGY",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/EGY",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "伊朗",
+          "name_en": "IR Iran",
+          "abbreviation": "IRN",
+          "id_team": "43817",
+          "id_country": "IRN",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/IRN",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "Seattle Stadium",
+        "city": "Seattle",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021479"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760476"
+        }
+      },
+      "espn_event_id": "760476",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+150",
+          "draw": "+165",
+          "away": "+280"
+        },
+        "implied_probability": {
+          "home_win": 40.0,
+          "draw": 37.74,
+          "away_win": 26.32
+        },
+        "normalized_probability": {
+          "home_win": 38.44,
+          "draw": 36.27,
+          "away_win": 25.29
+        },
+        "overround": 4.05,
+        "details": "EGY +150"
+      },
+      "injuries": {
+        "home": {
+          "team": "埃及",
+          "team_en": "Egypt",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "伊朗",
+          "team_en": "IR Iran",
           "status": "unknown",
           "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -1230,22 +1435,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+1500",
+          "home": "+1400",
           "draw": "+700",
-          "away": "-575"
+          "away": "-550"
         },
         "implied_probability": {
-          "home_win": 6.25,
+          "home_win": 6.67,
           "draw": 12.5,
-          "away_win": 85.19
+          "away_win": 84.62
         },
         "normalized_probability": {
-          "home_win": 6.01,
-          "draw": 12.03,
-          "away_win": 81.96
+          "home_win": 6.42,
+          "draw": 12.04,
+          "away_win": 81.53
         },
-        "overround": 3.94,
-        "details": "CIV -575"
+        "overround": 3.78,
+        "details": "CIV -550"
       },
       "injuries": {
         "home": {
@@ -1334,22 +1539,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+425",
-          "draw": "+390",
-          "away": "-185"
+          "home": "+400",
+          "draw": "+360",
+          "away": "-165"
         },
         "implied_probability": {
-          "home_win": 19.05,
-          "draw": 20.41,
-          "away_win": 64.91
+          "home_win": 20.0,
+          "draw": 21.74,
+          "away_win": 62.26
         },
         "normalized_probability": {
-          "home_win": 18.25,
-          "draw": 19.55,
-          "away_win": 62.2
+          "home_win": 19.23,
+          "draw": 20.9,
+          "away_win": 59.87
         },
-        "overround": 4.37,
-        "details": "GER -185"
+        "overround": 4.0,
+        "details": "GER -165"
       },
       "injuries": {
         "home": {
@@ -1439,21 +1644,21 @@
         "provider": "DraftKings",
         "moneyline_american": {
           "home": "+2500",
-          "draw": "+1000",
-          "away": "-1100"
+          "draw": "+950",
+          "away": "-1000"
         },
         "implied_probability": {
           "home_win": 3.85,
-          "draw": 9.09,
-          "away_win": 91.67
+          "draw": 9.52,
+          "away_win": 90.91
         },
         "normalized_probability": {
-          "home_win": 3.68,
-          "draw": 8.69,
-          "away_win": 87.63
+          "home_win": 3.69,
+          "draw": 9.13,
+          "away_win": 87.18
         },
-        "overround": 4.6,
-        "details": "NED -1100"
+        "overround": 4.28,
+        "details": "NED -1000"
       },
       "injuries": {
         "home": {
@@ -1566,20 +1771,20 @@
         "provider": "DraftKings",
         "moneyline_american": {
           "home": "-110",
-          "draw": "+250",
-          "away": "+340"
+          "draw": "+245",
+          "away": "+320"
         },
         "implied_probability": {
           "home_win": 52.38,
-          "draw": 28.57,
-          "away_win": 22.73
+          "draw": 28.99,
+          "away_win": 23.81
         },
         "normalized_probability": {
-          "home_win": 50.52,
+          "home_win": 49.8,
           "draw": 27.56,
-          "away_win": 21.92
+          "away_win": 22.64
         },
-        "overround": 3.68,
+        "overround": 5.18,
         "details": "JPN -110"
       },
       "injuries": {
@@ -1669,22 +1874,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+170",
+          "home": "+165",
           "draw": "+130",
-          "away": "+320"
+          "away": "+330"
         },
         "implied_probability": {
-          "home_win": 37.04,
+          "home_win": 37.74,
           "draw": 43.48,
-          "away_win": 23.81
+          "away_win": 23.26
         },
         "normalized_probability": {
-          "home_win": 35.5,
-          "draw": 41.68,
-          "away_win": 22.82
+          "home_win": 36.12,
+          "draw": 41.62,
+          "away_win": 22.26
         },
-        "overround": 4.32,
-        "details": "PAR +170"
+        "overround": 4.47,
+        "details": "PAR +165"
       },
       "injuries": {
         "home": {
@@ -1697,6 +1902,110 @@
         "away": {
           "team": "澳大利亚",
           "team_en": "Australia",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021459",
+      "fifa_match_id": "400021459",
+      "match_name": "土耳其 vs 美国",
+      "match_name_en": "Türkiye vs USA",
+      "kickoff_utc": "2026-06-26T02:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group D",
+      "match_number": 59,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "土耳其",
+          "name_en": "Türkiye",
+          "abbreviation": "TUR",
+          "id_team": "43972",
+          "id_country": "TUR",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/TUR",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "美国",
+          "name_en": "USA",
+          "abbreviation": "USA",
+          "id_team": "43921",
+          "id_country": "USA",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/USA",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "Los Angeles Stadium",
+        "city": "Los Angeles",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021459"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760470"
+        }
+      },
+      "espn_event_id": "760470",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+280",
+          "draw": "+300",
+          "away": "-115"
+        },
+        "implied_probability": {
+          "home_win": 26.32,
+          "draw": 25.0,
+          "away_win": 53.49
+        },
+        "normalized_probability": {
+          "home_win": 25.11,
+          "draw": 23.85,
+          "away_win": 51.04
+        },
+        "overround": 4.8,
+        "details": "USA -115"
+      },
+      "injuries": {
+        "home": {
+          "team": "土耳其",
+          "team_en": "Türkiye",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "美国",
+          "team_en": "USA",
           "status": "unknown",
           "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -2222,11 +2531,115 @@
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
+    },
+    {
+      "id": "400021479",
+      "fifa_match_id": "400021479",
+      "match_name": "埃及 vs 伊朗",
+      "match_name_en": "Egypt vs IR Iran",
+      "kickoff_utc": "2026-06-27T03:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group G",
+      "match_number": 63,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "埃及",
+          "name_en": "Egypt",
+          "abbreviation": "EGY",
+          "id_team": "43855",
+          "id_country": "EGY",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/EGY",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "伊朗",
+          "name_en": "IR Iran",
+          "abbreviation": "IRN",
+          "id_team": "43817",
+          "id_country": "IRN",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/IRN",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "Seattle Stadium",
+        "city": "Seattle",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021479"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760476"
+        }
+      },
+      "espn_event_id": "760476",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+150",
+          "draw": "+165",
+          "away": "+280"
+        },
+        "implied_probability": {
+          "home_win": 40.0,
+          "draw": 37.74,
+          "away_win": 26.32
+        },
+        "normalized_probability": {
+          "home_win": 38.44,
+          "draw": 36.27,
+          "away_win": 25.29
+        },
+        "overround": 4.05,
+        "details": "EGY +150"
+      },
+      "injuries": {
+        "home": {
+          "team": "埃及",
+          "team_en": "Egypt",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "伊朗",
+          "team_en": "IR Iran",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
     }
   ],
   "daily_log": [
     {
-      "time": "2026-06-25T11:57:16Z",
+      "time": "2026-06-25T13:59:04Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research",
       "status": "completed"
     }
