@@ -75,6 +75,7 @@ def validate(data: dict[str, Any]) -> tuple[bool, list[str]]:
     usage = data.get("usage")
     sources = data.get("data_sources")
     render = data.get("render")
+    china_match_days = data.get("china_match_days")
 
     if not isinstance(matches, list):
         errors.append("matches must be a list")
@@ -94,6 +95,8 @@ def validate(data: dict[str, Any]) -> tuple[bool, list[str]]:
                 errors.append(f"data_sources.{key} must be true")
     if not isinstance(render, str) or "<html" not in render.lower():
         errors.append("render must be a complete HTML string")
+    if not isinstance(china_match_days, list) or len(china_match_days) < 2:
+        errors.append("china_match_days must describe at least two China match days")
 
     if isinstance(matches, list):
         for index, match in enumerate(matches):
@@ -103,12 +106,15 @@ def validate(data: dict[str, Any]) -> tuple[bool, list[str]]:
                 errors.append(f"matches[{index}] must be an object")
 
     if isinstance(render, str):
-        for fragment in ("Token", "Cost", "\u98ce\u9669", "\u4f24\u505c", "\u8d54\u7387"):
+        for fragment in ("Token", "Cost", "\u98ce\u9669", "\u4f24\u505c", "\u8d54\u7387", "xG", "\u7206\u51b7\u6982\u7387"):
             if fragment not in render:
                 errors.append(f"render must visibly include {fragment}")
         for fragment in ("\u5317\u4eac\u65f6\u95f4", "\u6bd4\u8d5b\u65e5", "18:00"):
             if fragment not in render:
                 errors.append(f"render must visibly include China match-day fragment {fragment}")
+        for fragment in ("2026 \u4e16\u754c\u676f \u00b7 \u9884\u6d4b\u5206\u6790", "night-shell", "night-card", "match-card", ":hover"):
+            if fragment not in render:
+                errors.append(f"render must include dark UI fragment {fragment}")
         if "UTC" in render or "Z</time>" in render:
             errors.append("render must not visibly display UTC time")
 

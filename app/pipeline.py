@@ -35,7 +35,7 @@ FIFA_SEARCH_KEY = os.getenv(
 )
 
 DEFAULT_LEAGUE = os.getenv("WORLDCUP_ESPN_LEAGUE", "fifa.world")
-DEFAULT_DAYS = int(os.getenv("WORLDCUP_WINDOW_DAYS", "1"))
+DEFAULT_DAYS = int(os.getenv("WORLDCUP_WINDOW_DAYS", "2"))
 REQUEST_TIMEOUT = int(os.getenv("WORLDCUP_REQUEST_TIMEOUT", "25"))
 DEEPSEEK_REQUEST_TIMEOUT = int(os.getenv("DEEPSEEK_REQUEST_TIMEOUT", "180"))
 INJURY_LOOKBACK_DAYS = int(os.getenv("WORLDCUP_INJURY_LOOKBACK_DAYS", "180"))
@@ -184,6 +184,48 @@ def match_day_info(value: str | dt.datetime) -> dict[str, str]:
         "start_iso": start.isoformat(),
         "end_iso": end.isoformat(),
     }
+
+
+def china_match_day_window(day_count: int = DEFAULT_DAYS, start_date: dt.date | None = None) -> dict[str, Any]:
+    count = max(day_count, 1)
+    if start_date:
+        first_start = dt.datetime.combine(start_date, dt.time(MATCH_DAY_START_HOUR), SHANGHAI_TZ)
+    else:
+        first_start = match_day_start(to_shanghai(utc_now()))
+    end = first_start + dt.timedelta(days=count)
+    match_days = [match_day_info(first_start + dt.timedelta(days=offset)) for offset in range(count)]
+    return {
+        "timezone": "Asia/Shanghai",
+        "match_day_count": count,
+        "start_iso": first_start.isoformat(),
+        "end_iso": end.isoformat(),
+        "display_range": f"{match_days[0]['title']} - {match_days[-1]['title']}",
+        "range": f"北京时间 {first_start:%m-%d %H:%M} - {end:%m-%d %H:%M}",
+        "match_days": match_days,
+    }
+
+
+def fifa_fetch_span_for_china_window(window: dict[str, Any]) -> tuple[dt.date, int]:
+    start = dt.datetime.fromisoformat(window["start_iso"])
+    end = dt.datetime.fromisoformat(window["end_iso"])
+    start_utc = start.astimezone(dt.timezone.utc)
+    end_utc = (end - dt.timedelta(seconds=1)).astimezone(dt.timezone.utc)
+    days = (end_utc.date() - start_utc.date()).days + 1
+    return start_utc.date(), max(days, 1)
+
+
+def filter_matches_to_china_window(matches: list[dict[str, Any]], window: dict[str, Any]) -> list[dict[str, Any]]:
+    start = dt.datetime.fromisoformat(window["start_iso"])
+    end = dt.datetime.fromisoformat(window["end_iso"])
+    filtered = []
+    for match in matches:
+        kickoff = match.get("kickoff_utc")
+        if not kickoff:
+            continue
+        local = to_shanghai(kickoff)
+        if start <= local < end:
+            filtered.append(match)
+    return filtered
 
 
 def normalize_team(name: str | None) -> str:
@@ -658,9 +700,12 @@ def attach_injuries(matches: list[dict[str, Any]], espn_articles: list[dict[str,
 
 
 def run_research(output: Path = FIXTURES_PATH, start: dt.date | None = None, days: int = DEFAULT_DAYS) -> dict[str, Any]:
-    start_date = start or utc_now().date()
-    fifa_matches, fifa_url, fifa_warnings = fetch_fifa_matches(start_date, days)
-    espn_raw_events, espn_urls, espn_warnings = fetch_espn_events(start_date - dt.timedelta(days=1), days + 2)
+    display_window = china_match_day_window(days, start)
+    start_date, fetch_days = fifa_fetch_span_for_china_window(display_window)
+    fifa_matches, fifa_url, fifa_warnings = fetch_fifa_matches(start_date, fetch_days)
+    raw_fifa_fixture_count = len(fifa_matches)
+    fifa_matches = filter_matches_to_china_window(fifa_matches, display_window)
+    espn_raw_events, espn_urls, espn_warnings = fetch_espn_events(start_date - dt.timedelta(days=1), fetch_days + 2)
     espn_matches = [match for event in espn_raw_events if (match := transform_espn_event(event))]
 
     verified: list[dict[str, Any]] = []
@@ -689,7 +734,14 @@ def run_research(output: Path = FIXTURES_PATH, start: dt.date | None = None, day
         "schema_version": 3,
         "stage": "research",
         "generated_at": iso_utc(utc_now()),
-        "window": {"start_date": start_date.isoformat(), "days": days, "timezone": "UTC"},
+        "window": {
+            "start_date": start_date.isoformat(),
+            "days": fetch_days,
+            "timezone": "UTC",
+            "mode": "derived from China match-day display window",
+        },
+        "display_window": display_window,
+        "china_match_days": display_window["match_days"],
         "data_sources": {
             "fifa": True,
             "injury": True,
@@ -710,6 +762,7 @@ def run_research(output: Path = FIXTURES_PATH, start: dt.date | None = None, day
         "unverified_fifa_matches": unverified,
         "fixture_count": len(verified),
         "fifa_fixture_count": len(fifa_matches),
+        "raw_fifa_fixture_count": raw_fifa_fixture_count,
         "odds_available_count": odds_available,
         "matches": verified,
         "fixtures": verified,
@@ -900,6 +953,8 @@ def run_analysis(fixtures_path: Path = FIXTURES_PATH, output: Path = ANALYSIS_PA
         "analysis": analysis,
         "matches": matches,
         "research": research_payload,
+        "display_window": research_payload.get("display_window", {}),
+        "china_match_days": research_payload.get("china_match_days", []),
         "usage": usage,
         "analysis_model": ANALYSIS_MODEL,
         "model": {"analysis_model": ANALYSIS_MODEL},
@@ -1071,26 +1126,40 @@ def source_link(match: dict[str, Any]) -> str:
     return str(espn.get("event_url") or fifa.get("url") or "#")
 
 
-def probability_rows(match: dict[str, Any]) -> str:
-    teams = match.get("teams") or {}
-    home = teams.get("home") or {}
-    away = teams.get("away") or {}
+def probability_number(value: Any) -> float:
+    try:
+        return max(0.0, min(100.0, float(value)))
+    except (TypeError, ValueError):
+        return 0.0
+
+
+def percent_width(value: Any) -> str:
+    return f"{probability_number(value):.3f}%"
+
+
+def probability_segments(match: dict[str, Any]) -> str:
     probs = match.get("win_draw_loss") or {}
-    rows = [
-        (f"{home.get('name', '主队')} 胜", probs.get("home_win", 0)),
-        ("平局", probs.get("draw", 0)),
-        (f"{away.get('name', '客队')} 胜", probs.get("away_win", 0)),
-    ]
-    return "\n".join(
-        (
-            '<div class="prob-row">'
-            f"<span>{html_escape(label)}</span>"
-            f'<div class="prob-track" aria-hidden="true"><span style="width: {html_escape(value)}%"></span></div>'
-            f"<strong>{pct(value)}</strong>"
-            "</div>"
-        )
-        for label, value in rows
-    )
+    home_win = probability_number(probs.get("home_win"))
+    draw = probability_number(probs.get("draw"))
+    away_win = probability_number(probs.get("away_win"))
+    return f"""
+      <div class="prob-heading">主胜 / 平 / 客胜概率</div>
+      <div class="prob-labels">
+        <span><i class="dot home"></i>主胜 {pct(home_win)}</span>
+        <span><i class="dot draw"></i>平局 {pct(draw)}</span>
+        <span><i class="dot away"></i>客胜 {pct(away_win)}</span>
+      </div>
+      <div class="prob-stack" aria-hidden="true">
+        <span class="seg home" style="width:{percent_width(home_win)}"></span>
+        <span class="seg draw" style="width:{percent_width(draw)}"></span>
+        <span class="seg away" style="width:{percent_width(away_win)}"></span>
+      </div>
+      <div class="prob-values">
+        <span>{pct(home_win)}</span>
+        <span>{pct(draw)}</span>
+        <span>{pct(away_win)}</span>
+      </div>
+    """
 
 
 def injury_summary(match: dict[str, Any]) -> str:
@@ -1120,6 +1189,66 @@ def compact_note(value: Any) -> str:
     return str(value or "")
 
 
+def odds_badge(match: dict[str, Any]) -> str:
+    odds = match.get("odds") or {}
+    if not odds.get("available"):
+        return "unavailable"
+    return render_probability_line(odds.get("normalized_probability"))
+
+
+def confidence_class(value: str | None) -> str:
+    return {"low": "low", "medium": "medium", "high": "high"}.get(value or "", "unknown")
+
+
+def display_window_from_payload(payload: dict[str, Any]) -> dict[str, Any]:
+    for candidate in (payload, payload.get("research") or {}):
+        window = candidate.get("display_window") if isinstance(candidate, dict) else None
+        if isinstance(window, dict) and window.get("match_days"):
+            return window
+    return {}
+
+
+def match_days_from_payload(payload: dict[str, Any], matches: list[dict[str, Any]]) -> list[dict[str, str]]:
+    window = display_window_from_payload(payload)
+    days = window.get("match_days") or payload.get("china_match_days")
+    if not days and isinstance(payload.get("research"), dict):
+        days = (payload["research"].get("display_window") or {}).get("match_days") or payload["research"].get("china_match_days")
+    if isinstance(days, list) and all(isinstance(day, dict) for day in days):
+        return days
+    return [info for info, _items in group_matches_by_china_day(matches)]
+
+
+def group_matches_for_expected_days(
+    payload: dict[str, Any],
+    matches: list[dict[str, Any]],
+) -> list[tuple[dict[str, str], list[dict[str, Any]]]]:
+    grouped = {info["date"]: (info, items) for info, items in group_matches_by_china_day(matches)}
+    expected_days = match_days_from_payload(payload, matches)
+    sections: list[tuple[dict[str, str], list[dict[str, Any]]]] = []
+    used: set[str] = set()
+    for info in expected_days:
+        key = info.get("date")
+        if not key:
+            continue
+        _existing_info, items = grouped.get(key, (info, []))
+        sections.append((info, items))
+        used.add(key)
+    for key in sorted(grouped):
+        if key not in used:
+            sections.append(grouped[key])
+    return sections
+
+
+def display_range_text(payload: dict[str, Any], matches: list[dict[str, Any]]) -> str:
+    window = display_window_from_payload(payload)
+    if window:
+        return f"{window.get('display_range', '')} · {window.get('range', '')}".strip(" ·")
+    days = match_days_from_payload(payload, matches)
+    if days:
+        return f"{days[0].get('title', '')} - {days[-1].get('title', '')}"
+    return "两个中国比赛日"
+
+
 def match_card(match: dict[str, Any]) -> str:
     teams = match.get("teams") or {}
     home = teams.get("home") or {}
@@ -1135,35 +1264,48 @@ def match_card(match: dict[str, Any]) -> str:
     upset = match.get("upset_probability", 0)
     venue = venue_text(match)
     source = source_link(match)
+    match_id = match.get("match_id") or match.get("id") or match.get("fifa_match_id") or "unknown"
+    home_name = home.get("name") or home.get("name_en") or "主队"
+    away_name = away.get("name") or away.get("name_en") or "客队"
+    confidence_raw = match.get("confidence")
     return f"""
       <article class="match-card">
-        <div class="match-meta">
+        <div class="match-topline">
+          <h3>{html_escape(home_name)} vs {html_escape(away_name)}</h3>
           <time datetime="{kickoff_iso}">{html_escape(kickoff_display)}</time>
-          <span>信心: {html_escape(confidence)}</span>
         </div>
-        <div class="teams">
-          {team_visual(home)}
-          <div class="score">{html_escape(score.get("home", 0))} : {html_escape(score.get("away", 0))}</div>
-          {team_visual(away, right=True)}
+        <div class="scoreboard">
+          <div class="score-side">
+            <span>{html_escape(home_name)}</span>
+            <strong>{html_escape(score.get("home", 0))}</strong>
+          </div>
+          <div class="score-separator">:</div>
+          <div class="score-side away-side">
+            <span>{html_escape(away_name)}</span>
+            <strong>{html_escape(score.get("away", 0))}</strong>
+          </div>
         </div>
-        <div class="mini-stats">
-          <span>xG {html_escape(home.get("name", "主队"))} {number_text(xg.get("home"))}</span>
-          <span>xG {html_escape(away.get("name", "客队"))} {number_text(xg.get("away"))}</span>
-          <span>爆冷概率 {pct(upset)}</span>
+        <div class="probability-panel">
+          {probability_segments(match)}
         </div>
-        <div class="probabilities">
-          {probability_rows(match)}
+        <div class="metric-grid">
+          <span><b>xG</b>{html_escape(home_name)} {number_text(xg.get("home"))}</span>
+          <span><b>xG</b>{html_escape(away_name)} {number_text(xg.get("away"))}</span>
+          <span><b>爆冷概率</b>{pct(upset)}</span>
+          <span><b>赔率</b>{html_escape(odds_badge(match))}</span>
         </div>
-        <div class="insight-grid">
-          <section><h3>战术分析</h3><p>{html_escape(tactical)}</p></section>
-          <section><h3>风险分析</h3><p>{html_escape(risk)}</p></section>
-          <section><h3>伤停信息</h3><p>{html_escape(injury_summary(match))}</p><p class="muted compact">{html_escape(injury_adjustment)}</p></section>
-          <section><h3>赔率对比</h3><p>{html_escape(odds_summary(match))}</p></section>
+        <div class="analysis-block">
+          <section><h4>战术分析</h4><p>{html_escape(tactical)}</p></section>
+          <section><h4>风险分析</h4><p class="risk-text">{html_escape(risk)}</p></section>
+          <section><h4>伤停信息</h4><p>{html_escape(injury_summary(match))}</p><p class="muted compact">{html_escape(injury_adjustment)}</p></section>
+          <section><h4>赔率对比</h4><p>{html_escape(odds_summary(match))}</p></section>
         </div>
         <div class="match-footer">
-          <span>{html_escape(venue)}</span>
-          <a href="{html_escape(source)}" rel="noopener" target="_blank">来源</a>
+          <span>置信度 <b class="confidence {confidence_class(confidence_raw)}">{html_escape(confidence)}</b></span>
+          <span>比赛 ID: {html_escape(match_id)}</span>
+          <a class="source-link" href="{html_escape(source)}" rel="noopener" target="_blank">来源</a>
         </div>
+        <p class="venue-line">{html_escape(venue)}</p>
       </article>
     """
 
@@ -1172,10 +1314,16 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     matches = payload.get("matches") or []
     usage = payload.get("usage") or zero_usage()
     generated_display = format_beijing_time(payload.get("generated_at", iso_utc(utc_now())))
-    groups = group_matches_by_china_day(matches)
+    groups = group_matches_for_expected_days(payload, matches)
+    analysis = payload.get("analysis") or {}
+    summary = analysis.get("summary") or "V3 Agent 使用 FIFA 官方赛程作为主源，ESPN 完成第二来源校验和赔率读取，伤停信息按官方/媒体/unknown 规则展示。"
+    risk_overview = analysis.get("risk_overview") or "整体风险以赛程真实性、伤停可信度、赔率可用性和模型置信度共同评估。"
+    range_text = display_range_text(payload, matches)
     group_sections = []
     for info, items in groups:
         cards = "\n".join(match_card(match) for match in items)
+        if not cards:
+            cards = '<div class="empty">该中国比赛日暂无通过 FIFA + ESPN 双源校验的世界杯比赛。</div>'
         group_sections.append(
             f"""
     <section class="match-day" data-match-day="{html_escape(info['date'])}">
@@ -1184,175 +1332,322 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
           <h2>{html_escape(info['title'])}</h2>
           <p class="muted compact">{html_escape(info['range'])}，按北京时间升序排列</p>
         </div>
-        <div class="source-links"><a href="latest.json">原始 JSON</a></div>
+        <div class="day-count">{len(items)} 场</div>
       </div>
-      <section class="grid">{cards}</section>
+      <section class="match-grid">{cards}</section>
     </section>
             """
         )
     if not group_sections:
-        group_sections.append('<div class="empty">今日无双源验证的世界杯比赛。</div>')
+        group_sections.append('<div class="empty">当前两个中国比赛日暂无双源验证的世界杯比赛。</div>')
     return f"""<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>每日 FIFA 世界杯预测</title>
+  <title>2026 世界杯 · 预测分析</title>
   <style>
     :root {{
-      color-scheme: light;
-      --ink: #17201d;
-      --muted: #60706a;
-      --line: #d8e0dc;
-      --paper: #f7faf8;
-      --panel: #ffffff;
-      --accent: #147a4a;
-      --accent-2: #c83f31;
-      --accent-3: #1c6aa7;
+      color-scheme: dark;
+      --bg: #10111f;
+      --bg-2: #141727;
+      --panel: #1b2838;
+      --panel-2: #202d3d;
+      --panel-3: #172232;
+      --line: rgba(104, 136, 174, 0.28);
+      --line-hot: rgba(83, 171, 255, 0.58);
+      --text: #f5f7fb;
+      --muted: #a5afc1;
+      --green: #2bd16f;
+      --yellow: #f6bd27;
+      --red: #ef5049;
+      --blue: #66aaff;
+      --pink: #f05b78;
+      --shadow: 0 18px 48px rgba(0, 0, 0, 0.42);
     }}
     * {{ box-sizing: border-box; }}
+    html {{ background: var(--bg); }}
     body {{
       margin: 0;
       font-family: Inter, "Microsoft YaHei", "PingFang SC", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--ink);
-      background: var(--paper);
+      color: var(--text);
+      background:
+        radial-gradient(circle at 50% -20%, rgba(32, 93, 156, 0.32), transparent 38%),
+        linear-gradient(180deg, #171729 0%, #10111f 42%, #0c0f19 100%);
       letter-spacing: 0;
+      min-height: 100vh;
     }}
-    header {{ border-bottom: 1px solid var(--line); background: var(--panel); }}
-    .wrap {{ width: min(1120px, calc(100% - 32px)); margin: 0 auto; }}
-    .topbar {{
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 24px;
-      align-items: end;
-      padding: 30px 0 24px;
+    body::before {{
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,0.85), transparent 70%);
     }}
-    h1 {{ margin: 0 0 8px; font-size: clamp(28px, 4vw, 48px); line-height: 1.02; font-weight: 800; }}
-    .subtitle {{ margin: 0; color: var(--muted); max-width: 800px; line-height: 1.5; }}
-    .status-pill {{
+    a {{ color: var(--blue); text-decoration: none; font-weight: 700; transition: color .18s ease, text-shadow .18s ease; }}
+    a:hover {{ color: #91c4ff; text-shadow: 0 0 16px rgba(102, 170, 255, .45); }}
+    .page {{ width: min(980px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 44px; }}
+    .night-card {{
+      position: relative;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(145deg, rgba(31, 46, 66, .96), rgba(24, 35, 51, .96));
+      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.04);
+      overflow: hidden;
+    }}
+    .night-card::before {{
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(120deg, rgba(86, 169, 255, .18), transparent 36%, rgba(43, 209, 111, .08));
+      opacity: .55;
+    }}
+    .hero {{
+      padding: 30px;
+      margin-bottom: 24px;
+    }}
+    .hero > * {{ position: relative; z-index: 1; }}
+    .hero h1 {{ margin: 0 0 18px; font-size: clamp(30px, 7vw, 46px); line-height: 1.08; font-weight: 850; }}
+    .range-pill {{
       display: inline-flex;
       align-items: center;
-      min-height: 38px;
-      padding: 0 14px;
+      max-width: 100%;
+      min-height: 40px;
+      padding: 0 18px;
+      border-radius: 999px;
+      background: rgba(246, 189, 39, .13);
+      color: #ffdb54;
+      border: 1px solid rgba(246, 189, 39, .28);
+      font-weight: 800;
+      overflow-wrap: anywhere;
+    }}
+    .hero-meta {{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 22px;
+      margin: 26px 0 0;
+    }}
+    .hero-meta div {{ color: var(--muted); line-height: 1.55; min-width: 0; overflow-wrap: anywhere; }}
+    .hero-meta strong {{ display: block; color: var(--text); font-weight: 780; }}
+    .overview {{
+      padding: 24px;
+      margin-bottom: 24px;
+    }}
+    .overview h2, .usage-panel h2, .match-day h2 {{ margin: 0; font-size: 24px; color: #ffd64a; }}
+    .overview p {{ position: relative; z-index: 1; margin: 14px 0 0; color: var(--muted); line-height: 1.8; font-size: 16px; }}
+    .usage-panel {{
+      padding: 22px;
+      margin-bottom: 24px;
+      border-color: rgba(246, 189, 39, .24);
+    }}
+    .usage-grid {{
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }}
+    .usage-card {{
       border: 1px solid var(--line);
-      border-radius: 8px;
-      background: #f1f6f3;
-      color: var(--accent);
-      font-weight: 700;
-      white-space: nowrap;
+      border-radius: 14px;
+      background: rgba(24, 35, 51, .72);
+      padding: 18px;
+      min-height: 116px;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
     }}
-    .stats {{ display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; padding: 18px 0 26px; }}
-    .stat {{ border: 1px solid var(--line); border-radius: 8px; background: var(--panel); padding: 14px 16px; min-height: 86px; }}
-    .stat span {{ display: block; color: var(--muted); font-size: 13px; margin-bottom: 8px; }}
-    .stat strong {{ display: block; font-size: 20px; line-height: 1.25; overflow-wrap: anywhere; }}
-    main {{ padding: 24px 0 42px; }}
-    .notice {{
-      border: 1px solid #e3c7bd;
-      border-left: 4px solid var(--accent-2);
-      border-radius: 8px;
-      background: #fff8f5;
-      padding: 16px 18px;
-      margin-bottom: 18px;
+    .usage-card:hover {{ transform: translateY(-2px); border-color: var(--line-hot); box-shadow: 0 0 22px rgba(83, 171, 255, .14); }}
+    .usage-card span {{ display: block; color: var(--muted); letter-spacing: .08em; font-size: 13px; margin-bottom: 14px; }}
+    .usage-card strong {{ font-size: clamp(26px, 6vw, 36px); line-height: 1; overflow-wrap: anywhere; }}
+    .usage-card.input strong {{ color: var(--blue); }}
+    .usage-card.output strong {{ color: var(--green); }}
+    .usage-card.total strong {{ color: #ffd64a; }}
+    .usage-card.cost strong {{ color: var(--pink); }}
+    .legend {{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px 22px;
+      padding: 18px 20px;
+      margin-bottom: 28px;
     }}
-    .notice h2 {{ margin: 0 0 8px; font-size: 18px; }}
-    .notice p {{ margin: 0; color: var(--muted); line-height: 1.55; }}
-    .match-day {{ margin-top: 24px; }}
-    .section-head {{ display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 14px; }}
-    .section-head h2 {{ margin: 0 0 4px; font-size: 22px; }}
-    .source-links {{ display: flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }}
-    a {{ color: var(--accent-3); text-decoration: none; font-weight: 650; }}
-    a:hover {{ text-decoration: underline; }}
-    .grid {{ display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 16px; }}
+    .legend span {{ position: relative; z-index: 1; color: var(--muted); font-weight: 700; }}
+    .dot {{
+      display: inline-block;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      margin-right: 7px;
+      box-shadow: 0 0 14px currentColor;
+      vertical-align: middle;
+    }}
+    .dot.home {{ background: var(--green); color: var(--green); }}
+    .dot.draw {{ background: var(--yellow); color: var(--yellow); }}
+    .dot.away {{ background: var(--red); color: var(--red); }}
+    .match-day {{ margin-top: 28px; }}
+    .section-head {{ display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 14px; }}
+    .section-head p {{ margin-top: 8px; line-height: 1.5; }}
+    .day-count {{
+      flex: 0 0 auto;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      color: #ffdb54;
+      background: rgba(246, 189, 39, .12);
+      font-weight: 800;
+    }}
+    .match-grid {{ display: grid; grid-template-columns: 1fr; gap: 22px; }}
     .match-card {{
       border: 1px solid var(--line);
-      border-radius: 8px;
-      background: var(--panel);
-      padding: 16px;
-      min-height: 292px;
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(30, 43, 59, .97), rgba(23, 34, 50, .98));
+      padding: 22px;
+      min-height: 360px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 18px;
+      box-shadow: 0 14px 38px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.035);
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;
     }}
-    .match-meta, .match-footer {{ display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 13px; }}
-    .match-footer {{ border-top: 1px solid var(--line); padding-top: 12px; margin-top: auto; }}
-    .teams {{ display: grid; grid-template-columns: minmax(0, 1fr) 66px minmax(0, 1fr); align-items: center; gap: 10px; }}
-    .team {{ display: flex; align-items: center; gap: 10px; min-width: 0; }}
-    .team.right {{ justify-content: flex-end; text-align: right; }}
-    .team strong {{ font-size: 17px; line-height: 1.25; overflow-wrap: anywhere; }}
-    .team-logo, .team-initial {{
-      width: 38px;
-      height: 38px;
-      flex: 0 0 38px;
-      border-radius: 50%;
+    .match-card:hover {{
+      transform: translateY(-4px);
+      border-color: var(--line-hot);
+      box-shadow: 0 22px 58px rgba(0,0,0,.45), 0 0 24px rgba(83, 171, 255, .18), inset 0 1px 0 rgba(255,255,255,.06);
+    }}
+    .match-card:hover .prob-stack .seg {{ filter: brightness(1.12) saturate(1.08); }}
+    .match-topline {{ display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 14px; }}
+    .match-topline h3 {{ margin: 0; font-size: clamp(22px, 5vw, 32px); line-height: 1.2; overflow-wrap: anywhere; }}
+    .match-topline time {{
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.06);
+      color: var(--muted);
+      padding: 8px 14px;
+      white-space: nowrap;
+      font-weight: 750;
+    }}
+    .scoreboard {{ display: grid; grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr); align-items: center; gap: 12px; text-align: center; }}
+    .score-side span {{ display: block; color: var(--text); font-size: 18px; font-weight: 760; overflow-wrap: anywhere; }}
+    .score-side strong {{ display: block; margin-top: 6px; font-size: clamp(42px, 12vw, 62px); line-height: .95; color: #ffd11e; }}
+    .score-separator {{ color: var(--muted); font-size: 34px; font-weight: 600; }}
+    .probability-panel {{ display: grid; gap: 10px; }}
+    .prob-heading {{ color: var(--muted); font-weight: 760; }}
+    .prob-labels, .prob-values {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; color: var(--muted); font-weight: 700; }}
+    .prob-labels span:nth-child(2), .prob-values span:nth-child(2) {{ text-align: center; }}
+    .prob-labels span:nth-child(3), .prob-values span:nth-child(3) {{ text-align: right; }}
+    .prob-values span:nth-child(1) {{ color: var(--green); }}
+    .prob-values span:nth-child(2) {{ color: var(--yellow); }}
+    .prob-values span:nth-child(3) {{ color: var(--red); }}
+    .prob-stack {{
+      display: flex;
+      height: 16px;
+      border-radius: 999px;
+      overflow: hidden;
+      background: rgba(255,255,255,.08);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);
+    }}
+    .prob-stack .seg {{ min-width: 2px; transition: filter .18s ease, transform .18s ease; }}
+    .prob-stack .home {{ background: var(--green); }}
+    .prob-stack .draw {{ background: var(--yellow); }}
+    .prob-stack .away {{ background: var(--red); }}
+    .metric-grid {{ display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }}
+    .metric-grid span {{
       border: 1px solid var(--line);
-      background: #edf3ef;
-      object-fit: contain;
-      display: grid;
-      place-items: center;
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--accent);
+      border-radius: 13px;
+      background: rgba(18, 28, 42, .62);
+      color: var(--muted);
+      min-height: 72px;
+      padding: 12px;
+      line-height: 1.45;
+      overflow-wrap: anywhere;
     }}
-    .score {{ min-width: 66px; text-align: center; font-weight: 800; color: var(--ink); }}
-    .mini-stats {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }}
-    .mini-stats span {{ border: 1px solid var(--line); border-radius: 8px; padding: 8px; background: #f8fbf9; font-size: 12px; color: var(--muted); }}
-    .probabilities {{ display: grid; gap: 10px; }}
-    .prob-row {{ display: grid; grid-template-columns: minmax(92px, 1fr) minmax(92px, 1.4fr) 56px; gap: 10px; align-items: center; font-size: 13px; }}
-    .prob-row span:first-child {{ overflow-wrap: anywhere; }}
-    .prob-track {{ height: 10px; border-radius: 999px; background: #e9efec; overflow: hidden; }}
-    .prob-track span {{ display: block; height: 100%; background: var(--accent); }}
-    .prob-row:nth-child(2) .prob-track span {{ background: var(--accent-3); }}
-    .prob-row:nth-child(3) .prob-track span {{ background: var(--accent-2); }}
-    .insight-grid {{ display: grid; grid-template-columns: 1fr; gap: 10px; }}
-    .insight-grid section {{ border-top: 1px solid var(--line); padding-top: 10px; }}
-    .insight-grid h3 {{ margin: 0 0 6px; font-size: 14px; }}
-    .insight-grid p {{ margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }}
-    .empty {{ border: 1px dashed var(--line); border-radius: 8px; background: var(--panel); padding: 24px; color: var(--muted); }}
+    .metric-grid b {{ display: block; color: var(--text); margin-bottom: 4px; }}
+    .analysis-block {{ display: grid; gap: 14px; }}
+    .analysis-block section {{ border-top: 1px solid var(--line); padding-top: 14px; }}
+    .analysis-block h4 {{ margin: 0 0 8px; font-size: 17px; color: var(--muted); }}
+    .analysis-block p {{ margin: 0; color: #d8deea; font-size: 15px; line-height: 1.75; }}
+    .analysis-block .risk-text {{ color: #ffbd35; }}
+    .match-footer {{ display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; border-top: 1px solid var(--line); padding-top: 14px; margin-top: auto; color: var(--muted); }}
+    .confidence {{ display: inline-flex; align-items: center; min-width: 38px; justify-content: center; border-radius: 999px; padding: 4px 11px; margin-left: 4px; }}
+    .confidence.high {{ color: var(--green); background: rgba(43,209,111,.13); }}
+    .confidence.medium {{ color: var(--yellow); background: rgba(246,189,39,.13); }}
+    .confidence.low {{ color: var(--red); background: rgba(239,80,73,.13); }}
+    .source-link {{ border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }}
+    .venue-line {{ margin: -6px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }}
+    .empty {{ border: 1px dashed var(--line); border-radius: 18px; background: rgba(27,40,56,.68); padding: 24px; color: var(--muted); }}
     .muted {{ color: var(--muted); }}
     .compact {{ margin: 0; }}
-    footer {{ border-top: 1px solid var(--line); color: var(--muted); padding: 22px 0 30px; background: var(--panel); font-size: 13px; }}
+    .page-footer {{ color: var(--muted); padding-top: 30px; font-size: 13px; line-height: 1.8; }}
+    @media (min-width: 1080px) {{
+      .match-grid {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
+    }}
     @media (max-width: 760px) {{
-      .topbar, .stats {{ grid-template-columns: 1fr; }}
-      .status-pill {{ justify-content: center; width: 100%; }}
-      .section-head {{ display: block; }}
-      .source-links {{ justify-content: flex-start; margin-top: 10px; }}
-      .teams {{ grid-template-columns: 1fr; }}
-      .score {{ min-width: 0; text-align: left; }}
-      .team.right {{ justify-content: flex-start; text-align: left; }}
-      .mini-stats {{ grid-template-columns: 1fr; }}
-      .prob-row {{ grid-template-columns: 1fr 52px; }}
-      .prob-track {{ grid-column: 1 / -1; grid-row: 2; }}
+      .page {{ width: min(100% - 24px, 640px); padding-top: 18px; }}
+      .hero, .overview, .usage-panel, .match-card {{ border-radius: 20px; padding: 20px; }}
+      .hero-meta, .usage-grid, .metric-grid {{ grid-template-columns: 1fr 1fr; }}
+      .section-head, .match-topline {{ display: block; }}
+      .day-count {{ display: inline-flex; margin-top: 12px; }}
+      .match-topline time {{ display: inline-flex; margin-top: 12px; white-space: normal; }}
+      .scoreboard {{ grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr); gap: 6px; }}
+      .score-side span {{ font-size: 16px; }}
+      .prob-labels {{ font-size: 14px; }}
+      .match-footer {{ display: grid; grid-template-columns: 1fr; }}
+    }}
+    @media (max-width: 460px) {{
+      .hero-meta, .usage-grid, .metric-grid {{ grid-template-columns: 1fr; }}
+      .prob-labels {{ grid-template-columns: 1fr; gap: 6px; }}
+      .prob-labels span, .prob-labels span:nth-child(2), .prob-labels span:nth-child(3) {{ text-align: left; }}
     }}
   </style>
 </head>
-<body>
-  <header>
-    <div class="wrap">
-      <div class="topbar">
-        <div>
-          <h1>每日 FIFA 世界杯预测</h1>
-          <p class="subtitle">V3 Agent 自动抓取 FIFA 官方赛程，并用 ESPN 完成第二来源校验、赔率读取和媒体伤停扫描；分析由 deepseek-v4-pro 完成，页面由 deepseek-v4-flash 生成流程驱动。</p>
-        </div>
-        <span class="status-pill">V3 Agent 已就绪</span>
+<body class="night-shell">
+  <main class="page">
+    <header class="hero night-card">
+      <h1>2026 世界杯 · 预测分析</h1>
+      <span class="range-pill">{html_escape(range_text)}</span>
+      <div class="hero-meta">
+        <div>生成时间<strong>{html_escape(generated_display)}</strong></div>
+        <div>总比赛场次<strong>{len(matches)} 场</strong></div>
+        <div>分析模型<strong>{ANALYSIS_MODEL}</strong></div>
+        <div>生成模型<strong>{RENDER_MODEL}</strong></div>
       </div>
-      <div class="stats">
-        <div class="stat"><span>生成时间</span><strong>{html_escape(generated_display)}</strong></div>
-        <div class="stat"><span>已验证比赛</span><strong>{len(matches)}</strong></div>
-        <div class="stat"><span>Token</span><strong>{usage.get("total_tokens", 0)}</strong></div>
-        <div class="stat"><span>Cost</span><strong>{float(usage.get("cost_estimate", 0)):.6f}</strong></div>
+    </header>
+
+    <section class="overview night-card">
+      <h2>总览</h2>
+      <p>{html_escape(summary)}</p>
+    </section>
+
+    <section class="usage-panel night-card">
+      <h2>Token / Cost</h2>
+      <div class="usage-grid">
+        <div class="usage-card input"><span>输入 TOKEN</span><strong>{usage.get("input_tokens", 0)}</strong></div>
+        <div class="usage-card output"><span>输出 TOKEN</span><strong>{usage.get("output_tokens", 0)}</strong></div>
+        <div class="usage-card total"><span>总 TOKEN</span><strong>{usage.get("total_tokens", 0)}</strong></div>
+        <div class="usage-card cost"><span>预计成本</span><strong>{float(usage.get("cost_estimate", 0)):.6f}</strong></div>
       </div>
-    </div>
-  </header>
-  <main class="wrap">
-    <section class="notice">
-      <h2>中国时间比赛日规则</h2>
-      <p>所有开球时间均显示为北京时间。每个比赛日按北京时间 18:00 到次日 18:00 分块；例如 6月26日 01:00 开球会归入 6月25日比赛日。</p>
+    </section>
+
+    <section class="overview night-card">
+      <h2>风险概览</h2>
+      <p>{html_escape(risk_overview)}</p>
+    </section>
+
+    <section class="legend night-card">
+      <span><i class="dot home"></i>主胜</span>
+      <span><i class="dot draw"></i>平局</span>
+      <span><i class="dot away"></i>客胜</span>
+      <span>置信度：高 / 中 / 低</span>
+      <span><a href="latest.json">查看 data/latest.json</a></span>
     </section>
     {''.join(group_sections)}
+    <footer class="page-footer">
+      V3 Agent：FIFA 官方赛程为主源，ESPN 用于第二来源校验和赔率；伤停无可靠来源时显示 unknown，赔率无真实源时显示 unavailable。所有可见比赛时间均为北京时间，比赛日按 18:00 至次日 18:00 划分。
+    </footer>
   </main>
-  <footer>
-    <div class="wrap">分析模型: {ANALYSIS_MODEL} · 生成模型: {RENDER_MODEL} · Input tokens {usage.get("input_tokens", 0)} · Output tokens {usage.get("output_tokens", 0)} · Total tokens {usage.get("total_tokens", 0)} · Cost {float(usage.get("cost_estimate", 0)):.6f}</div>
-  </footer>
 </body>
 </html>
 """
@@ -1436,6 +1731,8 @@ def run_render(analysis_path: Path = ANALYSIS_PATH, output: Path = RENDER_PATH, 
         "analysis_model": ANALYSIS_MODEL,
         "render_model": RENDER_MODEL,
         "model": {"analysis_model": ANALYSIS_MODEL, "render_model": RENDER_MODEL},
+        "display_window": analysis_payload.get("display_window") or (analysis_payload.get("research") or {}).get("display_window", {}),
+        "china_match_days": analysis_payload.get("china_match_days") or (analysis_payload.get("research") or {}).get("china_match_days", []),
         "data_sources": analysis_payload.get("data_sources", {}),
         "source": (analysis_payload.get("research") or {}).get("source", {}),
         "daily_log": [
@@ -1474,6 +1771,8 @@ def run_finalize(render_path: Path = RENDER_PATH, latest_path: Path = LATEST_PAT
         "analysis": render_payload.get("analysis", {}),
         "usage_breakdown": render_payload.get("usage_breakdown", {}),
         "model": {"analysis_model": ANALYSIS_MODEL, "render_model": RENDER_MODEL},
+        "display_window": render_payload.get("display_window", {}),
+        "china_match_days": render_payload.get("china_match_days", []),
         "source": render_payload.get("source", {}),
         "daily_log": [
             *render_payload.get("daily_log", []),
