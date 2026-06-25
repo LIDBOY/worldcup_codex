@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "stage": "research",
-  "generated_at": "2026-06-25T04:53:45Z",
+  "generated_at": "2026-06-25T10:58:43Z",
   "window": {
     "start_date": "2026-06-25",
     "days": 1,
@@ -215,15 +215,31 @@
         "home": {
           "team": "捷克",
           "team_en": "Czechia",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+              "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+              "published": "2026-06-25T06:17:29Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "墨西哥",
           "team_en": "Mexico",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+              "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+              "published": "2026-06-25T06:17:29Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -298,22 +314,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+1800",
-          "draw": "+750",
-          "away": "-650"
+          "home": "+1500",
+          "draw": "+700",
+          "away": "-575"
         },
         "implied_probability": {
-          "home_win": 5.26,
-          "draw": 11.76,
-          "away_win": 86.67
+          "home_win": 6.25,
+          "draw": 12.5,
+          "away_win": 85.19
         },
         "normalized_probability": {
-          "home_win": 5.08,
-          "draw": 11.35,
-          "away_win": 83.58
+          "home_win": 6.01,
+          "draw": 12.03,
+          "away_win": 81.96
         },
-        "overround": 3.69,
-        "details": "CIV -650"
+        "overround": 3.94,
+        "details": "CIV -575"
       },
       "injuries": {
         "home": {
@@ -402,52 +418,36 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+450",
+          "home": "+425",
           "draw": "+390",
-          "away": "-190"
+          "away": "-185"
         },
         "implied_probability": {
-          "home_win": 18.18,
+          "home_win": 19.05,
           "draw": 20.41,
-          "away_win": 65.52
+          "away_win": 64.91
         },
         "normalized_probability": {
-          "home_win": 17.46,
-          "draw": 19.6,
-          "away_win": 62.93
+          "home_win": 18.25,
+          "draw": 19.55,
+          "away_win": 62.2
         },
-        "overround": 4.11,
-        "details": "GER -190"
+        "overround": 4.37,
+        "details": "GER -185"
       },
       "injuries": {
         "home": {
           "team": "厄瓜多尔",
           "team_en": "Ecuador",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Vinícius Júnior leads Brazil rout of Scotland to top group",
-              "description": "Brazil secured the top spot in Group C as Vinícius Júnior inspired them to a 3-0 win over Scotland to leave the Tartan Army's hopes hanging by a thread.",
-              "published": "2026-06-25T01:25:31Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49169585/vinicius-junior-brazil-scotland-fifa-2026-world-cup-knockout"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "德国",
           "team_en": "Germany",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Pochettino won't 'risk' United States players on yellows",
-              "description": "United States manager Mauricio Pochettino said his four players on yellow cards won't start Thursday's match against Türkiye to avoid the possibility of being suspended for the round of 32 match on July 1.",
-              "published": "2026-06-25T01:46:32Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49169923/pochettino-risk-united-states-players-yellows"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -562,6 +562,13 @@
           "records": [
             {
               "source": "ESPN World Cup news",
+              "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+              "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+              "published": "2026-06-25T06:17:29Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+            },
+            {
+              "source": "ESPN World Cup news",
               "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
               "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
               "published": "2026-06-25T03:36:14Z",
@@ -642,22 +649,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-115",
-          "draw": "+255",
-          "away": "+350"
+          "home": "-110",
+          "draw": "+250",
+          "away": "+340"
         },
         "implied_probability": {
-          "home_win": 53.49,
-          "draw": 28.17,
-          "away_win": 22.22
+          "home_win": 52.38,
+          "draw": 28.57,
+          "away_win": 22.73
         },
         "normalized_probability": {
-          "home_win": 51.49,
-          "draw": 27.12,
-          "away_win": 21.39
+          "home_win": 50.52,
+          "draw": 27.56,
+          "away_win": 21.92
         },
-        "overround": 3.88,
-        "details": "JPN -115"
+        "overround": 3.68,
+        "details": "JPN -110"
       },
       "injuries": {
         "home": {
@@ -847,15 +854,31 @@
         "home": {
           "team": "捷克",
           "team_en": "Czechia",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+              "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+              "published": "2026-06-25T06:17:29Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "墨西哥",
           "team_en": "Mexico",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+              "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+              "published": "2026-06-25T06:17:29Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -930,22 +953,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+1800",
-          "draw": "+750",
-          "away": "-650"
+          "home": "+1500",
+          "draw": "+700",
+          "away": "-575"
         },
         "implied_probability": {
-          "home_win": 5.26,
-          "draw": 11.76,
-          "away_win": 86.67
+          "home_win": 6.25,
+          "draw": 12.5,
+          "away_win": 85.19
         },
         "normalized_probability": {
-          "home_win": 5.08,
-          "draw": 11.35,
-          "away_win": 83.58
+          "home_win": 6.01,
+          "draw": 12.03,
+          "away_win": 81.96
         },
-        "overround": 3.69,
-        "details": "CIV -650"
+        "overround": 3.94,
+        "details": "CIV -575"
       },
       "injuries": {
         "home": {
@@ -1034,52 +1057,36 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+450",
+          "home": "+425",
           "draw": "+390",
-          "away": "-190"
+          "away": "-185"
         },
         "implied_probability": {
-          "home_win": 18.18,
+          "home_win": 19.05,
           "draw": 20.41,
-          "away_win": 65.52
+          "away_win": 64.91
         },
         "normalized_probability": {
-          "home_win": 17.46,
-          "draw": 19.6,
-          "away_win": 62.93
+          "home_win": 18.25,
+          "draw": 19.55,
+          "away_win": 62.2
         },
-        "overround": 4.11,
-        "details": "GER -190"
+        "overround": 4.37,
+        "details": "GER -185"
       },
       "injuries": {
         "home": {
           "team": "厄瓜多尔",
           "team_en": "Ecuador",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Vinícius Júnior leads Brazil rout of Scotland to top group",
-              "description": "Brazil secured the top spot in Group C as Vinícius Júnior inspired them to a 3-0 win over Scotland to leave the Tartan Army's hopes hanging by a thread.",
-              "published": "2026-06-25T01:25:31Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49169585/vinicius-junior-brazil-scotland-fifa-2026-world-cup-knockout"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "德国",
           "team_en": "Germany",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Pochettino won't 'risk' United States players on yellows",
-              "description": "United States manager Mauricio Pochettino said his four players on yellow cards won't start Thursday's match against Türkiye to avoid the possibility of being suspended for the round of 32 match on July 1.",
-              "published": "2026-06-25T01:46:32Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49169923/pochettino-risk-united-states-players-yellows"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -1194,6 +1201,13 @@
           "records": [
             {
               "source": "ESPN World Cup news",
+              "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+              "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+              "published": "2026-06-25T06:17:29Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+            },
+            {
+              "source": "ESPN World Cup news",
               "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
               "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
               "published": "2026-06-25T03:36:14Z",
@@ -1274,22 +1288,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-115",
-          "draw": "+255",
-          "away": "+350"
+          "home": "-110",
+          "draw": "+250",
+          "away": "+340"
         },
         "implied_probability": {
-          "home_win": 53.49,
-          "draw": 28.17,
-          "away_win": 22.22
+          "home_win": 52.38,
+          "draw": 28.57,
+          "away_win": 22.73
         },
         "normalized_probability": {
-          "home_win": 51.49,
-          "draw": 27.12,
-          "away_win": 21.39
+          "home_win": 50.52,
+          "draw": 27.56,
+          "away_win": 21.92
         },
-        "overround": 3.88,
-        "details": "JPN -115"
+        "overround": 3.68,
+        "details": "JPN -110"
       },
       "injuries": {
         "home": {
@@ -1311,7 +1325,7 @@
   ],
   "daily_log": [
     {
-      "time": "2026-06-25T04:53:45Z",
+      "time": "2026-06-25T10:58:43Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research",
       "status": "completed"
     }
