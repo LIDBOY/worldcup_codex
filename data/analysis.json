@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
   "stage": "analysis",
-  "generated_at": "2026-06-25T04:56:40Z",
+  "generated_at": "2026-06-25T11:01:50Z",
   "analysis": {
-    "generated_at": "2026-06-25T04:53:45Z",
-    "summary": "2026年6月25日世界杯小组赛共6场比赛，其中两场已完赛（南非1-0韩国，捷克0-3墨西哥），四场即将进行。当日焦点战为日本对瑞典，实力接近；德国与厄瓜多尔较量也值得关注。赔率数据对部分场次缺失，伤病信息总体模糊，分析可信度受限。",
+    "generated_at": "2026-06-25T10:58:43Z",
+    "summary": "本日共有6场比赛，包括两场已完赛和四场即将进行的比赛。已完赛：南非1-0韩国，捷克0-3墨西哥。即将进行的比赛：库拉索对阵科特迪瓦（科特迪瓦大热门），厄瓜多尔对阵德国（德国占优），突尼斯对阵荷兰（荷兰碾压优势），日本对阵瑞典（日本稍占上风）。伤病情况整体不明确，部分球队存在概率性伤病。",
     "matches": [
       {
         "id": "400021445",
@@ -95,21 +95,21 @@
           "away_win": 45
         },
         "xg_prediction": {
-          "home": 1.0,
+          "home": 0.9,
           "away": 1.3
         },
         "predicted_score": {
-          "home": 1,
+          "home": 0,
           "away": 1
         },
-        "tactical_matchup": "南非4-2-3-1阵型对阵韩国3-4-3，南非可能利用中场人数优势控制，韩国边翼卫攻击力强但防守可能留下空当。",
+        "tactical_matchup": "南非4-2-3-1对阵韩国3-4-3。韩国3-4-3注重边翼进攻，南非4-2-3-1中场拦截能力一般，可能被韩国边路突破。但南非防守反击有一定威胁。",
         "injury_adjustment": {
-          "home": "未知",
-          "away": "可能伤病（来源ESPN报道，但具体球员和影响未知）",
-          "summary": "韩国队可能有关键球员受伤，但细节不明，可能影响阵容深度。"
+          "home": "南非伤停情况未知",
+          "away": "韩国可能存在伤停影响",
+          "summary": "韩国队存在概率性伤病，可能影响阵容稳定性，但整体实力仍占优。"
         },
-        "risk_analysis": "赔率数据不可用，韩国队伤病情况不明，比赛结果不确定性高。",
-        "upset_probability": 25,
+        "risk_analysis": "韩国实力占优但存在伤病隐患，南非防守反击可能制造惊喜。",
+        "upset_probability": 30,
         "odds_comparison": {
           "market_implied": {
             "home_win": 0,
@@ -117,11 +117,11 @@
             "away_win": 0
           },
           "model_edge": {
-            "home_win": 25,
-            "draw": 30,
-            "away_win": 45
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
-          "deviation_analysis": "赔率数据不可用，无法进行偏差分析。"
+          "deviation_analysis": "赔率不可用，无法进行赔率偏差分析。"
         },
         "confidence": "low"
       },
@@ -187,15 +187,31 @@
           "home": {
             "team": "捷克",
             "team_en": "Czechia",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+                "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+                "published": "2026-06-25T06:17:29Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "墨西哥",
             "team_en": "Mexico",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+                "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+                "published": "2026-06-25T06:17:29Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         },
@@ -206,21 +222,21 @@
           "away_win": 65
         },
         "xg_prediction": {
-          "home": 0.7,
-          "away": 2.0
+          "home": 0.6,
+          "away": 1.8
         },
         "predicted_score": {
           "home": 0,
           "away": 2
         },
-        "tactical_matchup": "捷克5-2-3阵型防守为主，墨西哥4-1-2-3攻击阵型，墨西哥主场优势明显，利用边路进攻冲击捷克防线。",
+        "tactical_matchup": "捷克5-2-3对阵墨西哥4-1-2-3。墨西哥主场优势，4-1-2-3攻击力强，捷克5-2-3防守密集但可能无法抵挡墨西哥的攻势。",
         "injury_adjustment": {
-          "home": "未知",
-          "away": "未知",
-          "summary": "双方均无已知伤病信息，可全员出战。"
+          "home": "捷克可能存在伤停影响",
+          "away": "墨西哥可能存在伤停影响",
+          "summary": "双方都有概率性伤病，但墨西哥实力和主场优势明显。"
         },
-        "risk_analysis": "赔率不可用，实力差距明显但缺少市场参照，墨西哥主场氛围可能增加额外压力。",
-        "upset_probability": 15,
+        "risk_analysis": "墨西哥作为东道主之一，优势明显，捷克难以爆冷。",
+        "upset_probability": 20,
         "odds_comparison": {
           "market_implied": {
             "home_win": 0,
@@ -228,13 +244,13 @@
             "away_win": 0
           },
           "model_edge": {
-            "home_win": 15,
-            "draw": 20,
-            "away_win": 65
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
-          "deviation_analysis": "赔率数据不可用，无法进行偏差分析。"
+          "deviation_analysis": "赔率不可用，无法分析。"
         },
-        "confidence": "low"
+        "confidence": "medium"
       },
       {
         "id": "400021468",
@@ -294,22 +310,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+1800",
-            "draw": "+750",
-            "away": "-650"
+            "home": "+1500",
+            "draw": "+700",
+            "away": "-575"
           },
           "implied_probability": {
-            "home_win": 5.26,
-            "draw": 11.76,
-            "away_win": 86.67
+            "home_win": 6.25,
+            "draw": 12.5,
+            "away_win": 85.19
           },
           "normalized_probability": {
-            "home_win": 5.08,
-            "draw": 11.35,
-            "away_win": 83.58
+            "home_win": 6.01,
+            "draw": 12.03,
+            "away_win": 81.96
           },
-          "overround": 3.69,
-          "details": "CIV -650"
+          "overround": 3.94,
+          "details": "CIV -575"
         },
         "injuries": {
           "home": {
@@ -329,40 +345,40 @@
         },
         "match_id": "400021468",
         "win_draw_loss": {
-          "home_win": 5,
-          "draw": 12,
-          "away_win": 83
+          "home_win": 6.01,
+          "draw": 12.03,
+          "away_win": 81.96
         },
         "xg_prediction": {
-          "home": 0.4,
-          "away": 2.6
+          "home": 0.3,
+          "away": 2.3
         },
         "predicted_score": {
           "home": 0,
           "away": 3
         },
-        "tactical_matchup": "战术未知，库拉索整体实力偏弱，科特迪瓦预计主导控球与进攻，边路速度优势明显。",
+        "tactical_matchup": "双方阵型未知。科特迪瓦实力远超库拉索，预计将控制比赛。",
         "injury_adjustment": {
-          "home": "未知",
-          "away": "未知",
-          "summary": "无伤病信息。"
+          "home": "伤停情况未知",
+          "away": "伤停情况未知",
+          "summary": "双方伤病情况不明，对预测影响较小。"
         },
-        "risk_analysis": "科特迪瓦实力碾压，但赔率隐含概率极高（>80%），需考虑高估风险；库拉索作为黑马可能制造意外。",
+        "risk_analysis": "科特迪瓦优势巨大，库拉索爆冷概率极低。",
         "upset_probability": 5,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 5.08,
-            "draw": 11.35,
-            "away_win": 83.58
+            "home_win": 6.01,
+            "draw": 12.03,
+            "away_win": 81.96
           },
           "model_edge": {
-            "home_win": 5,
-            "draw": 12,
-            "away_win": 83
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
-          "deviation_analysis": "模型略微下调科特迪瓦胜率（-0.58%），微调平局与主胜，反映对极端赔率下波动风险的考量。"
+          "deviation_analysis": "模型预测与市场一致，无明显偏离。"
         },
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "id": "400021466",
@@ -422,89 +438,73 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+450",
+            "home": "+425",
             "draw": "+390",
-            "away": "-190"
+            "away": "-185"
           },
           "implied_probability": {
-            "home_win": 18.18,
+            "home_win": 19.05,
             "draw": 20.41,
-            "away_win": 65.52
+            "away_win": 64.91
           },
           "normalized_probability": {
-            "home_win": 17.46,
-            "draw": 19.6,
-            "away_win": 62.93
+            "home_win": 18.25,
+            "draw": 19.55,
+            "away_win": 62.2
           },
-          "overround": 4.11,
-          "details": "GER -190"
+          "overround": 4.37,
+          "details": "GER -185"
         },
         "injuries": {
           "home": {
             "team": "厄瓜多尔",
             "team_en": "Ecuador",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Vinícius Júnior leads Brazil rout of Scotland to top group",
-                "description": "Brazil secured the top spot in Group C as Vinícius Júnior inspired them to a 3-0 win over Scotland to leave the Tartan Army's hopes hanging by a thread.",
-                "published": "2026-06-25T01:25:31Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49169585/vinicius-junior-brazil-scotland-fifa-2026-world-cup-knockout"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "德国",
             "team_en": "Germany",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Pochettino won't 'risk' United States players on yellows",
-                "description": "United States manager Mauricio Pochettino said his four players on yellow cards won't start Thursday's match against Türkiye to avoid the possibility of being suspended for the round of 32 match on July 1.",
-                "published": "2026-06-25T01:46:32Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49169923/pochettino-risk-united-states-players-yellows"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         },
         "match_id": "400021466",
         "win_draw_loss": {
-          "home_win": 18,
-          "draw": 20,
-          "away_win": 62
+          "home_win": 18.25,
+          "draw": 19.55,
+          "away_win": 62.2
         },
         "xg_prediction": {
-          "home": 0.9,
-          "away": 2.1
+          "home": 0.8,
+          "away": 1.9
         },
         "predicted_score": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
-        "tactical_matchup": "战术未知，厄瓜多尔善用高原主场优势（本场中立），德国整体实力与大赛经验占优，中场控制是关键。",
+        "tactical_matchup": "双方阵型未知。德国实力占优，厄瓜多尔或采取防守反击。",
         "injury_adjustment": {
-          "home": "可能伤病（来源ESPN报道，但报道主要关于巴西比赛，未明确厄瓜多尔球员）",
-          "away": "可能伤病（来源ESPN报道，但报道主要关于美国队，未明确德国球员）",
-          "summary": "两队均有不确定的伤病报告，信息不明确，影响评估困难。"
+          "home": "伤停情况未知",
+          "away": "伤停情况未知",
+          "summary": "无明确伤病信息。"
         },
-        "risk_analysis": "两队均有不确定伤病，德国作为热门但厄瓜多尔有一定竞争力，平局概率不低。",
-        "upset_probability": 18,
+        "risk_analysis": "德国明显占优，但厄瓜多尔有爆冷能力，平局可能性不低。",
+        "upset_probability": 25,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 17.46,
-            "draw": 19.6,
-            "away_win": 62.93
+            "home_win": 18.25,
+            "draw": 19.55,
+            "away_win": 62.2
           },
           "model_edge": {
-            "home_win": 18,
-            "draw": 20,
-            "away_win": 62
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
-          "deviation_analysis": "模型微调至整数，小幅提升厄瓜多尔胜率与平局，德国胜率略降，考虑伤病不确定性与杯赛冷门可能。"
+          "deviation_analysis": "模型预测与市场一致。"
         },
         "confidence": "medium"
       },
@@ -606,6 +606,13 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
+                "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+                "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+                "published": "2026-06-25T06:17:29Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+              },
+              {
+                "source": "ESPN World Cup news",
                 "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
                 "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
                 "published": "2026-06-25T03:36:14Z",
@@ -617,9 +624,9 @@
         },
         "match_id": "400021473",
         "win_draw_loss": {
-          "home_win": 4,
-          "draw": 9,
-          "away_win": 87
+          "home_win": 3.68,
+          "draw": 8.69,
+          "away_win": 87.63
         },
         "xg_prediction": {
           "home": 0.3,
@@ -629,14 +636,14 @@
           "home": 0,
           "away": 3
         },
-        "tactical_matchup": "战术未知，荷兰全攻全守风格，突尼斯防守反击为主，实力差距明显，荷兰有望早早确立优势。",
+        "tactical_matchup": "阵型未知。荷兰实力碾压，突尼斯难有作为。",
         "injury_adjustment": {
-          "home": "可能伤病（来源ESPN南非胜韩报道，不相关）",
-          "away": "可能伤病（同上）",
-          "summary": "两份伤病报告来源相同且不相关，可信度低，伤病影响未知。"
+          "home": "突尼斯可能存在伤停影响",
+          "away": "荷兰可能存在伤停影响",
+          "summary": "双方都有概率性伤病，但对荷兰影响有限。"
         },
-        "risk_analysis": "荷兰实力绝对优势，但突尼斯上届世界杯有韧性表现，大热必死风险存在。",
-        "upset_probability": 4,
+        "risk_analysis": "荷兰获胜几乎无悬念，关注净胜球。",
+        "upset_probability": 2,
         "odds_comparison": {
           "market_implied": {
             "home_win": 3.68,
@@ -644,13 +651,13 @@
             "away_win": 87.63
           },
           "model_edge": {
-            "home_win": 4,
-            "draw": 9,
-            "away_win": 87
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
-          "deviation_analysis": "模型微调至整数，基本跟随市场，小额提升平局与主胜概率，反映对极高赔率下偶尔偏差的缓冲。"
+          "deviation_analysis": "模型与市场无偏差。"
         },
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "id": "400021471",
@@ -710,22 +717,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-115",
-            "draw": "+255",
-            "away": "+350"
+            "home": "-110",
+            "draw": "+250",
+            "away": "+340"
           },
           "implied_probability": {
-            "home_win": 53.49,
-            "draw": 28.17,
-            "away_win": 22.22
+            "home_win": 52.38,
+            "draw": 28.57,
+            "away_win": 22.73
           },
           "normalized_probability": {
-            "home_win": 51.49,
-            "draw": 27.12,
-            "away_win": 21.39
+            "home_win": 50.52,
+            "draw": 27.56,
+            "away_win": 21.92
           },
-          "overround": 3.88,
-          "details": "JPN -115"
+          "overround": 3.68,
+          "details": "JPN -110"
         },
         "injuries": {
           "home": {
@@ -745,44 +752,44 @@
         },
         "match_id": "400021471",
         "win_draw_loss": {
-          "home_win": 50,
-          "draw": 28,
-          "away_win": 22
+          "home_win": 50.52,
+          "draw": 27.56,
+          "away_win": 21.92
         },
         "xg_prediction": {
-          "home": 1.6,
-          "away": 1.1
+          "home": 1.5,
+          "away": 1.0
         },
         "predicted_score": {
           "home": 2,
           "away": 1
         },
-        "tactical_matchup": "战术未知，日本技术流控球，瑞典身体素质与高空球优势，日本需限制瑞典定位球，整体更看好日本小胜。",
+        "tactical_matchup": "阵型未知。日本技术优势，瑞典身体对抗强，预计激烈。",
         "injury_adjustment": {
-          "home": "未知",
-          "away": "未知",
-          "summary": "无伤病信息。"
+          "home": "伤停情况未知",
+          "away": "伤停情况未知",
+          "summary": "无明确伤病信息。"
         },
-        "risk_analysis": "实力接近，日本稍占优，赔率波动可能反映市场摇摆，临场发挥决定结果。",
-        "upset_probability": 22,
+        "risk_analysis": "日本稍占优，但瑞典有定位球威胁，平局可能。",
+        "upset_probability": 30,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 51.49,
-            "draw": 27.12,
-            "away_win": 21.39
+            "home_win": 50.52,
+            "draw": 27.56,
+            "away_win": 21.92
           },
           "model_edge": {
-            "home_win": 50,
-            "draw": 28,
-            "away_win": 22
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
-          "deviation_analysis": "模型基本吻合市场，略微调低日本胜率，增加平局和瑞典胜率，考虑双方实力均衡，倾向保守。"
+          "deviation_analysis": "模型与市场一致。"
         },
         "confidence": "medium"
       }
     ],
-    "risk_overview": "整体风险较高：两场比赛无赔率参考（南非vs韩国、捷克vs墨西哥）；多场比赛伤病报告来源不明确且交叉引用；科特迪瓦和荷兰场次赔率极度偏向强队，存在大热倒灶可能；德国与日本场次竞争性较强，结果不确定性大。数据质量方面，FIFA与ESPN双源验证可靠，但赔率提供商DraftKings报价仅覆盖4场，且部分伤病新闻关联性低。",
-    "data_quality": "数据源：FIFA官方日历API与ESPN记分板双重验证，均可信。赔率数据由DraftKings提供，仅4场可用，2场无赔率。伤病信息来自ESPN世界杯新闻，但部分提及的比赛与受伤球队不匹配（如厄瓜多尔伤病引自巴西比赛报道），信息有效性存疑。"
+    "risk_overview": "整体风险中等。多场比赛赔率显示强队优势明显，但部分球队存在伤病隐患，冷门可能性不可忽视。已完赛结果墨西哥和南非表现出色。",
+    "data_quality": "数据来源为FIFA官方API及ESPN，赔率来源于DraftKings，伤病信息基于ESPN新闻，存在一定不确定性。"
   },
   "matches": [
     {
@@ -874,21 +881,21 @@
         "away_win": 45
       },
       "xg_prediction": {
-        "home": 1.0,
+        "home": 0.9,
         "away": 1.3
       },
       "predicted_score": {
-        "home": 1,
+        "home": 0,
         "away": 1
       },
-      "tactical_matchup": "南非4-2-3-1阵型对阵韩国3-4-3，南非可能利用中场人数优势控制，韩国边翼卫攻击力强但防守可能留下空当。",
+      "tactical_matchup": "南非4-2-3-1对阵韩国3-4-3。韩国3-4-3注重边翼进攻，南非4-2-3-1中场拦截能力一般，可能被韩国边路突破。但南非防守反击有一定威胁。",
       "injury_adjustment": {
-        "home": "未知",
-        "away": "可能伤病（来源ESPN报道，但具体球员和影响未知）",
-        "summary": "韩国队可能有关键球员受伤，但细节不明，可能影响阵容深度。"
+        "home": "南非伤停情况未知",
+        "away": "韩国可能存在伤停影响",
+        "summary": "韩国队存在概率性伤病，可能影响阵容稳定性，但整体实力仍占优。"
       },
-      "risk_analysis": "赔率数据不可用，韩国队伤病情况不明，比赛结果不确定性高。",
-      "upset_probability": 25,
+      "risk_analysis": "韩国实力占优但存在伤病隐患，南非防守反击可能制造惊喜。",
+      "upset_probability": 30,
       "odds_comparison": {
         "market_implied": {
           "home_win": 0,
@@ -896,11 +903,11 @@
           "away_win": 0
         },
         "model_edge": {
-          "home_win": 25,
-          "draw": 30,
-          "away_win": 45
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
-        "deviation_analysis": "赔率数据不可用，无法进行偏差分析。"
+        "deviation_analysis": "赔率不可用，无法进行赔率偏差分析。"
       },
       "confidence": "low"
     },
@@ -966,15 +973,31 @@
         "home": {
           "team": "捷克",
           "team_en": "Czechia",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+              "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+              "published": "2026-06-25T06:17:29Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "墨西哥",
           "team_en": "Mexico",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+              "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+              "published": "2026-06-25T06:17:29Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       },
@@ -985,21 +1008,21 @@
         "away_win": 65
       },
       "xg_prediction": {
-        "home": 0.7,
-        "away": 2.0
+        "home": 0.6,
+        "away": 1.8
       },
       "predicted_score": {
         "home": 0,
         "away": 2
       },
-      "tactical_matchup": "捷克5-2-3阵型防守为主，墨西哥4-1-2-3攻击阵型，墨西哥主场优势明显，利用边路进攻冲击捷克防线。",
+      "tactical_matchup": "捷克5-2-3对阵墨西哥4-1-2-3。墨西哥主场优势，4-1-2-3攻击力强，捷克5-2-3防守密集但可能无法抵挡墨西哥的攻势。",
       "injury_adjustment": {
-        "home": "未知",
-        "away": "未知",
-        "summary": "双方均无已知伤病信息，可全员出战。"
+        "home": "捷克可能存在伤停影响",
+        "away": "墨西哥可能存在伤停影响",
+        "summary": "双方都有概率性伤病，但墨西哥实力和主场优势明显。"
       },
-      "risk_analysis": "赔率不可用，实力差距明显但缺少市场参照，墨西哥主场氛围可能增加额外压力。",
-      "upset_probability": 15,
+      "risk_analysis": "墨西哥作为东道主之一，优势明显，捷克难以爆冷。",
+      "upset_probability": 20,
       "odds_comparison": {
         "market_implied": {
           "home_win": 0,
@@ -1007,13 +1030,13 @@
           "away_win": 0
         },
         "model_edge": {
-          "home_win": 15,
-          "draw": 20,
-          "away_win": 65
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
-        "deviation_analysis": "赔率数据不可用，无法进行偏差分析。"
+        "deviation_analysis": "赔率不可用，无法分析。"
       },
-      "confidence": "low"
+      "confidence": "medium"
     },
     {
       "id": "400021468",
@@ -1073,22 +1096,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+1800",
-          "draw": "+750",
-          "away": "-650"
+          "home": "+1500",
+          "draw": "+700",
+          "away": "-575"
         },
         "implied_probability": {
-          "home_win": 5.26,
-          "draw": 11.76,
-          "away_win": 86.67
+          "home_win": 6.25,
+          "draw": 12.5,
+          "away_win": 85.19
         },
         "normalized_probability": {
-          "home_win": 5.08,
-          "draw": 11.35,
-          "away_win": 83.58
+          "home_win": 6.01,
+          "draw": 12.03,
+          "away_win": 81.96
         },
-        "overround": 3.69,
-        "details": "CIV -650"
+        "overround": 3.94,
+        "details": "CIV -575"
       },
       "injuries": {
         "home": {
@@ -1108,40 +1131,40 @@
       },
       "match_id": "400021468",
       "win_draw_loss": {
-        "home_win": 5,
-        "draw": 12,
-        "away_win": 83
+        "home_win": 6.01,
+        "draw": 12.03,
+        "away_win": 81.96
       },
       "xg_prediction": {
-        "home": 0.4,
-        "away": 2.6
+        "home": 0.3,
+        "away": 2.3
       },
       "predicted_score": {
         "home": 0,
         "away": 3
       },
-      "tactical_matchup": "战术未知，库拉索整体实力偏弱，科特迪瓦预计主导控球与进攻，边路速度优势明显。",
+      "tactical_matchup": "双方阵型未知。科特迪瓦实力远超库拉索，预计将控制比赛。",
       "injury_adjustment": {
-        "home": "未知",
-        "away": "未知",
-        "summary": "无伤病信息。"
+        "home": "伤停情况未知",
+        "away": "伤停情况未知",
+        "summary": "双方伤病情况不明，对预测影响较小。"
       },
-      "risk_analysis": "科特迪瓦实力碾压，但赔率隐含概率极高（>80%），需考虑高估风险；库拉索作为黑马可能制造意外。",
+      "risk_analysis": "科特迪瓦优势巨大，库拉索爆冷概率极低。",
       "upset_probability": 5,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 5.08,
-          "draw": 11.35,
-          "away_win": 83.58
+          "home_win": 6.01,
+          "draw": 12.03,
+          "away_win": 81.96
         },
         "model_edge": {
-          "home_win": 5,
-          "draw": 12,
-          "away_win": 83
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
-        "deviation_analysis": "模型略微下调科特迪瓦胜率（-0.58%），微调平局与主胜，反映对极端赔率下波动风险的考量。"
+        "deviation_analysis": "模型预测与市场一致，无明显偏离。"
       },
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "id": "400021466",
@@ -1201,89 +1224,73 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+450",
+          "home": "+425",
           "draw": "+390",
-          "away": "-190"
+          "away": "-185"
         },
         "implied_probability": {
-          "home_win": 18.18,
+          "home_win": 19.05,
           "draw": 20.41,
-          "away_win": 65.52
+          "away_win": 64.91
         },
         "normalized_probability": {
-          "home_win": 17.46,
-          "draw": 19.6,
-          "away_win": 62.93
+          "home_win": 18.25,
+          "draw": 19.55,
+          "away_win": 62.2
         },
-        "overround": 4.11,
-        "details": "GER -190"
+        "overround": 4.37,
+        "details": "GER -185"
       },
       "injuries": {
         "home": {
           "team": "厄瓜多尔",
           "team_en": "Ecuador",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Vinícius Júnior leads Brazil rout of Scotland to top group",
-              "description": "Brazil secured the top spot in Group C as Vinícius Júnior inspired them to a 3-0 win over Scotland to leave the Tartan Army's hopes hanging by a thread.",
-              "published": "2026-06-25T01:25:31Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49169585/vinicius-junior-brazil-scotland-fifa-2026-world-cup-knockout"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "德国",
           "team_en": "Germany",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Pochettino won't 'risk' United States players on yellows",
-              "description": "United States manager Mauricio Pochettino said his four players on yellow cards won't start Thursday's match against Türkiye to avoid the possibility of being suspended for the round of 32 match on July 1.",
-              "published": "2026-06-25T01:46:32Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49169923/pochettino-risk-united-states-players-yellows"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       },
       "match_id": "400021466",
       "win_draw_loss": {
-        "home_win": 18,
-        "draw": 20,
-        "away_win": 62
+        "home_win": 18.25,
+        "draw": 19.55,
+        "away_win": 62.2
       },
       "xg_prediction": {
-        "home": 0.9,
-        "away": 2.1
+        "home": 0.8,
+        "away": 1.9
       },
       "predicted_score": {
-        "home": 1,
+        "home": 0,
         "away": 2
       },
-      "tactical_matchup": "战术未知，厄瓜多尔善用高原主场优势（本场中立），德国整体实力与大赛经验占优，中场控制是关键。",
+      "tactical_matchup": "双方阵型未知。德国实力占优，厄瓜多尔或采取防守反击。",
       "injury_adjustment": {
-        "home": "可能伤病（来源ESPN报道，但报道主要关于巴西比赛，未明确厄瓜多尔球员）",
-        "away": "可能伤病（来源ESPN报道，但报道主要关于美国队，未明确德国球员）",
-        "summary": "两队均有不确定的伤病报告，信息不明确，影响评估困难。"
+        "home": "伤停情况未知",
+        "away": "伤停情况未知",
+        "summary": "无明确伤病信息。"
       },
-      "risk_analysis": "两队均有不确定伤病，德国作为热门但厄瓜多尔有一定竞争力，平局概率不低。",
-      "upset_probability": 18,
+      "risk_analysis": "德国明显占优，但厄瓜多尔有爆冷能力，平局可能性不低。",
+      "upset_probability": 25,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 17.46,
-          "draw": 19.6,
-          "away_win": 62.93
+          "home_win": 18.25,
+          "draw": 19.55,
+          "away_win": 62.2
         },
         "model_edge": {
-          "home_win": 18,
-          "draw": 20,
-          "away_win": 62
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
-        "deviation_analysis": "模型微调至整数，小幅提升厄瓜多尔胜率与平局，德国胜率略降，考虑伤病不确定性与杯赛冷门可能。"
+        "deviation_analysis": "模型预测与市场一致。"
       },
       "confidence": "medium"
     },
@@ -1385,6 +1392,13 @@
           "records": [
             {
               "source": "ESPN World Cup news",
+              "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+              "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+              "published": "2026-06-25T06:17:29Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+            },
+            {
+              "source": "ESPN World Cup news",
               "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
               "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
               "published": "2026-06-25T03:36:14Z",
@@ -1396,9 +1410,9 @@
       },
       "match_id": "400021473",
       "win_draw_loss": {
-        "home_win": 4,
-        "draw": 9,
-        "away_win": 87
+        "home_win": 3.68,
+        "draw": 8.69,
+        "away_win": 87.63
       },
       "xg_prediction": {
         "home": 0.3,
@@ -1408,14 +1422,14 @@
         "home": 0,
         "away": 3
       },
-      "tactical_matchup": "战术未知，荷兰全攻全守风格，突尼斯防守反击为主，实力差距明显，荷兰有望早早确立优势。",
+      "tactical_matchup": "阵型未知。荷兰实力碾压，突尼斯难有作为。",
       "injury_adjustment": {
-        "home": "可能伤病（来源ESPN南非胜韩报道，不相关）",
-        "away": "可能伤病（同上）",
-        "summary": "两份伤病报告来源相同且不相关，可信度低，伤病影响未知。"
+        "home": "突尼斯可能存在伤停影响",
+        "away": "荷兰可能存在伤停影响",
+        "summary": "双方都有概率性伤病，但对荷兰影响有限。"
       },
-      "risk_analysis": "荷兰实力绝对优势，但突尼斯上届世界杯有韧性表现，大热必死风险存在。",
-      "upset_probability": 4,
+      "risk_analysis": "荷兰获胜几乎无悬念，关注净胜球。",
+      "upset_probability": 2,
       "odds_comparison": {
         "market_implied": {
           "home_win": 3.68,
@@ -1423,13 +1437,13 @@
           "away_win": 87.63
         },
         "model_edge": {
-          "home_win": 4,
-          "draw": 9,
-          "away_win": 87
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
-        "deviation_analysis": "模型微调至整数，基本跟随市场，小额提升平局与主胜概率，反映对极高赔率下偶尔偏差的缓冲。"
+        "deviation_analysis": "模型与市场无偏差。"
       },
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "id": "400021471",
@@ -1489,22 +1503,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-115",
-          "draw": "+255",
-          "away": "+350"
+          "home": "-110",
+          "draw": "+250",
+          "away": "+340"
         },
         "implied_probability": {
-          "home_win": 53.49,
-          "draw": 28.17,
-          "away_win": 22.22
+          "home_win": 52.38,
+          "draw": 28.57,
+          "away_win": 22.73
         },
         "normalized_probability": {
-          "home_win": 51.49,
-          "draw": 27.12,
-          "away_win": 21.39
+          "home_win": 50.52,
+          "draw": 27.56,
+          "away_win": 21.92
         },
-        "overround": 3.88,
-        "details": "JPN -115"
+        "overround": 3.68,
+        "details": "JPN -110"
       },
       "injuries": {
         "home": {
@@ -1524,38 +1538,38 @@
       },
       "match_id": "400021471",
       "win_draw_loss": {
-        "home_win": 50,
-        "draw": 28,
-        "away_win": 22
+        "home_win": 50.52,
+        "draw": 27.56,
+        "away_win": 21.92
       },
       "xg_prediction": {
-        "home": 1.6,
-        "away": 1.1
+        "home": 1.5,
+        "away": 1.0
       },
       "predicted_score": {
         "home": 2,
         "away": 1
       },
-      "tactical_matchup": "战术未知，日本技术流控球，瑞典身体素质与高空球优势，日本需限制瑞典定位球，整体更看好日本小胜。",
+      "tactical_matchup": "阵型未知。日本技术优势，瑞典身体对抗强，预计激烈。",
       "injury_adjustment": {
-        "home": "未知",
-        "away": "未知",
-        "summary": "无伤病信息。"
+        "home": "伤停情况未知",
+        "away": "伤停情况未知",
+        "summary": "无明确伤病信息。"
       },
-      "risk_analysis": "实力接近，日本稍占优，赔率波动可能反映市场摇摆，临场发挥决定结果。",
-      "upset_probability": 22,
+      "risk_analysis": "日本稍占优，但瑞典有定位球威胁，平局可能。",
+      "upset_probability": 30,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 51.49,
-          "draw": 27.12,
-          "away_win": 21.39
+          "home_win": 50.52,
+          "draw": 27.56,
+          "away_win": 21.92
         },
         "model_edge": {
-          "home_win": 50,
-          "draw": 28,
-          "away_win": 22
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
-        "deviation_analysis": "模型基本吻合市场，略微调低日本胜率，增加平局和瑞典胜率，考虑双方实力均衡，倾向保守。"
+        "deviation_analysis": "模型与市场一致。"
       },
       "confidence": "medium"
     }
@@ -1563,7 +1577,7 @@
   "research": {
     "schema_version": 3,
     "stage": "research",
-    "generated_at": "2026-06-25T04:53:45Z",
+    "generated_at": "2026-06-25T10:58:43Z",
     "window": {
       "start_date": "2026-06-25",
       "days": 1,
@@ -1777,15 +1791,31 @@
           "home": {
             "team": "捷克",
             "team_en": "Czechia",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+                "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+                "published": "2026-06-25T06:17:29Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "墨西哥",
             "team_en": "Mexico",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+                "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+                "published": "2026-06-25T06:17:29Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -1860,22 +1890,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+1800",
-            "draw": "+750",
-            "away": "-650"
+            "home": "+1500",
+            "draw": "+700",
+            "away": "-575"
           },
           "implied_probability": {
-            "home_win": 5.26,
-            "draw": 11.76,
-            "away_win": 86.67
+            "home_win": 6.25,
+            "draw": 12.5,
+            "away_win": 85.19
           },
           "normalized_probability": {
-            "home_win": 5.08,
-            "draw": 11.35,
-            "away_win": 83.58
+            "home_win": 6.01,
+            "draw": 12.03,
+            "away_win": 81.96
           },
-          "overround": 3.69,
-          "details": "CIV -650"
+          "overround": 3.94,
+          "details": "CIV -575"
         },
         "injuries": {
           "home": {
@@ -1964,52 +1994,36 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+450",
+            "home": "+425",
             "draw": "+390",
-            "away": "-190"
+            "away": "-185"
           },
           "implied_probability": {
-            "home_win": 18.18,
+            "home_win": 19.05,
             "draw": 20.41,
-            "away_win": 65.52
+            "away_win": 64.91
           },
           "normalized_probability": {
-            "home_win": 17.46,
-            "draw": 19.6,
-            "away_win": 62.93
+            "home_win": 18.25,
+            "draw": 19.55,
+            "away_win": 62.2
           },
-          "overround": 4.11,
-          "details": "GER -190"
+          "overround": 4.37,
+          "details": "GER -185"
         },
         "injuries": {
           "home": {
             "team": "厄瓜多尔",
             "team_en": "Ecuador",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Vinícius Júnior leads Brazil rout of Scotland to top group",
-                "description": "Brazil secured the top spot in Group C as Vinícius Júnior inspired them to a 3-0 win over Scotland to leave the Tartan Army's hopes hanging by a thread.",
-                "published": "2026-06-25T01:25:31Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49169585/vinicius-junior-brazil-scotland-fifa-2026-world-cup-knockout"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "德国",
             "team_en": "Germany",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Pochettino won't 'risk' United States players on yellows",
-                "description": "United States manager Mauricio Pochettino said his four players on yellow cards won't start Thursday's match against Türkiye to avoid the possibility of being suspended for the round of 32 match on July 1.",
-                "published": "2026-06-25T01:46:32Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49169923/pochettino-risk-united-states-players-yellows"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -2124,6 +2138,13 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
+                "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+                "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+                "published": "2026-06-25T06:17:29Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+              },
+              {
+                "source": "ESPN World Cup news",
                 "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
                 "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
                 "published": "2026-06-25T03:36:14Z",
@@ -2204,22 +2225,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-115",
-            "draw": "+255",
-            "away": "+350"
+            "home": "-110",
+            "draw": "+250",
+            "away": "+340"
           },
           "implied_probability": {
-            "home_win": 53.49,
-            "draw": 28.17,
-            "away_win": 22.22
+            "home_win": 52.38,
+            "draw": 28.57,
+            "away_win": 22.73
           },
           "normalized_probability": {
-            "home_win": 51.49,
-            "draw": 27.12,
-            "away_win": 21.39
+            "home_win": 50.52,
+            "draw": 27.56,
+            "away_win": 21.92
           },
-          "overround": 3.88,
-          "details": "JPN -115"
+          "overround": 3.68,
+          "details": "JPN -110"
         },
         "injuries": {
           "home": {
@@ -2409,15 +2430,31 @@
           "home": {
             "team": "捷克",
             "team_en": "Czechia",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+                "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+                "published": "2026-06-25T06:17:29Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "墨西哥",
             "team_en": "Mexico",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+                "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+                "published": "2026-06-25T06:17:29Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -2492,22 +2529,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+1800",
-            "draw": "+750",
-            "away": "-650"
+            "home": "+1500",
+            "draw": "+700",
+            "away": "-575"
           },
           "implied_probability": {
-            "home_win": 5.26,
-            "draw": 11.76,
-            "away_win": 86.67
+            "home_win": 6.25,
+            "draw": 12.5,
+            "away_win": 85.19
           },
           "normalized_probability": {
-            "home_win": 5.08,
-            "draw": 11.35,
-            "away_win": 83.58
+            "home_win": 6.01,
+            "draw": 12.03,
+            "away_win": 81.96
           },
-          "overround": 3.69,
-          "details": "CIV -650"
+          "overround": 3.94,
+          "details": "CIV -575"
         },
         "injuries": {
           "home": {
@@ -2596,52 +2633,36 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+450",
+            "home": "+425",
             "draw": "+390",
-            "away": "-190"
+            "away": "-185"
           },
           "implied_probability": {
-            "home_win": 18.18,
+            "home_win": 19.05,
             "draw": 20.41,
-            "away_win": 65.52
+            "away_win": 64.91
           },
           "normalized_probability": {
-            "home_win": 17.46,
-            "draw": 19.6,
-            "away_win": 62.93
+            "home_win": 18.25,
+            "draw": 19.55,
+            "away_win": 62.2
           },
-          "overround": 4.11,
-          "details": "GER -190"
+          "overround": 4.37,
+          "details": "GER -185"
         },
         "injuries": {
           "home": {
             "team": "厄瓜多尔",
             "team_en": "Ecuador",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Vinícius Júnior leads Brazil rout of Scotland to top group",
-                "description": "Brazil secured the top spot in Group C as Vinícius Júnior inspired them to a 3-0 win over Scotland to leave the Tartan Army's hopes hanging by a thread.",
-                "published": "2026-06-25T01:25:31Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49169585/vinicius-junior-brazil-scotland-fifa-2026-world-cup-knockout"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "德国",
             "team_en": "Germany",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Pochettino won't 'risk' United States players on yellows",
-                "description": "United States manager Mauricio Pochettino said his four players on yellow cards won't start Thursday's match against Türkiye to avoid the possibility of being suspended for the round of 32 match on July 1.",
-                "published": "2026-06-25T01:46:32Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49169923/pochettino-risk-united-states-players-yellows"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -2756,6 +2777,13 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
+                "title": "Aguirre's pragmatic Mexico has its doubters, but is built for World Cup success",
+                "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
+                "published": "2026-06-25T06:17:29Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
+              },
+              {
+                "source": "ESPN World Cup news",
                 "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
                 "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
                 "published": "2026-06-25T03:36:14Z",
@@ -2836,22 +2864,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-115",
-            "draw": "+255",
-            "away": "+350"
+            "home": "-110",
+            "draw": "+250",
+            "away": "+340"
           },
           "implied_probability": {
-            "home_win": 53.49,
-            "draw": 28.17,
-            "away_win": 22.22
+            "home_win": 52.38,
+            "draw": 28.57,
+            "away_win": 22.73
           },
           "normalized_probability": {
-            "home_win": 51.49,
-            "draw": 27.12,
-            "away_win": 21.39
+            "home_win": 50.52,
+            "draw": 27.56,
+            "away_win": 21.92
           },
-          "overround": 3.88,
-          "details": "JPN -115"
+          "overround": 3.68,
+          "details": "JPN -110"
         },
         "injuries": {
           "home": {
@@ -2873,17 +2901,17 @@
     ],
     "daily_log": [
       {
-        "time": "2026-06-25T04:53:45Z",
+        "time": "2026-06-25T10:58:43Z",
         "stage": "08:15 automatic FIFA schedule + injury + odds research",
         "status": "completed"
       }
     ]
   },
   "usage": {
-    "input_tokens": 10949,
-    "output_tokens": 8152,
-    "total_tokens": 19101,
-    "cost_estimate": 0.19101
+    "input_tokens": 11231,
+    "output_tokens": 7145,
+    "total_tokens": 18376,
+    "cost_estimate": 0.18376
   },
   "analysis_model": "deepseek-v4-pro",
   "model": {
@@ -2897,12 +2925,12 @@
   },
   "daily_log": [
     {
-      "time": "2026-06-25T04:53:45Z",
+      "time": "2026-06-25T10:58:43Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research",
       "status": "completed"
     },
     {
-      "time": "2026-06-25T04:56:40Z",
+      "time": "2026-06-25T11:01:50Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     }
