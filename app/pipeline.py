@@ -234,9 +234,14 @@ def normalize_team(name: str | None) -> str:
     ascii_name = unicodedata.normalize("NFKD", name).encode("ascii", "ignore").decode("ascii")
     cleaned = re.sub(r"[^a-z0-9]+", " ", ascii_name.lower()).strip()
     aliases = {
-        "us": "usa",
-        "u s": "usa",
+        "us": "united states",
+        "u s": "united states",
+        "usa": "united states",
         "united states of america": "united states",
+        "ir iran": "iran",
+        "i r iran": "iran",
+        "iran islamic republic of": "iran",
+        "islamic republic of iran": "iran",
         "korea": "south korea",
         "korea republic": "south korea",
         "republic of korea": "south korea",
