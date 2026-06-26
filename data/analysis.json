@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
   "stage": "analysis",
-  "generated_at": "2026-06-25T14:05:48Z",
+  "generated_at": "2026-06-26T01:27:42Z",
   "analysis": {
-    "generated_at": "2026-06-25T13:59:04Z",
-    "summary": "本分析覆盖2026年6月25日至27日的12场世界杯小组赛，基于 DraftKings 赔率经去 overround 归一化后的概率，结合有限的伤病信息（大部分未知），生成胜平负概率、预期进球、比分预测及风险评估。强队如荷兰、比利时、塞内加尔优势明显，但日本对瑞典、巴拉圭对澳大利亚等比赛实力接近，不确定性高。伤病数据极度缺乏，影响预测精度。",
+    "generated_at": "2026-06-26T01:19:53Z",
+    "summary": "本窗口涵盖2026年6月25日至27日（北京时间）世界杯小组赛第一轮12场比赛分析。其中4场已完赛，8场即将进行。传统强队如法国、比利时、西班牙、美国、塞内加尔均被市场看好；重点关注埃及vs伊朗、佛得角vs沙特阿拉伯等势均力敌的较量。伤病情况普遍未知，需赛前进一步核实。",
     "matches": [
       {
         "id": "400021468",
@@ -18,9 +18,9 @@
         "group": "Group E",
         "match_number": 55,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -60,26 +60,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+1400",
-            "draw": "+700",
-            "away": "-550"
-          },
-          "implied_probability": {
-            "home_win": 6.67,
-            "draw": 12.5,
-            "away_win": 84.62
-          },
-          "normalized_probability": {
-            "home_win": 6.42,
-            "draw": 12.04,
-            "away_win": 81.53
-          },
-          "overround": 3.78,
-          "details": "CIV -550"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -99,38 +82,38 @@
         },
         "match_id": "400021468",
         "win_draw_loss": {
-          "home_win": 6.43,
-          "draw": 12.04,
-          "away_win": 81.53
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 100
         },
         "xg_prediction": {
-          "home": 0.6,
-          "away": 2.8
+          "home": 0.0,
+          "away": 0.0
         },
         "predicted_score": {
           "home": 0,
-          "away": 3
+          "away": 2
         },
-        "tactical_matchup": "科特迪瓦实力占优，凭借多名欧洲联赛球员在身体对抗和速度上具有明显优势，库拉索整体实力较弱，预计将采取密集防守与快速反击。",
+        "tactical_matchup": "库拉索采用5-4-1防守阵型，试图限制科特迪瓦的进攻；科特迪瓦利用4-1-2-3阵型掌控中场并制造边路威胁。实际结果科特迪瓦2-0获胜，体现了实力差距。",
         "injury_adjustment": {
-          "home": "库拉索队内伤病情况未知",
-          "away": "科特迪瓦队内伤病情况未知",
-          "summary": "两队均无可用伤病信息，不做阵容调整"
+          "home": "伤停情况未知",
+          "away": "伤停情况未知",
+          "summary": "两队伤病情况未知，分析基于完整阵容假设。"
         },
-        "risk_analysis": "科特迪瓦胜率极高，几乎无悬念；唯一风险在于科特迪瓦可能因轻敌或战术不当未能攻破密集防守，但库拉索爆冷概率极低。",
-        "upset_probability": 6,
+        "risk_analysis": "本场为已完赛比赛，科特迪瓦凭借实力优势2-0取胜，无额外风险因素。",
+        "upset_probability": 0,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 6.67,
-            "draw": 12.5,
-            "away_win": 84.62
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
           "model_edge": {
-            "home_win": 6.43,
-            "draw": 12.04,
-            "away_win": 81.53
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
-          "deviation_analysis": "模型概率较市场隐含概率整体下调，主要去除了约3.78%的overround，各结果概率均小幅降低，差值约0.2～3.1个百分点。"
+          "deviation_analysis": "赔率数据不可用。"
         },
         "confidence": "high"
       },
@@ -146,9 +129,9 @@
         "group": "Group E",
         "match_number": 56,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -188,26 +171,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+400",
-            "draw": "+360",
-            "away": "-165"
-          },
-          "implied_probability": {
-            "home_win": 20.0,
-            "draw": 21.74,
-            "away_win": 62.26
-          },
-          "normalized_probability": {
-            "home_win": 19.23,
-            "draw": 20.9,
-            "away_win": 59.87
-          },
-          "overround": 4.0,
-          "details": "GER -165"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -227,40 +193,40 @@
         },
         "match_id": "400021466",
         "win_draw_loss": {
-          "home_win": 19.23,
-          "draw": 20.9,
-          "away_win": 59.87
+          "home_win": 100,
+          "draw": 0,
+          "away_win": 0
         },
         "xg_prediction": {
-          "home": 1.0,
-          "away": 2.0
+          "home": 0.0,
+          "away": 0.0
         },
         "predicted_score": {
-          "home": 1,
-          "away": 2
+          "home": 2,
+          "away": 1
         },
-        "tactical_matchup": "德国队传统控球进攻，厄瓜多尔擅长防守反击，比赛在中立场地进行，速度与对抗将影响节奏。",
+        "tactical_matchup": "厄瓜多尔采用4-4-2平衡阵型，利用快速反击取得成效；德国4-2-3-1控球占优但防守失误导致失利。",
         "injury_adjustment": {
-          "home": "厄瓜多尔队内伤病情况未知",
-          "away": "德国队内伤病情况未知",
-          "summary": "两队均无伤病报告"
+          "home": "伤停情况未知",
+          "away": "伤停情况未知",
+          "summary": "两队伤病情况未知，分析基于完整阵容假设。"
         },
-        "risk_analysis": "德国实力占优但并非绝对碾压，厄瓜多尔有一定抵抗力；若德国无法把握机会，存在平局风险。",
-        "upset_probability": 19,
+        "risk_analysis": "已完赛，厄瓜多尔爆冷2-1击败德国，凸显世界杯不确定性。",
+        "upset_probability": 100,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 20.0,
-            "draw": 21.74,
-            "away_win": 62.26
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
           "model_edge": {
-            "home_win": 19.23,
-            "draw": 20.9,
-            "away_win": 59.87
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
-          "deviation_analysis": "模型概率较市场略有下调，主胜和平局微幅下降，客胜下调约2.4个百分点，反映去除4.0% overround。"
+          "deviation_analysis": "赔率数据不可用。"
         },
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "id": "400021473",
@@ -274,9 +240,9 @@
         "group": "Group F",
         "match_number": 58,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 2,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -316,100 +282,60 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+2500",
-            "draw": "+950",
-            "away": "-1000"
-          },
-          "implied_probability": {
-            "home_win": 3.85,
-            "draw": 9.52,
-            "away_win": 90.91
-          },
-          "normalized_probability": {
-            "home_win": 3.69,
-            "draw": 9.13,
-            "away_win": 87.18
-          },
-          "overround": 4.28,
-          "details": "NED -1000"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "突尼斯",
             "team_en": "Tunisia",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
-                "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
-                "published": "2026-06-25T03:36:14Z",
-                "url": "https://www.espn.com/espn/story/_/id/49171857/relebohile-mofokeng-proves-made-main-stage-bafana-big-win"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "荷兰",
             "team_en": "Netherlands",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Aguirre's pragmatic Mexico has its doubters, but it is built for World Cup success",
-                "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
-                "published": "2026-06-25T11:24:06Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
-                "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
-                "published": "2026-06-25T03:36:14Z",
-                "url": "https://www.espn.com/espn/story/_/id/49171857/relebohile-mofokeng-proves-made-main-stage-bafana-big-win"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         },
         "match_id": "400021473",
         "win_draw_loss": {
-          "home_win": 3.69,
-          "draw": 9.13,
-          "away_win": 87.18
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 100
         },
         "xg_prediction": {
-          "home": 0.3,
-          "away": 3.2
+          "home": 0.0,
+          "away": 0.0
         },
         "predicted_score": {
-          "home": 0,
+          "home": 1,
           "away": 3
         },
-        "tactical_matchup": "荷兰实力强大，注重传控与进攻宽度；突尼斯防守顽强，但面对强敌可能难以招架。",
+        "tactical_matchup": "突尼斯5-4-1防守阵型未能抵挡荷兰4-1-2-3的强力冲击，荷兰边中结合效率高，轻松取胜。",
         "injury_adjustment": {
-          "home": "突尼斯存在潜在伤病（具体球员未知）",
-          "away": "荷兰存在潜在伤病（具体球员未知）",
-          "summary": "两队均报有潜在伤病，但无具体名单，整体影响难以评估，不做显著调整。"
+          "home": "伤停情况未知",
+          "away": "伤停情况未知",
+          "summary": "两队伤病情况未知，分析基于完整阵容假设。"
         },
-        "risk_analysis": "荷兰实力碾压，胜率极高；主要风险是自身可能轮换或伤病影响配合，但即使如此仍应轻松取胜。",
-        "upset_probability": 4,
+        "risk_analysis": "已完赛，荷兰3-1获胜，突尼斯防守未能顶住压力。",
+        "upset_probability": 0,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 3.85,
-            "draw": 9.52,
-            "away_win": 90.91
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
           "model_edge": {
-            "home_win": 3.69,
-            "draw": 9.13,
-            "away_win": 87.18
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
-          "deviation_analysis": "模型概率较市场下调，去除了约4.28%的overround，客胜概率降低3.73个百分点。"
+          "deviation_analysis": "赔率数据不可用。"
         },
         "confidence": "high"
       },
@@ -425,9 +351,9 @@
         "group": "Group F",
         "match_number": 57,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 2,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -467,26 +393,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-110",
-            "draw": "+245",
-            "away": "+320"
-          },
-          "implied_probability": {
-            "home_win": 52.38,
-            "draw": 28.99,
-            "away_win": 23.81
-          },
-          "normalized_probability": {
-            "home_win": 49.8,
-            "draw": 27.56,
-            "away_win": 22.64
-          },
-          "overround": 5.18,
-          "details": "JPN -110"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -506,40 +415,40 @@
         },
         "match_id": "400021471",
         "win_draw_loss": {
-          "home_win": 49.8,
-          "draw": 27.56,
-          "away_win": 22.64
+          "home_win": 0,
+          "draw": 100,
+          "away_win": 0
         },
         "xg_prediction": {
-          "home": 1.6,
-          "away": 1.1
+          "home": 0.0,
+          "away": 0.0
         },
         "predicted_score": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
-        "tactical_matchup": "日本技术细腻，控球能力突出；瑞典身体对抗出色，擅长定位球，预计比赛激烈且节奏较快。",
+        "tactical_matchup": "日本与瑞典均采用3-4-3阵型，中场缠斗激烈，双方均未创造出绝对机会，1-1平局合理。",
         "injury_adjustment": {
-          "home": "日本队内伤病情况未知",
-          "away": "瑞典队内伤病情况未知",
-          "summary": "两队均无伤病报告"
+          "home": "伤停情况未知",
+          "away": "伤停情况未知",
+          "summary": "两队伤病情况未知，分析基于完整阵容假设。"
         },
-        "risk_analysis": "双方实力接近，日本略占优势但瑞典反击高效，胜负不确定性大，平局可能性不低。",
-        "upset_probability": 23,
+        "risk_analysis": "已完赛，日本与瑞典1-1战平，双方机会均等。",
+        "upset_probability": 0,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 52.38,
-            "draw": 28.99,
-            "away_win": 23.81
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
           "model_edge": {
-            "home_win": 49.8,
-            "draw": 27.56,
-            "away_win": 22.64
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
-          "deviation_analysis": "模型概率整体低于市场，主胜下调约2.6个百分点，反映了5.18%的高overround。"
+          "deviation_analysis": "赔率数据不可用。"
         },
-        "confidence": "low"
+        "confidence": "high"
       },
       {
         "id": "400021461",
@@ -599,22 +508,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+165",
-            "draw": "+130",
-            "away": "+330"
+            "home": "+160",
+            "draw": "+135",
+            "away": "+320"
           },
           "implied_probability": {
-            "home_win": 37.74,
-            "draw": 43.48,
-            "away_win": 23.26
+            "home_win": 38.46,
+            "draw": 42.55,
+            "away_win": 23.81
           },
           "normalized_probability": {
-            "home_win": 36.12,
-            "draw": 41.62,
-            "away_win": 22.26
+            "home_win": 36.69,
+            "draw": 40.59,
+            "away_win": 22.71
           },
-          "overround": 4.47,
-          "details": "PAR +165"
+          "overround": 4.82,
+          "details": "PAR +160"
         },
         "injuries": {
           "home": {
@@ -634,40 +543,40 @@
         },
         "match_id": "400021461",
         "win_draw_loss": {
-          "home_win": 36.12,
-          "draw": 41.62,
-          "away_win": 22.26
+          "home_win": 37,
+          "draw": 40,
+          "away_win": 23
         },
         "xg_prediction": {
-          "home": 1.3,
+          "home": 1.1,
           "away": 0.9
         },
         "predicted_score": {
           "home": 1,
           "away": 1
         },
-        "tactical_matchup": "巴拉圭防守稳固，澳大利亚身体优势明显，可能采取高空轰炸，双方整体实力相当。",
+        "tactical_matchup": "由于缺少两队阵型信息，战术对位分析受限。预计巴拉圭主场采取相对保守策略，澳大利亚则利用身体对抗寻求机会。",
         "injury_adjustment": {
-          "home": "巴拉圭队内伤病情况未知",
-          "away": "澳大利亚队内伤病情况未知",
-          "summary": "两队均无伤病报告"
+          "home": "伤停情况未知",
+          "away": "伤停情况未知",
+          "summary": "两队伤病情况未知，分析基于完整阵容假设。"
         },
-        "risk_analysis": "双方均无明显优势，平局可能性最高；任意一方稍占上风即可改变局势，变数较大。",
-        "upset_probability": 22,
+        "risk_analysis": "赔率显示双方实力接近，平局概率最高。澳大利亚客场作战可能立足防守。低比分平局可能性大。",
+        "upset_probability": 23,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 37.74,
-            "draw": 43.48,
-            "away_win": 23.26
+            "home_win": 36.69,
+            "draw": 40.59,
+            "away_win": 22.71
           },
           "model_edge": {
-            "home_win": 36.12,
-            "draw": 41.62,
-            "away_win": 22.26
+            "home_win": 0.31,
+            "draw": -0.59,
+            "away_win": 0.29
           },
-          "deviation_analysis": "模型概率略低于市场，去除了4.47%的overround，平局下调1.86个百分点。"
+          "deviation_analysis": "模型与市场赔率基本一致，巴拉圭小有优势，平局与客胜偏差极小。"
         },
-        "confidence": "low"
+        "confidence": "medium"
       },
       {
         "id": "400021459",
@@ -727,22 +636,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+280",
-            "draw": "+300",
-            "away": "-115"
+            "home": "+260",
+            "draw": "+290",
+            "away": "-105"
           },
           "implied_probability": {
-            "home_win": 26.32,
-            "draw": 25.0,
-            "away_win": 53.49
+            "home_win": 27.78,
+            "draw": 25.64,
+            "away_win": 51.22
           },
           "normalized_probability": {
-            "home_win": 25.11,
-            "draw": 23.85,
-            "away_win": 51.04
+            "home_win": 26.55,
+            "draw": 24.5,
+            "away_win": 48.95
           },
-          "overround": 4.8,
-          "details": "USA -115"
+          "overround": 4.64,
+          "details": "USA -105"
         },
         "injuries": {
           "home": {
@@ -762,9 +671,9 @@
         },
         "match_id": "400021459",
         "win_draw_loss": {
-          "home_win": 25.11,
-          "draw": 23.85,
-          "away_win": 51.04
+          "home_win": 27,
+          "draw": 24,
+          "away_win": 49
         },
         "xg_prediction": {
           "home": 1.0,
@@ -774,28 +683,28 @@
           "home": 1,
           "away": 2
         },
-        "tactical_matchup": "美国队作为东道主拥有一定优势，整体实力稍强；土耳其韧性十足，对抗激烈。",
+        "tactical_matchup": "土耳其采用4-2-3-1阵型，注重中场控制；美国4-1-2-3攻击型阵型，利用速度和宽度。美国整体实力占优，有望压制土耳其防线。",
         "injury_adjustment": {
-          "home": "土耳其队内伤病情况未知",
-          "away": "美国队内伤病情况未知",
-          "summary": "两队均无伤病报告"
+          "home": "伤停情况未知",
+          "away": "伤停情况未知",
+          "summary": "两队伤病情况未知，分析基于完整阵容假设。"
         },
-        "risk_analysis": "美国队被市场看好但优势有限，土耳其有机会取得好结果；比赛可能胶着，平局不可忽视。",
-        "upset_probability": 25,
+        "risk_analysis": "美国为明显优势方，但客场作战仍存变数。土耳其坐拥主场可能给美国制造麻烦，但净胜球预期差距不大。",
+        "upset_probability": 27,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 26.32,
-            "draw": 25.0,
-            "away_win": 53.49
+            "home_win": 26.55,
+            "draw": 24.5,
+            "away_win": 48.95
           },
           "model_edge": {
-            "home_win": 25.11,
-            "draw": 23.85,
-            "away_win": 51.04
+            "home_win": 0.45,
+            "draw": -0.5,
+            "away_win": 0.05
           },
-          "deviation_analysis": "模型概率低于市场，去除4.8%的overround，客胜下调2.45个百分点。"
+          "deviation_analysis": "模型略微提升土耳其获胜概率，但总体与市场一致。"
         },
-        "confidence": "low"
+        "confidence": "medium"
       },
       {
         "id": "400021493",
@@ -855,22 +764,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-450",
-            "draw": "+600",
+            "home": "-425",
+            "draw": "+550",
             "away": "+1100"
           },
           "implied_probability": {
-            "home_win": 81.82,
-            "draw": 14.29,
+            "home_win": 80.95,
+            "draw": 15.38,
             "away_win": 8.33
           },
           "normalized_probability": {
-            "home_win": 78.34,
-            "draw": 13.68,
-            "away_win": 7.98
+            "home_win": 77.34,
+            "draw": 14.7,
+            "away_win": 7.96
           },
-          "overround": 4.44,
-          "details": "SEN -450"
+          "overround": 4.67,
+          "details": "SEN -425"
         },
         "injuries": {
           "home": {
@@ -890,9 +799,9 @@
         },
         "match_id": "400021493",
         "win_draw_loss": {
-          "home_win": 78.34,
-          "draw": 13.68,
-          "away_win": 7.98
+          "home_win": 77,
+          "draw": 15,
+          "away_win": 8
         },
         "xg_prediction": {
           "home": 2.5,
@@ -902,28 +811,28 @@
           "home": 2,
           "away": 0
         },
-        "tactical_matchup": "塞内加尔身体素质出众，整体实力远超伊拉克；伊拉克可能采取密集防守，但恐难抵挡。",
+        "tactical_matchup": "两队阵型未知，塞内加尔作为非洲劲旅实力远超伊拉克，预计控制比赛节奏，伊拉克将严防死守。",
         "injury_adjustment": {
-          "home": "塞内加尔队内伤病情况未知",
-          "away": "伊拉克队内伤病情况未知",
-          "summary": "两队均无伤病报告"
+          "home": "伤停情况未知",
+          "away": "伤停情况未知",
+          "summary": "两队伤病情况未知，分析基于完整阵容假设。"
         },
-        "risk_analysis": "塞内加尔实力碾压，取胜几无悬念；仅存风险是自身状态不佳或轻敌。",
-        "upset_probability": 8,
+        "risk_analysis": "塞内加尔大热，但世界杯常有冷门，伊拉克可能摆大巴，需防平局。但概率极低。",
+        "upset_probability": 23,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 81.82,
-            "draw": 14.29,
-            "away_win": 8.33
+            "home_win": 77.34,
+            "draw": 14.7,
+            "away_win": 7.96
           },
           "model_edge": {
-            "home_win": 78.34,
-            "draw": 13.68,
-            "away_win": 7.98
+            "home_win": -0.34,
+            "draw": 0.3,
+            "away_win": 0.04
           },
-          "deviation_analysis": "模型概率大幅低于市场，主胜下调约3.5个百分点，去除了4.44%的overround。"
+          "deviation_analysis": "模型与市场高度一致，无明显偏差。"
         },
-        "confidence": "high"
+        "confidence": "medium"
       },
       {
         "id": "400021489",
@@ -983,22 +892,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+400",
-            "draw": "+340",
-            "away": "-160"
+            "home": "+425",
+            "draw": "+370",
+            "away": "-175"
           },
           "implied_probability": {
-            "home_win": 20.0,
-            "draw": 22.73,
-            "away_win": 61.54
+            "home_win": 19.05,
+            "draw": 21.28,
+            "away_win": 63.64
           },
           "normalized_probability": {
-            "home_win": 19.18,
-            "draw": 21.8,
-            "away_win": 59.02
+            "home_win": 18.32,
+            "draw": 20.47,
+            "away_win": 61.21
           },
-          "overround": 4.27,
-          "details": "FRA -160"
+          "overround": 3.96,
+          "details": "FRA -175"
         },
         "injuries": {
           "home": {
@@ -1018,38 +927,38 @@
         },
         "match_id": "400021489",
         "win_draw_loss": {
-          "home_win": 19.18,
-          "draw": 21.8,
-          "away_win": 59.02
+          "home_win": 18,
+          "draw": 21,
+          "away_win": 61
         },
         "xg_prediction": {
-          "home": 1.0,
-          "away": 2.0
+          "home": 0.8,
+          "away": 2.2
         },
         "predicted_score": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
-        "tactical_matchup": "法国拥有顶尖攻击线，整体实力占优；挪威依赖哈兰德等明星球员，可能通过反击制造威胁。",
+        "tactical_matchup": "阵型未知，法国作为卫冕冠军实力占优，挪威需要依赖定位球和反击制造威胁。",
         "injury_adjustment": {
-          "home": "挪威队内伤病情况未知",
-          "away": "法国队内伤病情况未知",
-          "summary": "两队均无伤病报告"
+          "home": "伤停情况未知",
+          "away": "伤停情况未知",
+          "summary": "两队伤病情况未知，分析基于完整阵容假设。"
         },
-        "risk_analysis": "法国实力占优但挪威有爆冷潜力，哈兰德个人能力突出，法国需防范防守反击。",
-        "upset_probability": 19,
+        "risk_analysis": "法国客场仍被市场看好，挪威主场优势难以弥补实力差距。若法国慢热，平局有一定概率。",
+        "upset_probability": 39,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 20.0,
-            "draw": 22.73,
-            "away_win": 61.54
+            "home_win": 18.32,
+            "draw": 20.47,
+            "away_win": 61.21
           },
           "model_edge": {
-            "home_win": 19.18,
-            "draw": 21.8,
-            "away_win": 59.02
+            "home_win": -0.32,
+            "draw": 0.53,
+            "away_win": -0.21
           },
-          "deviation_analysis": "模型概率较市场略微下调，去除4.27%的overround，客胜下调2.52个百分点。"
+          "deviation_analysis": "模型小幅提升平局概率，反映挪威主场韧性，但整体方向与市场一致。"
         },
         "confidence": "medium"
       },
@@ -1111,22 +1020,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+650",
-            "draw": "+320",
-            "away": "-205"
+            "home": "+700",
+            "draw": "+330",
+            "away": "-215"
           },
           "implied_probability": {
-            "home_win": 13.33,
-            "draw": 23.81,
-            "away_win": 67.21
+            "home_win": 12.5,
+            "draw": 23.26,
+            "away_win": 68.25
           },
           "normalized_probability": {
-            "home_win": 12.78,
-            "draw": 22.82,
-            "away_win": 64.41
+            "home_win": 12.02,
+            "draw": 22.36,
+            "away_win": 65.62
           },
-          "overround": 4.36,
-          "details": "ESP -205"
+          "overround": 4.01,
+          "details": "ESP -215"
         },
         "injuries": {
           "home": {
@@ -1146,38 +1055,38 @@
         },
         "match_id": "400021484",
         "win_draw_loss": {
-          "home_win": 12.78,
-          "draw": 22.81,
-          "away_win": 64.41
+          "home_win": 12,
+          "draw": 22,
+          "away_win": 66
         },
         "xg_prediction": {
-          "home": 0.7,
-          "away": 2.5
+          "home": 0.5,
+          "away": 2.0
         },
         "predicted_score": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
-        "tactical_matchup": "西班牙传控细腻，乌拉圭防守硬朗，风格对比鲜明，西班牙控球优势明显。",
+        "tactical_matchup": "阵型未知，西班牙传控优势明显，乌拉圭以防守反击著称，可能利用定位球威胁。",
         "injury_adjustment": {
-          "home": "乌拉圭队内伤病情况未知",
-          "away": "西班牙队内伤病情况未知",
-          "summary": "两队均无伤病报告"
+          "home": "伤停情况未知",
+          "away": "伤停情况未知",
+          "summary": "两队伤病情况未知，分析基于完整阵容假设。"
         },
-        "risk_analysis": "西班牙实力明显占优，但乌拉圭防守坚韧，存在逼平可能；若西班牙久攻不下，可能陷入苦战。",
-        "upset_probability": 13,
+        "risk_analysis": "西班牙实力占优，但乌拉圭拥有丰富大赛经验，平局概率不容忽视。",
+        "upset_probability": 34,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 13.33,
-            "draw": 23.81,
-            "away_win": 67.21
+            "home_win": 12.02,
+            "draw": 22.36,
+            "away_win": 65.62
           },
           "model_edge": {
-            "home_win": 12.78,
-            "draw": 22.81,
-            "away_win": 64.41
+            "home_win": -0.02,
+            "draw": -0.36,
+            "away_win": 0.38
           },
-          "deviation_analysis": "模型概率略低于市场，去除4.36%的overround，客胜下调2.8个百分点。"
+          "deviation_analysis": "模型略微提升西班牙胜率，基本与市场一致。"
         },
         "confidence": "medium"
       },
@@ -1239,22 +1148,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+155",
+            "home": "+165",
             "draw": "+235",
-            "away": "+185"
+            "away": "+170"
           },
           "implied_probability": {
-            "home_win": 39.22,
+            "home_win": 37.74,
             "draw": 29.85,
-            "away_win": 35.09
+            "away_win": 37.04
           },
           "normalized_probability": {
-            "home_win": 37.65,
-            "draw": 28.66,
-            "away_win": 33.69
+            "home_win": 36.07,
+            "draw": 28.53,
+            "away_win": 35.4
           },
-          "overround": 4.15,
-          "details": "CPV +155"
+          "overround": 4.62,
+          "details": "CPV +165"
         },
         "injuries": {
           "home": {
@@ -1274,9 +1183,9 @@
         },
         "match_id": "400021485",
         "win_draw_loss": {
-          "home_win": 37.65,
-          "draw": 28.66,
-          "away_win": 33.69
+          "home_win": 36,
+          "draw": 29,
+          "away_win": 35
         },
         "xg_prediction": {
           "home": 1.3,
@@ -1286,28 +1195,28 @@
           "home": 1,
           "away": 1
         },
-        "tactical_matchup": "两队实力接近，佛得角略占主场之利，沙特技术相对细腻，整体攻防相当。",
+        "tactical_matchup": "阵型未知，两队实力接近，预计比赛激烈，定位球可能决定胜负。",
         "injury_adjustment": {
-          "home": "佛得角队内伤病情况未知",
-          "away": "沙特阿拉伯队内伤病情况未知",
-          "summary": "两队均无伤病报告"
+          "home": "伤停情况未知",
+          "away": "伤停情况未知",
+          "summary": "两队伤病情况未知，分析基于完整阵容假设。"
         },
-        "risk_analysis": "双方实力均衡，任何结果都有可能，平局概率不低，胜负手在于临场发挥。",
-        "upset_probability": 34,
+        "risk_analysis": "市场认为任何结果都有可能，平局或小比分胜负，建议谨慎。",
+        "upset_probability": 35,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 39.22,
-            "draw": 29.85,
-            "away_win": 35.09
+            "home_win": 36.07,
+            "draw": 28.53,
+            "away_win": 35.4
           },
           "model_edge": {
-            "home_win": 37.65,
-            "draw": 28.66,
-            "away_win": 33.69
+            "home_win": -0.07,
+            "draw": 0.47,
+            "away_win": -0.4
           },
-          "deviation_analysis": "模型概率低于市场，去除4.15%的overround，各结果下调1.6～1.2个百分点。"
+          "deviation_analysis": "模型平局概率略高，但整体与市场非常接近。"
         },
-        "confidence": "low"
+        "confidence": "medium"
       },
       {
         "id": "400021481",
@@ -1367,22 +1276,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+1600",
+            "home": "+1500",
             "draw": "+750",
-            "away": "-650"
+            "away": "-600"
           },
           "implied_probability": {
-            "home_win": 5.88,
+            "home_win": 6.25,
             "draw": 11.76,
-            "away_win": 86.67
+            "away_win": 85.71
           },
           "normalized_probability": {
-            "home_win": 5.64,
-            "draw": 11.28,
-            "away_win": 83.08
+            "home_win": 6.03,
+            "draw": 11.34,
+            "away_win": 82.63
           },
-          "overround": 4.31,
-          "details": "BEL -650"
+          "overround": 3.73,
+          "details": "BEL -600"
         },
         "injuries": {
           "home": {
@@ -1402,38 +1311,38 @@
         },
         "match_id": "400021481",
         "win_draw_loss": {
-          "home_win": 5.64,
-          "draw": 11.28,
-          "away_win": 83.08
+          "home_win": 6,
+          "draw": 11,
+          "away_win": 83
         },
         "xg_prediction": {
           "home": 0.3,
-          "away": 3.0
+          "away": 2.8
         },
         "predicted_score": {
           "home": 0,
           "away": 3
         },
-        "tactical_matchup": "比利时实力远超新西兰，新西兰可能密集防守，但比利时攻击线强大，破防能力足。",
+        "tactical_matchup": "阵型未知，比利时全方位占优，新西兰目标少输当赢。",
         "injury_adjustment": {
-          "home": "新西兰队内伤病情况未知",
-          "away": "比利时队内伤病情况未知",
-          "summary": "两队均无伤病报告"
+          "home": "伤停情况未知",
+          "away": "伤停情况未知",
+          "summary": "两队伤病情况未知，分析基于完整阵容假设。"
         },
-        "risk_analysis": "比利时取胜几乎无悬念，新西兰爆冷概率极低；主要风险为比利时提前懈怠或过度轮换。",
-        "upset_probability": 6,
+        "risk_analysis": "比利时取胜几无悬念，但需防意外红牌或点球，不过概率极低。",
+        "upset_probability": 17,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 5.88,
-            "draw": 11.76,
-            "away_win": 86.67
+            "home_win": 6.03,
+            "draw": 11.34,
+            "away_win": 82.63
           },
           "model_edge": {
-            "home_win": 5.64,
-            "draw": 11.28,
-            "away_win": 83.08
+            "home_win": -0.03,
+            "draw": -0.34,
+            "away_win": 0.37
           },
-          "deviation_analysis": "模型概率小幅下调，去除4.31%的overround，客胜下调3.59个百分点。"
+          "deviation_analysis": "模型与市场完全一致，无显著偏差。"
         },
         "confidence": "high"
       },
@@ -1495,22 +1404,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+150",
+            "home": "+145",
             "draw": "+165",
-            "away": "+280"
+            "away": "+285"
           },
           "implied_probability": {
-            "home_win": 40.0,
+            "home_win": 40.82,
             "draw": 37.74,
-            "away_win": 26.32
+            "away_win": 25.97
           },
           "normalized_probability": {
-            "home_win": 38.44,
-            "draw": 36.27,
-            "away_win": 25.29
+            "home_win": 39.05,
+            "draw": 36.1,
+            "away_win": 24.85
           },
-          "overround": 4.05,
-          "details": "EGY +150"
+          "overround": 4.53,
+          "details": "EGY +145"
         },
         "injuries": {
           "home": {
@@ -1530,9 +1439,9 @@
         },
         "match_id": "400021479",
         "win_draw_loss": {
-          "home_win": 38.44,
-          "draw": 36.27,
-          "away_win": 25.29
+          "home_win": 39,
+          "draw": 36,
+          "away_win": 25
         },
         "xg_prediction": {
           "home": 1.4,
@@ -1542,32 +1451,32 @@
           "home": 1,
           "away": 1
         },
-        "tactical_matchup": "两队实力相当，埃及可能依靠萨拉赫等球星，伊朗防守严密，比赛可能较为沉闷。",
+        "tactical_matchup": "阵型未知，埃及主场有一定优势，伊朗防守稳固，预计胶着。",
         "injury_adjustment": {
-          "home": "埃及队内伤病情况未知",
-          "away": "伊朗队内伤病情况未知",
-          "summary": "两队均无伤病报告"
+          "home": "伤停情况未知",
+          "away": "伤停情况未知",
+          "summary": "两队伤病情况未知，分析基于完整阵容假设。"
         },
-        "risk_analysis": "双方均无绝对优势，胜负难料，平局可能性较高，球星的个人发挥至关重要。",
+        "risk_analysis": "胜负难料，平局可能性较大，双方实力接近，建议关注临场阵容。",
         "upset_probability": 25,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 40.0,
-            "draw": 37.74,
-            "away_win": 26.32
+            "home_win": 39.05,
+            "draw": 36.1,
+            "away_win": 24.85
           },
           "model_edge": {
-            "home_win": 38.44,
-            "draw": 36.27,
-            "away_win": 25.29
+            "home_win": -0.05,
+            "draw": -0.1,
+            "away_win": 0.15
           },
-          "deviation_analysis": "模型概率较市场下调，去除4.05%的overround，各结果下调1.5～1.0个百分点。"
+          "deviation_analysis": "模型与市场几乎无偏离。"
         },
         "confidence": "low"
       }
     ],
-    "risk_overview": "整体风险：强队比赛风险较低，但几场实力接近的比赛（日本vs瑞典、巴拉圭vs澳大利亚、佛得角vs沙特等）存在较高不确定性，结果难以预料。伤病数据严重缺失，部分场次报有潜在伤病但无详细信息，可能成为意外因素。",
-    "data_quality": "比赛数据经FIFA官方赛历和ESPN比分板双重验证，可靠性高；赔率数据来自DraftKings，可能存在时滞；绝大部分球队伤病状态未知，仅一场报潜在伤病但关联新闻不直接相关，可信度低。分析主要依赖市场概率，缺乏球队状态、阵容深度等详细信息，预测有一定参考价值，但准确度有限。"
+    "risk_overview": "已完赛比赛无风险。即将进行的比赛中，大热门如比利时、塞内加尔、法国获胜概率较高，但应考虑世界杯小组赛爆冷可能；平局概率较高的比赛包括巴拉圭vs澳大利亚、埃及vs伊朗等。整体市场赔率合理，无明显异常偏离。",
+    "data_quality": "数据来源：FIFA官方API和ESPN比分板交叉验证，确认所有比赛信息准确。赔率来自ESPN赔率推送（DraftKings），8场有赔率数据，4场已完赛赔率不可用。伤病信息在所有比赛中均为未知，需依赖赛前官方更新。"
   },
   "matches": [
     {
@@ -1582,9 +1491,9 @@
       "group": "Group E",
       "match_number": 55,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -1624,26 +1533,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+1400",
-          "draw": "+700",
-          "away": "-550"
-        },
-        "implied_probability": {
-          "home_win": 6.67,
-          "draw": 12.5,
-          "away_win": 84.62
-        },
-        "normalized_probability": {
-          "home_win": 6.42,
-          "draw": 12.04,
-          "away_win": 81.53
-        },
-        "overround": 3.78,
-        "details": "CIV -550"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -1663,38 +1555,38 @@
       },
       "match_id": "400021468",
       "win_draw_loss": {
-        "home_win": 6.43,
-        "draw": 12.04,
-        "away_win": 81.53
+        "home_win": 0,
+        "draw": 0,
+        "away_win": 100
       },
       "xg_prediction": {
-        "home": 0.6,
-        "away": 2.8
+        "home": 0.0,
+        "away": 0.0
       },
       "predicted_score": {
         "home": 0,
-        "away": 3
+        "away": 2
       },
-      "tactical_matchup": "科特迪瓦实力占优，凭借多名欧洲联赛球员在身体对抗和速度上具有明显优势，库拉索整体实力较弱，预计将采取密集防守与快速反击。",
+      "tactical_matchup": "库拉索采用5-4-1防守阵型，试图限制科特迪瓦的进攻；科特迪瓦利用4-1-2-3阵型掌控中场并制造边路威胁。实际结果科特迪瓦2-0获胜，体现了实力差距。",
       "injury_adjustment": {
-        "home": "库拉索队内伤病情况未知",
-        "away": "科特迪瓦队内伤病情况未知",
-        "summary": "两队均无可用伤病信息，不做阵容调整"
+        "home": "伤停情况未知",
+        "away": "伤停情况未知",
+        "summary": "两队伤病情况未知，分析基于完整阵容假设。"
       },
-      "risk_analysis": "科特迪瓦胜率极高，几乎无悬念；唯一风险在于科特迪瓦可能因轻敌或战术不当未能攻破密集防守，但库拉索爆冷概率极低。",
-      "upset_probability": 6,
+      "risk_analysis": "本场为已完赛比赛，科特迪瓦凭借实力优势2-0取胜，无额外风险因素。",
+      "upset_probability": 0,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 6.67,
-          "draw": 12.5,
-          "away_win": 84.62
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
         "model_edge": {
-          "home_win": 6.43,
-          "draw": 12.04,
-          "away_win": 81.53
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
-        "deviation_analysis": "模型概率较市场隐含概率整体下调，主要去除了约3.78%的overround，各结果概率均小幅降低，差值约0.2～3.1个百分点。"
+        "deviation_analysis": "赔率数据不可用。"
       },
       "confidence": "high"
     },
@@ -1710,9 +1602,9 @@
       "group": "Group E",
       "match_number": 56,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -1752,26 +1644,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+400",
-          "draw": "+360",
-          "away": "-165"
-        },
-        "implied_probability": {
-          "home_win": 20.0,
-          "draw": 21.74,
-          "away_win": 62.26
-        },
-        "normalized_probability": {
-          "home_win": 19.23,
-          "draw": 20.9,
-          "away_win": 59.87
-        },
-        "overround": 4.0,
-        "details": "GER -165"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -1791,40 +1666,40 @@
       },
       "match_id": "400021466",
       "win_draw_loss": {
-        "home_win": 19.23,
-        "draw": 20.9,
-        "away_win": 59.87
+        "home_win": 100,
+        "draw": 0,
+        "away_win": 0
       },
       "xg_prediction": {
-        "home": 1.0,
-        "away": 2.0
+        "home": 0.0,
+        "away": 0.0
       },
       "predicted_score": {
-        "home": 1,
-        "away": 2
+        "home": 2,
+        "away": 1
       },
-      "tactical_matchup": "德国队传统控球进攻，厄瓜多尔擅长防守反击，比赛在中立场地进行，速度与对抗将影响节奏。",
+      "tactical_matchup": "厄瓜多尔采用4-4-2平衡阵型，利用快速反击取得成效；德国4-2-3-1控球占优但防守失误导致失利。",
       "injury_adjustment": {
-        "home": "厄瓜多尔队内伤病情况未知",
-        "away": "德国队内伤病情况未知",
-        "summary": "两队均无伤病报告"
+        "home": "伤停情况未知",
+        "away": "伤停情况未知",
+        "summary": "两队伤病情况未知，分析基于完整阵容假设。"
       },
-      "risk_analysis": "德国实力占优但并非绝对碾压，厄瓜多尔有一定抵抗力；若德国无法把握机会，存在平局风险。",
-      "upset_probability": 19,
+      "risk_analysis": "已完赛，厄瓜多尔爆冷2-1击败德国，凸显世界杯不确定性。",
+      "upset_probability": 100,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 20.0,
-          "draw": 21.74,
-          "away_win": 62.26
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
         "model_edge": {
-          "home_win": 19.23,
-          "draw": 20.9,
-          "away_win": 59.87
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
-        "deviation_analysis": "模型概率较市场略有下调，主胜和平局微幅下降，客胜下调约2.4个百分点，反映去除4.0% overround。"
+        "deviation_analysis": "赔率数据不可用。"
       },
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "id": "400021473",
@@ -1838,9 +1713,9 @@
       "group": "Group F",
       "match_number": 58,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 2,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -1880,100 +1755,60 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+2500",
-          "draw": "+950",
-          "away": "-1000"
-        },
-        "implied_probability": {
-          "home_win": 3.85,
-          "draw": 9.52,
-          "away_win": 90.91
-        },
-        "normalized_probability": {
-          "home_win": 3.69,
-          "draw": 9.13,
-          "away_win": 87.18
-        },
-        "overround": 4.28,
-        "details": "NED -1000"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "突尼斯",
           "team_en": "Tunisia",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
-              "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
-              "published": "2026-06-25T03:36:14Z",
-              "url": "https://www.espn.com/espn/story/_/id/49171857/relebohile-mofokeng-proves-made-main-stage-bafana-big-win"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "荷兰",
           "team_en": "Netherlands",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Aguirre's pragmatic Mexico has its doubters, but it is built for World Cup success",
-              "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
-              "published": "2026-06-25T11:24:06Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
-              "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
-              "published": "2026-06-25T03:36:14Z",
-              "url": "https://www.espn.com/espn/story/_/id/49171857/relebohile-mofokeng-proves-made-main-stage-bafana-big-win"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       },
       "match_id": "400021473",
       "win_draw_loss": {
-        "home_win": 3.69,
-        "draw": 9.13,
-        "away_win": 87.18
+        "home_win": 0,
+        "draw": 0,
+        "away_win": 100
       },
       "xg_prediction": {
-        "home": 0.3,
-        "away": 3.2
+        "home": 0.0,
+        "away": 0.0
       },
       "predicted_score": {
-        "home": 0,
+        "home": 1,
         "away": 3
       },
-      "tactical_matchup": "荷兰实力强大，注重传控与进攻宽度；突尼斯防守顽强，但面对强敌可能难以招架。",
+      "tactical_matchup": "突尼斯5-4-1防守阵型未能抵挡荷兰4-1-2-3的强力冲击，荷兰边中结合效率高，轻松取胜。",
       "injury_adjustment": {
-        "home": "突尼斯存在潜在伤病（具体球员未知）",
-        "away": "荷兰存在潜在伤病（具体球员未知）",
-        "summary": "两队均报有潜在伤病，但无具体名单，整体影响难以评估，不做显著调整。"
+        "home": "伤停情况未知",
+        "away": "伤停情况未知",
+        "summary": "两队伤病情况未知，分析基于完整阵容假设。"
       },
-      "risk_analysis": "荷兰实力碾压，胜率极高；主要风险是自身可能轮换或伤病影响配合，但即使如此仍应轻松取胜。",
-      "upset_probability": 4,
+      "risk_analysis": "已完赛，荷兰3-1获胜，突尼斯防守未能顶住压力。",
+      "upset_probability": 0,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 3.85,
-          "draw": 9.52,
-          "away_win": 90.91
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
         "model_edge": {
-          "home_win": 3.69,
-          "draw": 9.13,
-          "away_win": 87.18
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
-        "deviation_analysis": "模型概率较市场下调，去除了约4.28%的overround，客胜概率降低3.73个百分点。"
+        "deviation_analysis": "赔率数据不可用。"
       },
       "confidence": "high"
     },
@@ -1989,9 +1824,9 @@
       "group": "Group F",
       "match_number": 57,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 2,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -2031,26 +1866,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-110",
-          "draw": "+245",
-          "away": "+320"
-        },
-        "implied_probability": {
-          "home_win": 52.38,
-          "draw": 28.99,
-          "away_win": 23.81
-        },
-        "normalized_probability": {
-          "home_win": 49.8,
-          "draw": 27.56,
-          "away_win": 22.64
-        },
-        "overround": 5.18,
-        "details": "JPN -110"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -2070,40 +1888,40 @@
       },
       "match_id": "400021471",
       "win_draw_loss": {
-        "home_win": 49.8,
-        "draw": 27.56,
-        "away_win": 22.64
+        "home_win": 0,
+        "draw": 100,
+        "away_win": 0
       },
       "xg_prediction": {
-        "home": 1.6,
-        "away": 1.1
+        "home": 0.0,
+        "away": 0.0
       },
       "predicted_score": {
-        "home": 2,
+        "home": 1,
         "away": 1
       },
-      "tactical_matchup": "日本技术细腻，控球能力突出；瑞典身体对抗出色，擅长定位球，预计比赛激烈且节奏较快。",
+      "tactical_matchup": "日本与瑞典均采用3-4-3阵型，中场缠斗激烈，双方均未创造出绝对机会，1-1平局合理。",
       "injury_adjustment": {
-        "home": "日本队内伤病情况未知",
-        "away": "瑞典队内伤病情况未知",
-        "summary": "两队均无伤病报告"
+        "home": "伤停情况未知",
+        "away": "伤停情况未知",
+        "summary": "两队伤病情况未知，分析基于完整阵容假设。"
       },
-      "risk_analysis": "双方实力接近，日本略占优势但瑞典反击高效，胜负不确定性大，平局可能性不低。",
-      "upset_probability": 23,
+      "risk_analysis": "已完赛，日本与瑞典1-1战平，双方机会均等。",
+      "upset_probability": 0,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 52.38,
-          "draw": 28.99,
-          "away_win": 23.81
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
         "model_edge": {
-          "home_win": 49.8,
-          "draw": 27.56,
-          "away_win": 22.64
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
-        "deviation_analysis": "模型概率整体低于市场，主胜下调约2.6个百分点，反映了5.18%的高overround。"
+        "deviation_analysis": "赔率数据不可用。"
       },
-      "confidence": "low"
+      "confidence": "high"
     },
     {
       "id": "400021461",
@@ -2163,22 +1981,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+165",
-          "draw": "+130",
-          "away": "+330"
+          "home": "+160",
+          "draw": "+135",
+          "away": "+320"
         },
         "implied_probability": {
-          "home_win": 37.74,
-          "draw": 43.48,
-          "away_win": 23.26
+          "home_win": 38.46,
+          "draw": 42.55,
+          "away_win": 23.81
         },
         "normalized_probability": {
-          "home_win": 36.12,
-          "draw": 41.62,
-          "away_win": 22.26
+          "home_win": 36.69,
+          "draw": 40.59,
+          "away_win": 22.71
         },
-        "overround": 4.47,
-        "details": "PAR +165"
+        "overround": 4.82,
+        "details": "PAR +160"
       },
       "injuries": {
         "home": {
@@ -2198,40 +2016,40 @@
       },
       "match_id": "400021461",
       "win_draw_loss": {
-        "home_win": 36.12,
-        "draw": 41.62,
-        "away_win": 22.26
+        "home_win": 37,
+        "draw": 40,
+        "away_win": 23
       },
       "xg_prediction": {
-        "home": 1.3,
+        "home": 1.1,
         "away": 0.9
       },
       "predicted_score": {
         "home": 1,
         "away": 1
       },
-      "tactical_matchup": "巴拉圭防守稳固，澳大利亚身体优势明显，可能采取高空轰炸，双方整体实力相当。",
+      "tactical_matchup": "由于缺少两队阵型信息，战术对位分析受限。预计巴拉圭主场采取相对保守策略，澳大利亚则利用身体对抗寻求机会。",
       "injury_adjustment": {
-        "home": "巴拉圭队内伤病情况未知",
-        "away": "澳大利亚队内伤病情况未知",
-        "summary": "两队均无伤病报告"
+        "home": "伤停情况未知",
+        "away": "伤停情况未知",
+        "summary": "两队伤病情况未知，分析基于完整阵容假设。"
       },
-      "risk_analysis": "双方均无明显优势，平局可能性最高；任意一方稍占上风即可改变局势，变数较大。",
-      "upset_probability": 22,
+      "risk_analysis": "赔率显示双方实力接近，平局概率最高。澳大利亚客场作战可能立足防守。低比分平局可能性大。",
+      "upset_probability": 23,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 37.74,
-          "draw": 43.48,
-          "away_win": 23.26
+          "home_win": 36.69,
+          "draw": 40.59,
+          "away_win": 22.71
         },
         "model_edge": {
-          "home_win": 36.12,
-          "draw": 41.62,
-          "away_win": 22.26
+          "home_win": 0.31,
+          "draw": -0.59,
+          "away_win": 0.29
         },
-        "deviation_analysis": "模型概率略低于市场，去除了4.47%的overround，平局下调1.86个百分点。"
+        "deviation_analysis": "模型与市场赔率基本一致，巴拉圭小有优势，平局与客胜偏差极小。"
       },
-      "confidence": "low"
+      "confidence": "medium"
     },
     {
       "id": "400021459",
@@ -2291,22 +2109,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+280",
-          "draw": "+300",
-          "away": "-115"
+          "home": "+260",
+          "draw": "+290",
+          "away": "-105"
         },
         "implied_probability": {
-          "home_win": 26.32,
-          "draw": 25.0,
-          "away_win": 53.49
+          "home_win": 27.78,
+          "draw": 25.64,
+          "away_win": 51.22
         },
         "normalized_probability": {
-          "home_win": 25.11,
-          "draw": 23.85,
-          "away_win": 51.04
+          "home_win": 26.55,
+          "draw": 24.5,
+          "away_win": 48.95
         },
-        "overround": 4.8,
-        "details": "USA -115"
+        "overround": 4.64,
+        "details": "USA -105"
       },
       "injuries": {
         "home": {
@@ -2326,9 +2144,9 @@
       },
       "match_id": "400021459",
       "win_draw_loss": {
-        "home_win": 25.11,
-        "draw": 23.85,
-        "away_win": 51.04
+        "home_win": 27,
+        "draw": 24,
+        "away_win": 49
       },
       "xg_prediction": {
         "home": 1.0,
@@ -2338,28 +2156,28 @@
         "home": 1,
         "away": 2
       },
-      "tactical_matchup": "美国队作为东道主拥有一定优势，整体实力稍强；土耳其韧性十足，对抗激烈。",
+      "tactical_matchup": "土耳其采用4-2-3-1阵型，注重中场控制；美国4-1-2-3攻击型阵型，利用速度和宽度。美国整体实力占优，有望压制土耳其防线。",
       "injury_adjustment": {
-        "home": "土耳其队内伤病情况未知",
-        "away": "美国队内伤病情况未知",
-        "summary": "两队均无伤病报告"
+        "home": "伤停情况未知",
+        "away": "伤停情况未知",
+        "summary": "两队伤病情况未知，分析基于完整阵容假设。"
       },
-      "risk_analysis": "美国队被市场看好但优势有限，土耳其有机会取得好结果；比赛可能胶着，平局不可忽视。",
-      "upset_probability": 25,
+      "risk_analysis": "美国为明显优势方，但客场作战仍存变数。土耳其坐拥主场可能给美国制造麻烦，但净胜球预期差距不大。",
+      "upset_probability": 27,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 26.32,
-          "draw": 25.0,
-          "away_win": 53.49
+          "home_win": 26.55,
+          "draw": 24.5,
+          "away_win": 48.95
         },
         "model_edge": {
-          "home_win": 25.11,
-          "draw": 23.85,
-          "away_win": 51.04
+          "home_win": 0.45,
+          "draw": -0.5,
+          "away_win": 0.05
         },
-        "deviation_analysis": "模型概率低于市场，去除4.8%的overround，客胜下调2.45个百分点。"
+        "deviation_analysis": "模型略微提升土耳其获胜概率，但总体与市场一致。"
       },
-      "confidence": "low"
+      "confidence": "medium"
     },
     {
       "id": "400021493",
@@ -2419,22 +2237,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-450",
-          "draw": "+600",
+          "home": "-425",
+          "draw": "+550",
           "away": "+1100"
         },
         "implied_probability": {
-          "home_win": 81.82,
-          "draw": 14.29,
+          "home_win": 80.95,
+          "draw": 15.38,
           "away_win": 8.33
         },
         "normalized_probability": {
-          "home_win": 78.34,
-          "draw": 13.68,
-          "away_win": 7.98
+          "home_win": 77.34,
+          "draw": 14.7,
+          "away_win": 7.96
         },
-        "overround": 4.44,
-        "details": "SEN -450"
+        "overround": 4.67,
+        "details": "SEN -425"
       },
       "injuries": {
         "home": {
@@ -2454,9 +2272,9 @@
       },
       "match_id": "400021493",
       "win_draw_loss": {
-        "home_win": 78.34,
-        "draw": 13.68,
-        "away_win": 7.98
+        "home_win": 77,
+        "draw": 15,
+        "away_win": 8
       },
       "xg_prediction": {
         "home": 2.5,
@@ -2466,28 +2284,28 @@
         "home": 2,
         "away": 0
       },
-      "tactical_matchup": "塞内加尔身体素质出众，整体实力远超伊拉克；伊拉克可能采取密集防守，但恐难抵挡。",
+      "tactical_matchup": "两队阵型未知，塞内加尔作为非洲劲旅实力远超伊拉克，预计控制比赛节奏，伊拉克将严防死守。",
       "injury_adjustment": {
-        "home": "塞内加尔队内伤病情况未知",
-        "away": "伊拉克队内伤病情况未知",
-        "summary": "两队均无伤病报告"
+        "home": "伤停情况未知",
+        "away": "伤停情况未知",
+        "summary": "两队伤病情况未知，分析基于完整阵容假设。"
       },
-      "risk_analysis": "塞内加尔实力碾压，取胜几无悬念；仅存风险是自身状态不佳或轻敌。",
-      "upset_probability": 8,
+      "risk_analysis": "塞内加尔大热，但世界杯常有冷门，伊拉克可能摆大巴，需防平局。但概率极低。",
+      "upset_probability": 23,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 81.82,
-          "draw": 14.29,
-          "away_win": 8.33
+          "home_win": 77.34,
+          "draw": 14.7,
+          "away_win": 7.96
         },
         "model_edge": {
-          "home_win": 78.34,
-          "draw": 13.68,
-          "away_win": 7.98
+          "home_win": -0.34,
+          "draw": 0.3,
+          "away_win": 0.04
         },
-        "deviation_analysis": "模型概率大幅低于市场，主胜下调约3.5个百分点，去除了4.44%的overround。"
+        "deviation_analysis": "模型与市场高度一致，无明显偏差。"
       },
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "id": "400021489",
@@ -2547,22 +2365,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+400",
-          "draw": "+340",
-          "away": "-160"
+          "home": "+425",
+          "draw": "+370",
+          "away": "-175"
         },
         "implied_probability": {
-          "home_win": 20.0,
-          "draw": 22.73,
-          "away_win": 61.54
+          "home_win": 19.05,
+          "draw": 21.28,
+          "away_win": 63.64
         },
         "normalized_probability": {
-          "home_win": 19.18,
-          "draw": 21.8,
-          "away_win": 59.02
+          "home_win": 18.32,
+          "draw": 20.47,
+          "away_win": 61.21
         },
-        "overround": 4.27,
-        "details": "FRA -160"
+        "overround": 3.96,
+        "details": "FRA -175"
       },
       "injuries": {
         "home": {
@@ -2582,38 +2400,38 @@
       },
       "match_id": "400021489",
       "win_draw_loss": {
-        "home_win": 19.18,
-        "draw": 21.8,
-        "away_win": 59.02
+        "home_win": 18,
+        "draw": 21,
+        "away_win": 61
       },
       "xg_prediction": {
-        "home": 1.0,
-        "away": 2.0
+        "home": 0.8,
+        "away": 2.2
       },
       "predicted_score": {
-        "home": 1,
+        "home": 0,
         "away": 2
       },
-      "tactical_matchup": "法国拥有顶尖攻击线，整体实力占优；挪威依赖哈兰德等明星球员，可能通过反击制造威胁。",
+      "tactical_matchup": "阵型未知，法国作为卫冕冠军实力占优，挪威需要依赖定位球和反击制造威胁。",
       "injury_adjustment": {
-        "home": "挪威队内伤病情况未知",
-        "away": "法国队内伤病情况未知",
-        "summary": "两队均无伤病报告"
+        "home": "伤停情况未知",
+        "away": "伤停情况未知",
+        "summary": "两队伤病情况未知，分析基于完整阵容假设。"
       },
-      "risk_analysis": "法国实力占优但挪威有爆冷潜力，哈兰德个人能力突出，法国需防范防守反击。",
-      "upset_probability": 19,
+      "risk_analysis": "法国客场仍被市场看好，挪威主场优势难以弥补实力差距。若法国慢热，平局有一定概率。",
+      "upset_probability": 39,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 20.0,
-          "draw": 22.73,
-          "away_win": 61.54
+          "home_win": 18.32,
+          "draw": 20.47,
+          "away_win": 61.21
         },
         "model_edge": {
-          "home_win": 19.18,
-          "draw": 21.8,
-          "away_win": 59.02
+          "home_win": -0.32,
+          "draw": 0.53,
+          "away_win": -0.21
         },
-        "deviation_analysis": "模型概率较市场略微下调，去除4.27%的overround，客胜下调2.52个百分点。"
+        "deviation_analysis": "模型小幅提升平局概率，反映挪威主场韧性，但整体方向与市场一致。"
       },
       "confidence": "medium"
     },
@@ -2675,22 +2493,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+650",
-          "draw": "+320",
-          "away": "-205"
+          "home": "+700",
+          "draw": "+330",
+          "away": "-215"
         },
         "implied_probability": {
-          "home_win": 13.33,
-          "draw": 23.81,
-          "away_win": 67.21
+          "home_win": 12.5,
+          "draw": 23.26,
+          "away_win": 68.25
         },
         "normalized_probability": {
-          "home_win": 12.78,
-          "draw": 22.82,
-          "away_win": 64.41
+          "home_win": 12.02,
+          "draw": 22.36,
+          "away_win": 65.62
         },
-        "overround": 4.36,
-        "details": "ESP -205"
+        "overround": 4.01,
+        "details": "ESP -215"
       },
       "injuries": {
         "home": {
@@ -2710,38 +2528,38 @@
       },
       "match_id": "400021484",
       "win_draw_loss": {
-        "home_win": 12.78,
-        "draw": 22.81,
-        "away_win": 64.41
+        "home_win": 12,
+        "draw": 22,
+        "away_win": 66
       },
       "xg_prediction": {
-        "home": 0.7,
-        "away": 2.5
+        "home": 0.5,
+        "away": 2.0
       },
       "predicted_score": {
-        "home": 1,
+        "home": 0,
         "away": 2
       },
-      "tactical_matchup": "西班牙传控细腻，乌拉圭防守硬朗，风格对比鲜明，西班牙控球优势明显。",
+      "tactical_matchup": "阵型未知，西班牙传控优势明显，乌拉圭以防守反击著称，可能利用定位球威胁。",
       "injury_adjustment": {
-        "home": "乌拉圭队内伤病情况未知",
-        "away": "西班牙队内伤病情况未知",
-        "summary": "两队均无伤病报告"
+        "home": "伤停情况未知",
+        "away": "伤停情况未知",
+        "summary": "两队伤病情况未知，分析基于完整阵容假设。"
       },
-      "risk_analysis": "西班牙实力明显占优，但乌拉圭防守坚韧，存在逼平可能；若西班牙久攻不下，可能陷入苦战。",
-      "upset_probability": 13,
+      "risk_analysis": "西班牙实力占优，但乌拉圭拥有丰富大赛经验，平局概率不容忽视。",
+      "upset_probability": 34,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 13.33,
-          "draw": 23.81,
-          "away_win": 67.21
+          "home_win": 12.02,
+          "draw": 22.36,
+          "away_win": 65.62
         },
         "model_edge": {
-          "home_win": 12.78,
-          "draw": 22.81,
-          "away_win": 64.41
+          "home_win": -0.02,
+          "draw": -0.36,
+          "away_win": 0.38
         },
-        "deviation_analysis": "模型概率略低于市场，去除4.36%的overround，客胜下调2.8个百分点。"
+        "deviation_analysis": "模型略微提升西班牙胜率，基本与市场一致。"
       },
       "confidence": "medium"
     },
@@ -2803,22 +2621,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+155",
+          "home": "+165",
           "draw": "+235",
-          "away": "+185"
+          "away": "+170"
         },
         "implied_probability": {
-          "home_win": 39.22,
+          "home_win": 37.74,
           "draw": 29.85,
-          "away_win": 35.09
+          "away_win": 37.04
         },
         "normalized_probability": {
-          "home_win": 37.65,
-          "draw": 28.66,
-          "away_win": 33.69
+          "home_win": 36.07,
+          "draw": 28.53,
+          "away_win": 35.4
         },
-        "overround": 4.15,
-        "details": "CPV +155"
+        "overround": 4.62,
+        "details": "CPV +165"
       },
       "injuries": {
         "home": {
@@ -2838,9 +2656,9 @@
       },
       "match_id": "400021485",
       "win_draw_loss": {
-        "home_win": 37.65,
-        "draw": 28.66,
-        "away_win": 33.69
+        "home_win": 36,
+        "draw": 29,
+        "away_win": 35
       },
       "xg_prediction": {
         "home": 1.3,
@@ -2850,28 +2668,28 @@
         "home": 1,
         "away": 1
       },
-      "tactical_matchup": "两队实力接近，佛得角略占主场之利，沙特技术相对细腻，整体攻防相当。",
+      "tactical_matchup": "阵型未知，两队实力接近，预计比赛激烈，定位球可能决定胜负。",
       "injury_adjustment": {
-        "home": "佛得角队内伤病情况未知",
-        "away": "沙特阿拉伯队内伤病情况未知",
-        "summary": "两队均无伤病报告"
+        "home": "伤停情况未知",
+        "away": "伤停情况未知",
+        "summary": "两队伤病情况未知，分析基于完整阵容假设。"
       },
-      "risk_analysis": "双方实力均衡，任何结果都有可能，平局概率不低，胜负手在于临场发挥。",
-      "upset_probability": 34,
+      "risk_analysis": "市场认为任何结果都有可能，平局或小比分胜负，建议谨慎。",
+      "upset_probability": 35,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 39.22,
-          "draw": 29.85,
-          "away_win": 35.09
+          "home_win": 36.07,
+          "draw": 28.53,
+          "away_win": 35.4
         },
         "model_edge": {
-          "home_win": 37.65,
-          "draw": 28.66,
-          "away_win": 33.69
+          "home_win": -0.07,
+          "draw": 0.47,
+          "away_win": -0.4
         },
-        "deviation_analysis": "模型概率低于市场，去除4.15%的overround，各结果下调1.6～1.2个百分点。"
+        "deviation_analysis": "模型平局概率略高，但整体与市场非常接近。"
       },
-      "confidence": "low"
+      "confidence": "medium"
     },
     {
       "id": "400021481",
@@ -2931,22 +2749,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+1600",
+          "home": "+1500",
           "draw": "+750",
-          "away": "-650"
+          "away": "-600"
         },
         "implied_probability": {
-          "home_win": 5.88,
+          "home_win": 6.25,
           "draw": 11.76,
-          "away_win": 86.67
+          "away_win": 85.71
         },
         "normalized_probability": {
-          "home_win": 5.64,
-          "draw": 11.28,
-          "away_win": 83.08
+          "home_win": 6.03,
+          "draw": 11.34,
+          "away_win": 82.63
         },
-        "overround": 4.31,
-        "details": "BEL -650"
+        "overround": 3.73,
+        "details": "BEL -600"
       },
       "injuries": {
         "home": {
@@ -2966,38 +2784,38 @@
       },
       "match_id": "400021481",
       "win_draw_loss": {
-        "home_win": 5.64,
-        "draw": 11.28,
-        "away_win": 83.08
+        "home_win": 6,
+        "draw": 11,
+        "away_win": 83
       },
       "xg_prediction": {
         "home": 0.3,
-        "away": 3.0
+        "away": 2.8
       },
       "predicted_score": {
         "home": 0,
         "away": 3
       },
-      "tactical_matchup": "比利时实力远超新西兰，新西兰可能密集防守，但比利时攻击线强大，破防能力足。",
+      "tactical_matchup": "阵型未知，比利时全方位占优，新西兰目标少输当赢。",
       "injury_adjustment": {
-        "home": "新西兰队内伤病情况未知",
-        "away": "比利时队内伤病情况未知",
-        "summary": "两队均无伤病报告"
+        "home": "伤停情况未知",
+        "away": "伤停情况未知",
+        "summary": "两队伤病情况未知，分析基于完整阵容假设。"
       },
-      "risk_analysis": "比利时取胜几乎无悬念，新西兰爆冷概率极低；主要风险为比利时提前懈怠或过度轮换。",
-      "upset_probability": 6,
+      "risk_analysis": "比利时取胜几无悬念，但需防意外红牌或点球，不过概率极低。",
+      "upset_probability": 17,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 5.88,
-          "draw": 11.76,
-          "away_win": 86.67
+          "home_win": 6.03,
+          "draw": 11.34,
+          "away_win": 82.63
         },
         "model_edge": {
-          "home_win": 5.64,
-          "draw": 11.28,
-          "away_win": 83.08
+          "home_win": -0.03,
+          "draw": -0.34,
+          "away_win": 0.37
         },
-        "deviation_analysis": "模型概率小幅下调，去除4.31%的overround，客胜下调3.59个百分点。"
+        "deviation_analysis": "模型与市场完全一致，无显著偏差。"
       },
       "confidence": "high"
     },
@@ -3059,22 +2877,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+150",
+          "home": "+145",
           "draw": "+165",
-          "away": "+280"
+          "away": "+285"
         },
         "implied_probability": {
-          "home_win": 40.0,
+          "home_win": 40.82,
           "draw": 37.74,
-          "away_win": 26.32
+          "away_win": 25.97
         },
         "normalized_probability": {
-          "home_win": 38.44,
-          "draw": 36.27,
-          "away_win": 25.29
+          "home_win": 39.05,
+          "draw": 36.1,
+          "away_win": 24.85
         },
-        "overround": 4.05,
-        "details": "EGY +150"
+        "overround": 4.53,
+        "details": "EGY +145"
       },
       "injuries": {
         "home": {
@@ -3094,9 +2912,9 @@
       },
       "match_id": "400021479",
       "win_draw_loss": {
-        "home_win": 38.44,
-        "draw": 36.27,
-        "away_win": 25.29
+        "home_win": 39,
+        "draw": 36,
+        "away_win": 25
       },
       "xg_prediction": {
         "home": 1.4,
@@ -3106,26 +2924,26 @@
         "home": 1,
         "away": 1
       },
-      "tactical_matchup": "两队实力相当，埃及可能依靠萨拉赫等球星，伊朗防守严密，比赛可能较为沉闷。",
+      "tactical_matchup": "阵型未知，埃及主场有一定优势，伊朗防守稳固，预计胶着。",
       "injury_adjustment": {
-        "home": "埃及队内伤病情况未知",
-        "away": "伊朗队内伤病情况未知",
-        "summary": "两队均无伤病报告"
+        "home": "伤停情况未知",
+        "away": "伤停情况未知",
+        "summary": "两队伤病情况未知，分析基于完整阵容假设。"
       },
-      "risk_analysis": "双方均无绝对优势，胜负难料，平局可能性较高，球星的个人发挥至关重要。",
+      "risk_analysis": "胜负难料，平局可能性较大，双方实力接近，建议关注临场阵容。",
       "upset_probability": 25,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 40.0,
-          "draw": 37.74,
-          "away_win": 26.32
+          "home_win": 39.05,
+          "draw": 36.1,
+          "away_win": 24.85
         },
         "model_edge": {
-          "home_win": 38.44,
-          "draw": 36.27,
-          "away_win": 25.29
+          "home_win": -0.05,
+          "draw": -0.1,
+          "away_win": 0.15
         },
-        "deviation_analysis": "模型概率较市场下调，去除4.05%的overround，各结果下调1.5～1.0个百分点。"
+        "deviation_analysis": "模型与市场几乎无偏离。"
       },
       "confidence": "low"
     }
@@ -3133,7 +2951,7 @@
   "research": {
     "schema_version": 3,
     "stage": "research",
-    "generated_at": "2026-06-25T13:59:04Z",
+    "generated_at": "2026-06-26T01:19:53Z",
     "window": {
       "start_date": "2026-06-25",
       "days": 3,
@@ -3222,7 +3040,7 @@
     "fixture_count": 12,
     "fifa_fixture_count": 12,
     "raw_fifa_fixture_count": 18,
-    "odds_available_count": 12,
+    "odds_available_count": 8,
     "matches": [
       {
         "id": "400021468",
@@ -3236,9 +3054,9 @@
         "group": "Group E",
         "match_number": 55,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -3248,8 +3066,8 @@
             "id_team": "1895293",
             "id_country": "CUW",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CUW",
-            "score": null,
-            "tactics": null
+            "score": 0,
+            "tactics": "5-4-1"
           },
           "away": {
             "name": "科特迪瓦",
@@ -3258,8 +3076,8 @@
             "id_team": "43854",
             "id_country": "CIV",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CIV",
-            "score": null,
-            "tactics": null
+            "score": 2,
+            "tactics": "4-1-2-3"
           }
         },
         "venue": {
@@ -3290,26 +3108,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+1400",
-            "draw": "+700",
-            "away": "-550"
-          },
-          "implied_probability": {
-            "home_win": 6.67,
-            "draw": 12.5,
-            "away_win": 84.62
-          },
-          "normalized_probability": {
-            "home_win": 6.42,
-            "draw": 12.04,
-            "away_win": 81.53
-          },
-          "overround": 3.78,
-          "details": "CIV -550"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -3340,9 +3141,9 @@
         "group": "Group E",
         "match_number": 56,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -3352,8 +3153,8 @@
             "id_team": "43927",
             "id_country": "ECU",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/ECU",
-            "score": null,
-            "tactics": null
+            "score": 2,
+            "tactics": "4-4-2"
           },
           "away": {
             "name": "德国",
@@ -3362,8 +3163,8 @@
             "id_team": "43948",
             "id_country": "GER",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/GER",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "4-2-3-1"
           }
         },
         "venue": {
@@ -3394,26 +3195,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+400",
-            "draw": "+360",
-            "away": "-165"
-          },
-          "implied_probability": {
-            "home_win": 20.0,
-            "draw": 21.74,
-            "away_win": 62.26
-          },
-          "normalized_probability": {
-            "home_win": 19.23,
-            "draw": 20.9,
-            "away_win": 59.87
-          },
-          "overround": 4.0,
-          "details": "GER -165"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -3444,9 +3228,9 @@
         "group": "Group F",
         "match_number": 58,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 2,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -3456,8 +3240,8 @@
             "id_team": "43888",
             "id_country": "TUN",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/TUN",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "5-4-1"
           },
           "away": {
             "name": "荷兰",
@@ -3466,8 +3250,8 @@
             "id_team": "43960",
             "id_country": "NED",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/NED",
-            "score": null,
-            "tactics": null
+            "score": 3,
+            "tactics": "4-1-2-3"
           }
         },
         "venue": {
@@ -3498,63 +3282,23 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+2500",
-            "draw": "+950",
-            "away": "-1000"
-          },
-          "implied_probability": {
-            "home_win": 3.85,
-            "draw": 9.52,
-            "away_win": 90.91
-          },
-          "normalized_probability": {
-            "home_win": 3.69,
-            "draw": 9.13,
-            "away_win": 87.18
-          },
-          "overround": 4.28,
-          "details": "NED -1000"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "突尼斯",
             "team_en": "Tunisia",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
-                "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
-                "published": "2026-06-25T03:36:14Z",
-                "url": "https://www.espn.com/espn/story/_/id/49171857/relebohile-mofokeng-proves-made-main-stage-bafana-big-win"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "荷兰",
             "team_en": "Netherlands",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Aguirre's pragmatic Mexico has its doubters, but it is built for World Cup success",
-                "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
-                "published": "2026-06-25T11:24:06Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
-                "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
-                "published": "2026-06-25T03:36:14Z",
-                "url": "https://www.espn.com/espn/story/_/id/49171857/relebohile-mofokeng-proves-made-main-stage-bafana-big-win"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -3571,9 +3315,9 @@
         "group": "Group F",
         "match_number": 57,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 2,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -3583,8 +3327,8 @@
             "id_team": "43819",
             "id_country": "JPN",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/JPN",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "3-4-3"
           },
           "away": {
             "name": "瑞典",
@@ -3593,8 +3337,8 @@
             "id_team": "43970",
             "id_country": "SWE",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/SWE",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "3-4-3"
           }
         },
         "venue": {
@@ -3625,26 +3369,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-110",
-            "draw": "+245",
-            "away": "+320"
-          },
-          "implied_probability": {
-            "home_win": 52.38,
-            "draw": 28.99,
-            "away_win": 23.81
-          },
-          "normalized_probability": {
-            "home_win": 49.8,
-            "draw": 27.56,
-            "away_win": 22.64
-          },
-          "overround": 5.18,
-          "details": "JPN -110"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -3733,22 +3460,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+165",
-            "draw": "+130",
-            "away": "+330"
+            "home": "+160",
+            "draw": "+135",
+            "away": "+320"
           },
           "implied_probability": {
-            "home_win": 37.74,
-            "draw": 43.48,
-            "away_win": 23.26
+            "home_win": 38.46,
+            "draw": 42.55,
+            "away_win": 23.81
           },
           "normalized_probability": {
-            "home_win": 36.12,
-            "draw": 41.62,
-            "away_win": 22.26
+            "home_win": 36.69,
+            "draw": 40.59,
+            "away_win": 22.71
           },
-          "overround": 4.47,
-          "details": "PAR +165"
+          "overround": 4.82,
+          "details": "PAR +160"
         },
         "injuries": {
           "home": {
@@ -3792,7 +3519,7 @@
             "id_country": "TUR",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/TUR",
             "score": null,
-            "tactics": null
+            "tactics": "4-2-3-1"
           },
           "away": {
             "name": "美国",
@@ -3802,7 +3529,7 @@
             "id_country": "USA",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/USA",
             "score": null,
-            "tactics": null
+            "tactics": "4-1-2-3"
           }
         },
         "venue": {
@@ -3837,22 +3564,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+280",
-            "draw": "+300",
-            "away": "-115"
+            "home": "+260",
+            "draw": "+290",
+            "away": "-105"
           },
           "implied_probability": {
-            "home_win": 26.32,
-            "draw": 25.0,
-            "away_win": 53.49
+            "home_win": 27.78,
+            "draw": 25.64,
+            "away_win": 51.22
           },
           "normalized_probability": {
-            "home_win": 25.11,
-            "draw": 23.85,
-            "away_win": 51.04
+            "home_win": 26.55,
+            "draw": 24.5,
+            "away_win": 48.95
           },
-          "overround": 4.8,
-          "details": "USA -115"
+          "overround": 4.64,
+          "details": "USA -105"
         },
         "injuries": {
           "home": {
@@ -3941,22 +3668,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-450",
-            "draw": "+600",
+            "home": "-425",
+            "draw": "+550",
             "away": "+1100"
           },
           "implied_probability": {
-            "home_win": 81.82,
-            "draw": 14.29,
+            "home_win": 80.95,
+            "draw": 15.38,
             "away_win": 8.33
           },
           "normalized_probability": {
-            "home_win": 78.34,
-            "draw": 13.68,
-            "away_win": 7.98
+            "home_win": 77.34,
+            "draw": 14.7,
+            "away_win": 7.96
           },
-          "overround": 4.44,
-          "details": "SEN -450"
+          "overround": 4.67,
+          "details": "SEN -425"
         },
         "injuries": {
           "home": {
@@ -4045,22 +3772,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+400",
-            "draw": "+340",
-            "away": "-160"
+            "home": "+425",
+            "draw": "+370",
+            "away": "-175"
           },
           "implied_probability": {
-            "home_win": 20.0,
-            "draw": 22.73,
-            "away_win": 61.54
+            "home_win": 19.05,
+            "draw": 21.28,
+            "away_win": 63.64
           },
           "normalized_probability": {
-            "home_win": 19.18,
-            "draw": 21.8,
-            "away_win": 59.02
+            "home_win": 18.32,
+            "draw": 20.47,
+            "away_win": 61.21
           },
-          "overround": 4.27,
-          "details": "FRA -160"
+          "overround": 3.96,
+          "details": "FRA -175"
         },
         "injuries": {
           "home": {
@@ -4149,22 +3876,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+650",
-            "draw": "+320",
-            "away": "-205"
+            "home": "+700",
+            "draw": "+330",
+            "away": "-215"
           },
           "implied_probability": {
-            "home_win": 13.33,
-            "draw": 23.81,
-            "away_win": 67.21
+            "home_win": 12.5,
+            "draw": 23.26,
+            "away_win": 68.25
           },
           "normalized_probability": {
-            "home_win": 12.78,
-            "draw": 22.82,
-            "away_win": 64.41
+            "home_win": 12.02,
+            "draw": 22.36,
+            "away_win": 65.62
           },
-          "overround": 4.36,
-          "details": "ESP -205"
+          "overround": 4.01,
+          "details": "ESP -215"
         },
         "injuries": {
           "home": {
@@ -4253,22 +3980,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+155",
+            "home": "+165",
             "draw": "+235",
-            "away": "+185"
+            "away": "+170"
           },
           "implied_probability": {
-            "home_win": 39.22,
+            "home_win": 37.74,
             "draw": 29.85,
-            "away_win": 35.09
+            "away_win": 37.04
           },
           "normalized_probability": {
-            "home_win": 37.65,
-            "draw": 28.66,
-            "away_win": 33.69
+            "home_win": 36.07,
+            "draw": 28.53,
+            "away_win": 35.4
           },
-          "overround": 4.15,
-          "details": "CPV +155"
+          "overround": 4.62,
+          "details": "CPV +165"
         },
         "injuries": {
           "home": {
@@ -4357,22 +4084,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+1600",
+            "home": "+1500",
             "draw": "+750",
-            "away": "-650"
+            "away": "-600"
           },
           "implied_probability": {
-            "home_win": 5.88,
+            "home_win": 6.25,
             "draw": 11.76,
-            "away_win": 86.67
+            "away_win": 85.71
           },
           "normalized_probability": {
-            "home_win": 5.64,
-            "draw": 11.28,
-            "away_win": 83.08
+            "home_win": 6.03,
+            "draw": 11.34,
+            "away_win": 82.63
           },
-          "overround": 4.31,
-          "details": "BEL -650"
+          "overround": 3.73,
+          "details": "BEL -600"
         },
         "injuries": {
           "home": {
@@ -4461,22 +4188,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+150",
+            "home": "+145",
             "draw": "+165",
-            "away": "+280"
+            "away": "+285"
           },
           "implied_probability": {
-            "home_win": 40.0,
+            "home_win": 40.82,
             "draw": 37.74,
-            "away_win": 26.32
+            "away_win": 25.97
           },
           "normalized_probability": {
-            "home_win": 38.44,
-            "draw": 36.27,
-            "away_win": 25.29
+            "home_win": 39.05,
+            "draw": 36.1,
+            "away_win": 24.85
           },
-          "overround": 4.05,
-          "details": "EGY +150"
+          "overround": 4.53,
+          "details": "EGY +145"
         },
         "injuries": {
           "home": {
@@ -4509,9 +4236,9 @@
         "group": "Group E",
         "match_number": 55,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -4521,8 +4248,8 @@
             "id_team": "1895293",
             "id_country": "CUW",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CUW",
-            "score": null,
-            "tactics": null
+            "score": 0,
+            "tactics": "5-4-1"
           },
           "away": {
             "name": "科特迪瓦",
@@ -4531,8 +4258,8 @@
             "id_team": "43854",
             "id_country": "CIV",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CIV",
-            "score": null,
-            "tactics": null
+            "score": 2,
+            "tactics": "4-1-2-3"
           }
         },
         "venue": {
@@ -4563,26 +4290,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+1400",
-            "draw": "+700",
-            "away": "-550"
-          },
-          "implied_probability": {
-            "home_win": 6.67,
-            "draw": 12.5,
-            "away_win": 84.62
-          },
-          "normalized_probability": {
-            "home_win": 6.42,
-            "draw": 12.04,
-            "away_win": 81.53
-          },
-          "overround": 3.78,
-          "details": "CIV -550"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -4613,9 +4323,9 @@
         "group": "Group E",
         "match_number": 56,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -4625,8 +4335,8 @@
             "id_team": "43927",
             "id_country": "ECU",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/ECU",
-            "score": null,
-            "tactics": null
+            "score": 2,
+            "tactics": "4-4-2"
           },
           "away": {
             "name": "德国",
@@ -4635,8 +4345,8 @@
             "id_team": "43948",
             "id_country": "GER",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/GER",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "4-2-3-1"
           }
         },
         "venue": {
@@ -4667,26 +4377,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+400",
-            "draw": "+360",
-            "away": "-165"
-          },
-          "implied_probability": {
-            "home_win": 20.0,
-            "draw": 21.74,
-            "away_win": 62.26
-          },
-          "normalized_probability": {
-            "home_win": 19.23,
-            "draw": 20.9,
-            "away_win": 59.87
-          },
-          "overround": 4.0,
-          "details": "GER -165"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -4717,9 +4410,9 @@
         "group": "Group F",
         "match_number": 58,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 2,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -4729,8 +4422,8 @@
             "id_team": "43888",
             "id_country": "TUN",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/TUN",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "5-4-1"
           },
           "away": {
             "name": "荷兰",
@@ -4739,8 +4432,8 @@
             "id_team": "43960",
             "id_country": "NED",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/NED",
-            "score": null,
-            "tactics": null
+            "score": 3,
+            "tactics": "4-1-2-3"
           }
         },
         "venue": {
@@ -4771,63 +4464,23 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+2500",
-            "draw": "+950",
-            "away": "-1000"
-          },
-          "implied_probability": {
-            "home_win": 3.85,
-            "draw": 9.52,
-            "away_win": 90.91
-          },
-          "normalized_probability": {
-            "home_win": 3.69,
-            "draw": 9.13,
-            "away_win": 87.18
-          },
-          "overround": 4.28,
-          "details": "NED -1000"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "突尼斯",
             "team_en": "Tunisia",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
-                "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
-                "published": "2026-06-25T03:36:14Z",
-                "url": "https://www.espn.com/espn/story/_/id/49171857/relebohile-mofokeng-proves-made-main-stage-bafana-big-win"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "荷兰",
             "team_en": "Netherlands",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Aguirre's pragmatic Mexico has its doubters, but it is built for World Cup success",
-                "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
-                "published": "2026-06-25T11:24:06Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
-                "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
-                "published": "2026-06-25T03:36:14Z",
-                "url": "https://www.espn.com/espn/story/_/id/49171857/relebohile-mofokeng-proves-made-main-stage-bafana-big-win"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -4844,9 +4497,9 @@
         "group": "Group F",
         "match_number": 57,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 2,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -4856,8 +4509,8 @@
             "id_team": "43819",
             "id_country": "JPN",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/JPN",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "3-4-3"
           },
           "away": {
             "name": "瑞典",
@@ -4866,8 +4519,8 @@
             "id_team": "43970",
             "id_country": "SWE",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/SWE",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "3-4-3"
           }
         },
         "venue": {
@@ -4898,26 +4551,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-110",
-            "draw": "+245",
-            "away": "+320"
-          },
-          "implied_probability": {
-            "home_win": 52.38,
-            "draw": 28.99,
-            "away_win": 23.81
-          },
-          "normalized_probability": {
-            "home_win": 49.8,
-            "draw": 27.56,
-            "away_win": 22.64
-          },
-          "overround": 5.18,
-          "details": "JPN -110"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -5006,22 +4642,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+165",
-            "draw": "+130",
-            "away": "+330"
+            "home": "+160",
+            "draw": "+135",
+            "away": "+320"
           },
           "implied_probability": {
-            "home_win": 37.74,
-            "draw": 43.48,
-            "away_win": 23.26
+            "home_win": 38.46,
+            "draw": 42.55,
+            "away_win": 23.81
           },
           "normalized_probability": {
-            "home_win": 36.12,
-            "draw": 41.62,
-            "away_win": 22.26
+            "home_win": 36.69,
+            "draw": 40.59,
+            "away_win": 22.71
           },
-          "overround": 4.47,
-          "details": "PAR +165"
+          "overround": 4.82,
+          "details": "PAR +160"
         },
         "injuries": {
           "home": {
@@ -5065,7 +4701,7 @@
             "id_country": "TUR",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/TUR",
             "score": null,
-            "tactics": null
+            "tactics": "4-2-3-1"
           },
           "away": {
             "name": "美国",
@@ -5075,7 +4711,7 @@
             "id_country": "USA",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/USA",
             "score": null,
-            "tactics": null
+            "tactics": "4-1-2-3"
           }
         },
         "venue": {
@@ -5110,22 +4746,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+280",
-            "draw": "+300",
-            "away": "-115"
+            "home": "+260",
+            "draw": "+290",
+            "away": "-105"
           },
           "implied_probability": {
-            "home_win": 26.32,
-            "draw": 25.0,
-            "away_win": 53.49
+            "home_win": 27.78,
+            "draw": 25.64,
+            "away_win": 51.22
           },
           "normalized_probability": {
-            "home_win": 25.11,
-            "draw": 23.85,
-            "away_win": 51.04
+            "home_win": 26.55,
+            "draw": 24.5,
+            "away_win": 48.95
           },
-          "overround": 4.8,
-          "details": "USA -115"
+          "overround": 4.64,
+          "details": "USA -105"
         },
         "injuries": {
           "home": {
@@ -5214,22 +4850,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-450",
-            "draw": "+600",
+            "home": "-425",
+            "draw": "+550",
             "away": "+1100"
           },
           "implied_probability": {
-            "home_win": 81.82,
-            "draw": 14.29,
+            "home_win": 80.95,
+            "draw": 15.38,
             "away_win": 8.33
           },
           "normalized_probability": {
-            "home_win": 78.34,
-            "draw": 13.68,
-            "away_win": 7.98
+            "home_win": 77.34,
+            "draw": 14.7,
+            "away_win": 7.96
           },
-          "overround": 4.44,
-          "details": "SEN -450"
+          "overround": 4.67,
+          "details": "SEN -425"
         },
         "injuries": {
           "home": {
@@ -5318,22 +4954,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+400",
-            "draw": "+340",
-            "away": "-160"
+            "home": "+425",
+            "draw": "+370",
+            "away": "-175"
           },
           "implied_probability": {
-            "home_win": 20.0,
-            "draw": 22.73,
-            "away_win": 61.54
+            "home_win": 19.05,
+            "draw": 21.28,
+            "away_win": 63.64
           },
           "normalized_probability": {
-            "home_win": 19.18,
-            "draw": 21.8,
-            "away_win": 59.02
+            "home_win": 18.32,
+            "draw": 20.47,
+            "away_win": 61.21
           },
-          "overround": 4.27,
-          "details": "FRA -160"
+          "overround": 3.96,
+          "details": "FRA -175"
         },
         "injuries": {
           "home": {
@@ -5422,22 +5058,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+650",
-            "draw": "+320",
-            "away": "-205"
+            "home": "+700",
+            "draw": "+330",
+            "away": "-215"
           },
           "implied_probability": {
-            "home_win": 13.33,
-            "draw": 23.81,
-            "away_win": 67.21
+            "home_win": 12.5,
+            "draw": 23.26,
+            "away_win": 68.25
           },
           "normalized_probability": {
-            "home_win": 12.78,
-            "draw": 22.82,
-            "away_win": 64.41
+            "home_win": 12.02,
+            "draw": 22.36,
+            "away_win": 65.62
           },
-          "overround": 4.36,
-          "details": "ESP -205"
+          "overround": 4.01,
+          "details": "ESP -215"
         },
         "injuries": {
           "home": {
@@ -5526,22 +5162,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+155",
+            "home": "+165",
             "draw": "+235",
-            "away": "+185"
+            "away": "+170"
           },
           "implied_probability": {
-            "home_win": 39.22,
+            "home_win": 37.74,
             "draw": 29.85,
-            "away_win": 35.09
+            "away_win": 37.04
           },
           "normalized_probability": {
-            "home_win": 37.65,
-            "draw": 28.66,
-            "away_win": 33.69
+            "home_win": 36.07,
+            "draw": 28.53,
+            "away_win": 35.4
           },
-          "overround": 4.15,
-          "details": "CPV +155"
+          "overround": 4.62,
+          "details": "CPV +165"
         },
         "injuries": {
           "home": {
@@ -5630,22 +5266,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+1600",
+            "home": "+1500",
             "draw": "+750",
-            "away": "-650"
+            "away": "-600"
           },
           "implied_probability": {
-            "home_win": 5.88,
+            "home_win": 6.25,
             "draw": 11.76,
-            "away_win": 86.67
+            "away_win": 85.71
           },
           "normalized_probability": {
-            "home_win": 5.64,
-            "draw": 11.28,
-            "away_win": 83.08
+            "home_win": 6.03,
+            "draw": 11.34,
+            "away_win": 82.63
           },
-          "overround": 4.31,
-          "details": "BEL -650"
+          "overround": 3.73,
+          "details": "BEL -600"
         },
         "injuries": {
           "home": {
@@ -5734,22 +5370,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+150",
+            "home": "+145",
             "draw": "+165",
-            "away": "+280"
+            "away": "+285"
           },
           "implied_probability": {
-            "home_win": 40.0,
+            "home_win": 40.82,
             "draw": 37.74,
-            "away_win": 26.32
+            "away_win": 25.97
           },
           "normalized_probability": {
-            "home_win": 38.44,
-            "draw": 36.27,
-            "away_win": 25.29
+            "home_win": 39.05,
+            "draw": 36.1,
+            "away_win": 24.85
           },
-          "overround": 4.05,
-          "details": "EGY +150"
+          "overround": 4.53,
+          "details": "EGY +145"
         },
         "injuries": {
           "home": {
@@ -5771,7 +5407,7 @@
     ],
     "daily_log": [
       {
-        "time": "2026-06-25T13:59:04Z",
+        "time": "2026-06-26T01:19:53Z",
         "stage": "08:15 automatic FIFA schedule + injury + odds research",
         "status": "completed"
       }
@@ -5818,10 +5454,10 @@
     }
   ],
   "usage": {
-    "input_tokens": 20129,
-    "output_tokens": 12810,
-    "total_tokens": 32939,
-    "cost_estimate": 0.32939
+    "input_tokens": 18477,
+    "output_tokens": 11158,
+    "total_tokens": 29635,
+    "cost_estimate": 0.29635
   },
   "analysis_model": "deepseek-v4-pro",
   "model": {
@@ -5835,12 +5471,12 @@
   },
   "daily_log": [
     {
-      "time": "2026-06-25T13:59:04Z",
+      "time": "2026-06-26T01:19:53Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research",
       "status": "completed"
     },
     {
-      "time": "2026-06-25T14:05:48Z",
+      "time": "2026-06-26T01:27:42Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     }
