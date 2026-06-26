@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "stage": "research",
-  "generated_at": "2026-06-25T13:59:04Z",
+  "generated_at": "2026-06-26T01:19:53Z",
   "window": {
     "start_date": "2026-06-25",
     "days": 3,
@@ -90,7 +90,7 @@
   "fixture_count": 12,
   "fifa_fixture_count": 12,
   "raw_fifa_fixture_count": 18,
-  "odds_available_count": 12,
+  "odds_available_count": 8,
   "matches": [
     {
       "id": "400021468",
@@ -104,9 +104,9 @@
       "group": "Group E",
       "match_number": 55,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -116,8 +116,8 @@
           "id_team": "1895293",
           "id_country": "CUW",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CUW",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "5-4-1"
         },
         "away": {
           "name": "科特迪瓦",
@@ -126,8 +126,8 @@
           "id_team": "43854",
           "id_country": "CIV",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CIV",
-          "score": null,
-          "tactics": null
+          "score": 2,
+          "tactics": "4-1-2-3"
         }
       },
       "venue": {
@@ -158,26 +158,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+1400",
-          "draw": "+700",
-          "away": "-550"
-        },
-        "implied_probability": {
-          "home_win": 6.67,
-          "draw": 12.5,
-          "away_win": 84.62
-        },
-        "normalized_probability": {
-          "home_win": 6.42,
-          "draw": 12.04,
-          "away_win": 81.53
-        },
-        "overround": 3.78,
-        "details": "CIV -550"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -208,9 +191,9 @@
       "group": "Group E",
       "match_number": 56,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -220,8 +203,8 @@
           "id_team": "43927",
           "id_country": "ECU",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/ECU",
-          "score": null,
-          "tactics": null
+          "score": 2,
+          "tactics": "4-4-2"
         },
         "away": {
           "name": "德国",
@@ -230,8 +213,8 @@
           "id_team": "43948",
           "id_country": "GER",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/GER",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "4-2-3-1"
         }
       },
       "venue": {
@@ -262,26 +245,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+400",
-          "draw": "+360",
-          "away": "-165"
-        },
-        "implied_probability": {
-          "home_win": 20.0,
-          "draw": 21.74,
-          "away_win": 62.26
-        },
-        "normalized_probability": {
-          "home_win": 19.23,
-          "draw": 20.9,
-          "away_win": 59.87
-        },
-        "overround": 4.0,
-        "details": "GER -165"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -312,9 +278,9 @@
       "group": "Group F",
       "match_number": 58,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 2,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -324,8 +290,8 @@
           "id_team": "43888",
           "id_country": "TUN",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/TUN",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "5-4-1"
         },
         "away": {
           "name": "荷兰",
@@ -334,8 +300,8 @@
           "id_team": "43960",
           "id_country": "NED",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/NED",
-          "score": null,
-          "tactics": null
+          "score": 3,
+          "tactics": "4-1-2-3"
         }
       },
       "venue": {
@@ -366,63 +332,23 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+2500",
-          "draw": "+950",
-          "away": "-1000"
-        },
-        "implied_probability": {
-          "home_win": 3.85,
-          "draw": 9.52,
-          "away_win": 90.91
-        },
-        "normalized_probability": {
-          "home_win": 3.69,
-          "draw": 9.13,
-          "away_win": 87.18
-        },
-        "overround": 4.28,
-        "details": "NED -1000"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "突尼斯",
           "team_en": "Tunisia",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
-              "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
-              "published": "2026-06-25T03:36:14Z",
-              "url": "https://www.espn.com/espn/story/_/id/49171857/relebohile-mofokeng-proves-made-main-stage-bafana-big-win"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "荷兰",
           "team_en": "Netherlands",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Aguirre's pragmatic Mexico has its doubters, but it is built for World Cup success",
-              "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
-              "published": "2026-06-25T11:24:06Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
-              "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
-              "published": "2026-06-25T03:36:14Z",
-              "url": "https://www.espn.com/espn/story/_/id/49171857/relebohile-mofokeng-proves-made-main-stage-bafana-big-win"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -439,9 +365,9 @@
       "group": "Group F",
       "match_number": 57,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 2,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -451,8 +377,8 @@
           "id_team": "43819",
           "id_country": "JPN",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/JPN",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "3-4-3"
         },
         "away": {
           "name": "瑞典",
@@ -461,8 +387,8 @@
           "id_team": "43970",
           "id_country": "SWE",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/SWE",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "3-4-3"
         }
       },
       "venue": {
@@ -493,26 +419,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-110",
-          "draw": "+245",
-          "away": "+320"
-        },
-        "implied_probability": {
-          "home_win": 52.38,
-          "draw": 28.99,
-          "away_win": 23.81
-        },
-        "normalized_probability": {
-          "home_win": 49.8,
-          "draw": 27.56,
-          "away_win": 22.64
-        },
-        "overround": 5.18,
-        "details": "JPN -110"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -601,22 +510,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+165",
-          "draw": "+130",
-          "away": "+330"
+          "home": "+160",
+          "draw": "+135",
+          "away": "+320"
         },
         "implied_probability": {
-          "home_win": 37.74,
-          "draw": 43.48,
-          "away_win": 23.26
+          "home_win": 38.46,
+          "draw": 42.55,
+          "away_win": 23.81
         },
         "normalized_probability": {
-          "home_win": 36.12,
-          "draw": 41.62,
-          "away_win": 22.26
+          "home_win": 36.69,
+          "draw": 40.59,
+          "away_win": 22.71
         },
-        "overround": 4.47,
-        "details": "PAR +165"
+        "overround": 4.82,
+        "details": "PAR +160"
       },
       "injuries": {
         "home": {
@@ -660,7 +569,7 @@
           "id_country": "TUR",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/TUR",
           "score": null,
-          "tactics": null
+          "tactics": "4-2-3-1"
         },
         "away": {
           "name": "美国",
@@ -670,7 +579,7 @@
           "id_country": "USA",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/USA",
           "score": null,
-          "tactics": null
+          "tactics": "4-1-2-3"
         }
       },
       "venue": {
@@ -705,22 +614,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+280",
-          "draw": "+300",
-          "away": "-115"
+          "home": "+260",
+          "draw": "+290",
+          "away": "-105"
         },
         "implied_probability": {
-          "home_win": 26.32,
-          "draw": 25.0,
-          "away_win": 53.49
+          "home_win": 27.78,
+          "draw": 25.64,
+          "away_win": 51.22
         },
         "normalized_probability": {
-          "home_win": 25.11,
-          "draw": 23.85,
-          "away_win": 51.04
+          "home_win": 26.55,
+          "draw": 24.5,
+          "away_win": 48.95
         },
-        "overround": 4.8,
-        "details": "USA -115"
+        "overround": 4.64,
+        "details": "USA -105"
       },
       "injuries": {
         "home": {
@@ -809,22 +718,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-450",
-          "draw": "+600",
+          "home": "-425",
+          "draw": "+550",
           "away": "+1100"
         },
         "implied_probability": {
-          "home_win": 81.82,
-          "draw": 14.29,
+          "home_win": 80.95,
+          "draw": 15.38,
           "away_win": 8.33
         },
         "normalized_probability": {
-          "home_win": 78.34,
-          "draw": 13.68,
-          "away_win": 7.98
+          "home_win": 77.34,
+          "draw": 14.7,
+          "away_win": 7.96
         },
-        "overround": 4.44,
-        "details": "SEN -450"
+        "overround": 4.67,
+        "details": "SEN -425"
       },
       "injuries": {
         "home": {
@@ -913,22 +822,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+400",
-          "draw": "+340",
-          "away": "-160"
+          "home": "+425",
+          "draw": "+370",
+          "away": "-175"
         },
         "implied_probability": {
-          "home_win": 20.0,
-          "draw": 22.73,
-          "away_win": 61.54
+          "home_win": 19.05,
+          "draw": 21.28,
+          "away_win": 63.64
         },
         "normalized_probability": {
-          "home_win": 19.18,
-          "draw": 21.8,
-          "away_win": 59.02
+          "home_win": 18.32,
+          "draw": 20.47,
+          "away_win": 61.21
         },
-        "overround": 4.27,
-        "details": "FRA -160"
+        "overround": 3.96,
+        "details": "FRA -175"
       },
       "injuries": {
         "home": {
@@ -1017,22 +926,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+650",
-          "draw": "+320",
-          "away": "-205"
+          "home": "+700",
+          "draw": "+330",
+          "away": "-215"
         },
         "implied_probability": {
-          "home_win": 13.33,
-          "draw": 23.81,
-          "away_win": 67.21
+          "home_win": 12.5,
+          "draw": 23.26,
+          "away_win": 68.25
         },
         "normalized_probability": {
-          "home_win": 12.78,
-          "draw": 22.82,
-          "away_win": 64.41
+          "home_win": 12.02,
+          "draw": 22.36,
+          "away_win": 65.62
         },
-        "overround": 4.36,
-        "details": "ESP -205"
+        "overround": 4.01,
+        "details": "ESP -215"
       },
       "injuries": {
         "home": {
@@ -1121,22 +1030,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+155",
+          "home": "+165",
           "draw": "+235",
-          "away": "+185"
+          "away": "+170"
         },
         "implied_probability": {
-          "home_win": 39.22,
+          "home_win": 37.74,
           "draw": 29.85,
-          "away_win": 35.09
+          "away_win": 37.04
         },
         "normalized_probability": {
-          "home_win": 37.65,
-          "draw": 28.66,
-          "away_win": 33.69
+          "home_win": 36.07,
+          "draw": 28.53,
+          "away_win": 35.4
         },
-        "overround": 4.15,
-        "details": "CPV +155"
+        "overround": 4.62,
+        "details": "CPV +165"
       },
       "injuries": {
         "home": {
@@ -1225,22 +1134,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+1600",
+          "home": "+1500",
           "draw": "+750",
-          "away": "-650"
+          "away": "-600"
         },
         "implied_probability": {
-          "home_win": 5.88,
+          "home_win": 6.25,
           "draw": 11.76,
-          "away_win": 86.67
+          "away_win": 85.71
         },
         "normalized_probability": {
-          "home_win": 5.64,
-          "draw": 11.28,
-          "away_win": 83.08
+          "home_win": 6.03,
+          "draw": 11.34,
+          "away_win": 82.63
         },
-        "overround": 4.31,
-        "details": "BEL -650"
+        "overround": 3.73,
+        "details": "BEL -600"
       },
       "injuries": {
         "home": {
@@ -1329,22 +1238,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+150",
+          "home": "+145",
           "draw": "+165",
-          "away": "+280"
+          "away": "+285"
         },
         "implied_probability": {
-          "home_win": 40.0,
+          "home_win": 40.82,
           "draw": 37.74,
-          "away_win": 26.32
+          "away_win": 25.97
         },
         "normalized_probability": {
-          "home_win": 38.44,
-          "draw": 36.27,
-          "away_win": 25.29
+          "home_win": 39.05,
+          "draw": 36.1,
+          "away_win": 24.85
         },
-        "overround": 4.05,
-        "details": "EGY +150"
+        "overround": 4.53,
+        "details": "EGY +145"
       },
       "injuries": {
         "home": {
@@ -1377,9 +1286,9 @@
       "group": "Group E",
       "match_number": 55,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -1389,8 +1298,8 @@
           "id_team": "1895293",
           "id_country": "CUW",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CUW",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "5-4-1"
         },
         "away": {
           "name": "科特迪瓦",
@@ -1399,8 +1308,8 @@
           "id_team": "43854",
           "id_country": "CIV",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CIV",
-          "score": null,
-          "tactics": null
+          "score": 2,
+          "tactics": "4-1-2-3"
         }
       },
       "venue": {
@@ -1431,26 +1340,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+1400",
-          "draw": "+700",
-          "away": "-550"
-        },
-        "implied_probability": {
-          "home_win": 6.67,
-          "draw": 12.5,
-          "away_win": 84.62
-        },
-        "normalized_probability": {
-          "home_win": 6.42,
-          "draw": 12.04,
-          "away_win": 81.53
-        },
-        "overround": 3.78,
-        "details": "CIV -550"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -1481,9 +1373,9 @@
       "group": "Group E",
       "match_number": 56,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -1493,8 +1385,8 @@
           "id_team": "43927",
           "id_country": "ECU",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/ECU",
-          "score": null,
-          "tactics": null
+          "score": 2,
+          "tactics": "4-4-2"
         },
         "away": {
           "name": "德国",
@@ -1503,8 +1395,8 @@
           "id_team": "43948",
           "id_country": "GER",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/GER",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "4-2-3-1"
         }
       },
       "venue": {
@@ -1535,26 +1427,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+400",
-          "draw": "+360",
-          "away": "-165"
-        },
-        "implied_probability": {
-          "home_win": 20.0,
-          "draw": 21.74,
-          "away_win": 62.26
-        },
-        "normalized_probability": {
-          "home_win": 19.23,
-          "draw": 20.9,
-          "away_win": 59.87
-        },
-        "overround": 4.0,
-        "details": "GER -165"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -1585,9 +1460,9 @@
       "group": "Group F",
       "match_number": 58,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 2,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -1597,8 +1472,8 @@
           "id_team": "43888",
           "id_country": "TUN",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/TUN",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "5-4-1"
         },
         "away": {
           "name": "荷兰",
@@ -1607,8 +1482,8 @@
           "id_team": "43960",
           "id_country": "NED",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/NED",
-          "score": null,
-          "tactics": null
+          "score": 3,
+          "tactics": "4-1-2-3"
         }
       },
       "venue": {
@@ -1639,63 +1514,23 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+2500",
-          "draw": "+950",
-          "away": "-1000"
-        },
-        "implied_probability": {
-          "home_win": 3.85,
-          "draw": 9.52,
-          "away_win": 90.91
-        },
-        "normalized_probability": {
-          "home_win": 3.69,
-          "draw": 9.13,
-          "away_win": 87.18
-        },
-        "overround": 4.28,
-        "details": "NED -1000"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "突尼斯",
           "team_en": "Tunisia",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
-              "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
-              "published": "2026-06-25T03:36:14Z",
-              "url": "https://www.espn.com/espn/story/_/id/49171857/relebohile-mofokeng-proves-made-main-stage-bafana-big-win"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "荷兰",
           "team_en": "Netherlands",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Aguirre's pragmatic Mexico has its doubters, but it is built for World Cup success",
-              "description": "Don't let the 3-0 scoreline fool you -- Mexico's win over Czechia was as pragmatic as they come, which is just how head coach Javier Aguirre had planned it.",
-              "published": "2026-06-25T11:24:06Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49172297/aguirres-pragmatic-mexico-doubters-built-world-cup-success"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Relebohile Mofokeng proves he's made for the main stage in Bafana's big win",
-              "description": "If there were still doubts regarding whether or not Relebohile Mofokeng is ready to play in one of the world's top 10 leagues, he effectively put them to bed as Bafana Bafana stunned South Korea 1-0.",
-              "published": "2026-06-25T03:36:14Z",
-              "url": "https://www.espn.com/espn/story/_/id/49171857/relebohile-mofokeng-proves-made-main-stage-bafana-big-win"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -1712,9 +1547,9 @@
       "group": "Group F",
       "match_number": 57,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 2,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -1724,8 +1559,8 @@
           "id_team": "43819",
           "id_country": "JPN",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/JPN",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "3-4-3"
         },
         "away": {
           "name": "瑞典",
@@ -1734,8 +1569,8 @@
           "id_team": "43970",
           "id_country": "SWE",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/SWE",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "3-4-3"
         }
       },
       "venue": {
@@ -1766,26 +1601,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-110",
-          "draw": "+245",
-          "away": "+320"
-        },
-        "implied_probability": {
-          "home_win": 52.38,
-          "draw": 28.99,
-          "away_win": 23.81
-        },
-        "normalized_probability": {
-          "home_win": 49.8,
-          "draw": 27.56,
-          "away_win": 22.64
-        },
-        "overround": 5.18,
-        "details": "JPN -110"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -1874,22 +1692,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+165",
-          "draw": "+130",
-          "away": "+330"
+          "home": "+160",
+          "draw": "+135",
+          "away": "+320"
         },
         "implied_probability": {
-          "home_win": 37.74,
-          "draw": 43.48,
-          "away_win": 23.26
+          "home_win": 38.46,
+          "draw": 42.55,
+          "away_win": 23.81
         },
         "normalized_probability": {
-          "home_win": 36.12,
-          "draw": 41.62,
-          "away_win": 22.26
+          "home_win": 36.69,
+          "draw": 40.59,
+          "away_win": 22.71
         },
-        "overround": 4.47,
-        "details": "PAR +165"
+        "overround": 4.82,
+        "details": "PAR +160"
       },
       "injuries": {
         "home": {
@@ -1933,7 +1751,7 @@
           "id_country": "TUR",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/TUR",
           "score": null,
-          "tactics": null
+          "tactics": "4-2-3-1"
         },
         "away": {
           "name": "美国",
@@ -1943,7 +1761,7 @@
           "id_country": "USA",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/USA",
           "score": null,
-          "tactics": null
+          "tactics": "4-1-2-3"
         }
       },
       "venue": {
@@ -1978,22 +1796,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+280",
-          "draw": "+300",
-          "away": "-115"
+          "home": "+260",
+          "draw": "+290",
+          "away": "-105"
         },
         "implied_probability": {
-          "home_win": 26.32,
-          "draw": 25.0,
-          "away_win": 53.49
+          "home_win": 27.78,
+          "draw": 25.64,
+          "away_win": 51.22
         },
         "normalized_probability": {
-          "home_win": 25.11,
-          "draw": 23.85,
-          "away_win": 51.04
+          "home_win": 26.55,
+          "draw": 24.5,
+          "away_win": 48.95
         },
-        "overround": 4.8,
-        "details": "USA -115"
+        "overround": 4.64,
+        "details": "USA -105"
       },
       "injuries": {
         "home": {
@@ -2082,22 +1900,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-450",
-          "draw": "+600",
+          "home": "-425",
+          "draw": "+550",
           "away": "+1100"
         },
         "implied_probability": {
-          "home_win": 81.82,
-          "draw": 14.29,
+          "home_win": 80.95,
+          "draw": 15.38,
           "away_win": 8.33
         },
         "normalized_probability": {
-          "home_win": 78.34,
-          "draw": 13.68,
-          "away_win": 7.98
+          "home_win": 77.34,
+          "draw": 14.7,
+          "away_win": 7.96
         },
-        "overround": 4.44,
-        "details": "SEN -450"
+        "overround": 4.67,
+        "details": "SEN -425"
       },
       "injuries": {
         "home": {
@@ -2186,22 +2004,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+400",
-          "draw": "+340",
-          "away": "-160"
+          "home": "+425",
+          "draw": "+370",
+          "away": "-175"
         },
         "implied_probability": {
-          "home_win": 20.0,
-          "draw": 22.73,
-          "away_win": 61.54
+          "home_win": 19.05,
+          "draw": 21.28,
+          "away_win": 63.64
         },
         "normalized_probability": {
-          "home_win": 19.18,
-          "draw": 21.8,
-          "away_win": 59.02
+          "home_win": 18.32,
+          "draw": 20.47,
+          "away_win": 61.21
         },
-        "overround": 4.27,
-        "details": "FRA -160"
+        "overround": 3.96,
+        "details": "FRA -175"
       },
       "injuries": {
         "home": {
@@ -2290,22 +2108,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+650",
-          "draw": "+320",
-          "away": "-205"
+          "home": "+700",
+          "draw": "+330",
+          "away": "-215"
         },
         "implied_probability": {
-          "home_win": 13.33,
-          "draw": 23.81,
-          "away_win": 67.21
+          "home_win": 12.5,
+          "draw": 23.26,
+          "away_win": 68.25
         },
         "normalized_probability": {
-          "home_win": 12.78,
-          "draw": 22.82,
-          "away_win": 64.41
+          "home_win": 12.02,
+          "draw": 22.36,
+          "away_win": 65.62
         },
-        "overround": 4.36,
-        "details": "ESP -205"
+        "overround": 4.01,
+        "details": "ESP -215"
       },
       "injuries": {
         "home": {
@@ -2394,22 +2212,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+155",
+          "home": "+165",
           "draw": "+235",
-          "away": "+185"
+          "away": "+170"
         },
         "implied_probability": {
-          "home_win": 39.22,
+          "home_win": 37.74,
           "draw": 29.85,
-          "away_win": 35.09
+          "away_win": 37.04
         },
         "normalized_probability": {
-          "home_win": 37.65,
-          "draw": 28.66,
-          "away_win": 33.69
+          "home_win": 36.07,
+          "draw": 28.53,
+          "away_win": 35.4
         },
-        "overround": 4.15,
-        "details": "CPV +155"
+        "overround": 4.62,
+        "details": "CPV +165"
       },
       "injuries": {
         "home": {
@@ -2498,22 +2316,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+1600",
+          "home": "+1500",
           "draw": "+750",
-          "away": "-650"
+          "away": "-600"
         },
         "implied_probability": {
-          "home_win": 5.88,
+          "home_win": 6.25,
           "draw": 11.76,
-          "away_win": 86.67
+          "away_win": 85.71
         },
         "normalized_probability": {
-          "home_win": 5.64,
-          "draw": 11.28,
-          "away_win": 83.08
+          "home_win": 6.03,
+          "draw": 11.34,
+          "away_win": 82.63
         },
-        "overround": 4.31,
-        "details": "BEL -650"
+        "overround": 3.73,
+        "details": "BEL -600"
       },
       "injuries": {
         "home": {
@@ -2602,22 +2420,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+150",
+          "home": "+145",
           "draw": "+165",
-          "away": "+280"
+          "away": "+285"
         },
         "implied_probability": {
-          "home_win": 40.0,
+          "home_win": 40.82,
           "draw": 37.74,
-          "away_win": 26.32
+          "away_win": 25.97
         },
         "normalized_probability": {
-          "home_win": 38.44,
-          "draw": 36.27,
-          "away_win": 25.29
+          "home_win": 39.05,
+          "draw": 36.1,
+          "away_win": 24.85
         },
-        "overround": 4.05,
-        "details": "EGY +150"
+        "overround": 4.53,
+        "details": "EGY +145"
       },
       "injuries": {
         "home": {
@@ -2639,7 +2457,7 @@
   ],
   "daily_log": [
     {
-      "time": "2026-06-25T13:59:04Z",
+      "time": "2026-06-26T01:19:53Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research",
       "status": "completed"
     }
