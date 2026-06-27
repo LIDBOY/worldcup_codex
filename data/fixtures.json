@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
   "stage": "research",
-  "generated_at": "2026-06-26T01:19:53Z",
+  "generated_at": "2026-06-27T01:15:19Z",
   "window": {
-    "start_date": "2026-06-25",
+    "start_date": "2026-06-26",
     "days": 3,
     "timezone": "UTC",
     "mode": "derived from China match-day display window"
@@ -11,41 +11,41 @@
   "display_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 2,
-    "start_iso": "2026-06-25T18:00:00+08:00",
-    "end_iso": "2026-06-27T18:00:00+08:00",
-    "display_range": "6月25日比赛日 - 6月26日比赛日",
-    "range": "北京时间 06-25 18:00 - 06-27 18:00",
+    "start_iso": "2026-06-26T18:00:00+08:00",
+    "end_iso": "2026-06-28T18:00:00+08:00",
+    "display_range": "6月26日比赛日 - 6月27日比赛日",
+    "range": "北京时间 06-26 18:00 - 06-28 18:00",
     "match_days": [
-      {
-        "date": "2026-06-25",
-        "title": "6月25日比赛日",
-        "range": "北京时间 06-25 18:00 - 06-26 18:00",
-        "start_iso": "2026-06-25T18:00:00+08:00",
-        "end_iso": "2026-06-26T18:00:00+08:00"
-      },
       {
         "date": "2026-06-26",
         "title": "6月26日比赛日",
         "range": "北京时间 06-26 18:00 - 06-27 18:00",
         "start_iso": "2026-06-26T18:00:00+08:00",
         "end_iso": "2026-06-27T18:00:00+08:00"
+      },
+      {
+        "date": "2026-06-27",
+        "title": "6月27日比赛日",
+        "range": "北京时间 06-27 18:00 - 06-28 18:00",
+        "start_iso": "2026-06-27T18:00:00+08:00",
+        "end_iso": "2026-06-28T18:00:00+08:00"
       }
     ]
   },
   "china_match_days": [
-    {
-      "date": "2026-06-25",
-      "title": "6月25日比赛日",
-      "range": "北京时间 06-25 18:00 - 06-26 18:00",
-      "start_iso": "2026-06-25T18:00:00+08:00",
-      "end_iso": "2026-06-26T18:00:00+08:00"
-    },
     {
       "date": "2026-06-26",
       "title": "6月26日比赛日",
       "range": "北京时间 06-26 18:00 - 06-27 18:00",
       "start_iso": "2026-06-26T18:00:00+08:00",
       "end_iso": "2026-06-27T18:00:00+08:00"
+    },
+    {
+      "date": "2026-06-27",
+      "title": "6月27日比赛日",
+      "range": "北京时间 06-27 18:00 - 06-28 18:00",
+      "start_iso": "2026-06-27T18:00:00+08:00",
+      "end_iso": "2026-06-28T18:00:00+08:00"
     }
   ],
   "data_sources": {
@@ -57,16 +57,16 @@
   "source": {
     "fifa": {
       "name": "FIFA official calendar API",
-      "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-06-25&to=2026-06-28&language=en&count=500&idCompetition=17&idSeason=285023"
+      "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-06-26&to=2026-06-29&language=en&count=500&idCompetition=17&idSeason=285023"
     },
     "verification": {
       "name": "ESPN public FIFA World Cup scoreboard",
       "urls": [
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260624&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260625&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260626&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260627&limit=100",
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260628&limit=100"
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260628&limit=100",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260629&limit=100"
       ]
     },
     "injury": {
@@ -77,11 +77,11 @@
     "odds": {
       "name": "ESPN odds feed",
       "urls": [
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260624&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260625&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260626&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260627&limit=100",
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260628&limit=100"
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260628&limit=100",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260629&limit=100"
       ]
     }
   },
@@ -89,565 +89,9 @@
   "unverified_fifa_matches": [],
   "fixture_count": 12,
   "fifa_fixture_count": 12,
-  "raw_fifa_fixture_count": 18,
-  "odds_available_count": 8,
+  "raw_fifa_fixture_count": 15,
+  "odds_available_count": 10,
   "matches": [
-    {
-      "id": "400021468",
-      "fifa_match_id": "400021468",
-      "match_name": "库拉索 vs 科特迪瓦",
-      "match_name_en": "Curaçao vs Côte d'Ivoire",
-      "kickoff_utc": "2026-06-25T20:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "First Stage",
-      "group": "Group E",
-      "match_number": 55,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 1,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "库拉索",
-          "name_en": "Curaçao",
-          "abbreviation": "CUW",
-          "id_team": "1895293",
-          "id_country": "CUW",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CUW",
-          "score": 0,
-          "tactics": "5-4-1"
-        },
-        "away": {
-          "name": "科特迪瓦",
-          "name_en": "Côte d'Ivoire",
-          "abbreviation": "CIV",
-          "id_team": "43854",
-          "id_country": "CIV",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CIV",
-          "score": 2,
-          "tactics": "4-1-2-3"
-        }
-      },
-      "venue": {
-        "name": "Philadelphia Stadium",
-        "city": "Philadelphia",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021468"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760473"
-        }
-      },
-      "espn_event_id": "760473",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "库拉索",
-          "team_en": "Curaçao",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "科特迪瓦",
-          "team_en": "Côte d'Ivoire",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021466",
-      "fifa_match_id": "400021466",
-      "match_name": "厄瓜多尔 vs 德国",
-      "match_name_en": "Ecuador vs Germany",
-      "kickoff_utc": "2026-06-25T20:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "First Stage",
-      "group": "Group E",
-      "match_number": 56,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 1,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "厄瓜多尔",
-          "name_en": "Ecuador",
-          "abbreviation": "ECU",
-          "id_team": "43927",
-          "id_country": "ECU",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/ECU",
-          "score": 2,
-          "tactics": "4-4-2"
-        },
-        "away": {
-          "name": "德国",
-          "name_en": "Germany",
-          "abbreviation": "GER",
-          "id_team": "43948",
-          "id_country": "GER",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/GER",
-          "score": 1,
-          "tactics": "4-2-3-1"
-        }
-      },
-      "venue": {
-        "name": "New York/New Jersey Stadium",
-        "city": "New Jersey",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021466"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760468"
-        }
-      },
-      "espn_event_id": "760468",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "厄瓜多尔",
-          "team_en": "Ecuador",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "德国",
-          "team_en": "Germany",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021473",
-      "fifa_match_id": "400021473",
-      "match_name": "突尼斯 vs 荷兰",
-      "match_name_en": "Tunisia vs Netherlands",
-      "kickoff_utc": "2026-06-25T23:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "First Stage",
-      "group": "Group F",
-      "match_number": 58,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 2,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "突尼斯",
-          "name_en": "Tunisia",
-          "abbreviation": "TUN",
-          "id_team": "43888",
-          "id_country": "TUN",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/TUN",
-          "score": 1,
-          "tactics": "5-4-1"
-        },
-        "away": {
-          "name": "荷兰",
-          "name_en": "Netherlands",
-          "abbreviation": "NED",
-          "id_team": "43960",
-          "id_country": "NED",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/NED",
-          "score": 3,
-          "tactics": "4-1-2-3"
-        }
-      },
-      "venue": {
-        "name": "Kansas City Stadium",
-        "city": "Kansas City",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021473"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760472"
-        }
-      },
-      "espn_event_id": "760472",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "突尼斯",
-          "team_en": "Tunisia",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "荷兰",
-          "team_en": "Netherlands",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021471",
-      "fifa_match_id": "400021471",
-      "match_name": "日本 vs 瑞典",
-      "match_name_en": "Japan vs Sweden",
-      "kickoff_utc": "2026-06-25T23:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "First Stage",
-      "group": "Group F",
-      "match_number": 57,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 2,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "日本",
-          "name_en": "Japan",
-          "abbreviation": "JPN",
-          "id_team": "43819",
-          "id_country": "JPN",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/JPN",
-          "score": 1,
-          "tactics": "3-4-3"
-        },
-        "away": {
-          "name": "瑞典",
-          "name_en": "Sweden",
-          "abbreviation": "SWE",
-          "id_team": "43970",
-          "id_country": "SWE",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/SWE",
-          "score": 1,
-          "tactics": "3-4-3"
-        }
-      },
-      "venue": {
-        "name": "Dallas Stadium",
-        "city": "Dallas",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021471"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760471"
-        }
-      },
-      "espn_event_id": "760471",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "日本",
-          "team_en": "Japan",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "瑞典",
-          "team_en": "Sweden",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021461",
-      "fifa_match_id": "400021461",
-      "match_name": "巴拉圭 vs 澳大利亚",
-      "match_name_en": "Paraguay vs Australia",
-      "kickoff_utc": "2026-06-26T02:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "First Stage",
-      "group": "Group D",
-      "match_number": 60,
-      "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
-      },
-      "teams": {
-        "home": {
-          "name": "巴拉圭",
-          "name_en": "Paraguay",
-          "abbreviation": "PAR",
-          "id_team": "43928",
-          "id_country": "PAR",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/PAR",
-          "score": null,
-          "tactics": null
-        },
-        "away": {
-          "name": "澳大利亚",
-          "name_en": "Australia",
-          "abbreviation": "AUS",
-          "id_team": "43976",
-          "id_country": "AUS",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/AUS",
-          "score": null,
-          "tactics": null
-        }
-      },
-      "venue": {
-        "name": "San Francisco Bay Area Stadium",
-        "city": "San Francisco Bay Area",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021461"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760469"
-        }
-      },
-      "espn_event_id": "760469",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": true,
-        "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+160",
-          "draw": "+135",
-          "away": "+320"
-        },
-        "implied_probability": {
-          "home_win": 38.46,
-          "draw": 42.55,
-          "away_win": 23.81
-        },
-        "normalized_probability": {
-          "home_win": 36.69,
-          "draw": 40.59,
-          "away_win": 22.71
-        },
-        "overround": 4.82,
-        "details": "PAR +160"
-      },
-      "injuries": {
-        "home": {
-          "team": "巴拉圭",
-          "team_en": "Paraguay",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "澳大利亚",
-          "team_en": "Australia",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021459",
-      "fifa_match_id": "400021459",
-      "match_name": "土耳其 vs 美国",
-      "match_name_en": "Türkiye vs USA",
-      "kickoff_utc": "2026-06-26T02:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "First Stage",
-      "group": "Group D",
-      "match_number": 59,
-      "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
-      },
-      "teams": {
-        "home": {
-          "name": "土耳其",
-          "name_en": "Türkiye",
-          "abbreviation": "TUR",
-          "id_team": "43972",
-          "id_country": "TUR",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/TUR",
-          "score": null,
-          "tactics": "4-2-3-1"
-        },
-        "away": {
-          "name": "美国",
-          "name_en": "USA",
-          "abbreviation": "USA",
-          "id_team": "43921",
-          "id_country": "USA",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/USA",
-          "score": null,
-          "tactics": "4-1-2-3"
-        }
-      },
-      "venue": {
-        "name": "Los Angeles Stadium",
-        "city": "Los Angeles",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021459"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760470"
-        }
-      },
-      "espn_event_id": "760470",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": true,
-        "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+260",
-          "draw": "+290",
-          "away": "-105"
-        },
-        "implied_probability": {
-          "home_win": 27.78,
-          "draw": 25.64,
-          "away_win": 51.22
-        },
-        "normalized_probability": {
-          "home_win": 26.55,
-          "draw": 24.5,
-          "away_win": 48.95
-        },
-        "overround": 4.64,
-        "details": "USA -105"
-      },
-      "injuries": {
-        "home": {
-          "team": "土耳其",
-          "team_en": "Türkiye",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "美国",
-          "team_en": "USA",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
     {
       "id": "400021493",
       "fifa_match_id": "400021493",
@@ -660,9 +104,9 @@
       "group": "Group I",
       "match_number": 62,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -672,8 +116,8 @@
           "id_team": "43879",
           "id_country": "SEN",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/SEN",
-          "score": null,
-          "tactics": null
+          "score": 5,
+          "tactics": "4-1-2-3"
         },
         "away": {
           "name": "伊拉克",
@@ -682,8 +126,8 @@
           "id_team": "43818",
           "id_country": "IRQ",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/IRQ",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "4-4-2"
         }
       },
       "venue": {
@@ -714,26 +158,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-425",
-          "draw": "+550",
-          "away": "+1100"
-        },
-        "implied_probability": {
-          "home_win": 80.95,
-          "draw": 15.38,
-          "away_win": 8.33
-        },
-        "normalized_probability": {
-          "home_win": 77.34,
-          "draw": 14.7,
-          "away_win": 7.96
-        },
-        "overround": 4.67,
-        "details": "SEN -425"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -764,9 +191,9 @@
       "group": "Group I",
       "match_number": 61,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -776,8 +203,8 @@
           "id_team": "43961",
           "id_country": "NOR",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/NOR",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "4-1-2-3"
         },
         "away": {
           "name": "法国",
@@ -786,8 +213,8 @@
           "id_team": "43946",
           "id_country": "FRA",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/FRA",
-          "score": null,
-          "tactics": null
+          "score": 4,
+          "tactics": "4-2-3-1"
         }
       },
       "venue": {
@@ -818,26 +245,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+425",
-          "draw": "+370",
-          "away": "-175"
-        },
-        "implied_probability": {
-          "home_win": 19.05,
-          "draw": 21.28,
-          "away_win": 63.64
-        },
-        "normalized_probability": {
-          "home_win": 18.32,
-          "draw": 20.47,
-          "away_win": 61.21
-        },
-        "overround": 3.96,
-        "details": "FRA -175"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -868,7 +278,7 @@
       "group": "Group H",
       "match_number": 66,
       "status": {
-        "match_status": 1,
+        "match_status": 3,
         "officiality_status": 0,
         "result_type": 0
       },
@@ -880,8 +290,8 @@
           "id_team": "43930",
           "id_country": "URU",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/URU",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "4-1-2-3"
         },
         "away": {
           "name": "西班牙",
@@ -890,8 +300,8 @@
           "id_team": "43969",
           "id_country": "ESP",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/ESP",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "4-1-2-3"
         }
       },
       "venue": {
@@ -926,22 +336,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+700",
-          "draw": "+330",
-          "away": "-215"
+          "home": "+475",
+          "draw": "+265",
+          "away": "-145"
         },
         "implied_probability": {
-          "home_win": 12.5,
-          "draw": 23.26,
-          "away_win": 68.25
+          "home_win": 17.39,
+          "draw": 27.4,
+          "away_win": 59.18
         },
         "normalized_probability": {
-          "home_win": 12.02,
-          "draw": 22.36,
-          "away_win": 65.62
+          "home_win": 16.73,
+          "draw": 26.35,
+          "away_win": 56.92
         },
-        "overround": 4.01,
-        "details": "ESP -215"
+        "overround": 3.97,
+        "details": "ESP -145"
       },
       "injuries": {
         "home": {
@@ -972,7 +382,7 @@
       "group": "Group H",
       "match_number": 65,
       "status": {
-        "match_status": 1,
+        "match_status": 3,
         "officiality_status": 0,
         "result_type": 0
       },
@@ -984,8 +394,8 @@
           "id_team": "43850",
           "id_country": "CPV",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CPV",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "4-1-2-3"
         },
         "away": {
           "name": "沙特阿拉伯",
@@ -994,8 +404,8 @@
           "id_team": "43835",
           "id_country": "KSA",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/KSA",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "4-4-2"
         }
       },
       "venue": {
@@ -1030,22 +440,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+165",
-          "draw": "+235",
-          "away": "+170"
+          "home": "+150",
+          "draw": "+250",
+          "away": "+180"
         },
         "implied_probability": {
-          "home_win": 37.74,
-          "draw": 29.85,
-          "away_win": 37.04
+          "home_win": 40.0,
+          "draw": 28.57,
+          "away_win": 35.71
         },
         "normalized_probability": {
-          "home_win": 36.07,
-          "draw": 28.53,
-          "away_win": 35.4
+          "home_win": 38.36,
+          "draw": 27.4,
+          "away_win": 34.25
         },
-        "overround": 4.62,
-        "details": "CPV +165"
+        "overround": 4.29,
+        "details": "CPV +150"
       },
       "injuries": {
         "home": {
@@ -1134,22 +544,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+1500",
-          "draw": "+750",
-          "away": "-600"
+          "home": "+1200",
+          "draw": "+700",
+          "away": "-525"
         },
         "implied_probability": {
-          "home_win": 6.25,
-          "draw": 11.76,
-          "away_win": 85.71
+          "home_win": 7.69,
+          "draw": 12.5,
+          "away_win": 84.0
         },
         "normalized_probability": {
-          "home_win": 6.03,
-          "draw": 11.34,
-          "away_win": 82.63
+          "home_win": 7.38,
+          "draw": 12.0,
+          "away_win": 80.62
         },
-        "overround": 3.73,
-        "details": "BEL -600"
+        "overround": 4.19,
+        "details": "BEL -525"
       },
       "injuries": {
         "home": {
@@ -1238,22 +648,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+145",
+          "home": "+170",
           "draw": "+165",
-          "away": "+285"
+          "away": "+240"
         },
         "implied_probability": {
-          "home_win": 40.82,
+          "home_win": 37.04,
           "draw": 37.74,
-          "away_win": 25.97
+          "away_win": 29.41
         },
         "normalized_probability": {
-          "home_win": 39.05,
-          "draw": 36.1,
-          "away_win": 24.85
+          "home_win": 35.55,
+          "draw": 36.22,
+          "away_win": 28.23
         },
-        "overround": 4.53,
-        "details": "EGY +145"
+        "overround": 4.18,
+        "details": "EGY +170"
       },
       "injuries": {
         "home": {
@@ -1266,6 +676,660 @@
         "away": {
           "team": "伊朗",
           "team_en": "IR Iran",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021508",
+      "fifa_match_id": "400021508",
+      "match_name": "巴拿马 vs 英格兰",
+      "match_name_en": "Panama vs England",
+      "kickoff_utc": "2026-06-27T21:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group L",
+      "match_number": 67,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "巴拿马",
+          "name_en": "Panama",
+          "abbreviation": "PAN",
+          "id_team": "43914",
+          "id_country": "PAN",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/PAN",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "英格兰",
+          "name_en": "England",
+          "abbreviation": "ENG",
+          "id_team": "43942",
+          "id_country": "ENG",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/ENG",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "New York/New Jersey Stadium",
+        "city": "New Jersey",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021508"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760485"
+        }
+      },
+      "espn_event_id": "760485",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+1400",
+          "draw": "+650",
+          "away": "-550"
+        },
+        "implied_probability": {
+          "home_win": 6.67,
+          "draw": 13.33,
+          "away_win": 84.62
+        },
+        "normalized_probability": {
+          "home_win": 6.37,
+          "draw": 12.75,
+          "away_win": 80.88
+        },
+        "overround": 4.62,
+        "details": "ENG -550"
+      },
+      "injuries": {
+        "home": {
+          "team": "巴拿马",
+          "team_en": "Panama",
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Reece James to miss England vs Panama with injury, Declan Rice, Elliot Anderson fit",
+              "description": "Thomas Tuchel has confirmed Reece James will miss Saturday's Group L finale against Panama but Elliot Anderson and Declan Rice are available to start.",
+              "published": "2026-06-27T00:34:26Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49191072/world-cup-2026-reece-james-miss-england-vs-panama-injury-declan-rice-elliot-anderson-fit"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "England's Reece James misses training ahead of Panama World Cup clash",
+              "description": "Reece James missed training ahead of England's final group game against Panama.",
+              "published": "2026-06-26T17:05:27Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49188194/england-reece-james-misses-training-ahead-panama-world-cup-clash"
+            }
+          ],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "英格兰",
+          "team_en": "England",
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Reece James to miss England vs Panama with injury, Declan Rice, Elliot Anderson fit",
+              "description": "Thomas Tuchel has confirmed Reece James will miss Saturday's Group L finale against Panama but Elliot Anderson and Declan Rice are available to start.",
+              "published": "2026-06-27T00:34:26Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49191072/world-cup-2026-reece-james-miss-england-vs-panama-injury-declan-rice-elliot-anderson-fit"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "England's Reece James misses training ahead of Panama World Cup clash",
+              "description": "Reece James missed training ahead of England's final group game against Panama.",
+              "published": "2026-06-26T17:05:27Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49188194/england-reece-james-misses-training-ahead-panama-world-cup-clash"
+            }
+          ],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021509",
+      "fifa_match_id": "400021509",
+      "match_name": "克罗地亚 vs 加纳",
+      "match_name_en": "Croatia vs Ghana",
+      "kickoff_utc": "2026-06-27T21:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group L",
+      "match_number": 68,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "克罗地亚",
+          "name_en": "Croatia",
+          "abbreviation": "CRO",
+          "id_team": "43938",
+          "id_country": "CRO",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CRO",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "加纳",
+          "name_en": "Ghana",
+          "abbreviation": "GHA",
+          "id_team": "43860",
+          "id_country": "GHA",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/GHA",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "Philadelphia Stadium",
+        "city": "Philadelphia",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021509"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760480"
+        }
+      },
+      "espn_event_id": "760480",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "-120",
+          "draw": "+220",
+          "away": "+450"
+        },
+        "implied_probability": {
+          "home_win": 54.55,
+          "draw": 31.25,
+          "away_win": 18.18
+        },
+        "normalized_probability": {
+          "home_win": 52.46,
+          "draw": 30.05,
+          "away_win": 17.49
+        },
+        "overround": 3.98,
+        "details": "CRO -120"
+      },
+      "injuries": {
+        "home": {
+          "team": "克罗地亚",
+          "team_en": "Croatia",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "加纳",
+          "team_en": "Ghana",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021500",
+      "fifa_match_id": "400021500",
+      "match_name": "刚果民主共和国 vs 乌兹别克斯坦",
+      "match_name_en": "Congo DR vs Uzbekistan",
+      "kickoff_utc": "2026-06-27T23:30:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group K",
+      "match_number": 72,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "刚果民主共和国",
+          "name_en": "Congo DR",
+          "abbreviation": "COD",
+          "id_team": "20014",
+          "id_country": "COD",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/COD",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "乌兹别克斯坦",
+          "name_en": "Uzbekistan",
+          "abbreviation": "UZB",
+          "id_team": "44005",
+          "id_country": "UZB",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/UZB",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "Atlanta Stadium",
+        "city": "Atlanta",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021500"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760482"
+        }
+      },
+      "espn_event_id": "760482",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "-140",
+          "draw": "+310",
+          "away": "+360"
+        },
+        "implied_probability": {
+          "home_win": 58.33,
+          "draw": 24.39,
+          "away_win": 21.74
+        },
+        "normalized_probability": {
+          "home_win": 55.84,
+          "draw": 23.35,
+          "away_win": 20.81
+        },
+        "overround": 4.46,
+        "details": "COD -140"
+      },
+      "injuries": {
+        "home": {
+          "team": "刚果民主共和国",
+          "team_en": "Congo DR",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "乌兹别克斯坦",
+          "team_en": "Uzbekistan",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021505",
+      "fifa_match_id": "400021505",
+      "match_name": "哥伦比亚 vs 葡萄牙",
+      "match_name_en": "Colombia vs Portugal",
+      "kickoff_utc": "2026-06-27T23:30:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group K",
+      "match_number": 71,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "哥伦比亚",
+          "name_en": "Colombia",
+          "abbreviation": "COL",
+          "id_team": "43926",
+          "id_country": "COL",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/COL",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "葡萄牙",
+          "name_en": "Portugal",
+          "abbreviation": "POR",
+          "id_team": "43963",
+          "id_country": "POR",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/POR",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "Miami Stadium",
+        "city": "Miami",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021505"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760481"
+        }
+      },
+      "espn_event_id": "760481",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+300",
+          "draw": "+280",
+          "away": "-110"
+        },
+        "implied_probability": {
+          "home_win": 25.0,
+          "draw": 26.32,
+          "away_win": 52.38
+        },
+        "normalized_probability": {
+          "home_win": 24.11,
+          "draw": 25.38,
+          "away_win": 50.51
+        },
+        "overround": 3.7,
+        "details": "POR -110"
+      },
+      "injuries": {
+        "home": {
+          "team": "哥伦比亚",
+          "team_en": "Colombia",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "葡萄牙",
+          "team_en": "Portugal",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021497",
+      "fifa_match_id": "400021497",
+      "match_name": "阿尔及利亚 vs 奥地利",
+      "match_name_en": "Algeria vs Austria",
+      "kickoff_utc": "2026-06-28T02:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group J",
+      "match_number": 69,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "阿尔及利亚",
+          "name_en": "Algeria",
+          "abbreviation": "ALG",
+          "id_team": "43843",
+          "id_country": "ALG",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/ALG",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "奥地利",
+          "name_en": "Austria",
+          "abbreviation": "AUT",
+          "id_team": "43934",
+          "id_country": "AUT",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/AUT",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "Kansas City Stadium",
+        "city": "Kansas City",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021497"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760484"
+        }
+      },
+      "espn_event_id": "760484",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+310",
+          "draw": "+120",
+          "away": "+195"
+        },
+        "implied_probability": {
+          "home_win": 24.39,
+          "draw": 45.45,
+          "away_win": 33.9
+        },
+        "normalized_probability": {
+          "home_win": 23.51,
+          "draw": 43.81,
+          "away_win": 32.68
+        },
+        "overround": 3.74,
+        "details": "AUT +195"
+      },
+      "injuries": {
+        "home": {
+          "team": "阿尔及利亚",
+          "team_en": "Algeria",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "奥地利",
+          "team_en": "Austria",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021495",
+      "fifa_match_id": "400021495",
+      "match_name": "约旦 vs 阿根廷",
+      "match_name_en": "Jordan vs Argentina",
+      "kickoff_utc": "2026-06-28T02:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group J",
+      "match_number": 70,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "约旦",
+          "name_en": "Jordan",
+          "abbreviation": "JOR",
+          "id_team": "43820",
+          "id_country": "JOR",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/JOR",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "阿根廷",
+          "name_en": "Argentina",
+          "abbreviation": "ARG",
+          "id_team": "43922",
+          "id_country": "ARG",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/ARG",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "Dallas Stadium",
+        "city": "Dallas",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021495"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760483"
+        }
+      },
+      "espn_event_id": "760483",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+1400",
+          "draw": "+650",
+          "away": "-550"
+        },
+        "implied_probability": {
+          "home_win": 6.67,
+          "draw": 13.33,
+          "away_win": 84.62
+        },
+        "normalized_probability": {
+          "home_win": 6.37,
+          "draw": 12.75,
+          "away_win": 80.88
+        },
+        "overround": 4.62,
+        "details": "ARG -550"
+      },
+      "injuries": {
+        "home": {
+          "team": "约旦",
+          "team_en": "Jordan",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "阿根廷",
+          "team_en": "Argentina",
           "status": "unknown",
           "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -1275,562 +1339,6 @@
   ],
   "fixtures": [
     {
-      "id": "400021468",
-      "fifa_match_id": "400021468",
-      "match_name": "库拉索 vs 科特迪瓦",
-      "match_name_en": "Curaçao vs Côte d'Ivoire",
-      "kickoff_utc": "2026-06-25T20:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "First Stage",
-      "group": "Group E",
-      "match_number": 55,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 1,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "库拉索",
-          "name_en": "Curaçao",
-          "abbreviation": "CUW",
-          "id_team": "1895293",
-          "id_country": "CUW",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CUW",
-          "score": 0,
-          "tactics": "5-4-1"
-        },
-        "away": {
-          "name": "科特迪瓦",
-          "name_en": "Côte d'Ivoire",
-          "abbreviation": "CIV",
-          "id_team": "43854",
-          "id_country": "CIV",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CIV",
-          "score": 2,
-          "tactics": "4-1-2-3"
-        }
-      },
-      "venue": {
-        "name": "Philadelphia Stadium",
-        "city": "Philadelphia",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021468"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760473"
-        }
-      },
-      "espn_event_id": "760473",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "库拉索",
-          "team_en": "Curaçao",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "科特迪瓦",
-          "team_en": "Côte d'Ivoire",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021466",
-      "fifa_match_id": "400021466",
-      "match_name": "厄瓜多尔 vs 德国",
-      "match_name_en": "Ecuador vs Germany",
-      "kickoff_utc": "2026-06-25T20:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "First Stage",
-      "group": "Group E",
-      "match_number": 56,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 1,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "厄瓜多尔",
-          "name_en": "Ecuador",
-          "abbreviation": "ECU",
-          "id_team": "43927",
-          "id_country": "ECU",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/ECU",
-          "score": 2,
-          "tactics": "4-4-2"
-        },
-        "away": {
-          "name": "德国",
-          "name_en": "Germany",
-          "abbreviation": "GER",
-          "id_team": "43948",
-          "id_country": "GER",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/GER",
-          "score": 1,
-          "tactics": "4-2-3-1"
-        }
-      },
-      "venue": {
-        "name": "New York/New Jersey Stadium",
-        "city": "New Jersey",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021466"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760468"
-        }
-      },
-      "espn_event_id": "760468",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "厄瓜多尔",
-          "team_en": "Ecuador",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "德国",
-          "team_en": "Germany",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021473",
-      "fifa_match_id": "400021473",
-      "match_name": "突尼斯 vs 荷兰",
-      "match_name_en": "Tunisia vs Netherlands",
-      "kickoff_utc": "2026-06-25T23:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "First Stage",
-      "group": "Group F",
-      "match_number": 58,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 2,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "突尼斯",
-          "name_en": "Tunisia",
-          "abbreviation": "TUN",
-          "id_team": "43888",
-          "id_country": "TUN",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/TUN",
-          "score": 1,
-          "tactics": "5-4-1"
-        },
-        "away": {
-          "name": "荷兰",
-          "name_en": "Netherlands",
-          "abbreviation": "NED",
-          "id_team": "43960",
-          "id_country": "NED",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/NED",
-          "score": 3,
-          "tactics": "4-1-2-3"
-        }
-      },
-      "venue": {
-        "name": "Kansas City Stadium",
-        "city": "Kansas City",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021473"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760472"
-        }
-      },
-      "espn_event_id": "760472",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "突尼斯",
-          "team_en": "Tunisia",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "荷兰",
-          "team_en": "Netherlands",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021471",
-      "fifa_match_id": "400021471",
-      "match_name": "日本 vs 瑞典",
-      "match_name_en": "Japan vs Sweden",
-      "kickoff_utc": "2026-06-25T23:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "First Stage",
-      "group": "Group F",
-      "match_number": 57,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 2,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "日本",
-          "name_en": "Japan",
-          "abbreviation": "JPN",
-          "id_team": "43819",
-          "id_country": "JPN",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/JPN",
-          "score": 1,
-          "tactics": "3-4-3"
-        },
-        "away": {
-          "name": "瑞典",
-          "name_en": "Sweden",
-          "abbreviation": "SWE",
-          "id_team": "43970",
-          "id_country": "SWE",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/SWE",
-          "score": 1,
-          "tactics": "3-4-3"
-        }
-      },
-      "venue": {
-        "name": "Dallas Stadium",
-        "city": "Dallas",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021471"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760471"
-        }
-      },
-      "espn_event_id": "760471",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "日本",
-          "team_en": "Japan",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "瑞典",
-          "team_en": "Sweden",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021461",
-      "fifa_match_id": "400021461",
-      "match_name": "巴拉圭 vs 澳大利亚",
-      "match_name_en": "Paraguay vs Australia",
-      "kickoff_utc": "2026-06-26T02:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "First Stage",
-      "group": "Group D",
-      "match_number": 60,
-      "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
-      },
-      "teams": {
-        "home": {
-          "name": "巴拉圭",
-          "name_en": "Paraguay",
-          "abbreviation": "PAR",
-          "id_team": "43928",
-          "id_country": "PAR",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/PAR",
-          "score": null,
-          "tactics": null
-        },
-        "away": {
-          "name": "澳大利亚",
-          "name_en": "Australia",
-          "abbreviation": "AUS",
-          "id_team": "43976",
-          "id_country": "AUS",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/AUS",
-          "score": null,
-          "tactics": null
-        }
-      },
-      "venue": {
-        "name": "San Francisco Bay Area Stadium",
-        "city": "San Francisco Bay Area",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021461"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760469"
-        }
-      },
-      "espn_event_id": "760469",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": true,
-        "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+160",
-          "draw": "+135",
-          "away": "+320"
-        },
-        "implied_probability": {
-          "home_win": 38.46,
-          "draw": 42.55,
-          "away_win": 23.81
-        },
-        "normalized_probability": {
-          "home_win": 36.69,
-          "draw": 40.59,
-          "away_win": 22.71
-        },
-        "overround": 4.82,
-        "details": "PAR +160"
-      },
-      "injuries": {
-        "home": {
-          "team": "巴拉圭",
-          "team_en": "Paraguay",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "澳大利亚",
-          "team_en": "Australia",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021459",
-      "fifa_match_id": "400021459",
-      "match_name": "土耳其 vs 美国",
-      "match_name_en": "Türkiye vs USA",
-      "kickoff_utc": "2026-06-26T02:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "First Stage",
-      "group": "Group D",
-      "match_number": 59,
-      "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
-      },
-      "teams": {
-        "home": {
-          "name": "土耳其",
-          "name_en": "Türkiye",
-          "abbreviation": "TUR",
-          "id_team": "43972",
-          "id_country": "TUR",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/TUR",
-          "score": null,
-          "tactics": "4-2-3-1"
-        },
-        "away": {
-          "name": "美国",
-          "name_en": "USA",
-          "abbreviation": "USA",
-          "id_team": "43921",
-          "id_country": "USA",
-          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/USA",
-          "score": null,
-          "tactics": "4-1-2-3"
-        }
-      },
-      "venue": {
-        "name": "Los Angeles Stadium",
-        "city": "Los Angeles",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021459"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760470"
-        }
-      },
-      "espn_event_id": "760470",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": true,
-        "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+260",
-          "draw": "+290",
-          "away": "-105"
-        },
-        "implied_probability": {
-          "home_win": 27.78,
-          "draw": 25.64,
-          "away_win": 51.22
-        },
-        "normalized_probability": {
-          "home_win": 26.55,
-          "draw": 24.5,
-          "away_win": 48.95
-        },
-        "overround": 4.64,
-        "details": "USA -105"
-      },
-      "injuries": {
-        "home": {
-          "team": "土耳其",
-          "team_en": "Türkiye",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "美国",
-          "team_en": "USA",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
       "id": "400021493",
       "fifa_match_id": "400021493",
       "match_name": "塞内加尔 vs 伊拉克",
@@ -1842,9 +1350,9 @@
       "group": "Group I",
       "match_number": 62,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -1854,8 +1362,8 @@
           "id_team": "43879",
           "id_country": "SEN",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/SEN",
-          "score": null,
-          "tactics": null
+          "score": 5,
+          "tactics": "4-1-2-3"
         },
         "away": {
           "name": "伊拉克",
@@ -1864,8 +1372,8 @@
           "id_team": "43818",
           "id_country": "IRQ",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/IRQ",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "4-4-2"
         }
       },
       "venue": {
@@ -1896,26 +1404,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-425",
-          "draw": "+550",
-          "away": "+1100"
-        },
-        "implied_probability": {
-          "home_win": 80.95,
-          "draw": 15.38,
-          "away_win": 8.33
-        },
-        "normalized_probability": {
-          "home_win": 77.34,
-          "draw": 14.7,
-          "away_win": 7.96
-        },
-        "overround": 4.67,
-        "details": "SEN -425"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -1946,9 +1437,9 @@
       "group": "Group I",
       "match_number": 61,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -1958,8 +1449,8 @@
           "id_team": "43961",
           "id_country": "NOR",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/NOR",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "4-1-2-3"
         },
         "away": {
           "name": "法国",
@@ -1968,8 +1459,8 @@
           "id_team": "43946",
           "id_country": "FRA",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/FRA",
-          "score": null,
-          "tactics": null
+          "score": 4,
+          "tactics": "4-2-3-1"
         }
       },
       "venue": {
@@ -2000,26 +1491,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+425",
-          "draw": "+370",
-          "away": "-175"
-        },
-        "implied_probability": {
-          "home_win": 19.05,
-          "draw": 21.28,
-          "away_win": 63.64
-        },
-        "normalized_probability": {
-          "home_win": 18.32,
-          "draw": 20.47,
-          "away_win": 61.21
-        },
-        "overround": 3.96,
-        "details": "FRA -175"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -2050,7 +1524,7 @@
       "group": "Group H",
       "match_number": 66,
       "status": {
-        "match_status": 1,
+        "match_status": 3,
         "officiality_status": 0,
         "result_type": 0
       },
@@ -2062,8 +1536,8 @@
           "id_team": "43930",
           "id_country": "URU",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/URU",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "4-1-2-3"
         },
         "away": {
           "name": "西班牙",
@@ -2072,8 +1546,8 @@
           "id_team": "43969",
           "id_country": "ESP",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/ESP",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "4-1-2-3"
         }
       },
       "venue": {
@@ -2108,22 +1582,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+700",
-          "draw": "+330",
-          "away": "-215"
+          "home": "+475",
+          "draw": "+265",
+          "away": "-145"
         },
         "implied_probability": {
-          "home_win": 12.5,
-          "draw": 23.26,
-          "away_win": 68.25
+          "home_win": 17.39,
+          "draw": 27.4,
+          "away_win": 59.18
         },
         "normalized_probability": {
-          "home_win": 12.02,
-          "draw": 22.36,
-          "away_win": 65.62
+          "home_win": 16.73,
+          "draw": 26.35,
+          "away_win": 56.92
         },
-        "overround": 4.01,
-        "details": "ESP -215"
+        "overround": 3.97,
+        "details": "ESP -145"
       },
       "injuries": {
         "home": {
@@ -2154,7 +1628,7 @@
       "group": "Group H",
       "match_number": 65,
       "status": {
-        "match_status": 1,
+        "match_status": 3,
         "officiality_status": 0,
         "result_type": 0
       },
@@ -2166,8 +1640,8 @@
           "id_team": "43850",
           "id_country": "CPV",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CPV",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "4-1-2-3"
         },
         "away": {
           "name": "沙特阿拉伯",
@@ -2176,8 +1650,8 @@
           "id_team": "43835",
           "id_country": "KSA",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/KSA",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "4-4-2"
         }
       },
       "venue": {
@@ -2212,22 +1686,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+165",
-          "draw": "+235",
-          "away": "+170"
+          "home": "+150",
+          "draw": "+250",
+          "away": "+180"
         },
         "implied_probability": {
-          "home_win": 37.74,
-          "draw": 29.85,
-          "away_win": 37.04
+          "home_win": 40.0,
+          "draw": 28.57,
+          "away_win": 35.71
         },
         "normalized_probability": {
-          "home_win": 36.07,
-          "draw": 28.53,
-          "away_win": 35.4
+          "home_win": 38.36,
+          "draw": 27.4,
+          "away_win": 34.25
         },
-        "overround": 4.62,
-        "details": "CPV +165"
+        "overround": 4.29,
+        "details": "CPV +150"
       },
       "injuries": {
         "home": {
@@ -2316,22 +1790,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+1500",
-          "draw": "+750",
-          "away": "-600"
+          "home": "+1200",
+          "draw": "+700",
+          "away": "-525"
         },
         "implied_probability": {
-          "home_win": 6.25,
-          "draw": 11.76,
-          "away_win": 85.71
+          "home_win": 7.69,
+          "draw": 12.5,
+          "away_win": 84.0
         },
         "normalized_probability": {
-          "home_win": 6.03,
-          "draw": 11.34,
-          "away_win": 82.63
+          "home_win": 7.38,
+          "draw": 12.0,
+          "away_win": 80.62
         },
-        "overround": 3.73,
-        "details": "BEL -600"
+        "overround": 4.19,
+        "details": "BEL -525"
       },
       "injuries": {
         "home": {
@@ -2420,22 +1894,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+145",
+          "home": "+170",
           "draw": "+165",
-          "away": "+285"
+          "away": "+240"
         },
         "implied_probability": {
-          "home_win": 40.82,
+          "home_win": 37.04,
           "draw": 37.74,
-          "away_win": 25.97
+          "away_win": 29.41
         },
         "normalized_probability": {
-          "home_win": 39.05,
-          "draw": 36.1,
-          "away_win": 24.85
+          "home_win": 35.55,
+          "draw": 36.22,
+          "away_win": 28.23
         },
-        "overround": 4.53,
-        "details": "EGY +145"
+        "overround": 4.18,
+        "details": "EGY +170"
       },
       "injuries": {
         "home": {
@@ -2453,11 +1927,665 @@
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
+    },
+    {
+      "id": "400021508",
+      "fifa_match_id": "400021508",
+      "match_name": "巴拿马 vs 英格兰",
+      "match_name_en": "Panama vs England",
+      "kickoff_utc": "2026-06-27T21:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group L",
+      "match_number": 67,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "巴拿马",
+          "name_en": "Panama",
+          "abbreviation": "PAN",
+          "id_team": "43914",
+          "id_country": "PAN",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/PAN",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "英格兰",
+          "name_en": "England",
+          "abbreviation": "ENG",
+          "id_team": "43942",
+          "id_country": "ENG",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/ENG",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "New York/New Jersey Stadium",
+        "city": "New Jersey",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021508"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760485"
+        }
+      },
+      "espn_event_id": "760485",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+1400",
+          "draw": "+650",
+          "away": "-550"
+        },
+        "implied_probability": {
+          "home_win": 6.67,
+          "draw": 13.33,
+          "away_win": 84.62
+        },
+        "normalized_probability": {
+          "home_win": 6.37,
+          "draw": 12.75,
+          "away_win": 80.88
+        },
+        "overround": 4.62,
+        "details": "ENG -550"
+      },
+      "injuries": {
+        "home": {
+          "team": "巴拿马",
+          "team_en": "Panama",
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Reece James to miss England vs Panama with injury, Declan Rice, Elliot Anderson fit",
+              "description": "Thomas Tuchel has confirmed Reece James will miss Saturday's Group L finale against Panama but Elliot Anderson and Declan Rice are available to start.",
+              "published": "2026-06-27T00:34:26Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49191072/world-cup-2026-reece-james-miss-england-vs-panama-injury-declan-rice-elliot-anderson-fit"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "England's Reece James misses training ahead of Panama World Cup clash",
+              "description": "Reece James missed training ahead of England's final group game against Panama.",
+              "published": "2026-06-26T17:05:27Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49188194/england-reece-james-misses-training-ahead-panama-world-cup-clash"
+            }
+          ],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "英格兰",
+          "team_en": "England",
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Reece James to miss England vs Panama with injury, Declan Rice, Elliot Anderson fit",
+              "description": "Thomas Tuchel has confirmed Reece James will miss Saturday's Group L finale against Panama but Elliot Anderson and Declan Rice are available to start.",
+              "published": "2026-06-27T00:34:26Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49191072/world-cup-2026-reece-james-miss-england-vs-panama-injury-declan-rice-elliot-anderson-fit"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "England's Reece James misses training ahead of Panama World Cup clash",
+              "description": "Reece James missed training ahead of England's final group game against Panama.",
+              "published": "2026-06-26T17:05:27Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49188194/england-reece-james-misses-training-ahead-panama-world-cup-clash"
+            }
+          ],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021509",
+      "fifa_match_id": "400021509",
+      "match_name": "克罗地亚 vs 加纳",
+      "match_name_en": "Croatia vs Ghana",
+      "kickoff_utc": "2026-06-27T21:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group L",
+      "match_number": 68,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "克罗地亚",
+          "name_en": "Croatia",
+          "abbreviation": "CRO",
+          "id_team": "43938",
+          "id_country": "CRO",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CRO",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "加纳",
+          "name_en": "Ghana",
+          "abbreviation": "GHA",
+          "id_team": "43860",
+          "id_country": "GHA",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/GHA",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "Philadelphia Stadium",
+        "city": "Philadelphia",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021509"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760480"
+        }
+      },
+      "espn_event_id": "760480",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "-120",
+          "draw": "+220",
+          "away": "+450"
+        },
+        "implied_probability": {
+          "home_win": 54.55,
+          "draw": 31.25,
+          "away_win": 18.18
+        },
+        "normalized_probability": {
+          "home_win": 52.46,
+          "draw": 30.05,
+          "away_win": 17.49
+        },
+        "overround": 3.98,
+        "details": "CRO -120"
+      },
+      "injuries": {
+        "home": {
+          "team": "克罗地亚",
+          "team_en": "Croatia",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "加纳",
+          "team_en": "Ghana",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021500",
+      "fifa_match_id": "400021500",
+      "match_name": "刚果民主共和国 vs 乌兹别克斯坦",
+      "match_name_en": "Congo DR vs Uzbekistan",
+      "kickoff_utc": "2026-06-27T23:30:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group K",
+      "match_number": 72,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "刚果民主共和国",
+          "name_en": "Congo DR",
+          "abbreviation": "COD",
+          "id_team": "20014",
+          "id_country": "COD",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/COD",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "乌兹别克斯坦",
+          "name_en": "Uzbekistan",
+          "abbreviation": "UZB",
+          "id_team": "44005",
+          "id_country": "UZB",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/UZB",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "Atlanta Stadium",
+        "city": "Atlanta",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021500"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760482"
+        }
+      },
+      "espn_event_id": "760482",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "-140",
+          "draw": "+310",
+          "away": "+360"
+        },
+        "implied_probability": {
+          "home_win": 58.33,
+          "draw": 24.39,
+          "away_win": 21.74
+        },
+        "normalized_probability": {
+          "home_win": 55.84,
+          "draw": 23.35,
+          "away_win": 20.81
+        },
+        "overround": 4.46,
+        "details": "COD -140"
+      },
+      "injuries": {
+        "home": {
+          "team": "刚果民主共和国",
+          "team_en": "Congo DR",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "乌兹别克斯坦",
+          "team_en": "Uzbekistan",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021505",
+      "fifa_match_id": "400021505",
+      "match_name": "哥伦比亚 vs 葡萄牙",
+      "match_name_en": "Colombia vs Portugal",
+      "kickoff_utc": "2026-06-27T23:30:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group K",
+      "match_number": 71,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "哥伦比亚",
+          "name_en": "Colombia",
+          "abbreviation": "COL",
+          "id_team": "43926",
+          "id_country": "COL",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/COL",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "葡萄牙",
+          "name_en": "Portugal",
+          "abbreviation": "POR",
+          "id_team": "43963",
+          "id_country": "POR",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/POR",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "Miami Stadium",
+        "city": "Miami",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021505"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760481"
+        }
+      },
+      "espn_event_id": "760481",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+300",
+          "draw": "+280",
+          "away": "-110"
+        },
+        "implied_probability": {
+          "home_win": 25.0,
+          "draw": 26.32,
+          "away_win": 52.38
+        },
+        "normalized_probability": {
+          "home_win": 24.11,
+          "draw": 25.38,
+          "away_win": 50.51
+        },
+        "overround": 3.7,
+        "details": "POR -110"
+      },
+      "injuries": {
+        "home": {
+          "team": "哥伦比亚",
+          "team_en": "Colombia",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "葡萄牙",
+          "team_en": "Portugal",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021497",
+      "fifa_match_id": "400021497",
+      "match_name": "阿尔及利亚 vs 奥地利",
+      "match_name_en": "Algeria vs Austria",
+      "kickoff_utc": "2026-06-28T02:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group J",
+      "match_number": 69,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "阿尔及利亚",
+          "name_en": "Algeria",
+          "abbreviation": "ALG",
+          "id_team": "43843",
+          "id_country": "ALG",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/ALG",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "奥地利",
+          "name_en": "Austria",
+          "abbreviation": "AUT",
+          "id_team": "43934",
+          "id_country": "AUT",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/AUT",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "Kansas City Stadium",
+        "city": "Kansas City",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021497"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760484"
+        }
+      },
+      "espn_event_id": "760484",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+310",
+          "draw": "+120",
+          "away": "+195"
+        },
+        "implied_probability": {
+          "home_win": 24.39,
+          "draw": 45.45,
+          "away_win": 33.9
+        },
+        "normalized_probability": {
+          "home_win": 23.51,
+          "draw": 43.81,
+          "away_win": 32.68
+        },
+        "overround": 3.74,
+        "details": "AUT +195"
+      },
+      "injuries": {
+        "home": {
+          "team": "阿尔及利亚",
+          "team_en": "Algeria",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "奥地利",
+          "team_en": "Austria",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021495",
+      "fifa_match_id": "400021495",
+      "match_name": "约旦 vs 阿根廷",
+      "match_name_en": "Jordan vs Argentina",
+      "kickoff_utc": "2026-06-28T02:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "First Stage",
+      "group": "Group J",
+      "match_number": 70,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "约旦",
+          "name_en": "Jordan",
+          "abbreviation": "JOR",
+          "id_team": "43820",
+          "id_country": "JOR",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/JOR",
+          "score": null,
+          "tactics": null
+        },
+        "away": {
+          "name": "阿根廷",
+          "name_en": "Argentina",
+          "abbreviation": "ARG",
+          "id_team": "43922",
+          "id_country": "ARG",
+          "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/ARG",
+          "score": null,
+          "tactics": null
+        }
+      },
+      "venue": {
+        "name": "Dallas Stadium",
+        "city": "Dallas",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021495"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760483"
+        }
+      },
+      "espn_event_id": "760483",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+1400",
+          "draw": "+650",
+          "away": "-550"
+        },
+        "implied_probability": {
+          "home_win": 6.67,
+          "draw": 13.33,
+          "away_win": 84.62
+        },
+        "normalized_probability": {
+          "home_win": 6.37,
+          "draw": 12.75,
+          "away_win": 80.88
+        },
+        "overround": 4.62,
+        "details": "ARG -550"
+      },
+      "injuries": {
+        "home": {
+          "team": "约旦",
+          "team_en": "Jordan",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "阿根廷",
+          "team_en": "Argentina",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
     }
   ],
   "daily_log": [
     {
-      "time": "2026-06-26T01:19:53Z",
+      "time": "2026-06-27T01:15:19Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research",
       "status": "completed"
     }
