@@ -890,6 +890,21 @@ def analysis_messages(research_payload: dict[str, Any]) -> list[dict[str, str]]:
                 "\"win_draw_loss\":{\"home_win\":0,\"draw\":0,\"away_win\":0},"
                 "\"xg_prediction\":{\"home\":0.0,\"away\":0.0},"
                 "\"predicted_score\":{\"home\":0,\"away\":0},"
+                "\"score_options\":["
+                "{\"score\":\"0-2\",\"rank\":1,\"reason\":\"Chinese concise reason\"},"
+                "{\"score\":\"0-1\",\"rank\":2,\"reason\":\"Chinese concise reason\"},"
+                "{\"score\":\"0-3\",\"rank\":3,\"reason\":\"Chinese concise reason\"}"
+                "],"
+                "\"method_factors\":{"
+                "\"market_signal\":\"Chinese note or unavailable\","
+                "\"fifa_rank_prior\":\"Chinese FIFA ranking or long-term strength prior; do not invent ranking numbers\","
+                "\"recent_form\":\"Chinese recent form note\","
+                "\"group_context\":\"Chinese group context note\","
+                "\"injury_rotation\":\"Chinese injury and rotation note\","
+                "\"weather_venue\":\"Chinese weather/venue note or unknown\","
+                "\"tactical_key\":\"Chinese tactical key\","
+                "\"uncertainty\":\"Chinese uncertainty note\""
+                "},"
                 "\"tactical_matchup\":\"Chinese tactical matchup\","
                 "\"injury_adjustment\":{\"home\":\"Chinese note\",\"away\":\"Chinese note\",\"summary\":\"Chinese note\"},"
                 "\"risk_analysis\":\"Chinese risk analysis\","
@@ -903,6 +918,13 @@ def analysis_messages(research_payload: dict[str, Any]) -> list[dict[str, str]]:
                 "\"data_quality\":\"Chinese source quality note\""
                 "}. Win/draw/loss probabilities must be percentages and sum exactly to 100 for every match. "
                 "xG must be numeric. upset_probability is percentage 0-100. "
+                "score_options must contain exactly three likely score results ranked 1, 2, and 3. "
+                "Use predicted_score as the rank 1 score. Each score option must include only score, rank, and reason. "
+                "Do not output, calculate, or mention score probabilities. "
+                "method_factors must contain market_signal, fifa_rank_prior, recent_form, group_context, "
+                "injury_rotation, weather_venue, tactical_key, and uncertainty. "
+                "If FIFA ranking source is unavailable, do not invent ranking numbers; use a long-term strength prior note. "
+                "If weather data has no reliable source in the payload, write unknown. "
                 "If injury status is unknown, say it is unknown; do not invent player names. "
                 "If odds are unavailable, say odds are unavailable; do not invent market prices. "
                 f"Verified Agent research payload:\n{json.dumps(research_payload, ensure_ascii=False)}"
@@ -989,12 +1011,14 @@ def render_messages(analysis_payload: dict[str, Any]) -> list[dict[str, str]]:
             "content": (
                 "Generate complete HTML for GitHub Pages. The page must visibly include: "
                 "match predictions, win/draw/loss probabilities, predicted score, xG, tactical matchup, "
-                "risk analysis, upset probability, injury information, odds comparison, token usage, and cost. "
+                "score result Top 3 without score probabilities, method factors, risk analysis, upset probability, "
+                "injury information, odds comparison, token usage, and cost. "
                 "All visible match times must use Asia/Shanghai, never UTC. "
                 "Group matches by China match day, where each match day runs from 18:00 to next-day 18:00. "
                 "Use these exact placeholders inside the token panel: "
                 "{{INPUT_TOKENS}}, {{OUTPUT_TOKENS}}, {{TOTAL_TOKENS}}, {{COST_ESTIMATE}}. "
                 "Do not invent data. If source data says unknown or unavailable, display that clearly. "
+                "Do not display or mention score probability. "
                 f"Analysis payload:\n{json.dumps(analysis_payload, ensure_ascii=False)}"
             ),
         },
@@ -1254,6 +1278,68 @@ def display_range_text(payload: dict[str, Any], matches: list[dict[str, Any]]) -
     return "两个中国比赛日"
 
 
+METHOD_FACTOR_LABELS = (
+    ("market_signal", "市场信号"),
+    ("fifa_rank_prior", "FIFA 实力先验"),
+    ("recent_form", "近期状态"),
+    ("group_context", "小组形势"),
+    ("injury_rotation", "伤停/轮换"),
+    ("weather_venue", "天气/场地"),
+    ("tactical_key", "战术关键"),
+    ("uncertainty", "不确定性"),
+)
+
+
+def score_options_html(match: dict[str, Any]) -> str:
+    raw_options = match.get("score_options") or []
+    options = [item for item in raw_options if isinstance(item, dict)]
+    options.sort(key=lambda item: int(item.get("rank", 99)) if str(item.get("rank", "")).isdigit() else 99)
+    items = []
+    for option in options[:3]:
+        rank = option.get("rank")
+        try:
+            rank_number = int(rank)
+        except (TypeError, ValueError):
+            rank_number = len(items) + 1
+        label = "主推荐" if rank_number == 1 else f"Top {rank_number}"
+        primary = " primary" if rank_number == 1 else ""
+        items.append(
+            "<article class=\"score-option{primary}\">"
+            "<span class=\"score-rank\">{label}</span>"
+            "<strong>{score}</strong>"
+            "<p>{reason}</p>"
+            "</article>".format(
+                primary=primary,
+                label=html_escape(label),
+                score=html_escape(option.get("score", "unknown")),
+                reason=html_escape(option.get("reason", "unknown")),
+            )
+        )
+    if not items:
+        items.append('<article class="score-option"><span class="score-rank">Top 3</span><strong>unknown</strong><p>unknown</p></article>')
+    return f"""
+        <section class="score-options">
+          <h4>比分结果 Top 3</h4>
+          <div class="score-option-grid">{''.join(items)}</div>
+        </section>
+    """
+
+
+def method_factors_html(match: dict[str, Any]) -> str:
+    factors = match.get("method_factors") or {}
+    items = []
+    for key, label in METHOD_FACTOR_LABELS:
+        value = factors.get(key, "unknown") if isinstance(factors, dict) else "unknown"
+        items.append(
+            f"<section class=\"factor-item\"><h5>{html_escape(label)}</h5><p>{html_escape(value or 'unknown')}</p></section>"
+        )
+    return f"""
+        <details class="factor-panel" open>
+          <summary>分析因子</summary>
+          <div class="factor-grid">{''.join(items)}</div>
+        </details>
+    """
+
 def match_card(match: dict[str, Any]) -> str:
     teams = match.get("teams") or {}
     home = teams.get("home") or {}
@@ -1299,6 +1385,8 @@ def match_card(match: dict[str, Any]) -> str:
           <span><b>爆冷概率</b>{pct(upset)}</span>
           <span><b>赔率</b>{html_escape(odds_badge(match))}</span>
         </div>
+        {score_options_html(match)}
+        {method_factors_html(match)}
         <div class="analysis-block">
           <section><h4>战术分析</h4><p>{html_escape(tactical)}</p></section>
           <section><h4>风险分析</h4><p class="risk-text">{html_escape(risk)}</p></section>
@@ -1570,6 +1658,51 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
       overflow-wrap: anywhere;
     }}
     .metric-grid b {{ display: block; color: var(--text); margin-bottom: 4px; }}
+    .score-options, .factor-panel {{
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(18, 28, 42, .48);
+      padding: 14px;
+    }}
+    .score-options h4 {{ margin: 0 0 12px; color: #ffd64a; font-size: 17px; }}
+    .score-option-grid {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }}
+    .score-option {{
+      border: 1px solid rgba(104, 136, 174, .26);
+      border-radius: 14px;
+      background: rgba(14, 22, 34, .62);
+      padding: 12px;
+      min-width: 0;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }}
+    .score-option.primary {{
+      border-color: rgba(246, 189, 39, .5);
+      background: linear-gradient(160deg, rgba(246, 189, 39, .16), rgba(14, 22, 34, .68));
+      box-shadow: 0 0 18px rgba(246, 189, 39, .12);
+    }}
+    .match-card:hover .score-option.primary {{ box-shadow: 0 0 24px rgba(246, 189, 39, .18); }}
+    .score-option:hover {{ transform: translateY(-2px); border-color: var(--line-hot); }}
+    .score-rank {{ display: block; color: var(--muted); font-size: 12px; font-weight: 800; margin-bottom: 8px; }}
+    .score-option strong {{ display: block; color: #ffd11e; font-size: 30px; line-height: 1; margin-bottom: 10px; }}
+    .score-option p {{ margin: 0; color: #d8deea; font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; }}
+    .factor-panel {{ color: var(--muted); }}
+    .factor-panel summary {{
+      cursor: pointer;
+      color: #ffd64a;
+      font-size: 17px;
+      font-weight: 800;
+      list-style-position: inside;
+    }}
+    .factor-panel summary:hover {{ color: #ffe784; }}
+    .factor-grid {{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }}
+    .factor-item {{
+      border: 1px solid rgba(104, 136, 174, .22);
+      border-radius: 13px;
+      background: rgba(12, 20, 31, .48);
+      padding: 12px;
+      min-width: 0;
+    }}
+    .factor-item h5 {{ margin: 0 0 7px; color: var(--text); font-size: 13px; }}
+    .factor-item p {{ margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; }}
     .analysis-block {{ display: grid; gap: 14px; }}
     .analysis-block section {{ border-top: 1px solid var(--line); padding-top: 14px; }}
     .analysis-block h4 {{ margin: 0 0 8px; font-size: 17px; color: var(--muted); }}
@@ -1592,7 +1725,7 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     @media (max-width: 760px) {{
       .page {{ width: min(100% - 24px, 640px); padding-top: 18px; }}
       .hero, .overview, .usage-panel, .match-card {{ border-radius: 20px; padding: 20px; }}
-      .hero-meta, .usage-grid, .metric-grid {{ grid-template-columns: 1fr 1fr; }}
+      .hero-meta, .usage-grid, .metric-grid, .score-option-grid, .factor-grid {{ grid-template-columns: 1fr 1fr; }}
       .section-head, .match-topline {{ display: block; }}
       .day-count {{ display: inline-flex; margin-top: 12px; }}
       .match-topline time {{ display: inline-flex; margin-top: 12px; white-space: normal; }}
@@ -1602,7 +1735,7 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
       .match-footer {{ display: grid; grid-template-columns: 1fr; }}
     }}
     @media (max-width: 460px) {{
-      .hero-meta, .usage-grid, .metric-grid {{ grid-template-columns: 1fr; }}
+      .hero-meta, .usage-grid, .metric-grid, .score-option-grid, .factor-grid {{ grid-template-columns: 1fr; }}
       .prob-labels {{ grid-template-columns: 1fr; gap: 6px; }}
       .prob-labels span, .prob-labels span:nth-child(2), .prob-labels span:nth-child(3) {{ text-align: left; }}
     }}

@@ -8,6 +8,16 @@ from typing import Any
 
 REQUIRED_ANALYSIS_MODEL = "deepseek-v4-pro"
 REQUIRED_RENDER_MODEL = "deepseek-v4-flash"
+METHOD_FACTOR_KEYS = (
+    "market_signal",
+    "fifa_rank_prior",
+    "recent_form",
+    "group_context",
+    "injury_rotation",
+    "weather_venue",
+    "tactical_key",
+    "uncertainty",
+)
 
 
 def validate_usage(usage: dict[str, Any], prefix: str, errors: list[str]) -> None:
@@ -41,8 +51,49 @@ def validate_probabilities(match: dict[str, Any], index: int, errors: list[str])
         errors.append(f"matches[{index}].win_draw_loss must sum to 100")
 
 
+def validate_score_options(match: dict[str, Any], index: int, errors: list[str]) -> None:
+    options = match.get("score_options")
+    if not isinstance(options, list) or len(options) != 3:
+        errors.append(f"matches[{index}].score_options must contain exactly 3 score results")
+        return
+    ranks: set[int] = set()
+    for option_index, option in enumerate(options):
+        if not isinstance(option, dict):
+            errors.append(f"matches[{index}].score_options[{option_index}] must be an object")
+            continue
+        forbidden = [key for key in option if "prob" in str(key).lower() or "概率" in str(key)]
+        if forbidden:
+            errors.append(f"matches[{index}].score_options[{option_index}] must not include score probability fields")
+        score = option.get("score")
+        reason = option.get("reason")
+        rank = option.get("rank")
+        if not isinstance(score, str) or not score.strip():
+            errors.append(f"matches[{index}].score_options[{option_index}].score is required")
+        if not isinstance(reason, str) or not reason.strip():
+            errors.append(f"matches[{index}].score_options[{option_index}].reason is required")
+        if not isinstance(rank, int):
+            errors.append(f"matches[{index}].score_options[{option_index}].rank must be an integer")
+        else:
+            ranks.add(rank)
+    if ranks != {1, 2, 3}:
+        errors.append(f"matches[{index}].score_options ranks must be exactly 1, 2, and 3")
+
+
+def validate_method_factors(match: dict[str, Any], index: int, errors: list[str]) -> None:
+    factors = match.get("method_factors")
+    if not isinstance(factors, dict):
+        errors.append(f"matches[{index}].method_factors must be an object")
+        return
+    for key in METHOD_FACTOR_KEYS:
+        value = factors.get(key)
+        if not isinstance(value, str) or not value.strip():
+            errors.append(f"matches[{index}].method_factors.{key} is required")
+
+
 def validate_match(match: dict[str, Any], index: int, errors: list[str]) -> None:
     validate_probabilities(match, index, errors)
+    validate_score_options(match, index, errors)
+    validate_method_factors(match, index, errors)
     score = match.get("predicted_score") or {}
     if not isinstance(score.get("home"), int) or not isinstance(score.get("away"), int):
         errors.append(f"matches[{index}].predicted_score must include integer home/away")
@@ -106,15 +157,32 @@ def validate(data: dict[str, Any]) -> tuple[bool, list[str]]:
                 errors.append(f"matches[{index}] must be an object")
 
     if isinstance(render, str):
-        for fragment in ("Token", "Cost", "\u98ce\u9669", "\u4f24\u505c", "\u8d54\u7387", "xG", "\u7206\u51b7\u6982\u7387"):
+        for fragment in (
+            "Token",
+            "Cost",
+            "风险",
+            "伤停",
+            "赔率",
+            "xG",
+            "爆冷概率",
+            "比分结果 Top 3",
+            "分析因子",
+            "市场信号",
+            "天气/场地",
+        ):
             if fragment not in render:
                 errors.append(f"render must visibly include {fragment}")
-        for fragment in ("\u5317\u4eac\u65f6\u95f4", "\u6bd4\u8d5b\u65e5", "18:00"):
+        for fragment in ("北京时间", "比赛日", "18:00"):
             if fragment not in render:
                 errors.append(f"render must visibly include China match-day fragment {fragment}")
-        for fragment in ("2026 \u4e16\u754c\u676f \u00b7 \u9884\u6d4b\u5206\u6790", "night-shell", "night-card", "match-card", ":hover"):
+        for fragment in ("2026 世界杯 · 预测分析", "night-shell", "night-card", "match-card", ":hover"):
             if fragment not in render:
                 errors.append(f"render must include dark UI fragment {fragment}")
+        forbidden_score_probability = ("比分概率", "score probability", "score probabilities", "score_probability")
+        lower_render = render.lower()
+        for fragment in forbidden_score_probability:
+            if fragment in lower_render:
+                errors.append("render must not display score probability text")
         if "UTC" in render or "Z</time>" in render:
             errors.append("render must not visibly display UTC time")
 
