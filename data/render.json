@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
   "stage": "render",
-  "generated_at": "2026-06-29T01:53:14Z",
+  "generated_at": "2026-06-29T05:44:20Z",
   "analysis": {
-    "generated_at": "2026-06-29T01:22:37Z",
-    "summary": "6月28日至29日比赛日共分析4场世界杯16强赛。南非对加拿大已结束，加拿大1-0小胜。剩余3场即将进行：巴西对日本市场看巴西取胜，德国对巴拉圭德国碾压优势，荷兰对摩洛哥两队实力接近胜负难料。",
+    "generated_at": "2026-06-29T05:34:24Z",
+    "summary": "4场比赛分析：包含已完成的南非对加拿大，以及即将进行的巴西对日本、德国对巴拉圭、荷兰对摩洛哥。预测基于球队实力、赔率数据及伤病信息。",
     "matches": [
       {
         "id": "400021518",
@@ -98,13 +98,13 @@
         },
         "match_id": "400021518",
         "win_draw_loss": {
-          "home_win": 0,
-          "draw": 0,
-          "away_win": 100
+          "home_win": 30,
+          "draw": 30,
+          "away_win": 40
         },
         "xg_prediction": {
-          "home": 0.3,
-          "away": 1.2
+          "home": 1.0,
+          "away": 1.3
         },
         "predicted_score": {
           "home": 0,
@@ -114,37 +114,119 @@
           {
             "score": "0-1",
             "rank": 1,
-            "reason": "实际比赛结果"
+            "reason": "加拿大整体实力稍强，南非进攻乏力"
           },
           {
             "score": "1-1",
             "rank": 2,
-            "reason": "加时赛可能平局"
+            "reason": "双方均有进球能力，可能握手言和"
           },
           {
-            "score": "0-2",
+            "score": "1-0",
             "rank": 3,
-            "reason": "加拿大若把握机会"
+            "reason": "南非有机会偷走胜利"
           }
         ],
         "method_factors": {
-          "market_signal": "赔率不可用，已结束比赛",
-          "fifa_rank_prior": "南非与加拿大均为中游队伍，均首次晋级淘汰赛",
-          "recent_form": "双方小组赛表现未知",
-          "group_context": "16强淘汰赛",
-          "injury_rotation": "两队均有疑似伤病报道",
-          "weather_venue": "未知",
-          "tactical_key": "战术未知",
-          "uncertainty": "比赛已结束，分析无意义"
+          "market_signal": "赔率不可用",
+          "fifa_rank_prior": "无法获得FIFA排名，长期实力：加拿大近年表现优于南非",
+          "recent_form": "未知",
+          "group_context": "16强淘汰赛，双方首次进入世界杯淘汰赛",
+          "injury_rotation": "双方均有疑似伤病，但信息不全",
+          "weather_venue": "洛杉矶，未知",
+          "tactical_key": "南非可能依赖防守反击，加拿大利用身体优势",
+          "uncertainty": "信息有限，不确定性较高"
         },
-        "tactical_matchup": "比赛已结束",
+        "matchup_graph": {
+          "nodes": [
+            {
+              "id": "home_attack",
+              "label": "主队进攻",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 40,
+              "note": "南非进攻手段单一"
+            },
+            {
+              "id": "home_midfield",
+              "label": "主队中场/转换",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 50,
+              "note": "中场拦截尚可"
+            },
+            {
+              "id": "home_defense",
+              "label": "主队防守",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 40,
+              "note": "防守稳固但压力大"
+            },
+            {
+              "id": "away_attack",
+              "label": "客队进攻",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 60,
+              "note": "加拿大前锋速度快"
+            },
+            {
+              "id": "away_midfield",
+              "label": "客队中场/转换",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 50,
+              "note": "中场控制力一般"
+            },
+            {
+              "id": "away_defense",
+              "label": "客队防守",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 50,
+              "note": "防线相对稳定"
+            }
+          ],
+          "edges": [
+            {
+              "from": "home_attack",
+              "to": "away_defense",
+              "label": "南非突破加拿大防线",
+              "impact": "low",
+              "direction": "home_to_away",
+              "note": "主队进攻能力有限"
+            },
+            {
+              "from": "away_attack",
+              "to": "home_defense",
+              "label": "加拿大寻找进球",
+              "impact": "high",
+              "direction": "away_to_home",
+              "note": "客队进攻更有威胁"
+            },
+            {
+              "from": "home_midfield",
+              "to": "away_midfield",
+              "label": "中场转换争夺",
+              "impact": "medium",
+              "direction": "balanced",
+              "note": "双方争夺控球权"
+            }
+          ],
+          "summary": "加拿大凭借更强的个人能力在进攻端占据优势，南非需依靠防守反击寻找机会。",
+          "advantage_side": "away",
+          "key_battle": "加拿大前锋对南非中卫",
+          "risk_trigger": "南非可能死守，低比分"
+        },
+        "tactical_matchup": "加拿大利用边路传中，南非中路密集防守",
         "injury_adjustment": {
-          "home": "有疑似伤病",
-          "away": "有疑似伤病",
-          "summary": "双方均受疑似伤病影响"
+          "home": "疑似伤病，影响未知",
+          "away": "疑似伤病，影响未知",
+          "summary": "双方阵容可能完整，伤病影响有限"
         },
-        "risk_analysis": "已完成比赛，无风险",
-        "upset_probability": 0,
+        "risk_analysis": "淘汰赛紧张氛围，可能进入加时，低进球风险",
+        "upset_probability": 30,
         "odds_comparison": {
           "market_implied": {
             "home_win": 0,
@@ -158,7 +240,7 @@
           },
           "deviation_analysis": "赔率不可用"
         },
-        "confidence": "high"
+        "confidence": "low"
       },
       {
         "id": "400021516",
@@ -218,22 +300,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-135",
+            "home": "-140",
             "draw": "+275",
-            "away": "+400"
+            "away": "+425"
           },
           "implied_probability": {
-            "home_win": 57.45,
+            "home_win": 58.33,
             "draw": 26.67,
-            "away_win": 20.0
+            "away_win": 19.05
           },
           "normalized_probability": {
-            "home_win": 55.18,
-            "draw": 25.61,
-            "away_win": 19.21
+            "home_win": 56.06,
+            "draw": 25.63,
+            "away_win": 18.31
           },
-          "overround": 4.11,
-          "details": "BRA -135"
+          "overround": 4.05,
+          "details": "BRA -140"
         },
         "injuries": {
           "home": {
@@ -253,65 +335,147 @@
         },
         "match_id": "400021516",
         "win_draw_loss": {
-          "home_win": 55,
-          "draw": 25,
-          "away_win": 20
+          "home_win": 65,
+          "draw": 20,
+          "away_win": 15
         },
         "xg_prediction": {
-          "home": 1.8,
-          "away": 0.9
+          "home": 2.0,
+          "away": 0.8
         },
         "predicted_score": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "score_options": [
           {
-            "score": "2-1",
+            "score": "2-0",
             "rank": 1,
-            "reason": "巴西进攻能力强，日本有望进球"
+            "reason": "巴西实力碾压，控制节奏"
+          },
+          {
+            "score": "3-1",
+            "rank": 2,
+            "reason": "巴西攻击力强大，日本可能进球"
           },
           {
             "score": "1-0",
-            "rank": 2,
-            "reason": "小胜可能"
-          },
-          {
-            "score": "1-1",
             "rank": 3,
-            "reason": "若日本防守顽强"
+            "reason": "日本死守，巴西小胜"
           }
         ],
         "method_factors": {
-          "market_signal": "博彩公司看巴西胜，赔率-135",
-          "fifa_rank_prior": "巴西为传统强队，日本为亚洲劲旅但实力不及巴西",
-          "recent_form": "无近期战绩信息",
+          "market_signal": "赔率显示巴西大热",
+          "fifa_rank_prior": "无法获得FIFA排名，长期实力：巴西顶级，日本亚洲劲旅",
+          "recent_form": "未知",
           "group_context": "16强淘汰赛",
-          "injury_rotation": "伤病情况未知",
-          "weather_venue": "未知",
-          "tactical_key": "战术未知",
-          "uncertainty": "缺乏近期数据和伤病信息，存在不确定性"
+          "injury_rotation": "双方无已知伤病",
+          "weather_venue": "休斯顿，未知",
+          "tactical_key": "巴西技术压制，日本防守反击",
+          "uncertainty": "中等"
         },
-        "tactical_matchup": "巴西技术占优，日本擅长传控与快速反击",
+        "matchup_graph": {
+          "nodes": [
+            {
+              "id": "home_attack",
+              "label": "主队进攻",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 70,
+              "note": "巴西攻击群个人能力出众"
+            },
+            {
+              "id": "home_midfield",
+              "label": "主队中场/转换",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 65,
+              "note": "中场控制力强"
+            },
+            {
+              "id": "home_defense",
+              "label": "主队防守",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 50,
+              "note": "防线稳固但可能冒险"
+            },
+            {
+              "id": "away_attack",
+              "label": "客队进攻",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 50,
+              "note": "日本快反有威胁"
+            },
+            {
+              "id": "away_midfield",
+              "label": "客队中场/转换",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 55,
+              "note": "中场组织性强"
+            },
+            {
+              "id": "away_defense",
+              "label": "客队防守",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 60,
+              "note": "防守纪律严明"
+            }
+          ],
+          "edges": [
+            {
+              "from": "home_attack",
+              "to": "away_defense",
+              "label": "巴西攻击群考验日本防线",
+              "impact": "high",
+              "direction": "home_to_away",
+              "note": "巴西进攻点众多"
+            },
+            {
+              "from": "away_attack",
+              "to": "home_defense",
+              "label": "日本快速反击威胁巴西后防",
+              "impact": "medium",
+              "direction": "away_to_home",
+              "note": "日本反击速度值得警惕"
+            },
+            {
+              "from": "home_midfield",
+              "to": "away_midfield",
+              "label": "中场控制权决定节奏",
+              "impact": "high",
+              "direction": "balanced",
+              "note": "巴西技术优势明显"
+            }
+          ],
+          "summary": "巴西明显占优，日本需依靠防守和反击寻找机会。",
+          "advantage_side": "home",
+          "key_battle": "日本中场拦截对巴西组织",
+          "risk_trigger": "巴西久攻不下或日本先进球"
+        },
+        "tactical_matchup": "巴西将主导控球，日本收缩防守寻求快速转换",
         "injury_adjustment": {
-          "home": "伤病未知",
-          "away": "伤病未知",
-          "summary": "伤病情况不明"
+          "home": "无已知伤病",
+          "away": "无已知伤病",
+          "summary": "双方主力阵容齐整"
         },
-        "risk_analysis": "巴西整体实力更强，但日本有爆冷能力",
-        "upset_probability": 20,
+        "risk_analysis": "巴西需避免轻敌，日本有能力制造麻烦",
+        "upset_probability": 15,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 55.18,
-            "draw": 25.61,
-            "away_win": 19.21
+            "home_win": 56,
+            "draw": 25.63,
+            "away_win": 18.31
           },
           "model_edge": {
-            "home_win": 55,
-            "draw": 25,
-            "away_win": 20
+            "home_win": 65,
+            "draw": 20,
+            "away_win": 15
           },
-          "deviation_analysis": "模型与市场接近，略微调高日本胜率"
+          "deviation_analysis": "模型更看好巴西，降低平局和客胜可能"
         },
         "confidence": "medium"
       },
@@ -373,22 +537,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-300",
+            "home": "-285",
             "draw": "+425",
             "away": "+850"
           },
           "implied_probability": {
-            "home_win": 75.0,
+            "home_win": 74.03,
             "draw": 19.05,
             "away_win": 10.53
           },
           "normalized_probability": {
-            "home_win": 71.72,
-            "draw": 18.21,
-            "away_win": 10.07
+            "home_win": 71.45,
+            "draw": 18.39,
+            "away_win": 10.16
           },
-          "overround": 4.57,
-          "details": "GER -300"
+          "overround": 3.6,
+          "details": "GER -285"
         },
         "injuries": {
           "home": {
@@ -396,6 +560,13 @@
             "team_en": "Germany",
             "status": "probable injury",
             "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
+                "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
+                "published": "2026-06-29T02:43:49Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
+              },
               {
                 "source": "ESPN World Cup news",
                 "title": "Metcalfe: 'A lot of inner anger from the season'",
@@ -416,65 +587,147 @@
         },
         "match_id": "400021513",
         "win_draw_loss": {
-          "home_win": 70,
-          "draw": 19,
-          "away_win": 11
+          "home_win": 75,
+          "draw": 15,
+          "away_win": 10
         },
         "xg_prediction": {
           "home": 2.5,
           "away": 0.5
         },
         "predicted_score": {
-          "home": 2,
+          "home": 3,
           "away": 0
         },
         "score_options": [
           {
-            "score": "2-0",
-            "rank": 1,
-            "reason": "德国实力碾压，巴拉圭难破门"
-          },
-          {
             "score": "3-0",
-            "rank": 2,
-            "reason": "德国大胜可能"
+            "rank": 1,
+            "reason": "德国攻击力碾压对手"
           },
           {
-            "score": "1-0",
+            "score": "2-0",
+            "rank": 2,
+            "reason": "德国稳健控制，两球完胜"
+          },
+          {
+            "score": "4-0",
             "rank": 3,
-            "reason": "若巴拉圭死守成功"
+            "reason": "巴拉圭防线可能崩溃"
           }
         ],
         "method_factors": {
-          "market_signal": "德国胜赔-300，市场强烈看衰巴拉圭",
-          "fifa_rank_prior": "德国是传统豪门，巴拉圭南部球队实力有限",
+          "market_signal": "赔率极度倾向德国",
+          "fifa_rank_prior": "无法获得FIFA排名，长期实力：德国传统强队，巴拉圭南美中游",
           "recent_form": "未知",
           "group_context": "16强淘汰赛",
-          "injury_rotation": "德国媒体报道可能伤病但细节不明，巴拉圭未知",
-          "weather_venue": "未知",
-          "tactical_key": "未知",
-          "uncertainty": "德国伤病情况不明带来不确定性"
+          "injury_rotation": "德国有疑似伤病（关联新闻可能不准确），巴拉圭未知",
+          "weather_venue": "波士顿，未知",
+          "tactical_key": "德国强势进攻，巴拉圭全力防守",
+          "uncertainty": "低"
         },
-        "tactical_matchup": "德国高压控球，巴拉圭防守反击",
+        "matchup_graph": {
+          "nodes": [
+            {
+              "id": "home_attack",
+              "label": "主队进攻",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 80,
+              "note": "德国进攻手段丰富"
+            },
+            {
+              "id": "home_midfield",
+              "label": "主队中场/转换",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 75,
+              "note": "中场统治力强"
+            },
+            {
+              "id": "home_defense",
+              "label": "主队防守",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 60,
+              "note": "防线稳固"
+            },
+            {
+              "id": "away_attack",
+              "label": "客队进攻",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 30,
+              "note": "进攻威胁有限"
+            },
+            {
+              "id": "away_midfield",
+              "label": "客队中场/转换",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 40,
+              "note": "中场控制力弱"
+            },
+            {
+              "id": "away_defense",
+              "label": "客队防守",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 70,
+              "note": "防守顽强但压力大"
+            }
+          ],
+          "edges": [
+            {
+              "from": "home_attack",
+              "to": "away_defense",
+              "label": "德国进攻冲击巴拉圭防线",
+              "impact": "high",
+              "direction": "home_to_away",
+              "note": "德国攻击点众多"
+            },
+            {
+              "from": "away_attack",
+              "to": "home_defense",
+              "label": "巴拉圭难有机会",
+              "impact": "low",
+              "direction": "away_to_home",
+              "note": "客队进攻手段单一"
+            },
+            {
+              "from": "home_midfield",
+              "to": "away_midfield",
+              "label": "德国控制中场",
+              "impact": "high",
+              "direction": "balanced",
+              "note": "德国中场优势明显"
+            }
+          ],
+          "summary": "德国全方位占优，巴拉圭只能死守等待定位球机会。",
+          "advantage_side": "home",
+          "key_battle": "德国定位球对巴拉圭防空",
+          "risk_trigger": "德国轻敌"
+        },
+        "tactical_matchup": "德国控球围攻，巴拉圭密集防守寻求反击",
         "injury_adjustment": {
-          "home": "有疑似伤病报道，具体未知",
-          "away": "伤病未知",
-          "summary": "德国可能受伤病影响但实力仍占优"
+          "home": "疑似伤病关联澳大利亚球员，可能不准确",
+          "away": "未知",
+          "summary": "德国伤病情况不明，但板凳深度足够"
         },
-        "risk_analysis": "德国整体优势大，但淘汰赛阶段冷门风险存在",
-        "upset_probability": 10,
+        "risk_analysis": "德国需确保早进球，否则可能陷入焦灼",
+        "upset_probability": 5,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 71.72,
-            "draw": 18.21,
-            "away_win": 10.07
+            "home_win": 71.45,
+            "draw": 18.39,
+            "away_win": 10.16
           },
           "model_edge": {
-            "home_win": 70,
-            "draw": 19,
-            "away_win": 11
+            "home_win": 75,
+            "draw": 15,
+            "away_win": 10
           },
-          "deviation_analysis": "模型与市场一致，略微提高平局和客胜概率"
+          "deviation_analysis": "模型更看好德国，几乎排除巴拉圭获胜可能"
         },
         "confidence": "high"
       },
@@ -579,13 +832,13 @@
         },
         "match_id": "400021522",
         "win_draw_loss": {
-          "home_win": 43,
-          "draw": 31,
-          "away_win": 26
+          "home_win": 40,
+          "draw": 30,
+          "away_win": 30
         },
         "xg_prediction": {
-          "home": 1.5,
-          "away": 1.2
+          "home": 1.2,
+          "away": 1.0
         },
         "predicted_score": {
           "home": 1,
@@ -595,37 +848,119 @@
           {
             "score": "1-1",
             "rank": 1,
-            "reason": "双方实力接近，荷兰略优但摩洛哥有信心拿分"
+            "reason": "双方实力接近，摩洛哥防守稳健"
           },
           {
             "score": "2-1",
             "rank": 2,
-            "reason": "荷兰小胜可能"
+            "reason": "荷兰略占上风，一球小胜"
           },
           {
-            "score": "0-0",
+            "score": "1-2",
             "rank": 3,
-            "reason": "可能闷平"
+            "reason": "摩洛哥反击致胜"
           }
         ],
         "method_factors": {
-          "market_signal": "荷兰胜赔+125，摩洛哥+255，市场认为荷兰稍占优",
-          "fifa_rank_prior": "荷兰传统强队，摩洛哥上届世界杯四强，实力不容小觑",
+          "market_signal": "荷兰略优，市场相对谨慎",
+          "fifa_rank_prior": "无法获得FIFA排名，长期实力：荷兰欧洲劲旅，摩洛哥非洲强队",
           "recent_form": "未知",
           "group_context": "16强淘汰赛",
-          "injury_rotation": "荷兰有疑似伤病报道但不明确，摩洛哥未知",
-          "weather_venue": "未知",
-          "tactical_key": "未知",
-          "uncertainty": "伤病情况不明，两队实力接近，结果难以预测"
+          "injury_rotation": "荷兰有疑似伤病，摩洛哥未知",
+          "weather_venue": "蒙特雷，未知",
+          "tactical_key": "荷兰全攻全守，摩洛哥防守坚韧",
+          "uncertainty": "高"
         },
-        "tactical_matchup": "荷兰全攻全守，摩洛哥防守稳固反击犀利",
+        "matchup_graph": {
+          "nodes": [
+            {
+              "id": "home_attack",
+              "label": "主队进攻",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 65,
+              "note": "荷兰前场创造力强"
+            },
+            {
+              "id": "home_midfield",
+              "label": "主队中场/转换",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 60,
+              "note": "中场控制力不错"
+            },
+            {
+              "id": "home_defense",
+              "label": "主队防守",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 55,
+              "note": "防线有漏洞"
+            },
+            {
+              "id": "away_attack",
+              "label": "客队进攻",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 55,
+              "note": "摩洛哥反击迅速"
+            },
+            {
+              "id": "away_midfield",
+              "label": "客队中场/转换",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 50,
+              "note": "中场绞杀能力强"
+            },
+            {
+              "id": "away_defense",
+              "label": "客队防守",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 65,
+              "note": "防守组织严密"
+            }
+          ],
+          "edges": [
+            {
+              "from": "home_attack",
+              "to": "away_defense",
+              "label": "荷兰需破解摩洛哥密集防守",
+              "impact": "medium",
+              "direction": "home_to_away",
+              "note": "荷兰破防能力受考验"
+            },
+            {
+              "from": "away_attack",
+              "to": "home_defense",
+              "label": "摩洛哥反击威胁",
+              "impact": "medium",
+              "direction": "away_to_home",
+              "note": "摩洛哥速度优势"
+            },
+            {
+              "from": "home_midfield",
+              "to": "away_midfield",
+              "label": "中场绞杀",
+              "impact": "medium",
+              "direction": "balanced",
+              "note": "双方中场争夺激烈"
+            }
+          ],
+          "summary": "势均力敌，摩洛哥防守稳固，荷兰需耐心寻找机会。",
+          "advantage_side": "balanced",
+          "key_battle": "荷兰边锋对摩洛哥边卫",
+          "risk_trigger": "摩洛哥防守反击可能致胜"
+        },
+        "tactical_matchup": "荷兰控球进攻，摩洛哥收缩防守打反击",
         "injury_adjustment": {
-          "home": "疑似伤病信息不明确",
-          "away": "伤病未知",
-          "summary": "荷兰伤病情况不明，可能影响阵容"
+          "home": "疑似伤病，影响未知",
+          "away": "未知",
+          "summary": "荷兰阵容或有缺失，摩洛哥齐整概率大"
         },
-        "risk_analysis": "荷兰稍占优但摩洛哥有实力逼平甚至取胜",
-        "upset_probability": 26,
+        "risk_analysis": "胜负难料，可能进入加时或点球大战",
+        "upset_probability": 30,
         "odds_comparison": {
           "market_implied": {
             "home_win": 42.38,
@@ -633,17 +968,17 @@
             "away_win": 26.86
           },
           "model_edge": {
-            "home_win": 43,
-            "draw": 31,
-            "away_win": 26
+            "home_win": 40,
+            "draw": 30,
+            "away_win": 30
           },
-          "deviation_analysis": "模型基本跟随市场，微调主胜概率"
+          "deviation_analysis": "模型认为摩洛哥获胜机会稍高于市场"
         },
         "confidence": "low"
       }
     ],
-    "risk_overview": "已完成的南非vs加拿大无风险。巴西vs日本中日本有爆冷可能，德国vs巴拉圭德国基本稳胜，荷兰vs摩洛哥悬念较大。",
-    "data_quality": "数据来源于FIFA和ESPN，赔率来自DraftKings，伤病情报有限且部分不明确，近期状态和战术信息缺失，分析置信度受限。"
+    "risk_overview": "巴西与德国两场比赛强弱分明，风险较低；荷兰对摩洛哥势均力敌，不确定性高；南非对加拿大已完成，加拿大险胜。",
+    "data_quality": "数据来源包括FIFA官方日历、ESPN比分板及赔率信息，部分伤病新闻关联可能不准确，赔率仅覆盖三场比赛。"
   },
   "matches": [
     {
@@ -738,13 +1073,13 @@
       },
       "match_id": "400021518",
       "win_draw_loss": {
-        "home_win": 0,
-        "draw": 0,
-        "away_win": 100
+        "home_win": 30,
+        "draw": 30,
+        "away_win": 40
       },
       "xg_prediction": {
-        "home": 0.3,
-        "away": 1.2
+        "home": 1.0,
+        "away": 1.3
       },
       "predicted_score": {
         "home": 0,
@@ -754,37 +1089,119 @@
         {
           "score": "0-1",
           "rank": 1,
-          "reason": "实际比赛结果"
+          "reason": "加拿大整体实力稍强，南非进攻乏力"
         },
         {
           "score": "1-1",
           "rank": 2,
-          "reason": "加时赛可能平局"
+          "reason": "双方均有进球能力，可能握手言和"
         },
         {
-          "score": "0-2",
+          "score": "1-0",
           "rank": 3,
-          "reason": "加拿大若把握机会"
+          "reason": "南非有机会偷走胜利"
         }
       ],
       "method_factors": {
-        "market_signal": "赔率不可用，已结束比赛",
-        "fifa_rank_prior": "南非与加拿大均为中游队伍，均首次晋级淘汰赛",
-        "recent_form": "双方小组赛表现未知",
-        "group_context": "16强淘汰赛",
-        "injury_rotation": "两队均有疑似伤病报道",
-        "weather_venue": "未知",
-        "tactical_key": "战术未知",
-        "uncertainty": "比赛已结束，分析无意义"
+        "market_signal": "赔率不可用",
+        "fifa_rank_prior": "无法获得FIFA排名，长期实力：加拿大近年表现优于南非",
+        "recent_form": "未知",
+        "group_context": "16强淘汰赛，双方首次进入世界杯淘汰赛",
+        "injury_rotation": "双方均有疑似伤病，但信息不全",
+        "weather_venue": "洛杉矶，未知",
+        "tactical_key": "南非可能依赖防守反击，加拿大利用身体优势",
+        "uncertainty": "信息有限，不确定性较高"
       },
-      "tactical_matchup": "比赛已结束",
+      "matchup_graph": {
+        "nodes": [
+          {
+            "id": "home_attack",
+            "label": "主队进攻",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 40,
+            "note": "南非进攻手段单一"
+          },
+          {
+            "id": "home_midfield",
+            "label": "主队中场/转换",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 50,
+            "note": "中场拦截尚可"
+          },
+          {
+            "id": "home_defense",
+            "label": "主队防守",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 40,
+            "note": "防守稳固但压力大"
+          },
+          {
+            "id": "away_attack",
+            "label": "客队进攻",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 60,
+            "note": "加拿大前锋速度快"
+          },
+          {
+            "id": "away_midfield",
+            "label": "客队中场/转换",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 50,
+            "note": "中场控制力一般"
+          },
+          {
+            "id": "away_defense",
+            "label": "客队防守",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 50,
+            "note": "防线相对稳定"
+          }
+        ],
+        "edges": [
+          {
+            "from": "home_attack",
+            "to": "away_defense",
+            "label": "南非突破加拿大防线",
+            "impact": "low",
+            "direction": "home_to_away",
+            "note": "主队进攻能力有限"
+          },
+          {
+            "from": "away_attack",
+            "to": "home_defense",
+            "label": "加拿大寻找进球",
+            "impact": "high",
+            "direction": "away_to_home",
+            "note": "客队进攻更有威胁"
+          },
+          {
+            "from": "home_midfield",
+            "to": "away_midfield",
+            "label": "中场转换争夺",
+            "impact": "medium",
+            "direction": "balanced",
+            "note": "双方争夺控球权"
+          }
+        ],
+        "summary": "加拿大凭借更强的个人能力在进攻端占据优势，南非需依靠防守反击寻找机会。",
+        "advantage_side": "away",
+        "key_battle": "加拿大前锋对南非中卫",
+        "risk_trigger": "南非可能死守，低比分"
+      },
+      "tactical_matchup": "加拿大利用边路传中，南非中路密集防守",
       "injury_adjustment": {
-        "home": "有疑似伤病",
-        "away": "有疑似伤病",
-        "summary": "双方均受疑似伤病影响"
+        "home": "疑似伤病，影响未知",
+        "away": "疑似伤病，影响未知",
+        "summary": "双方阵容可能完整，伤病影响有限"
       },
-      "risk_analysis": "已完成比赛，无风险",
-      "upset_probability": 0,
+      "risk_analysis": "淘汰赛紧张氛围，可能进入加时，低进球风险",
+      "upset_probability": 30,
       "odds_comparison": {
         "market_implied": {
           "home_win": 0,
@@ -798,7 +1215,7 @@
         },
         "deviation_analysis": "赔率不可用"
       },
-      "confidence": "high",
+      "confidence": "low",
       "kickoff_beijing": "2026-06-29T03:00:00+08:00",
       "kickoff_display": "北京时间 06-29 03:00",
       "match_day": {
@@ -867,22 +1284,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-135",
+          "home": "-140",
           "draw": "+275",
-          "away": "+400"
+          "away": "+425"
         },
         "implied_probability": {
-          "home_win": 57.45,
+          "home_win": 58.33,
           "draw": 26.67,
-          "away_win": 20.0
+          "away_win": 19.05
         },
         "normalized_probability": {
-          "home_win": 55.18,
-          "draw": 25.61,
-          "away_win": 19.21
+          "home_win": 56.06,
+          "draw": 25.63,
+          "away_win": 18.31
         },
-        "overround": 4.11,
-        "details": "BRA -135"
+        "overround": 4.05,
+        "details": "BRA -140"
       },
       "injuries": {
         "home": {
@@ -902,65 +1319,147 @@
       },
       "match_id": "400021516",
       "win_draw_loss": {
-        "home_win": 55,
-        "draw": 25,
-        "away_win": 20
+        "home_win": 65,
+        "draw": 20,
+        "away_win": 15
       },
       "xg_prediction": {
-        "home": 1.8,
-        "away": 0.9
+        "home": 2.0,
+        "away": 0.8
       },
       "predicted_score": {
         "home": 2,
-        "away": 1
+        "away": 0
       },
       "score_options": [
         {
-          "score": "2-1",
+          "score": "2-0",
           "rank": 1,
-          "reason": "巴西进攻能力强，日本有望进球"
+          "reason": "巴西实力碾压，控制节奏"
+        },
+        {
+          "score": "3-1",
+          "rank": 2,
+          "reason": "巴西攻击力强大，日本可能进球"
         },
         {
           "score": "1-0",
-          "rank": 2,
-          "reason": "小胜可能"
-        },
-        {
-          "score": "1-1",
           "rank": 3,
-          "reason": "若日本防守顽强"
+          "reason": "日本死守，巴西小胜"
         }
       ],
       "method_factors": {
-        "market_signal": "博彩公司看巴西胜，赔率-135",
-        "fifa_rank_prior": "巴西为传统强队，日本为亚洲劲旅但实力不及巴西",
-        "recent_form": "无近期战绩信息",
+        "market_signal": "赔率显示巴西大热",
+        "fifa_rank_prior": "无法获得FIFA排名，长期实力：巴西顶级，日本亚洲劲旅",
+        "recent_form": "未知",
         "group_context": "16强淘汰赛",
-        "injury_rotation": "伤病情况未知",
-        "weather_venue": "未知",
-        "tactical_key": "战术未知",
-        "uncertainty": "缺乏近期数据和伤病信息，存在不确定性"
+        "injury_rotation": "双方无已知伤病",
+        "weather_venue": "休斯顿，未知",
+        "tactical_key": "巴西技术压制，日本防守反击",
+        "uncertainty": "中等"
       },
-      "tactical_matchup": "巴西技术占优，日本擅长传控与快速反击",
+      "matchup_graph": {
+        "nodes": [
+          {
+            "id": "home_attack",
+            "label": "主队进攻",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 70,
+            "note": "巴西攻击群个人能力出众"
+          },
+          {
+            "id": "home_midfield",
+            "label": "主队中场/转换",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 65,
+            "note": "中场控制力强"
+          },
+          {
+            "id": "home_defense",
+            "label": "主队防守",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 50,
+            "note": "防线稳固但可能冒险"
+          },
+          {
+            "id": "away_attack",
+            "label": "客队进攻",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 50,
+            "note": "日本快反有威胁"
+          },
+          {
+            "id": "away_midfield",
+            "label": "客队中场/转换",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 55,
+            "note": "中场组织性强"
+          },
+          {
+            "id": "away_defense",
+            "label": "客队防守",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 60,
+            "note": "防守纪律严明"
+          }
+        ],
+        "edges": [
+          {
+            "from": "home_attack",
+            "to": "away_defense",
+            "label": "巴西攻击群考验日本防线",
+            "impact": "high",
+            "direction": "home_to_away",
+            "note": "巴西进攻点众多"
+          },
+          {
+            "from": "away_attack",
+            "to": "home_defense",
+            "label": "日本快速反击威胁巴西后防",
+            "impact": "medium",
+            "direction": "away_to_home",
+            "note": "日本反击速度值得警惕"
+          },
+          {
+            "from": "home_midfield",
+            "to": "away_midfield",
+            "label": "中场控制权决定节奏",
+            "impact": "high",
+            "direction": "balanced",
+            "note": "巴西技术优势明显"
+          }
+        ],
+        "summary": "巴西明显占优，日本需依靠防守和反击寻找机会。",
+        "advantage_side": "home",
+        "key_battle": "日本中场拦截对巴西组织",
+        "risk_trigger": "巴西久攻不下或日本先进球"
+      },
+      "tactical_matchup": "巴西将主导控球，日本收缩防守寻求快速转换",
       "injury_adjustment": {
-        "home": "伤病未知",
-        "away": "伤病未知",
-        "summary": "伤病情况不明"
+        "home": "无已知伤病",
+        "away": "无已知伤病",
+        "summary": "双方主力阵容齐整"
       },
-      "risk_analysis": "巴西整体实力更强，但日本有爆冷能力",
-      "upset_probability": 20,
+      "risk_analysis": "巴西需避免轻敌，日本有能力制造麻烦",
+      "upset_probability": 15,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 55.18,
-          "draw": 25.61,
-          "away_win": 19.21
+          "home_win": 56,
+          "draw": 25.63,
+          "away_win": 18.31
         },
         "model_edge": {
-          "home_win": 55,
-          "draw": 25,
-          "away_win": 20
+          "home_win": 65,
+          "draw": 20,
+          "away_win": 15
         },
-        "deviation_analysis": "模型与市场接近，略微调高日本胜率"
+        "deviation_analysis": "模型更看好巴西，降低平局和客胜可能"
       },
       "confidence": "medium",
       "kickoff_beijing": "2026-06-30T01:00:00+08:00",
@@ -1031,22 +1530,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-300",
+          "home": "-285",
           "draw": "+425",
           "away": "+850"
         },
         "implied_probability": {
-          "home_win": 75.0,
+          "home_win": 74.03,
           "draw": 19.05,
           "away_win": 10.53
         },
         "normalized_probability": {
-          "home_win": 71.72,
-          "draw": 18.21,
-          "away_win": 10.07
+          "home_win": 71.45,
+          "draw": 18.39,
+          "away_win": 10.16
         },
-        "overround": 4.57,
-        "details": "GER -300"
+        "overround": 3.6,
+        "details": "GER -285"
       },
       "injuries": {
         "home": {
@@ -1054,6 +1553,13 @@
           "team_en": "Germany",
           "status": "probable injury",
           "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
+              "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
+              "published": "2026-06-29T02:43:49Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
+            },
             {
               "source": "ESPN World Cup news",
               "title": "Metcalfe: 'A lot of inner anger from the season'",
@@ -1074,65 +1580,147 @@
       },
       "match_id": "400021513",
       "win_draw_loss": {
-        "home_win": 70,
-        "draw": 19,
-        "away_win": 11
+        "home_win": 75,
+        "draw": 15,
+        "away_win": 10
       },
       "xg_prediction": {
         "home": 2.5,
         "away": 0.5
       },
       "predicted_score": {
-        "home": 2,
+        "home": 3,
         "away": 0
       },
       "score_options": [
         {
-          "score": "2-0",
-          "rank": 1,
-          "reason": "德国实力碾压，巴拉圭难破门"
-        },
-        {
           "score": "3-0",
-          "rank": 2,
-          "reason": "德国大胜可能"
+          "rank": 1,
+          "reason": "德国攻击力碾压对手"
         },
         {
-          "score": "1-0",
+          "score": "2-0",
+          "rank": 2,
+          "reason": "德国稳健控制，两球完胜"
+        },
+        {
+          "score": "4-0",
           "rank": 3,
-          "reason": "若巴拉圭死守成功"
+          "reason": "巴拉圭防线可能崩溃"
         }
       ],
       "method_factors": {
-        "market_signal": "德国胜赔-300，市场强烈看衰巴拉圭",
-        "fifa_rank_prior": "德国是传统豪门，巴拉圭南部球队实力有限",
+        "market_signal": "赔率极度倾向德国",
+        "fifa_rank_prior": "无法获得FIFA排名，长期实力：德国传统强队，巴拉圭南美中游",
         "recent_form": "未知",
         "group_context": "16强淘汰赛",
-        "injury_rotation": "德国媒体报道可能伤病但细节不明，巴拉圭未知",
-        "weather_venue": "未知",
-        "tactical_key": "未知",
-        "uncertainty": "德国伤病情况不明带来不确定性"
+        "injury_rotation": "德国有疑似伤病（关联新闻可能不准确），巴拉圭未知",
+        "weather_venue": "波士顿，未知",
+        "tactical_key": "德国强势进攻，巴拉圭全力防守",
+        "uncertainty": "低"
       },
-      "tactical_matchup": "德国高压控球，巴拉圭防守反击",
+      "matchup_graph": {
+        "nodes": [
+          {
+            "id": "home_attack",
+            "label": "主队进攻",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 80,
+            "note": "德国进攻手段丰富"
+          },
+          {
+            "id": "home_midfield",
+            "label": "主队中场/转换",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 75,
+            "note": "中场统治力强"
+          },
+          {
+            "id": "home_defense",
+            "label": "主队防守",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 60,
+            "note": "防线稳固"
+          },
+          {
+            "id": "away_attack",
+            "label": "客队进攻",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 30,
+            "note": "进攻威胁有限"
+          },
+          {
+            "id": "away_midfield",
+            "label": "客队中场/转换",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 40,
+            "note": "中场控制力弱"
+          },
+          {
+            "id": "away_defense",
+            "label": "客队防守",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 70,
+            "note": "防守顽强但压力大"
+          }
+        ],
+        "edges": [
+          {
+            "from": "home_attack",
+            "to": "away_defense",
+            "label": "德国进攻冲击巴拉圭防线",
+            "impact": "high",
+            "direction": "home_to_away",
+            "note": "德国攻击点众多"
+          },
+          {
+            "from": "away_attack",
+            "to": "home_defense",
+            "label": "巴拉圭难有机会",
+            "impact": "low",
+            "direction": "away_to_home",
+            "note": "客队进攻手段单一"
+          },
+          {
+            "from": "home_midfield",
+            "to": "away_midfield",
+            "label": "德国控制中场",
+            "impact": "high",
+            "direction": "balanced",
+            "note": "德国中场优势明显"
+          }
+        ],
+        "summary": "德国全方位占优，巴拉圭只能死守等待定位球机会。",
+        "advantage_side": "home",
+        "key_battle": "德国定位球对巴拉圭防空",
+        "risk_trigger": "德国轻敌"
+      },
+      "tactical_matchup": "德国控球围攻，巴拉圭密集防守寻求反击",
       "injury_adjustment": {
-        "home": "有疑似伤病报道，具体未知",
-        "away": "伤病未知",
-        "summary": "德国可能受伤病影响但实力仍占优"
+        "home": "疑似伤病关联澳大利亚球员，可能不准确",
+        "away": "未知",
+        "summary": "德国伤病情况不明，但板凳深度足够"
       },
-      "risk_analysis": "德国整体优势大，但淘汰赛阶段冷门风险存在",
-      "upset_probability": 10,
+      "risk_analysis": "德国需确保早进球，否则可能陷入焦灼",
+      "upset_probability": 5,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 71.72,
-          "draw": 18.21,
-          "away_win": 10.07
+          "home_win": 71.45,
+          "draw": 18.39,
+          "away_win": 10.16
         },
         "model_edge": {
-          "home_win": 70,
-          "draw": 19,
-          "away_win": 11
+          "home_win": 75,
+          "draw": 15,
+          "away_win": 10
         },
-        "deviation_analysis": "模型与市场一致，略微提高平局和客胜概率"
+        "deviation_analysis": "模型更看好德国，几乎排除巴拉圭获胜可能"
       },
       "confidence": "high",
       "kickoff_beijing": "2026-06-30T04:30:00+08:00",
@@ -1246,13 +1834,13 @@
       },
       "match_id": "400021522",
       "win_draw_loss": {
-        "home_win": 43,
-        "draw": 31,
-        "away_win": 26
+        "home_win": 40,
+        "draw": 30,
+        "away_win": 30
       },
       "xg_prediction": {
-        "home": 1.5,
-        "away": 1.2
+        "home": 1.2,
+        "away": 1.0
       },
       "predicted_score": {
         "home": 1,
@@ -1262,37 +1850,119 @@
         {
           "score": "1-1",
           "rank": 1,
-          "reason": "双方实力接近，荷兰略优但摩洛哥有信心拿分"
+          "reason": "双方实力接近，摩洛哥防守稳健"
         },
         {
           "score": "2-1",
           "rank": 2,
-          "reason": "荷兰小胜可能"
+          "reason": "荷兰略占上风，一球小胜"
         },
         {
-          "score": "0-0",
+          "score": "1-2",
           "rank": 3,
-          "reason": "可能闷平"
+          "reason": "摩洛哥反击致胜"
         }
       ],
       "method_factors": {
-        "market_signal": "荷兰胜赔+125，摩洛哥+255，市场认为荷兰稍占优",
-        "fifa_rank_prior": "荷兰传统强队，摩洛哥上届世界杯四强，实力不容小觑",
+        "market_signal": "荷兰略优，市场相对谨慎",
+        "fifa_rank_prior": "无法获得FIFA排名，长期实力：荷兰欧洲劲旅，摩洛哥非洲强队",
         "recent_form": "未知",
         "group_context": "16强淘汰赛",
-        "injury_rotation": "荷兰有疑似伤病报道但不明确，摩洛哥未知",
-        "weather_venue": "未知",
-        "tactical_key": "未知",
-        "uncertainty": "伤病情况不明，两队实力接近，结果难以预测"
+        "injury_rotation": "荷兰有疑似伤病，摩洛哥未知",
+        "weather_venue": "蒙特雷，未知",
+        "tactical_key": "荷兰全攻全守，摩洛哥防守坚韧",
+        "uncertainty": "高"
       },
-      "tactical_matchup": "荷兰全攻全守，摩洛哥防守稳固反击犀利",
+      "matchup_graph": {
+        "nodes": [
+          {
+            "id": "home_attack",
+            "label": "主队进攻",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 65,
+            "note": "荷兰前场创造力强"
+          },
+          {
+            "id": "home_midfield",
+            "label": "主队中场/转换",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 60,
+            "note": "中场控制力不错"
+          },
+          {
+            "id": "home_defense",
+            "label": "主队防守",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 55,
+            "note": "防线有漏洞"
+          },
+          {
+            "id": "away_attack",
+            "label": "客队进攻",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 55,
+            "note": "摩洛哥反击迅速"
+          },
+          {
+            "id": "away_midfield",
+            "label": "客队中场/转换",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 50,
+            "note": "中场绞杀能力强"
+          },
+          {
+            "id": "away_defense",
+            "label": "客队防守",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 65,
+            "note": "防守组织严密"
+          }
+        ],
+        "edges": [
+          {
+            "from": "home_attack",
+            "to": "away_defense",
+            "label": "荷兰需破解摩洛哥密集防守",
+            "impact": "medium",
+            "direction": "home_to_away",
+            "note": "荷兰破防能力受考验"
+          },
+          {
+            "from": "away_attack",
+            "to": "home_defense",
+            "label": "摩洛哥反击威胁",
+            "impact": "medium",
+            "direction": "away_to_home",
+            "note": "摩洛哥速度优势"
+          },
+          {
+            "from": "home_midfield",
+            "to": "away_midfield",
+            "label": "中场绞杀",
+            "impact": "medium",
+            "direction": "balanced",
+            "note": "双方中场争夺激烈"
+          }
+        ],
+        "summary": "势均力敌，摩洛哥防守稳固，荷兰需耐心寻找机会。",
+        "advantage_side": "balanced",
+        "key_battle": "荷兰边锋对摩洛哥边卫",
+        "risk_trigger": "摩洛哥防守反击可能致胜"
+      },
+      "tactical_matchup": "荷兰控球进攻，摩洛哥收缩防守打反击",
       "injury_adjustment": {
-        "home": "疑似伤病信息不明确",
-        "away": "伤病未知",
-        "summary": "荷兰伤病情况不明，可能影响阵容"
+        "home": "疑似伤病，影响未知",
+        "away": "未知",
+        "summary": "荷兰阵容或有缺失，摩洛哥齐整概率大"
       },
-      "risk_analysis": "荷兰稍占优但摩洛哥有实力逼平甚至取胜",
-      "upset_probability": 26,
+      "risk_analysis": "胜负难料，可能进入加时或点球大战",
+      "upset_probability": 30,
       "odds_comparison": {
         "market_implied": {
           "home_win": 42.38,
@@ -1300,11 +1970,11 @@
           "away_win": 26.86
         },
         "model_edge": {
-          "home_win": 43,
-          "draw": 31,
-          "away_win": 26
+          "home_win": 40,
+          "draw": 30,
+          "away_win": 30
         },
-        "deviation_analysis": "模型基本跟随市场，微调主胜概率"
+        "deviation_analysis": "模型认为摩洛哥获胜机会稍高于市场"
       },
       "confidence": "low",
       "kickoff_beijing": "2026-06-30T09:00:00+08:00",
@@ -1318,26 +1988,26 @@
       }
     }
   ],
-  "render": "<!doctype html>\n<html lang=\"zh-CN\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>2026 世界杯 · 预测分析</title>\n  <style>\n    :root {\n      color-scheme: dark;\n      --bg: #10111f;\n      --bg-2: #141727;\n      --panel: #1b2838;\n      --panel-2: #202d3d;\n      --panel-3: #172232;\n      --line: rgba(104, 136, 174, 0.28);\n      --line-hot: rgba(83, 171, 255, 0.58);\n      --text: #f5f7fb;\n      --muted: #a5afc1;\n      --green: #2bd16f;\n      --yellow: #f6bd27;\n      --red: #ef5049;\n      --blue: #66aaff;\n      --pink: #f05b78;\n      --shadow: 0 18px 48px rgba(0, 0, 0, 0.42);\n    }\n    * { box-sizing: border-box; }\n    html { background: var(--bg); }\n    body {\n      margin: 0;\n      font-family: Inter, \"Microsoft YaHei\", \"PingFang SC\", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;\n      color: var(--text);\n      background:\n        radial-gradient(circle at 50% -20%, rgba(32, 93, 156, 0.32), transparent 38%),\n        linear-gradient(180deg, #171729 0%, #10111f 42%, #0c0f19 100%);\n      letter-spacing: 0;\n      min-height: 100vh;\n    }\n    body::before {\n      content: \"\";\n      position: fixed;\n      inset: 0;\n      pointer-events: none;\n      background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);\n      background-size: 42px 42px;\n      mask-image: linear-gradient(180deg, rgba(0,0,0,0.85), transparent 70%);\n    }\n    a { color: var(--blue); text-decoration: none; font-weight: 700; transition: color .18s ease, text-shadow .18s ease; }\n    a:hover { color: #91c4ff; text-shadow: 0 0 16px rgba(102, 170, 255, .45); }\n    .page { width: min(980px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 44px; }\n    .night-card {\n      position: relative;\n      border: 1px solid var(--line);\n      border-radius: 22px;\n      background: linear-gradient(145deg, rgba(31, 46, 66, .96), rgba(24, 35, 51, .96));\n      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.04);\n      overflow: hidden;\n    }\n    .night-card::before {\n      content: \"\";\n      position: absolute;\n      inset: 0;\n      pointer-events: none;\n      background: linear-gradient(120deg, rgba(86, 169, 255, .18), transparent 36%, rgba(43, 209, 111, .08));\n      opacity: .55;\n    }\n    .hero {\n      padding: 30px;\n      margin-bottom: 24px;\n    }\n    .hero > * { position: relative; z-index: 1; }\n    .hero h1 { margin: 0 0 18px; font-size: clamp(30px, 7vw, 46px); line-height: 1.08; font-weight: 850; }\n    .range-pill {\n      display: inline-flex;\n      align-items: center;\n      max-width: 100%;\n      min-height: 40px;\n      padding: 0 18px;\n      border-radius: 999px;\n      background: rgba(246, 189, 39, .13);\n      color: #ffdb54;\n      border: 1px solid rgba(246, 189, 39, .28);\n      font-weight: 800;\n      overflow-wrap: anywhere;\n    }\n    .hero-meta {\n      display: grid;\n      grid-template-columns: repeat(2, minmax(0, 1fr));\n      gap: 14px 22px;\n      margin: 26px 0 0;\n    }\n    .hero-meta div { color: var(--muted); line-height: 1.55; min-width: 0; overflow-wrap: anywhere; }\n    .hero-meta strong { display: block; color: var(--text); font-weight: 780; }\n    .overview {\n      padding: 24px;\n      margin-bottom: 24px;\n    }\n    .overview h2, .usage-panel h2, .match-day h2 { margin: 0; font-size: 24px; color: #ffd64a; }\n    .overview p { position: relative; z-index: 1; margin: 14px 0 0; color: var(--muted); line-height: 1.8; font-size: 16px; }\n    .usage-panel {\n      padding: 22px;\n      margin-bottom: 24px;\n      border-color: rgba(246, 189, 39, .24);\n    }\n    .usage-grid {\n      position: relative;\n      z-index: 1;\n      display: grid;\n      grid-template-columns: repeat(4, minmax(0, 1fr));\n      gap: 14px;\n      margin-top: 18px;\n    }\n    .usage-card {\n      border: 1px solid var(--line);\n      border-radius: 14px;\n      background: rgba(24, 35, 51, .72);\n      padding: 18px;\n      min-height: 116px;\n      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;\n    }\n    .usage-card:hover { transform: translateY(-2px); border-color: var(--line-hot); box-shadow: 0 0 22px rgba(83, 171, 255, .14); }\n    .usage-card span { display: block; color: var(--muted); letter-spacing: .08em; font-size: 13px; margin-bottom: 14px; }\n    .usage-card strong { font-size: clamp(26px, 6vw, 36px); line-height: 1; overflow-wrap: anywhere; }\n    .usage-card.input strong { color: var(--blue); }\n    .usage-card.output strong { color: var(--green); }\n    .usage-card.total strong { color: #ffd64a; }\n    .usage-card.cost strong { color: var(--pink); }\n    .legend {\n      display: flex;\n      flex-wrap: wrap;\n      align-items: center;\n      gap: 14px 22px;\n      padding: 18px 20px;\n      margin-bottom: 28px;\n    }\n    .legend span { position: relative; z-index: 1; color: var(--muted); font-weight: 700; }\n    .dot {\n      display: inline-block;\n      width: 11px;\n      height: 11px;\n      border-radius: 50%;\n      margin-right: 7px;\n      box-shadow: 0 0 14px currentColor;\n      vertical-align: middle;\n    }\n    .dot.home { background: var(--green); color: var(--green); }\n    .dot.draw { background: var(--yellow); color: var(--yellow); }\n    .dot.away { background: var(--red); color: var(--red); }\n    .match-day { margin-top: 28px; }\n    .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 14px; }\n    .section-head p { margin-top: 8px; line-height: 1.5; }\n    .day-count {\n      flex: 0 0 auto;\n      border: 1px solid var(--line);\n      border-radius: 999px;\n      padding: 8px 14px;\n      color: #ffdb54;\n      background: rgba(246, 189, 39, .12);\n      font-weight: 800;\n    }\n    .match-grid { display: grid; grid-template-columns: 1fr; gap: 22px; }\n    .match-card {\n      border: 1px solid var(--line);\n      border-radius: 20px;\n      background: linear-gradient(145deg, rgba(30, 43, 59, .97), rgba(23, 34, 50, .98));\n      padding: 22px;\n      min-height: 360px;\n      display: flex;\n      flex-direction: column;\n      gap: 18px;\n      box-shadow: 0 14px 38px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.035);\n      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;\n    }\n    .match-card:hover {\n      transform: translateY(-4px);\n      border-color: var(--line-hot);\n      box-shadow: 0 22px 58px rgba(0,0,0,.45), 0 0 24px rgba(83, 171, 255, .18), inset 0 1px 0 rgba(255,255,255,.06);\n    }\n    .match-card:hover .prob-stack .seg { filter: brightness(1.12) saturate(1.08); }\n    .match-topline { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 14px; }\n    .match-topline h3 { margin: 0; font-size: clamp(22px, 5vw, 32px); line-height: 1.2; overflow-wrap: anywhere; }\n    .match-topline time {\n      border-radius: 999px;\n      background: rgba(255,255,255,.06);\n      border: 1px solid rgba(255,255,255,.06);\n      color: var(--muted);\n      padding: 8px 14px;\n      white-space: nowrap;\n      font-weight: 750;\n    }\n    .scoreboard { display: grid; grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr); align-items: center; gap: 12px; text-align: center; }\n    .score-side span { display: block; color: var(--text); font-size: 18px; font-weight: 760; overflow-wrap: anywhere; }\n    .score-side strong { display: block; margin-top: 6px; font-size: clamp(42px, 12vw, 62px); line-height: .95; color: #ffd11e; }\n    .score-separator { color: var(--muted); font-size: 34px; font-weight: 600; }\n    .probability-panel { display: grid; gap: 10px; }\n    .prob-heading { color: var(--muted); font-weight: 760; }\n    .prob-labels, .prob-values { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; color: var(--muted); font-weight: 700; }\n    .prob-labels span:nth-child(2), .prob-values span:nth-child(2) { text-align: center; }\n    .prob-labels span:nth-child(3), .prob-values span:nth-child(3) { text-align: right; }\n    .prob-values span:nth-child(1) { color: var(--green); }\n    .prob-values span:nth-child(2) { color: var(--yellow); }\n    .prob-values span:nth-child(3) { color: var(--red); }\n    .prob-stack {\n      display: flex;\n      height: 16px;\n      border-radius: 999px;\n      overflow: hidden;\n      background: rgba(255,255,255,.08);\n      box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);\n    }\n    .prob-stack .seg { min-width: 2px; transition: filter .18s ease, transform .18s ease; }\n    .prob-stack .home { background: var(--green); }\n    .prob-stack .draw { background: var(--yellow); }\n    .prob-stack .away { background: var(--red); }\n    .metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }\n    .metric-grid span {\n      border: 1px solid var(--line);\n      border-radius: 13px;\n      background: rgba(18, 28, 42, .62);\n      color: var(--muted);\n      min-height: 72px;\n      padding: 12px;\n      line-height: 1.45;\n      overflow-wrap: anywhere;\n    }\n    .metric-grid b { display: block; color: var(--text); margin-bottom: 4px; }\n    .score-options, .factor-panel {\n      border: 1px solid var(--line);\n      border-radius: 16px;\n      background: rgba(18, 28, 42, .48);\n      padding: 14px;\n    }\n    .score-options h4 { margin: 0 0 12px; color: #ffd64a; font-size: 17px; }\n    .score-option-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }\n    .score-option {\n      border: 1px solid rgba(104, 136, 174, .26);\n      border-radius: 14px;\n      background: rgba(14, 22, 34, .62);\n      padding: 12px;\n      min-width: 0;\n      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;\n    }\n    .score-option.primary {\n      border-color: rgba(246, 189, 39, .5);\n      background: linear-gradient(160deg, rgba(246, 189, 39, .16), rgba(14, 22, 34, .68));\n      box-shadow: 0 0 18px rgba(246, 189, 39, .12);\n    }\n    .match-card:hover .score-option.primary { box-shadow: 0 0 24px rgba(246, 189, 39, .18); }\n    .score-option:hover { transform: translateY(-2px); border-color: var(--line-hot); }\n    .score-rank { display: block; color: var(--muted); font-size: 12px; font-weight: 800; margin-bottom: 8px; }\n    .score-option strong { display: block; color: #ffd11e; font-size: 30px; line-height: 1; margin-bottom: 10px; }\n    .score-option p { margin: 0; color: #d8deea; font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; }\n    .factor-panel { color: var(--muted); }\n    .factor-panel summary {\n      cursor: pointer;\n      color: #ffd64a;\n      font-size: 17px;\n      font-weight: 800;\n      list-style-position: inside;\n    }\n    .factor-panel summary:hover { color: #ffe784; }\n    .factor-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }\n    .factor-item {\n      border: 1px solid rgba(104, 136, 174, .22);\n      border-radius: 13px;\n      background: rgba(12, 20, 31, .48);\n      padding: 12px;\n      min-width: 0;\n    }\n    .factor-item h5 { margin: 0 0 7px; color: var(--text); font-size: 13px; }\n    .factor-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; }\n    .analysis-block { display: grid; gap: 14px; }\n    .analysis-block section { border-top: 1px solid var(--line); padding-top: 14px; }\n    .analysis-block h4 { margin: 0 0 8px; font-size: 17px; color: var(--muted); }\n    .analysis-block p { margin: 0; color: #d8deea; font-size: 15px; line-height: 1.75; }\n    .analysis-block .risk-text { color: #ffbd35; }\n    .match-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; border-top: 1px solid var(--line); padding-top: 14px; margin-top: auto; color: var(--muted); }\n    .confidence { display: inline-flex; align-items: center; min-width: 38px; justify-content: center; border-radius: 999px; padding: 4px 11px; margin-left: 4px; }\n    .confidence.high { color: var(--green); background: rgba(43,209,111,.13); }\n    .confidence.medium { color: var(--yellow); background: rgba(246,189,39,.13); }\n    .confidence.low { color: var(--red); background: rgba(239,80,73,.13); }\n    .source-link { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }\n    .venue-line { margin: -6px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }\n    .empty { border: 1px dashed var(--line); border-radius: 18px; background: rgba(27,40,56,.68); padding: 24px; color: var(--muted); }\n    .muted { color: var(--muted); }\n    .compact { margin: 0; }\n    .page-footer { color: var(--muted); padding-top: 30px; font-size: 13px; line-height: 1.8; }\n    @media (min-width: 1080px) {\n      .match-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }\n    }\n    @media (max-width: 760px) {\n      .page { width: min(100% - 24px, 640px); padding-top: 18px; }\n      .hero, .overview, .usage-panel, .match-card { border-radius: 20px; padding: 20px; }\n      .hero-meta, .usage-grid, .metric-grid, .score-option-grid, .factor-grid { grid-template-columns: 1fr 1fr; }\n      .section-head, .match-topline { display: block; }\n      .day-count { display: inline-flex; margin-top: 12px; }\n      .match-topline time { display: inline-flex; margin-top: 12px; white-space: normal; }\n      .scoreboard { grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr); gap: 6px; }\n      .score-side span { font-size: 16px; }\n      .prob-labels { font-size: 14px; }\n      .match-footer { display: grid; grid-template-columns: 1fr; }\n    }\n    @media (max-width: 460px) {\n      .hero-meta, .usage-grid, .metric-grid, .score-option-grid, .factor-grid { grid-template-columns: 1fr; }\n      .prob-labels { grid-template-columns: 1fr; gap: 6px; }\n      .prob-labels span, .prob-labels span:nth-child(2), .prob-labels span:nth-child(3) { text-align: left; }\n    }\n  </style>\n</head>\n<body class=\"night-shell\">\n  <main class=\"page\">\n    <header class=\"hero night-card\">\n      <h1>2026 世界杯 · 预测分析</h1>\n      <span class=\"range-pill\">6月28日比赛日 - 6月29日比赛日 · 北京时间 06-28 18:00 - 06-30 18:00</span>\n      <div class=\"hero-meta\">\n        <div>生成时间<strong>北京时间 06-29 09:53</strong></div>\n        <div>总比赛场次<strong>4 场</strong></div>\n        <div>分析模型<strong>deepseek-v4-pro</strong></div>\n        <div>生成模型<strong>deepseek-v4-flash</strong></div>\n      </div>\n    </header>\n\n    <section class=\"overview night-card\">\n      <h2>总览</h2>\n      <p>6月28日至29日比赛日共分析4场世界杯16强赛。南非对加拿大已结束，加拿大1-0小胜。剩余3场即将进行：巴西对日本市场看巴西取胜，德国对巴拉圭德国碾压优势，荷兰对摩洛哥两队实力接近胜负难料。</p>\n    </section>\n\n    <section class=\"usage-panel night-card\">\n      <h2>Token / Cost</h2>\n      <div class=\"usage-grid\">\n        <div class=\"usage-card input\"><span>输入 TOKEN</span><strong>26908</strong></div>\n        <div class=\"usage-card output\"><span>输出 TOKEN</span><strong>18107</strong></div>\n        <div class=\"usage-card total\"><span>总 TOKEN</span><strong>45015</strong></div>\n        <div class=\"usage-card cost\"><span>预计成本</span><strong>0.450150</strong></div>\n      </div>\n    </section>\n\n    <section class=\"overview night-card\">\n      <h2>风险概览</h2>\n      <p>已完成的南非vs加拿大无风险。巴西vs日本中日本有爆冷可能，德国vs巴拉圭德国基本稳胜，荷兰vs摩洛哥悬念较大。</p>\n    </section>\n\n    <section class=\"legend night-card\">\n      <span><i class=\"dot home\"></i>主胜</span>\n      <span><i class=\"dot draw\"></i>平局</span>\n      <span><i class=\"dot away\"></i>客胜</span>\n      <span>置信度：高 / 中 / 低</span>\n      <span><a href=\"latest.json\">查看 data/latest.json</a></span>\n    </section>\n    \n    <section class=\"match-day\" data-match-day=\"2026-06-28\">\n      <div class=\"section-head\">\n        <div>\n          <h2>6月28日比赛日</h2>\n          <p class=\"muted compact\">北京时间 06-28 18:00 - 06-29 18:00，按北京时间升序排列</p>\n        </div>\n        <div class=\"day-count\">1 场</div>\n      </div>\n      <section class=\"match-grid\">\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>南非 vs 加拿大</h3>\n          <time datetime=\"2026-06-29T03:00:00+08:00\">北京时间 06-29 03:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>南非</span>\n            <strong>0</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>加拿大</span>\n            <strong>1</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 0%</span>\n        <span><i class=\"dot draw\"></i>平局 0%</span>\n        <span><i class=\"dot away\"></i>客胜 100%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:0.000%\"></span>\n        <span class=\"seg draw\" style=\"width:0.000%\"></span>\n        <span class=\"seg away\" style=\"width:100.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>0%</span>\n        <span>0%</span>\n        <span>100%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>南非 0.30</span>\n          <span><b>xG</b>加拿大 1.20</span>\n          <span><b>爆冷概率</b>0%</span>\n          <span><b>赔率</b>unavailable</span>\n        </div>\n        \n        <section class=\"score-options\">\n          <h4>比分结果 Top 3</h4>\n          <div class=\"score-option-grid\"><article class=\"score-option primary\"><span class=\"score-rank\">主推荐</span><strong>0-1</strong><p>实际比赛结果</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 2</span><strong>1-1</strong><p>加时赛可能平局</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 3</span><strong>0-2</strong><p>加拿大若把握机会</p></article></div>\n        </section>\n    \n        \n        <details class=\"factor-panel\" open>\n          <summary>分析因子</summary>\n          <div class=\"factor-grid\"><section class=\"factor-item\"><h5>市场信号</h5><p>赔率不可用，已结束比赛</p></section><section class=\"factor-item\"><h5>FIFA 实力先验</h5><p>南非与加拿大均为中游队伍，均首次晋级淘汰赛</p></section><section class=\"factor-item\"><h5>近期状态</h5><p>双方小组赛表现未知</p></section><section class=\"factor-item\"><h5>小组形势</h5><p>16强淘汰赛</p></section><section class=\"factor-item\"><h5>伤停/轮换</h5><p>两队均有疑似伤病报道</p></section><section class=\"factor-item\"><h5>天气/场地</h5><p>未知</p></section><section class=\"factor-item\"><h5>战术关键</h5><p>战术未知</p></section><section class=\"factor-item\"><h5>不确定性</h5><p>比赛已结束，分析无意义</p></section></div>\n        </details>\n    \n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>比赛已结束</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">已完成比赛，无风险</p></section>\n          <section><h4>伤停信息</h4><p>主队: 媒体伤停线索; 客队: 媒体伤停线索</p><p class=\"muted compact\">有疑似伤病 有疑似伤病 双方均受疑似伤病影响</p></section>\n          <section><h4>赔率对比</h4><p>真实赔率源未提供 moneyline，显示 unavailable。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence high\">高</b></span>\n          <span>比赛 ID: 400021518</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760486\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Los Angeles Stadium - Los Angeles - USA</p>\n      </article>\n    </section>\n    </section>\n            \n    <section class=\"match-day\" data-match-day=\"2026-06-29\">\n      <div class=\"section-head\">\n        <div>\n          <h2>6月29日比赛日</h2>\n          <p class=\"muted compact\">北京时间 06-29 18:00 - 06-30 18:00，按北京时间升序排列</p>\n        </div>\n        <div class=\"day-count\">3 场</div>\n      </div>\n      <section class=\"match-grid\">\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>巴西 vs 日本</h3>\n          <time datetime=\"2026-06-30T01:00:00+08:00\">北京时间 06-30 01:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>巴西</span>\n            <strong>2</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>日本</span>\n            <strong>1</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 55%</span>\n        <span><i class=\"dot draw\"></i>平局 25%</span>\n        <span><i class=\"dot away\"></i>客胜 20%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:55.000%\"></span>\n        <span class=\"seg draw\" style=\"width:25.000%\"></span>\n        <span class=\"seg away\" style=\"width:20.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>55%</span>\n        <span>25%</span>\n        <span>20%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>巴西 1.80</span>\n          <span><b>xG</b>日本 0.90</span>\n          <span><b>爆冷概率</b>20%</span>\n          <span><b>赔率</b>主胜 55.18% / 平 25.61% / 客胜 19.21%</span>\n        </div>\n        \n        <section class=\"score-options\">\n          <h4>比分结果 Top 3</h4>\n          <div class=\"score-option-grid\"><article class=\"score-option primary\"><span class=\"score-rank\">主推荐</span><strong>2-1</strong><p>巴西进攻能力强，日本有望进球</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 2</span><strong>1-0</strong><p>小胜可能</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 3</span><strong>1-1</strong><p>若日本防守顽强</p></article></div>\n        </section>\n    \n        \n        <details class=\"factor-panel\" open>\n          <summary>分析因子</summary>\n          <div class=\"factor-grid\"><section class=\"factor-item\"><h5>市场信号</h5><p>博彩公司看巴西胜，赔率-135</p></section><section class=\"factor-item\"><h5>FIFA 实力先验</h5><p>巴西为传统强队，日本为亚洲劲旅但实力不及巴西</p></section><section class=\"factor-item\"><h5>近期状态</h5><p>无近期战绩信息</p></section><section class=\"factor-item\"><h5>小组形势</h5><p>16强淘汰赛</p></section><section class=\"factor-item\"><h5>伤停/轮换</h5><p>伤病情况未知</p></section><section class=\"factor-item\"><h5>天气/场地</h5><p>未知</p></section><section class=\"factor-item\"><h5>战术关键</h5><p>战术未知</p></section><section class=\"factor-item\"><h5>不确定性</h5><p>缺乏近期数据和伤病信息，存在不确定性</p></section></div>\n        </details>\n    \n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>巴西技术占优，日本擅长传控与快速反击</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">巴西整体实力更强，但日本有爆冷能力</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">伤病未知 伤病未知 伤病情况不明</p></section>\n          <section><h4>赔率对比</h4><p>BRA -135: 主胜 55.18% / 平 25.61% / 客胜 19.21%. 模型与市场接近，略微调高日本胜率</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence medium\">中</b></span>\n          <span>比赛 ID: 400021516</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760487\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Houston Stadium - Houston - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>德国 vs 巴拉圭</h3>\n          <time datetime=\"2026-06-30T04:30:00+08:00\">北京时间 06-30 04:30</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>德国</span>\n            <strong>2</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>巴拉圭</span>\n            <strong>0</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 70%</span>\n        <span><i class=\"dot draw\"></i>平局 19%</span>\n        <span><i class=\"dot away\"></i>客胜 11%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:70.000%\"></span>\n        <span class=\"seg draw\" style=\"width:19.000%\"></span>\n        <span class=\"seg away\" style=\"width:11.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>70%</span>\n        <span>19%</span>\n        <span>11%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>德国 2.50</span>\n          <span><b>xG</b>巴拉圭 0.50</span>\n          <span><b>爆冷概率</b>10%</span>\n          <span><b>赔率</b>主胜 71.72% / 平 18.21% / 客胜 10.07%</span>\n        </div>\n        \n        <section class=\"score-options\">\n          <h4>比分结果 Top 3</h4>\n          <div class=\"score-option-grid\"><article class=\"score-option primary\"><span class=\"score-rank\">主推荐</span><strong>2-0</strong><p>德国实力碾压，巴拉圭难破门</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 2</span><strong>3-0</strong><p>德国大胜可能</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 3</span><strong>1-0</strong><p>若巴拉圭死守成功</p></article></div>\n        </section>\n    \n        \n        <details class=\"factor-panel\" open>\n          <summary>分析因子</summary>\n          <div class=\"factor-grid\"><section class=\"factor-item\"><h5>市场信号</h5><p>德国胜赔-300，市场强烈看衰巴拉圭</p></section><section class=\"factor-item\"><h5>FIFA 实力先验</h5><p>德国是传统豪门，巴拉圭南部球队实力有限</p></section><section class=\"factor-item\"><h5>近期状态</h5><p>未知</p></section><section class=\"factor-item\"><h5>小组形势</h5><p>16强淘汰赛</p></section><section class=\"factor-item\"><h5>伤停/轮换</h5><p>德国媒体报道可能伤病但细节不明，巴拉圭未知</p></section><section class=\"factor-item\"><h5>天气/场地</h5><p>未知</p></section><section class=\"factor-item\"><h5>战术关键</h5><p>未知</p></section><section class=\"factor-item\"><h5>不确定性</h5><p>德国伤病情况不明带来不确定性</p></section></div>\n        </details>\n    \n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>德国高压控球，巴拉圭防守反击</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">德国整体优势大，但淘汰赛阶段冷门风险存在</p></section>\n          <section><h4>伤停信息</h4><p>主队: 媒体伤停线索; 客队: unknown</p><p class=\"muted compact\">有疑似伤病报道，具体未知 伤病未知 德国可能受伤病影响但实力仍占优</p></section>\n          <section><h4>赔率对比</h4><p>GER -300: 主胜 71.72% / 平 18.21% / 客胜 10.07%. 模型与市场一致，略微提高平局和客胜概率</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence high\">高</b></span>\n          <span>比赛 ID: 400021513</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760489\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Boston Stadium - Boston - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>荷兰 vs 摩洛哥</h3>\n          <time datetime=\"2026-06-30T09:00:00+08:00\">北京时间 06-30 09:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>荷兰</span>\n            <strong>1</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>摩洛哥</span>\n            <strong>1</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 43%</span>\n        <span><i class=\"dot draw\"></i>平局 31%</span>\n        <span><i class=\"dot away\"></i>客胜 26%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:43.000%\"></span>\n        <span class=\"seg draw\" style=\"width:31.000%\"></span>\n        <span class=\"seg away\" style=\"width:26.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>43%</span>\n        <span>31%</span>\n        <span>26%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>荷兰 1.50</span>\n          <span><b>xG</b>摩洛哥 1.20</span>\n          <span><b>爆冷概率</b>26%</span>\n          <span><b>赔率</b>主胜 42.38% / 平 30.76% / 客胜 26.86%</span>\n        </div>\n        \n        <section class=\"score-options\">\n          <h4>比分结果 Top 3</h4>\n          <div class=\"score-option-grid\"><article class=\"score-option primary\"><span class=\"score-rank\">主推荐</span><strong>1-1</strong><p>双方实力接近，荷兰略优但摩洛哥有信心拿分</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 2</span><strong>2-1</strong><p>荷兰小胜可能</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 3</span><strong>0-0</strong><p>可能闷平</p></article></div>\n        </section>\n    \n        \n        <details class=\"factor-panel\" open>\n          <summary>分析因子</summary>\n          <div class=\"factor-grid\"><section class=\"factor-item\"><h5>市场信号</h5><p>荷兰胜赔+125，摩洛哥+255，市场认为荷兰稍占优</p></section><section class=\"factor-item\"><h5>FIFA 实力先验</h5><p>荷兰传统强队，摩洛哥上届世界杯四强，实力不容小觑</p></section><section class=\"factor-item\"><h5>近期状态</h5><p>未知</p></section><section class=\"factor-item\"><h5>小组形势</h5><p>16强淘汰赛</p></section><section class=\"factor-item\"><h5>伤停/轮换</h5><p>荷兰有疑似伤病报道但不明确，摩洛哥未知</p></section><section class=\"factor-item\"><h5>天气/场地</h5><p>未知</p></section><section class=\"factor-item\"><h5>战术关键</h5><p>未知</p></section><section class=\"factor-item\"><h5>不确定性</h5><p>伤病情况不明，两队实力接近，结果难以预测</p></section></div>\n        </details>\n    \n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>荷兰全攻全守，摩洛哥防守稳固反击犀利</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">荷兰稍占优但摩洛哥有实力逼平甚至取胜</p></section>\n          <section><h4>伤停信息</h4><p>主队: 媒体伤停线索; 客队: unknown</p><p class=\"muted compact\">疑似伤病信息不明确 伤病未知 荷兰伤病情况不明，可能影响阵容</p></section>\n          <section><h4>赔率对比</h4><p>NED +125: 主胜 42.38% / 平 30.76% / 客胜 26.86%. 模型基本跟随市场，微调主胜概率</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence low\">低</b></span>\n          <span>比赛 ID: 400021522</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760488\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Monterrey Stadium - Monterrey - MEX</p>\n      </article>\n    </section>\n    </section>\n            \n    <footer class=\"page-footer\">\n      V3 Agent：FIFA 官方赛程为主源，ESPN 用于第二来源校验和赔率；伤停无可靠来源时显示 unknown，赔率无真实源时显示 unavailable。所有可见比赛时间均为北京时间，比赛日按 18:00 至次日 18:00 划分。\n    </footer>\n  </main>\n</body>\n</html>\n",
-  "render_draft_sha": "a1ff64eb334a3154",
+  "render": "<!doctype html>\n<html lang=\"zh-CN\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>2026 世界杯 · 预测分析</title>\n  <style>\n    :root {\n      color-scheme: dark;\n      --bg: #10111f;\n      --bg-2: #141727;\n      --panel: #1b2838;\n      --panel-2: #202d3d;\n      --panel-3: #172232;\n      --line: rgba(104, 136, 174, 0.28);\n      --line-hot: rgba(83, 171, 255, 0.58);\n      --text: #f5f7fb;\n      --muted: #a5afc1;\n      --green: #2bd16f;\n      --yellow: #f6bd27;\n      --red: #ef5049;\n      --blue: #66aaff;\n      --pink: #f05b78;\n      --shadow: 0 18px 48px rgba(0, 0, 0, 0.42);\n    }\n    * { box-sizing: border-box; }\n    html { background: var(--bg); }\n    body {\n      margin: 0;\n      font-family: Inter, \"Microsoft YaHei\", \"PingFang SC\", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif;\n      color: var(--text);\n      background:\n        radial-gradient(circle at 50% -20%, rgba(32, 93, 156, 0.32), transparent 38%),\n        linear-gradient(180deg, #171729 0%, #10111f 42%, #0c0f19 100%);\n      letter-spacing: 0;\n      min-height: 100vh;\n    }\n    body::before {\n      content: \"\";\n      position: fixed;\n      inset: 0;\n      pointer-events: none;\n      background-image: linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);\n      background-size: 42px 42px;\n      mask-image: linear-gradient(180deg, rgba(0,0,0,0.85), transparent 70%);\n    }\n    a { color: var(--blue); text-decoration: none; font-weight: 700; transition: color .18s ease, text-shadow .18s ease; }\n    a:hover { color: #91c4ff; text-shadow: 0 0 16px rgba(102, 170, 255, .45); }\n    .page { width: min(980px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 44px; }\n    .night-card {\n      position: relative;\n      border: 1px solid var(--line);\n      border-radius: 22px;\n      background: linear-gradient(145deg, rgba(31, 46, 66, .96), rgba(24, 35, 51, .96));\n      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.04);\n      overflow: hidden;\n    }\n    .night-card::before {\n      content: \"\";\n      position: absolute;\n      inset: 0;\n      pointer-events: none;\n      background: linear-gradient(120deg, rgba(86, 169, 255, .18), transparent 36%, rgba(43, 209, 111, .08));\n      opacity: .55;\n    }\n    .hero {\n      padding: 30px;\n      margin-bottom: 24px;\n    }\n    .hero > * { position: relative; z-index: 1; }\n    .hero h1 { margin: 0 0 18px; font-size: clamp(30px, 7vw, 46px); line-height: 1.08; font-weight: 850; }\n    .range-pill {\n      display: inline-flex;\n      align-items: center;\n      max-width: 100%;\n      min-height: 40px;\n      padding: 0 18px;\n      border-radius: 999px;\n      background: rgba(246, 189, 39, .13);\n      color: #ffdb54;\n      border: 1px solid rgba(246, 189, 39, .28);\n      font-weight: 800;\n      overflow-wrap: anywhere;\n    }\n    .hero-meta {\n      display: grid;\n      grid-template-columns: repeat(2, minmax(0, 1fr));\n      gap: 14px 22px;\n      margin: 26px 0 0;\n    }\n    .hero-meta div { color: var(--muted); line-height: 1.55; min-width: 0; overflow-wrap: anywhere; }\n    .hero-meta strong { display: block; color: var(--text); font-weight: 780; }\n    .overview {\n      padding: 24px;\n      margin-bottom: 24px;\n    }\n    .overview h2, .usage-panel h2, .match-day h2 { margin: 0; font-size: 24px; color: #ffd64a; }\n    .overview p { position: relative; z-index: 1; margin: 14px 0 0; color: var(--muted); line-height: 1.8; font-size: 16px; }\n    .usage-panel {\n      padding: 22px;\n      margin-bottom: 24px;\n      border-color: rgba(246, 189, 39, .24);\n    }\n    .usage-grid {\n      position: relative;\n      z-index: 1;\n      display: grid;\n      grid-template-columns: repeat(4, minmax(0, 1fr));\n      gap: 14px;\n      margin-top: 18px;\n    }\n    .usage-card {\n      border: 1px solid var(--line);\n      border-radius: 14px;\n      background: rgba(24, 35, 51, .72);\n      padding: 18px;\n      min-height: 116px;\n      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;\n    }\n    .usage-card:hover { transform: translateY(-2px); border-color: var(--line-hot); box-shadow: 0 0 22px rgba(83, 171, 255, .14); }\n    .usage-card span { display: block; color: var(--muted); letter-spacing: .08em; font-size: 13px; margin-bottom: 14px; }\n    .usage-card strong { font-size: clamp(26px, 6vw, 36px); line-height: 1; overflow-wrap: anywhere; }\n    .usage-card.input strong { color: var(--blue); }\n    .usage-card.output strong { color: var(--green); }\n    .usage-card.total strong { color: #ffd64a; }\n    .usage-card.cost strong { color: var(--pink); }\n    .legend {\n      display: flex;\n      flex-wrap: wrap;\n      align-items: center;\n      gap: 14px 22px;\n      padding: 18px 20px;\n      margin-bottom: 28px;\n    }\n    .legend span { position: relative; z-index: 1; color: var(--muted); font-weight: 700; }\n    .dot {\n      display: inline-block;\n      width: 11px;\n      height: 11px;\n      border-radius: 50%;\n      margin-right: 7px;\n      box-shadow: 0 0 14px currentColor;\n      vertical-align: middle;\n    }\n    .dot.home { background: var(--green); color: var(--green); }\n    .dot.draw { background: var(--yellow); color: var(--yellow); }\n    .dot.away { background: var(--red); color: var(--red); }\n    .match-day { margin-top: 28px; }\n    .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 14px; }\n    .section-head p { margin-top: 8px; line-height: 1.5; }\n    .day-count {\n      flex: 0 0 auto;\n      border: 1px solid var(--line);\n      border-radius: 999px;\n      padding: 8px 14px;\n      color: #ffdb54;\n      background: rgba(246, 189, 39, .12);\n      font-weight: 800;\n    }\n    .match-grid { display: grid; grid-template-columns: 1fr; gap: 22px; }\n    .match-card {\n      border: 1px solid var(--line);\n      border-radius: 20px;\n      background: linear-gradient(145deg, rgba(30, 43, 59, .97), rgba(23, 34, 50, .98));\n      padding: 22px;\n      min-height: 360px;\n      display: flex;\n      flex-direction: column;\n      gap: 18px;\n      box-shadow: 0 14px 38px rgba(0,0,0,.34), inset 0 1px 0 rgba(255,255,255,.035);\n      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease;\n    }\n    .match-card:hover {\n      transform: translateY(-4px);\n      border-color: var(--line-hot);\n      box-shadow: 0 22px 58px rgba(0,0,0,.45), 0 0 24px rgba(83, 171, 255, .18), inset 0 1px 0 rgba(255,255,255,.06);\n    }\n    .match-card:hover .prob-stack .seg { filter: brightness(1.12) saturate(1.08); }\n    .match-topline { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 14px; }\n    .match-topline h3 { margin: 0; font-size: clamp(22px, 5vw, 32px); line-height: 1.2; overflow-wrap: anywhere; }\n    .match-topline time {\n      border-radius: 999px;\n      background: rgba(255,255,255,.06);\n      border: 1px solid rgba(255,255,255,.06);\n      color: var(--muted);\n      padding: 8px 14px;\n      white-space: nowrap;\n      font-weight: 750;\n    }\n    .scoreboard { display: grid; grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr); align-items: center; gap: 12px; text-align: center; }\n    .score-side span { display: block; color: var(--text); font-size: 18px; font-weight: 760; overflow-wrap: anywhere; }\n    .score-side strong { display: block; margin-top: 6px; font-size: clamp(42px, 12vw, 62px); line-height: .95; color: #ffd11e; }\n    .score-separator { color: var(--muted); font-size: 34px; font-weight: 600; }\n    .probability-panel { display: grid; gap: 10px; }\n    .prob-heading { color: var(--muted); font-weight: 760; }\n    .prob-labels, .prob-values { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; color: var(--muted); font-weight: 700; }\n    .prob-labels span:nth-child(2), .prob-values span:nth-child(2) { text-align: center; }\n    .prob-labels span:nth-child(3), .prob-values span:nth-child(3) { text-align: right; }\n    .prob-values span:nth-child(1) { color: var(--green); }\n    .prob-values span:nth-child(2) { color: var(--yellow); }\n    .prob-values span:nth-child(3) { color: var(--red); }\n    .prob-stack {\n      display: flex;\n      height: 16px;\n      border-radius: 999px;\n      overflow: hidden;\n      background: rgba(255,255,255,.08);\n      box-shadow: inset 0 0 0 1px rgba(255,255,255,.04);\n    }\n    .prob-stack .seg { min-width: 2px; transition: filter .18s ease, transform .18s ease; }\n    .prob-stack .home { background: var(--green); }\n    .prob-stack .draw { background: var(--yellow); }\n    .prob-stack .away { background: var(--red); }\n    .metric-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }\n    .metric-grid span {\n      border: 1px solid var(--line);\n      border-radius: 13px;\n      background: rgba(18, 28, 42, .62);\n      color: var(--muted);\n      min-height: 72px;\n      padding: 12px;\n      line-height: 1.45;\n      overflow-wrap: anywhere;\n    }\n    .metric-grid b { display: block; color: var(--text); margin-bottom: 4px; }\n    .score-options, .factor-panel, .matchup-panel {\n      border: 1px solid var(--line);\n      border-radius: 16px;\n      background: rgba(18, 28, 42, .48);\n      padding: 14px;\n    }\n    .score-options h4 { margin: 0 0 12px; color: #ffd64a; font-size: 17px; }\n    .score-option-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }\n    .score-option {\n      border: 1px solid rgba(104, 136, 174, .26);\n      border-radius: 14px;\n      background: rgba(14, 22, 34, .62);\n      padding: 12px;\n      min-width: 0;\n      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;\n    }\n    .score-option.primary {\n      border-color: rgba(246, 189, 39, .5);\n      background: linear-gradient(160deg, rgba(246, 189, 39, .16), rgba(14, 22, 34, .68));\n      box-shadow: 0 0 18px rgba(246, 189, 39, .12);\n    }\n    .match-card:hover .score-option.primary { box-shadow: 0 0 24px rgba(246, 189, 39, .18); }\n    .score-option:hover { transform: translateY(-2px); border-color: var(--line-hot); }\n    .score-rank { display: block; color: var(--muted); font-size: 12px; font-weight: 800; margin-bottom: 8px; }\n    .score-option strong { display: block; color: #ffd11e; font-size: 30px; line-height: 1; margin-bottom: 10px; }\n    .score-option p { margin: 0; color: #d8deea; font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; }\n    .factor-panel { color: var(--muted); }\n    .factor-panel summary {\n      cursor: pointer;\n      color: #ffd64a;\n      font-size: 17px;\n      font-weight: 800;\n      list-style-position: inside;\n    }\n    .factor-panel summary:hover { color: #ffe784; }\n    .factor-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }\n    .factor-item {\n      border: 1px solid rgba(104, 136, 174, .22);\n      border-radius: 13px;\n      background: rgba(12, 20, 31, .48);\n      padding: 12px;\n      min-width: 0;\n    }\n    .factor-item h5 { margin: 0 0 7px; color: var(--text); font-size: 13px; }\n    .factor-item p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; }\n    .matchup-panel summary {\n      cursor: pointer;\n      color: #ffd64a;\n      font-size: 17px;\n      font-weight: 800;\n      list-style-position: inside;\n    }\n    .matchup-panel summary:hover { color: #ffe784; }\n    .graph-summary-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }\n    .graph-summary-grid span {\n      border: 1px solid rgba(104, 136, 174, .22);\n      border-radius: 13px;\n      background: rgba(12, 20, 31, .5);\n      padding: 12px;\n      color: var(--muted);\n      line-height: 1.45;\n      overflow-wrap: anywhere;\n    }\n    .graph-summary-grid b { display: block; color: var(--text); margin-bottom: 5px; }\n    .graph-summary { margin: 12px 0 0; color: #d8deea; font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }\n    .graph-node-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }\n    .graph-node-grid h5, .graph-edge-list h5 { margin: 0 0 9px; color: var(--text); font-size: 14px; }\n    .graph-node {\n      border: 1px solid rgba(104, 136, 174, .24);\n      border-radius: 14px;\n      background: rgba(12, 20, 31, .5);\n      padding: 11px;\n      margin-top: 8px;\n      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;\n    }\n    .graph-node.home { border-left: 3px solid var(--green); }\n    .graph-node.away { border-left: 3px solid var(--red); }\n    .graph-node:hover { transform: translateY(-2px); border-color: var(--line-hot); }\n    .graph-node div { display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }\n    .graph-node strong { color: var(--text); font-size: 14px; }\n    .graph-node span { color: #ffd64a; font-size: 12px; font-weight: 800; white-space: nowrap; }\n    .graph-node p { margin: 7px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }\n    .graph-edge-list { margin-top: 12px; }\n    .graph-edge {\n      border: 1px solid rgba(104, 136, 174, .24);\n      border-radius: 14px;\n      background: rgba(12, 20, 31, .46);\n      padding: 12px;\n      margin-top: 9px;\n      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;\n    }\n    .graph-edge:hover { transform: translateY(-2px); border-color: var(--line-hot); }\n    .graph-edge.impact-high { border-color: rgba(239,80,73,.54); box-shadow: inset 0 0 0 1px rgba(239,80,73,.12); }\n    .graph-edge.impact-medium { border-color: rgba(246,189,39,.45); }\n    .graph-edge.impact-low { border-color: rgba(104,136,174,.3); }\n    .graph-edge div { display: flex; justify-content: space-between; gap: 10px; align-items: center; }\n    .graph-edge strong { color: var(--text); font-size: 14px; overflow-wrap: anywhere; }\n    .graph-edge span { border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 900; }\n    .graph-edge.impact-high span { color: #ffb7b3; background: rgba(239,80,73,.16); }\n    .graph-edge.impact-medium span { color: #ffe184; background: rgba(246,189,39,.14); }\n    .graph-edge.impact-low span { color: #c5d1e4; background: rgba(104,136,174,.13); }\n    .graph-edge p { margin: 8px 0 0; color: #d8deea; font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; }\n    .graph-edge small { display: block; margin-top: 8px; color: var(--muted); overflow-wrap: anywhere; }\n    .analysis-block { display: grid; gap: 14px; }\n    .analysis-block section { border-top: 1px solid var(--line); padding-top: 14px; }\n    .analysis-block h4 { margin: 0 0 8px; font-size: 17px; color: var(--muted); }\n    .analysis-block p { margin: 0; color: #d8deea; font-size: 15px; line-height: 1.75; }\n    .analysis-block .risk-text { color: #ffbd35; }\n    .match-footer { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; border-top: 1px solid var(--line); padding-top: 14px; margin-top: auto; color: var(--muted); }\n    .confidence { display: inline-flex; align-items: center; min-width: 38px; justify-content: center; border-radius: 999px; padding: 4px 11px; margin-left: 4px; }\n    .confidence.high { color: var(--green); background: rgba(43,209,111,.13); }\n    .confidence.medium { color: var(--yellow); background: rgba(246,189,39,.13); }\n    .confidence.low { color: var(--red); background: rgba(239,80,73,.13); }\n    .source-link { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; }\n    .venue-line { margin: -6px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; }\n    .empty { border: 1px dashed var(--line); border-radius: 18px; background: rgba(27,40,56,.68); padding: 24px; color: var(--muted); }\n    .muted { color: var(--muted); }\n    .compact { margin: 0; }\n    .page-footer { color: var(--muted); padding-top: 30px; font-size: 13px; line-height: 1.8; }\n    @media (min-width: 1080px) {\n      .match-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }\n    }\n    @media (max-width: 760px) {\n      .page { width: min(100% - 24px, 640px); padding-top: 18px; }\n      .hero, .overview, .usage-panel, .match-card { border-radius: 20px; padding: 20px; }\n      .hero-meta, .usage-grid, .metric-grid, .score-option-grid, .factor-grid, .graph-summary-grid, .graph-node-grid { grid-template-columns: 1fr 1fr; }\n      .section-head, .match-topline { display: block; }\n      .day-count { display: inline-flex; margin-top: 12px; }\n      .match-topline time { display: inline-flex; margin-top: 12px; white-space: normal; }\n      .scoreboard { grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr); gap: 6px; }\n      .score-side span { font-size: 16px; }\n      .prob-labels { font-size: 14px; }\n      .match-footer { display: grid; grid-template-columns: 1fr; }\n    }\n    @media (max-width: 460px) {\n      .hero-meta, .usage-grid, .metric-grid, .score-option-grid, .factor-grid, .graph-summary-grid, .graph-node-grid { grid-template-columns: 1fr; }\n      .prob-labels { grid-template-columns: 1fr; gap: 6px; }\n      .prob-labels span, .prob-labels span:nth-child(2), .prob-labels span:nth-child(3) { text-align: left; }\n    }\n  </style>\n</head>\n<body class=\"night-shell\">\n  <main class=\"page\">\n    <header class=\"hero night-card\">\n      <h1>2026 世界杯 · 预测分析</h1>\n      <span class=\"range-pill\">6月28日比赛日 - 6月29日比赛日 · 北京时间 06-28 18:00 - 06-30 18:00</span>\n      <div class=\"hero-meta\">\n        <div>生成时间<strong>北京时间 06-29 13:44</strong></div>\n        <div>总比赛场次<strong>4 场</strong></div>\n        <div>分析模型<strong>deepseek-v4-pro</strong></div>\n        <div>生成模型<strong>deepseek-v4-flash</strong></div>\n      </div>\n    </header>\n\n    <section class=\"overview night-card\">\n      <h2>总览</h2>\n      <p>4场比赛分析：包含已完成的南非对加拿大，以及即将进行的巴西对日本、德国对巴拉圭、荷兰对摩洛哥。预测基于球队实力、赔率数据及伤病信息。</p>\n    </section>\n\n    <section class=\"usage-panel night-card\">\n      <h2>Token / Cost</h2>\n      <div class=\"usage-grid\">\n        <div class=\"usage-card input\"><span>输入 TOKEN</span><strong>32213</strong></div>\n        <div class=\"usage-card output\"><span>输出 TOKEN</span><strong>26060</strong></div>\n        <div class=\"usage-card total\"><span>总 TOKEN</span><strong>58273</strong></div>\n        <div class=\"usage-card cost\"><span>预计成本</span><strong>0.582730</strong></div>\n      </div>\n    </section>\n\n    <section class=\"overview night-card\">\n      <h2>风险概览</h2>\n      <p>巴西与德国两场比赛强弱分明，风险较低；荷兰对摩洛哥势均力敌，不确定性高；南非对加拿大已完成，加拿大险胜。</p>\n    </section>\n\n    <section class=\"legend night-card\">\n      <span><i class=\"dot home\"></i>主胜</span>\n      <span><i class=\"dot draw\"></i>平局</span>\n      <span><i class=\"dot away\"></i>客胜</span>\n      <span>置信度：高 / 中 / 低</span>\n      <span><a href=\"latest.json\">查看 data/latest.json</a></span>\n    </section>\n    \n    <section class=\"match-day\" data-match-day=\"2026-06-28\">\n      <div class=\"section-head\">\n        <div>\n          <h2>6月28日比赛日</h2>\n          <p class=\"muted compact\">北京时间 06-28 18:00 - 06-29 18:00，按北京时间升序排列</p>\n        </div>\n        <div class=\"day-count\">1 场</div>\n      </div>\n      <section class=\"match-grid\">\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>南非 vs 加拿大</h3>\n          <time datetime=\"2026-06-29T03:00:00+08:00\">北京时间 06-29 03:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>南非</span>\n            <strong>0</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>加拿大</span>\n            <strong>1</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 30%</span>\n        <span><i class=\"dot draw\"></i>平局 30%</span>\n        <span><i class=\"dot away\"></i>客胜 40%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:30.000%\"></span>\n        <span class=\"seg draw\" style=\"width:30.000%\"></span>\n        <span class=\"seg away\" style=\"width:40.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>30%</span>\n        <span>30%</span>\n        <span>40%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>南非 1.00</span>\n          <span><b>xG</b>加拿大 1.30</span>\n          <span><b>爆冷概率</b>30%</span>\n          <span><b>赔率</b>unavailable</span>\n        </div>\n        \n        <section class=\"score-options\">\n          <h4>比分结果 Top 3</h4>\n          <div class=\"score-option-grid\"><article class=\"score-option primary\"><span class=\"score-rank\">主推荐</span><strong>0-1</strong><p>加拿大整体实力稍强，南非进攻乏力</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 2</span><strong>1-1</strong><p>双方均有进球能力，可能握手言和</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 3</span><strong>1-0</strong><p>南非有机会偷走胜利</p></article></div>\n        </section>\n    \n        \n        <details class=\"matchup-panel\" open>\n          <summary>对战结构图</summary>\n          <div class=\"graph-summary-grid\">\n            <span><b>优势方</b>客队</span>\n            <span><b>关键对位</b>加拿大前锋对南非中卫</span>\n            <span><b>风险触发点</b>南非可能死守，低比分</span>\n          </div>\n          <p class=\"graph-summary\">加拿大凭借更强的个人能力在进攻端占据优势，南非需依靠防守反击寻找机会。</p>\n          <div class=\"graph-node-grid\">\n            <section><h5>主队结构</h5><article class=\"graph-node home\"><div><strong>主队进攻</strong><span>强度 40/100</span></div><p>南非进攻手段单一</p></article><article class=\"graph-node home\"><div><strong>主队中场/转换</strong><span>强度 50/100</span></div><p>中场拦截尚可</p></article><article class=\"graph-node home\"><div><strong>主队防守</strong><span>强度 40/100</span></div><p>防守稳固但压力大</p></article></section>\n            <section><h5>客队结构</h5><article class=\"graph-node away\"><div><strong>客队进攻</strong><span>强度 60/100</span></div><p>加拿大前锋速度快</p></article><article class=\"graph-node away\"><div><strong>客队中场/转换</strong><span>强度 50/100</span></div><p>中场控制力一般</p></article><article class=\"graph-node away\"><div><strong>客队防守</strong><span>强度 50/100</span></div><p>防线相对稳定</p></article></section>\n          </div>\n          <div class=\"graph-edge-list\">\n            <h5>关键关系</h5>\n            <article class=\"graph-edge impact-low\"><div><strong>南非突破加拿大防线</strong><span>低</span></div><p>主队进攻能力有限</p><small>home_attack → away_defense · home_to_away</small></article><article class=\"graph-edge impact-high\"><div><strong>加拿大寻找进球</strong><span>高</span></div><p>客队进攻更有威胁</p><small>away_attack → home_defense · away_to_home</small></article><article class=\"graph-edge impact-medium\"><div><strong>中场转换争夺</strong><span>中</span></div><p>双方争夺控球权</p><small>home_midfield → away_midfield · balanced</small></article>\n          </div>\n        </details>\n    \n        \n        <details class=\"factor-panel\" open>\n          <summary>分析因子</summary>\n          <div class=\"factor-grid\"><section class=\"factor-item\"><h5>市场信号</h5><p>赔率不可用</p></section><section class=\"factor-item\"><h5>FIFA 实力先验</h5><p>无法获得FIFA排名，长期实力：加拿大近年表现优于南非</p></section><section class=\"factor-item\"><h5>近期状态</h5><p>未知</p></section><section class=\"factor-item\"><h5>小组形势</h5><p>16强淘汰赛，双方首次进入世界杯淘汰赛</p></section><section class=\"factor-item\"><h5>伤停/轮换</h5><p>双方均有疑似伤病，但信息不全</p></section><section class=\"factor-item\"><h5>天气/场地</h5><p>洛杉矶，未知</p></section><section class=\"factor-item\"><h5>战术关键</h5><p>南非可能依赖防守反击，加拿大利用身体优势</p></section><section class=\"factor-item\"><h5>不确定性</h5><p>信息有限，不确定性较高</p></section></div>\n        </details>\n    \n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>加拿大利用边路传中，南非中路密集防守</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">淘汰赛紧张氛围，可能进入加时，低进球风险</p></section>\n          <section><h4>伤停信息</h4><p>主队: 媒体伤停线索; 客队: 媒体伤停线索</p><p class=\"muted compact\">疑似伤病，影响未知 疑似伤病，影响未知 双方阵容可能完整，伤病影响有限</p></section>\n          <section><h4>赔率对比</h4><p>真实赔率源未提供 moneyline，显示 unavailable。</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence low\">低</b></span>\n          <span>比赛 ID: 400021518</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760486\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Los Angeles Stadium - Los Angeles - USA</p>\n      </article>\n    </section>\n    </section>\n            \n    <section class=\"match-day\" data-match-day=\"2026-06-29\">\n      <div class=\"section-head\">\n        <div>\n          <h2>6月29日比赛日</h2>\n          <p class=\"muted compact\">北京时间 06-29 18:00 - 06-30 18:00，按北京时间升序排列</p>\n        </div>\n        <div class=\"day-count\">3 场</div>\n      </div>\n      <section class=\"match-grid\">\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>巴西 vs 日本</h3>\n          <time datetime=\"2026-06-30T01:00:00+08:00\">北京时间 06-30 01:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>巴西</span>\n            <strong>2</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>日本</span>\n            <strong>0</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 65%</span>\n        <span><i class=\"dot draw\"></i>平局 20%</span>\n        <span><i class=\"dot away\"></i>客胜 15%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:65.000%\"></span>\n        <span class=\"seg draw\" style=\"width:20.000%\"></span>\n        <span class=\"seg away\" style=\"width:15.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>65%</span>\n        <span>20%</span>\n        <span>15%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>巴西 2.00</span>\n          <span><b>xG</b>日本 0.80</span>\n          <span><b>爆冷概率</b>15%</span>\n          <span><b>赔率</b>主胜 56.06% / 平 25.63% / 客胜 18.31%</span>\n        </div>\n        \n        <section class=\"score-options\">\n          <h4>比分结果 Top 3</h4>\n          <div class=\"score-option-grid\"><article class=\"score-option primary\"><span class=\"score-rank\">主推荐</span><strong>2-0</strong><p>巴西实力碾压，控制节奏</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 2</span><strong>3-1</strong><p>巴西攻击力强大，日本可能进球</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 3</span><strong>1-0</strong><p>日本死守，巴西小胜</p></article></div>\n        </section>\n    \n        \n        <details class=\"matchup-panel\" open>\n          <summary>对战结构图</summary>\n          <div class=\"graph-summary-grid\">\n            <span><b>优势方</b>主队</span>\n            <span><b>关键对位</b>日本中场拦截对巴西组织</span>\n            <span><b>风险触发点</b>巴西久攻不下或日本先进球</span>\n          </div>\n          <p class=\"graph-summary\">巴西明显占优，日本需依靠防守和反击寻找机会。</p>\n          <div class=\"graph-node-grid\">\n            <section><h5>主队结构</h5><article class=\"graph-node home\"><div><strong>主队进攻</strong><span>强度 70/100</span></div><p>巴西攻击群个人能力出众</p></article><article class=\"graph-node home\"><div><strong>主队中场/转换</strong><span>强度 65/100</span></div><p>中场控制力强</p></article><article class=\"graph-node home\"><div><strong>主队防守</strong><span>强度 50/100</span></div><p>防线稳固但可能冒险</p></article></section>\n            <section><h5>客队结构</h5><article class=\"graph-node away\"><div><strong>客队进攻</strong><span>强度 50/100</span></div><p>日本快反有威胁</p></article><article class=\"graph-node away\"><div><strong>客队中场/转换</strong><span>强度 55/100</span></div><p>中场组织性强</p></article><article class=\"graph-node away\"><div><strong>客队防守</strong><span>强度 60/100</span></div><p>防守纪律严明</p></article></section>\n          </div>\n          <div class=\"graph-edge-list\">\n            <h5>关键关系</h5>\n            <article class=\"graph-edge impact-high\"><div><strong>巴西攻击群考验日本防线</strong><span>高</span></div><p>巴西进攻点众多</p><small>home_attack → away_defense · home_to_away</small></article><article class=\"graph-edge impact-medium\"><div><strong>日本快速反击威胁巴西后防</strong><span>中</span></div><p>日本反击速度值得警惕</p><small>away_attack → home_defense · away_to_home</small></article><article class=\"graph-edge impact-high\"><div><strong>中场控制权决定节奏</strong><span>高</span></div><p>巴西技术优势明显</p><small>home_midfield → away_midfield · balanced</small></article>\n          </div>\n        </details>\n    \n        \n        <details class=\"factor-panel\" open>\n          <summary>分析因子</summary>\n          <div class=\"factor-grid\"><section class=\"factor-item\"><h5>市场信号</h5><p>赔率显示巴西大热</p></section><section class=\"factor-item\"><h5>FIFA 实力先验</h5><p>无法获得FIFA排名，长期实力：巴西顶级，日本亚洲劲旅</p></section><section class=\"factor-item\"><h5>近期状态</h5><p>未知</p></section><section class=\"factor-item\"><h5>小组形势</h5><p>16强淘汰赛</p></section><section class=\"factor-item\"><h5>伤停/轮换</h5><p>双方无已知伤病</p></section><section class=\"factor-item\"><h5>天气/场地</h5><p>休斯顿，未知</p></section><section class=\"factor-item\"><h5>战术关键</h5><p>巴西技术压制，日本防守反击</p></section><section class=\"factor-item\"><h5>不确定性</h5><p>中等</p></section></div>\n        </details>\n    \n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>巴西将主导控球，日本收缩防守寻求快速转换</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">巴西需避免轻敌，日本有能力制造麻烦</p></section>\n          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class=\"muted compact\">无已知伤病 无已知伤病 双方主力阵容齐整</p></section>\n          <section><h4>赔率对比</h4><p>BRA -140: 主胜 56.06% / 平 25.63% / 客胜 18.31%. 模型更看好巴西，降低平局和客胜可能</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence medium\">中</b></span>\n          <span>比赛 ID: 400021516</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760487\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Houston Stadium - Houston - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>德国 vs 巴拉圭</h3>\n          <time datetime=\"2026-06-30T04:30:00+08:00\">北京时间 06-30 04:30</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>德国</span>\n            <strong>3</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>巴拉圭</span>\n            <strong>0</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 75%</span>\n        <span><i class=\"dot draw\"></i>平局 15%</span>\n        <span><i class=\"dot away\"></i>客胜 10%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:75.000%\"></span>\n        <span class=\"seg draw\" style=\"width:15.000%\"></span>\n        <span class=\"seg away\" style=\"width:10.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>75%</span>\n        <span>15%</span>\n        <span>10%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>德国 2.50</span>\n          <span><b>xG</b>巴拉圭 0.50</span>\n          <span><b>爆冷概率</b>5%</span>\n          <span><b>赔率</b>主胜 71.45% / 平 18.39% / 客胜 10.16%</span>\n        </div>\n        \n        <section class=\"score-options\">\n          <h4>比分结果 Top 3</h4>\n          <div class=\"score-option-grid\"><article class=\"score-option primary\"><span class=\"score-rank\">主推荐</span><strong>3-0</strong><p>德国攻击力碾压对手</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 2</span><strong>2-0</strong><p>德国稳健控制，两球完胜</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 3</span><strong>4-0</strong><p>巴拉圭防线可能崩溃</p></article></div>\n        </section>\n    \n        \n        <details class=\"matchup-panel\" open>\n          <summary>对战结构图</summary>\n          <div class=\"graph-summary-grid\">\n            <span><b>优势方</b>主队</span>\n            <span><b>关键对位</b>德国定位球对巴拉圭防空</span>\n            <span><b>风险触发点</b>德国轻敌</span>\n          </div>\n          <p class=\"graph-summary\">德国全方位占优，巴拉圭只能死守等待定位球机会。</p>\n          <div class=\"graph-node-grid\">\n            <section><h5>主队结构</h5><article class=\"graph-node home\"><div><strong>主队进攻</strong><span>强度 80/100</span></div><p>德国进攻手段丰富</p></article><article class=\"graph-node home\"><div><strong>主队中场/转换</strong><span>强度 75/100</span></div><p>中场统治力强</p></article><article class=\"graph-node home\"><div><strong>主队防守</strong><span>强度 60/100</span></div><p>防线稳固</p></article></section>\n            <section><h5>客队结构</h5><article class=\"graph-node away\"><div><strong>客队进攻</strong><span>强度 30/100</span></div><p>进攻威胁有限</p></article><article class=\"graph-node away\"><div><strong>客队中场/转换</strong><span>强度 40/100</span></div><p>中场控制力弱</p></article><article class=\"graph-node away\"><div><strong>客队防守</strong><span>强度 70/100</span></div><p>防守顽强但压力大</p></article></section>\n          </div>\n          <div class=\"graph-edge-list\">\n            <h5>关键关系</h5>\n            <article class=\"graph-edge impact-high\"><div><strong>德国进攻冲击巴拉圭防线</strong><span>高</span></div><p>德国攻击点众多</p><small>home_attack → away_defense · home_to_away</small></article><article class=\"graph-edge impact-low\"><div><strong>巴拉圭难有机会</strong><span>低</span></div><p>客队进攻手段单一</p><small>away_attack → home_defense · away_to_home</small></article><article class=\"graph-edge impact-high\"><div><strong>德国控制中场</strong><span>高</span></div><p>德国中场优势明显</p><small>home_midfield → away_midfield · balanced</small></article>\n          </div>\n        </details>\n    \n        \n        <details class=\"factor-panel\" open>\n          <summary>分析因子</summary>\n          <div class=\"factor-grid\"><section class=\"factor-item\"><h5>市场信号</h5><p>赔率极度倾向德国</p></section><section class=\"factor-item\"><h5>FIFA 实力先验</h5><p>无法获得FIFA排名，长期实力：德国传统强队，巴拉圭南美中游</p></section><section class=\"factor-item\"><h5>近期状态</h5><p>未知</p></section><section class=\"factor-item\"><h5>小组形势</h5><p>16强淘汰赛</p></section><section class=\"factor-item\"><h5>伤停/轮换</h5><p>德国有疑似伤病（关联新闻可能不准确），巴拉圭未知</p></section><section class=\"factor-item\"><h5>天气/场地</h5><p>波士顿，未知</p></section><section class=\"factor-item\"><h5>战术关键</h5><p>德国强势进攻，巴拉圭全力防守</p></section><section class=\"factor-item\"><h5>不确定性</h5><p>低</p></section></div>\n        </details>\n    \n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>德国控球围攻，巴拉圭密集防守寻求反击</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">德国需确保早进球，否则可能陷入焦灼</p></section>\n          <section><h4>伤停信息</h4><p>主队: 媒体伤停线索; 客队: unknown</p><p class=\"muted compact\">疑似伤病关联澳大利亚球员，可能不准确 未知 德国伤病情况不明，但板凳深度足够</p></section>\n          <section><h4>赔率对比</h4><p>GER -285: 主胜 71.45% / 平 18.39% / 客胜 10.16%. 模型更看好德国，几乎排除巴拉圭获胜可能</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence high\">高</b></span>\n          <span>比赛 ID: 400021513</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760489\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Boston Stadium - Boston - USA</p>\n      </article>\n    \n\n      <article class=\"match-card\">\n        <div class=\"match-topline\">\n          <h3>荷兰 vs 摩洛哥</h3>\n          <time datetime=\"2026-06-30T09:00:00+08:00\">北京时间 06-30 09:00</time>\n        </div>\n        <div class=\"scoreboard\">\n          <div class=\"score-side\">\n            <span>荷兰</span>\n            <strong>1</strong>\n          </div>\n          <div class=\"score-separator\">:</div>\n          <div class=\"score-side away-side\">\n            <span>摩洛哥</span>\n            <strong>1</strong>\n          </div>\n        </div>\n        <div class=\"probability-panel\">\n          \n      <div class=\"prob-heading\">主胜 / 平 / 客胜概率</div>\n      <div class=\"prob-labels\">\n        <span><i class=\"dot home\"></i>主胜 40%</span>\n        <span><i class=\"dot draw\"></i>平局 30%</span>\n        <span><i class=\"dot away\"></i>客胜 30%</span>\n      </div>\n      <div class=\"prob-stack\" aria-hidden=\"true\">\n        <span class=\"seg home\" style=\"width:40.000%\"></span>\n        <span class=\"seg draw\" style=\"width:30.000%\"></span>\n        <span class=\"seg away\" style=\"width:30.000%\"></span>\n      </div>\n      <div class=\"prob-values\">\n        <span>40%</span>\n        <span>30%</span>\n        <span>30%</span>\n      </div>\n    \n        </div>\n        <div class=\"metric-grid\">\n          <span><b>xG</b>荷兰 1.20</span>\n          <span><b>xG</b>摩洛哥 1.00</span>\n          <span><b>爆冷概率</b>30%</span>\n          <span><b>赔率</b>主胜 42.38% / 平 30.76% / 客胜 26.86%</span>\n        </div>\n        \n        <section class=\"score-options\">\n          <h4>比分结果 Top 3</h4>\n          <div class=\"score-option-grid\"><article class=\"score-option primary\"><span class=\"score-rank\">主推荐</span><strong>1-1</strong><p>双方实力接近，摩洛哥防守稳健</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 2</span><strong>2-1</strong><p>荷兰略占上风，一球小胜</p></article><article class=\"score-option\"><span class=\"score-rank\">Top 3</span><strong>1-2</strong><p>摩洛哥反击致胜</p></article></div>\n        </section>\n    \n        \n        <details class=\"matchup-panel\" open>\n          <summary>对战结构图</summary>\n          <div class=\"graph-summary-grid\">\n            <span><b>优势方</b>均衡</span>\n            <span><b>关键对位</b>荷兰边锋对摩洛哥边卫</span>\n            <span><b>风险触发点</b>摩洛哥防守反击可能致胜</span>\n          </div>\n          <p class=\"graph-summary\">势均力敌，摩洛哥防守稳固，荷兰需耐心寻找机会。</p>\n          <div class=\"graph-node-grid\">\n            <section><h5>主队结构</h5><article class=\"graph-node home\"><div><strong>主队进攻</strong><span>强度 65/100</span></div><p>荷兰前场创造力强</p></article><article class=\"graph-node home\"><div><strong>主队中场/转换</strong><span>强度 60/100</span></div><p>中场控制力不错</p></article><article class=\"graph-node home\"><div><strong>主队防守</strong><span>强度 55/100</span></div><p>防线有漏洞</p></article></section>\n            <section><h5>客队结构</h5><article class=\"graph-node away\"><div><strong>客队进攻</strong><span>强度 55/100</span></div><p>摩洛哥反击迅速</p></article><article class=\"graph-node away\"><div><strong>客队中场/转换</strong><span>强度 50/100</span></div><p>中场绞杀能力强</p></article><article class=\"graph-node away\"><div><strong>客队防守</strong><span>强度 65/100</span></div><p>防守组织严密</p></article></section>\n          </div>\n          <div class=\"graph-edge-list\">\n            <h5>关键关系</h5>\n            <article class=\"graph-edge impact-medium\"><div><strong>荷兰需破解摩洛哥密集防守</strong><span>中</span></div><p>荷兰破防能力受考验</p><small>home_attack → away_defense · home_to_away</small></article><article class=\"graph-edge impact-medium\"><div><strong>摩洛哥反击威胁</strong><span>中</span></div><p>摩洛哥速度优势</p><small>away_attack → home_defense · away_to_home</small></article><article class=\"graph-edge impact-medium\"><div><strong>中场绞杀</strong><span>中</span></div><p>双方中场争夺激烈</p><small>home_midfield → away_midfield · balanced</small></article>\n          </div>\n        </details>\n    \n        \n        <details class=\"factor-panel\" open>\n          <summary>分析因子</summary>\n          <div class=\"factor-grid\"><section class=\"factor-item\"><h5>市场信号</h5><p>荷兰略优，市场相对谨慎</p></section><section class=\"factor-item\"><h5>FIFA 实力先验</h5><p>无法获得FIFA排名，长期实力：荷兰欧洲劲旅，摩洛哥非洲强队</p></section><section class=\"factor-item\"><h5>近期状态</h5><p>未知</p></section><section class=\"factor-item\"><h5>小组形势</h5><p>16强淘汰赛</p></section><section class=\"factor-item\"><h5>伤停/轮换</h5><p>荷兰有疑似伤病，摩洛哥未知</p></section><section class=\"factor-item\"><h5>天气/场地</h5><p>蒙特雷，未知</p></section><section class=\"factor-item\"><h5>战术关键</h5><p>荷兰全攻全守，摩洛哥防守坚韧</p></section><section class=\"factor-item\"><h5>不确定性</h5><p>高</p></section></div>\n        </details>\n    \n        <div class=\"analysis-block\">\n          <section><h4>战术分析</h4><p>荷兰控球进攻，摩洛哥收缩防守打反击</p></section>\n          <section><h4>风险分析</h4><p class=\"risk-text\">胜负难料，可能进入加时或点球大战</p></section>\n          <section><h4>伤停信息</h4><p>主队: 媒体伤停线索; 客队: unknown</p><p class=\"muted compact\">疑似伤病，影响未知 未知 荷兰阵容或有缺失，摩洛哥齐整概率大</p></section>\n          <section><h4>赔率对比</h4><p>NED +125: 主胜 42.38% / 平 30.76% / 客胜 26.86%. 模型认为摩洛哥获胜机会稍高于市场</p></section>\n        </div>\n        <div class=\"match-footer\">\n          <span>置信度 <b class=\"confidence low\">低</b></span>\n          <span>比赛 ID: 400021522</span>\n          <a class=\"source-link\" href=\"https://www.espn.com/soccer/match/_/gameId/760488\" rel=\"noopener\" target=\"_blank\">来源</a>\n        </div>\n        <p class=\"venue-line\">Monterrey Stadium - Monterrey - MEX</p>\n      </article>\n    </section>\n    </section>\n            \n    <footer class=\"page-footer\">\n      V3 Agent：FIFA 官方赛程为主源，ESPN 用于第二来源校验和赔率；伤停无可靠来源时显示 unknown，赔率无真实源时显示 unavailable。所有可见比赛时间均为北京时间，比赛日按 18:00 至次日 18:00 划分。\n    </footer>\n  </main>\n</body>\n</html>\n",
+  "render_draft_sha": "03fff1b3eb4d39d4",
   "usage": {
-    "input_tokens": 26908,
-    "output_tokens": 18107,
-    "total_tokens": 45015,
-    "cost_estimate": 0.45015
+    "input_tokens": 32213,
+    "output_tokens": 26060,
+    "total_tokens": 58273,
+    "cost_estimate": 0.58273
   },
   "usage_breakdown": {
     "analysis": {
-      "input_tokens": 8652,
-      "output_tokens": 6717,
-      "total_tokens": 15369,
-      "cost_estimate": 0.15369
+      "input_tokens": 9373,
+      "output_tokens": 7280,
+      "total_tokens": 16653,
+      "cost_estimate": 0.16653
     },
     "render": {
-      "input_tokens": 18256,
-      "output_tokens": 11390,
-      "total_tokens": 29646,
-      "cost_estimate": 0.29646
+      "input_tokens": 22840,
+      "output_tokens": 18780,
+      "total_tokens": 41620,
+      "cost_estimate": 0.4162
     }
   },
   "analysis_model": "deepseek-v4-pro",
@@ -1425,17 +2095,17 @@
   },
   "daily_log": [
     {
-      "time": "2026-06-29T01:22:37Z",
+      "time": "2026-06-29T05:34:24Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research",
       "status": "completed"
     },
     {
-      "time": "2026-06-29T01:29:01Z",
+      "time": "2026-06-29T05:38:02Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     },
     {
-      "time": "2026-06-29T01:53:14Z",
+      "time": "2026-06-29T05:44:20Z",
       "stage": "09:00 deepseek-v4-flash HTML generation",
       "status": "completed"
     }
