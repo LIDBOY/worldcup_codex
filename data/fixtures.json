@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "stage": "research",
-  "generated_at": "2026-06-28T14:55:36Z",
+  "generated_at": "2026-06-29T01:22:37Z",
   "window": {
     "start_date": "2026-06-28",
     "days": 3,
@@ -90,7 +90,7 @@
   "fixture_count": 4,
   "fifa_fixture_count": 4,
   "raw_fifa_fixture_count": 8,
-  "odds_available_count": 4,
+  "odds_available_count": 3,
   "matches": [
     {
       "id": "400021518",
@@ -104,9 +104,9 @@
       "group": "",
       "match_number": 73,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -116,8 +116,8 @@
           "id_team": "43883",
           "id_country": "RSA",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/RSA",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "4-2-3-1"
         },
         "away": {
           "name": "加拿大",
@@ -126,8 +126,8 @@
           "id_team": "43899",
           "id_country": "CAN",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CAN",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "4-4-2"
         }
       },
       "venue": {
@@ -158,33 +158,24 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+500",
-          "draw": "+265",
-          "away": "-150"
-        },
-        "implied_probability": {
-          "home_win": 16.67,
-          "draw": 27.4,
-          "away_win": 60.0
-        },
-        "normalized_probability": {
-          "home_win": 16.02,
-          "draw": 26.33,
-          "away_win": 57.66
-        },
-        "overround": 4.06,
-        "details": "CAN -150"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "南非",
           "team_en": "South Africa",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Canada 1-0 South Africa - Injury time goal breaks Bafana hearts in LA - As it happened",
+              "description": "History was made in Los Angeles, as South Africa and Canada contested both countries' first ever FIFA World Cup knockout match, with Canada emerging victorious at the death. Here's how it happened.",
+              "published": "2026-06-28T21:06:27Z",
+              "url": "https://www.espn.com/espn/story/_/id/49207966/canada-1-0-south-africa-injury-goal-breaks-bafana-hearts-la-happened"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
@@ -194,10 +185,10 @@
           "records": [
             {
               "source": "ESPN World Cup news",
-              "title": "Nine out of ten African teams secure World Cup round of 32 berth",
-              "description": "Africa completed a historic World Cup group stage on Sunday, sending nine out of 10 teams to the round of 32 after Congo and Algeria secured knockout berths.",
-              "published": "2026-06-28T05:59:34Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49204123/nine-ten-african-teams-secure-world-cup-round-32-berth"
+              "title": "Canada 1-0 South Africa - Injury time goal breaks Bafana hearts in LA - As it happened",
+              "description": "History was made in Los Angeles, as South Africa and Canada contested both countries' first ever FIFA World Cup knockout match, with Canada emerging victorious at the death. Here's how it happened.",
+              "published": "2026-06-28T21:06:27Z",
+              "url": "https://www.espn.com/espn/story/_/id/49207966/canada-1-0-south-africa-injury-goal-breaks-bafana-hearts-la-happened"
             }
           ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -274,22 +265,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-145",
-          "draw": "+290",
+          "home": "-135",
+          "draw": "+275",
           "away": "+400"
         },
         "implied_probability": {
-          "home_win": 59.18,
-          "draw": 25.64,
+          "home_win": 57.45,
+          "draw": 26.67,
           "away_win": 20.0
         },
         "normalized_probability": {
-          "home_win": 56.46,
-          "draw": 24.46,
-          "away_win": 19.08
+          "home_win": 55.18,
+          "draw": 25.61,
+          "away_win": 19.21
         },
-        "overround": 4.82,
-        "details": "BRA -145"
+        "overround": 4.11,
+        "details": "BRA -135"
       },
       "injuries": {
         "home": {
@@ -378,22 +369,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-295",
-          "draw": "+450",
+          "home": "-300",
+          "draw": "+425",
           "away": "+850"
         },
         "implied_probability": {
-          "home_win": 74.68,
-          "draw": 18.18,
+          "home_win": 75.0,
+          "draw": 19.05,
           "away_win": 10.53
         },
         "normalized_probability": {
-          "home_win": 72.23,
-          "draw": 17.59,
-          "away_win": 10.18
+          "home_win": 71.72,
+          "draw": 18.21,
+          "away_win": 10.07
         },
-        "overround": 3.39,
-        "details": "GER -295"
+        "overround": 4.57,
+        "details": "GER -300"
       },
       "injuries": {
         "home": {
@@ -403,17 +394,10 @@
           "records": [
             {
               "source": "ESPN World Cup news",
-              "title": "Nine out of ten African teams secure World Cup round of 32 berth",
-              "description": "Africa completed a historic World Cup group stage on Sunday, sending nine out of 10 teams to the round of 32 after Congo and Algeria secured knockout berths.",
-              "published": "2026-06-28T05:59:34Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49204123/nine-ten-african-teams-secure-world-cup-round-32-berth"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Algeria and Austria's dramatic draw sends Iran out of World Cup",
-              "description": "Austria and Algeria played to a thrilling 3-3 draw Saturday night in what amounted to a win-win result in their World Cup group stage finale, allowing both to advance to the knockout round while eliminating Iran from the tournament.",
-              "published": "2026-06-28T12:23:55Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49203568/algeria-austria-iran-2026-world-cup-draw-advance-eliminated"
+              "title": "Metcalfe: 'A lot of inner anger from the season'",
+              "description": "Socceroos attacker Connor Metcalfe is enjoying the moment and the release of playing at the world cup after limited minutes at FC St. Pauli",
+              "published": "2026-06-28T21:13:40Z",
+              "url": "https://www.espn.com/video/clip/_/id/49209789/lot-inner-anger-season"
             }
           ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -497,22 +481,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+120",
-          "draw": "+225",
-          "away": "+260"
+          "home": "+125",
+          "draw": "+210",
+          "away": "+255"
         },
         "implied_probability": {
-          "home_win": 45.45,
-          "draw": 30.77,
-          "away_win": 27.78
+          "home_win": 44.44,
+          "draw": 32.26,
+          "away_win": 28.17
         },
         "normalized_probability": {
-          "home_win": 43.71,
-          "draw": 29.59,
-          "away_win": 26.71
+          "home_win": 42.38,
+          "draw": 30.76,
+          "away_win": 26.86
         },
-        "overround": 4.0,
-        "details": "NED +120"
+        "overround": 4.87,
+        "details": "NED +125"
       },
       "injuries": {
         "home": {
@@ -522,10 +506,10 @@
           "records": [
             {
               "source": "ESPN World Cup news",
-              "title": "Tuchel concerned by England's right-back injury crisis",
-              "description": "Tuchel concerned by England's right-back injury crisis",
-              "published": "2026-06-28T09:23:55Z",
-              "url": "https://www.espn.com/video/clip/_/id/49205245/tuchel-concerned-england-right-back-injury-crisis"
+              "title": "Canada 1-0 South Africa - Injury time goal breaks Bafana hearts in LA - As it happened",
+              "description": "History was made in Los Angeles, as South Africa and Canada contested both countries' first ever FIFA World Cup knockout match, with Canada emerging victorious at the death. Here's how it happened.",
+              "published": "2026-06-28T21:06:27Z",
+              "url": "https://www.espn.com/espn/story/_/id/49207966/canada-1-0-south-africa-injury-goal-breaks-bafana-hearts-la-happened"
             }
           ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -553,9 +537,9 @@
       "group": "",
       "match_number": 73,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -565,8 +549,8 @@
           "id_team": "43883",
           "id_country": "RSA",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/RSA",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "4-2-3-1"
         },
         "away": {
           "name": "加拿大",
@@ -575,8 +559,8 @@
           "id_team": "43899",
           "id_country": "CAN",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/CAN",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "4-4-2"
         }
       },
       "venue": {
@@ -607,33 +591,24 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+500",
-          "draw": "+265",
-          "away": "-150"
-        },
-        "implied_probability": {
-          "home_win": 16.67,
-          "draw": 27.4,
-          "away_win": 60.0
-        },
-        "normalized_probability": {
-          "home_win": 16.02,
-          "draw": 26.33,
-          "away_win": 57.66
-        },
-        "overround": 4.06,
-        "details": "CAN -150"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "南非",
           "team_en": "South Africa",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Canada 1-0 South Africa - Injury time goal breaks Bafana hearts in LA - As it happened",
+              "description": "History was made in Los Angeles, as South Africa and Canada contested both countries' first ever FIFA World Cup knockout match, with Canada emerging victorious at the death. Here's how it happened.",
+              "published": "2026-06-28T21:06:27Z",
+              "url": "https://www.espn.com/espn/story/_/id/49207966/canada-1-0-south-africa-injury-goal-breaks-bafana-hearts-la-happened"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
@@ -643,10 +618,10 @@
           "records": [
             {
               "source": "ESPN World Cup news",
-              "title": "Nine out of ten African teams secure World Cup round of 32 berth",
-              "description": "Africa completed a historic World Cup group stage on Sunday, sending nine out of 10 teams to the round of 32 after Congo and Algeria secured knockout berths.",
-              "published": "2026-06-28T05:59:34Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49204123/nine-ten-african-teams-secure-world-cup-round-32-berth"
+              "title": "Canada 1-0 South Africa - Injury time goal breaks Bafana hearts in LA - As it happened",
+              "description": "History was made in Los Angeles, as South Africa and Canada contested both countries' first ever FIFA World Cup knockout match, with Canada emerging victorious at the death. Here's how it happened.",
+              "published": "2026-06-28T21:06:27Z",
+              "url": "https://www.espn.com/espn/story/_/id/49207966/canada-1-0-south-africa-injury-goal-breaks-bafana-hearts-la-happened"
             }
           ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -723,22 +698,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-145",
-          "draw": "+290",
+          "home": "-135",
+          "draw": "+275",
           "away": "+400"
         },
         "implied_probability": {
-          "home_win": 59.18,
-          "draw": 25.64,
+          "home_win": 57.45,
+          "draw": 26.67,
           "away_win": 20.0
         },
         "normalized_probability": {
-          "home_win": 56.46,
-          "draw": 24.46,
-          "away_win": 19.08
+          "home_win": 55.18,
+          "draw": 25.61,
+          "away_win": 19.21
         },
-        "overround": 4.82,
-        "details": "BRA -145"
+        "overround": 4.11,
+        "details": "BRA -135"
       },
       "injuries": {
         "home": {
@@ -827,22 +802,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-295",
-          "draw": "+450",
+          "home": "-300",
+          "draw": "+425",
           "away": "+850"
         },
         "implied_probability": {
-          "home_win": 74.68,
-          "draw": 18.18,
+          "home_win": 75.0,
+          "draw": 19.05,
           "away_win": 10.53
         },
         "normalized_probability": {
-          "home_win": 72.23,
-          "draw": 17.59,
-          "away_win": 10.18
+          "home_win": 71.72,
+          "draw": 18.21,
+          "away_win": 10.07
         },
-        "overround": 3.39,
-        "details": "GER -295"
+        "overround": 4.57,
+        "details": "GER -300"
       },
       "injuries": {
         "home": {
@@ -852,17 +827,10 @@
           "records": [
             {
               "source": "ESPN World Cup news",
-              "title": "Nine out of ten African teams secure World Cup round of 32 berth",
-              "description": "Africa completed a historic World Cup group stage on Sunday, sending nine out of 10 teams to the round of 32 after Congo and Algeria secured knockout berths.",
-              "published": "2026-06-28T05:59:34Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49204123/nine-ten-african-teams-secure-world-cup-round-32-berth"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Algeria and Austria's dramatic draw sends Iran out of World Cup",
-              "description": "Austria and Algeria played to a thrilling 3-3 draw Saturday night in what amounted to a win-win result in their World Cup group stage finale, allowing both to advance to the knockout round while eliminating Iran from the tournament.",
-              "published": "2026-06-28T12:23:55Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49203568/algeria-austria-iran-2026-world-cup-draw-advance-eliminated"
+              "title": "Metcalfe: 'A lot of inner anger from the season'",
+              "description": "Socceroos attacker Connor Metcalfe is enjoying the moment and the release of playing at the world cup after limited minutes at FC St. Pauli",
+              "published": "2026-06-28T21:13:40Z",
+              "url": "https://www.espn.com/video/clip/_/id/49209789/lot-inner-anger-season"
             }
           ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -946,22 +914,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+120",
-          "draw": "+225",
-          "away": "+260"
+          "home": "+125",
+          "draw": "+210",
+          "away": "+255"
         },
         "implied_probability": {
-          "home_win": 45.45,
-          "draw": 30.77,
-          "away_win": 27.78
+          "home_win": 44.44,
+          "draw": 32.26,
+          "away_win": 28.17
         },
         "normalized_probability": {
-          "home_win": 43.71,
-          "draw": 29.59,
-          "away_win": 26.71
+          "home_win": 42.38,
+          "draw": 30.76,
+          "away_win": 26.86
         },
-        "overround": 4.0,
-        "details": "NED +120"
+        "overround": 4.87,
+        "details": "NED +125"
       },
       "injuries": {
         "home": {
@@ -971,10 +939,10 @@
           "records": [
             {
               "source": "ESPN World Cup news",
-              "title": "Tuchel concerned by England's right-back injury crisis",
-              "description": "Tuchel concerned by England's right-back injury crisis",
-              "published": "2026-06-28T09:23:55Z",
-              "url": "https://www.espn.com/video/clip/_/id/49205245/tuchel-concerned-england-right-back-injury-crisis"
+              "title": "Canada 1-0 South Africa - Injury time goal breaks Bafana hearts in LA - As it happened",
+              "description": "History was made in Los Angeles, as South Africa and Canada contested both countries' first ever FIFA World Cup knockout match, with Canada emerging victorious at the death. Here's how it happened.",
+              "published": "2026-06-28T21:06:27Z",
+              "url": "https://www.espn.com/espn/story/_/id/49207966/canada-1-0-south-africa-injury-goal-breaks-bafana-hearts-la-happened"
             }
           ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -991,7 +959,7 @@
   ],
   "daily_log": [
     {
-      "time": "2026-06-28T14:55:36Z",
+      "time": "2026-06-29T01:22:37Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research",
       "status": "completed"
     }
