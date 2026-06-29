@@ -905,6 +905,25 @@ def analysis_messages(research_payload: dict[str, Any]) -> list[dict[str, str]]:
                 "\"tactical_key\":\"Chinese tactical key\","
                 "\"uncertainty\":\"Chinese uncertainty note\""
                 "},"
+                "\"matchup_graph\":{"
+                "\"nodes\":["
+                "{\"id\":\"home_attack\",\"label\":\"主队进攻\",\"type\":\"team_phase\",\"side\":\"home\",\"weight\":0,\"note\":\"Chinese note\"},"
+                "{\"id\":\"home_midfield\",\"label\":\"主队中场/转换\",\"type\":\"team_phase\",\"side\":\"home\",\"weight\":0,\"note\":\"Chinese note\"},"
+                "{\"id\":\"home_defense\",\"label\":\"主队防守\",\"type\":\"team_phase\",\"side\":\"home\",\"weight\":0,\"note\":\"Chinese note\"},"
+                "{\"id\":\"away_attack\",\"label\":\"客队进攻\",\"type\":\"team_phase\",\"side\":\"away\",\"weight\":0,\"note\":\"Chinese note\"},"
+                "{\"id\":\"away_midfield\",\"label\":\"客队中场/转换\",\"type\":\"team_phase\",\"side\":\"away\",\"weight\":0,\"note\":\"Chinese note\"},"
+                "{\"id\":\"away_defense\",\"label\":\"客队防守\",\"type\":\"team_phase\",\"side\":\"away\",\"weight\":0,\"note\":\"Chinese note\"}"
+                "],"
+                "\"edges\":["
+                "{\"from\":\"home_attack\",\"to\":\"away_defense\",\"label\":\"Chinese key relation\",\"impact\":\"high\",\"direction\":\"home_to_away\",\"note\":\"Chinese note\"},"
+                "{\"from\":\"away_attack\",\"to\":\"home_defense\",\"label\":\"Chinese key relation\",\"impact\":\"medium\",\"direction\":\"away_to_home\",\"note\":\"Chinese note\"},"
+                "{\"from\":\"home_midfield\",\"to\":\"away_midfield\",\"label\":\"Chinese key relation\",\"impact\":\"low\",\"direction\":\"balanced\",\"note\":\"Chinese note\"}"
+                "],"
+                "\"summary\":\"Chinese graph summary\","
+                "\"advantage_side\":\"home|away|balanced\","
+                "\"key_battle\":\"Chinese key battle\","
+                "\"risk_trigger\":\"Chinese risk trigger\""
+                "},"
                 "\"tactical_matchup\":\"Chinese tactical matchup\","
                 "\"injury_adjustment\":{\"home\":\"Chinese note\",\"away\":\"Chinese note\",\"summary\":\"Chinese note\"},"
                 "\"risk_analysis\":\"Chinese risk analysis\","
@@ -925,6 +944,11 @@ def analysis_messages(research_payload: dict[str, Any]) -> list[dict[str, str]]:
                 "injury_rotation, weather_venue, tactical_key, and uncertainty. "
                 "If FIFA ranking source is unavailable, do not invent ranking numbers; use a long-term strength prior note. "
                 "If weather data has no reliable source in the payload, write unknown. "
+                "Each match must include matchup_graph with at least six nodes: home attack, home midfield/transition, home defense, away attack, away midfield/transition, and away defense. "
+                "Each matchup_graph must include at least three edges describing key matchup relations. "
+                "Node weight must be a 0-100 relative analytical strength score, not a probability, win rate, matchup probability, or score probability. "
+                "Edge impact must be high, medium, or low. advantage_side must be home, away, or balanced. "
+                "Do not output or mention structure graph probability, matchup probability, duel probability, or score probability. "
                 "If injury status is unknown, say it is unknown; do not invent player names. "
                 "If odds are unavailable, say odds are unavailable; do not invent market prices. "
                 f"Verified Agent research payload:\n{json.dumps(research_payload, ensure_ascii=False)}"
@@ -1011,14 +1035,14 @@ def render_messages(analysis_payload: dict[str, Any]) -> list[dict[str, str]]:
             "content": (
                 "Generate complete HTML for GitHub Pages. The page must visibly include: "
                 "match predictions, win/draw/loss probabilities, predicted score, xG, tactical matchup, "
-                "score result Top 3 without score probabilities, method factors, risk analysis, upset probability, "
+                "score result Top 3 without score probabilities, method factors, matchup graph, risk analysis, upset probability, "
                 "injury information, odds comparison, token usage, and cost. "
                 "All visible match times must use Asia/Shanghai, never UTC. "
                 "Group matches by China match day, where each match day runs from 18:00 to next-day 18:00. "
                 "Use these exact placeholders inside the token panel: "
                 "{{INPUT_TOKENS}}, {{OUTPUT_TOKENS}}, {{TOTAL_TOKENS}}, {{COST_ESTIMATE}}. "
                 "Do not invent data. If source data says unknown or unavailable, display that clearly. "
-                "Do not display or mention score probability. "
+                "Do not display or mention score probability, matchup probability, duel probability, or structure graph probability. "
                 f"Analysis payload:\n{json.dumps(analysis_payload, ensure_ascii=False)}"
             ),
         },
@@ -1340,6 +1364,99 @@ def method_factors_html(match: dict[str, Any]) -> str:
         </details>
     """
 
+
+def impact_text(value: str | None) -> str:
+    return {"high": "高", "medium": "中", "low": "低"}.get(value or "", value or "unknown")
+
+
+def advantage_text(value: str | None) -> str:
+    return {"home": "主队", "away": "客队", "balanced": "均衡"}.get(value or "", value or "unknown")
+
+
+def graph_weight(value: Any) -> str:
+    try:
+        number = max(0.0, min(100.0, float(value)))
+    except (TypeError, ValueError):
+        number = 0.0
+    if number.is_integer():
+        return str(int(number))
+    return f"{number:.1f}"
+
+
+def graph_nodes_html(nodes: list[Any], side: str) -> str:
+    side_nodes = [node for node in nodes if isinstance(node, dict) and node.get("side") == side]
+    if not side_nodes:
+        side_nodes = [{"label": "unknown", "weight": 0, "note": "unknown"}]
+    cards = []
+    for node in side_nodes:
+        cards.append(
+            "<article class=\"graph-node {side}\">"
+            "<div><strong>{label}</strong><span>强度 {weight}/100</span></div>"
+            "<p>{note}</p>"
+            "</article>".format(
+                side=html_escape(side),
+                label=html_escape(node.get("label", "unknown")),
+                weight=graph_weight(node.get("weight")),
+                note=html_escape(node.get("note", "unknown")),
+            )
+        )
+    return "".join(cards)
+
+
+def graph_edges_html(edges: list[Any]) -> str:
+    valid_edges = [edge for edge in edges if isinstance(edge, dict)]
+    if not valid_edges:
+        valid_edges = [{"label": "unknown", "impact": "low", "direction": "unknown", "note": "unknown"}]
+    cards = []
+    for edge in valid_edges[:6]:
+        impact = str(edge.get("impact", "low"))
+        if impact not in {"high", "medium", "low"}:
+            impact = "low"
+        cards.append(
+            "<article class=\"graph-edge impact-{impact}\">"
+            "<div><strong>{label}</strong><span>{impact_text}</span></div>"
+            "<p>{note}</p>"
+            "<small>{source} → {target} · {direction}</small>"
+            "</article>".format(
+                impact=html_escape(impact),
+                label=html_escape(edge.get("label", "unknown")),
+                impact_text=html_escape(impact_text(impact)),
+                note=html_escape(edge.get("note", "unknown")),
+                source=html_escape(edge.get("from", "unknown")),
+                target=html_escape(edge.get("to", "unknown")),
+                direction=html_escape(edge.get("direction", "unknown")),
+            )
+        )
+    return "".join(cards)
+
+
+def matchup_graph_html(match: dict[str, Any]) -> str:
+    graph = match.get("matchup_graph") or {}
+    nodes = graph.get("nodes") if isinstance(graph, dict) else []
+    edges = graph.get("edges") if isinstance(graph, dict) else []
+    if not isinstance(nodes, list):
+        nodes = []
+    if not isinstance(edges, list):
+        edges = []
+    return f"""
+        <details class="matchup-panel" open>
+          <summary>对战结构图</summary>
+          <div class="graph-summary-grid">
+            <span><b>优势方</b>{html_escape(advantage_text(graph.get('advantage_side') if isinstance(graph, dict) else None))}</span>
+            <span><b>关键对位</b>{html_escape(graph.get('key_battle', 'unknown') if isinstance(graph, dict) else 'unknown')}</span>
+            <span><b>风险触发点</b>{html_escape(graph.get('risk_trigger', 'unknown') if isinstance(graph, dict) else 'unknown')}</span>
+          </div>
+          <p class="graph-summary">{html_escape(graph.get('summary', 'unknown') if isinstance(graph, dict) else 'unknown')}</p>
+          <div class="graph-node-grid">
+            <section><h5>主队结构</h5>{graph_nodes_html(nodes, 'home')}</section>
+            <section><h5>客队结构</h5>{graph_nodes_html(nodes, 'away')}</section>
+          </div>
+          <div class="graph-edge-list">
+            <h5>关键关系</h5>
+            {graph_edges_html(edges)}
+          </div>
+        </details>
+    """
 def match_card(match: dict[str, Any]) -> str:
     teams = match.get("teams") or {}
     home = teams.get("home") or {}
@@ -1386,6 +1503,7 @@ def match_card(match: dict[str, Any]) -> str:
           <span><b>赔率</b>{html_escape(odds_badge(match))}</span>
         </div>
         {score_options_html(match)}
+        {matchup_graph_html(match)}
         {method_factors_html(match)}
         <div class="analysis-block">
           <section><h4>战术分析</h4><p>{html_escape(tactical)}</p></section>
@@ -1658,7 +1776,7 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
       overflow-wrap: anywhere;
     }}
     .metric-grid b {{ display: block; color: var(--text); margin-bottom: 4px; }}
-    .score-options, .factor-panel {{
+    .score-options, .factor-panel, .matchup-panel {{
       border: 1px solid var(--line);
       border-radius: 16px;
       background: rgba(18, 28, 42, .48);
@@ -1703,6 +1821,64 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     }}
     .factor-item h5 {{ margin: 0 0 7px; color: var(--text); font-size: 13px; }}
     .factor-item p {{ margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; }}
+    .matchup-panel summary {{
+      cursor: pointer;
+      color: #ffd64a;
+      font-size: 17px;
+      font-weight: 800;
+      list-style-position: inside;
+    }}
+    .matchup-panel summary:hover {{ color: #ffe784; }}
+    .graph-summary-grid {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }}
+    .graph-summary-grid span {{
+      border: 1px solid rgba(104, 136, 174, .22);
+      border-radius: 13px;
+      background: rgba(12, 20, 31, .5);
+      padding: 12px;
+      color: var(--muted);
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }}
+    .graph-summary-grid b {{ display: block; color: var(--text); margin-bottom: 5px; }}
+    .graph-summary {{ margin: 12px 0 0; color: #d8deea; font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }}
+    .graph-node-grid {{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 12px; }}
+    .graph-node-grid h5, .graph-edge-list h5 {{ margin: 0 0 9px; color: var(--text); font-size: 14px; }}
+    .graph-node {{
+      border: 1px solid rgba(104, 136, 174, .24);
+      border-radius: 14px;
+      background: rgba(12, 20, 31, .5);
+      padding: 11px;
+      margin-top: 8px;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }}
+    .graph-node.home {{ border-left: 3px solid var(--green); }}
+    .graph-node.away {{ border-left: 3px solid var(--red); }}
+    .graph-node:hover {{ transform: translateY(-2px); border-color: var(--line-hot); }}
+    .graph-node div {{ display: flex; justify-content: space-between; gap: 8px; align-items: baseline; }}
+    .graph-node strong {{ color: var(--text); font-size: 14px; }}
+    .graph-node span {{ color: #ffd64a; font-size: 12px; font-weight: 800; white-space: nowrap; }}
+    .graph-node p {{ margin: 7px 0 0; color: var(--muted); font-size: 13px; line-height: 1.5; overflow-wrap: anywhere; }}
+    .graph-edge-list {{ margin-top: 12px; }}
+    .graph-edge {{
+      border: 1px solid rgba(104, 136, 174, .24);
+      border-radius: 14px;
+      background: rgba(12, 20, 31, .46);
+      padding: 12px;
+      margin-top: 9px;
+      transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+    }}
+    .graph-edge:hover {{ transform: translateY(-2px); border-color: var(--line-hot); }}
+    .graph-edge.impact-high {{ border-color: rgba(239,80,73,.54); box-shadow: inset 0 0 0 1px rgba(239,80,73,.12); }}
+    .graph-edge.impact-medium {{ border-color: rgba(246,189,39,.45); }}
+    .graph-edge.impact-low {{ border-color: rgba(104,136,174,.3); }}
+    .graph-edge div {{ display: flex; justify-content: space-between; gap: 10px; align-items: center; }}
+    .graph-edge strong {{ color: var(--text); font-size: 14px; overflow-wrap: anywhere; }}
+    .graph-edge span {{ border-radius: 999px; padding: 4px 9px; font-size: 12px; font-weight: 900; }}
+    .graph-edge.impact-high span {{ color: #ffb7b3; background: rgba(239,80,73,.16); }}
+    .graph-edge.impact-medium span {{ color: #ffe184; background: rgba(246,189,39,.14); }}
+    .graph-edge.impact-low span {{ color: #c5d1e4; background: rgba(104,136,174,.13); }}
+    .graph-edge p {{ margin: 8px 0 0; color: #d8deea; font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; }}
+    .graph-edge small {{ display: block; margin-top: 8px; color: var(--muted); overflow-wrap: anywhere; }}
     .analysis-block {{ display: grid; gap: 14px; }}
     .analysis-block section {{ border-top: 1px solid var(--line); padding-top: 14px; }}
     .analysis-block h4 {{ margin: 0 0 8px; font-size: 17px; color: var(--muted); }}
@@ -1725,7 +1901,7 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     @media (max-width: 760px) {{
       .page {{ width: min(100% - 24px, 640px); padding-top: 18px; }}
       .hero, .overview, .usage-panel, .match-card {{ border-radius: 20px; padding: 20px; }}
-      .hero-meta, .usage-grid, .metric-grid, .score-option-grid, .factor-grid {{ grid-template-columns: 1fr 1fr; }}
+      .hero-meta, .usage-grid, .metric-grid, .score-option-grid, .factor-grid, .graph-summary-grid, .graph-node-grid {{ grid-template-columns: 1fr 1fr; }}
       .section-head, .match-topline {{ display: block; }}
       .day-count {{ display: inline-flex; margin-top: 12px; }}
       .match-topline time {{ display: inline-flex; margin-top: 12px; white-space: normal; }}
@@ -1735,7 +1911,7 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
       .match-footer {{ display: grid; grid-template-columns: 1fr; }}
     }}
     @media (max-width: 460px) {{
-      .hero-meta, .usage-grid, .metric-grid, .score-option-grid, .factor-grid {{ grid-template-columns: 1fr; }}
+      .hero-meta, .usage-grid, .metric-grid, .score-option-grid, .factor-grid, .graph-summary-grid, .graph-node-grid {{ grid-template-columns: 1fr; }}
       .prob-labels {{ grid-template-columns: 1fr; gap: 6px; }}
       .prob-labels span, .prob-labels span:nth-child(2), .prob-labels span:nth-child(3) {{ text-align: left; }}
     }}

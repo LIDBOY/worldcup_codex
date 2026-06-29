@@ -18,6 +18,20 @@ METHOD_FACTOR_KEYS = (
     "tactical_key",
     "uncertainty",
 )
+MATCHUP_NODE_KEYS = ("id", "label", "type", "side", "weight", "note")
+MATCHUP_EDGE_KEYS = ("from", "to", "label", "impact", "direction", "note")
+MATCHUP_IMPACTS = {"high", "medium", "low"}
+MATCHUP_ADVANTAGES = {"home", "away", "balanced"}
+FORBIDDEN_PROBABILITY_TEXT = (
+    "结构图概率",
+    "对位概率",
+    "比分概率",
+    "matchup probability",
+    "matchup probabilities",
+    "score probability",
+    "score probabilities",
+    "score_probability",
+)
 
 
 def validate_usage(usage: dict[str, Any], prefix: str, errors: list[str]) -> None:
@@ -90,10 +104,69 @@ def validate_method_factors(match: dict[str, Any], index: int, errors: list[str]
             errors.append(f"matches[{index}].method_factors.{key} is required")
 
 
+def validate_matchup_graph(match: dict[str, Any], index: int, errors: list[str]) -> None:
+    graph = match.get("matchup_graph")
+    if not isinstance(graph, dict):
+        errors.append(f"matches[{index}].matchup_graph must be an object")
+        return
+    nodes = graph.get("nodes")
+    edges = graph.get("edges")
+    if not isinstance(nodes, list) or len(nodes) < 6:
+        errors.append(f"matches[{index}].matchup_graph.nodes must contain at least 6 nodes")
+    else:
+        node_ids: set[str] = set()
+        for node_index, node in enumerate(nodes):
+            if not isinstance(node, dict):
+                errors.append(f"matches[{index}].matchup_graph.nodes[{node_index}] must be an object")
+                continue
+            for key in MATCHUP_NODE_KEYS:
+                if key not in node:
+                    errors.append(f"matches[{index}].matchup_graph.nodes[{node_index}].{key} is required")
+            node_id = node.get("id")
+            if isinstance(node_id, str) and node_id.strip():
+                node_ids.add(node_id)
+            for key in ("id", "label", "type", "side", "note"):
+                value = node.get(key)
+                if not isinstance(value, str) or not value.strip():
+                    errors.append(f"matches[{index}].matchup_graph.nodes[{node_index}].{key} must be a non-empty string")
+            weight = node.get("weight")
+            if not isinstance(weight, (int, float)) or weight < 0 or weight > 100:
+                errors.append(f"matches[{index}].matchup_graph.nodes[{node_index}].weight must be 0-100")
+            forbidden = [key for key in node if "prob" in str(key).lower() or "概率" in str(key)]
+            if forbidden:
+                errors.append(f"matches[{index}].matchup_graph.nodes[{node_index}] must not include probability fields")
+    if not isinstance(edges, list) or len(edges) < 3:
+        errors.append(f"matches[{index}].matchup_graph.edges must contain at least 3 edges")
+    else:
+        for edge_index, edge in enumerate(edges):
+            if not isinstance(edge, dict):
+                errors.append(f"matches[{index}].matchup_graph.edges[{edge_index}] must be an object")
+                continue
+            for key in MATCHUP_EDGE_KEYS:
+                if key not in edge:
+                    errors.append(f"matches[{index}].matchup_graph.edges[{edge_index}].{key} is required")
+            for key in ("from", "to", "label", "direction", "note"):
+                value = edge.get(key)
+                if not isinstance(value, str) or not value.strip():
+                    errors.append(f"matches[{index}].matchup_graph.edges[{edge_index}].{key} must be a non-empty string")
+            if edge.get("impact") not in MATCHUP_IMPACTS:
+                errors.append(f"matches[{index}].matchup_graph.edges[{edge_index}].impact must be high, medium, or low")
+            forbidden = [key for key in edge if "prob" in str(key).lower() or "概率" in str(key)]
+            if forbidden:
+                errors.append(f"matches[{index}].matchup_graph.edges[{edge_index}] must not include probability fields")
+    for key in ("summary", "key_battle", "risk_trigger"):
+        value = graph.get(key)
+        if not isinstance(value, str) or not value.strip():
+            errors.append(f"matches[{index}].matchup_graph.{key} is required")
+    if graph.get("advantage_side") not in MATCHUP_ADVANTAGES:
+        errors.append(f"matches[{index}].matchup_graph.advantage_side must be home, away, or balanced")
+
+
 def validate_match(match: dict[str, Any], index: int, errors: list[str]) -> None:
     validate_probabilities(match, index, errors)
     validate_score_options(match, index, errors)
     validate_method_factors(match, index, errors)
+    validate_matchup_graph(match, index, errors)
     score = match.get("predicted_score") or {}
     if not isinstance(score.get("home"), int) or not isinstance(score.get("away"), int):
         errors.append(f"matches[{index}].predicted_score must include integer home/away")
@@ -169,6 +242,9 @@ def validate(data: dict[str, Any]) -> tuple[bool, list[str]]:
             "分析因子",
             "市场信号",
             "天气/场地",
+            "对战结构图",
+            "关键对位",
+            "风险触发点",
         ):
             if fragment not in render:
                 errors.append(f"render must visibly include {fragment}")
@@ -178,11 +254,10 @@ def validate(data: dict[str, Any]) -> tuple[bool, list[str]]:
         for fragment in ("2026 世界杯 · 预测分析", "night-shell", "night-card", "match-card", ":hover"):
             if fragment not in render:
                 errors.append(f"render must include dark UI fragment {fragment}")
-        forbidden_score_probability = ("比分概率", "score probability", "score probabilities", "score_probability")
         lower_render = render.lower()
-        for fragment in forbidden_score_probability:
+        for fragment in FORBIDDEN_PROBABILITY_TEXT:
             if fragment in lower_render:
-                errors.append("render must not display score probability text")
+                errors.append("render must not display forbidden probability text")
         if "UTC" in render or "Z</time>" in render:
             errors.append("render must not visibly display UTC time")
 
