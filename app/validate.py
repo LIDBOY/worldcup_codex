@@ -22,6 +22,9 @@ MATCHUP_NODE_KEYS = ("id", "label", "type", "side", "weight", "note")
 MATCHUP_EDGE_KEYS = ("from", "to", "label", "impact", "direction", "note")
 MATCHUP_IMPACTS = {"high", "medium", "low"}
 MATCHUP_ADVANTAGES = {"home", "away", "balanced"}
+STRUCTURE_STAGES = {"group", "knockout"}
+BRACKET_KEYS = ("round_of_32", "round_of_16", "quarter_finals", "semi_finals", "final")
+BRACKET_LABELS = ("32强", "16强", "8强", "4强", "决赛")
 FORBIDDEN_PROBABILITY_TEXT = (
     "结构图概率",
     "对位概率",
@@ -31,6 +34,7 @@ FORBIDDEN_PROBABILITY_TEXT = (
     "score probability",
     "score probabilities",
     "score_probability",
+    "structure graph probability",
 )
 
 
@@ -162,6 +166,160 @@ def validate_matchup_graph(match: dict[str, Any], index: int, errors: list[str])
         errors.append(f"matches[{index}].matchup_graph.advantage_side must be home, away, or balanced")
 
 
+def match_identity(match: dict[str, Any]) -> str:
+    return str(match.get("match_id") or match.get("id") or match.get("fifa_match_id") or "")
+
+
+def validate_structure_score_options(options: Any, prefix: str, errors: list[str]) -> None:
+    if not isinstance(options, list) or len(options) != 3:
+        errors.append(f"{prefix} must contain exactly 3 score tab options")
+        return
+    ranks: set[int] = set()
+    for option_index, option in enumerate(options):
+        if not isinstance(option, dict):
+            errors.append(f"{prefix}[{option_index}] must be an object")
+            continue
+        forbidden = [key for key in option if "prob" in str(key).lower() or "概率" in str(key)]
+        if forbidden:
+            errors.append(f"{prefix}[{option_index}] must not include score probability fields")
+        score = option.get("score")
+        rank = option.get("rank")
+        if not isinstance(score, str) or not score.strip():
+            errors.append(f"{prefix}[{option_index}].score is required")
+        if not isinstance(rank, int):
+            errors.append(f"{prefix}[{option_index}].rank must be an integer")
+        else:
+            ranks.add(rank)
+    if ranks != {1, 2, 3}:
+        errors.append(f"{prefix} ranks must be exactly 1, 2, and 3")
+
+
+def validate_structure_node(
+    node: Any,
+    prefix: str,
+    display_ids: set[str],
+    errors: list[str],
+) -> tuple[str, bool]:
+    if not isinstance(node, dict):
+        errors.append(f"{prefix} must be an object")
+        return "", False
+    match_id = str(node.get("match_id") or "")
+    if not match_id:
+        errors.append(f"{prefix}.match_id is required")
+    if not isinstance(node.get("teams"), dict):
+        errors.append(f"{prefix}.teams is required")
+    if not isinstance(node.get("kickoff_display"), str) or "北京时间" not in node.get("kickoff_display", ""):
+        errors.append(f"{prefix}.kickoff_display must use Beijing time")
+    current = bool(node.get("current_window"))
+    if match_id in display_ids:
+        if not current:
+            errors.append(f"{prefix}.current_window must be true for displayed match {match_id}")
+        if not isinstance(node.get("win_draw_loss"), dict):
+            errors.append(f"{prefix}.win_draw_loss is required for displayed match {match_id}")
+        validate_structure_score_options(node.get("score_options"), f"{prefix}.score_options", errors)
+    return match_id, current
+
+
+def collect_structure_nodes(structure: dict[str, Any], errors: list[str]) -> list[dict[str, Any]]:
+    nodes: list[dict[str, Any]] = []
+    stage = structure.get("stage")
+    if stage == "group":
+        groups = structure.get("groups")
+        if not isinstance(groups, list):
+            errors.append("tournament_structure.groups must be a list for group stage")
+            return nodes
+        if structure.get("bracket") not in (None, {}):
+            errors.append("tournament_structure.bracket must be null for group stage")
+        for group_index, group in enumerate(groups):
+            if not isinstance(group, dict):
+                errors.append(f"tournament_structure.groups[{group_index}] must be an object")
+                continue
+            if not isinstance(group.get("name"), str) or not group.get("name"):
+                errors.append(f"tournament_structure.groups[{group_index}].name is required")
+            days = group.get("match_days")
+            if not isinstance(days, list):
+                errors.append(f"tournament_structure.groups[{group_index}].match_days must be a list")
+                continue
+            for day_index, day in enumerate(days):
+                if not isinstance(day, dict):
+                    errors.append(f"tournament_structure.groups[{group_index}].match_days[{day_index}] must be an object")
+                    continue
+                matches = day.get("matches")
+                if not isinstance(matches, list):
+                    errors.append(f"tournament_structure.groups[{group_index}].match_days[{day_index}].matches must be a list")
+                    continue
+                nodes.extend(match for match in matches if isinstance(match, dict))
+    elif stage == "knockout":
+        bracket = structure.get("bracket")
+        if not isinstance(bracket, dict):
+            errors.append("tournament_structure.bracket must be an object for knockout stage")
+            return nodes
+        if structure.get("groups") not in (None, []):
+            errors.append("tournament_structure.groups must be null for knockout stage")
+        for key in BRACKET_KEYS:
+            round_nodes = bracket.get(key)
+            if not isinstance(round_nodes, list):
+                errors.append(f"tournament_structure.bracket.{key} must be a list")
+                continue
+            nodes.extend(node for node in round_nodes if isinstance(node, dict))
+    return nodes
+
+
+def validate_tournament_structure(data: dict[str, Any], matches: Any, render: Any, errors: list[str]) -> None:
+    structure = data.get("tournament_structure")
+    if not isinstance(structure, dict):
+        errors.append("tournament_structure must be an object")
+        return
+    stage = structure.get("stage")
+    if stage not in STRUCTURE_STAGES:
+        errors.append("tournament_structure.stage must be group or knockout")
+    focus = structure.get("focus_window")
+    if not isinstance(focus, dict):
+        errors.append("tournament_structure.focus_window must be an object")
+    else:
+        if focus.get("timezone") != "Asia/Shanghai":
+            errors.append("tournament_structure.focus_window.timezone must be Asia/Shanghai")
+        days = focus.get("china_match_days")
+        if not isinstance(days, list) or len(days) < 2:
+            errors.append("tournament_structure.focus_window.china_match_days must contain at least two days")
+    highlight_ids = structure.get("highlight_match_ids")
+    if not isinstance(highlight_ids, list):
+        errors.append("tournament_structure.highlight_match_ids must be a list")
+        highlight_set: set[str] = set()
+    else:
+        highlight_set = {str(item) for item in highlight_ids}
+    display_ids = {match_identity(match) for match in matches if isinstance(match, dict) and match_identity(match)} if isinstance(matches, list) else set()
+    missing = display_ids - highlight_set
+    if missing:
+        errors.append(f"tournament_structure.highlight_match_ids missing displayed matches: {sorted(missing)}")
+    nodes = collect_structure_nodes(structure, errors)
+    node_ids: set[str] = set()
+    current_node_ids: set[str] = set()
+    for index, node in enumerate(nodes):
+        match_id, current = validate_structure_node(node, f"tournament_structure.node[{index}]", display_ids, errors)
+        if match_id:
+            node_ids.add(match_id)
+        if current and match_id:
+            current_node_ids.add(match_id)
+    missing_nodes = display_ids - node_ids
+    if missing_nodes:
+        errors.append(f"tournament_structure nodes missing displayed matches: {sorted(missing_nodes)}")
+    missing_current = display_ids - current_node_ids
+    if missing_current:
+        errors.append(f"tournament_structure current-window highlight missing for displayed matches: {sorted(missing_current)}")
+    if isinstance(render, str):
+        if stage == "group" and "小组对战结构图" not in render:
+            errors.append("render must include 小组对战结构图 for group stage")
+        if stage == "knockout":
+            if "淘汰赛对阵树" not in render:
+                errors.append("render must include 淘汰赛对阵树 for knockout stage")
+            for label in BRACKET_LABELS:
+                if label not in render:
+                    errors.append(f"render must include knockout round label {label}")
+        for fragment in ("当前窗口", "前3预测比分", "主推荐", "Top 2", "Top 3"):
+            if fragment not in render:
+                errors.append(f"render must include tournament structure score tab fragment {fragment}")
+
 def validate_match(match: dict[str, Any], index: int, errors: list[str]) -> None:
     validate_probabilities(match, index, errors)
     validate_score_options(match, index, errors)
@@ -200,6 +358,7 @@ def validate(data: dict[str, Any]) -> tuple[bool, list[str]]:
     sources = data.get("data_sources")
     render = data.get("render")
     china_match_days = data.get("china_match_days")
+    tournament_structure = data.get("tournament_structure")
 
     if not isinstance(matches, list):
         errors.append("matches must be a list")
@@ -222,6 +381,8 @@ def validate(data: dict[str, Any]) -> tuple[bool, list[str]]:
     if not isinstance(china_match_days, list) or len(china_match_days) < 2:
         errors.append("china_match_days must describe at least two China match days")
 
+    validate_tournament_structure(data, matches, render, errors)
+
     if isinstance(matches, list):
         for index, match in enumerate(matches):
             if isinstance(match, dict):
@@ -238,13 +399,16 @@ def validate(data: dict[str, Any]) -> tuple[bool, list[str]]:
             "赔率",
             "xG",
             "爆冷概率",
-            "比分结果 Top 3",
+            "前3预测比分",
             "分析因子",
             "市场信号",
             "天气/场地",
             "对战结构图",
             "关键对位",
             "风险触发点",
+            "主推荐",
+            "Top 2",
+            "Top 3",
         ):
             if fragment not in render:
                 errors.append(f"render must visibly include {fragment}")

@@ -36,6 +36,7 @@ FIFA_SEARCH_KEY = os.getenv(
 
 DEFAULT_LEAGUE = os.getenv("WORLDCUP_ESPN_LEAGUE", "fifa.world")
 DEFAULT_DAYS = int(os.getenv("WORLDCUP_WINDOW_DAYS", "2"))
+STRUCTURE_MATCH_DAYS = int(os.getenv("WORLDCUP_STRUCTURE_MATCH_DAYS", "7"))
 REQUEST_TIMEOUT = int(os.getenv("WORLDCUP_REQUEST_TIMEOUT", "25"))
 DEEPSEEK_REQUEST_TIMEOUT = int(os.getenv("DEEPSEEK_REQUEST_TIMEOUT", "180"))
 INJURY_LOOKBACK_DAYS = int(os.getenv("WORLDCUP_INJURY_LOOKBACK_DAYS", "180"))
@@ -573,6 +574,29 @@ def find_espn_match(fifa_match: dict[str, Any], espn_matches: list[dict[str, Any
     return best[1] if best else None
 
 
+def verify_fifa_matches(
+    fifa_matches: list[dict[str, Any]],
+    espn_matches: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[str]]:
+    verified: list[dict[str, Any]] = []
+    unverified: list[str] = []
+    for fifa_match in fifa_matches:
+        espn_match = find_espn_match(fifa_match, espn_matches)
+        if not espn_match:
+            unverified.append(fifa_match.get("match_name_en") or fifa_match.get("match_name") or str(fifa_match.get("id")))
+            continue
+        item = {**fifa_match, "sources": dict(fifa_match.get("sources") or {})}
+        item["espn_event_id"] = espn_match["id"]
+        item["sources"]["espn"] = espn_match["source"]
+        item["source_verification"] = {
+            "verified": True,
+            "sources": ["FIFA official calendar API", "ESPN public FIFA World Cup scoreboard"],
+            "method": "team-pair and kickoff-time cross-check",
+        }
+        item["odds"] = espn_match["odds"]
+        verified.append(item)
+    return verified, unverified
+
 def fetch_espn_news() -> tuple[list[dict[str, Any]], str, list[str]]:
     params = {"limit": "100"}
     url = f"{ESPN_NEWS}?{urlencode(params)}"
@@ -706,29 +730,32 @@ def attach_injuries(matches: list[dict[str, Any]], espn_articles: list[dict[str,
 
 def run_research(output: Path = FIXTURES_PATH, start: dt.date | None = None, days: int = DEFAULT_DAYS) -> dict[str, Any]:
     display_window = china_match_day_window(days, start)
-    start_date, fetch_days = fifa_fetch_span_for_china_window(display_window)
-    fifa_matches, fifa_url, fifa_warnings = fetch_fifa_matches(start_date, fetch_days)
-    raw_fifa_fixture_count = len(fifa_matches)
-    fifa_matches = filter_matches_to_china_window(fifa_matches, display_window)
-    espn_raw_events, espn_urls, espn_warnings = fetch_espn_events(start_date - dt.timedelta(days=1), fetch_days + 2)
+    display_start_date, display_fetch_days = fifa_fetch_span_for_china_window(display_window)
+    structure_start = dt.date.fromisoformat(display_window["match_days"][0]["date"])
+    structure_days = max(days, STRUCTURE_MATCH_DAYS)
+    structure_window = china_match_day_window(structure_days, structure_start)
+    structure_start_date, structure_fetch_days = fifa_fetch_span_for_china_window(structure_window)
+
+    fifa_matches_all, fifa_url, fifa_warnings = fetch_fifa_matches(structure_start_date, structure_fetch_days)
+    raw_fifa_fixture_count = len(fifa_matches_all)
+    structure_fifa_matches = filter_matches_to_china_window(fifa_matches_all, structure_window)
+    fifa_matches = filter_matches_to_china_window(fifa_matches_all, display_window)
+
+    espn_raw_events, espn_urls, espn_warnings = fetch_espn_events(
+        structure_start_date - dt.timedelta(days=1),
+        structure_fetch_days + 2,
+    )
     espn_matches = [match for event in espn_raw_events if (match := transform_espn_event(event))]
 
-    verified: list[dict[str, Any]] = []
-    unverified: list[str] = []
-    for fifa_match in fifa_matches:
-        espn_match = find_espn_match(fifa_match, espn_matches)
-        if not espn_match:
-            unverified.append(fifa_match["match_name_en"])
-            continue
-        fifa_match["espn_event_id"] = espn_match["id"]
-        fifa_match["sources"]["espn"] = espn_match["source"]
-        fifa_match["source_verification"] = {
-            "verified": True,
-            "sources": ["FIFA official calendar API", "ESPN public FIFA World Cup scoreboard"],
-            "method": "team-pair and kickoff-time cross-check",
-        }
-        fifa_match["odds"] = espn_match["odds"]
-        verified.append(fifa_match)
+    structure_verified, structure_unverified = verify_fifa_matches(structure_fifa_matches, espn_matches)
+    structure_verified.sort(key=lambda item: item.get("kickoff_utc") or "")
+    verified_by_id = {str(item.get("id")): item for item in structure_verified}
+    verified = [verified_by_id[str(match.get("id"))] for match in fifa_matches if str(match.get("id")) in verified_by_id]
+    unverified = [
+        match.get("match_name_en") or match.get("match_name") or str(match.get("id"))
+        for match in fifa_matches
+        if str(match.get("id")) not in verified_by_id
+    ]
 
     espn_articles, news_url, news_warnings = fetch_espn_news()
     verified, injury_warnings = attach_injuries(verified, espn_articles)
@@ -740,12 +767,19 @@ def run_research(output: Path = FIXTURES_PATH, start: dt.date | None = None, day
         "stage": "research",
         "generated_at": iso_utc(utc_now()),
         "window": {
-            "start_date": start_date.isoformat(),
-            "days": fetch_days,
+            "start_date": display_start_date.isoformat(),
+            "days": display_fetch_days,
             "timezone": "UTC",
             "mode": "derived from China match-day display window",
         },
+        "structure_utc_window": {
+            "start_date": structure_start_date.isoformat(),
+            "days": structure_fetch_days,
+            "timezone": "UTC",
+            "mode": "derived from China match-day structure window",
+        },
         "display_window": display_window,
+        "structure_window": structure_window,
         "china_match_days": display_window["match_days"],
         "data_sources": {
             "fifa": True,
@@ -765,23 +799,26 @@ def run_research(output: Path = FIXTURES_PATH, start: dt.date | None = None, day
         },
         "warnings": warnings,
         "unverified_fifa_matches": unverified,
+        "structure_unverified_fifa_matches": structure_unverified,
         "fixture_count": len(verified),
         "fifa_fixture_count": len(fifa_matches),
         "raw_fifa_fixture_count": raw_fifa_fixture_count,
+        "structure_fixture_count": len(structure_verified),
+        "structure_fifa_fixture_count": len(structure_fifa_matches),
         "odds_available_count": odds_available,
         "matches": verified,
         "fixtures": verified,
+        "structure_matches": structure_verified,
         "daily_log": [
             {
                 "time": iso_utc(utc_now()),
-                "stage": "08:15 automatic FIFA schedule + injury + odds research",
+                "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
                 "status": "completed",
             }
         ],
     }
     write_json(output, payload)
     return payload
-
 
 def zero_usage() -> dict[str, Any]:
     return {"input_tokens": 0, "output_tokens": 0, "total_tokens": 0, "cost_estimate": 0.0}
@@ -870,14 +907,14 @@ def analysis_messages(research_payload: dict[str, Any]) -> list[dict[str, str]]:
             "content": (
                 "You are the only analysis layer for a FIFA World Cup AI Agent. "
                 "You must use deepseek-v4-pro reasoning only. Do not invent fixtures, injuries, odds, results, "
-                "or sources. Use only the verified FIFA/ESPN/injury/odds payload provided. "
+                "or sources. Use only the verified FIFA/ESPN/injury/odds payload provided; structure_matches is schedule context only. "
                 "Return strict JSON only. Write all user-facing analysis in Simplified Chinese."
             ),
         },
         {
             "role": "user",
             "content": (
-                "Analyze every verified match and return JSON with this exact shape: "
+                "Analyze every verified match in research_payload.matches and return JSON with this exact shape. Use research_payload.structure_matches only as real schedule context for tournament_structure; do not create predictions for structure context matches outside research_payload.matches: "
                 "{"
                 "\"generated_at\":\"ISO-8601\","
                 "\"summary\":\"Chinese summary\","
@@ -949,6 +986,7 @@ def analysis_messages(research_payload: dict[str, Any]) -> list[dict[str, str]]:
                 "Node weight must be a 0-100 relative analytical strength score, not a probability, win rate, matchup probability, or score probability. "
                 "Edge impact must be high, medium, or low. advantage_side must be home, away, or balanced. "
                 "Do not output or mention structure graph probability, matchup probability, duel probability, or score probability. "
+                "Preserve match_id, kickoff_utc, stage, group, match_number, teams, and score_options so the deterministic renderer can build tournament_structure and score tabs. "
                 "If injury status is unknown, say it is unknown; do not invent player names. "
                 "If odds are unavailable, say odds are unavailable; do not invent market prices. "
                 f"Verified Agent research payload:\n{json.dumps(research_payload, ensure_ascii=False)}"
@@ -997,12 +1035,21 @@ def run_analysis(fixtures_path: Path = FIXTURES_PATH, output: Path = ANALYSIS_PA
     analysis = parse_json_content(content)
     matches = merge_analysis_matches(analysis, research_payload)
     analysis["matches"] = matches
+    tournament_structure = build_tournament_structure(
+        matches,
+        research_payload.get("display_window", {}),
+        research_payload.get("structure_matches", []),
+        research_payload.get("structure_window", {}),
+    )
+    analysis["tournament_structure"] = tournament_structure
     payload = {
         "schema_version": 3,
         "stage": "analysis",
         "generated_at": iso_utc(utc_now()),
         "analysis": analysis,
         "matches": matches,
+        "tournament_structure": tournament_structure,
+        "structure_window": research_payload.get("structure_window", {}),
         "research": research_payload,
         "display_window": research_payload.get("display_window", {}),
         "china_match_days": research_payload.get("china_match_days", []),
@@ -1017,7 +1064,6 @@ def run_analysis(fixtures_path: Path = FIXTURES_PATH, output: Path = ANALYSIS_PA
     }
     write_json(output, payload)
     return payload
-
 
 def render_messages(analysis_payload: dict[str, Any]) -> list[dict[str, str]]:
     return [
@@ -1035,10 +1081,10 @@ def render_messages(analysis_payload: dict[str, Any]) -> list[dict[str, str]]:
             "content": (
                 "Generate complete HTML for GitHub Pages. The page must visibly include: "
                 "match predictions, win/draw/loss probabilities, predicted score, xG, tactical matchup, "
-                "score result Top 3 without score probabilities, method factors, matchup graph, risk analysis, upset probability, "
+                "front-three score tabs without score probabilities, method factors, matchup graph, tournament structure graph, risk analysis, upset probability, "
                 "injury information, odds comparison, token usage, and cost. "
                 "All visible match times must use Asia/Shanghai, never UTC. "
-                "Group matches by China match day, where each match day runs from 18:00 to next-day 18:00. "
+                "Group main match cards by China match day, where each match day runs from 18:00 to next-day 18:00. Render tournament_structure as 小组对战结构图 or 淘汰赛对阵树 with current-window highlights and score tabs. "
                 "Use these exact placeholders inside the token panel: "
                 "{{INPUT_TOKENS}}, {{OUTPUT_TOKENS}}, {{TOTAL_TOKENS}}, {{COST_ESTIMATE}}. "
                 "Do not invent data. If source data says unknown or unavailable, display that clearly. "
@@ -1302,6 +1348,362 @@ def display_range_text(payload: dict[str, Any], matches: list[dict[str, Any]]) -
     return "两个中国比赛日"
 
 
+def safe_dom_id(value: Any) -> str:
+    text = re.sub(r"[^a-zA-Z0-9_-]+", "-", str(value or "")).strip("-")
+    return text or stable_id(value)
+
+
+def ordered_score_options(match_or_options: Any) -> list[dict[str, Any]]:
+    raw_options = match_or_options.get("score_options") if isinstance(match_or_options, dict) else match_or_options
+    options = [item for item in (raw_options or []) if isinstance(item, dict)]
+
+    def rank_key(item: dict[str, Any]) -> int:
+        try:
+            return int(item.get("rank", 99))
+        except (TypeError, ValueError):
+            return 99
+
+    options.sort(key=rank_key)
+    return options[:3]
+
+
+def score_option_label(rank: Any) -> str:
+    try:
+        rank_number = int(rank)
+    except (TypeError, ValueError):
+        rank_number = 0
+    return "主推荐" if rank_number == 1 else f"Top {rank_number or '?'}"
+
+
+def group_label_for_match(match: dict[str, Any]) -> str:
+    group = str(match.get("group") or "").strip()
+    stage = str(match.get("stage") or "").strip()
+    match = re.fullmatch(r"Group\s+([A-Za-z])", group, flags=re.IGNORECASE)
+    if match:
+        return f"{match.group(1).upper()}组"
+    if group:
+        return group
+    return stage or "未分组"
+
+
+def group_sort_key(name: str) -> tuple[int, str]:
+    match = re.match(r"([A-Z])组", name)
+    if match:
+        return (0, match.group(1))
+    match = re.match(r"Group\s+([A-Z])", name, flags=re.IGNORECASE)
+    if match:
+        return (0, match.group(1).upper())
+    return (1, name)
+
+
+def stage_text(match: dict[str, Any]) -> str:
+    return " ".join(str(match.get(key) or "") for key in ("stage", "group", "competition", "match_number"))
+
+
+def is_knockout_match(match: dict[str, Any]) -> bool:
+    text = normalize_team(stage_text(match))
+    knockout_hints = (
+        "knockout",
+        "round of",
+        "round 32",
+        "round 16",
+        "last 16",
+        "quarter final",
+        "quarterfinal",
+        "semi final",
+        "semifinal",
+        "final",
+        "third place",
+        "play off",
+        "playoff",
+    )
+    chinese_text = stage_text(match)
+    chinese_hints = ("淘汰", "32强", "16强", "八分之一", "四分之一", "半决赛", "决赛", "季军")
+    if any(hint in text for hint in knockout_hints) or any(hint in chinese_text for hint in chinese_hints):
+        if "first stage" not in text and "group" not in text:
+            return True
+    match_number = match.get("match_number")
+    try:
+        return int(match_number) >= 73
+    except (TypeError, ValueError):
+        return False
+
+
+def determine_tournament_stage(matches: list[dict[str, Any]]) -> str:
+    return "knockout" if any(is_knockout_match(match) for match in matches) else "group"
+
+
+def round_key_for_match(match: dict[str, Any]) -> str:
+    text = normalize_team(stage_text(match))
+    if "semi" in text:
+        return "semi_finals"
+    if "quarter" in text or "8" in text and "round" in text:
+        return "quarter_finals"
+    if "round of 16" in text or "round 16" in text or "last 16" in text:
+        return "round_of_16"
+    if "round of 32" in text or "round 32" in text:
+        return "round_of_32"
+    if "final" in text:
+        return "final"
+    match_number = match.get("match_number")
+    try:
+        number = int(match_number)
+    except (TypeError, ValueError):
+        return "round_of_32"
+    if 73 <= number <= 88:
+        return "round_of_32"
+    if 89 <= number <= 96:
+        return "round_of_16"
+    if 97 <= number <= 100:
+        return "quarter_finals"
+    if 101 <= number <= 103:
+        return "semi_finals"
+    if number >= 104:
+        return "final"
+    return "round_of_32"
+
+
+def merge_structure_context(
+    matches: list[dict[str, Any]],
+    structure_matches: list[dict[str, Any]] | None,
+) -> list[dict[str, Any]]:
+    by_id: dict[str, dict[str, Any]] = {}
+    for match in structure_matches or []:
+        match_id = match_id_of(match)
+        if match_id:
+            by_id[match_id] = dict(match)
+    for match in matches:
+        match_id = match_id_of(match)
+        if not match_id:
+            continue
+        by_id[match_id] = {**by_id.get(match_id, {}), **match}
+    return enrich_matches_for_display(list(by_id.values()))
+
+
+def structure_match_node(
+    match: dict[str, Any],
+    current_by_id: dict[str, dict[str, Any]],
+    highlight_ids: set[str],
+) -> dict[str, Any]:
+    match_id = match_id_of(match)
+    source = {**match, **current_by_id.get(match_id, {})}
+    teams = source.get("teams") or {}
+    kickoff = source.get("kickoff_utc")
+    match_day = source.get("match_day") or (match_day_info(kickoff) if kickoff else {})
+    is_current = match_id in highlight_ids
+    return {
+        "match_id": match_id,
+        "match_number": source.get("match_number"),
+        "stage": source.get("stage"),
+        "group": group_label_for_match(source),
+        "match_name": source.get("match_name") or f"{(teams.get('home') or {}).get('name', '待定')} vs {(teams.get('away') or {}).get('name', '待定')}",
+        "teams": teams,
+        "kickoff_utc": kickoff,
+        "kickoff_beijing": source.get("kickoff_beijing"),
+        "kickoff_display": source.get("kickoff_display") or (format_beijing_time(kickoff) if kickoff else "北京时间 待定"),
+        "match_day": match_day,
+        "win_draw_loss": source.get("win_draw_loss") if is_current else None,
+        "score_options": ordered_score_options(source) if is_current else [],
+        "current_window": is_current,
+    }
+
+
+def build_tournament_structure(
+    matches: list[dict[str, Any]],
+    display_window: dict[str, Any] | None,
+    structure_matches: list[dict[str, Any]] | None = None,
+    structure_window: dict[str, Any] | None = None,
+) -> dict[str, Any]:
+    display_window = display_window or {}
+    current_matches = enrich_matches_for_display(matches)
+    context_matches = merge_structure_context(current_matches, structure_matches)
+    stage_basis = current_matches or context_matches
+    stage = determine_tournament_stage(stage_basis)
+    highlight_ids = {match_id_of(match) for match in current_matches if match_id_of(match)}
+    current_by_id = {match_id_of(match): match for match in current_matches if match_id_of(match)}
+    focus_window = {
+        "timezone": "Asia/Shanghai",
+        "china_match_days": display_window.get("match_days") or [],
+    }
+    structure = {
+        "stage": stage,
+        "focus_window": focus_window,
+        "highlight_match_ids": sorted(highlight_ids),
+        "groups": None,
+        "bracket": None,
+        "structure_window": structure_window or {},
+    }
+    if stage == "group":
+        group_map: dict[str, dict[str, list[dict[str, Any]]]] = {}
+        for match in [item for item in context_matches if not is_knockout_match(item)]:
+            node = structure_match_node(match, current_by_id, highlight_ids)
+            group_name = node.get("group") or "未分组"
+            day = node.get("match_day") or {}
+            day_key = day.get("date") or "unknown"
+            group_map.setdefault(group_name, {}).setdefault(day_key, []).append(node)
+        groups = []
+        for group_name in sorted(group_map, key=group_sort_key):
+            day_sections = []
+            for day_key in sorted(group_map[group_name]):
+                nodes = sorted(group_map[group_name][day_key], key=lambda item: item.get("kickoff_beijing") or item.get("kickoff_utc") or "")
+                first_day = nodes[0].get("match_day") or {"date": day_key, "title": day_key, "range": ""}
+                day_sections.append({
+                    "date": first_day.get("date", day_key),
+                    "title": first_day.get("title", day_key),
+                    "range": first_day.get("range", ""),
+                    "matches": nodes,
+                })
+            groups.append({"name": group_name, "match_days": day_sections})
+        structure["groups"] = groups
+    else:
+        round_keys = ("round_of_32", "round_of_16", "quarter_finals", "semi_finals", "final")
+        bracket = {key: [] for key in round_keys}
+        for match in [item for item in context_matches if is_knockout_match(item)]:
+            node = structure_match_node(match, current_by_id, highlight_ids)
+            bracket.setdefault(round_key_for_match(match), []).append(node)
+        for key in bracket:
+            bracket[key].sort(key=lambda item: item.get("kickoff_beijing") or item.get("kickoff_utc") or "")
+        structure["bracket"] = bracket
+    return structure
+
+
+def mini_score_tabs_html(options: list[dict[str, Any]]) -> str:
+    ordered = ordered_score_options(options)
+    if len(ordered) < 3:
+        return '<div class="mini-score-wrap unavailable"><span>前3预测比分</span><em>当前窗口外不展开</em></div>'
+    tabs = []
+    for option in ordered:
+        rank = option.get("rank")
+        try:
+            rank_number = int(rank)
+        except (TypeError, ValueError):
+            rank_number = len(tabs) + 1
+        active = " active" if rank_number == 1 else ""
+        tabs.append(
+            '<span class="mini-score-tab{active}">{label} <b>{score}</b></span>'.format(
+                active=active,
+                label=html_escape(score_option_label(rank_number)),
+                score=html_escape(option.get("score", "unknown")),
+            )
+        )
+    return f'<div class="mini-score-wrap"><span>前3预测比分</span><div class="mini-score-tabs">{"".join(tabs)}</div></div>'
+
+
+def structure_wdl_text(node: dict[str, Any]) -> str:
+    wdl = node.get("win_draw_loss")
+    if isinstance(wdl, dict):
+        return render_probability_line(wdl)
+    return "当前窗口外未生成分析"
+
+
+def structure_match_node_html(node: dict[str, Any]) -> str:
+    teams = node.get("teams") or {}
+    home = teams.get("home") or {}
+    away = teams.get("away") or {}
+    home_name = home.get("name") or home.get("name_en") or "待定"
+    away_name = away.get("name") or away.get("name_en") or "待定"
+    current = bool(node.get("current_window"))
+    classes = "structure-match-node current-window" if current else "structure-match-node"
+    badge = '<span class="window-badge">当前窗口</span>' if current else '<span class="outside-badge">结构上下文</span>'
+    return f"""
+      <article class="{classes}" data-match-id="{html_escape(node.get('match_id', ''))}">
+        <div class="structure-node-head"><span>{html_escape(node.get('group') or node.get('stage') or '未分组')}</span>{badge}</div>
+        <strong>{html_escape(home_name)} vs {html_escape(away_name)}</strong>
+        <p>{html_escape(node.get('kickoff_display', '北京时间 待定'))} · 比赛 ID: {html_escape(node.get('match_id') or 'unknown')}</p>
+        <p class="structure-wdl">胜平负摘要：{html_escape(structure_wdl_text(node))}</p>
+        {mini_score_tabs_html(node.get('score_options') or [])}
+      </article>
+    """
+
+
+def group_structure_html(structure: dict[str, Any]) -> str:
+    group_sections = []
+    for group in structure.get("groups") or []:
+        day_sections = []
+        for day in group.get("match_days") or []:
+            nodes = "".join(structure_match_node_html(node) for node in day.get("matches") or [])
+            if not nodes:
+                nodes = '<div class="structure-empty">该比赛日暂无双源校验赛程。</div>'
+            day_sections.append(
+                f"""
+          <section class="structure-day">
+            <h4>{html_escape(day.get('title', '比赛日'))}</h4>
+            <p class="muted compact">{html_escape(day.get('range', ''))}</p>
+            <div class="structure-node-grid">{nodes}</div>
+          </section>
+                """
+            )
+        group_sections.append(
+            f"""
+        <details class="structure-group" open>
+          <summary>{html_escape(group.get('name', '未分组'))}</summary>
+          {''.join(day_sections)}
+        </details>
+            """
+        )
+    if not group_sections:
+        group_sections.append('<div class="structure-empty">暂无可用于小组结构图的双源校验赛程。</div>')
+    return "".join(group_sections)
+
+
+def bracket_structure_html(structure: dict[str, Any]) -> str:
+    labels = {
+        "round_of_32": "32强",
+        "round_of_16": "16强",
+        "quarter_finals": "8强",
+        "semi_finals": "4强",
+        "final": "决赛",
+    }
+    bracket = structure.get("bracket") or {}
+    rounds = []
+    for key, label in labels.items():
+        nodes = "".join(structure_match_node_html(node) for node in bracket.get(key, []) if isinstance(node, dict))
+        if not nodes:
+            nodes = '<div class="structure-empty">待定</div>'
+        rounds.append(
+            f"""
+        <section class="bracket-round">
+          <h3>{label}</h3>
+          <div class="bracket-node-list">{nodes}</div>
+        </section>
+            """
+        )
+    return f'<div class="bracket-grid">{"".join(rounds)}</div>'
+
+
+def tournament_structure_html(payload: dict[str, Any]) -> str:
+    structure = payload.get("tournament_structure")
+    if not isinstance(structure, dict):
+        structure = build_tournament_structure(
+            payload.get("matches") or [],
+            payload.get("display_window") or {},
+            (payload.get("research") or {}).get("structure_matches") or payload.get("structure_matches"),
+            (payload.get("research") or {}).get("structure_window") or payload.get("structure_window"),
+        )
+    stage = structure.get("stage")
+    title = "淘汰赛对阵树" if stage == "knockout" else "小组对战结构图"
+    body = bracket_structure_html(structure) if stage == "knockout" else group_structure_html(structure)
+    highlight_count = len(structure.get("highlight_match_ids") or [])
+    context_count = 0
+    if stage == "knockout":
+        context_count = sum(len(items or []) for items in (structure.get("bracket") or {}).values())
+    else:
+        for group in structure.get("groups") or []:
+            for day in group.get("match_days") or []:
+                context_count += len(day.get("matches") or [])
+    return f"""
+    <section class="tournament-panel night-card">
+      <div class="structure-title-row">
+        <div>
+          <h2>{title}</h2>
+          <p class="muted compact">结构图基于 FIFA 官方赛程与 ESPN 第二来源校验；当前两个中国比赛日内 {highlight_count} 场已高亮。</p>
+        </div>
+        <div class="structure-count">结构赛程 {context_count} 场</div>
+      </div>
+      {body}
+    </section>
+    """
+
 METHOD_FACTOR_LABELS = (
     ("market_signal", "市场信号"),
     ("fifa_rank_prior", "FIFA 实力先验"),
@@ -1315,39 +1717,48 @@ METHOD_FACTOR_LABELS = (
 
 
 def score_options_html(match: dict[str, Any]) -> str:
-    raw_options = match.get("score_options") or []
-    options = [item for item in raw_options if isinstance(item, dict)]
-    options.sort(key=lambda item: int(item.get("rank", 99)) if str(item.get("rank", "")).isdigit() else 99)
-    items = []
-    for option in options[:3]:
+    options = ordered_score_options(match)
+    match_id = safe_dom_id(match_id_of(match) or match.get("match_name") or stable_id(match))
+    if not options:
+        options = [{"score": "unknown", "rank": 1, "reason": "unknown"}]
+    buttons = []
+    panels = []
+    for index, option in enumerate(options[:3]):
         rank = option.get("rank")
         try:
             rank_number = int(rank)
         except (TypeError, ValueError):
-            rank_number = len(items) + 1
-        label = "主推荐" if rank_number == 1 else f"Top {rank_number}"
-        primary = " primary" if rank_number == 1 else ""
-        items.append(
-            "<article class=\"score-option{primary}\">"
-            "<span class=\"score-rank\">{label}</span>"
-            "<strong>{score}</strong>"
-            "<p>{reason}</p>"
-            "</article>".format(
-                primary=primary,
+            rank_number = index + 1
+        label = score_option_label(rank_number)
+        active = " active" if index == 0 else ""
+        tab_id = f"score-{match_id}-{rank_number}"
+        buttons.append(
+            '<button class="score-tab{active}" type="button" role="tab" aria-selected="{selected}" data-score-tab="{tab_id}">'
+            '<span>{label}</span><strong>{score}</strong></button>'.format(
+                active=active,
+                selected="true" if index == 0 else "false",
+                tab_id=html_escape(tab_id),
+                label=html_escape(label),
+                score=html_escape(option.get("score", "unknown")),
+            )
+        )
+        panels.append(
+            '<article class="score-tab-panel{active}" role="tabpanel" data-score-panel="{tab_id}">'
+            '<h5>{label} · {score}</h5><p>{reason}</p></article>'.format(
+                active=active,
+                tab_id=html_escape(tab_id),
                 label=html_escape(label),
                 score=html_escape(option.get("score", "unknown")),
                 reason=html_escape(option.get("reason", "unknown")),
             )
         )
-    if not items:
-        items.append('<article class="score-option"><span class="score-rank">Top 3</span><strong>unknown</strong><p>unknown</p></article>')
     return f"""
-        <section class="score-options">
-          <h4>比分结果 Top 3</h4>
-          <div class="score-option-grid">{''.join(items)}</div>
+        <section class="score-options" data-score-tabs>
+          <h4>前3预测比分</h4>
+          <div class="score-tab-labels" role="tablist">{''.join(buttons)}</div>
+          <div class="score-tab-panels">{''.join(panels)}</div>
         </section>
     """
-
 
 def method_factors_html(match: dict[str, Any]) -> str:
     factors = match.get("method_factors") or {}
@@ -1530,6 +1941,7 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     summary = analysis.get("summary") or "V3 Agent 使用 FIFA 官方赛程作为主源，ESPN 完成第二来源校验和赔率读取，伤停信息按官方/媒体/unknown 规则展示。"
     risk_overview = analysis.get("risk_overview") or "整体风险以赛程真实性、伤停可信度、赔率可用性和模型置信度共同评估。"
     range_text = display_range_text(payload, matches)
+    structure_section = tournament_structure_html(payload)
     group_sections = []
     for info, items in groups:
         cards = "\n".join(match_card(match) for match in items)
@@ -1686,7 +2098,36 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
       margin-bottom: 28px;
     }}
     .legend span {{ position: relative; z-index: 1; color: var(--muted); font-weight: 700; }}
-    .dot {{
+    .tournament-panel {{ padding: 22px; margin-bottom: 26px; border-color: rgba(83, 171, 255, .26); }}
+    .structure-title-row {{ position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px; align-items: end; margin-bottom: 18px; }}
+    .structure-title-row h2 {{ margin: 0 0 8px; font-size: 24px; color: #66d9ff; }}
+    .structure-count {{ border: 1px solid rgba(83, 171, 255, .34); border-radius: 999px; padding: 8px 14px; color: #9bdcff; background: rgba(83, 171, 255, .1); font-weight: 850; white-space: nowrap; }}
+    .structure-group {{ position: relative; z-index: 1; border: 1px solid rgba(104, 136, 174, .24); border-radius: 16px; background: rgba(12, 20, 31, .38); padding: 12px; margin-top: 12px; }}
+    .structure-group summary {{ cursor: pointer; color: #ffd64a; font-size: 18px; font-weight: 850; list-style-position: inside; }}
+    .structure-day {{ margin-top: 14px; border-top: 1px solid rgba(104, 136, 174, .18); padding-top: 12px; }}
+    .structure-day h4 {{ margin: 0 0 6px; color: var(--text); font-size: 15px; }}
+    .structure-node-grid {{ display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 10px; }}
+    .structure-match-node {{ border: 1px solid rgba(104, 136, 174, .24); border-radius: 15px; background: rgba(10, 18, 30, .58); padding: 12px; min-width: 0; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease; }}
+    .structure-match-node:hover {{ transform: translateY(-2px); border-color: var(--line-hot); box-shadow: 0 0 20px rgba(83, 171, 255, .13); }}
+    .structure-match-node.current-window {{ border-color: rgba(83, 217, 255, .72); box-shadow: 0 0 24px rgba(83, 217, 255, .16), inset 0 0 0 1px rgba(83, 217, 255, .1); background: linear-gradient(145deg, rgba(20, 42, 60, .8), rgba(10, 18, 30, .68)); }}
+    .structure-node-head {{ display: flex; justify-content: space-between; align-items: center; gap: 8px; color: var(--muted); font-size: 12px; font-weight: 850; margin-bottom: 8px; }}
+    .window-badge, .outside-badge {{ border-radius: 999px; padding: 4px 8px; white-space: nowrap; }}
+    .window-badge {{ color: #8df3ff; background: rgba(83, 217, 255, .14); border: 1px solid rgba(83, 217, 255, .34); }}
+    .outside-badge {{ color: var(--muted); background: rgba(104, 136, 174, .1); border: 1px solid rgba(104, 136, 174, .18); }}
+    .structure-match-node > strong {{ display: block; color: var(--text); font-size: 15px; line-height: 1.35; overflow-wrap: anywhere; }}
+    .structure-match-node p {{ margin: 7px 0 0; color: var(--muted); font-size: 12px; line-height: 1.5; overflow-wrap: anywhere; }}
+    .structure-wdl {{ color: #d8deea !important; }}
+    .mini-score-wrap {{ margin-top: 10px; }}
+    .mini-score-wrap > span {{ display: block; margin-bottom: 7px; color: #ffd64a; font-size: 12px; font-weight: 900; }}
+    .mini-score-wrap em {{ color: var(--muted); font-style: normal; font-size: 12px; }}
+    .mini-score-tabs {{ display: flex; flex-wrap: wrap; gap: 6px; }}
+    .mini-score-tab {{ border: 1px solid rgba(83, 171, 255, .34); border-radius: 999px; padding: 6px 9px; color: #bed8f6; background: rgba(12, 20, 31, .72); font-size: 12px; font-weight: 850; }}
+    .mini-score-tab.active {{ border-color: rgba(246, 189, 39, .65); color: #ffe184; background: rgba(246, 189, 39, .16); box-shadow: 0 0 14px rgba(246, 189, 39, .14); }}
+    .bracket-grid {{ position: relative; z-index: 1; display: grid; grid-template-columns: repeat(5, minmax(170px, 1fr)); gap: 12px; overflow-x: auto; padding-bottom: 4px; }}
+    .bracket-round {{ min-width: 170px; border-left: 1px solid rgba(83, 171, 255, .24); padding-left: 10px; }}
+    .bracket-round h3 {{ margin: 0 0 10px; color: #ffd64a; font-size: 16px; }}
+    .bracket-node-list {{ display: grid; gap: 10px; }}
+    .structure-empty {{ border: 1px dashed rgba(104, 136, 174, .26); border-radius: 14px; background: rgba(12, 20, 31, .35); padding: 12px; color: var(--muted); font-size: 13px; }}    .dot {{
       display: inline-block;
       width: 11px;
       height: 11px;
@@ -1802,7 +2243,16 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     .score-rank {{ display: block; color: var(--muted); font-size: 12px; font-weight: 800; margin-bottom: 8px; }}
     .score-option strong {{ display: block; color: #ffd11e; font-size: 30px; line-height: 1; margin-bottom: 10px; }}
     .score-option p {{ margin: 0; color: #d8deea; font-size: 13px; line-height: 1.55; overflow-wrap: anywhere; }}
-    .factor-panel {{ color: var(--muted); }}
+    .score-tab-labels {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }}
+    .score-tab {{ border: 1px solid rgba(104, 136, 174, .34); border-radius: 14px; background: rgba(12, 20, 31, .62); color: var(--muted); padding: 11px; text-align: left; cursor: pointer; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, background .18s ease; min-width: 0; }}
+    .score-tab:hover, .score-tab:focus-visible {{ transform: translateY(-2px); border-color: var(--line-hot); outline: none; box-shadow: 0 0 18px rgba(83, 171, 255, .16); }}
+    .score-tab span {{ display: block; font-size: 12px; font-weight: 900; margin-bottom: 6px; }}
+    .score-tab strong {{ display: block; color: #ffd11e; font-size: 24px; line-height: 1; }}
+    .score-tab.active {{ border-color: rgba(246, 189, 39, .62); background: linear-gradient(160deg, rgba(246, 189, 39, .2), rgba(12, 20, 31, .7)); box-shadow: 0 0 20px rgba(246, 189, 39, .14); color: #ffe184; }}
+    .score-tab-panel {{ display: none; margin-top: 10px; border: 1px solid rgba(104, 136, 174, .24); border-radius: 14px; background: rgba(12, 20, 31, .5); padding: 12px; }}
+    .score-tab-panel.active {{ display: block; }}
+    .score-tab-panel h5 {{ margin: 0 0 7px; color: var(--text); font-size: 14px; }}
+    .score-tab-panel p {{ margin: 0; color: #d8deea; font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }}    .factor-panel {{ color: var(--muted); }}
     .factor-panel summary {{
       cursor: pointer;
       color: #ffd64a;
@@ -1901,7 +2351,7 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     @media (max-width: 760px) {{
       .page {{ width: min(100% - 24px, 640px); padding-top: 18px; }}
       .hero, .overview, .usage-panel, .match-card {{ border-radius: 20px; padding: 20px; }}
-      .hero-meta, .usage-grid, .metric-grid, .score-option-grid, .factor-grid, .graph-summary-grid, .graph-node-grid {{ grid-template-columns: 1fr 1fr; }}
+      .hero-meta, .usage-grid, .metric-grid, .score-tab-labels, .factor-grid, .graph-summary-grid, .graph-node-grid, .structure-title-row, .structure-node-grid {{ grid-template-columns: 1fr 1fr; }}
       .section-head, .match-topline {{ display: block; }}
       .day-count {{ display: inline-flex; margin-top: 12px; }}
       .match-topline time {{ display: inline-flex; margin-top: 12px; white-space: normal; }}
@@ -1911,7 +2361,7 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
       .match-footer {{ display: grid; grid-template-columns: 1fr; }}
     }}
     @media (max-width: 460px) {{
-      .hero-meta, .usage-grid, .metric-grid, .score-option-grid, .factor-grid, .graph-summary-grid, .graph-node-grid {{ grid-template-columns: 1fr; }}
+      .hero-meta, .usage-grid, .metric-grid, .score-tab-labels, .factor-grid, .graph-summary-grid, .graph-node-grid, .structure-title-row, .structure-node-grid {{ grid-template-columns: 1fr; }}
       .prob-labels {{ grid-template-columns: 1fr; gap: 6px; }}
       .prob-labels span, .prob-labels span:nth-child(2), .prob-labels span:nth-child(3) {{ text-align: left; }}
     }}
@@ -1957,69 +2407,35 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
       <span>置信度：高 / 中 / 低</span>
       <span><a href="latest.json">查看 data/latest.json</a></span>
     </section>
+    {structure_section}
     {''.join(group_sections)}
     <footer class="page-footer">
       V3 Agent：FIFA 官方赛程为主源，ESPN 用于第二来源校验和赔率；伤停无可靠来源时显示 unknown，赔率无真实源时显示 unavailable。所有可见比赛时间均为北京时间，比赛日按 18:00 至次日 18:00 划分。
     </footer>
   </main>
-</body>
+  <script>
+    document.querySelectorAll('[data-score-tabs]').forEach((set) => {{
+      const tabs = Array.from(set.querySelectorAll('[data-score-tab]'));
+      const panels = Array.from(set.querySelectorAll('[data-score-panel]'));
+      tabs.forEach((tab) => {{
+        tab.addEventListener('click', () => {{
+          const target = tab.getAttribute('data-score-tab');
+          tabs.forEach((item) => {{
+            const active = item === tab;
+            item.classList.toggle('active', active);
+            item.setAttribute('aria-selected', active ? 'true' : 'false');
+          }});
+          panels.forEach((panel) => panel.classList.toggle('active', panel.getAttribute('data-score-panel') === target));
+        }});
+      }});
+    }});
+  </script></body>
 </html>
 """
 
 
 def append_agent_panels(page: str, payload: dict[str, Any]) -> str:
-    if 'id="deepseek-agent-runtime"' in page:
-        return page
-    usage = payload["usage"]
-    sources = payload.get("data_sources") or {}
-    rows = []
-    for match in payload.get("matches", []):
-        injuries = match.get("injuries") or {}
-        odds = match.get("odds") or {}
-        home_injury = (injuries.get("home") or {}).get("status", "unknown")
-        away_injury = (injuries.get("away") or {}).get("status", "unknown")
-        odds_text = "\u4e0d\u53ef\u7528"
-        if odds.get("available"):
-            odds_text = render_probability_line(odds.get("normalized_probability"))
-        rows.append(
-            "<tr>"
-            f"<td>{html.escape(str(match.get('match_name') or ''))}</td>"
-            f"<td>{html.escape(str(home_injury))}</td>"
-            f"<td>{html.escape(str(away_injury))}</td>"
-            f"<td>{html.escape(odds_text)}</td>"
-            "</tr>"
-        )
-    table = "\n".join(rows) if rows else "<tr><td colspan=\"4\">\u4eca\u65e5\u65e0\u53cc\u6e90\u9a8c\u8bc1\u7684\u4e16\u754c\u676f\u6bd4\u8d5b</td></tr>"
-    panel = f"""
-<section id="deepseek-agent-runtime" style="max-width:1120px;margin:24px auto;padding:16px;border:1px solid #d8e0dc;border-radius:8px;background:#fff;font-family:Inter,'Microsoft YaHei','PingFang SC',system-ui,sans-serif;color:#17201d;">
-  <h2 style="margin:0 0 12px;font-size:20px;">\u8fd0\u884c\u7528\u91cf</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
-    <div><strong>\u5206\u6790\u6a21\u578b</strong><br>{ANALYSIS_MODEL}</div>
-    <div><strong>\u751f\u6210\u6a21\u578b</strong><br>{RENDER_MODEL}</div>
-    <div><strong>Input tokens</strong><br>{usage["input_tokens"]}</div>
-    <div><strong>Output tokens</strong><br>{usage["output_tokens"]}</div>
-    <div><strong>Total tokens</strong><br>{usage["total_tokens"]}</div>
-    <div><strong>Cost</strong><br>{usage["cost_estimate"]:.6f}</div>
-  </div>
-  <h2 style="margin:20px 0 12px;font-size:20px;">\u6570\u636e\u6e90\u4e0eAgent\u6821\u9a8c</h2>
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;">
-    <div><strong>FIFA</strong><br>{str(bool(sources.get("fifa"))).lower()}</div>
-    <div><strong>\u4f24\u505c\u4fe1\u606f</strong><br>{str(bool(sources.get("injury"))).lower()}</div>
-    <div><strong>\u8d54\u7387\u5bf9\u6bd4</strong><br>{str(bool(sources.get("odds"))).lower()}</div>
-  </div>
-  <h2 style="margin:20px 0 12px;font-size:20px;">\u4f24\u505c\u4fe1\u606f / \u8d54\u7387\u5bf9\u6bd4</h2>
-  <div style="overflow:auto;">
-    <table style="width:100%;border-collapse:collapse;font-size:14px;">
-      <thead><tr><th style="text-align:left;border-bottom:1px solid #d8e0dc;padding:8px;">\u6bd4\u8d5b</th><th style="text-align:left;border-bottom:1px solid #d8e0dc;padding:8px;">\u4e3b\u961f\u4f24\u505c</th><th style="text-align:left;border-bottom:1px solid #d8e0dc;padding:8px;">\u5ba2\u961f\u4f24\u505c</th><th style="text-align:left;border-bottom:1px solid #d8e0dc;padding:8px;">\u9690\u542b\u6982\u7387</th></tr></thead>
-      <tbody>{table}</tbody>
-    </table>
-  </div>
-</section>
-"""
-    if "</body>" in page:
-        return page.replace("</body>", panel + "\n</body>", 1)
-    return page + panel
-
+    return page
 
 def run_render(analysis_path: Path = ANALYSIS_PATH, output: Path = RENDER_PATH, docs_dir: Path = DOCS_DIR) -> dict[str, Any]:
     analysis_payload = read_json(analysis_path)
@@ -2032,12 +2448,20 @@ def run_render(analysis_path: Path = ANALYSIS_PATH, output: Path = RENDER_PATH, 
     analysis_usage = analysis_payload.get("usage") or zero_usage()
     total_usage = combine_usage(analysis_usage, render_usage)
     matches = enrich_matches_for_display(analysis_payload.get("matches", []))
+    tournament_structure = analysis_payload.get("tournament_structure") or build_tournament_structure(
+        matches,
+        analysis_payload.get("display_window") or (analysis_payload.get("research") or {}).get("display_window", {}),
+        (analysis_payload.get("research") or {}).get("structure_matches", []),
+        analysis_payload.get("structure_window") or (analysis_payload.get("research") or {}).get("structure_window", {}),
+    )
     payload = {
         "schema_version": 3,
         "stage": "render",
         "generated_at": iso_utc(utc_now()),
         "analysis": analysis_payload.get("analysis", {}),
         "matches": matches,
+        "tournament_structure": tournament_structure,
+        "structure_window": analysis_payload.get("structure_window") or (analysis_payload.get("research") or {}).get("structure_window", {}),
         "render": "",
         "render_draft_sha": stable_id(flash_draft),
         "usage": total_usage,
@@ -2061,11 +2485,17 @@ def run_render(analysis_path: Path = ANALYSIS_PATH, output: Path = RENDER_PATH, 
     (docs_dir / ".nojekyll").write_text("\n", encoding="utf-8")
     return payload
 
-
 def run_finalize(render_path: Path = RENDER_PATH, latest_path: Path = LATEST_PATH, docs_dir: Path = DOCS_DIR) -> dict[str, Any]:
     render_payload = read_json(render_path)
     matches = enrich_matches_for_display(render_payload.get("matches", []))
     render_payload["matches"] = matches
+    tournament_structure = render_payload.get("tournament_structure") or build_tournament_structure(
+        matches,
+        render_payload.get("display_window", {}),
+        render_payload.get("structure_matches", []),
+        render_payload.get("structure_window", {}),
+    )
+    render_payload["tournament_structure"] = tournament_structure
     if render_payload.get("render"):
         render_payload["render"] = build_legacy_agent_html(render_payload)
     payload = {
@@ -2073,6 +2503,7 @@ def run_finalize(render_path: Path = RENDER_PATH, latest_path: Path = LATEST_PAT
         "stage": "latest",
         "generated_at": iso_utc(utc_now()),
         "matches": matches,
+        "tournament_structure": tournament_structure,
         "analysis_model": ANALYSIS_MODEL,
         "render_model": RENDER_MODEL,
         "usage": render_payload.get("usage") or zero_usage(),
@@ -2086,6 +2517,7 @@ def run_finalize(render_path: Path = RENDER_PATH, latest_path: Path = LATEST_PAT
         "usage_breakdown": render_payload.get("usage_breakdown", {}),
         "model": {"analysis_model": ANALYSIS_MODEL, "render_model": RENDER_MODEL},
         "display_window": render_payload.get("display_window", {}),
+        "structure_window": render_payload.get("structure_window", {}),
         "china_match_days": render_payload.get("china_match_days", []),
         "source": render_payload.get("source", {}),
         "daily_log": [
@@ -2099,7 +2531,6 @@ def run_finalize(render_path: Path = RENDER_PATH, latest_path: Path = LATEST_PAT
     shutil.copyfile(latest_path, docs_dir / "latest.json")
     (docs_dir / ".nojekyll").write_text("\n", encoding="utf-8")
     return payload
-
 
 def run_full() -> dict[str, Any]:
     run_research()
