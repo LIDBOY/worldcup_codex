@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "stage": "research",
-  "generated_at": "2026-06-29T01:22:37Z",
+  "generated_at": "2026-06-29T05:34:24Z",
   "window": {
     "start_date": "2026-06-28",
     "days": 3,
@@ -265,22 +265,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-135",
+          "home": "-140",
           "draw": "+275",
-          "away": "+400"
+          "away": "+425"
         },
         "implied_probability": {
-          "home_win": 57.45,
+          "home_win": 58.33,
           "draw": 26.67,
-          "away_win": 20.0
+          "away_win": 19.05
         },
         "normalized_probability": {
-          "home_win": 55.18,
-          "draw": 25.61,
-          "away_win": 19.21
+          "home_win": 56.06,
+          "draw": 25.63,
+          "away_win": 18.31
         },
-        "overround": 4.11,
-        "details": "BRA -135"
+        "overround": 4.05,
+        "details": "BRA -140"
       },
       "injuries": {
         "home": {
@@ -369,22 +369,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-300",
+          "home": "-285",
           "draw": "+425",
           "away": "+850"
         },
         "implied_probability": {
-          "home_win": 75.0,
+          "home_win": 74.03,
           "draw": 19.05,
           "away_win": 10.53
         },
         "normalized_probability": {
-          "home_win": 71.72,
-          "draw": 18.21,
-          "away_win": 10.07
+          "home_win": 71.45,
+          "draw": 18.39,
+          "away_win": 10.16
         },
-        "overround": 4.57,
-        "details": "GER -300"
+        "overround": 3.6,
+        "details": "GER -285"
       },
       "injuries": {
         "home": {
@@ -392,6 +392,13 @@
           "team_en": "Germany",
           "status": "probable injury",
           "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
+              "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
+              "published": "2026-06-29T02:43:49Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
+            },
             {
               "source": "ESPN World Cup news",
               "title": "Metcalfe: 'A lot of inner anger from the season'",
@@ -698,22 +705,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-135",
+          "home": "-140",
           "draw": "+275",
-          "away": "+400"
+          "away": "+425"
         },
         "implied_probability": {
-          "home_win": 57.45,
+          "home_win": 58.33,
           "draw": 26.67,
-          "away_win": 20.0
+          "away_win": 19.05
         },
         "normalized_probability": {
-          "home_win": 55.18,
-          "draw": 25.61,
-          "away_win": 19.21
+          "home_win": 56.06,
+          "draw": 25.63,
+          "away_win": 18.31
         },
-        "overround": 4.11,
-        "details": "BRA -135"
+        "overround": 4.05,
+        "details": "BRA -140"
       },
       "injuries": {
         "home": {
@@ -802,22 +809,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-300",
+          "home": "-285",
           "draw": "+425",
           "away": "+850"
         },
         "implied_probability": {
-          "home_win": 75.0,
+          "home_win": 74.03,
           "draw": 19.05,
           "away_win": 10.53
         },
         "normalized_probability": {
-          "home_win": 71.72,
-          "draw": 18.21,
-          "away_win": 10.07
+          "home_win": 71.45,
+          "draw": 18.39,
+          "away_win": 10.16
         },
-        "overround": 4.57,
-        "details": "GER -300"
+        "overround": 3.6,
+        "details": "GER -285"
       },
       "injuries": {
         "home": {
@@ -825,6 +832,13 @@
           "team_en": "Germany",
           "status": "probable injury",
           "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
+              "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
+              "published": "2026-06-29T02:43:49Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
+            },
             {
               "source": "ESPN World Cup news",
               "title": "Metcalfe: 'A lot of inner anger from the season'",
@@ -959,7 +973,7 @@
   ],
   "daily_log": [
     {
-      "time": "2026-06-29T01:22:37Z",
+      "time": "2026-06-29T05:34:24Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research",
       "status": "completed"
     }
