@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "stage": "research",
-  "generated_at": "2026-06-29T14:42:10Z",
+  "generated_at": "2026-06-29T14:51:24Z",
   "window": {
     "start_date": "2026-06-29",
     "days": 3,
@@ -781,22 +781,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+120",
+          "home": "+125",
           "draw": "+195",
-          "away": "+300"
+          "away": "+290"
         },
         "implied_probability": {
-          "home_win": 45.45,
+          "home_win": 44.44,
           "draw": 33.9,
-          "away_win": 25.0
+          "away_win": 25.64
         },
         "normalized_probability": {
-          "home_win": 43.56,
-          "draw": 32.48,
-          "away_win": 23.96
+          "home_win": 42.74,
+          "draw": 32.6,
+          "away_win": 24.66
         },
-        "overround": 4.35,
-        "details": "MEX +120"
+        "overround": 3.98,
+        "details": "MEX +125"
       },
       "injuries": {
         "home": {
@@ -1423,22 +1423,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+120",
+          "home": "+125",
           "draw": "+195",
-          "away": "+300"
+          "away": "+290"
         },
         "implied_probability": {
-          "home_win": 45.45,
+          "home_win": 44.44,
           "draw": 33.9,
-          "away_win": 25.0
+          "away_win": 25.64
         },
         "normalized_probability": {
-          "home_win": 43.56,
-          "draw": 32.48,
-          "away_win": 23.96
+          "home_win": 42.74,
+          "draw": 32.6,
+          "away_win": 24.66
         },
-        "overround": 4.35,
-        "details": "MEX +120"
+        "overround": 3.98,
+        "details": "MEX +125"
       },
       "injuries": {
         "home": {
@@ -2065,22 +2065,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+120",
+          "home": "+125",
           "draw": "+195",
-          "away": "+300"
+          "away": "+290"
         },
         "implied_probability": {
-          "home_win": 45.45,
+          "home_win": 44.44,
           "draw": 33.9,
-          "away_win": 25.0
+          "away_win": 25.64
         },
         "normalized_probability": {
-          "home_win": 43.56,
-          "draw": 32.48,
-          "away_win": 23.96
+          "home_win": 42.74,
+          "draw": 32.6,
+          "away_win": 24.66
         },
-        "overround": 4.35,
-        "details": "MEX +120"
+        "overround": 3.98,
+        "details": "MEX +125"
       },
       "injuries": {
         "home": {
@@ -2894,7 +2894,7 @@
   ],
   "daily_log": [
     {
-      "time": "2026-06-29T14:42:10Z",
+      "time": "2026-06-29T14:51:24Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     }
