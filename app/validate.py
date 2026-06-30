@@ -25,6 +25,13 @@ MATCHUP_ADVANTAGES = {"home", "away", "balanced"}
 STRUCTURE_STAGES = {"group", "knockout"}
 BRACKET_KEYS = ("round_of_32", "round_of_16", "quarter_finals", "semi_finals", "final")
 BRACKET_LABELS = ("32强", "16强", "8强", "4强", "决赛")
+BRACKET_ROUND_SIZES = {
+    "round_of_32": 16,
+    "round_of_16": 8,
+    "quarter_finals": 4,
+    "semi_finals": 2,
+    "final": 1,
+}
 FORBIDDEN_PROBABILITY_TEXT = (
     "结构图概率",
     "对位概率",
@@ -35,8 +42,11 @@ FORBIDDEN_PROBABILITY_TEXT = (
     "score probabilities",
     "score_probability",
     "structure graph probability",
+    "伪造赔率",
+    "伪造伤停",
+    "伪造天气",
+    "伪造排名",
 )
-
 
 def validate_usage(usage: dict[str, Any], prefix: str, errors: list[str]) -> None:
     for key in ("input_tokens", "output_tokens", "total_tokens"):
@@ -170,6 +180,37 @@ def match_identity(match: dict[str, Any]) -> str:
     return str(match.get("match_id") or match.get("id") or match.get("fifa_match_id") or "")
 
 
+def placeholder_team(team: Any) -> bool:
+    if not isinstance(team, dict):
+        return True
+    if team.get("placeholder"):
+        return True
+    value = str(team.get("name") or team.get("name_en") or "").strip()
+    lowered = value.lower()
+    return not value or value in {"待定", "unknown", "tbd", "to be determined"} or value.startswith("胜者 M") or "组第" in value or lowered.startswith("group ")
+
+
+def validate_team_flag_fields(team: Any, prefix: str, errors: list[str]) -> None:
+    if not isinstance(team, dict):
+        errors.append(f"{prefix} must be an object")
+        return
+    is_placeholder = placeholder_team(team)
+    flag_fields = (team.get("country_code"), team.get("flag_url"), team.get("flag_emoji"))
+    if is_placeholder:
+        if any(bool(value) for value in flag_fields):
+            errors.append(f"{prefix} placeholder team must not carry country_code, flag_url, or flag_emoji")
+        return
+    if not any(bool(value) for value in flag_fields):
+        errors.append(f"{prefix} real team should include country_code, flag_url, or flag_emoji")
+
+
+def validate_teams_flag_fields(teams: Any, prefix: str, errors: list[str]) -> None:
+    if not isinstance(teams, dict):
+        errors.append(f"{prefix} must be an object")
+        return
+    for side in ("home", "away"):
+        validate_team_flag_fields(teams.get(side), f"{prefix}.{side}", errors)
+
 def validate_structure_score_options(options: Any, prefix: str, errors: list[str]) -> None:
     if not isinstance(options, list) or len(options) != 3:
         errors.append(f"{prefix} must contain exactly 3 score tab options")
@@ -208,6 +249,14 @@ def validate_structure_node(
         errors.append(f"{prefix}.match_id is required")
     if not isinstance(node.get("teams"), dict):
         errors.append(f"{prefix}.teams is required")
+    else:
+        validate_teams_flag_fields(node.get("teams"), f"{prefix}.teams", errors)
+    if node.get("match_number") in (None, ""):
+        errors.append(f"{prefix}.match_number is required")
+    if "round_key" not in node:
+        errors.append(f"{prefix}.round_key is required")
+    if not isinstance(node.get("placeholder"), bool):
+        errors.append(f"{prefix}.placeholder must be a boolean")
     if not isinstance(node.get("kickoff_display"), str) or "北京时间" not in node.get("kickoff_display", ""):
         errors.append(f"{prefix}.kickoff_display must use Beijing time")
     current = bool(node.get("current_window"))
@@ -217,6 +266,8 @@ def validate_structure_node(
         if not isinstance(node.get("win_draw_loss"), dict):
             errors.append(f"{prefix}.win_draw_loss is required for displayed match {match_id}")
         validate_structure_score_options(node.get("score_options"), f"{prefix}.score_options", errors)
+    elif node.get("score_options") not in (None, []):
+        errors.append(f"{prefix}.score_options must be empty outside the current display window")
     return match_id, current
 
 
@@ -261,6 +312,12 @@ def collect_structure_nodes(structure: dict[str, Any], errors: list[str]) -> lis
             if not isinstance(round_nodes, list):
                 errors.append(f"tournament_structure.bracket.{key} must be a list")
                 continue
+            expected = BRACKET_ROUND_SIZES[key]
+            if len(round_nodes) != expected:
+                errors.append(f"tournament_structure.bracket.{key} must contain exactly {expected} nodes")
+            for node_index, node in enumerate(round_nodes):
+                if isinstance(node, dict) and node.get("round_key") != key:
+                    errors.append(f"tournament_structure.bracket.{key}[{node_index}].round_key must be {key}")
             nodes.extend(node for node in round_nodes if isinstance(node, dict))
     return nodes
 
@@ -316,7 +373,7 @@ def validate_tournament_structure(data: dict[str, Any], matches: Any, render: An
             for label in BRACKET_LABELS:
                 if label not in render:
                     errors.append(f"render must include knockout round label {label}")
-            for fragment in ("bracket-board", "bracket-node-card", "bracket-match-number", "current-window-key"):
+            for fragment in ("bracket-board", "bracket-node-card", "bracket-match-number", "current-window-key", "team-flag"):
                 if fragment not in render:
                     errors.append(f"render must include knockout bracket UI fragment {fragment}")
         for fragment in ("当前窗口", "前3预测比分", "主推荐", "Top 2", "Top 3"):
@@ -324,6 +381,7 @@ def validate_tournament_structure(data: dict[str, Any], matches: Any, render: An
                 errors.append(f"render must include tournament structure score tab fragment {fragment}")
 
 def validate_match(match: dict[str, Any], index: int, errors: list[str]) -> None:
+    validate_teams_flag_fields(match.get("teams"), f"matches[{index}].teams", errors)
     validate_probabilities(match, index, errors)
     validate_score_options(match, index, errors)
     validate_method_factors(match, index, errors)

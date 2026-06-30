@@ -36,10 +36,83 @@ FIFA_SEARCH_KEY = os.getenv(
 
 DEFAULT_LEAGUE = os.getenv("WORLDCUP_ESPN_LEAGUE", "fifa.world")
 DEFAULT_DAYS = int(os.getenv("WORLDCUP_WINDOW_DAYS", "2"))
-STRUCTURE_MATCH_DAYS = int(os.getenv("WORLDCUP_STRUCTURE_MATCH_DAYS", "7"))
+STRUCTURE_MATCH_DAYS = int(os.getenv("WORLDCUP_STRUCTURE_MATCH_DAYS", "21"))
 REQUEST_TIMEOUT = int(os.getenv("WORLDCUP_REQUEST_TIMEOUT", "25"))
 DEEPSEEK_REQUEST_TIMEOUT = int(os.getenv("DEEPSEEK_REQUEST_TIMEOUT", "180"))
 INJURY_LOOKBACK_DAYS = int(os.getenv("WORLDCUP_INJURY_LOOKBACK_DAYS", "180"))
+BRACKET_ROUND_ORDER = ("round_of_32", "round_of_16", "quarter_finals", "semi_finals", "final")
+BRACKET_ROUND_SIZES = {
+    "round_of_32": 16,
+    "round_of_16": 8,
+    "quarter_finals": 4,
+    "semi_finals": 2,
+    "final": 1,
+}
+BRACKET_MATCH_NUMBERS = {
+    "round_of_32": tuple(range(73, 89)),
+    "round_of_16": tuple(range(89, 97)),
+    "quarter_finals": tuple(range(97, 101)),
+    "semi_finals": (101, 102),
+    "final": (104,),
+}
+BRACKET_WINNER_FEEDS = {
+    89: (73, 74),
+    90: (75, 76),
+    91: (77, 78),
+    92: (79, 80),
+    93: (81, 82),
+    94: (83, 84),
+    95: (85, 86),
+    96: (87, 88),
+    97: (89, 90),
+    98: (91, 92),
+    99: (93, 94),
+    100: (95, 96),
+    101: (97, 98),
+    102: (99, 100),
+    104: (101, 102),
+}
+THIRD_PLACE_MATCH_NUMBERS = {103}
+
+COUNTRY_CODE_ALPHA2 = {
+    "ALG": "DZ",
+    "ARG": "AR",
+    "AUS": "AU",
+    "AUT": "AT",
+    "BEL": "BE",
+    "BIH": "BA",
+    "BRA": "BR",
+    "CAN": "CA",
+    "CIV": "CI",
+    "CPV": "CV",
+    "COL": "CO",
+    "COD": "CD",
+    "CRO": "HR",
+    "CZE": "CZ",
+    "DEN": "DK",
+    "ECU": "EC",
+    "EGY": "EG",
+    "FRA": "FR",
+    "GER": "DE",
+    "GHA": "GH",
+    "IRN": "IR",
+    "ITA": "IT",
+    "JPN": "JP",
+    "KOR": "KR",
+    "MAR": "MA",
+    "MEX": "MX",
+    "NED": "NL",
+    "NOR": "NO",
+    "PAR": "PY",
+    "POR": "PT",
+    "SEN": "SN",
+    "ESP": "ES",
+    "SUI": "CH",
+    "SWE": "SE",
+    "TUN": "TN",
+    "URU": "UY",
+    "USA": "US",
+}
 
 DATA_DIR = Path("data")
 DOCS_DIR = Path("docs")
@@ -337,19 +410,74 @@ def localized(values: Any, default: str = "") -> str:
     return default
 
 
+def clean_asset_url(value: Any) -> str:
+    if not value:
+        return ""
+    return str(value).replace("{format}", "png").replace("{size}", "3")
+
+
+def first_logo_from_espn(team: dict[str, Any]) -> str:
+    for key in ("flag", "logo"):
+        if team.get(key):
+            return clean_asset_url(team.get(key))
+    logos = team.get("logos")
+    if isinstance(logos, list):
+        for item in logos:
+            if isinstance(item, dict) and item.get("href"):
+                return clean_asset_url(item.get("href"))
+    return ""
+
+
+def normalize_country_code(value: Any) -> str:
+    if value is None:
+        return ""
+    return re.sub(r"[^A-Za-z]", "", str(value)).upper()
+
+
+def country_alpha2(code: Any) -> str:
+    normalized = normalize_country_code(code)
+    if len(normalized) == 2:
+        return normalized
+    return COUNTRY_CODE_ALPHA2.get(normalized, "")
+
+
+def flag_emoji_from_code(code: Any) -> str:
+    alpha2 = country_alpha2(code)
+    if len(alpha2) != 2 or not alpha2.isalpha():
+        return ""
+    base = 0x1F1E6
+    return "".join(chr(base + ord(char) - ord("A")) for char in alpha2.upper())
+
+
+def team_flag_metadata(*codes: Any, flag_url_value: Any = None) -> dict[str, str]:
+    country_code = ""
+    for code in codes:
+        country_code = normalize_country_code(code)
+        if country_code:
+            break
+    flag_url_value = clean_asset_url(flag_url_value)
+    return {
+        "country_code": country_code,
+        "flag_url": flag_url_value,
+        "flag_emoji": flag_emoji_from_code(country_code),
+    }
+
 def team_from_fifa(raw: dict[str, Any], placeholder: str | None = None) -> dict[str, Any]:
     name_en = localized(raw.get("TeamName"), raw.get("ShortClubName") or placeholder or "Unknown team")
     if not name_en or name_en == "Unknown team":
         name_en = placeholder or "Unknown team"
+    country_code = raw.get("IdCountry") or raw.get("CountryCode") or raw.get("Abbreviation")
+    metadata = team_flag_metadata(country_code, raw.get("Abbreviation"), flag_url_value=raw.get("PictureUrl"))
     return {
         "name": team_name_zh(name_en),
         "name_en": name_en,
         "abbreviation": raw.get("Abbreviation") or raw.get("IdCountry") or placeholder,
         "id_team": raw.get("IdTeam"),
         "id_country": raw.get("IdCountry"),
-        "logo": raw.get("PictureUrl"),
+        "logo": clean_asset_url(raw.get("PictureUrl")),
         "score": raw.get("Score"),
         "tactics": raw.get("Tactics"),
+        **metadata,
     }
 
 
@@ -393,6 +521,9 @@ def transform_fifa_match(item: dict[str, Any]) -> dict[str, Any]:
         "competition": localized(item.get("CompetitionName"), "FIFA World Cup"),
         "season": localized(item.get("SeasonName"), "FIFA World Cup 2026"),
         "stage": localized(item.get("StageName")),
+        "stage_name": localized(item.get("StageName")),
+        "round_name": localized(item.get("RoundName") or item.get("Round") or item.get("MatchRoundName")),
+        "phase": localized(item.get("PhaseName") or item.get("Phase") or item.get("StageType")),
         "group": localized(item.get("GroupName")),
         "match_number": item.get("MatchNumber"),
         "status": {
@@ -530,18 +661,30 @@ def transform_espn_event(event: dict[str, Any]) -> dict[str, Any] | None:
     home_raw, away_raw = pair
     competition = (event.get("competitions") or [{}])[0]
     event_id = str(event.get("id") or stable_id(event))
+
+    def espn_team(raw: dict[str, Any]) -> dict[str, Any]:
+        team = raw.get("team") or {}
+        abbreviation = team.get("abbreviation") or raw.get("abbreviation")
+        metadata = team_flag_metadata(
+            team.get("countryCode"),
+            team.get("country"),
+            abbreviation,
+            flag_url_value=first_logo_from_espn(team),
+        )
+        return {
+            "name_en": competitor_name(raw),
+            "abbreviation": abbreviation,
+            "id_team": team.get("id"),
+            "logo": first_logo_from_espn(team),
+            **metadata,
+        }
+
     return {
         "id": event_id,
         "kickoff_utc": iso_utc(parse_date(event["date"])) if event.get("date") else None,
         "teams": {
-            "home": {
-                "name_en": competitor_name(home_raw),
-                "abbreviation": (home_raw.get("team") or {}).get("abbreviation"),
-            },
-            "away": {
-                "name_en": competitor_name(away_raw),
-                "abbreviation": (away_raw.get("team") or {}).get("abbreviation"),
-            },
+            "home": espn_team(home_raw),
+            "away": espn_team(away_raw),
         },
         "odds": extract_odds(competition),
         "source": {
@@ -558,6 +701,35 @@ def team_pair_key(match: dict[str, Any]) -> frozenset[str]:
         for side in ("home", "away")
     )
 
+
+def merge_team_metadata(base: dict[str, Any] | None, incoming: dict[str, Any] | None) -> dict[str, Any]:
+    base = base or {}
+    incoming = incoming or {}
+    merged = dict(base)
+    for key, value in incoming.items():
+        if value not in (None, "", []):
+            merged[key] = value
+    for key in ("country_code", "flag_url", "flag_emoji", "logo", "id_country", "id_team", "abbreviation"):
+        if not merged.get(key) and base.get(key):
+            merged[key] = base[key]
+    if not merged.get("name") and merged.get("name_en"):
+        merged["name"] = team_name_zh(str(merged["name_en"]))
+    if not merged.get("country_code"):
+        merged["country_code"] = normalize_country_code(merged.get("id_country") or merged.get("abbreviation"))
+    if not merged.get("flag_url") and merged.get("logo"):
+        merged["flag_url"] = clean_asset_url(merged.get("logo"))
+    if not merged.get("flag_emoji") and merged.get("country_code"):
+        merged["flag_emoji"] = flag_emoji_from_code(merged.get("country_code"))
+    return merged
+
+
+def merge_match_teams(base: dict[str, Any] | None, incoming: dict[str, Any] | None) -> dict[str, dict[str, Any]]:
+    base = base or {}
+    incoming = incoming or {}
+    return {
+        "home": merge_team_metadata(base.get("home"), incoming.get("home")),
+        "away": merge_team_metadata(base.get("away"), incoming.get("away")),
+    }
 
 def find_espn_match(fifa_match: dict[str, Any], espn_matches: list[dict[str, Any]]) -> dict[str, Any] | None:
     fifa_key = team_pair_key(fifa_match)
@@ -594,6 +766,7 @@ def verify_fifa_matches(
             "method": "team-pair and kickoff-time cross-check",
         }
         item["odds"] = espn_match["odds"]
+        item["teams"] = merge_match_teams(fifa_match.get("teams"), espn_match.get("teams"))
         verified.append(item)
     return verified, unverified
 
@@ -1000,7 +1173,13 @@ def match_id_of(match: dict[str, Any]) -> str:
 
 
 def merge_analysis_matches(analysis: dict[str, Any], research_payload: dict[str, Any]) -> list[dict[str, Any]]:
-    source_matches = {str(item.get("id")): item for item in research_payload.get("matches", [])}
+    source_matches: dict[str, dict[str, Any]] = {}
+    for source_item in research_payload.get("matches", []) or []:
+        if not isinstance(source_item, dict):
+            continue
+        for key in (match_id_of(source_item), str(source_item.get("id") or ""), str(source_item.get("fifa_match_id") or "")):
+            if key:
+                source_matches[key] = source_item
     analyzed = analysis.get("matches")
     if not isinstance(analyzed, list):
         analyzed = analysis.get("predictions") if isinstance(analysis.get("predictions"), list) else []
@@ -1015,7 +1194,7 @@ def merge_analysis_matches(analysis: dict[str, Any], research_payload: dict[str,
         if source:
             merged_item.setdefault("match_name", source.get("match_name"))
             merged_item.setdefault("kickoff_utc", source.get("kickoff_utc"))
-            merged_item.setdefault("teams", source.get("teams"))
+            merged_item["teams"] = merge_match_teams(source.get("teams"), item.get("teams"))
             merged_item["injuries"] = source.get("injuries", {})
             merged_item["odds"] = source.get("odds", {"available": False})
             merged_item["source_verification"] = source.get("source_verification", {})
@@ -1161,24 +1340,48 @@ def html_escape(value: Any) -> str:
     return html.escape(str(value if value is not None else ""), quote=True)
 
 
+def placeholder_team_node(team: dict[str, Any] | None) -> bool:
+    team = team or {}
+    if team.get("placeholder"):
+        return True
+    value = str(team.get("name") or team.get("name_en") or "")
+    normalized = normalize_team(value)
+    return not value.strip() or normalized in {"tbd", "to be determined", "unknown", "none", "null"} or normalized.startswith("group ") or value.startswith("胜者") or value == "待定" or "组第" in value
+
+
 def flag_url(team: dict[str, Any]) -> str | None:
-    raw = team.get("logo")
+    raw = team.get("flag_url") or team.get("logo")
     if not raw:
         return None
-    return str(raw).replace("{format}", "png").replace("{size}", "3")
+    return clean_asset_url(raw)
 
 
-def team_visual(team: dict[str, Any], *, right: bool = False) -> str:
+def team_flag_html(team: dict[str, Any], *, small: bool = False) -> str:
+    classes = "team-flag small" if small else "team-flag"
+    if placeholder_team_node(team):
+        return f'<span class="{classes} placeholder" aria-hidden="true"></span>'
     name = html_escape(team.get("name") or team.get("name_en") or "Unknown")
     logo = flag_url(team)
     if logo:
-        visual = f'<img class="team-logo" src="{html_escape(logo)}" alt="{name}">'
-    else:
-        initial = html_escape((team.get("abbreviation") or name or "?")[:3])
-        visual = f'<span class="team-initial">{initial}</span>'
+        return f'<img class="{classes}" src="{html_escape(logo)}" alt="{name} 国旗" loading="lazy">'
+    emoji = team.get("flag_emoji")
+    if emoji:
+        return f'<span class="{classes} emoji" role="img" aria-label="{name} 国旗">{html_escape(emoji)}</span>'
+    return f'<span class="{classes} placeholder" aria-hidden="true"></span>'
+
+
+def team_inline_html(team: dict[str, Any], *, reverse: bool = False, small: bool = False) -> str:
+    name = html_escape(team.get("name") or team.get("name_en") or "Unknown")
+    flag = team_flag_html(team, small=small)
+    reverse_class = " reverse" if reverse else ""
+    return f'<span class="team-inline{reverse_class}">{flag}<span>{name}</span></span>'
+
+
+def team_visual(team: dict[str, Any], *, right: bool = False) -> str:
+    content = team_inline_html(team, reverse=right)
     if right:
-        return f'<div class="team right"><strong>{name}</strong>{visual}</div>'
-    return f'<div class="team">{visual}<strong>{name}</strong></div>'
+        return f'<div class="team right">{content}</div>'
+    return f'<div class="team">{content}</div>'
 
 
 def enrich_matches_for_display(matches: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -1397,7 +1600,38 @@ def group_sort_key(name: str) -> tuple[int, str]:
 
 
 def stage_text(match: dict[str, Any]) -> str:
-    return " ".join(str(match.get(key) or "") for key in ("stage", "group", "competition", "match_number"))
+    keys = (
+        "round_key",
+        "round_name",
+        "stage_name",
+        "stage",
+        "phase",
+        "group",
+        "competition",
+        "match_name",
+        "match_number",
+    )
+    return " ".join(str(match.get(key) or "") for key in keys)
+
+
+def match_number_int(match: dict[str, Any]) -> int | None:
+    value = match.get("match_number")
+    if value in (None, ""):
+        return None
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        found = re.search(r"\d+", str(value))
+        return int(found.group(0)) if found else None
+
+
+def is_third_place_match(match: dict[str, Any]) -> bool:
+    number = match_number_int(match)
+    if number in THIRD_PLACE_MATCH_NUMBERS:
+        return True
+    text = normalize_team(stage_text(match))
+    raw = stage_text(match)
+    return any(fragment in text for fragment in ("third place", "3rd place", "bronze")) or "季军" in raw
 
 
 def is_knockout_match(match: dict[str, Any]) -> bool:
@@ -1407,6 +1641,7 @@ def is_knockout_match(match: dict[str, Any]) -> bool:
         "round of",
         "round 32",
         "round 16",
+        "last 32",
         "last 16",
         "quarter final",
         "quarterfinal",
@@ -1414,19 +1649,14 @@ def is_knockout_match(match: dict[str, Any]) -> bool:
         "semifinal",
         "final",
         "third place",
-        "play off",
-        "playoff",
     )
     chinese_text = stage_text(match)
     chinese_hints = ("淘汰", "32强", "16强", "八分之一", "四分之一", "半决赛", "决赛", "季军")
     if any(hint in text for hint in knockout_hints) or any(hint in chinese_text for hint in chinese_hints):
-        if "first stage" not in text and "group" not in text:
+        if "first stage" not in text and "group stage" not in text:
             return True
-    match_number = match.get("match_number")
-    try:
-        return int(match_number) >= 73
-    except (TypeError, ValueError):
-        return False
+    number = match_number_int(match)
+    return bool(number and number >= 73)
 
 
 def determine_tournament_stage(matches: list[dict[str, Any]]) -> str:
@@ -1434,21 +1664,25 @@ def determine_tournament_stage(matches: list[dict[str, Any]]) -> str:
 
 
 def round_key_for_match(match: dict[str, Any]) -> str:
-    text = normalize_team(stage_text(match))
-    if "semi" in text:
-        return "semi_finals"
-    if "quarter" in text or "8" in text and "round" in text:
-        return "quarter_finals"
-    if "round of 16" in text or "round 16" in text or "last 16" in text:
-        return "round_of_16"
-    if "round of 32" in text or "round 32" in text:
+    explicit = str(match.get("round_key") or "")
+    if explicit in BRACKET_ROUND_ORDER:
+        return explicit
+    if is_third_place_match(match):
+        return "third_place"
+    raw_text = stage_text(match)
+    text = normalize_team(raw_text)
+    if re.search(r"round\s+of\s+32|round\s*32|last\s*32", text) or "32强" in raw_text:
         return "round_of_32"
-    if "final" in text:
+    if re.search(r"round\s+of\s+16|round\s*16|last\s*16", text) or "16强" in raw_text or "八分之一" in raw_text:
+        return "round_of_16"
+    if "quarter final" in text or "quarterfinal" in text or "四分之一" in raw_text or "8强" in raw_text:
+        return "quarter_finals"
+    if "semi final" in text or "semifinal" in text or "半决赛" in raw_text or "4强" in raw_text:
+        return "semi_finals"
+    if "final" in text or "决赛" in raw_text:
         return "final"
-    match_number = match.get("match_number")
-    try:
-        number = int(match_number)
-    except (TypeError, ValueError):
+    number = match_number_int(match)
+    if number is None:
         return "round_of_32"
     if 73 <= number <= 88:
         return "round_of_32"
@@ -1456,11 +1690,101 @@ def round_key_for_match(match: dict[str, Any]) -> str:
         return "round_of_16"
     if 97 <= number <= 100:
         return "quarter_finals"
-    if 101 <= number <= 103:
+    if 101 <= number <= 102:
         return "semi_finals"
-    if number >= 104:
+    if number == 104:
         return "final"
+    if number == 103:
+        return "third_place"
     return "round_of_32"
+
+
+def placeholder_team(label: str) -> dict[str, Any]:
+    return {
+        "name": label,
+        "name_en": label,
+        "country_code": "",
+        "flag_url": "",
+        "flag_emoji": "",
+        "placeholder": True,
+    }
+
+
+def unresolved_team_label(team: dict[str, Any]) -> bool:
+    value = normalize_team(str(team.get("name_en") or team.get("name") or ""))
+    return not value or value in {"tbd", "to be determined", "unknown", "none", "null", "dai ding"} or value.startswith("winner") or value.startswith("loser") or "待定" in str(team.get("name") or "") or "胜者" in str(team.get("name") or "")
+
+
+def bracket_placeholder_node(match_number: int, round_key: str) -> dict[str, Any]:
+    feeds = BRACKET_WINNER_FEEDS.get(match_number)
+    if feeds:
+        home_label = f"胜者 M{feeds[0]}"
+        away_label = f"胜者 M{feeds[1]}"
+    else:
+        home_label = "待定"
+        away_label = "待定"
+    return {
+        "match_id": f"placeholder-M{match_number}",
+        "match_number": match_number,
+        "round_key": round_key,
+        "stage": round_key,
+        "group": "淘汰赛",
+        "match_name": f"{home_label} vs {away_label}",
+        "teams": {"home": placeholder_team(home_label), "away": placeholder_team(away_label)},
+        "kickoff_utc": None,
+        "kickoff_beijing": None,
+        "kickoff_display": "北京时间 待定",
+        "match_day": {},
+        "win_draw_loss": None,
+        "score_options": [],
+        "current_window": False,
+        "placeholder": True,
+    }
+
+
+def bracket_sort_key(match: dict[str, Any]) -> tuple[int, str, str]:
+    number = match_number_int(match)
+    return (number if number is not None else 9999, str(match.get("kickoff_beijing") or match.get("kickoff_utc") or ""), match_id_of(match))
+
+
+def build_knockout_bracket(
+    context_matches: list[dict[str, Any]],
+    current_by_id: dict[str, dict[str, Any]],
+    highlight_ids: set[str],
+) -> dict[str, list[dict[str, Any]]]:
+    buckets: dict[str, dict[int, dict[str, Any]]] = {key: {} for key in BRACKET_ROUND_ORDER}
+    overflow: dict[str, list[dict[str, Any]]] = {key: [] for key in BRACKET_ROUND_ORDER}
+    for match in sorted(context_matches, key=bracket_sort_key):
+        if not is_knockout_match(match) or is_third_place_match(match):
+            continue
+        key = round_key_for_match(match)
+        if key not in BRACKET_ROUND_ORDER:
+            continue
+        node = structure_match_node(match, current_by_id, highlight_ids)
+        node["round_key"] = key
+        node["placeholder"] = False
+        number = match_number_int(node)
+        expected_numbers = set(BRACKET_MATCH_NUMBERS[key])
+        if number in expected_numbers:
+            existing = buckets[key].get(number)
+            if existing is None or node.get("current_window") or not existing.get("current_window"):
+                buckets[key][number] = node
+        else:
+            overflow[key].append(node)
+
+    bracket: dict[str, list[dict[str, Any]]] = {key: [] for key in BRACKET_ROUND_ORDER}
+    for key in BRACKET_ROUND_ORDER:
+        spill = list(overflow[key])
+        for slot_number in BRACKET_MATCH_NUMBERS[key]:
+            node = buckets[key].get(slot_number)
+            if node is None and spill:
+                node = spill.pop(0)
+                node["match_number"] = node.get("match_number") or slot_number
+                node["round_key"] = key
+            if node is None:
+                node = bracket_placeholder_node(slot_number, key)
+            bracket[key].append(node)
+    return bracket
 
 
 def merge_structure_context(
@@ -1487,14 +1811,20 @@ def structure_match_node(
 ) -> dict[str, Any]:
     match_id = match_id_of(match)
     source = {**match, **current_by_id.get(match_id, {})}
+    source["teams"] = merge_match_teams(match.get("teams"), (current_by_id.get(match_id, {}) or {}).get("teams"))
     teams = source.get("teams") or {}
     kickoff = source.get("kickoff_utc")
     match_day = source.get("match_day") or (match_day_info(kickoff) if kickoff else {})
     is_current = match_id in highlight_ids
+    key = round_key_for_match(source)
     return {
         "match_id": match_id,
         "match_number": source.get("match_number"),
+        "round_key": key if key in BRACKET_ROUND_ORDER else None,
         "stage": source.get("stage"),
+        "stage_name": source.get("stage_name") or source.get("stage"),
+        "round_name": source.get("round_name"),
+        "phase": source.get("phase"),
         "group": group_label_for_match(source),
         "match_name": source.get("match_name") or f"{(teams.get('home') or {}).get('name', '待定')} vs {(teams.get('away') or {}).get('name', '待定')}",
         "teams": teams,
@@ -1505,6 +1835,7 @@ def structure_match_node(
         "win_draw_loss": source.get("win_draw_loss") if is_current else None,
         "score_options": ordered_score_options(source) if is_current else [],
         "current_window": is_current,
+        "placeholder": False,
     }
 
 
@@ -1556,14 +1887,7 @@ def build_tournament_structure(
             groups.append({"name": group_name, "match_days": day_sections})
         structure["groups"] = groups
     else:
-        round_keys = ("round_of_32", "round_of_16", "quarter_finals", "semi_finals", "final")
-        bracket = {key: [] for key in round_keys}
-        for match in [item for item in context_matches if is_knockout_match(item)]:
-            node = structure_match_node(match, current_by_id, highlight_ids)
-            bracket.setdefault(round_key_for_match(match), []).append(node)
-        for key in bracket:
-            bracket[key].sort(key=lambda item: item.get("kickoff_beijing") or item.get("kickoff_utc") or "")
-        structure["bracket"] = bracket
+        structure["bracket"] = build_knockout_bracket(context_matches, current_by_id, highlight_ids)
     return structure
 
 
@@ -1677,6 +2001,15 @@ def bracket_team_label(entity: dict[str, Any] | str | None) -> str:
     return team_name_zh(value)
 
 
+def bracket_team_html(entity: dict[str, Any] | str | None) -> str:
+    if isinstance(entity, dict):
+        team = dict(entity)
+        team["name"] = bracket_team_label(team)
+    else:
+        team = placeholder_team(bracket_team_label(entity))
+    return team_inline_html(team, small=True)
+
+
 def bracket_node_time(node: dict[str, Any]) -> str:
     text = str(node.get("kickoff_display") or "北京时间 待定")
     text = text.replace("北京时间 ", "")
@@ -1752,8 +2085,8 @@ def bracket_score_tabs_html(node: dict[str, Any]) -> str:
 
 def bracket_structure_node_html(node: dict[str, Any], round_key: str) -> str:
     teams = node.get("teams") or {}
-    home_name = bracket_team_label(teams.get("home"))
-    away_name = bracket_team_label(teams.get("away"))
+    home_html = bracket_team_html(teams.get("home"))
+    away_html = bracket_team_html(teams.get("away"))
     current = bool(node.get("current_window"))
     placeholder = bool(node.get("placeholder"))
     classes = ["bracket-node", f"round-{round_key}"]
@@ -1768,7 +2101,7 @@ def bracket_structure_node_html(node: dict[str, Any], round_key: str) -> str:
         <span class="bracket-match-number">{html_escape(match_no)}</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>{html_escape(match_no)}</span>{badge}</div>
-          <strong>{html_escape(home_name)}<em>vs</em>{html_escape(away_name)}</strong>
+          <strong>{home_html}<em>vs</em>{away_html}</strong>
           <time>{html_escape(bracket_node_time(node))}</time>
           {bracket_score_tabs_html(node)}
           <div class="bracket-wdl-mini">{bracket_wdl_html(node)}</div>
@@ -2031,21 +2364,23 @@ def match_card(match: dict[str, Any]) -> str:
     match_id = match.get("match_id") or match.get("id") or match.get("fifa_match_id") or "unknown"
     home_name = home.get("name") or home.get("name_en") or "主队"
     away_name = away.get("name") or away.get("name_en") or "客队"
+    home_inline = team_inline_html(home)
+    away_inline = team_inline_html(away, reverse=True)
     confidence_raw = match.get("confidence")
     return f"""
       <article class="match-card">
         <div class="match-topline">
-          <h3>{html_escape(home_name)} vs {html_escape(away_name)}</h3>
+          <h3 class="match-title-teams">{home_inline}<span class="versus">vs</span>{team_inline_html(away)}</h3>
           <time datetime="{kickoff_iso}">{html_escape(kickoff_display)}</time>
         </div>
         <div class="scoreboard">
           <div class="score-side">
-            <span>{html_escape(home_name)}</span>
+            <span class="score-team-name">{home_inline}</span>
             <strong>{html_escape(score.get("home", 0))}</strong>
           </div>
           <div class="score-separator">:</div>
           <div class="score-side away-side">
-            <span>{html_escape(away_name)}</span>
+            <span class="score-team-name">{away_inline}</span>
             <strong>{html_escape(score.get("away", 0))}</strong>
           </div>
         </div>
@@ -2322,6 +2657,7 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     .bracket-node-top {{ display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 22px; color: #91a8c2; font-size: 12px; font-weight: 850; }}
     .bracket-node-card strong {{ display: grid; gap: 3px; margin-top: 5px; color: #edf7ff; font-size: 16px; line-height: 1.22; text-align: center; overflow-wrap: anywhere; }}
     .bracket-node-card strong em {{ color: #9fb5cf; font-style: normal; font-size: 12px; font-weight: 700; }}
+    .bracket-node-card strong .team-inline {{ justify-content: center; gap: 6px; }}
     .bracket-node-card time {{ display: block; margin-top: 5px; color: #a8bbd4; font-size: 13px; text-align: center; }}
     .bracket-mini-title {{ display: flex; align-items: center; gap: 8px; margin: 8px 0 6px; color: #a8bbd4; font-size: 12px; text-align: center; }}
     .bracket-mini-title::before, .bracket-mini-title::after {{ content: ""; flex: 1; height: 1px; background: rgba(104, 190, 255, .34); }}
@@ -2354,6 +2690,16 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     .dot.home {{ background: var(--green); color: var(--green); }}
     .dot.draw {{ background: var(--yellow); color: var(--yellow); }}
     .dot.away {{ background: var(--red); color: var(--red); }}
+    .team-inline {{ display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 0; max-width: 100%; vertical-align: middle; }}
+    .team-inline.reverse {{ flex-direction: row-reverse; }}
+    .team-inline span:last-child {{ min-width: 0; overflow-wrap: anywhere; }}
+    .team-flag {{ width: 28px; height: 28px; flex: 0 0 auto; border-radius: 50%; object-fit: cover; background: rgba(255,255,255,.08); box-shadow: 0 0 12px rgba(0, 217, 255, .18); }}
+    .team-flag.small {{ width: 18px; height: 18px; }}
+    .team-flag.emoji {{ display: inline-grid; place-items: center; font-size: 22px; line-height: 1; background: transparent; box-shadow: none; }}
+    .team-flag.small.emoji {{ font-size: 16px; }}
+    .team-flag.placeholder {{ display: inline-block; border: 1px dashed rgba(159, 181, 207, .38); background: rgba(159, 181, 207, .12); box-shadow: none; }}
+    .match-title-teams {{ display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; }}
+    .match-title-teams .versus {{ color: var(--muted); font-size: .72em; font-weight: 760; }}
     .match-day {{ margin-top: 28px; }}
     .section-head {{ display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 14px; }}
     .section-head p {{ margin-top: 8px; line-height: 1.5; }}
@@ -2397,7 +2743,7 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
       font-weight: 750;
     }}
     .scoreboard {{ display: grid; grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr); align-items: center; gap: 12px; text-align: center; }}
-    .score-side span {{ display: block; color: var(--text); font-size: 18px; font-weight: 760; overflow-wrap: anywhere; }}
+    .score-side > .score-team-name {{ display: flex; justify-content: center; color: var(--text); font-size: 18px; font-weight: 760; overflow-wrap: anywhere; }}
     .score-side strong {{ display: block; margin-top: 6px; font-size: clamp(42px, 12vw, 62px); line-height: .95; color: #ffd11e; }}
     .score-separator {{ color: var(--muted); font-size: 34px; font-weight: 600; }}
     .probability-panel {{ display: grid; gap: 10px; }}
@@ -2576,7 +2922,7 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
       .day-count {{ display: inline-flex; margin-top: 12px; }}
       .match-topline time {{ display: inline-flex; margin-top: 12px; white-space: normal; }}
       .scoreboard {{ grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr); gap: 6px; }}
-      .score-side span {{ font-size: 16px; }}
+      .score-side > .score-team-name {{ font-size: 16px; }}
       .prob-labels {{ font-size: 14px; }}
       .match-footer {{ display: grid; grid-template-columns: 1fr; }}
     }}
