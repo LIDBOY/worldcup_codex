@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>2026 世界杯 · 预测分析</title>
+  <title>2026 ??? ? ????</title>
   <style>
     :root {
       color-scheme: dark;
@@ -159,7 +159,7 @@
     .tournament-panel { padding: 16px; margin-bottom: 16px; border-color: rgba(0, 174, 255, .58); background: linear-gradient(145deg, rgba(2, 12, 23, .98), rgba(5, 25, 41, .96)); }
     .structure-title-row { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px; align-items: start; margin-bottom: 12px; }
     .structure-title-row h2 { margin: 0 0 8px; font-size: 26px; color: #eaf8ff; text-shadow: 0 0 16px rgba(0, 217, 255, .26); }
-    .structure-title-row h2::before { content: "⌗"; color: #15d9ff; margin-right: 10px; }
+    .structure-title-row h2::before { content: "?"; color: #15d9ff; margin-right: 10px; }
     .structure-count { border: 1px solid rgba(0, 217, 255, .42); border-radius: 999px; padding: 8px 14px; color: #9beeff; background: rgba(0, 174, 255, .11); font-weight: 850; white-space: nowrap; box-shadow: 0 0 18px rgba(0, 174, 255, .12); }
     .structure-group { position: relative; z-index: 1; border: 1px solid rgba(104, 136, 174, .24); border-radius: 16px; background: rgba(12, 20, 31, .38); padding: 12px; margin-top: 12px; }
     .structure-group summary { cursor: pointer; color: #ffd64a; font-size: 18px; font-weight: 850; list-style-position: inside; }
@@ -202,6 +202,7 @@
     .bracket-node-top { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 22px; color: #91a8c2; font-size: 12px; font-weight: 850; }
     .bracket-node-card strong { display: grid; gap: 3px; margin-top: 5px; color: #edf7ff; font-size: 16px; line-height: 1.22; text-align: center; overflow-wrap: anywhere; }
     .bracket-node-card strong em { color: #9fb5cf; font-style: normal; font-size: 12px; font-weight: 700; }
+    .bracket-node-card strong .team-inline { justify-content: center; gap: 6px; }
     .bracket-node-card time { display: block; margin-top: 5px; color: #a8bbd4; font-size: 13px; text-align: center; }
     .bracket-mini-title { display: flex; align-items: center; gap: 8px; margin: 8px 0 6px; color: #a8bbd4; font-size: 12px; text-align: center; }
     .bracket-mini-title::before, .bracket-mini-title::after { content: ""; flex: 1; height: 1px; background: rgba(104, 190, 255, .34); }
@@ -234,6 +235,16 @@
     .dot.home { background: var(--green); color: var(--green); }
     .dot.draw { background: var(--yellow); color: var(--yellow); }
     .dot.away { background: var(--red); color: var(--red); }
+    .team-inline { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 0; max-width: 100%; vertical-align: middle; }
+    .team-inline.reverse { flex-direction: row-reverse; }
+    .team-inline span:last-child { min-width: 0; overflow-wrap: anywhere; }
+    .team-flag { width: 28px; height: 28px; flex: 0 0 auto; border-radius: 50%; object-fit: cover; background: rgba(255,255,255,.08); box-shadow: 0 0 12px rgba(0, 217, 255, .18); }
+    .team-flag.small { width: 18px; height: 18px; }
+    .team-flag.emoji { display: inline-grid; place-items: center; font-size: 22px; line-height: 1; background: transparent; box-shadow: none; }
+    .team-flag.small.emoji { font-size: 16px; }
+    .team-flag.placeholder { display: inline-block; border: 1px dashed rgba(159, 181, 207, .38); background: rgba(159, 181, 207, .12); box-shadow: none; }
+    .match-title-teams { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 12px; }
+    .match-title-teams .versus { color: var(--muted); font-size: .72em; font-weight: 760; }
     .match-day { margin-top: 28px; }
     .section-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 14px; }
     .section-head p { margin-top: 8px; line-height: 1.5; }
@@ -277,7 +288,7 @@
       font-weight: 750;
     }
     .scoreboard { display: grid; grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr); align-items: center; gap: 12px; text-align: center; }
-    .score-side span { display: block; color: var(--text); font-size: 18px; font-weight: 760; overflow-wrap: anywhere; }
+    .score-side > .score-team-name { display: flex; justify-content: center; color: var(--text); font-size: 18px; font-weight: 760; overflow-wrap: anywhere; }
     .score-side strong { display: block; margin-top: 6px; font-size: clamp(42px, 12vw, 62px); line-height: .95; color: #ffd11e; }
     .score-separator { color: var(--muted); font-size: 34px; font-weight: 600; }
     .probability-panel { display: grid; gap: 10px; }
@@ -456,7 +467,7 @@
       .day-count { display: inline-flex; margin-top: 12px; }
       .match-topline time { display: inline-flex; margin-top: 12px; white-space: normal; }
       .scoreboard { grid-template-columns: minmax(0, 1fr) 24px minmax(0, 1fr); gap: 6px; }
-      .score-side span { font-size: 16px; }
+      .score-side > .score-team-name { font-size: 16px; }
       .prob-labels { font-size: 14px; }
       .match-footer { display: grid; grid-template-columns: 1fr; }
     }
@@ -473,15 +484,15 @@
 <body class="night-shell">
   <main class="page">
     <header class="hero night-card">
-      <h1><span class="hero-ball">⚽</span><span>2026 世界杯 · 预测分析</span></h1>
-      <span class="range-pill">6月29日比赛日 - 6月30日比赛日 · 北京时间 06-29 18:00 - 07-01 18:00</span>
+      <h1><span class="hero-ball">?</span><span>2026 ??? ? ????</span></h1>
+      <span class="range-pill">6月30日比赛日 - 7月1日比赛日 ? ???? 06-30 18:00 - 07-02 18:00</span>
       <div class="hero-meta">
-        <div><span class="meta-icon">▦</span>比赛阶段<strong>淘汰赛</strong></div>
-        <div><span class="meta-icon">◷</span>生成时间<strong>北京时间 06-30 14:00</strong></div>
-        <div><span class="meta-icon">◎</span>总比赛场次<strong>16 场</strong></div>
-        <div><span class="meta-icon">◇</span>分析模型<strong>deepseek-v4-pro</strong></div>
-        <div><span class="meta-icon">⬡</span>渲染模型<strong>deepseek-v4-flash</strong></div>
-        <div><span class="meta-icon">▥</span>数据来源<strong>FIFA + ESPN + DeepSeek</strong></div>
+        <div><span class="meta-icon">?</span>????<strong>???</strong></div>
+        <div><span class="meta-icon">?</span>????<strong>北京时间 07-01 00:27</strong></div>
+        <div><span class="meta-icon">?</span>?????<strong>31 ?</strong></div>
+        <div><span class="meta-icon">?</span>????<strong>deepseek-v4-pro</strong></div>
+        <div><span class="meta-icon">?</span>????<strong>deepseek-v4-flash</strong></div>
+        <div><span class="meta-icon">?</span>????<strong>FIFA + ESPN + DeepSeek</strong></div>
       </div>
     </header>
 
@@ -489,300 +500,377 @@
     <section class="tournament-panel night-card">
       <div class="structure-title-row">
         <div>
-          <h2>淘汰赛对阵树</h2>
-          <p class="muted compact">结构图基于 FIFA 官方赛程与 ESPN 第二来源校验；当前两个中国比赛日内 6 场已高亮。</p>
+          <h2>??????</h2>
+          <p class="muted compact">????? FIFA ????? ESPN ????????????????? 6 ?????</p>
         </div>
-        <div class="structure-count">结构赛程 16 场</div>
+        <div class="structure-count">???? 31 ?</div>
       </div>
       
       <div class="bracket-shell">
-        <div class="bracket-stage-labels"><span>32强</span> <span>16强</span> <span>8强</span> <span>4强</span> <span>决赛</span></div>
+        <div class="bracket-stage-labels"><span>32?</span> <span>16?</span> <span>8?</span> <span>4?</span> <span>??</span></div>
         <div class="bracket-board">
           <div class="bracket-grid">
         <section class="bracket-round bracket-round-round_of_32">
-          <h3>32强</h3>
+          <h3>32?</h3>
           <div class="bracket-node-list">
-      <article class="bracket-node round-round_of_32 current-window" data-match-id="400021516">
-        <span class="bracket-match-number">M76</span>
+      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M73">
+        <span class="bracket-match-number">M73</span>
         <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M76</span><span class="window-badge">当前窗口</span></div>
-          <strong>巴西<em>vs</em>日本</strong>
-          <time>06-30 01:00</time>
-          <div class="bracket-mini-title">前3预测比分</div><div class="mini-score-wrap"><span>前3预测比分</span><div class="mini-score-tabs"><span class="mini-score-tab active">主推荐 <b>2-1</b></span><span class="mini-score-tab">Top 2 <b>1-0</b></span><span class="mini-score-tab">Top 3 <b>2-0</b></span></div></div>
-          <div class="bracket-wdl-mini"><span class="home">胜 100%</span><span class="draw">平 0%</span><span class="away">负 0%</span></div>
+          <div class="bracket-node-top"><span>M73</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>??</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>??</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 current-window" data-match-id="400021513">
+      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M74">
         <span class="bracket-match-number">M74</span>
         <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M74</span><span class="window-badge">当前窗口</span></div>
-          <strong>德国<em>vs</em>巴拉圭</strong>
-          <time>06-30 04:30</time>
-          <div class="bracket-mini-title">前3预测比分</div><div class="mini-score-wrap"><span>前3预测比分</span><div class="mini-score-tabs"><span class="mini-score-tab active">主推荐 <b>1-1</b></span><span class="mini-score-tab">Top 2 <b>2-1</b></span><span class="mini-score-tab">Top 3 <b>1-2</b></span></div></div>
-          <div class="bracket-wdl-mini"><span class="home">胜 0%</span><span class="draw">平 100%</span><span class="away">负 0%</span></div>
+          <div class="bracket-node-top"><span>M74</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>??</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>??</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 current-window" data-match-id="400021522">
+      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M75">
         <span class="bracket-match-number">M75</span>
         <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M75</span><span class="window-badge">当前窗口</span></div>
-          <strong>荷兰<em>vs</em>摩洛哥</strong>
-          <time>06-30 09:00</time>
-          <div class="bracket-mini-title">前3预测比分</div><div class="mini-score-wrap"><span>前3预测比分</span><div class="mini-score-tabs"><span class="mini-score-tab active">主推荐 <b>1-1</b></span><span class="mini-score-tab">Top 2 <b>2-1</b></span><span class="mini-score-tab">Top 3 <b>1-0</b></span></div></div>
-          <div class="bracket-wdl-mini"><span class="home">胜 0%</span><span class="draw">平 100%</span><span class="away">负 0%</span></div>
+          <div class="bracket-node-top"><span>M75</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>??</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>??</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M76">
+        <span class="bracket-match-number">M76</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M76</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>??</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>??</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
         </div>
       </article>
     
       <article class="bracket-node round-round_of_32 current-window" data-match-id="400021523">
         <span class="bracket-match-number">M77</span>
         <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M77</span><span class="window-badge">当前窗口</span></div>
-          <strong>法国<em>vs</em>瑞典</strong>
-          <time>07-01 05:00</time>
-          <div class="bracket-mini-title">前3预测比分</div><div class="mini-score-wrap"><span>前3预测比分</span><div class="mini-score-tabs"><span class="mini-score-tab active">主推荐 <b>3-0</b></span><span class="mini-score-tab">Top 2 <b>2-0</b></span><span class="mini-score-tab">Top 3 <b>2-1</b></span></div></div>
-          <div class="bracket-wdl-mini"><span class="home">胜 74%</span><span class="draw">平 16%</span><span class="away">负 10%</span></div>
+          <div class="bracket-node-top"><span>M77</span><span class="window-badge">????</span></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/fra.png" alt="法国 ??" loading="lazy"><span>法国</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/swe.png" alt="瑞典 ??" loading="lazy"><span>瑞典</span></span></strong>
+          <time>北京时间 07-01 05:00</time>
+          <div class="bracket-mini-title">?3????</div><div class="mini-score-wrap"><span>?3????</span><div class="mini-score-tabs"><span class="mini-score-tab active">??? <b>2-0</b></span><span class="mini-score-tab">Top 2 <b>3-0</b></span><span class="mini-score-tab">Top 3 <b>1-0</b></span></div></div>
+          <div class="bracket-wdl-mini"><span class="home">? 74.7%</span><span class="draw">? 16.1%</span><span class="away">? 9.2%</span></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_32 current-window" data-match-id="400021514">
+        <span class="bracket-match-number">M78</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M78</span><span class="window-badge">????</span></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/civ.png" alt="科特迪瓦 ??" loading="lazy"><span>科特迪瓦</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/nor.png" alt="挪威 ??" loading="lazy"><span>挪威</span></span></strong>
+          <time>北京时间 07-01 01:00</time>
+          <div class="bracket-mini-title">?3????</div><div class="mini-score-wrap"><span>?3????</span><div class="mini-score-tabs"><span class="mini-score-tab active">??? <b>0-1</b></span><span class="mini-score-tab">Top 2 <b>1-1</b></span><span class="mini-score-tab">Top 3 <b>0-2</b></span></div></div>
+          <div class="bracket-wdl-mini"><span class="home">? 27.1%</span><span class="draw">? 28.3%</span><span class="away">? 44.7%</span></div>
         </div>
       </article>
     
       <article class="bracket-node round-round_of_32 current-window" data-match-id="400021520">
         <span class="bracket-match-number">M79</span>
         <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M79</span><span class="window-badge">当前窗口</span></div>
-          <strong>墨西哥<em>vs</em>厄瓜多尔</strong>
-          <time>07-01 09:00</time>
-          <div class="bracket-mini-title">前3预测比分</div><div class="mini-score-wrap"><span>前3预测比分</span><div class="mini-score-tabs"><span class="mini-score-tab active">主推荐 <b>1-1</b></span><span class="mini-score-tab">Top 2 <b>2-1</b></span><span class="mini-score-tab">Top 3 <b>1-0</b></span></div></div>
-          <div class="bracket-wdl-mini"><span class="home">胜 43%</span><span class="draw">平 33%</span><span class="away">负 24%</span></div>
+          <div class="bracket-node-top"><span>M79</span><span class="window-badge">????</span></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="墨西哥 ??" loading="lazy"><span>墨西哥</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/ecu.png" alt="厄瓜多尔 ??" loading="lazy"><span>厄瓜多尔</span></span></strong>
+          <time>北京时间 07-01 09:00</time>
+          <div class="bracket-mini-title">?3????</div><div class="mini-score-wrap"><span>?3????</span><div class="mini-score-tabs"><span class="mini-score-tab active">??? <b>1-0</b></span><span class="mini-score-tab">Top 2 <b>1-1</b></span><span class="mini-score-tab">Top 3 <b>2-1</b></span></div></div>
+          <div class="bracket-wdl-mini"><span class="home">? 41.9%</span><span class="draw">? 33.8%</span><span class="away">? 24.4%</span></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_32 current-window" data-match-id="400021512">
+        <span class="bracket-match-number">M80</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M80</span><span class="window-badge">????</span></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/eng.png" alt="英格兰 ??" loading="lazy"><span>英格兰</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/rdc.png" alt="刚果民主共和国 ??" loading="lazy"><span>刚果民主共和国</span></span></strong>
+          <time>北京时间 07-02 00:00</time>
+          <div class="bracket-mini-title">?3????</div><div class="mini-score-wrap"><span>?3????</span><div class="mini-score-tabs"><span class="mini-score-tab active">??? <b>2-0</b></span><span class="mini-score-tab">Top 2 <b>3-0</b></span><span class="mini-score-tab">Top 3 <b>1-0</b></span></div></div>
+          <div class="bracket-wdl-mini"><span class="home">? 74.4%</span><span class="draw">? 18.2%</span><span class="away">? 7.4%</span></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_32 current-window" data-match-id="400021524">
+        <span class="bracket-match-number">M81</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M81</span><span class="window-badge">????</span></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/usa.png" alt="美国 ??" loading="lazy"><span>美国</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/bih.png" alt="波黑 ??" loading="lazy"><span>波黑</span></span></strong>
+          <time>北京时间 07-02 08:00</time>
+          <div class="bracket-mini-title">?3????</div><div class="mini-score-wrap"><span>?3????</span><div class="mini-score-tabs"><span class="mini-score-tab active">??? <b>2-0</b></span><span class="mini-score-tab">Top 2 <b>1-0</b></span><span class="mini-score-tab">Top 3 <b>2-1</b></span></div></div>
+          <div class="bracket-wdl-mini"><span class="home">? 69.7%</span><span class="draw">? 19.6%</span><span class="away">? 10.7%</span></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_32 current-window" data-match-id="400021525">
+        <span class="bracket-match-number">M82</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M82</span><span class="window-badge">????</span></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/bel.png" alt="比利时 ??" loading="lazy"><span>比利时</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/sen.png" alt="塞内加尔 ??" loading="lazy"><span>塞内加尔</span></span></strong>
+          <time>北京时间 07-02 04:00</time>
+          <div class="bracket-mini-title">?3????</div><div class="mini-score-wrap"><span>?3????</span><div class="mini-score-tabs"><span class="mini-score-tab active">??? <b>1-1</b></span><span class="mini-score-tab">Top 2 <b>2-1</b></span><span class="mini-score-tab">Top 3 <b>1-0</b></span></div></div>
+          <div class="bracket-wdl-mini"><span class="home">? 42.8%</span><span class="draw">? 29.6%</span><span class="away">? 27.5%</span></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_32" data-match-id="400021526">
+        <span class="bracket-match-number">M83</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M83</span></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/por.png" alt="葡萄牙 ??" loading="lazy"><span>葡萄牙</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/cro.png" alt="克罗地亚 ??" loading="lazy"><span>克罗地亚</span></span></strong>
+          <time>北京时间 07-03 07:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_32" data-match-id="400021519">
+        <span class="bracket-match-number">M84</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M84</span></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/esp.png" alt="西班牙 ??" loading="lazy"><span>西班牙</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/aut.png" alt="奥地利 ??" loading="lazy"><span>奥地利</span></span></strong>
+          <time>北京时间 07-03 03:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_32" data-match-id="400021527">
+        <span class="bracket-match-number">M85</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M85</span></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/sui.png" alt="瑞士 ??" loading="lazy"><span>瑞士</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/alg.png" alt="阿尔及利亚 ??" loading="lazy"><span>阿尔及利亚</span></span></strong>
+          <time>北京时间 07-03 11:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_32" data-match-id="400021521">
+        <span class="bracket-match-number">M86</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M86</span></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="阿根廷 ??" loading="lazy"><span>阿根廷</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/cpv.png" alt="佛得角 ??" loading="lazy"><span>佛得角</span></span></strong>
+          <time>北京时间 07-04 06:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_32" data-match-id="400021517">
+        <span class="bracket-match-number">M87</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M87</span></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="哥伦比亚 ??" loading="lazy"><span>哥伦比亚</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/gha.png" alt="加纳 ??" loading="lazy"><span>加纳</span></span></strong>
+          <time>北京时间 07-04 09:30</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_32" data-match-id="400021515">
+        <span class="bracket-match-number">M88</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M88</span></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/aus.png" alt="澳大利亚 ??" loading="lazy"><span>澳大利亚</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/egy.png" alt="埃及 ??" loading="lazy"><span>埃及</span></span></strong>
+          <time>北京时间 07-04 02:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
         </div>
       </article>
     </div>
         </section>
             
         <section class="bracket-round bracket-round-round_of_16">
-          <h3>16强</h3>
+          <h3>16?</h3>
           <div class="bracket-node-list">
+      <article class="bracket-node round-round_of_16 placeholder" data-match-id="placeholder-M89">
+        <span class="bracket-match-number">M89</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M89</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M73</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M74</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
+        </div>
+      </article>
+    
       <article class="bracket-node round-round_of_16" data-match-id="400021530">
         <span class="bracket-match-number">M90</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M90</span></div>
-          <strong>加拿大<em>vs</em>摩洛哥</strong>
-          <time>07-05 01:00</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/can.png" alt="加拿大 ??" loading="lazy"><span>加拿大</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/mar.png" alt="摩洛哥 ??" loading="lazy"><span>摩洛哥</span></span></strong>
+          <time>北京时间 07-05 01:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_16 placeholder" data-match-id="placeholder-M91">
+        <span class="bracket-match-number">M91</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M91</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M77</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M78</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_16 placeholder" data-match-id="placeholder-M92">
+        <span class="bracket-match-number">M92</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M92</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M79</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M80</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_16 placeholder" data-match-id="placeholder-M93">
+        <span class="bracket-match-number">M93</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M93</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M81</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M82</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_16 placeholder" data-match-id="placeholder-M94">
+        <span class="bracket-match-number">M94</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M94</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M83</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M84</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_16 placeholder" data-match-id="placeholder-M95">
+        <span class="bracket-match-number">M95</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M95</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M85</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M86</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
+        </div>
+      </article>
+    
+      <article class="bracket-node round-round_of_16 placeholder" data-match-id="placeholder-M96">
+        <span class="bracket-match-number">M96</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>M96</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M87</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M88</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
         </div>
       </article>
     </div>
         </section>
             
         <section class="bracket-round bracket-round-quarter_finals">
-          <h3>8强</h3>
+          <h3>8?</h3>
           <div class="bracket-node-list">
-      <article class="bracket-node round-quarter_finals current-window" data-match-id="400021514">
-        <span class="bracket-match-number">M78</span>
+      <article class="bracket-node round-quarter_finals placeholder" data-match-id="placeholder-M97">
+        <span class="bracket-match-number">M97</span>
         <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M78</span><span class="window-badge">当前窗口</span></div>
-          <strong>科特迪瓦<em>vs</em>挪威</strong>
-          <time>07-01 01:00</time>
-          <div class="bracket-mini-title">前3预测比分</div><div class="mini-score-wrap"><span>前3预测比分</span><div class="mini-score-tabs"><span class="mini-score-tab active">主推荐 <b>1-2</b></span><span class="mini-score-tab">Top 2 <b>1-1</b></span><span class="mini-score-tab">Top 3 <b>0-1</b></span></div></div>
-          <div class="bracket-wdl-mini"><span class="home">胜 27%</span><span class="draw">平 28%</span><span class="away">负 45%</span></div>
+          <div class="bracket-node-top"><span>M97</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M89</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M90</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-quarter_finals" data-match-id="400021512">
-        <span class="bracket-match-number">M80</span>
+      <article class="bracket-node round-quarter_finals placeholder" data-match-id="placeholder-M98">
+        <span class="bracket-match-number">M98</span>
         <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M80</span></div>
-          <strong>英格兰<em>vs</em>刚果民主共和国</strong>
-          <time>07-02 00:00</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <div class="bracket-node-top"><span>M98</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M91</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M92</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-quarter_finals" data-match-id="400021525">
-        <span class="bracket-match-number">M82</span>
+      <article class="bracket-node round-quarter_finals placeholder" data-match-id="placeholder-M99">
+        <span class="bracket-match-number">M99</span>
         <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M82</span></div>
-          <strong>比利时<em>vs</em>塞内加尔</strong>
-          <time>07-02 04:00</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <div class="bracket-node-top"><span>M99</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M93</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M94</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-quarter_finals" data-match-id="400021524">
-        <span class="bracket-match-number">M81</span>
+      <article class="bracket-node round-quarter_finals placeholder" data-match-id="placeholder-M100">
+        <span class="bracket-match-number">M100</span>
         <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M81</span></div>
-          <strong>美国<em>vs</em>波黑</strong>
-          <time>07-02 08:00</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
-        </div>
-      </article>
-    
-      <article class="bracket-node round-quarter_finals" data-match-id="400021519">
-        <span class="bracket-match-number">M84</span>
-        <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M84</span></div>
-          <strong>西班牙<em>vs</em>奥地利</strong>
-          <time>07-03 03:00</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
-        </div>
-      </article>
-    
-      <article class="bracket-node round-quarter_finals" data-match-id="400021526">
-        <span class="bracket-match-number">M83</span>
-        <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M83</span></div>
-          <strong>葡萄牙<em>vs</em>克罗地亚</strong>
-          <time>07-03 07:00</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
-        </div>
-      </article>
-    
-      <article class="bracket-node round-quarter_finals" data-match-id="400021527">
-        <span class="bracket-match-number">M85</span>
-        <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M85</span></div>
-          <strong>瑞士<em>vs</em>阿尔及利亚</strong>
-          <time>07-03 11:00</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
-        </div>
-      </article>
-    
-      <article class="bracket-node round-quarter_finals" data-match-id="400021515">
-        <span class="bracket-match-number">M88</span>
-        <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M88</span></div>
-          <strong>澳大利亚<em>vs</em>埃及</strong>
-          <time>07-04 02:00</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
-        </div>
-      </article>
-    
-      <article class="bracket-node round-quarter_finals" data-match-id="400021521">
-        <span class="bracket-match-number">M86</span>
-        <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M86</span></div>
-          <strong>阿根廷<em>vs</em>佛得角</strong>
-          <time>07-04 06:00</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
-        </div>
-      </article>
-    
-      <article class="bracket-node round-quarter_finals" data-match-id="400021517">
-        <span class="bracket-match-number">M87</span>
-        <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M87</span></div>
-          <strong>哥伦比亚<em>vs</em>加纳</strong>
-          <time>07-04 09:30</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <div class="bracket-node-top"><span>M100</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M95</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M96</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
         </div>
       </article>
     </div>
         </section>
             
         <section class="bracket-round bracket-round-semi_finals">
-          <h3>4强</h3>
+          <h3>4?</h3>
           <div class="bracket-node-list">
-      <article class="bracket-node round-semi_finals placeholder" data-match-id="placeholder-semi_finals-91">
-        <span class="bracket-match-number">M91</span>
+      <article class="bracket-node round-semi_finals placeholder" data-match-id="placeholder-M101">
+        <span class="bracket-match-number">M101</span>
         <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M91</span></div>
-          <strong>胜者 M78<em>vs</em>胜者 M80</strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <div class="bracket-node-top"><span>M101</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M97</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M98</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-semi_finals placeholder" data-match-id="placeholder-semi_finals-92">
-        <span class="bracket-match-number">M92</span>
+      <article class="bracket-node round-semi_finals placeholder" data-match-id="placeholder-M102">
+        <span class="bracket-match-number">M102</span>
         <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M92</span></div>
-          <strong>胜者 M82<em>vs</em>胜者 M81</strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
-        </div>
-      </article>
-    
-      <article class="bracket-node round-semi_finals placeholder" data-match-id="placeholder-semi_finals-93">
-        <span class="bracket-match-number">M93</span>
-        <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M93</span></div>
-          <strong>胜者 M84<em>vs</em>胜者 M83</strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
-        </div>
-      </article>
-    
-      <article class="bracket-node round-semi_finals placeholder" data-match-id="placeholder-semi_finals-94">
-        <span class="bracket-match-number">M94</span>
-        <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M94</span></div>
-          <strong>胜者 M85<em>vs</em>胜者 M88</strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
-        </div>
-      </article>
-    
-      <article class="bracket-node round-semi_finals placeholder" data-match-id="placeholder-semi_finals-95">
-        <span class="bracket-match-number">M95</span>
-        <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M95</span></div>
-          <strong>胜者 M86<em>vs</em>胜者 M87</strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <div class="bracket-node-top"><span>M102</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M99</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M100</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
         </div>
       </article>
     </div>
         </section>
             
         <section class="bracket-round bracket-round-final">
-          <h3>决赛</h3>
+          <h3>??</h3>
           <div class="bracket-node-list">
-      <article class="bracket-node round-final placeholder" data-match-id="placeholder-final-96">
-        <span class="bracket-match-number">M96</span>
+      <article class="bracket-node round-final placeholder" data-match-id="placeholder-M104">
+        <span class="bracket-match-number">M104</span>
         <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M96</span></div>
-          <strong>胜者 M91<em>vs</em>胜者 M92</strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
-        </div>
-      </article>
-    
-      <article class="bracket-node round-final placeholder" data-match-id="placeholder-final-97">
-        <span class="bracket-match-number">M97</span>
-        <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M97</span></div>
-          <strong>胜者 M93<em>vs</em>胜者 M94</strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
-        </div>
-      </article>
-    
-      <article class="bracket-node round-final placeholder" data-match-id="placeholder-final-98">
-        <span class="bracket-match-number">M98</span>
-        <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M98</span></div>
-          <strong>胜者 M95<em>vs</em>待定</strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <div class="bracket-node-top"><span>M104</span></div>
+          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M101</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>?? M102</span></span></strong>
+          <time>??</time>
+          <div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>
+          <div class="bracket-wdl-mini"><div class="bracket-status">??</div></div>
         </div>
       </article>
     </div>
@@ -790,10 +878,10 @@
             </div>
         </div>
         <div class="bracket-legend">
-          <span><i class="dot home"></i>胜率高</span>
-          <span><i class="dot draw"></i>平局倾向</span>
-          <span><i class="dot away"></i>负率高</span>
-          <span class="current-window-key">当前窗口：当前和下一个中国比赛日</span>
+          <span><i class="dot home"></i>???</span>
+          <span><i class="dot draw"></i>????</span>
+          <span><i class="dot away"></i>???</span>
+          <span class="current-window-key">????????????????</span>
         </div>
       </div>
     
@@ -803,401 +891,124 @@
     <section class="usage-panel night-card">
       <h2>Token / Cost</h2>
       <div class="usage-grid">
-        <div class="usage-card input"><span>输入 TOKEN</span><strong>85891</strong></div>
-        <div class="usage-card output"><span>输出 TOKEN</span><strong>43770</strong></div>
-        <div class="usage-card total"><span>总 TOKEN</span><strong>129661</strong></div>
-        <div class="usage-card cost"><span>预计成本</span><strong>1.296610</strong></div>
+        <div class="usage-card input"><span>?? TOKEN</span><strong>106375</strong></div>
+        <div class="usage-card output"><span>?? TOKEN</span><strong>31790</strong></div>
+        <div class="usage-card total"><span>? TOKEN</span><strong>138165</strong></div>
+        <div class="usage-card cost"><span>????</span><strong>1.381650</strong></div>
       </div>
     </section>
 
     <section class="overview night-card">
-      <h2>总览</h2>
-      <p>世界杯1/16决赛阶段分析，包含6场比赛。巴西、德国、荷兰已完成比赛，科特迪瓦vs挪威、法国vs瑞典、墨西哥vs厄瓜多尔即将进行。</p>
+      <h2>??</h2>
+      <p>2026世界杯1/16决赛首轮6场分析：强队整体占优，法国、英格兰、美国被看好大胜；挪威、比利时、墨西哥面临考验。赛前伤情不明朗，淘汰赛爆冷风险存在。</p>
     </section>
 
     <section class="overview night-card">
-      <h2>风险概览</h2>
-      <p>已完成的比赛中巴西顺利晋级，德国与荷兰点球出局；即将进行的比赛中法国实力明显占优，墨西哥主场优势，挪威略占上风。</p>
+      <h2>????</h2>
+      <p>法国、英格兰、美国胜赔较低，但需警惕比利时 vs 塞内加尔、墨西哥 vs 厄瓜多尔的胶着比赛。伤病因素和天气信息缺失增加不确定性。</p>
     </section>
 
     <section class="legend night-card">
-      <span><i class="dot home"></i>主胜</span>
-      <span><i class="dot draw"></i>平局</span>
-      <span><i class="dot away"></i>客胜</span>
-      <span>置信度：高 / 中 / 低</span>
-      <span><a href="latest.json">查看 data/latest.json</a></span>
+      <span><i class="dot home"></i>??</span>
+      <span><i class="dot draw"></i>??</span>
+      <span><i class="dot away"></i>??</span>
+      <span>????? / ? / ?</span>
+      <span><a href="latest.json">?? data/latest.json</a></span>
     </section>
     
-    <section class="match-day" data-match-day="2026-06-29">
-      <div class="section-head">
-        <div>
-          <h2>6月29日比赛日</h2>
-          <p class="muted compact">北京时间 06-29 18:00 - 06-30 18:00，按北京时间升序排列</p>
-        </div>
-        <div class="day-count">3 场</div>
-      </div>
-      <section class="match-grid">
-      <article class="match-card">
-        <div class="match-topline">
-          <h3>巴西 vs 日本</h3>
-          <time datetime="2026-06-30T01:00:00+08:00">北京时间 06-30 01:00</time>
-        </div>
-        <div class="scoreboard">
-          <div class="score-side">
-            <span>巴西</span>
-            <strong>2</strong>
-          </div>
-          <div class="score-separator">:</div>
-          <div class="score-side away-side">
-            <span>日本</span>
-            <strong>1</strong>
-          </div>
-        </div>
-        <div class="probability-panel">
-          
-      <div class="prob-heading">主胜 / 平 / 客胜概率</div>
-      <div class="prob-labels">
-        <span><i class="dot home"></i>主胜 100%</span>
-        <span><i class="dot draw"></i>平局 0%</span>
-        <span><i class="dot away"></i>客胜 0%</span>
-      </div>
-      <div class="prob-stack" aria-hidden="true">
-        <span class="seg home" style="width:100.000%"></span>
-        <span class="seg draw" style="width:0.000%"></span>
-        <span class="seg away" style="width:0.000%"></span>
-      </div>
-      <div class="prob-values">
-        <span>100%</span>
-        <span>0%</span>
-        <span>0%</span>
-      </div>
-    
-        </div>
-        <div class="metric-grid">
-          <span><b>xG</b>巴西 0.00</span>
-          <span><b>xG</b>日本 0.00</span>
-          <span><b>爆冷概率</b>0%</span>
-          <span><b>赔率</b>unavailable</span>
-        </div>
-        
-        <section class="score-options" data-score-tabs>
-          <h4>前3预测比分</h4>
-          <div class="score-tab-labels" role="tablist"><button class="score-tab active" type="button" role="tab" aria-selected="true" data-score-tab="score-400021516-1"><span>主推荐</span><strong>2-1</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021516-2"><span>Top 2</span><strong>1-0</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021516-3"><span>Top 3</span><strong>2-0</strong></button></div>
-          <div class="score-tab-panels"><article class="score-tab-panel active" role="tabpanel" data-score-panel="score-400021516-1"><h5>主推荐 · 2-1</h5><p>比赛最终比分</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021516-2"><h5>Top 2 · 1-0</h5><p>巴西掌控节奏可能小胜</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021516-3"><h5>Top 3 · 2-0</h5><p>日本防守顽强但巴西可零封</p></article></div>
-        </section>
-    
-        
-        <details class="matchup-panel" open>
-          <summary>对战结构图</summary>
-          <div class="graph-summary-grid">
-            <span><b>优势方</b>主队</span>
-            <span><b>关键对位</b>巴西边路进攻 vs 日本三后卫体系</span>
-            <span><b>风险触发点</b>日本快速反击可能偷得一球</span>
-          </div>
-          <p class="graph-summary">巴西整体实力占优，掌控比赛</p>
-          <div class="graph-node-grid">
-            <section><h5>主队结构</h5><article class="graph-node home"><div><strong>主队进攻</strong><span>强度 85/100</span></div><p>巴西进攻豪华</p></article><article class="graph-node home"><div><strong>主队中场/转换</strong><span>强度 80/100</span></div><p>控制力强</p></article><article class="graph-node home"><div><strong>主队防守</strong><span>强度 75/100</span></div><p>防守稳固</p></article></section>
-            <section><h5>客队结构</h5><article class="graph-node away"><div><strong>客队进攻</strong><span>强度 70/100</span></div><p>日本快速反击</p></article><article class="graph-node away"><div><strong>客队中场/转换</strong><span>强度 65/100</span></div><p>组织能力不俗</p></article><article class="graph-node away"><div><strong>客队防守</strong><span>强度 60/100</span></div><p>防守稍弱</p></article></section>
-          </div>
-          <div class="graph-edge-list">
-            <h5>关键关系</h5>
-            <article class="graph-edge impact-high"><div><strong>巴西冲击日本防线</strong><span>高</span></div><p>巴西锋线威胁大</p><small>home_attack → away_defense · home_to_away</small></article><article class="graph-edge impact-medium"><div><strong>日本反击考验巴西</strong><span>中</span></div><p>日本速度可能制造麻烦</p><small>away_attack → home_defense · away_to_home</small></article><article class="graph-edge impact-low"><div><strong>中场控制对抗</strong><span>低</span></div><p>巴西中场占优</p><small>home_midfield → away_midfield · balanced</small></article>
-          </div>
-        </details>
-    
-        
-        <details class="factor-panel" open>
-          <summary>分析因子</summary>
-          <div class="factor-grid"><section class="factor-item"><h5>市场信号</h5><p>盘口不可用</p></section><section class="factor-item"><h5>FIFA 实力先验</h5><p>巴西长期实力优于日本</p></section><section class="factor-item"><h5>近期状态</h5><p>两队小组赛表现未知</p></section><section class="factor-item"><h5>小组形势</h5><p>1/16决赛淘汰赛，单场决胜负</p></section><section class="factor-item"><h5>伤停/轮换</h5><p>双方伤停情况未知</p></section><section class="factor-item"><h5>天气/场地</h5><p>休斯顿，天气未知</p></section><section class="factor-item"><h5>战术关键</h5><p>巴西4-1-2-3阵型对日本3-4-3，巴西边路进攻强势</p></section><section class="factor-item"><h5>不确定性</h5><p>已完赛，结果确定</p></section></div>
-        </details>
-    
-        <div class="analysis-block">
-          <section><h4>战术分析</h4><p>巴西4-1-2-3对日本3-4-3，巴西利用宽度和球员个人能力，日本依靠整体防守和反击。</p></section>
-          <section><h4>风险分析</h4><p class="risk-text">巴西晋级无悬念，但日本若抓住机会可能制造冷门，实际比赛2:1</p></section>
-          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class="muted compact">未知 未知 无影响</p></section>
-          <section><h4>赔率对比</h4><p>真实赔率源未提供 moneyline，显示 unavailable。</p></section>
-        </div>
-        <div class="match-footer">
-          <span>置信度 <b class="confidence high">高</b></span>
-          <span>比赛 ID: 400021516</span>
-          <a class="source-link" href="https://www.espn.com/soccer/match/_/gameId/760487" rel="noopener" target="_blank">来源</a>
-        </div>
-        <p class="venue-line">Houston Stadium - Houston - USA</p>
-      </article>
-    
-
-      <article class="match-card">
-        <div class="match-topline">
-          <h3>德国 vs 巴拉圭</h3>
-          <time datetime="2026-06-30T04:30:00+08:00">北京时间 06-30 04:30</time>
-        </div>
-        <div class="scoreboard">
-          <div class="score-side">
-            <span>德国</span>
-            <strong>1</strong>
-          </div>
-          <div class="score-separator">:</div>
-          <div class="score-side away-side">
-            <span>巴拉圭</span>
-            <strong>1</strong>
-          </div>
-        </div>
-        <div class="probability-panel">
-          
-      <div class="prob-heading">主胜 / 平 / 客胜概率</div>
-      <div class="prob-labels">
-        <span><i class="dot home"></i>主胜 0%</span>
-        <span><i class="dot draw"></i>平局 100%</span>
-        <span><i class="dot away"></i>客胜 0%</span>
-      </div>
-      <div class="prob-stack" aria-hidden="true">
-        <span class="seg home" style="width:0.000%"></span>
-        <span class="seg draw" style="width:100.000%"></span>
-        <span class="seg away" style="width:0.000%"></span>
-      </div>
-      <div class="prob-values">
-        <span>0%</span>
-        <span>100%</span>
-        <span>0%</span>
-      </div>
-    
-        </div>
-        <div class="metric-grid">
-          <span><b>xG</b>德国 0.00</span>
-          <span><b>xG</b>巴拉圭 0.00</span>
-          <span><b>爆冷概率</b>80%</span>
-          <span><b>赔率</b>unavailable</span>
-        </div>
-        
-        <section class="score-options" data-score-tabs>
-          <h4>前3预测比分</h4>
-          <div class="score-tab-labels" role="tablist"><button class="score-tab active" type="button" role="tab" aria-selected="true" data-score-tab="score-400021513-1"><span>主推荐</span><strong>1-1</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021513-2"><span>Top 2</span><strong>2-1</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021513-3"><span>Top 3</span><strong>1-2</strong></button></div>
-          <div class="score-tab-panels"><article class="score-tab-panel active" role="tabpanel" data-score-panel="score-400021513-1"><h5>主推荐 · 1-1</h5><p>常规时间平局</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021513-2"><h5>Top 2 · 2-1</h5><p>德国可能险胜</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021513-3"><h5>Top 3 · 1-2</h5><p>巴拉圭爆冷</p></article></div>
-        </section>
-    
-        
-        <details class="matchup-panel" open>
-          <summary>对战结构图</summary>
-          <div class="graph-summary-grid">
-            <span><b>优势方</b>主队</span>
-            <span><b>关键对位</b>德国进攻对巴拉圭密集防守</span>
-            <span><b>风险触发点</b>巴拉圭定位球或反击</span>
-          </div>
-          <p class="graph-summary">德国强攻，巴拉圭顽强防守，平局合理</p>
-          <div class="graph-node-grid">
-            <section><h5>主队结构</h5><article class="graph-node home"><div><strong>主队进攻</strong><span>强度 85/100</span></div><p>德国进攻手段多样</p></article><article class="graph-node home"><div><strong>主队中场/转换</strong><span>强度 80/100</span></div><p>中场控制力强</p></article><article class="graph-node home"><div><strong>主队防守</strong><span>强度 75/100</span></div><p>防线稳固但偶有漏洞</p></article></section>
-            <section><h5>客队结构</h5><article class="graph-node away"><div><strong>客队进攻</strong><span>强度 65/100</span></div><p>反击有威胁</p></article><article class="graph-node away"><div><strong>客队中场/转换</strong><span>强度 60/100</span></div><p>中场硬朗但创造性不足</p></article><article class="graph-node away"><div><strong>客队防守</strong><span>强度 70/100</span></div><p>防守组织良好</p></article></section>
-          </div>
-          <div class="graph-edge-list">
-            <h5>关键关系</h5>
-            <article class="graph-edge impact-high"><div><strong>德国围攻巴拉圭禁区</strong><span>高</span></div><p>德国进攻压制</p><small>home_attack → away_defense · home_to_away</small></article><article class="graph-edge impact-medium"><div><strong>巴拉圭反击威胁德国</strong><span>中</span></div><p>可能偷袭得手</p><small>away_attack → home_defense · away_to_home</small></article><article class="graph-edge impact-low"><div><strong>中场争夺</strong><span>低</span></div><p>德国控球优势</p><small>home_midfield → away_midfield · balanced</small></article>
-          </div>
-        </details>
-    
-        
-        <details class="factor-panel" open>
-          <summary>分析因子</summary>
-          <div class="factor-grid"><section class="factor-item"><h5>市场信号</h5><p>盘口不可用</p></section><section class="factor-item"><h5>FIFA 实力先验</h5><p>德国历史强队，巴拉圭相对较弱</p></section><section class="factor-item"><h5>近期状态</h5><p>小组赛表现未知</p></section><section class="factor-item"><h5>小组形势</h5><p>1/16决赛淘汰赛</p></section><section class="factor-item"><h5>伤停/轮换</h5><p>德国和巴拉圭均有伤病传闻，可能影响阵容</p></section><section class="factor-item"><h5>天气/场地</h5><p>波士顿，天气未知</p></section><section class="factor-item"><h5>战术关键</h5><p>德国4-2-3-1 vs 巴拉圭4-4-2，德国控球，巴拉圭防守反击</p></section><section class="factor-item"><h5>不确定性</h5><p>已完赛，点球大战巴拉圭晋级</p></section></div>
-        </details>
-    
-        <div class="analysis-block">
-          <section><h4>战术分析</h4><p>德国主导控球，巴拉圭收缩防线寻求反击。</p></section>
-          <section><h4>风险分析</h4><p class="risk-text">常规时间平局，德国控球但破门乏力，最终点球大战出局。</p></section>
-          <section><h4>伤停信息</h4><p>主队: 媒体伤停线索; 客队: 媒体伤停线索</p><p class="muted compact">有伤病传闻，可能影响关键球员 有伤病传闻 双方阵容或有缺失，平局可能性大</p></section>
-          <section><h4>赔率对比</h4><p>真实赔率源未提供 moneyline，显示 unavailable。</p></section>
-        </div>
-        <div class="match-footer">
-          <span>置信度 <b class="confidence medium">中</b></span>
-          <span>比赛 ID: 400021513</span>
-          <a class="source-link" href="https://www.espn.com/soccer/match/_/gameId/760489" rel="noopener" target="_blank">来源</a>
-        </div>
-        <p class="venue-line">Boston Stadium - Boston - USA</p>
-      </article>
-    
-
-      <article class="match-card">
-        <div class="match-topline">
-          <h3>荷兰 vs 摩洛哥</h3>
-          <time datetime="2026-06-30T09:00:00+08:00">北京时间 06-30 09:00</time>
-        </div>
-        <div class="scoreboard">
-          <div class="score-side">
-            <span>荷兰</span>
-            <strong>1</strong>
-          </div>
-          <div class="score-separator">:</div>
-          <div class="score-side away-side">
-            <span>摩洛哥</span>
-            <strong>1</strong>
-          </div>
-        </div>
-        <div class="probability-panel">
-          
-      <div class="prob-heading">主胜 / 平 / 客胜概率</div>
-      <div class="prob-labels">
-        <span><i class="dot home"></i>主胜 0%</span>
-        <span><i class="dot draw"></i>平局 100%</span>
-        <span><i class="dot away"></i>客胜 0%</span>
-      </div>
-      <div class="prob-stack" aria-hidden="true">
-        <span class="seg home" style="width:0.000%"></span>
-        <span class="seg draw" style="width:100.000%"></span>
-        <span class="seg away" style="width:0.000%"></span>
-      </div>
-      <div class="prob-values">
-        <span>0%</span>
-        <span>100%</span>
-        <span>0%</span>
-      </div>
-    
-        </div>
-        <div class="metric-grid">
-          <span><b>xG</b>荷兰 0.00</span>
-          <span><b>xG</b>摩洛哥 0.00</span>
-          <span><b>爆冷概率</b>70%</span>
-          <span><b>赔率</b>unavailable</span>
-        </div>
-        
-        <section class="score-options" data-score-tabs>
-          <h4>前3预测比分</h4>
-          <div class="score-tab-labels" role="tablist"><button class="score-tab active" type="button" role="tab" aria-selected="true" data-score-tab="score-400021522-1"><span>主推荐</span><strong>1-1</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021522-2"><span>Top 2</span><strong>2-1</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021522-3"><span>Top 3</span><strong>1-0</strong></button></div>
-          <div class="score-tab-panels"><article class="score-tab-panel active" role="tabpanel" data-score-panel="score-400021522-1"><h5>主推荐 · 1-1</h5><p>常规时间平局</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021522-2"><h5>Top 2 · 2-1</h5><p>荷兰攻击力可能致胜</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021522-3"><h5>Top 3 · 1-0</h5><p>荷兰小胜</p></article></div>
-        </section>
-    
-        
-        <details class="matchup-panel" open>
-          <summary>对战结构图</summary>
-          <div class="graph-summary-grid">
-            <span><b>优势方</b>均衡</span>
-            <span><b>关键对位</b>荷兰边翼卫 vs 摩洛哥边路防守</span>
-            <span><b>风险触发点</b>摩洛哥防守反击</span>
-          </div>
-          <p class="graph-summary">双方实力接近，平局是合理结果</p>
-          <div class="graph-node-grid">
-            <section><h5>主队结构</h5><article class="graph-node home"><div><strong>主队进攻</strong><span>强度 80/100</span></div><p>荷兰攻击线有天赋</p></article><article class="graph-node home"><div><strong>主队中场/转换</strong><span>强度 75/100</span></div><p>中场组织能力不错</p></article><article class="graph-node home"><div><strong>主队防守</strong><span>强度 70/100</span></div><p>防守有经验</p></article></section>
-            <section><h5>客队结构</h5><article class="graph-node away"><div><strong>客队进攻</strong><span>强度 70/100</span></div><p>摩洛哥快速反击</p></article><article class="graph-node away"><div><strong>客队中场/转换</strong><span>强度 65/100</span></div><p>中场体能充沛</p></article><article class="graph-node away"><div><strong>客队防守</strong><span>强度 75/100</span></div><p>防守坚韧</p></article></section>
-          </div>
-          <div class="graph-edge-list">
-            <h5>关键关系</h5>
-            <article class="graph-edge impact-high"><div><strong>荷兰攻击摩洛哥防线</strong><span>高</span></div><p>荷兰寻求突破</p><small>home_attack → away_defense · home_to_away</small></article><article class="graph-edge impact-medium"><div><strong>摩洛哥反击荷兰</strong><span>中</span></div><p>摩洛哥速度威胁</p><small>away_attack → home_defense · away_to_home</small></article><article class="graph-edge impact-low"><div><strong>中场争夺控制权</strong><span>低</span></div><p>势均力敌</p><small>home_midfield → away_midfield · balanced</small></article>
-          </div>
-        </details>
-    
-        
-        <details class="factor-panel" open>
-          <summary>分析因子</summary>
-          <div class="factor-grid"><section class="factor-item"><h5>市场信号</h5><p>盘口不可用</p></section><section class="factor-item"><h5>FIFA 实力先验</h5><p>荷兰略强于摩洛哥</p></section><section class="factor-item"><h5>近期状态</h5><p>小组赛表现未知</p></section><section class="factor-item"><h5>小组形势</h5><p>1/16决赛淘汰赛</p></section><section class="factor-item"><h5>伤停/轮换</h5><p>双方有伤病传闻</p></section><section class="factor-item"><h5>天气/场地</h5><p>蒙特雷，天气未知</p></section><section class="factor-item"><h5>战术关键</h5><p>荷兰3-4-3 vs 摩洛哥4-2-3-1</p></section><section class="factor-item"><h5>不确定性</h5><p>已完赛，摩洛哥点球胜</p></section></div>
-        </details>
-    
-        <div class="analysis-block">
-          <section><h4>战术分析</h4><p>荷兰3-4-3对摩洛哥4-2-3-1，荷兰边路进攻，摩洛哥中路反击。</p></section>
-          <section><h4>风险分析</h4><p class="risk-text">常规时间平局，荷兰控球稍多但未能取胜，摩洛哥点球晋级。</p></section>
-          <section><h4>伤停信息</h4><p>主队: 媒体伤停线索; 客队: 媒体伤停线索</p><p class="muted compact">有伤病传闻 有伤病传闻 可能影响双方阵容</p></section>
-          <section><h4>赔率对比</h4><p>真实赔率源未提供 moneyline，显示 unavailable。</p></section>
-        </div>
-        <div class="match-footer">
-          <span>置信度 <b class="confidence medium">中</b></span>
-          <span>比赛 ID: 400021522</span>
-          <a class="source-link" href="https://www.espn.com/soccer/match/_/gameId/760488" rel="noopener" target="_blank">来源</a>
-        </div>
-        <p class="venue-line">Monterrey Stadium - Monterrey - MEX</p>
-      </article>
-    </section>
-    </section>
-            
     <section class="match-day" data-match-day="2026-06-30">
       <div class="section-head">
         <div>
           <h2>6月30日比赛日</h2>
-          <p class="muted compact">北京时间 06-30 18:00 - 07-01 18:00，按北京时间升序排列</p>
+          <p class="muted compact">北京时间 06-30 18:00 - 07-01 18:00??????????</p>
         </div>
-        <div class="day-count">3 场</div>
+        <div class="day-count">3 ?</div>
       </div>
       <section class="match-grid">
       <article class="match-card">
         <div class="match-topline">
-          <h3>科特迪瓦 vs 挪威</h3>
+          <h3 class="match-title-teams"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/civ.png" alt="科特迪瓦 ??" loading="lazy"><span>科特迪瓦</span></span><span class="versus">vs</span><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nor.png" alt="挪威 ??" loading="lazy"><span>挪威</span></span></h3>
           <time datetime="2026-07-01T01:00:00+08:00">北京时间 07-01 01:00</time>
         </div>
         <div class="scoreboard">
           <div class="score-side">
-            <span>科特迪瓦</span>
-            <strong>1</strong>
+            <span class="score-team-name"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/civ.png" alt="科特迪瓦 ??" loading="lazy"><span>科特迪瓦</span></span></span>
+            <strong>0</strong>
           </div>
           <div class="score-separator">:</div>
           <div class="score-side away-side">
-            <span>挪威</span>
-            <strong>2</strong>
+            <span class="score-team-name"><span class="team-inline reverse"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/nor.png" alt="挪威 ??" loading="lazy"><span>挪威</span></span></span>
+            <strong>1</strong>
           </div>
         </div>
         <div class="probability-panel">
           
-      <div class="prob-heading">主胜 / 平 / 客胜概率</div>
+      <div class="prob-heading">?? / ? / ????</div>
       <div class="prob-labels">
-        <span><i class="dot home"></i>主胜 27%</span>
-        <span><i class="dot draw"></i>平局 28%</span>
-        <span><i class="dot away"></i>客胜 45%</span>
+        <span><i class="dot home"></i>?? 27.1%</span>
+        <span><i class="dot draw"></i>?? 28.3%</span>
+        <span><i class="dot away"></i>?? 44.7%</span>
       </div>
       <div class="prob-stack" aria-hidden="true">
-        <span class="seg home" style="width:27.000%"></span>
-        <span class="seg draw" style="width:28.000%"></span>
-        <span class="seg away" style="width:45.000%"></span>
+        <span class="seg home" style="width:27.060%"></span>
+        <span class="seg draw" style="width:28.260%"></span>
+        <span class="seg away" style="width:44.680%"></span>
       </div>
       <div class="prob-values">
-        <span>27%</span>
-        <span>28%</span>
-        <span>45%</span>
+        <span>27.1%</span>
+        <span>28.3%</span>
+        <span>44.7%</span>
       </div>
     
         </div>
         <div class="metric-grid">
-          <span><b>xG</b>科特迪瓦 0.90</span>
-          <span><b>xG</b>挪威 1.40</span>
-          <span><b>爆冷概率</b>40%</span>
-          <span><b>赔率</b>主胜 26.89% / 平 27.66% / 客胜 45.45%</span>
+          <span><b>xG</b>科特迪瓦 0.70</span>
+          <span><b>xG</b>挪威 1.20</span>
+          <span><b>????</b>55.3%</span>
+          <span><b>??</b>主胜 27.06% / 平 28.26% / 客胜 44.68%</span>
         </div>
         
         <section class="score-options" data-score-tabs>
-          <h4>前3预测比分</h4>
-          <div class="score-tab-labels" role="tablist"><button class="score-tab active" type="button" role="tab" aria-selected="true" data-score-tab="score-400021514-1"><span>主推荐</span><strong>1-2</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021514-2"><span>Top 2</span><strong>1-1</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021514-3"><span>Top 3</span><strong>0-1</strong></button></div>
-          <div class="score-tab-panels"><article class="score-tab-panel active" role="tabpanel" data-score-panel="score-400021514-1"><h5>主推荐 · 1-2</h5><p>挪威攻击力更强</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021514-2"><h5>Top 2 · 1-1</h5><p>可能陷入僵局</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021514-3"><h5>Top 3 · 0-1</h5><p>挪威小胜</p></article></div>
+          <h4>?3????</h4>
+          <div class="score-tab-labels" role="tablist"><button class="score-tab active" type="button" role="tab" aria-selected="true" data-score-tab="score-400021514-1"><span>???</span><strong>0-1</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021514-2"><span>Top 2</span><strong>1-1</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021514-3"><span>Top 3</span><strong>0-2</strong></button></div>
+          <div class="score-tab-panels"><article class="score-tab-panel active" role="tabpanel" data-score-panel="score-400021514-1"><h5>??? ? 0-1</h5><p>挪威进攻效率更高，科特迪瓦防守组织一般</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021514-2"><h5>Top 2 ? 1-1</h5><p>淘汰赛可能保守，科特迪瓦主场优势</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021514-3"><h5>Top 3 ? 0-2</h5><p>挪威实力占优，若科特迪瓦失误</p></article></div>
         </section>
     
         
         <details class="matchup-panel" open>
-          <summary>对战结构图</summary>
+          <summary>?????</summary>
           <div class="graph-summary-grid">
-            <span><b>优势方</b>客队</span>
-            <span><b>关键对位</b>哈兰德 vs 科特迪瓦防线</span>
-            <span><b>风险触发点</b>挪威防守失误</span>
+            <span><b>???</b>??</span>
+            <span><b>????</b>哈兰德 vs 科特迪瓦中卫</span>
+            <span><b>?????</b>若挪威进攻效率不佳，比赛可能陷入僵局</span>
           </div>
-          <p class="graph-summary">挪威整体实力更强，但科特迪瓦有爆冷可能</p>
+          <p class="graph-summary">挪威在攻防两端实力占优，科特迪瓦需依靠主场和反击。</p>
           <div class="graph-node-grid">
-            <section><h5>主队结构</h5><article class="graph-node home"><div><strong>主队进攻</strong><span>强度 70/100</span></div><p>科特迪瓦身体对抗强</p></article><article class="graph-node home"><div><strong>主队中场/转换</strong><span>强度 65/100</span></div><p>中场拼抢积极</p></article><article class="graph-node home"><div><strong>主队防守</strong><span>强度 60/100</span></div><p>防守有速度但经验不足</p></article></section>
-            <section><h5>客队结构</h5><article class="graph-node away"><div><strong>客队进攻</strong><span>强度 80/100</span></div><p>哈兰德终结能力顶级</p></article><article class="graph-node away"><div><strong>客队中场/转换</strong><span>强度 75/100</span></div><p>中场组织有序</p></article><article class="graph-node away"><div><strong>客队防守</strong><span>强度 70/100</span></div><p>防守较为稳健</p></article></section>
+            <section><h5>????</h5><article class="graph-node home"><div><strong>科特迪瓦进攻</strong><span>?? 65/100</span></div><p>进攻主要依靠速度和个人突破</p></article><article class="graph-node home"><div><strong>科特迪瓦中场/转换</strong><span>?? 60/100</span></div><p>中场控制力一般</p></article><article class="graph-node home"><div><strong>科特迪瓦防守</strong><span>?? 55/100</span></div><p>防守稳定性不足</p></article></section>
+            <section><h5>????</h5><article class="graph-node away"><div><strong>挪威进攻</strong><span>?? 80/100</span></div><p>拥有顶级射手，进攻威胁大</p></article><article class="graph-node away"><div><strong>挪威中场/转换</strong><span>?? 75/100</span></div><p>中场组织有序</p></article><article class="graph-node away"><div><strong>挪威防守</strong><span>?? 70/100</span></div><p>防线整体稳固</p></article></section>
           </div>
           <div class="graph-edge-list">
-            <h5>关键关系</h5>
-            <article class="graph-edge impact-medium"><div><strong>科特迪瓦冲击挪威防线</strong><span>中</span></div><p>可能制造混乱</p><small>home_attack → away_defense · home_to_away</small></article><article class="graph-edge impact-high"><div><strong>哈兰德考验科特迪瓦防线</strong><span>高</span></div><p>强点压制</p><small>away_attack → home_defense · away_to_home</small></article><article class="graph-edge impact-low"><div><strong>中场对抗</strong><span>低</span></div><p>挪威稍占优</p><small>home_midfield → away_midfield · balanced</small></article>
+            <h5>????</h5>
+            <article class="graph-edge impact-medium"><div><strong>科特迪瓦突破 vs 挪威防线</strong><span>?</span></div><p>科特迪瓦边路速度可能制造威胁，但挪威防守组织严密</p><small>home_attack ? away_defense ? home_to_away</small></article><article class="graph-edge impact-high"><div><strong>挪威强攻 vs 科特迪瓦防线</strong><span>?</span></div><p>哈兰德领衔的进攻线有望叩开对手大门</p><small>away_attack ? home_defense ? away_to_home</small></article><article class="graph-edge impact-low"><div><strong>中场争夺</strong><span>?</span></div><p>挪威中场控制可能占优</p><small>home_midfield ? away_midfield ? balanced</small></article>
           </div>
         </details>
     
         
         <details class="factor-panel" open>
-          <summary>分析因子</summary>
-          <div class="factor-grid"><section class="factor-item"><h5>市场信号</h5><p>挪威+110，市场看好挪威</p></section><section class="factor-item"><h5>FIFA 实力先验</h5><p>科特迪瓦非洲强队，挪威近年实力提升，哈兰德领衔</p></section><section class="factor-item"><h5>近期状态</h5><p>小组赛表现未知</p></section><section class="factor-item"><h5>小组形势</h5><p>1/16决赛，一场定胜负</p></section><section class="factor-item"><h5>伤停/轮换</h5><p>未知</p></section><section class="factor-item"><h5>天气/场地</h5><p>达拉斯，天气未知</p></section><section class="factor-item"><h5>战术关键</h5><p>科特迪瓦冲击力 vs 挪威高效进攻</p></section><section class="factor-item"><h5>不确定性</h5><p>科特迪瓦有望爆冷</p></section></div>
+          <summary>????</summary>
+          <div class="factor-grid"><section class="factor-item"><h5>????</h5><p>DraftKings赔率显示挪威客胜概率约44.68%，市场略看好挪威。</p></section><section class="factor-item"><h5>FIFA ????</h5><p>FIFA排名不可用，基于长期实力先验，挪威整体阵容略强。</p></section><section class="factor-item"><h5>????</h5><p>近期表现未知。</p></section><section class="factor-item"><h5>????</h5><p>1/16决赛，单场淘汰制，比赛在达拉斯进行。</p></section><section class="factor-item"><h5>??/??</h5><p>双方伤病情况未知。</p></section><section class="factor-item"><h5>??/??</h5><p>达拉斯体育馆，天气未知。</p></section><section class="factor-item"><h5>????</h5><p>挪威依靠哈兰德等攻击手，科特迪瓦需稳固防守。</p></section><section class="factor-item"><h5>????</h5><p>淘汰赛第一轮，双方状态未知，存在变数。</p></section></div>
         </details>
     
         <div class="analysis-block">
-          <section><h4>战术分析</h4><p>科特迪瓦利用速度和身体，挪威依靠哈兰德终结能力。</p></section>
-          <section><h4>风险分析</h4><p class="risk-text">挪威实力占优但科特迪瓦韧性足，可能小胜或平局</p></section>
-          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class="muted compact">未知 未知 无关键影响</p></section>
-          <section><h4>赔率对比</h4><p>NOR +110: 主胜 26.89% / 平 27.66% / 客胜 45.45%. 模型与市场一致，挪威小优</p></section>
+          <section><h4>????</h4><p>挪威预计控球主导，科特迪瓦收缩防守伺机反击。</p></section>
+          <section><h4>????</h4><p class="risk-text">淘汰赛不确定性较大，科特迪瓦在主场的韧性不可低估，但挪威实力略优，看好小胜。</p></section>
+          <section><h4>????</h4><p>主队: unknown; 客队: unknown</p><p class="muted compact">无已知伤病 无已知伤病 双方阵容齐整</p></section>
+          <section><h4>????</h4><p>NOR +115: 主胜 27.06% / 平 28.26% / 客胜 44.68%. 模型移除水分后，挪威胜率小幅下调，但仍是赢面最大。</p></section>
         </div>
         <div class="match-footer">
-          <span>置信度 <b class="confidence medium">中</b></span>
-          <span>比赛 ID: 400021514</span>
-          <a class="source-link" href="https://www.espn.com/soccer/match/_/gameId/760490" rel="noopener" target="_blank">来源</a>
+          <span>??? <b class="confidence medium">中</b></span>
+          <span>?? ID: 400021514</span>
+          <a class="source-link" href="https://www.espn.com/soccer/match/_/gameId/760490" rel="noopener" target="_blank">??</a>
         </div>
         <p class="venue-line">Dallas Stadium - Dallas - USA</p>
       </article>
@@ -1205,88 +1016,88 @@
 
       <article class="match-card">
         <div class="match-topline">
-          <h3>法国 vs 瑞典</h3>
+          <h3 class="match-title-teams"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/fra.png" alt="法国 ??" loading="lazy"><span>法国</span></span><span class="versus">vs</span><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/swe.png" alt="瑞典 ??" loading="lazy"><span>瑞典</span></span></h3>
           <time datetime="2026-07-01T05:00:00+08:00">北京时间 07-01 05:00</time>
         </div>
         <div class="scoreboard">
           <div class="score-side">
-            <span>法国</span>
-            <strong>3</strong>
+            <span class="score-team-name"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/fra.png" alt="法国 ??" loading="lazy"><span>法国</span></span></span>
+            <strong>2</strong>
           </div>
           <div class="score-separator">:</div>
           <div class="score-side away-side">
-            <span>瑞典</span>
+            <span class="score-team-name"><span class="team-inline reverse"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/swe.png" alt="瑞典 ??" loading="lazy"><span>瑞典</span></span></span>
             <strong>0</strong>
           </div>
         </div>
         <div class="probability-panel">
           
-      <div class="prob-heading">主胜 / 平 / 客胜概率</div>
+      <div class="prob-heading">?? / ? / ????</div>
       <div class="prob-labels">
-        <span><i class="dot home"></i>主胜 74%</span>
-        <span><i class="dot draw"></i>平局 16%</span>
-        <span><i class="dot away"></i>客胜 10%</span>
+        <span><i class="dot home"></i>?? 74.7%</span>
+        <span><i class="dot draw"></i>?? 16.1%</span>
+        <span><i class="dot away"></i>?? 9.2%</span>
       </div>
       <div class="prob-stack" aria-hidden="true">
-        <span class="seg home" style="width:74.000%"></span>
-        <span class="seg draw" style="width:16.000%"></span>
-        <span class="seg away" style="width:10.000%"></span>
+        <span class="seg home" style="width:74.680%"></span>
+        <span class="seg draw" style="width:16.110%"></span>
+        <span class="seg away" style="width:9.210%"></span>
       </div>
       <div class="prob-values">
-        <span>74%</span>
-        <span>16%</span>
-        <span>10%</span>
+        <span>74.7%</span>
+        <span>16.1%</span>
+        <span>9.2%</span>
       </div>
     
         </div>
         <div class="metric-grid">
-          <span><b>xG</b>法国 2.50</span>
+          <span><b>xG</b>法国 2.10</span>
           <span><b>xG</b>瑞典 0.40</span>
-          <span><b>爆冷概率</b>5%</span>
-          <span><b>赔率</b>主胜 73.83% / 平 16.62% / 客胜 9.55%</span>
+          <span><b>????</b>25.3%</span>
+          <span><b>??</b>主胜 74.69% / 平 16.11% / 客胜 9.21%</span>
         </div>
         
         <section class="score-options" data-score-tabs>
-          <h4>前3预测比分</h4>
-          <div class="score-tab-labels" role="tablist"><button class="score-tab active" type="button" role="tab" aria-selected="true" data-score-tab="score-400021523-1"><span>主推荐</span><strong>3-0</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021523-2"><span>Top 2</span><strong>2-0</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021523-3"><span>Top 3</span><strong>2-1</strong></button></div>
-          <div class="score-tab-panels"><article class="score-tab-panel active" role="tabpanel" data-score-panel="score-400021523-1"><h5>主推荐 · 3-0</h5><p>法国攻防碾压</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021523-2"><h5>Top 2 · 2-0</h5><p>瑞典防守顽强但难进</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021523-3"><h5>Top 3 · 2-1</h5><p>瑞典可能偷得一球</p></article></div>
+          <h4>?3????</h4>
+          <div class="score-tab-labels" role="tablist"><button class="score-tab active" type="button" role="tab" aria-selected="true" data-score-tab="score-400021523-1"><span>???</span><strong>2-0</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021523-2"><span>Top 2</span><strong>3-0</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021523-3"><span>Top 3</span><strong>1-0</strong></button></div>
+          <div class="score-tab-panels"><article class="score-tab-panel active" role="tabpanel" data-score-panel="score-400021523-1"><h5>??? ? 2-0</h5><p>法国整体实力远超瑞典，瑞典难以破门</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021523-2"><h5>Top 2 ? 3-0</h5><p>法国攻击线多点开花</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021523-3"><h5>Top 3 ? 1-0</h5><p>淘汰赛可能小胜</p></article></div>
         </section>
     
         
         <details class="matchup-panel" open>
-          <summary>对战结构图</summary>
+          <summary>?????</summary>
           <div class="graph-summary-grid">
-            <span><b>优势方</b>主队</span>
-            <span><b>关键对位</b>姆巴佩 vs 瑞典防线</span>
-            <span><b>风险触发点</b>法国轻敌</span>
+            <span><b>???</b>??</span>
+            <span><b>????</b>姆巴佩 vs 瑞典边卫</span>
+            <span><b>?????</b>若法国久攻不下，瑞典可能利用定位球偷袭</span>
           </div>
-          <p class="graph-summary">法国全方位压制，取胜无悬念</p>
+          <p class="graph-summary">法国全面占优，瑞典爆冷难度极大。</p>
           <div class="graph-node-grid">
-            <section><h5>主队结构</h5><article class="graph-node home"><div><strong>主队进攻</strong><span>强度 90/100</span></div><p>攻击线世界级</p></article><article class="graph-node home"><div><strong>主队中场/转换</strong><span>强度 85/100</span></div><p>中场控制无解</p></article><article class="graph-node home"><div><strong>主队防守</strong><span>强度 80/100</span></div><p>防线稳固</p></article></section>
-            <section><h5>客队结构</h5><article class="graph-node away"><div><strong>客队进攻</strong><span>强度 55/100</span></div><p>攻击力有限</p></article><article class="graph-node away"><div><strong>客队中场/转换</strong><span>强度 50/100</span></div><p>中场创造力不足</p></article><article class="graph-node away"><div><strong>客队防守</strong><span>强度 60/100</span></div><p>防守平庸</p></article></section>
+            <section><h5>????</h5><article class="graph-node home"><div><strong>法国进攻</strong><span>?? 90/100</span></div><p>姆巴佩等攻击手个人能力极强</p></article><article class="graph-node home"><div><strong>法国中场/转换</strong><span>?? 85/100</span></div><p>中场控制力出色</p></article><article class="graph-node home"><div><strong>法国防守</strong><span>?? 80/100</span></div><p>防线经验丰富</p></article></section>
+            <section><h5>????</h5><article class="graph-node away"><div><strong>瑞典进攻</strong><span>?? 55/100</span></div><p>进攻依赖反击和定位球</p></article><article class="graph-node away"><div><strong>瑞典中场/转换</strong><span>?? 60/100</span></div><p>中场拼抢积极但创造力不足</p></article><article class="graph-node away"><div><strong>瑞典防守</strong><span>?? 65/100</span></div><p>防守组织较严密</p></article></section>
           </div>
           <div class="graph-edge-list">
-            <h5>关键关系</h5>
-            <article class="graph-edge impact-high"><div><strong>法国锋线碾压瑞典</strong><span>高</span></div><p>绝对优势</p><small>home_attack → away_defense · home_to_away</small></article><article class="graph-edge impact-low"><div><strong>瑞典反击难撼法国</strong><span>低</span></div><p>机会寥寥</p><small>away_attack → home_defense · away_to_home</small></article><article class="graph-edge impact-high"><div><strong>中场统治力</strong><span>高</span></div><p>完全控制</p><small>home_midfield → away_midfield · home_to_away</small></article>
+            <h5>????</h5>
+            <article class="graph-edge impact-high"><div><strong>法国强攻 vs 瑞典密集防守</strong><span>?</span></div><p>法国进攻火力有望撕破瑞典防线</p><small>home_attack ? away_defense ? home_to_away</small></article><article class="graph-edge impact-low"><div><strong>瑞典反击 vs 法国防线</strong><span>?</span></div><p>瑞典反击威胁有限</p><small>away_attack ? home_defense ? away_to_home</small></article><article class="graph-edge impact-medium"><div><strong>中场控制权争夺</strong><span>?</span></div><p>法国中场控制优势明显</p><small>home_midfield ? away_midfield ? balanced</small></article>
           </div>
         </details>
     
         
         <details class="factor-panel" open>
-          <summary>分析因子</summary>
-          <div class="factor-grid"><section class="factor-item"><h5>市场信号</h5><p>法国-340，深盘支持</p></section><section class="factor-item"><h5>FIFA 实力先验</h5><p>法国世界顶级强队，瑞典实力平庸</p></section><section class="factor-item"><h5>近期状态</h5><p>小组赛表现未知</p></section><section class="factor-item"><h5>小组形势</h5><p>淘汰赛，法国控场</p></section><section class="factor-item"><h5>伤停/轮换</h5><p>未知</p></section><section class="factor-item"><h5>天气/场地</h5><p>纽约，天气未知</p></section><section class="factor-item"><h5>战术关键</h5><p>法国豪华阵容，瑞典防守反击</p></section><section class="factor-item"><h5>不确定性</h5><p>瑞典爆冷可能性极低</p></section></div>
+          <summary>????</summary>
+          <div class="factor-grid"><section class="factor-item"><h5>????</h5><p>DraftKings赔率显示法国主胜概率约77.27%，市场强烈看好法国。</p></section><section class="factor-item"><h5>FIFA ????</h5><p>FIFA排名不可用，法国长期世界顶级强队。</p></section><section class="factor-item"><h5>????</h5><p>近期表现未知。</p></section><section class="factor-item"><h5>????</h5><p>1/16决赛，单场淘汰制，比赛在新泽西进行。</p></section><section class="factor-item"><h5>??/??</h5><p>双方伤病情况未知。</p></section><section class="factor-item"><h5>??/??</h5><p>新泽西球场，天气未知。</p></section><section class="factor-item"><h5>????</h5><p>法国进攻多核，瑞典密集防守伺机反击。</p></section><section class="factor-item"><h5>????</h5><p>法国淘汰赛首轮，需防冷门。</p></section></div>
         </details>
     
         <div class="analysis-block">
-          <section><h4>战术分析</h4><p>法国控球进攻，瑞典死守少输当赢。</p></section>
-          <section><h4>风险分析</h4><p class="risk-text">法国赢球概率极高，可能大胜。</p></section>
-          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class="muted compact">未知 未知 无影响</p></section>
-          <section><h4>赔率对比</h4><p>FRA -340: 主胜 73.83% / 平 16.62% / 客胜 9.55%. 模型与市场几乎一致，法国大热</p></section>
+          <section><h4>????</h4><p>法国掌控球权，瑞典低位防守，寻找反击机会。</p></section>
+          <section><h4>????</h4><p class="risk-text">法国实力碾压，正常发挥获胜无悬念。</p></section>
+          <section><h4>????</h4><p>主队: unknown; 客队: unknown</p><p class="muted compact">无已知伤病 无已知伤病 双方阵容齐整</p></section>
+          <section><h4>????</h4><p>FRA -340: 主胜 74.69% / 平 16.11% / 客胜 9.21%. 模型小幅降低法国胜率，反映市场过热。</p></section>
         </div>
         <div class="match-footer">
-          <span>置信度 <b class="confidence high">高</b></span>
-          <span>比赛 ID: 400021523</span>
-          <a class="source-link" href="https://www.espn.com/soccer/match/_/gameId/760492" rel="noopener" target="_blank">来源</a>
+          <span>??? <b class="confidence high">高</b></span>
+          <span>?? ID: 400021523</span>
+          <a class="source-link" href="https://www.espn.com/soccer/match/_/gameId/760492" rel="noopener" target="_blank">??</a>
         </div>
         <p class="venue-line">New York/New Jersey Stadium - New Jersey - USA</p>
       </article>
@@ -1294,96 +1105,373 @@
 
       <article class="match-card">
         <div class="match-topline">
-          <h3>墨西哥 vs 厄瓜多尔</h3>
+          <h3 class="match-title-teams"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="墨西哥 ??" loading="lazy"><span>墨西哥</span></span><span class="versus">vs</span><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/ecu.png" alt="厄瓜多尔 ??" loading="lazy"><span>厄瓜多尔</span></span></h3>
           <time datetime="2026-07-01T09:00:00+08:00">北京时间 07-01 09:00</time>
         </div>
         <div class="scoreboard">
           <div class="score-side">
-            <span>墨西哥</span>
+            <span class="score-team-name"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="墨西哥 ??" loading="lazy"><span>墨西哥</span></span></span>
             <strong>1</strong>
           </div>
           <div class="score-separator">:</div>
           <div class="score-side away-side">
-            <span>厄瓜多尔</span>
-            <strong>1</strong>
+            <span class="score-team-name"><span class="team-inline reverse"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/ecu.png" alt="厄瓜多尔 ??" loading="lazy"><span>厄瓜多尔</span></span></span>
+            <strong>0</strong>
           </div>
         </div>
         <div class="probability-panel">
           
-      <div class="prob-heading">主胜 / 平 / 客胜概率</div>
+      <div class="prob-heading">?? / ? / ????</div>
       <div class="prob-labels">
-        <span><i class="dot home"></i>主胜 43%</span>
-        <span><i class="dot draw"></i>平局 33%</span>
-        <span><i class="dot away"></i>客胜 24%</span>
+        <span><i class="dot home"></i>?? 41.9%</span>
+        <span><i class="dot draw"></i>?? 33.8%</span>
+        <span><i class="dot away"></i>?? 24.4%</span>
       </div>
       <div class="prob-stack" aria-hidden="true">
-        <span class="seg home" style="width:43.000%"></span>
-        <span class="seg draw" style="width:33.000%"></span>
-        <span class="seg away" style="width:24.000%"></span>
+        <span class="seg home" style="width:41.850%"></span>
+        <span class="seg draw" style="width:33.780%"></span>
+        <span class="seg away" style="width:24.370%"></span>
       </div>
       <div class="prob-values">
-        <span>43%</span>
-        <span>33%</span>
-        <span>24%</span>
+        <span>41.9%</span>
+        <span>33.8%</span>
+        <span>24.4%</span>
       </div>
     
         </div>
         <div class="metric-grid">
-          <span><b>xG</b>墨西哥 1.30</span>
-          <span><b>xG</b>厄瓜多尔 1.00</span>
-          <span><b>爆冷概率</b>35%</span>
-          <span><b>赔率</b>主胜 42.64% / 平 33.08% / 客胜 24.29%</span>
+          <span><b>xG</b>墨西哥 1.20</span>
+          <span><b>xG</b>厄瓜多尔 0.90</span>
+          <span><b>????</b>58.1%</span>
+          <span><b>??</b>主胜 41.85% / 平 33.78% / 客胜 24.37%</span>
         </div>
         
         <section class="score-options" data-score-tabs>
-          <h4>前3预测比分</h4>
-          <div class="score-tab-labels" role="tablist"><button class="score-tab active" type="button" role="tab" aria-selected="true" data-score-tab="score-400021520-1"><span>主推荐</span><strong>1-1</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021520-2"><span>Top 2</span><strong>2-1</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021520-3"><span>Top 3</span><strong>1-0</strong></button></div>
-          <div class="score-tab-panels"><article class="score-tab-panel active" role="tabpanel" data-score-panel="score-400021520-1"><h5>主推荐 · 1-1</h5><p>双方实力接近</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021520-2"><h5>Top 2 · 2-1</h5><p>墨西哥主场小胜</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021520-3"><h5>Top 3 · 1-0</h5><p>墨西哥防守胜出</p></article></div>
+          <h4>?3????</h4>
+          <div class="score-tab-labels" role="tablist"><button class="score-tab active" type="button" role="tab" aria-selected="true" data-score-tab="score-400021520-1"><span>???</span><strong>1-0</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021520-2"><span>Top 2</span><strong>1-1</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021520-3"><span>Top 3</span><strong>2-1</strong></button></div>
+          <div class="score-tab-panels"><article class="score-tab-panel active" role="tabpanel" data-score-panel="score-400021520-1"><h5>??? ? 1-0</h5><p>墨西哥主场优势，厄瓜多尔进攻一般</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021520-2"><h5>Top 2 ? 1-1</h5><p>南美球队韧性，可能平局</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021520-3"><h5>Top 3 ? 2-1</h5><p>墨西哥攻击力稍强，或2-1取胜</p></article></div>
         </section>
     
         
         <details class="matchup-panel" open>
-          <summary>对战结构图</summary>
+          <summary>?????</summary>
           <div class="graph-summary-grid">
-            <span><b>优势方</b>主队</span>
-            <span><b>关键对位</b>墨西哥中场控制 vs 厄瓜多尔中场绞杀</span>
-            <span><b>风险触发点</b>厄瓜多尔定位球</span>
+            <span><b>???</b>??</span>
+            <span><b>????</b>墨西哥中场发动机 vs 厄瓜多尔拦截</span>
+            <span><b>?????</b>若墨西哥久攻不下，后防可能犯错</span>
           </div>
-          <p class="graph-summary">墨西哥主场稍占优，平局可能大</p>
+          <p class="graph-summary">墨西哥主场占优，但厄瓜多尔韧性十足。</p>
           <div class="graph-node-grid">
-            <section><h5>主队结构</h5><article class="graph-node home"><div><strong>主队进攻</strong><span>强度 75/100</span></div><p>技术配合娴熟</p></article><article class="graph-node home"><div><strong>主队中场/转换</strong><span>强度 70/100</span></div><p>中场控制主场</p></article><article class="graph-node home"><div><strong>主队防守</strong><span>强度 65/100</span></div><p>防线有经验</p></article></section>
-            <section><h5>客队结构</h5><article class="graph-node away"><div><strong>客队进攻</strong><span>强度 65/100</span></div><p>身体对抗强</p></article><article class="graph-node away"><div><strong>客队中场/转换</strong><span>强度 60/100</span></div><p>拼抢凶狠</p></article><article class="graph-node away"><div><strong>客队防守</strong><span>强度 70/100</span></div><p>防守较稳固</p></article></section>
+            <section><h5>????</h5><article class="graph-node home"><div><strong>墨西哥进攻</strong><span>?? 75/100</span></div><p>技术细腻，前场配合熟练</p></article><article class="graph-node home"><div><strong>墨西哥中场/转换</strong><span>?? 70/100</span></div><p>中场控制力不错</p></article><article class="graph-node home"><div><strong>墨西哥防守</strong><span>?? 70/100</span></div><p>防线稳定</p></article></section>
+            <section><h5>????</h5><article class="graph-node away"><div><strong>厄瓜多尔进攻</strong><span>?? 65/100</span></div><p>速度快，边路有威胁</p></article><article class="graph-node away"><div><strong>厄瓜多尔中场/转换</strong><span>?? 68/100</span></div><p>中场拼抢积极</p></article><article class="graph-node away"><div><strong>厄瓜多尔防守</strong><span>?? 65/100</span></div><p>防守组织较好</p></article></section>
           </div>
           <div class="graph-edge-list">
-            <h5>关键关系</h5>
-            <article class="graph-edge impact-medium"><div><strong>墨西哥技术渗透</strong><span>中</span></div><p>可能制造机会</p><small>home_attack → away_defense · home_to_away</small></article><article class="graph-edge impact-medium"><div><strong>厄瓜多尔身体冲击</strong><span>中</span></div><p>墨西哥需注意</p><small>away_attack → home_defense · away_to_home</small></article><article class="graph-edge impact-low"><div><strong>中场争夺</strong><span>低</span></div><p>五五开</p><small>home_midfield → away_midfield · balanced</small></article>
+            <h5>????</h5>
+            <article class="graph-edge impact-medium"><div><strong>墨西哥渗透 vs 厄瓜多尔防线</strong><span>?</span></div><p>墨西哥控球优势可能创造机会</p><small>home_attack ? away_defense ? home_to_away</small></article><article class="graph-edge impact-medium"><div><strong>厄瓜多尔边路冲击 vs 墨西哥防线</strong><span>?</span></div><p>厄瓜多尔速度可能制造威胁</p><small>away_attack ? home_defense ? away_to_home</small></article><article class="graph-edge impact-low"><div><strong>中场争夺</strong><span>?</span></div><p>双方中场实力接近</p><small>home_midfield ? away_midfield ? balanced</small></article>
           </div>
         </details>
     
         
         <details class="factor-panel" open>
-          <summary>分析因子</summary>
-          <div class="factor-grid"><section class="factor-item"><h5>市场信号</h5><p>墨西哥+125，主场优势但不高</p></section><section class="factor-item"><h5>FIFA 实力先验</h5><p>墨西哥中北美强队，厄瓜多尔南美中游</p></section><section class="factor-item"><h5>近期状态</h5><p>小组赛表现未知</p></section><section class="factor-item"><h5>小组形势</h5><p>淘汰赛，墨西哥城高原主场</p></section><section class="factor-item"><h5>伤停/轮换</h5><p>未知</p></section><section class="factor-item"><h5>天气/场地</h5><p>墨西哥城，高原可能影响</p></section><section class="factor-item"><h5>战术关键</h5><p>墨西哥技术流 vs 厄瓜多尔身体对抗</p></section><section class="factor-item"><h5>不确定性</h5><p>厄瓜多尔可能展现韧性</p></section></div>
+          <summary>????</summary>
+          <div class="factor-grid"><section class="factor-item"><h5>????</h5><p>DraftKings赔率显示墨西哥主胜概率约43.48%，市场略微看好。</p></section><section class="factor-item"><h5>FIFA ????</h5><p>FIFA排名不可用，两队长期实力接近。</p></section><section class="factor-item"><h5>????</h5><p>近期表现未知。</p></section><section class="factor-item"><h5>????</h5><p>1/16决赛，单场淘汰制，比赛在墨西哥城进行。</p></section><section class="factor-item"><h5>??/??</h5><p>厄瓜多尔媒体提及疑似伤病，但无具体球员；墨西哥无已知伤病。</p></section><section class="factor-item"><h5>??/??</h5><p>墨西哥城高原主场，海拔因素可能利于墨西哥。</p></section><section class="factor-item"><h5>????</h5><p>墨西哥中场控制，厄瓜多尔边路冲击。</p></section><section class="factor-item"><h5>????</h5><p>厄瓜多尔伤病情况不确定，高原影响待观察。</p></section></div>
         </details>
     
         <div class="analysis-block">
-          <section><h4>战术分析</h4><p>墨西哥传控为主，厄瓜多尔简洁直接。</p></section>
-          <section><h4>风险分析</h4><p class="risk-text">比赛胶着，墨西哥主场略占上风，但冷门可能不高。</p></section>
-          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class="muted compact">未知 未知 无重大影响</p></section>
-          <section><h4>赔率对比</h4><p>MEX +125: 主胜 42.64% / 平 33.08% / 客胜 24.29%. 模型与市场一致，墨西哥略占优</p></section>
+          <section><h4>????</h4><p>墨西哥主导控球，厄瓜多尔高位逼抢后快速反击。</p></section>
+          <section><h4>????</h4><p class="risk-text">墨西哥主场优势明显，但厄瓜多尔作为南美球队防守顽强，小胜或平局可能性较大。</p></section>
+          <section><h4>????</h4><p>主队: unknown; 客队: 媒体伤停线索</p><p class="muted compact">无已知伤病 可能有伤病，媒体提及但无具体球员 厄瓜多尔阵容完整度存疑</p></section>
+          <section><h4>????</h4><p>MEX +130: 主胜 41.85% / 平 33.78% / 客胜 24.37%. 模型概率与市场接近，主胜概率稍低。</p></section>
         </div>
         <div class="match-footer">
-          <span>置信度 <b class="confidence medium">中</b></span>
-          <span>比赛 ID: 400021520</span>
-          <a class="source-link" href="https://www.espn.com/soccer/match/_/gameId/760491" rel="noopener" target="_blank">来源</a>
+          <span>??? <b class="confidence medium">中</b></span>
+          <span>?? ID: 400021520</span>
+          <a class="source-link" href="https://www.espn.com/soccer/match/_/gameId/760491" rel="noopener" target="_blank">??</a>
         </div>
         <p class="venue-line">Mexico City Stadium - Mexico City - MEX</p>
       </article>
     </section>
     </section>
             
+    <section class="match-day" data-match-day="2026-07-01">
+      <div class="section-head">
+        <div>
+          <h2>7月1日比赛日</h2>
+          <p class="muted compact">北京时间 07-01 18:00 - 07-02 18:00??????????</p>
+        </div>
+        <div class="day-count">3 ?</div>
+      </div>
+      <section class="match-grid">
+      <article class="match-card">
+        <div class="match-topline">
+          <h3 class="match-title-teams"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/eng.png" alt="英格兰 ??" loading="lazy"><span>英格兰</span></span><span class="versus">vs</span><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/rdc.png" alt="刚果民主共和国 ??" loading="lazy"><span>刚果民主共和国</span></span></h3>
+          <time datetime="2026-07-02T00:00:00+08:00">北京时间 07-02 00:00</time>
+        </div>
+        <div class="scoreboard">
+          <div class="score-side">
+            <span class="score-team-name"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/eng.png" alt="英格兰 ??" loading="lazy"><span>英格兰</span></span></span>
+            <strong>2</strong>
+          </div>
+          <div class="score-separator">:</div>
+          <div class="score-side away-side">
+            <span class="score-team-name"><span class="team-inline reverse"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/rdc.png" alt="刚果民主共和国 ??" loading="lazy"><span>刚果民主共和国</span></span></span>
+            <strong>0</strong>
+          </div>
+        </div>
+        <div class="probability-panel">
+          
+      <div class="prob-heading">?? / ? / ????</div>
+      <div class="prob-labels">
+        <span><i class="dot home"></i>?? 74.4%</span>
+        <span><i class="dot draw"></i>?? 18.2%</span>
+        <span><i class="dot away"></i>?? 7.4%</span>
+      </div>
+      <div class="prob-stack" aria-hidden="true">
+        <span class="seg home" style="width:74.420%"></span>
+        <span class="seg draw" style="width:18.220%"></span>
+        <span class="seg away" style="width:7.360%"></span>
+      </div>
+      <div class="prob-values">
+        <span>74.4%</span>
+        <span>18.2%</span>
+        <span>7.4%</span>
+      </div>
+    
+        </div>
+        <div class="metric-grid">
+          <span><b>xG</b>英格兰 2.30</span>
+          <span><b>xG</b>刚果民主共和国 0.30</span>
+          <span><b>????</b>25.6%</span>
+          <span><b>??</b>主胜 74.42% / 平 18.22% / 客胜 7.36%</span>
+        </div>
+        
+        <section class="score-options" data-score-tabs>
+          <h4>?3????</h4>
+          <div class="score-tab-labels" role="tablist"><button class="score-tab active" type="button" role="tab" aria-selected="true" data-score-tab="score-400021512-1"><span>???</span><strong>2-0</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021512-2"><span>Top 2</span><strong>3-0</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021512-3"><span>Top 3</span><strong>1-0</strong></button></div>
+          <div class="score-tab-panels"><article class="score-tab-panel active" role="tabpanel" data-score-panel="score-400021512-1"><h5>??? ? 2-0</h5><p>英格兰实力碾压，刚果防守有一定韧性</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021512-2"><h5>Top 2 ? 3-0</h5><p>英格兰攻击线强大</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021512-3"><h5>Top 3 ? 1-0</h5><p>刚果摆大巴，或仅0-1</p></article></div>
+        </section>
+    
+        
+        <details class="matchup-panel" open>
+          <summary>?????</summary>
+          <div class="graph-summary-grid">
+            <span><b>???</b>??</span>
+            <span><b>????</b>凯恩 vs 刚果中卫</span>
+            <span><b>?????</b>若英格兰轻敌，刚果反击可能制造威胁</span>
+          </div>
+          <p class="graph-summary">英格兰全面占优，刚果凶多吉少。</p>
+          <div class="graph-node-grid">
+            <section><h5>????</h5><article class="graph-node home"><div><strong>英格兰进攻</strong><span>?? 88/100</span></div><p>凯恩等攻击手状态正佳</p></article><article class="graph-node home"><div><strong>英格兰中场/转换</strong><span>?? 85/100</span></div><p>中场控制力出色</p></article><article class="graph-node home"><div><strong>英格兰防守</strong><span>?? 82/100</span></div><p>防守稳固</p></article></section>
+            <section><h5>????</h5><article class="graph-node away"><div><strong>刚果进攻</strong><span>?? 40/100</span></div><p>进攻威胁有限</p></article><article class="graph-node away"><div><strong>刚果中场/转换</strong><span>?? 45/100</span></div><p>中场组织能力弱</p></article><article class="graph-node away"><div><strong>刚果防守</strong><span>?? 50/100</span></div><p>防守有一定硬度</p></article></section>
+          </div>
+          <div class="graph-edge-list">
+            <h5>????</h5>
+            <article class="graph-edge impact-high"><div><strong>英格兰围攻 vs 刚果密集防守</strong><span>?</span></div><p>英格兰攻击力有望打破僵局</p><small>home_attack ? away_defense ? home_to_away</small></article><article class="graph-edge impact-low"><div><strong>刚果反击 vs 英格兰防线</strong><span>?</span></div><p>刚果反击难以构成威胁</p><small>away_attack ? home_defense ? away_to_home</small></article><article class="graph-edge impact-high"><div><strong>中场实力悬殊</strong><span>?</span></div><p>英格兰中场碾压对手</p><small>home_midfield ? away_midfield ? balanced</small></article>
+          </div>
+        </details>
+    
+        
+        <details class="factor-panel" open>
+          <summary>????</summary>
+          <div class="factor-grid"><section class="factor-item"><h5>????</h5><p>DraftKings赔率显示英格兰主胜概率约77.78%，市场强烈看好。</p></section><section class="factor-item"><h5>FIFA ????</h5><p>FIFA排名不可用，英格兰长期世界强队。</p></section><section class="factor-item"><h5>????</h5><p>近期表现未知。</p></section><section class="factor-item"><h5>????</h5><p>1/16决赛，单场淘汰制，比赛在亚特兰大进行。</p></section><section class="factor-item"><h5>??/??</h5><p>双方均有媒体提及的疑似伤病，但皮克福德等核心预计出战。</p></section><section class="factor-item"><h5>??/??</h5><p>亚特兰大球场，天气未知。</p></section><section class="factor-item"><h5>????</h5><p>英格兰控球主攻，刚果防守反击。</p></section><section class="factor-item"><h5>????</h5><p>刚果爆冷可能性极低。</p></section></div>
+        </details>
+    
+        <div class="analysis-block">
+          <section><h4>????</h4><p>英格兰掌控比赛，刚果全力防守期待死守。</p></section>
+          <section><h4>????</h4><p class="risk-text">英格兰实力远超对手，正常发挥获胜无悬念。</p></section>
+          <section><h4>????</h4><p>主队: 媒体伤停线索; 客队: 媒体伤停线索</p><p class="muted compact">媒体报道疑似伤病，无具体名单 同样有疑似伤病 双方均可能有轻微伤病，但核心阵容预计完整</p></section>
+          <section><h4>????</h4><p>ENG -350: 主胜 74.42% / 平 18.22% / 客胜 7.36%. 模型小幅降低英格兰胜率，反映市场过热。</p></section>
+        </div>
+        <div class="match-footer">
+          <span>??? <b class="confidence high">高</b></span>
+          <span>?? ID: 400021512</span>
+          <a class="source-link" href="https://www.espn.com/soccer/match/_/gameId/760495" rel="noopener" target="_blank">??</a>
+        </div>
+        <p class="venue-line">Atlanta Stadium - Atlanta - USA</p>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-topline">
+          <h3 class="match-title-teams"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/bel.png" alt="比利时 ??" loading="lazy"><span>比利时</span></span><span class="versus">vs</span><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/sen.png" alt="塞内加尔 ??" loading="lazy"><span>塞内加尔</span></span></h3>
+          <time datetime="2026-07-02T04:00:00+08:00">北京时间 07-02 04:00</time>
+        </div>
+        <div class="scoreboard">
+          <div class="score-side">
+            <span class="score-team-name"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/bel.png" alt="比利时 ??" loading="lazy"><span>比利时</span></span></span>
+            <strong>1</strong>
+          </div>
+          <div class="score-separator">:</div>
+          <div class="score-side away-side">
+            <span class="score-team-name"><span class="team-inline reverse"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/sen.png" alt="塞内加尔 ??" loading="lazy"><span>塞内加尔</span></span></span>
+            <strong>1</strong>
+          </div>
+        </div>
+        <div class="probability-panel">
+          
+      <div class="prob-heading">?? / ? / ????</div>
+      <div class="prob-labels">
+        <span><i class="dot home"></i>?? 42.8%</span>
+        <span><i class="dot draw"></i>?? 29.6%</span>
+        <span><i class="dot away"></i>?? 27.5%</span>
+      </div>
+      <div class="prob-stack" aria-hidden="true">
+        <span class="seg home" style="width:42.820%"></span>
+        <span class="seg draw" style="width:29.650%"></span>
+        <span class="seg away" style="width:27.530%"></span>
+      </div>
+      <div class="prob-values">
+        <span>42.8%</span>
+        <span>29.6%</span>
+        <span>27.5%</span>
+      </div>
+    
+        </div>
+        <div class="metric-grid">
+          <span><b>xG</b>比利时 1.10</span>
+          <span><b>xG</b>塞内加尔 1.00</span>
+          <span><b>????</b>57.2%</span>
+          <span><b>??</b>主胜 42.82% / 平 29.65% / 客胜 27.53%</span>
+        </div>
+        
+        <section class="score-options" data-score-tabs>
+          <h4>?3????</h4>
+          <div class="score-tab-labels" role="tablist"><button class="score-tab active" type="button" role="tab" aria-selected="true" data-score-tab="score-400021525-1"><span>???</span><strong>1-1</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021525-2"><span>Top 2</span><strong>2-1</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021525-3"><span>Top 3</span><strong>1-0</strong></button></div>
+          <div class="score-tab-panels"><article class="score-tab-panel active" role="tabpanel" data-score-panel="score-400021525-1"><h5>??? ? 1-1</h5><p>势均力敌，淘汰赛可能保守</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021525-2"><h5>Top 2 ? 2-1</h5><p>比利时攻击群稍强</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021525-3"><h5>Top 3 ? 1-0</h5><p>塞内加尔防守稳固，或1-0小胜</p></article></div>
+        </section>
+    
+        
+        <details class="matchup-panel" open>
+          <summary>?????</summary>
+          <div class="graph-summary-grid">
+            <span><b>???</b>??</span>
+            <span><b>????</b>德布劳内 vs 塞内加尔后腰</span>
+            <span><b>?????</b>比利时平均年龄偏大，体能可能影响</span>
+          </div>
+          <p class="graph-summary">双方实力接近，比赛可能进入加时。</p>
+          <div class="graph-node-grid">
+            <section><h5>????</h5><article class="graph-node home"><div><strong>比利时进攻</strong><span>?? 80/100</span></div><p>卢卡库等球星攻击力强</p></article><article class="graph-node home"><div><strong>比利时中场/转换</strong><span>?? 75/100</span></div><p>德布劳内组织核心</p></article><article class="graph-node home"><div><strong>比利时防守</strong><span>?? 70/100</span></div><p>防线年龄偏大</p></article></section>
+            <section><h5>????</h5><article class="graph-node away"><div><strong>塞内加尔进攻</strong><span>?? 75/100</span></div><p>马内领衔，速度极快</p></article><article class="graph-node away"><div><strong>塞内加尔中场/转换</strong><span>?? 70/100</span></div><p>中场硬度足</p></article><article class="graph-node away"><div><strong>塞内加尔防守</strong><span>?? 75/100</span></div><p>防守坚固</p></article></section>
+          </div>
+          <div class="graph-edge-list">
+            <h5>????</h5>
+            <article class="graph-edge impact-medium"><div><strong>比利时攻击 vs 塞内加尔防守</strong><span>?</span></div><p>比利时攻击线面临考验</p><small>home_attack ? away_defense ? home_to_away</small></article><article class="graph-edge impact-medium"><div><strong>塞内加尔反击 vs 比利时防线</strong><span>?</span></div><p>塞内加尔速度可能冲击比利时高龄防线</p><small>away_attack ? home_defense ? away_to_home</small></article><article class="graph-edge impact-medium"><div><strong>中场对抗</strong><span>?</span></div><p>中场争夺激烈</p><small>home_midfield ? away_midfield ? balanced</small></article>
+          </div>
+        </details>
+    
+        
+        <details class="factor-panel" open>
+          <summary>????</summary>
+          <div class="factor-grid"><section class="factor-item"><h5>????</h5><p>DraftKings赔率显示比利时主胜概率约44.44%，稍有优势。</p></section><section class="factor-item"><h5>FIFA ????</h5><p>FIFA排名不可用，双方都是世界强队。</p></section><section class="factor-item"><h5>????</h5><p>近期表现未知。</p></section><section class="factor-item"><h5>????</h5><p>1/16决赛，单场淘汰制，比赛在西雅图进行。</p></section><section class="factor-item"><h5>??/??</h5><p>双方伤病情况未知。</p></section><section class="factor-item"><h5>??/??</h5><p>西雅图球场，天气未知。</p></section><section class="factor-item"><h5>????</h5><p>比利时传控 vs 塞内加尔速度冲击。</p></section><section class="factor-item"><h5>????</h5><p>塞内加尔非洲球队爆发力不可小觑。</p></section></div>
+        </details>
+    
+        <div class="analysis-block">
+          <section><h4>????</h4><p>比利时传控主导，塞内加尔快速反击与强硬对抗。</p></section>
+          <section><h4>????</h4><p class="risk-text">比利时黄金一代最后机会，但塞内加尔近年非洲最强，比赛可能胶着。</p></section>
+          <section><h4>????</h4><p>主队: unknown; 客队: unknown</p><p class="muted compact">无已知伤病 无已知伤病 双方阵容齐整</p></section>
+          <section><h4>????</h4><p>BEL +125: 主胜 42.82% / 平 29.65% / 客胜 27.53%. 模型与市场一致，比赛胶着。</p></section>
+        </div>
+        <div class="match-footer">
+          <span>??? <b class="confidence medium">中</b></span>
+          <span>?? ID: 400021525</span>
+          <a class="source-link" href="https://www.espn.com/soccer/match/_/gameId/760493" rel="noopener" target="_blank">??</a>
+        </div>
+        <p class="venue-line">Seattle Stadium - Seattle - USA</p>
+      </article>
+    
+
+      <article class="match-card">
+        <div class="match-topline">
+          <h3 class="match-title-teams"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/usa.png" alt="美国 ??" loading="lazy"><span>美国</span></span><span class="versus">vs</span><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/bih.png" alt="波黑 ??" loading="lazy"><span>波黑</span></span></h3>
+          <time datetime="2026-07-02T08:00:00+08:00">北京时间 07-02 08:00</time>
+        </div>
+        <div class="scoreboard">
+          <div class="score-side">
+            <span class="score-team-name"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/usa.png" alt="美国 ??" loading="lazy"><span>美国</span></span></span>
+            <strong>2</strong>
+          </div>
+          <div class="score-separator">:</div>
+          <div class="score-side away-side">
+            <span class="score-team-name"><span class="team-inline reverse"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/bih.png" alt="波黑 ??" loading="lazy"><span>波黑</span></span></span>
+            <strong>0</strong>
+          </div>
+        </div>
+        <div class="probability-panel">
+          
+      <div class="prob-heading">?? / ? / ????</div>
+      <div class="prob-labels">
+        <span><i class="dot home"></i>?? 69.7%</span>
+        <span><i class="dot draw"></i>?? 19.6%</span>
+        <span><i class="dot away"></i>?? 10.7%</span>
+      </div>
+      <div class="prob-stack" aria-hidden="true">
+        <span class="seg home" style="width:69.730%"></span>
+        <span class="seg draw" style="width:19.600%"></span>
+        <span class="seg away" style="width:10.670%"></span>
+      </div>
+      <div class="prob-values">
+        <span>69.7%</span>
+        <span>19.6%</span>
+        <span>10.7%</span>
+      </div>
+    
+        </div>
+        <div class="metric-grid">
+          <span><b>xG</b>美国 1.80</span>
+          <span><b>xG</b>波黑 0.60</span>
+          <span><b>????</b>30.3%</span>
+          <span><b>??</b>主胜 69.73% / 平 19.6% / 客胜 10.67%</span>
+        </div>
+        
+        <section class="score-options" data-score-tabs>
+          <h4>?3????</h4>
+          <div class="score-tab-labels" role="tablist"><button class="score-tab active" type="button" role="tab" aria-selected="true" data-score-tab="score-400021524-1"><span>???</span><strong>2-0</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021524-2"><span>Top 2</span><strong>1-0</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021524-3"><span>Top 3</span><strong>2-1</strong></button></div>
+          <div class="score-tab-panels"><article class="score-tab-panel active" role="tabpanel" data-score-panel="score-400021524-1"><h5>??? ? 2-0</h5><p>美国主场作战，实力占优</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021524-2"><h5>Top 2 ? 1-0</h5><p>波黑防守有一定硬度，可能小胜</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021524-3"><h5>Top 3 ? 2-1</h5><p>波黑可能打进一球</p></article></div>
+        </section>
+    
+        
+        <details class="matchup-panel" open>
+          <summary>?????</summary>
+          <div class="graph-summary-grid">
+            <span><b>???</b>??</span>
+            <span><b>????</b>普利西奇 vs 波黑边卫</span>
+            <span><b>?????</b>若美国久攻不下，定位球可能成为波黑机会</span>
+          </div>
+          <p class="graph-summary">美国主场胜面大，波黑难以逆袭。</p>
+          <div class="graph-node-grid">
+            <section><h5>????</h5><article class="graph-node home"><div><strong>美国进攻</strong><span>?? 78/100</span></div><p>普利西奇等球员攻击力强</p></article><article class="graph-node home"><div><strong>美国中场/转换</strong><span>?? 75/100</span></div><p>中场跑动积极</p></article><article class="graph-node home"><div><strong>美国防守</strong><span>?? 72/100</span></div><p>防线年轻有活力</p></article></section>
+            <section><h5>????</h5><article class="graph-node away"><div><strong>波黑进攻</strong><span>?? 55/100</span></div><p>哲科等老将经验丰富</p></article><article class="graph-node away"><div><strong>波黑中场/转换</strong><span>?? 58/100</span></div><p>中场控制力一般</p></article><article class="graph-node away"><div><strong>波黑防守</strong><span>?? 60/100</span></div><p>防守有一定硬度</p></article></section>
+          </div>
+          <div class="graph-edge-list">
+            <h5>????</h5>
+            <article class="graph-edge impact-high"><div><strong>美国冲击 vs 波黑防线</strong><span>?</span></div><p>美国进攻有望得分</p><small>home_attack ? away_defense ? home_to_away</small></article><article class="graph-edge impact-low"><div><strong>波黑反击 vs 美国防线</strong><span>?</span></div><p>波黑反击效率有限</p><small>away_attack ? home_defense ? away_to_home</small></article><article class="graph-edge impact-medium"><div><strong>中场控制</strong><span>?</span></div><p>美国中场略占上风</p><small>home_midfield ? away_midfield ? balanced</small></article>
+          </div>
+        </details>
+    
+        
+        <details class="factor-panel" open>
+          <summary>????</summary>
+          <div class="factor-grid"><section class="factor-item"><h5>????</h5><p>DraftKings赔率显示美国主胜概率约72.6%，市场看好。</p></section><section class="factor-item"><h5>FIFA ????</h5><p>FIFA排名不可用，美国队近年崛起。</p></section><section class="factor-item"><h5>????</h5><p>近期表现未知。</p></section><section class="factor-item"><h5>????</h5><p>1/16决赛，单场淘汰制，比赛在旧金山湾区进行。</p></section><section class="factor-item"><h5>??/??</h5><p>双方伤病情况未知。</p></section><section class="factor-item"><h5>??/??</h5><p>旧金山湾区球场，天气未知。</p></section><section class="factor-item"><h5>????</h5><p>美国高位逼抢，波黑长传冲吊。</p></section><section class="factor-item"><h5>????</h5><p>波黑有爆冷基因。</p></section></div>
+        </details>
+    
+        <div class="analysis-block">
+          <section><h4>????</h4><p>美国主动施压，波黑稳守反击。</p></section>
+          <section><h4>????</h4><p class="risk-text">美国主场优势明显，波黑整体实力稍逊，但淘汰赛一切皆有可能。</p></section>
+          <section><h4>????</h4><p>主队: unknown; 客队: unknown</p><p class="muted compact">无已知伤病 无已知伤病 双方阵容齐整</p></section>
+          <section><h4>????</h4><p>USA -265: 主胜 69.73% / 平 19.6% / 客胜 10.67%. 模型小幅降低美国胜率，波黑客场冷意需防。</p></section>
+        </div>
+        <div class="match-footer">
+          <span>??? <b class="confidence medium">中</b></span>
+          <span>?? ID: 400021524</span>
+          <a class="source-link" href="https://www.espn.com/soccer/match/_/gameId/760494" rel="noopener" target="_blank">??</a>
+        </div>
+        <p class="venue-line">San Francisco Bay Area Stadium - San Francisco Bay Area - USA</p>
+      </article>
+    </section>
+    </section>
+            
     <footer class="page-footer">
-      V3 Agent：FIFA 官方赛程为主源，ESPN 用于第二来源校验和赔率；伤停无可靠来源时显示 unknown，赔率无真实源时显示 unavailable。所有可见比赛时间均为北京时间，比赛日按 18:00 至次日 18:00 划分。
+      V3 Agent?FIFA ????????ESPN ?????????????????????? unknown?????????? unavailable???????????????????? 18:00 ??? 18:00 ???
     </footer>
   </main>
   <script>
