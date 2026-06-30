@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "stage": "research",
-  "generated_at": "2026-06-29T14:51:24Z",
+  "generated_at": "2026-06-30T01:17:04Z",
   "window": {
     "start_date": "2026-06-29",
     "days": 3,
@@ -164,8 +164,8 @@
   "unverified_fifa_matches": [],
   "structure_unverified_fifa_matches": [
     "Canada vs W75",
-    "W74 vs W77",
-    "W76 vs W78",
+    "Paraguay vs W77",
+    "Brazil vs W78",
     "W79 vs W80"
   ],
   "fixture_count": 6,
@@ -173,7 +173,7 @@
   "raw_fifa_fixture_count": 21,
   "structure_fixture_count": 15,
   "structure_fifa_fixture_count": 19,
-  "odds_available_count": 6,
+  "odds_available_count": 4,
   "matches": [
     {
       "id": "400021516",
@@ -187,9 +187,9 @@
       "group": "",
       "match_number": 76,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -199,8 +199,8 @@
           "id_team": "43924",
           "id_country": "BRA",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/BRA",
-          "score": null,
-          "tactics": null
+          "score": 2,
+          "tactics": "4-1-2-3"
         },
         "away": {
           "name": "日本",
@@ -209,8 +209,8 @@
           "id_team": "43819",
           "id_country": "JPN",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/JPN",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "3-4-3"
         }
       },
       "venue": {
@@ -241,40 +241,39 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-135",
-          "draw": "+265",
-          "away": "+400"
-        },
-        "implied_probability": {
-          "home_win": 57.45,
-          "draw": 27.4,
-          "away_win": 20.0
-        },
-        "normalized_probability": {
-          "home_win": 54.79,
-          "draw": 26.13,
-          "away_win": 19.08
-        },
-        "overround": 4.84,
-        "details": "BRA -135"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "巴西",
           "team_en": "Brazil",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+              "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+              "published": "2026-06-29T19:35:54Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "日本",
           "team_en": "Japan",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+              "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+              "published": "2026-06-29T19:35:54Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -291,9 +290,9 @@
       "group": "",
       "match_number": 74,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 2
       },
       "teams": {
         "home": {
@@ -303,8 +302,8 @@
           "id_team": "43948",
           "id_country": "GER",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/GER",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "4-2-3-1"
         },
         "away": {
           "name": "巴拉圭",
@@ -313,8 +312,8 @@
           "id_team": "43928",
           "id_country": "PAR",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/PAR",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "4-4-2"
         }
       },
       "venue": {
@@ -345,26 +344,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-275",
-          "draw": "+400",
-          "away": "+800"
-        },
-        "implied_probability": {
-          "home_win": 73.33,
-          "draw": 20.0,
-          "away_win": 11.11
-        },
-        "normalized_probability": {
-          "home_win": 70.21,
-          "draw": 19.15,
-          "away_win": 10.64
-        },
-        "overround": 4.44,
-        "details": "GER -275"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -374,10 +356,24 @@
           "records": [
             {
               "source": "ESPN World Cup news",
-              "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-              "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-              "published": "2026-06-29T02:43:49Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
+              "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+              "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+              "published": "2026-06-30T00:39:30Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+              "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+              "published": "2026-06-30T00:06:01Z",
+              "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany dumped out of World Cup by Paraguay on penalties",
+              "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+              "published": "2026-06-30T00:42:38Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
             }
           ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -385,8 +381,30 @@
         "away": {
           "team": "巴拉圭",
           "team_en": "Paraguay",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+              "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+              "published": "2026-06-30T00:39:30Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+              "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+              "published": "2026-06-30T00:06:01Z",
+              "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany dumped out of World Cup by Paraguay on penalties",
+              "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+              "published": "2026-06-30T00:42:38Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -403,7 +421,7 @@
       "group": "",
       "match_number": 75,
       "status": {
-        "match_status": 1,
+        "match_status": 3,
         "officiality_status": 0,
         "result_type": 0
       },
@@ -415,8 +433,8 @@
           "id_team": "43960",
           "id_country": "NED",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/NED",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "3-4-3"
         },
         "away": {
           "name": "摩洛哥",
@@ -425,8 +443,8 @@
           "id_team": "43872",
           "id_country": "MAR",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/MAR",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "4-2-3-1"
         }
       },
       "venue": {
@@ -461,36 +479,59 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+130",
+          "home": "+145",
           "draw": "+210",
-          "away": "+250"
+          "away": "+230"
         },
         "implied_probability": {
-          "home_win": 43.48,
+          "home_win": 40.82,
           "draw": 32.26,
-          "away_win": 28.57
+          "away_win": 30.3
         },
         "normalized_probability": {
-          "home_win": 41.68,
-          "draw": 30.93,
-          "away_win": 27.39
+          "home_win": 39.48,
+          "draw": 31.2,
+          "away_win": 29.31
         },
-        "overround": 4.31,
-        "details": "NED +130"
+        "overround": 3.38,
+        "details": "NED +145"
       },
       "injuries": {
         "home": {
           "team": "荷兰",
           "team_en": "Netherlands",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+              "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+              "published": "2026-06-30T00:39:30Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "摩洛哥",
           "team_en": "Morocco",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Spain's plan for Austria simple: Get ball to Lamine Yamal",
+              "description": "Right-back Marcos Llorente said Spain are working hard to get the best out of star winger Lamine Yamal as they prepare to face Austria in the World Cup round of 32.",
+              "published": "2026-06-29T21:18:16Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49218747/spain-plan-austria-simple-get-ball-lamine-yamal"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+              "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+              "published": "2026-06-29T19:35:54Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -565,22 +606,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+265",
-          "draw": "+255",
-          "away": "+105"
+          "home": "+255",
+          "draw": "+245",
+          "away": "+110"
         },
         "implied_probability": {
-          "home_win": 27.4,
-          "draw": 28.17,
-          "away_win": 48.78
+          "home_win": 28.17,
+          "draw": 28.99,
+          "away_win": 47.62
         },
         "normalized_probability": {
-          "home_win": 26.26,
-          "draw": 27.0,
-          "away_win": 46.75
+          "home_win": 26.89,
+          "draw": 27.66,
+          "away_win": 45.45
         },
-        "overround": 4.35,
-        "details": "NOR +105"
+        "overround": 4.77,
+        "details": "NOR +110"
       },
       "injuries": {
         "home": {
@@ -593,16 +634,8 @@
         "away": {
           "team": "挪威",
           "team_en": "Norway",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-              "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-              "published": "2026-06-29T02:43:49Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -677,22 +710,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-370",
+          "home": "-350",
           "draw": "+500",
-          "away": "+950"
+          "away": "+850"
         },
         "implied_probability": {
-          "home_win": 78.72,
+          "home_win": 77.78,
           "draw": 16.67,
-          "away_win": 9.52
+          "away_win": 10.53
         },
         "normalized_probability": {
-          "home_win": 75.04,
-          "draw": 15.89,
-          "away_win": 9.08
+          "home_win": 74.09,
+          "draw": 15.88,
+          "away_win": 10.03
         },
-        "overround": 4.91,
-        "details": "FRA -370"
+        "overround": 4.97,
+        "details": "FRA -350"
       },
       "injuries": {
         "home": {
@@ -781,22 +814,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+125",
+          "home": "+120",
           "draw": "+195",
-          "away": "+290"
+          "away": "+300"
         },
         "implied_probability": {
-          "home_win": 44.44,
+          "home_win": 45.45,
           "draw": 33.9,
-          "away_win": 25.64
+          "away_win": 25.0
         },
         "normalized_probability": {
-          "home_win": 42.74,
-          "draw": 32.6,
-          "away_win": 24.66
+          "home_win": 43.56,
+          "draw": 32.48,
+          "away_win": 23.96
         },
-        "overround": 3.98,
-        "details": "MEX +125"
+        "overround": 4.35,
+        "details": "MEX +120"
       },
       "injuries": {
         "home": {
@@ -829,9 +862,9 @@
       "group": "",
       "match_number": 76,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -841,8 +874,8 @@
           "id_team": "43924",
           "id_country": "BRA",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/BRA",
-          "score": null,
-          "tactics": null
+          "score": 2,
+          "tactics": "4-1-2-3"
         },
         "away": {
           "name": "日本",
@@ -851,8 +884,8 @@
           "id_team": "43819",
           "id_country": "JPN",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/JPN",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "3-4-3"
         }
       },
       "venue": {
@@ -883,40 +916,39 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-135",
-          "draw": "+265",
-          "away": "+400"
-        },
-        "implied_probability": {
-          "home_win": 57.45,
-          "draw": 27.4,
-          "away_win": 20.0
-        },
-        "normalized_probability": {
-          "home_win": 54.79,
-          "draw": 26.13,
-          "away_win": 19.08
-        },
-        "overround": 4.84,
-        "details": "BRA -135"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "巴西",
           "team_en": "Brazil",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+              "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+              "published": "2026-06-29T19:35:54Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "日本",
           "team_en": "Japan",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+              "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+              "published": "2026-06-29T19:35:54Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -933,9 +965,9 @@
       "group": "",
       "match_number": 74,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 2
       },
       "teams": {
         "home": {
@@ -945,8 +977,8 @@
           "id_team": "43948",
           "id_country": "GER",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/GER",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "4-2-3-1"
         },
         "away": {
           "name": "巴拉圭",
@@ -955,8 +987,8 @@
           "id_team": "43928",
           "id_country": "PAR",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/PAR",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "4-4-2"
         }
       },
       "venue": {
@@ -987,26 +1019,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-275",
-          "draw": "+400",
-          "away": "+800"
-        },
-        "implied_probability": {
-          "home_win": 73.33,
-          "draw": 20.0,
-          "away_win": 11.11
-        },
-        "normalized_probability": {
-          "home_win": 70.21,
-          "draw": 19.15,
-          "away_win": 10.64
-        },
-        "overround": 4.44,
-        "details": "GER -275"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -1016,10 +1031,24 @@
           "records": [
             {
               "source": "ESPN World Cup news",
-              "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-              "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-              "published": "2026-06-29T02:43:49Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
+              "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+              "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+              "published": "2026-06-30T00:39:30Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+              "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+              "published": "2026-06-30T00:06:01Z",
+              "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany dumped out of World Cup by Paraguay on penalties",
+              "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+              "published": "2026-06-30T00:42:38Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
             }
           ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -1027,8 +1056,30 @@
         "away": {
           "team": "巴拉圭",
           "team_en": "Paraguay",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+              "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+              "published": "2026-06-30T00:39:30Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+              "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+              "published": "2026-06-30T00:06:01Z",
+              "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany dumped out of World Cup by Paraguay on penalties",
+              "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+              "published": "2026-06-30T00:42:38Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -1045,7 +1096,7 @@
       "group": "",
       "match_number": 75,
       "status": {
-        "match_status": 1,
+        "match_status": 3,
         "officiality_status": 0,
         "result_type": 0
       },
@@ -1057,8 +1108,8 @@
           "id_team": "43960",
           "id_country": "NED",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/NED",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "3-4-3"
         },
         "away": {
           "name": "摩洛哥",
@@ -1067,8 +1118,8 @@
           "id_team": "43872",
           "id_country": "MAR",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/MAR",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "4-2-3-1"
         }
       },
       "venue": {
@@ -1103,36 +1154,59 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+130",
+          "home": "+145",
           "draw": "+210",
-          "away": "+250"
+          "away": "+230"
         },
         "implied_probability": {
-          "home_win": 43.48,
+          "home_win": 40.82,
           "draw": 32.26,
-          "away_win": 28.57
+          "away_win": 30.3
         },
         "normalized_probability": {
-          "home_win": 41.68,
-          "draw": 30.93,
-          "away_win": 27.39
+          "home_win": 39.48,
+          "draw": 31.2,
+          "away_win": 29.31
         },
-        "overround": 4.31,
-        "details": "NED +130"
+        "overround": 3.38,
+        "details": "NED +145"
       },
       "injuries": {
         "home": {
           "team": "荷兰",
           "team_en": "Netherlands",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+              "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+              "published": "2026-06-30T00:39:30Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "摩洛哥",
           "team_en": "Morocco",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Spain's plan for Austria simple: Get ball to Lamine Yamal",
+              "description": "Right-back Marcos Llorente said Spain are working hard to get the best out of star winger Lamine Yamal as they prepare to face Austria in the World Cup round of 32.",
+              "published": "2026-06-29T21:18:16Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49218747/spain-plan-austria-simple-get-ball-lamine-yamal"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+              "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+              "published": "2026-06-29T19:35:54Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -1207,22 +1281,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+265",
-          "draw": "+255",
-          "away": "+105"
+          "home": "+255",
+          "draw": "+245",
+          "away": "+110"
         },
         "implied_probability": {
-          "home_win": 27.4,
-          "draw": 28.17,
-          "away_win": 48.78
+          "home_win": 28.17,
+          "draw": 28.99,
+          "away_win": 47.62
         },
         "normalized_probability": {
-          "home_win": 26.26,
-          "draw": 27.0,
-          "away_win": 46.75
+          "home_win": 26.89,
+          "draw": 27.66,
+          "away_win": 45.45
         },
-        "overround": 4.35,
-        "details": "NOR +105"
+        "overround": 4.77,
+        "details": "NOR +110"
       },
       "injuries": {
         "home": {
@@ -1235,16 +1309,8 @@
         "away": {
           "team": "挪威",
           "team_en": "Norway",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-              "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-              "published": "2026-06-29T02:43:49Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -1319,22 +1385,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-370",
+          "home": "-350",
           "draw": "+500",
-          "away": "+950"
+          "away": "+850"
         },
         "implied_probability": {
-          "home_win": 78.72,
+          "home_win": 77.78,
           "draw": 16.67,
-          "away_win": 9.52
+          "away_win": 10.53
         },
         "normalized_probability": {
-          "home_win": 75.04,
-          "draw": 15.89,
-          "away_win": 9.08
+          "home_win": 74.09,
+          "draw": 15.88,
+          "away_win": 10.03
         },
-        "overround": 4.91,
-        "details": "FRA -370"
+        "overround": 4.97,
+        "details": "FRA -350"
       },
       "injuries": {
         "home": {
@@ -1423,22 +1489,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+125",
+          "home": "+120",
           "draw": "+195",
-          "away": "+290"
+          "away": "+300"
         },
         "implied_probability": {
-          "home_win": 44.44,
+          "home_win": 45.45,
           "draw": 33.9,
-          "away_win": 25.64
+          "away_win": 25.0
         },
         "normalized_probability": {
-          "home_win": 42.74,
-          "draw": 32.6,
-          "away_win": 24.66
+          "home_win": 43.56,
+          "draw": 32.48,
+          "away_win": 23.96
         },
-        "overround": 3.98,
-        "details": "MEX +125"
+        "overround": 4.35,
+        "details": "MEX +120"
       },
       "injuries": {
         "home": {
@@ -1471,9 +1537,9 @@
       "group": "",
       "match_number": 76,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -1483,8 +1549,8 @@
           "id_team": "43924",
           "id_country": "BRA",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/BRA",
-          "score": null,
-          "tactics": null
+          "score": 2,
+          "tactics": "4-1-2-3"
         },
         "away": {
           "name": "日本",
@@ -1493,8 +1559,8 @@
           "id_team": "43819",
           "id_country": "JPN",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/JPN",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "3-4-3"
         }
       },
       "venue": {
@@ -1525,40 +1591,39 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-135",
-          "draw": "+265",
-          "away": "+400"
-        },
-        "implied_probability": {
-          "home_win": 57.45,
-          "draw": 27.4,
-          "away_win": 20.0
-        },
-        "normalized_probability": {
-          "home_win": 54.79,
-          "draw": 26.13,
-          "away_win": 19.08
-        },
-        "overround": 4.84,
-        "details": "BRA -135"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "巴西",
           "team_en": "Brazil",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+              "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+              "published": "2026-06-29T19:35:54Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "日本",
           "team_en": "Japan",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+              "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+              "published": "2026-06-29T19:35:54Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -1575,9 +1640,9 @@
       "group": "",
       "match_number": 74,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 2
       },
       "teams": {
         "home": {
@@ -1587,8 +1652,8 @@
           "id_team": "43948",
           "id_country": "GER",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/GER",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "4-2-3-1"
         },
         "away": {
           "name": "巴拉圭",
@@ -1597,8 +1662,8 @@
           "id_team": "43928",
           "id_country": "PAR",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/PAR",
-          "score": null,
-          "tactics": null
+          "score": 1,
+          "tactics": "4-4-2"
         }
       },
       "venue": {
@@ -1629,26 +1694,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-275",
-          "draw": "+400",
-          "away": "+800"
-        },
-        "implied_probability": {
-          "home_win": 73.33,
-          "draw": 20.0,
-          "away_win": 11.11
-        },
-        "normalized_probability": {
-          "home_win": 70.21,
-          "draw": 19.15,
-          "away_win": 10.64
-        },
-        "overround": 4.44,
-        "details": "GER -275"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -1658,10 +1706,24 @@
           "records": [
             {
               "source": "ESPN World Cup news",
-              "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-              "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-              "published": "2026-06-29T02:43:49Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
+              "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+              "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+              "published": "2026-06-30T00:39:30Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+              "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+              "published": "2026-06-30T00:06:01Z",
+              "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany dumped out of World Cup by Paraguay on penalties",
+              "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+              "published": "2026-06-30T00:42:38Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
             }
           ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -1669,8 +1731,30 @@
         "away": {
           "team": "巴拉圭",
           "team_en": "Paraguay",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+              "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+              "published": "2026-06-30T00:39:30Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+              "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+              "published": "2026-06-30T00:06:01Z",
+              "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany dumped out of World Cup by Paraguay on penalties",
+              "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+              "published": "2026-06-30T00:42:38Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -1687,7 +1771,7 @@
       "group": "",
       "match_number": 75,
       "status": {
-        "match_status": 1,
+        "match_status": 3,
         "officiality_status": 0,
         "result_type": 0
       },
@@ -1699,8 +1783,8 @@
           "id_team": "43960",
           "id_country": "NED",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/NED",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "3-4-3"
         },
         "away": {
           "name": "摩洛哥",
@@ -1709,8 +1793,8 @@
           "id_team": "43872",
           "id_country": "MAR",
           "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/MAR",
-          "score": null,
-          "tactics": null
+          "score": 0,
+          "tactics": "4-2-3-1"
         }
       },
       "venue": {
@@ -1745,36 +1829,59 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+130",
+          "home": "+145",
           "draw": "+210",
-          "away": "+250"
+          "away": "+230"
         },
         "implied_probability": {
-          "home_win": 43.48,
+          "home_win": 40.82,
           "draw": 32.26,
-          "away_win": 28.57
+          "away_win": 30.3
         },
         "normalized_probability": {
-          "home_win": 41.68,
-          "draw": 30.93,
-          "away_win": 27.39
+          "home_win": 39.48,
+          "draw": 31.2,
+          "away_win": 29.31
         },
-        "overround": 4.31,
-        "details": "NED +130"
+        "overround": 3.38,
+        "details": "NED +145"
       },
       "injuries": {
         "home": {
           "team": "荷兰",
           "team_en": "Netherlands",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+              "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+              "published": "2026-06-30T00:39:30Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "摩洛哥",
           "team_en": "Morocco",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Spain's plan for Austria simple: Get ball to Lamine Yamal",
+              "description": "Right-back Marcos Llorente said Spain are working hard to get the best out of star winger Lamine Yamal as they prepare to face Austria in the World Cup round of 32.",
+              "published": "2026-06-29T21:18:16Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49218747/spain-plan-austria-simple-get-ball-lamine-yamal"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+              "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+              "published": "2026-06-29T19:35:54Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -1849,22 +1956,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+265",
-          "draw": "+255",
-          "away": "+105"
+          "home": "+255",
+          "draw": "+245",
+          "away": "+110"
         },
         "implied_probability": {
-          "home_win": 27.4,
-          "draw": 28.17,
-          "away_win": 48.78
+          "home_win": 28.17,
+          "draw": 28.99,
+          "away_win": 47.62
         },
         "normalized_probability": {
-          "home_win": 26.26,
-          "draw": 27.0,
-          "away_win": 46.75
+          "home_win": 26.89,
+          "draw": 27.66,
+          "away_win": 45.45
         },
-        "overround": 4.35,
-        "details": "NOR +105"
+        "overround": 4.77,
+        "details": "NOR +110"
       },
       "injuries": {
         "home": {
@@ -1877,16 +1984,8 @@
         "away": {
           "team": "挪威",
           "team_en": "Norway",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-              "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-              "published": "2026-06-29T02:43:49Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -1961,22 +2060,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-370",
+          "home": "-350",
           "draw": "+500",
-          "away": "+950"
+          "away": "+850"
         },
         "implied_probability": {
-          "home_win": 78.72,
+          "home_win": 77.78,
           "draw": 16.67,
-          "away_win": 9.52
+          "away_win": 10.53
         },
         "normalized_probability": {
-          "home_win": 75.04,
-          "draw": 15.89,
-          "away_win": 9.08
+          "home_win": 74.09,
+          "draw": 15.88,
+          "away_win": 10.03
         },
-        "overround": 4.91,
-        "details": "FRA -370"
+        "overround": 4.97,
+        "details": "FRA -350"
       },
       "injuries": {
         "home": {
@@ -2065,22 +2164,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+125",
+          "home": "+120",
           "draw": "+195",
-          "away": "+290"
+          "away": "+300"
         },
         "implied_probability": {
-          "home_win": 44.44,
+          "home_win": 45.45,
           "draw": 33.9,
-          "away_win": 25.64
+          "away_win": 25.0
         },
         "normalized_probability": {
-          "home_win": 42.74,
-          "draw": 32.6,
-          "away_win": 24.66
+          "home_win": 43.56,
+          "draw": 32.48,
+          "away_win": 23.96
         },
-        "overround": 3.98,
-        "details": "MEX +125"
+        "overround": 4.35,
+        "details": "MEX +120"
       },
       "injuries": {
         "home": {
@@ -2345,22 +2444,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-260",
+          "home": "-265",
           "draw": "+390",
           "away": "+800"
         },
         "implied_probability": {
-          "home_win": 72.22,
+          "home_win": 72.6,
           "draw": 20.41,
           "away_win": 11.11
         },
         "normalized_probability": {
-          "home_win": 69.62,
-          "draw": 19.67,
-          "away_win": 10.71
+          "home_win": 69.73,
+          "draw": 19.6,
+          "away_win": 10.67
         },
-        "overround": 3.74,
-        "details": "USA -260"
+        "overround": 4.12,
+        "details": "USA -265"
       }
     },
     {
@@ -2521,22 +2620,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-125",
+          "home": "-130",
           "draw": "+265",
-          "away": "+370"
+          "away": "+400"
         },
         "implied_probability": {
-          "home_win": 55.56,
+          "home_win": 56.52,
           "draw": 27.4,
-          "away_win": 21.28
+          "away_win": 20.0
         },
         "normalized_probability": {
-          "home_win": 53.3,
-          "draw": 26.29,
-          "away_win": 20.41
+          "home_win": 54.39,
+          "draw": 26.36,
+          "away_win": 19.25
         },
-        "overround": 4.23,
-        "details": "POR -125"
+        "overround": 3.92,
+        "details": "POR -130"
       }
     },
     {
@@ -2785,22 +2884,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-600",
-          "draw": "+700",
-          "away": "+1700"
+          "home": "-575",
+          "draw": "+650",
+          "away": "+1600"
         },
         "implied_probability": {
-          "home_win": 85.71,
-          "draw": 12.5,
-          "away_win": 5.56
+          "home_win": 85.19,
+          "draw": 13.33,
+          "away_win": 5.88
         },
         "normalized_probability": {
-          "home_win": 82.6,
-          "draw": 12.05,
-          "away_win": 5.35
+          "home_win": 81.59,
+          "draw": 12.77,
+          "away_win": 5.63
         },
-        "overround": 3.77,
-        "details": "ARG -600"
+        "overround": 4.4,
+        "details": "ARG -575"
       }
     },
     {
@@ -2894,7 +2993,7 @@
   ],
   "daily_log": [
     {
-      "time": "2026-06-29T14:51:24Z",
+      "time": "2026-06-30T01:17:04Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     }
