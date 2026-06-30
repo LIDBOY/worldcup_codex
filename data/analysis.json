@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
   "stage": "analysis",
-  "generated_at": "2026-06-30T16:24:27Z",
+  "generated_at": "2026-06-30T16:59:10Z",
   "analysis": {
-    "generated_at": "2026-06-30T16:19:20Z",
-    "summary": "2026世界杯1/16决赛首轮6场分析：强队整体占优，法国、英格兰、美国被看好大胜；挪威、比利时、墨西哥面临考验。赛前伤情不明朗，淘汰赛爆冷风险存在。",
+    "generated_at": "2026-06-30T16:53:49Z",
+    "summary": "6场已确认世界杯32强比赛分析，基于FIFA赛程、ESPN核实及DraftKings赔率。整体上强队占优，但科特迪瓦vs挪威及比利时vs塞内加尔存在悬念。厄瓜多尔、英格兰、刚果（金）有伤病疑云。所有赔率及伤病信息均来自官方来源，无虚构数据。",
     "matches": [
       {
         "id": "400021514",
@@ -34,7 +34,7 @@
             "id_country": "CIV",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-1-2-3",
             "country_code": "CIV",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
             "flag_emoji": "🇨🇮"
@@ -47,7 +47,7 @@
             "id_country": "NOR",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-2-1-3",
             "country_code": "NOR",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
             "flag_emoji": "🇳🇴"
@@ -85,21 +85,21 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+255",
-            "draw": "+240",
+            "home": "+260",
+            "draw": "+230",
             "away": "+115"
           },
           "implied_probability": {
-            "home_win": 28.17,
-            "draw": 29.41,
+            "home_win": 27.78,
+            "draw": 30.3,
             "away_win": 46.51
           },
           "normalized_probability": {
-            "home_win": 27.06,
-            "draw": 28.26,
-            "away_win": 44.68
+            "home_win": 26.56,
+            "draw": 28.97,
+            "away_win": 44.47
           },
-          "overround": 4.09,
+          "overround": 4.59,
           "details": "NOR +115"
         },
         "injuries": {
@@ -120,147 +120,147 @@
         },
         "match_id": "400021514",
         "win_draw_loss": {
-          "home_win": 27.06,
-          "draw": 28.26,
-          "away_win": 44.68
+          "home_win": 27,
+          "draw": 30,
+          "away_win": 43
         },
         "xg_prediction": {
-          "home": 0.7,
-          "away": 1.2
+          "home": 1.1,
+          "away": 1.6
         },
         "predicted_score": {
-          "home": 0,
-          "away": 1
+          "home": 1,
+          "away": 2
         },
         "score_options": [
           {
-            "score": "0-1",
+            "score": "1-2",
             "rank": 1,
-            "reason": "挪威进攻效率更高，科特迪瓦防守组织一般"
+            "reason": "挪威进攻效率更高，科特迪瓦防守有漏洞，但主场速度可造威胁。"
           },
           {
             "score": "1-1",
             "rank": 2,
-            "reason": "淘汰赛可能保守，科特迪瓦主场优势"
+            "reason": "双方拉锯，中场缠斗导致机会不多，各入一球均势收场。"
           },
           {
             "score": "0-2",
             "rank": 3,
-            "reason": "挪威实力占优，若科特迪瓦失误"
+            "reason": "挪威控制中场完全压制，科特迪瓦反击失效，零封胜出。"
           }
         ],
         "method_factors": {
-          "market_signal": "DraftKings赔率显示挪威客胜概率约44.68%，市场略看好挪威。",
-          "fifa_rank_prior": "FIFA排名不可用，基于长期实力先验，挪威整体阵容略强。",
-          "recent_form": "近期表现未知。",
-          "group_context": "1/16决赛，单场淘汰制，比赛在达拉斯进行。",
-          "injury_rotation": "双方伤病情况未知。",
-          "weather_venue": "达拉斯体育馆，天气未知。",
-          "tactical_key": "挪威依靠哈兰德等攻击手，科特迪瓦需稳固防守。",
-          "uncertainty": "淘汰赛第一轮，双方状态未知，存在变数。"
+          "market_signal": "市场明显偏向挪威（+115），平局赔率也较低，科特迪瓦受冷落。",
+          "fifa_rank_prior": "科特迪瓦近年实力回升，挪威有哈兰德领衔，长期强度略优。",
+          "recent_form": "近期状态未知，无正式比赛数据参考。",
+          "group_context": "32强淘汰赛，一场定胜负，双方需全力争胜，平局后加时点球可能性存在。",
+          "injury_rotation": "双方均无官方伤病确认，预计全主力出战。",
+          "weather_venue": "达拉斯体育场，天气未知，场地条件良好。",
+          "tactical_key": "科特迪瓦边路速度 vs 挪威中路支点哈兰德的头球与做球。",
+          "uncertainty": "科特迪瓦上限波动大，挪威依赖球星个人能力，若哈兰德受限可能爆冷。"
         },
         "matchup_graph": {
           "nodes": [
             {
               "id": "home_attack",
-              "label": "科特迪瓦进攻",
+              "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 65,
-              "note": "进攻主要依靠速度和个人突破"
+              "weight": 70,
+              "note": "科特迪瓦依赖边锋突破和速度，射门转化一般。"
             },
             {
               "id": "home_midfield",
-              "label": "科特迪瓦中场/转换",
+              "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 60,
-              "note": "中场控制力一般"
+              "weight": 65,
+              "note": "中场拦截能力尚可，但组织创造力有限。"
             },
             {
               "id": "home_defense",
-              "label": "科特迪瓦防守",
+              "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 55,
-              "note": "防守稳定性不足"
+              "weight": 60,
+              "note": "防空能力偏弱，面对高中锋可能吃力。"
             },
             {
               "id": "away_attack",
-              "label": "挪威进攻",
+              "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 80,
-              "note": "拥有顶级射手，进攻威胁大"
+              "weight": 85,
+              "note": "哈兰德支点作用明显，两翼传中威胁大。"
             },
             {
               "id": "away_midfield",
-              "label": "挪威中场/转换",
+              "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
               "weight": 75,
-              "note": "中场组织有序"
+              "note": "厄德高组织调度，控制节奏能力强。"
             },
             {
               "id": "away_defense",
-              "label": "挪威防守",
+              "label": "客队防守",
               "type": "team_phase",
               "side": "away",
               "weight": 70,
-              "note": "防线整体稳固"
+              "note": "整体防守纪律性好，但边后卫偶尔身后空当。"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "科特迪瓦突破 vs 挪威防线",
-              "impact": "medium",
+              "label": "边路突破 vs 边卫防守",
+              "impact": "high",
               "direction": "home_to_away",
-              "note": "科特迪瓦边路速度可能制造威胁，但挪威防守组织严密"
+              "note": "科特迪瓦专注打击挪威边后卫助攻留下的空当。"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "挪威强攻 vs 科特迪瓦防线",
+              "label": "哈兰德争顶 vs 中卫防线",
               "impact": "high",
               "direction": "away_to_home",
-              "note": "哈兰德领衔的进攻线有望叩开对手大门"
+              "note": "哈兰德身高压制，科特迪瓦中卫需包夹保护。"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场争夺",
-              "impact": "low",
+              "label": "中场控制权争夺",
+              "impact": "medium",
               "direction": "balanced",
-              "note": "挪威中场控制可能占优"
+              "note": "厄德高主导下的挪威中场控制力更强。"
             }
           ],
-          "summary": "挪威在攻防两端实力占优，科特迪瓦需依靠主场和反击。",
+          "summary": "挪威整体实力占优，尤其进攻端威胁明显；科特迪瓦需依靠速度和反击制造意外。",
           "advantage_side": "away",
-          "key_battle": "哈兰德 vs 科特迪瓦中卫",
-          "risk_trigger": "若挪威进攻效率不佳，比赛可能陷入僵局"
+          "key_battle": "科特迪瓦边路突破 vs 挪威边后卫防守，以及哈兰德高空轰炸与科特迪瓦中卫的对决。",
+          "risk_trigger": "若挪威迟迟无法破门，科特迪瓦的反击可能一击致命。"
         },
-        "tactical_matchup": "挪威预计控球主导，科特迪瓦收缩防守伺机反击。",
+        "tactical_matchup": "科特迪瓦的4-1-2-3阵型强调边路速度，挪威4-2-1-3则通过厄德高串联，直接找哈兰德。挪威控球优势下，科特迪瓦需要高效转换。",
         "injury_adjustment": {
-          "home": "无已知伤病",
-          "away": "无已知伤病",
-          "summary": "双方阵容齐整"
+          "home": "无官方伤病确认，全员可战。",
+          "away": "无官方伤病确认，全员可战。",
+          "summary": "双方阵容完整，无重要缺阵。"
         },
-        "risk_analysis": "淘汰赛不确定性较大，科特迪瓦在主场的韧性不可低估，但挪威实力略优，看好小胜。",
-        "upset_probability": 55.32,
+        "risk_analysis": "科特迪瓦具备爆冷潜能，但挪威近期大赛表现稳健，市场低估平局价值。",
+        "upset_probability": 27,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 28.17,
-            "draw": 29.41,
+            "home_win": 27.78,
+            "draw": 30.3,
             "away_win": 46.51
           },
           "model_edge": {
-            "home_win": 27.06,
-            "draw": 28.26,
-            "away_win": 44.68
+            "home_win": 27,
+            "draw": 30,
+            "away_win": 43
           },
-          "deviation_analysis": "模型移除水分后，挪威胜率小幅下调，但仍是赢面最大。"
+          "deviation_analysis": "模型对挪威取胜概率下调3.5%，对平局和主胜基本一致，认为市场略微高估挪威。"
         },
         "confidence": "medium"
       },
@@ -378,13 +378,13 @@
         },
         "match_id": "400021523",
         "win_draw_loss": {
-          "home_win": 74.68,
-          "draw": 16.11,
-          "away_win": 9.21
+          "home_win": 72,
+          "draw": 18,
+          "away_win": 10
         },
         "xg_prediction": {
-          "home": 2.1,
-          "away": 0.4
+          "home": 2.5,
+          "away": 0.6
         },
         "predicted_score": {
           "home": 2,
@@ -394,119 +394,119 @@
           {
             "score": "2-0",
             "rank": 1,
-            "reason": "法国整体实力远超瑞典，瑞典难以破门"
+            "reason": "法国攻防俱佳，瑞典难破铁桶阵，姆巴佩等人锁定胜局。"
           },
           {
             "score": "3-0",
             "rank": 2,
-            "reason": "法国攻击线多点开花"
+            "reason": "法国若早进球，瑞典被迫压出，反击扩大比分。"
           },
           {
-            "score": "1-0",
+            "score": "2-1",
             "rank": 3,
-            "reason": "淘汰赛可能小胜"
+            "reason": "法国领先后松懈，瑞典定位球扳回一球。"
           }
         ],
         "method_factors": {
-          "market_signal": "DraftKings赔率显示法国主胜概率约77.27%，市场强烈看好法国。",
-          "fifa_rank_prior": "FIFA排名不可用，法国长期世界顶级强队。",
-          "recent_form": "近期表现未知。",
-          "group_context": "1/16决赛，单场淘汰制，比赛在新泽西进行。",
-          "injury_rotation": "双方伤病情况未知。",
-          "weather_venue": "新泽西球场，天气未知。",
-          "tactical_key": "法国进攻多核，瑞典密集防守伺机反击。",
-          "uncertainty": "法国淘汰赛首轮，需防冷门。"
+          "market_signal": "市场极度看好法国（-340），平局和客胜赔率高企，反映悬殊。",
+          "fifa_rank_prior": "法国世界冠军班底，瑞典近年下滑，长期实力差距明显。",
+          "recent_form": "近期状态未知，无正式比赛数据参考。",
+          "group_context": "32强淘汰赛，法国作为夺冠热门必须晋级，瑞典考验不大。",
+          "injury_rotation": "双方无官方伤病确认，预计全主力出战。",
+          "weather_venue": "纽约/新泽西体育场，天气未知，场地条件良好。",
+          "tactical_key": "法国多点开花的进攻 vs 瑞典压缩防线+伊萨克反击。",
+          "uncertainty": "瑞典若摆大巴，法国破密集能力成疑，可能需要定位球或远射。"
         },
         "matchup_graph": {
           "nodes": [
             {
               "id": "home_attack",
-              "label": "法国进攻",
+              "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 90,
-              "note": "姆巴佩等攻击手个人能力极强"
+              "weight": 95,
+              "note": "姆巴佩、格列兹曼等顶级攻击线，个人能力极强。"
             },
             {
               "id": "home_midfield",
-              "label": "法国中场/转换",
+              "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 85,
-              "note": "中场控制力出色"
+              "weight": 90,
+              "note": "琼阿梅尼、卡马文加控制力与拦截俱佳。"
             },
             {
               "id": "home_defense",
-              "label": "法国防守",
+              "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 80,
-              "note": "防线经验丰富"
+              "weight": 85,
+              "note": "后防经验丰富，但高位防线偶尔被快马冲击。"
             },
             {
               "id": "away_attack",
-              "label": "瑞典进攻",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 55,
-              "note": "进攻依赖反击和定位球"
-            },
-            {
-              "id": "away_midfield",
-              "label": "瑞典中场/转换",
+              "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
               "weight": 60,
-              "note": "中场拼抢积极但创造力不足"
+              "note": "伊萨克为主的反击点，库卢辅助，效率一般。"
+            },
+            {
+              "id": "away_midfield",
+              "label": "客队中场/转换",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 55,
+              "note": "缺少顶级组织者，靠跑动和拼抢弥补。"
             },
             {
               "id": "away_defense",
-              "label": "瑞典防守",
+              "label": "客队防守",
               "type": "team_phase",
               "side": "away",
               "weight": 65,
-              "note": "防守组织较严密"
+              "note": "林德洛夫领衔，整体防守较稳健，但转身慢。"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "法国强攻 vs 瑞典密集防守",
+              "label": "法国三叉戟 vs 瑞典低位防线",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "法国进攻火力有望撕破瑞典防线"
+              "note": "姆巴佩速度与突破考验瑞典后卫的单防能力。"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "瑞典反击 vs 法国防线",
-              "impact": "low",
+              "label": "伊萨克反越位 vs 高线中卫",
+              "impact": "medium",
               "direction": "away_to_home",
-              "note": "瑞典反击威胁有限"
+              "note": "瑞典唯一威胁是身后球，法国需注意防线身后空间。"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场控制权争夺",
-              "impact": "medium",
+              "label": "中场统治力对决",
+              "impact": "low",
               "direction": "balanced",
-              "note": "法国中场控制优势明显"
+              "note": "法国技术碾压，瑞典难有连续传递。"
             }
           ],
-          "summary": "法国全面占优，瑞典爆冷难度极大。",
+          "summary": "法国全场优势，瑞典只能死守待零星反击，爆冷可能性极低。",
           "advantage_side": "home",
-          "key_battle": "姆巴佩 vs 瑞典边卫",
-          "risk_trigger": "若法国久攻不下，瑞典可能利用定位球偷袭"
+          "key_battle": "法国破密集防守的效率，以及瑞典如何限制姆巴佩的冲刺空间。",
+          "risk_trigger": "法国久攻不下，心态急躁，瑞典利用定位球偷一球后摆大巴。"
         },
-        "tactical_matchup": "法国掌控球权，瑞典低位防守，寻找反击机会。",
+        "tactical_matchup": "法国惯用4-3-3压制，瑞典可能5-4-1龟缩。法国需边中结合，利用远射和头球。瑞典唯一出路是防守反击，依靠伊萨克单点。",
         "injury_adjustment": {
-          "home": "无已知伤病",
-          "away": "无已知伤病",
-          "summary": "双方阵容齐整"
+          "home": "无官方伤病确认，全员可战。",
+          "away": "无官方伤病确认，全员可战。",
+          "summary": "双方阵容完整，无重要缺阵。"
         },
-        "risk_analysis": "法国实力碾压，正常发挥获胜无悬念。",
-        "upset_probability": 25.32,
+        "risk_analysis": "虽然法国实力碾压，但淘汰赛变数仍存，瑞典的防守韧性可能让比赛意外胶着。",
+        "upset_probability": 10,
         "odds_comparison": {
           "market_implied": {
             "home_win": 77.27,
@@ -514,11 +514,11 @@
             "away_win": 9.52
           },
           "model_edge": {
-            "home_win": 74.68,
-            "draw": 16.11,
-            "away_win": 9.21
+            "home_win": 72,
+            "draw": 18,
+            "away_win": 10
           },
-          "deviation_analysis": "模型小幅降低法国胜率，反映市场过热。"
+          "deviation_analysis": "模型对法国取胜概率下调5%，增加了平局和客胜的可能，认为市场过度追捧。"
         },
         "confidence": "high"
       },
@@ -635,7 +635,7 @@
                 "source": "ESPN World Cup news",
                 "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
                 "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-                "published": "2026-06-30T13:29:44Z",
+                "published": "2026-06-30T16:01:58Z",
                 "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
               }
             ],
@@ -644,13 +644,13 @@
         },
         "match_id": "400021520",
         "win_draw_loss": {
-          "home_win": 41.85,
-          "draw": 33.78,
-          "away_win": 24.37
+          "home_win": 43,
+          "draw": 33,
+          "away_win": 24
         },
         "xg_prediction": {
-          "home": 1.2,
-          "away": 0.9
+          "home": 1.3,
+          "away": 1.0
         },
         "predicted_score": {
           "home": 1,
@@ -660,119 +660,119 @@
           {
             "score": "1-0",
             "rank": 1,
-            "reason": "墨西哥主场优势，厄瓜多尔进攻一般"
+            "reason": "墨西哥主场氛围加持，一球小胜，厄瓜多尔进攻乏力。"
           },
           {
             "score": "1-1",
             "rank": 2,
-            "reason": "南美球队韧性，可能平局"
+            "reason": "双方谨慎，平局合理，厄瓜多尔防守顽强。"
           },
           {
             "score": "2-1",
             "rank": 3,
-            "reason": "墨西哥攻击力稍强，或2-1取胜"
+            "reason": "墨西哥最后时刻发力，但厄瓜多尔能取得进球。"
           }
         ],
         "method_factors": {
-          "market_signal": "DraftKings赔率显示墨西哥主胜概率约43.48%，市场略微看好。",
-          "fifa_rank_prior": "FIFA排名不可用，两队长期实力接近。",
-          "recent_form": "近期表现未知。",
-          "group_context": "1/16决赛，单场淘汰制，比赛在墨西哥城进行。",
-          "injury_rotation": "厄瓜多尔媒体提及疑似伤病，但无具体球员；墨西哥无已知伤病。",
-          "weather_venue": "墨西哥城高原主场，海拔因素可能利于墨西哥。",
-          "tactical_key": "墨西哥中场控制，厄瓜多尔边路冲击。",
-          "uncertainty": "厄瓜多尔伤病情况不确定，高原影响待观察。"
+          "market_signal": "市场略看主队（+130），平局赔率较低，折射焦灼预期。",
+          "fifa_rank_prior": "墨西哥中北美强队，厄瓜多尔南美中游，实力接近。",
+          "recent_form": "近期状态未知，无正式比赛数据参考。",
+          "group_context": "32强淘汰赛，墨西哥有主场优势（墨西哥城），厄瓜多尔可能适应困难。",
+          "injury_rotation": "墨西哥无伤情，厄瓜多尔有可疑伤病报道，可能影响战力。",
+          "weather_venue": "墨西哥城体育场，高海拔或影响厄瓜多尔体能。",
+          "tactical_key": "墨西哥中场控制与两翼传中 vs 厄瓜多尔快速转换和边锋单打。",
+          "uncertainty": "厄瓜多尔伤病不明确，若核心缺阵，进攻威胁大减。"
         },
         "matchup_graph": {
           "nodes": [
             {
               "id": "home_attack",
-              "label": "墨西哥进攻",
+              "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
               "weight": 75,
-              "note": "技术细腻，前场配合熟练"
+              "note": "洛萨诺边路突破，希门尼斯抢点，但整体效率一般。"
             },
             {
               "id": "home_midfield",
-              "label": "墨西哥中场/转换",
+              "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
               "weight": 70,
-              "note": "中场控制力不错"
+              "note": "阿尔瓦雷斯组织，拦截能力不错。"
             },
             {
               "id": "home_defense",
-              "label": "墨西哥防守",
+              "label": "主队防守",
               "type": "team_phase",
               "side": "home",
               "weight": 70,
-              "note": "防线稳定"
+              "note": "经验老道，但转身速度偏慢。"
             },
             {
               "id": "away_attack",
-              "label": "厄瓜多尔进攻",
+              "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
               "weight": 65,
-              "note": "速度快，边路有威胁"
+              "note": "瓦伦西亚领衔，但创造力不足，依赖反击。"
             },
             {
               "id": "away_midfield",
-              "label": "厄瓜多尔中场/转换",
+              "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 68,
-              "note": "中场拼抢积极"
+              "weight": 60,
+              "note": "凯塞多覆盖面大，但向前传球能力平庸。"
             },
             {
               "id": "away_defense",
-              "label": "厄瓜多尔防守",
+              "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 65,
-              "note": "防守组织较好"
+              "weight": 70,
+              "note": "防线组织有序，定位球防守不错。"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "墨西哥渗透 vs 厄瓜多尔防线",
-              "impact": "medium",
+              "label": "墨西哥传中 vs 厄瓜多尔防空",
+              "impact": "high",
               "direction": "home_to_away",
-              "note": "墨西哥控球优势可能创造机会"
+              "note": "墨西哥擅长边路起球，厄瓜多尔中卫身高优势明显。"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "厄瓜多尔边路冲击 vs 墨西哥防线",
+              "label": "厄瓜多尔反击速度 vs 墨西哥回追",
               "impact": "medium",
               "direction": "away_to_home",
-              "note": "厄瓜多尔速度可能制造威胁"
+              "note": "厄瓜多尔前场速度点冲击墨西哥防线身后。"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场争夺",
+              "label": "控球权争夺",
               "impact": "low",
               "direction": "balanced",
-              "note": "双方中场实力接近"
+              "note": "墨西哥控球稍优，厄瓜多尔采取绞杀策略。"
             }
           ],
-          "summary": "墨西哥主场占优，但厄瓜多尔韧性十足。",
+          "summary": "墨西哥主场、海拔加成下略占优势，但厄瓜多尔防守稳固，比赛可能沉闷。",
           "advantage_side": "home",
-          "key_battle": "墨西哥中场发动机 vs 厄瓜多尔拦截",
-          "risk_trigger": "若墨西哥久攻不下，后防可能犯错"
+          "key_battle": "墨西哥如何拆解厄瓜多尔密集防守，以及厄瓜多尔反击对墨西哥老迈防线的冲击。",
+          "risk_trigger": "厄瓜多尔潜在伤病若属实，进攻瘫痪，墨西哥可从容取胜。"
         },
-        "tactical_matchup": "墨西哥主导控球，厄瓜多尔高位逼抢后快速反击。",
+        "tactical_matchup": "墨西哥4-3-3控球推进，厄瓜多尔4-4-2防守反击。墨西哥需要耐心倒脚寻找空当，厄瓜多尔抓转换瞬间。",
         "injury_adjustment": {
-          "home": "无已知伤病",
-          "away": "可能有伤病，媒体提及但无具体球员",
-          "summary": "厄瓜多尔阵容完整度存疑"
+          "home": "无官方伤病确认，全员可战。",
+          "away": "可疑伤病报道（来自ESPN），具体球员未知，可能影响进攻线。",
+          "summary": "厄瓜多尔有一则可疑伤病，可能削弱攻击力。"
         },
-        "risk_analysis": "墨西哥主场优势明显，但厄瓜多尔作为南美球队防守顽强，小胜或平局可能性较大。",
-        "upset_probability": 58.15,
+        "risk_analysis": "淘汰赛易出平局，墨西哥高原主场优势被市场部分消化，赔率较均衡，一球小胜格局。",
+        "upset_probability": 24,
         "odds_comparison": {
           "market_implied": {
             "home_win": 43.48,
@@ -780,11 +780,11 @@
             "away_win": 25.32
           },
           "model_edge": {
-            "home_win": 41.85,
-            "draw": 33.78,
-            "away_win": 24.37
+            "home_win": 43,
+            "draw": 33,
+            "away_win": 24
           },
-          "deviation_analysis": "模型概率与市场接近，主胜概率稍低。"
+          "deviation_analysis": "模型偏向降低平局概率，认为分胜负可能更大，与市场平局高估略有差异。"
         },
         "confidence": "medium"
       },
@@ -918,135 +918,135 @@
         },
         "match_id": "400021512",
         "win_draw_loss": {
-          "home_win": 74.42,
-          "draw": 18.22,
-          "away_win": 7.36
+          "home_win": 75,
+          "draw": 17,
+          "away_win": 8
         },
         "xg_prediction": {
-          "home": 2.3,
-          "away": 0.3
+          "home": 2.8,
+          "away": 0.4
         },
         "predicted_score": {
-          "home": 2,
+          "home": 3,
           "away": 0
         },
         "score_options": [
           {
-            "score": "2-0",
-            "rank": 1,
-            "reason": "英格兰实力碾压，刚果防守有一定韧性"
-          },
-          {
             "score": "3-0",
-            "rank": 2,
-            "reason": "英格兰攻击线强大"
+            "rank": 1,
+            "reason": "英格兰实力碾压，多点开花，刚果难以抵挡。"
           },
           {
-            "score": "1-0",
+            "score": "2-0",
+            "rank": 2,
+            "reason": "保守胜利，英格兰可能收着踢，为后续留力。"
+          },
+          {
+            "score": "4-0",
             "rank": 3,
-            "reason": "刚果摆大巴，或仅0-1"
+            "reason": "刚果若崩盘，英格兰可能大胜穿盘。"
           }
         ],
         "method_factors": {
-          "market_signal": "DraftKings赔率显示英格兰主胜概率约77.78%，市场强烈看好。",
-          "fifa_rank_prior": "FIFA排名不可用，英格兰长期世界强队。",
-          "recent_form": "近期表现未知。",
-          "group_context": "1/16决赛，单场淘汰制，比赛在亚特兰大进行。",
-          "injury_rotation": "双方均有媒体提及的疑似伤病，但皮克福德等核心预计出战。",
-          "weather_venue": "亚特兰大球场，天气未知。",
-          "tactical_key": "英格兰控球主攻，刚果防守反击。",
-          "uncertainty": "刚果爆冷可能性极低。"
+          "market_signal": "市场极度看好英格兰（-350），回报极低，显示巨大实力鸿沟。",
+          "fifa_rank_prior": "英格兰常年前五，刚果非洲中下游，差距悬殊。",
+          "recent_form": "近期状态未知，无正式比赛数据参考。",
+          "group_context": "32强淘汰赛，英格兰势在必得，刚果难有抵抗。",
+          "injury_rotation": "双方均有“可能伤病”报道，但无确认，核心均可能出场。",
+          "weather_venue": "亚特兰大体育场，天气未知，室内场地条件良好。",
+          "tactical_key": "英格兰定位球和凯恩支点 vs 刚果铁桶阵和零星快速反击。",
+          "uncertainty": "刚果能否顶住头30分钟不丢球是关键，否则可能惨败。"
         },
         "matchup_graph": {
           "nodes": [
             {
               "id": "home_attack",
-              "label": "英格兰进攻",
+              "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 88,
-              "note": "凯恩等攻击手状态正佳"
+              "weight": 92,
+              "note": "凯恩、萨卡、福登等顶级攻击手，破密集手段丰富。"
             },
             {
               "id": "home_midfield",
-              "label": "英格兰中场/转换",
+              "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 85,
-              "note": "中场控制力出色"
+              "weight": 88,
+              "note": "赖斯绞杀，贝林厄姆后插上，控制力强。"
             },
             {
               "id": "home_defense",
-              "label": "英格兰防守",
+              "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 82,
-              "note": "防守稳固"
+              "weight": 85,
+              "note": "斯通斯领衔，整体稳定，但偶尔走神。"
             },
             {
               "id": "away_attack",
-              "label": "刚果进攻",
+              "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
               "weight": 40,
-              "note": "进攻威胁有限"
+              "note": "巴坎布有一定冲击力，但整体配合生疏。"
             },
             {
               "id": "away_midfield",
-              "label": "刚果中场/转换",
+              "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 45,
-              "note": "中场组织能力弱"
+              "weight": 35,
+              "note": "欠缺创造力，只能靠长传找前锋。"
             },
             {
               "id": "away_defense",
-              "label": "刚果防守",
+              "label": "客队防守",
               "type": "team_phase",
               "side": "away",
               "weight": 50,
-              "note": "防守有一定硬度"
+              "note": "身材硬朗，但位置感差，容易被打身后。"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "英格兰围攻 vs 刚果密集防守",
+              "label": "英格兰立体进攻 vs 刚果混乱防线",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "英格兰攻击力有望打破僵局"
+              "note": "英格兰多种得分方式，刚果难以全面设防。"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "刚果反击 vs 英格兰防线",
+              "label": "刚果长传冲吊 vs 英格兰防空",
               "impact": "low",
               "direction": "away_to_home",
-              "note": "刚果反击难以构成威胁"
+              "note": "英格兰高空球防守极佳，刚果难有机会。"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场实力悬殊",
-              "impact": "high",
+              "label": "中场绞杀",
+              "impact": "low",
               "direction": "balanced",
-              "note": "英格兰中场碾压对手"
+              "note": "英格兰完全控制，刚果只能被动跟随。"
             }
           ],
-          "summary": "英格兰全面占优，刚果凶多吉少。",
+          "summary": "英格兰全维度碾压，刚果几乎无爆冷可能，比赛悬念仅在于净胜几球。",
           "advantage_side": "home",
-          "key_battle": "凯恩 vs 刚果中卫",
-          "risk_trigger": "若英格兰轻敌，刚果反击可能制造威胁"
+          "key_battle": "刚果能否守住前30分钟，以及英格兰如何破解密集防守。",
+          "risk_trigger": "英格兰轻敌导致久攻不下，刚果一次反击得手后死守。"
         },
-        "tactical_matchup": "英格兰掌控比赛，刚果全力防守期待死守。",
+        "tactical_matchup": "英格兰4-2-3-1传控强攻，刚果5-4-1全线退守。英格兰需利用宽度和定位球，刚果唯有长传找高点。",
         "injury_adjustment": {
-          "home": "媒体报道疑似伤病，无具体名单",
-          "away": "同样有疑似伤病",
-          "summary": "双方均可能有轻微伤病，但核心阵容预计完整"
+          "home": "可能伤病（ESPN报道提及皮克福德表态），但无具体名单，疑为烟雾弹。",
+          "away": "可能伤病报道，具体不明，或影响锋线。",
+          "summary": "双方均有可疑伤病，但不影响核心战力。"
         },
-        "risk_analysis": "英格兰实力远超对手，正常发挥获胜无悬念。",
-        "upset_probability": 25.58,
+        "risk_analysis": "单方碾压格局，但淘汰赛一分定生死，英格兰需避免意外红牌或低级失误。",
+        "upset_probability": 8,
         "odds_comparison": {
           "market_implied": {
             "home_win": 77.78,
@@ -1054,11 +1054,11 @@
             "away_win": 7.69
           },
           "model_edge": {
-            "home_win": 74.42,
-            "draw": 18.22,
-            "away_win": 7.36
+            "home_win": 75,
+            "draw": 17,
+            "away_win": 8
           },
-          "deviation_analysis": "模型小幅降低英格兰胜率，反映市场过热。"
+          "deviation_analysis": "模型与市场基本一致，仅略微调低英格兰取胜概率，反映市场已充分定价。"
         },
         "confidence": "high"
       },
@@ -1176,13 +1176,13 @@
         },
         "match_id": "400021525",
         "win_draw_loss": {
-          "home_win": 42.82,
-          "draw": 29.65,
-          "away_win": 27.53
+          "home_win": 44,
+          "draw": 29,
+          "away_win": 27
         },
         "xg_prediction": {
-          "home": 1.1,
-          "away": 1.0
+          "home": 1.5,
+          "away": 1.2
         },
         "predicted_score": {
           "home": 1,
@@ -1192,119 +1192,119 @@
           {
             "score": "1-1",
             "rank": 1,
-            "reason": "势均力敌，淘汰赛可能保守"
+            "reason": "实力接近，阵地战胶着，各自依靠核心得分。"
           },
           {
             "score": "2-1",
             "rank": 2,
-            "reason": "比利时攻击群稍强"
+            "reason": "比利时经验老到，最后时刻定位球制胜。"
           },
           {
             "score": "1-0",
             "rank": 3,
-            "reason": "塞内加尔防守稳固，或1-0小胜"
+            "reason": "一球小胜，谁先进球谁收缩防守。"
           }
         ],
         "method_factors": {
-          "market_signal": "DraftKings赔率显示比利时主胜概率约44.44%，稍有优势。",
-          "fifa_rank_prior": "FIFA排名不可用，双方都是世界强队。",
-          "recent_form": "近期表现未知。",
-          "group_context": "1/16决赛，单场淘汰制，比赛在西雅图进行。",
-          "injury_rotation": "双方伤病情况未知。",
-          "weather_venue": "西雅图球场，天气未知。",
-          "tactical_key": "比利时传控 vs 塞内加尔速度冲击。",
-          "uncertainty": "塞内加尔非洲球队爆发力不可小觑。"
+          "market_signal": "市场倾向比利时但优势微弱（+125），平局与客胜差距小，反映均势。",
+          "fifa_rank_prior": "比利时黄金一代尾声但战力犹存，塞内加尔非洲冠军势头上升。",
+          "recent_form": "近期状态未知，无正式比赛数据参考。",
+          "group_context": "32强淘汰赛，双方都具晋级野心，可能谨慎开局。",
+          "injury_rotation": "双方无官方伤病确认，预计全主力出战。",
+          "weather_venue": "西雅图体育场，天气未知，人工草皮或对技术型球员有影响。",
+          "tactical_key": "比利时控球与德布劳内直塞 vs 塞内加尔凶狠逼抢与马内速度。",
+          "uncertainty": "比利时阵容老化，体能在下半场可能下降，塞内加尔体能充沛。"
         },
         "matchup_graph": {
           "nodes": [
             {
               "id": "home_attack",
-              "label": "比利时进攻",
+              "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
               "weight": 80,
-              "note": "卢卡库等球星攻击力强"
+              "note": "卢卡库支点，德布劳内输送，但门前效率下降。"
             },
             {
               "id": "home_midfield",
-              "label": "比利时中场/转换",
+              "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
               "weight": 75,
-              "note": "德布劳内组织核心"
+              "note": "德布劳内创造力顶级，但防守覆盖不足。"
             },
             {
               "id": "home_defense",
-              "label": "比利时防守",
+              "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 70,
-              "note": "防线年龄偏大"
+              "weight": 65,
+              "note": "维尔通亨等老将转身慢，怕速度型冲击。"
             },
             {
               "id": "away_attack",
-              "label": "塞内加尔进攻",
+              "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
               "weight": 75,
-              "note": "马内领衔，速度极快"
+              "note": "马内、萨尔领衔的快马锋线，转换犀利。"
             },
             {
               "id": "away_midfield",
-              "label": "塞内加尔中场/转换",
+              "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
               "weight": 70,
-              "note": "中场硬度足"
+              "note": "盖耶和库亚特拦截凶悍，攻防枢纽。"
             },
             {
               "id": "away_defense",
-              "label": "塞内加尔防守",
+              "label": "客队防守",
               "type": "team_phase",
               "side": "away",
               "weight": 75,
-              "note": "防守坚固"
+              "note": "库利巴利领衔，身体对抗强，防空出色。"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "比利时攻击 vs 塞内加尔防守",
-              "impact": "medium",
+              "label": "卢卡库对位库利巴利",
+              "impact": "high",
               "direction": "home_to_away",
-              "note": "比利时攻击线面临考验"
+              "note": "身体碰撞激烈，卢卡库能否压制库利巴利是关键。"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "塞内加尔反击 vs 比利时防线",
-              "impact": "medium",
+              "label": "塞内加尔双速锋 vs 比利时老迈防线",
+              "impact": "high",
               "direction": "away_to_home",
-              "note": "塞内加尔速度可能冲击比利时高龄防线"
+              "note": "马内的速度将考验比利时中卫的回追。"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场对抗",
+              "label": "德布劳内 vs 中场绞杀",
               "impact": "medium",
               "direction": "balanced",
-              "note": "中场争夺激烈"
+              "note": "德布劳内能否摆脱盖耶的贴身纠缠。"
             }
           ],
-          "summary": "双方实力接近，比赛可能进入加时。",
+          "summary": "势均力敌，防线缺陷可能决定胜负，比利时技术稍优但体能存疑。",
           "advantage_side": "balanced",
-          "key_battle": "德布劳内 vs 塞内加尔后腰",
-          "risk_trigger": "比利时平均年龄偏大，体能可能影响"
+          "key_battle": "卢卡库与库利巴利的身体对抗，以及马内冲击比利时右路。",
+          "risk_trigger": "比利时早早领先后保守，塞内加尔疯狂反扑扳平甚至逆转。"
         },
-        "tactical_matchup": "比利时传控主导，塞内加尔快速反击与强硬对抗。",
+        "tactical_matchup": "比利时惯用3-4-3控球，塞内加尔4-3-3逼抢反击。比利时需保护后场空当，塞内加尔抓转换机会。",
         "injury_adjustment": {
-          "home": "无已知伤病",
-          "away": "无已知伤病",
-          "summary": "双方阵容齐整"
+          "home": "无官方伤病确认，全员可战。",
+          "away": "无官方伤病确认，全员可战。",
+          "summary": "双方阵容齐整，最强出击。"
         },
-        "risk_analysis": "比利时黄金一代最后机会，但塞内加尔近年非洲最强，比赛可能胶着。",
-        "upset_probability": 57.18,
+        "risk_analysis": "淘汰赛强强对话，平局概率不低，加时点球随时可能，两队均善于扑点。",
+        "upset_probability": 27,
         "odds_comparison": {
           "market_implied": {
             "home_win": 44.44,
@@ -1312,11 +1312,11 @@
             "away_win": 28.57
           },
           "model_edge": {
-            "home_win": 42.82,
-            "draw": 29.65,
-            "away_win": 27.53
+            "home_win": 44,
+            "draw": 29,
+            "away_win": 27
           },
-          "deviation_analysis": "模型与市场一致，比赛胶着。"
+          "deviation_analysis": "模型微调，与市场几乎一致，无明显价值偏离。"
         },
         "confidence": "medium"
       },
@@ -1434,13 +1434,13 @@
         },
         "match_id": "400021524",
         "win_draw_loss": {
-          "home_win": 69.73,
-          "draw": 19.6,
-          "away_win": 10.67
+          "home_win": 70,
+          "draw": 20,
+          "away_win": 10
         },
         "xg_prediction": {
-          "home": 1.8,
-          "away": 0.6
+          "home": 2.1,
+          "away": 0.7
         },
         "predicted_score": {
           "home": 2,
@@ -1450,119 +1450,119 @@
           {
             "score": "2-0",
             "rank": 1,
-            "reason": "美国主场作战，实力占优"
-          },
-          {
-            "score": "1-0",
-            "rank": 2,
-            "reason": "波黑防守有一定硬度，可能小胜"
+            "reason": "美国主场优势明显，波黑进攻乏力，遭零封合理。"
           },
           {
             "score": "2-1",
+            "rank": 2,
+            "reason": "美国丢一个定位球，但仍能掌控全局。"
+          },
+          {
+            "score": "1-0",
             "rank": 3,
-            "reason": "波黑可能打进一球"
+            "reason": "美国踢得保守，一球小胜经济实惠。"
           }
         ],
         "method_factors": {
-          "market_signal": "DraftKings赔率显示美国主胜概率约72.6%，市场看好。",
-          "fifa_rank_prior": "FIFA排名不可用，美国队近年崛起。",
-          "recent_form": "近期表现未知。",
-          "group_context": "1/16决赛，单场淘汰制，比赛在旧金山湾区进行。",
-          "injury_rotation": "双方伤病情况未知。",
-          "weather_venue": "旧金山湾区球场，天气未知。",
-          "tactical_key": "美国高位逼抢，波黑长传冲吊。",
-          "uncertainty": "波黑有爆冷基因。"
+          "market_signal": "市场看好美国（-265），反映东道主优势和对手偏弱。",
+          "fifa_rank_prior": "美国中北美劲旅，波黑欧洲二三流，实力差明显。",
+          "recent_form": "近期状态未知，无正式比赛数据参考。",
+          "group_context": "32强淘汰赛，东道主美国坐拥主场，波黑难以阻挡。",
+          "injury_rotation": "双方无官方伤病确认，预计全主力出战。",
+          "weather_venue": "旧金山湾区体育场，天气未知，场地条件良好。",
+          "tactical_key": "美国快速转换和边路突击 vs 波黑长传找哲科。",
+          "uncertainty": "波黑若哲科状态爆发，可能制造冷门。"
         },
         "matchup_graph": {
           "nodes": [
             {
               "id": "home_attack",
-              "label": "美国进攻",
+              "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 78,
-              "note": "普利西奇等球员攻击力强"
+              "weight": 80,
+              "note": "普利西奇、麦肯尼等快速灵活，擅长跑动穿插。"
             },
             {
               "id": "home_midfield",
-              "label": "美国中场/转换",
+              "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 75,
-              "note": "中场跑动积极"
+              "weight": 78,
+              "note": "亚当斯拦截，穆萨推进，节奏明快。"
             },
             {
               "id": "home_defense",
-              "label": "美国防守",
+              "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 72,
-              "note": "防线年轻有活力"
+              "weight": 75,
+              "note": "年轻但默契不错，高空球防哲科需警惕。"
             },
             {
               "id": "away_attack",
-              "label": "波黑进攻",
+              "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
               "weight": 55,
-              "note": "哲科等老将经验丰富"
+              "note": "哲科支点，皮亚尼奇输送，但运动能力不足。"
             },
             {
               "id": "away_midfield",
-              "label": "波黑中场/转换",
+              "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 58,
-              "note": "中场控制力一般"
+              "weight": 50,
+              "note": "皮亚尼奇老化，跑动能力下降，控制力不足。"
             },
             {
               "id": "away_defense",
-              "label": "波黑防守",
+              "label": "客队防守",
               "type": "team_phase",
               "side": "away",
               "weight": 60,
-              "note": "防守有一定硬度"
+              "note": "身体对抗还行，但面对灵活前锋易失位。"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "美国冲击 vs 波黑防线",
+              "label": "美国穿插跑动 vs 波黑防线协同",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "美国进攻有望得分"
+              "note": "普利西奇等人的灵活换位将考验波黑防线默契。"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "波黑反击 vs 美国防线",
-              "impact": "low",
+              "label": "哲科高空球 vs 美国中卫",
+              "impact": "medium",
               "direction": "away_to_home",
-              "note": "波黑反击效率有限"
+              "note": "波黑唯一可能得分的途径是定位球找哲科。"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场控制",
-              "impact": "medium",
+              "label": "中场活力对比",
+              "impact": "low",
               "direction": "balanced",
-              "note": "美国中场略占上风"
+              "note": "美国年轻能跑，波黑老将体能堪忧。"
             }
           ],
-          "summary": "美国主场胜面大，波黑难以逆袭。",
+          "summary": "美国主场作战，整体运转流畅，波黑仅靠老将个人闪光难以抗衡。",
           "advantage_side": "home",
-          "key_battle": "普利西奇 vs 波黑边卫",
-          "risk_trigger": "若美国久攻不下，定位球可能成为波黑机会"
+          "key_battle": "美国如何切断皮亚尼奇与哲科连线，以及自身前场小快灵的配合效率。",
+          "risk_trigger": "美国久攻不下被反击，波黑凭借哲科一击致命。"
         },
-        "tactical_matchup": "美国主动施压，波黑稳守反击。",
+        "tactical_matchup": "美国4-3-3高位压迫，波黑4-2-3-1稳守反击。美国需急躁出球，波黑等机会长传。",
         "injury_adjustment": {
-          "home": "无已知伤病",
-          "away": "无已知伤病",
-          "summary": "双方阵容齐整"
+          "home": "无官方伤病确认，全员可战。",
+          "away": "无官方伤病确认，全员可战。",
+          "summary": "双方阵容完整，无重要缺阵。"
         },
-        "risk_analysis": "美国主场优势明显，波黑整体实力稍逊，但淘汰赛一切皆有可能。",
-        "upset_probability": 30.27,
+        "risk_analysis": "美国实力占优但淘汰赛压力下，小胜或平局可能性不小，市场充分定价。",
+        "upset_probability": 10,
         "odds_comparison": {
           "market_implied": {
             "home_win": 72.6,
@@ -1570,17 +1570,17 @@
             "away_win": 11.11
           },
           "model_edge": {
-            "home_win": 69.73,
-            "draw": 19.6,
-            "away_win": 10.67
+            "home_win": 70,
+            "draw": 20,
+            "away_win": 10
           },
-          "deviation_analysis": "模型小幅降低美国胜率，波黑客场冷意需防。"
+          "deviation_analysis": "模型与市场基本趋同，略微下调主胜概率，无显著套利空间。"
         },
-        "confidence": "medium"
+        "confidence": "high"
       }
     ],
-    "risk_overview": "法国、英格兰、美国胜赔较低，但需警惕比利时 vs 塞内加尔、墨西哥 vs 厄瓜多尔的胶着比赛。伤病因素和天气信息缺失增加不确定性。",
-    "data_quality": "基于FIFA官方API和ESPN数据，赔率来自DraftKings。伤停信息源自ESPN新闻，未获官方确认。天气数据未提供，可能影响判断。",
+    "risk_overview": "6场比赛中，法国、英格兰、美国三场强弱分明，爆冷概率低；墨西哥vs厄瓜多尔、科特迪瓦vs挪威存在一定变数；比利时vs塞内加尔最为均衡，平局可能较高。需关注厄瓜多尔伤病动向及英格兰可能轮换。",
+    "data_quality": "数据来源：FIFA官方赛程API、ESPN公开记分板交叉验证确保对阵无误；赔率取自DraftKings（ESPN odds feed）；伤病信息基于ESPN新闻，仅有两则有可疑报道但无具体球员；FIFA排名未公开，以长期实力先验替代；天气信息缺失。整体可靠性较高，但缺失近期状态和确切排名。",
     "tournament_structure": {
       "stage": "knockout",
       "focus_window": {
@@ -1618,20 +1618,20 @@
             "match_number": 73,
             "round_key": "round_of_32",
             "stage": "round_of_32",
-            "group": "???",
-            "match_name": "?? vs ??",
+            "group": "淘汰赛",
+            "match_name": "待定 vs 待定",
             "teams": {
               "home": {
-                "name": "??",
-                "name_en": "??",
+                "name": "待定",
+                "name_en": "待定",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "??",
-                "name_en": "??",
+                "name": "待定",
+                "name_en": "待定",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -1640,7 +1640,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -1652,20 +1652,20 @@
             "match_number": 74,
             "round_key": "round_of_32",
             "stage": "round_of_32",
-            "group": "???",
-            "match_name": "?? vs ??",
+            "group": "淘汰赛",
+            "match_name": "待定 vs 待定",
             "teams": {
               "home": {
-                "name": "??",
-                "name_en": "??",
+                "name": "待定",
+                "name_en": "待定",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "??",
-                "name_en": "??",
+                "name": "待定",
+                "name_en": "待定",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -1674,7 +1674,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -1686,20 +1686,20 @@
             "match_number": 75,
             "round_key": "round_of_32",
             "stage": "round_of_32",
-            "group": "???",
-            "match_name": "?? vs ??",
+            "group": "淘汰赛",
+            "match_name": "待定 vs 待定",
             "teams": {
               "home": {
-                "name": "??",
-                "name_en": "??",
+                "name": "待定",
+                "name_en": "待定",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "??",
-                "name_en": "??",
+                "name": "待定",
+                "name_en": "待定",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -1708,7 +1708,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -1720,20 +1720,20 @@
             "match_number": 76,
             "round_key": "round_of_32",
             "stage": "round_of_32",
-            "group": "???",
-            "match_name": "?? vs ??",
+            "group": "淘汰赛",
+            "match_name": "待定 vs 待定",
             "teams": {
               "home": {
-                "name": "??",
-                "name_en": "??",
+                "name": "待定",
+                "name_en": "待定",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "??",
-                "name_en": "??",
+                "name": "待定",
+                "name_en": "待定",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -1742,7 +1742,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -1798,25 +1798,25 @@
               "end_iso": "2026-07-01T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 74.68,
-              "draw": 16.11,
-              "away_win": 9.21
+              "home_win": 72,
+              "draw": 18,
+              "away_win": 10
             },
             "score_options": [
               {
                 "score": "2-0",
                 "rank": 1,
-                "reason": "法国整体实力远超瑞典，瑞典难以破门"
+                "reason": "法国攻防俱佳，瑞典难破铁桶阵，姆巴佩等人锁定胜局。"
               },
               {
                 "score": "3-0",
                 "rank": 2,
-                "reason": "法国攻击线多点开花"
+                "reason": "法国若早进球，瑞典被迫压出，反击扩大比分。"
               },
               {
-                "score": "1-0",
+                "score": "2-1",
                 "rank": 3,
-                "reason": "淘汰赛可能小胜"
+                "reason": "法国领先后松懈，瑞典定位球扳回一球。"
               }
             ],
             "current_window": true,
@@ -1841,7 +1841,7 @@
                 "id_country": "CIV",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
                 "score": null,
-                "tactics": null,
+                "tactics": "4-1-2-3",
                 "country_code": "CIV",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
                 "flag_emoji": "🇨🇮"
@@ -1854,7 +1854,7 @@
                 "id_country": "NOR",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
                 "score": null,
-                "tactics": null,
+                "tactics": "4-2-1-3",
                 "country_code": "NOR",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
                 "flag_emoji": "🇳🇴"
@@ -1871,25 +1871,25 @@
               "end_iso": "2026-07-01T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 27.06,
-              "draw": 28.26,
-              "away_win": 44.68
+              "home_win": 27,
+              "draw": 30,
+              "away_win": 43
             },
             "score_options": [
               {
-                "score": "0-1",
+                "score": "1-2",
                 "rank": 1,
-                "reason": "挪威进攻效率更高，科特迪瓦防守组织一般"
+                "reason": "挪威进攻效率更高，科特迪瓦防守有漏洞，但主场速度可造威胁。"
               },
               {
                 "score": "1-1",
                 "rank": 2,
-                "reason": "淘汰赛可能保守，科特迪瓦主场优势"
+                "reason": "双方拉锯，中场缠斗导致机会不多，各入一球均势收场。"
               },
               {
                 "score": "0-2",
                 "rank": 3,
-                "reason": "挪威实力占优，若科特迪瓦失误"
+                "reason": "挪威控制中场完全压制，科特迪瓦反击失效，零封胜出。"
               }
             ],
             "current_window": true,
@@ -1944,25 +1944,25 @@
               "end_iso": "2026-07-01T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 41.85,
-              "draw": 33.78,
-              "away_win": 24.37
+              "home_win": 43,
+              "draw": 33,
+              "away_win": 24
             },
             "score_options": [
               {
                 "score": "1-0",
                 "rank": 1,
-                "reason": "墨西哥主场优势，厄瓜多尔进攻一般"
+                "reason": "墨西哥主场氛围加持，一球小胜，厄瓜多尔进攻乏力。"
               },
               {
                 "score": "1-1",
                 "rank": 2,
-                "reason": "南美球队韧性，可能平局"
+                "reason": "双方谨慎，平局合理，厄瓜多尔防守顽强。"
               },
               {
                 "score": "2-1",
                 "rank": 3,
-                "reason": "墨西哥攻击力稍强，或2-1取胜"
+                "reason": "墨西哥最后时刻发力，但厄瓜多尔能取得进球。"
               }
             ],
             "current_window": true,
@@ -2017,25 +2017,25 @@
               "end_iso": "2026-07-02T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 74.42,
-              "draw": 18.22,
-              "away_win": 7.36
+              "home_win": 75,
+              "draw": 17,
+              "away_win": 8
             },
             "score_options": [
               {
-                "score": "2-0",
-                "rank": 1,
-                "reason": "英格兰实力碾压，刚果防守有一定韧性"
-              },
-              {
                 "score": "3-0",
-                "rank": 2,
-                "reason": "英格兰攻击线强大"
+                "rank": 1,
+                "reason": "英格兰实力碾压，多点开花，刚果难以抵挡。"
               },
               {
-                "score": "1-0",
+                "score": "2-0",
+                "rank": 2,
+                "reason": "保守胜利，英格兰可能收着踢，为后续留力。"
+              },
+              {
+                "score": "4-0",
                 "rank": 3,
-                "reason": "刚果摆大巴，或仅0-1"
+                "reason": "刚果若崩盘，英格兰可能大胜穿盘。"
               }
             ],
             "current_window": true,
@@ -2090,25 +2090,25 @@
               "end_iso": "2026-07-02T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 69.73,
-              "draw": 19.6,
-              "away_win": 10.67
+              "home_win": 70,
+              "draw": 20,
+              "away_win": 10
             },
             "score_options": [
               {
                 "score": "2-0",
                 "rank": 1,
-                "reason": "美国主场作战，实力占优"
-              },
-              {
-                "score": "1-0",
-                "rank": 2,
-                "reason": "波黑防守有一定硬度，可能小胜"
+                "reason": "美国主场优势明显，波黑进攻乏力，遭零封合理。"
               },
               {
                 "score": "2-1",
+                "rank": 2,
+                "reason": "美国丢一个定位球，但仍能掌控全局。"
+              },
+              {
+                "score": "1-0",
                 "rank": 3,
-                "reason": "波黑可能打进一球"
+                "reason": "美国踢得保守，一球小胜经济实惠。"
               }
             ],
             "current_window": true,
@@ -2163,25 +2163,25 @@
               "end_iso": "2026-07-02T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 42.82,
-              "draw": 29.65,
-              "away_win": 27.53
+              "home_win": 44,
+              "draw": 29,
+              "away_win": 27
             },
             "score_options": [
               {
                 "score": "1-1",
                 "rank": 1,
-                "reason": "势均力敌，淘汰赛可能保守"
+                "reason": "实力接近，阵地战胶着，各自依靠核心得分。"
               },
               {
                 "score": "2-1",
                 "rank": 2,
-                "reason": "比利时攻击群稍强"
+                "reason": "比利时经验老到，最后时刻定位球制胜。"
               },
               {
                 "score": "1-0",
                 "rank": 3,
-                "reason": "塞内加尔防守稳固，或1-0小胜"
+                "reason": "一球小胜，谁先进球谁收缩防守。"
               }
             ],
             "current_window": true,
@@ -2512,20 +2512,20 @@
             "match_number": 89,
             "round_key": "round_of_16",
             "stage": "round_of_16",
-            "group": "???",
-            "match_name": "?? M73 vs ?? M74",
+            "group": "淘汰赛",
+            "match_name": "胜者 M73 vs 胜者 M74",
             "teams": {
               "home": {
-                "name": "?? M73",
-                "name_en": "?? M73",
+                "name": "胜者 M73",
+                "name_en": "胜者 M73",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "?? M74",
-                "name_en": "?? M74",
+                "name": "胜者 M74",
+                "name_en": "胜者 M74",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -2534,7 +2534,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -2599,20 +2599,20 @@
             "match_number": 91,
             "round_key": "round_of_16",
             "stage": "round_of_16",
-            "group": "???",
-            "match_name": "?? M77 vs ?? M78",
+            "group": "淘汰赛",
+            "match_name": "胜者 M77 vs 胜者 M78",
             "teams": {
               "home": {
-                "name": "?? M77",
-                "name_en": "?? M77",
+                "name": "胜者 M77",
+                "name_en": "胜者 M77",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "?? M78",
-                "name_en": "?? M78",
+                "name": "胜者 M78",
+                "name_en": "胜者 M78",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -2621,7 +2621,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -2633,20 +2633,20 @@
             "match_number": 92,
             "round_key": "round_of_16",
             "stage": "round_of_16",
-            "group": "???",
-            "match_name": "?? M79 vs ?? M80",
+            "group": "淘汰赛",
+            "match_name": "胜者 M79 vs 胜者 M80",
             "teams": {
               "home": {
-                "name": "?? M79",
-                "name_en": "?? M79",
+                "name": "胜者 M79",
+                "name_en": "胜者 M79",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "?? M80",
-                "name_en": "?? M80",
+                "name": "胜者 M80",
+                "name_en": "胜者 M80",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -2655,7 +2655,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -2667,20 +2667,20 @@
             "match_number": 93,
             "round_key": "round_of_16",
             "stage": "round_of_16",
-            "group": "???",
-            "match_name": "?? M81 vs ?? M82",
+            "group": "淘汰赛",
+            "match_name": "胜者 M81 vs 胜者 M82",
             "teams": {
               "home": {
-                "name": "?? M81",
-                "name_en": "?? M81",
+                "name": "胜者 M81",
+                "name_en": "胜者 M81",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "?? M82",
-                "name_en": "?? M82",
+                "name": "胜者 M82",
+                "name_en": "胜者 M82",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -2689,7 +2689,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -2701,20 +2701,20 @@
             "match_number": 94,
             "round_key": "round_of_16",
             "stage": "round_of_16",
-            "group": "???",
-            "match_name": "?? M83 vs ?? M84",
+            "group": "淘汰赛",
+            "match_name": "胜者 M83 vs 胜者 M84",
             "teams": {
               "home": {
-                "name": "?? M83",
-                "name_en": "?? M83",
+                "name": "胜者 M83",
+                "name_en": "胜者 M83",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "?? M84",
-                "name_en": "?? M84",
+                "name": "胜者 M84",
+                "name_en": "胜者 M84",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -2723,7 +2723,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -2735,20 +2735,20 @@
             "match_number": 95,
             "round_key": "round_of_16",
             "stage": "round_of_16",
-            "group": "???",
-            "match_name": "?? M85 vs ?? M86",
+            "group": "淘汰赛",
+            "match_name": "胜者 M85 vs 胜者 M86",
             "teams": {
               "home": {
-                "name": "?? M85",
-                "name_en": "?? M85",
+                "name": "胜者 M85",
+                "name_en": "胜者 M85",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "?? M86",
-                "name_en": "?? M86",
+                "name": "胜者 M86",
+                "name_en": "胜者 M86",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -2757,7 +2757,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -2769,20 +2769,20 @@
             "match_number": 96,
             "round_key": "round_of_16",
             "stage": "round_of_16",
-            "group": "???",
-            "match_name": "?? M87 vs ?? M88",
+            "group": "淘汰赛",
+            "match_name": "胜者 M87 vs 胜者 M88",
             "teams": {
               "home": {
-                "name": "?? M87",
-                "name_en": "?? M87",
+                "name": "胜者 M87",
+                "name_en": "胜者 M87",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "?? M88",
-                "name_en": "?? M88",
+                "name": "胜者 M88",
+                "name_en": "胜者 M88",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -2791,7 +2791,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -2805,20 +2805,20 @@
             "match_number": 97,
             "round_key": "quarter_finals",
             "stage": "quarter_finals",
-            "group": "???",
-            "match_name": "?? M89 vs ?? M90",
+            "group": "淘汰赛",
+            "match_name": "胜者 M89 vs 胜者 M90",
             "teams": {
               "home": {
-                "name": "?? M89",
-                "name_en": "?? M89",
+                "name": "胜者 M89",
+                "name_en": "胜者 M89",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "?? M90",
-                "name_en": "?? M90",
+                "name": "胜者 M90",
+                "name_en": "胜者 M90",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -2827,7 +2827,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -2839,20 +2839,20 @@
             "match_number": 98,
             "round_key": "quarter_finals",
             "stage": "quarter_finals",
-            "group": "???",
-            "match_name": "?? M91 vs ?? M92",
+            "group": "淘汰赛",
+            "match_name": "胜者 M91 vs 胜者 M92",
             "teams": {
               "home": {
-                "name": "?? M91",
-                "name_en": "?? M91",
+                "name": "胜者 M91",
+                "name_en": "胜者 M91",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "?? M92",
-                "name_en": "?? M92",
+                "name": "胜者 M92",
+                "name_en": "胜者 M92",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -2861,7 +2861,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -2873,20 +2873,20 @@
             "match_number": 99,
             "round_key": "quarter_finals",
             "stage": "quarter_finals",
-            "group": "???",
-            "match_name": "?? M93 vs ?? M94",
+            "group": "淘汰赛",
+            "match_name": "胜者 M93 vs 胜者 M94",
             "teams": {
               "home": {
-                "name": "?? M93",
-                "name_en": "?? M93",
+                "name": "胜者 M93",
+                "name_en": "胜者 M93",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "?? M94",
-                "name_en": "?? M94",
+                "name": "胜者 M94",
+                "name_en": "胜者 M94",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -2895,7 +2895,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -2907,20 +2907,20 @@
             "match_number": 100,
             "round_key": "quarter_finals",
             "stage": "quarter_finals",
-            "group": "???",
-            "match_name": "?? M95 vs ?? M96",
+            "group": "淘汰赛",
+            "match_name": "胜者 M95 vs 胜者 M96",
             "teams": {
               "home": {
-                "name": "?? M95",
-                "name_en": "?? M95",
+                "name": "胜者 M95",
+                "name_en": "胜者 M95",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "?? M96",
-                "name_en": "?? M96",
+                "name": "胜者 M96",
+                "name_en": "胜者 M96",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -2929,7 +2929,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -2943,20 +2943,20 @@
             "match_number": 101,
             "round_key": "semi_finals",
             "stage": "semi_finals",
-            "group": "???",
-            "match_name": "?? M97 vs ?? M98",
+            "group": "淘汰赛",
+            "match_name": "胜者 M97 vs 胜者 M98",
             "teams": {
               "home": {
-                "name": "?? M97",
-                "name_en": "?? M97",
+                "name": "胜者 M97",
+                "name_en": "胜者 M97",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "?? M98",
-                "name_en": "?? M98",
+                "name": "胜者 M98",
+                "name_en": "胜者 M98",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -2965,7 +2965,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -2977,20 +2977,20 @@
             "match_number": 102,
             "round_key": "semi_finals",
             "stage": "semi_finals",
-            "group": "???",
-            "match_name": "?? M99 vs ?? M100",
+            "group": "淘汰赛",
+            "match_name": "胜者 M99 vs 胜者 M100",
             "teams": {
               "home": {
-                "name": "?? M99",
-                "name_en": "?? M99",
+                "name": "胜者 M99",
+                "name_en": "胜者 M99",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "?? M100",
-                "name_en": "?? M100",
+                "name": "胜者 M100",
+                "name_en": "胜者 M100",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -2999,7 +2999,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -3013,20 +3013,20 @@
             "match_number": 104,
             "round_key": "final",
             "stage": "final",
-            "group": "???",
-            "match_name": "?? M101 vs ?? M102",
+            "group": "淘汰赛",
+            "match_name": "胜者 M101 vs 胜者 M102",
             "teams": {
               "home": {
-                "name": "?? M101",
-                "name_en": "?? M101",
+                "name": "胜者 M101",
+                "name_en": "胜者 M101",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
                 "placeholder": true
               },
               "away": {
-                "name": "?? M102",
-                "name_en": "?? M102",
+                "name": "胜者 M102",
+                "name_en": "胜者 M102",
                 "country_code": "",
                 "flag_url": "",
                 "flag_emoji": "",
@@ -3035,7 +3035,7 @@
             },
             "kickoff_utc": null,
             "kickoff_beijing": null,
-            "kickoff_display": "???? ??",
+            "kickoff_display": "北京时间 待定",
             "match_day": {},
             "win_draw_loss": null,
             "score_options": [],
@@ -3050,7 +3050,7 @@
         "start_iso": "2026-06-30T18:00:00+08:00",
         "end_iso": "2026-07-21T18:00:00+08:00",
         "display_range": "6月30日比赛日 - 7月20日比赛日",
-        "range": "???? 06-30 18:00 - 07-21 18:00",
+        "range": "北京时间 06-30 18:00 - 07-21 18:00",
         "match_days": [
           {
             "date": "2026-06-30",
@@ -3232,7 +3232,7 @@
           "id_country": "CIV",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-1-2-3",
           "country_code": "CIV",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
           "flag_emoji": "🇨🇮"
@@ -3245,7 +3245,7 @@
           "id_country": "NOR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-2-1-3",
           "country_code": "NOR",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
           "flag_emoji": "🇳🇴"
@@ -3283,21 +3283,21 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+255",
-          "draw": "+240",
+          "home": "+260",
+          "draw": "+230",
           "away": "+115"
         },
         "implied_probability": {
-          "home_win": 28.17,
-          "draw": 29.41,
+          "home_win": 27.78,
+          "draw": 30.3,
           "away_win": 46.51
         },
         "normalized_probability": {
-          "home_win": 27.06,
-          "draw": 28.26,
-          "away_win": 44.68
+          "home_win": 26.56,
+          "draw": 28.97,
+          "away_win": 44.47
         },
-        "overround": 4.09,
+        "overround": 4.59,
         "details": "NOR +115"
       },
       "injuries": {
@@ -3318,147 +3318,147 @@
       },
       "match_id": "400021514",
       "win_draw_loss": {
-        "home_win": 27.06,
-        "draw": 28.26,
-        "away_win": 44.68
+        "home_win": 27,
+        "draw": 30,
+        "away_win": 43
       },
       "xg_prediction": {
-        "home": 0.7,
-        "away": 1.2
+        "home": 1.1,
+        "away": 1.6
       },
       "predicted_score": {
-        "home": 0,
-        "away": 1
+        "home": 1,
+        "away": 2
       },
       "score_options": [
         {
-          "score": "0-1",
+          "score": "1-2",
           "rank": 1,
-          "reason": "挪威进攻效率更高，科特迪瓦防守组织一般"
+          "reason": "挪威进攻效率更高，科特迪瓦防守有漏洞，但主场速度可造威胁。"
         },
         {
           "score": "1-1",
           "rank": 2,
-          "reason": "淘汰赛可能保守，科特迪瓦主场优势"
+          "reason": "双方拉锯，中场缠斗导致机会不多，各入一球均势收场。"
         },
         {
           "score": "0-2",
           "rank": 3,
-          "reason": "挪威实力占优，若科特迪瓦失误"
+          "reason": "挪威控制中场完全压制，科特迪瓦反击失效，零封胜出。"
         }
       ],
       "method_factors": {
-        "market_signal": "DraftKings赔率显示挪威客胜概率约44.68%，市场略看好挪威。",
-        "fifa_rank_prior": "FIFA排名不可用，基于长期实力先验，挪威整体阵容略强。",
-        "recent_form": "近期表现未知。",
-        "group_context": "1/16决赛，单场淘汰制，比赛在达拉斯进行。",
-        "injury_rotation": "双方伤病情况未知。",
-        "weather_venue": "达拉斯体育馆，天气未知。",
-        "tactical_key": "挪威依靠哈兰德等攻击手，科特迪瓦需稳固防守。",
-        "uncertainty": "淘汰赛第一轮，双方状态未知，存在变数。"
+        "market_signal": "市场明显偏向挪威（+115），平局赔率也较低，科特迪瓦受冷落。",
+        "fifa_rank_prior": "科特迪瓦近年实力回升，挪威有哈兰德领衔，长期强度略优。",
+        "recent_form": "近期状态未知，无正式比赛数据参考。",
+        "group_context": "32强淘汰赛，一场定胜负，双方需全力争胜，平局后加时点球可能性存在。",
+        "injury_rotation": "双方均无官方伤病确认，预计全主力出战。",
+        "weather_venue": "达拉斯体育场，天气未知，场地条件良好。",
+        "tactical_key": "科特迪瓦边路速度 vs 挪威中路支点哈兰德的头球与做球。",
+        "uncertainty": "科特迪瓦上限波动大，挪威依赖球星个人能力，若哈兰德受限可能爆冷。"
       },
       "matchup_graph": {
         "nodes": [
           {
             "id": "home_attack",
-            "label": "科特迪瓦进攻",
+            "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 65,
-            "note": "进攻主要依靠速度和个人突破"
+            "weight": 70,
+            "note": "科特迪瓦依赖边锋突破和速度，射门转化一般。"
           },
           {
             "id": "home_midfield",
-            "label": "科特迪瓦中场/转换",
+            "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 60,
-            "note": "中场控制力一般"
+            "weight": 65,
+            "note": "中场拦截能力尚可，但组织创造力有限。"
           },
           {
             "id": "home_defense",
-            "label": "科特迪瓦防守",
+            "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 55,
-            "note": "防守稳定性不足"
+            "weight": 60,
+            "note": "防空能力偏弱，面对高中锋可能吃力。"
           },
           {
             "id": "away_attack",
-            "label": "挪威进攻",
+            "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 80,
-            "note": "拥有顶级射手，进攻威胁大"
+            "weight": 85,
+            "note": "哈兰德支点作用明显，两翼传中威胁大。"
           },
           {
             "id": "away_midfield",
-            "label": "挪威中场/转换",
+            "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
             "weight": 75,
-            "note": "中场组织有序"
+            "note": "厄德高组织调度，控制节奏能力强。"
           },
           {
             "id": "away_defense",
-            "label": "挪威防守",
+            "label": "客队防守",
             "type": "team_phase",
             "side": "away",
             "weight": 70,
-            "note": "防线整体稳固"
+            "note": "整体防守纪律性好，但边后卫偶尔身后空当。"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "科特迪瓦突破 vs 挪威防线",
-            "impact": "medium",
+            "label": "边路突破 vs 边卫防守",
+            "impact": "high",
             "direction": "home_to_away",
-            "note": "科特迪瓦边路速度可能制造威胁，但挪威防守组织严密"
+            "note": "科特迪瓦专注打击挪威边后卫助攻留下的空当。"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "挪威强攻 vs 科特迪瓦防线",
+            "label": "哈兰德争顶 vs 中卫防线",
             "impact": "high",
             "direction": "away_to_home",
-            "note": "哈兰德领衔的进攻线有望叩开对手大门"
+            "note": "哈兰德身高压制，科特迪瓦中卫需包夹保护。"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场争夺",
-            "impact": "low",
+            "label": "中场控制权争夺",
+            "impact": "medium",
             "direction": "balanced",
-            "note": "挪威中场控制可能占优"
+            "note": "厄德高主导下的挪威中场控制力更强。"
           }
         ],
-        "summary": "挪威在攻防两端实力占优，科特迪瓦需依靠主场和反击。",
+        "summary": "挪威整体实力占优，尤其进攻端威胁明显；科特迪瓦需依靠速度和反击制造意外。",
         "advantage_side": "away",
-        "key_battle": "哈兰德 vs 科特迪瓦中卫",
-        "risk_trigger": "若挪威进攻效率不佳，比赛可能陷入僵局"
+        "key_battle": "科特迪瓦边路突破 vs 挪威边后卫防守，以及哈兰德高空轰炸与科特迪瓦中卫的对决。",
+        "risk_trigger": "若挪威迟迟无法破门，科特迪瓦的反击可能一击致命。"
       },
-      "tactical_matchup": "挪威预计控球主导，科特迪瓦收缩防守伺机反击。",
+      "tactical_matchup": "科特迪瓦的4-1-2-3阵型强调边路速度，挪威4-2-1-3则通过厄德高串联，直接找哈兰德。挪威控球优势下，科特迪瓦需要高效转换。",
       "injury_adjustment": {
-        "home": "无已知伤病",
-        "away": "无已知伤病",
-        "summary": "双方阵容齐整"
+        "home": "无官方伤病确认，全员可战。",
+        "away": "无官方伤病确认，全员可战。",
+        "summary": "双方阵容完整，无重要缺阵。"
       },
-      "risk_analysis": "淘汰赛不确定性较大，科特迪瓦在主场的韧性不可低估，但挪威实力略优，看好小胜。",
-      "upset_probability": 55.32,
+      "risk_analysis": "科特迪瓦具备爆冷潜能，但挪威近期大赛表现稳健，市场低估平局价值。",
+      "upset_probability": 27,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 28.17,
-          "draw": 29.41,
+          "home_win": 27.78,
+          "draw": 30.3,
           "away_win": 46.51
         },
         "model_edge": {
-          "home_win": 27.06,
-          "draw": 28.26,
-          "away_win": 44.68
+          "home_win": 27,
+          "draw": 30,
+          "away_win": 43
         },
-        "deviation_analysis": "模型移除水分后，挪威胜率小幅下调，但仍是赢面最大。"
+        "deviation_analysis": "模型对挪威取胜概率下调3.5%，对平局和主胜基本一致，认为市场略微高估挪威。"
       },
       "confidence": "medium"
     },
@@ -3576,13 +3576,13 @@
       },
       "match_id": "400021523",
       "win_draw_loss": {
-        "home_win": 74.68,
-        "draw": 16.11,
-        "away_win": 9.21
+        "home_win": 72,
+        "draw": 18,
+        "away_win": 10
       },
       "xg_prediction": {
-        "home": 2.1,
-        "away": 0.4
+        "home": 2.5,
+        "away": 0.6
       },
       "predicted_score": {
         "home": 2,
@@ -3592,119 +3592,119 @@
         {
           "score": "2-0",
           "rank": 1,
-          "reason": "法国整体实力远超瑞典，瑞典难以破门"
+          "reason": "法国攻防俱佳，瑞典难破铁桶阵，姆巴佩等人锁定胜局。"
         },
         {
           "score": "3-0",
           "rank": 2,
-          "reason": "法国攻击线多点开花"
+          "reason": "法国若早进球，瑞典被迫压出，反击扩大比分。"
         },
         {
-          "score": "1-0",
+          "score": "2-1",
           "rank": 3,
-          "reason": "淘汰赛可能小胜"
+          "reason": "法国领先后松懈，瑞典定位球扳回一球。"
         }
       ],
       "method_factors": {
-        "market_signal": "DraftKings赔率显示法国主胜概率约77.27%，市场强烈看好法国。",
-        "fifa_rank_prior": "FIFA排名不可用，法国长期世界顶级强队。",
-        "recent_form": "近期表现未知。",
-        "group_context": "1/16决赛，单场淘汰制，比赛在新泽西进行。",
-        "injury_rotation": "双方伤病情况未知。",
-        "weather_venue": "新泽西球场，天气未知。",
-        "tactical_key": "法国进攻多核，瑞典密集防守伺机反击。",
-        "uncertainty": "法国淘汰赛首轮，需防冷门。"
+        "market_signal": "市场极度看好法国（-340），平局和客胜赔率高企，反映悬殊。",
+        "fifa_rank_prior": "法国世界冠军班底，瑞典近年下滑，长期实力差距明显。",
+        "recent_form": "近期状态未知，无正式比赛数据参考。",
+        "group_context": "32强淘汰赛，法国作为夺冠热门必须晋级，瑞典考验不大。",
+        "injury_rotation": "双方无官方伤病确认，预计全主力出战。",
+        "weather_venue": "纽约/新泽西体育场，天气未知，场地条件良好。",
+        "tactical_key": "法国多点开花的进攻 vs 瑞典压缩防线+伊萨克反击。",
+        "uncertainty": "瑞典若摆大巴，法国破密集能力成疑，可能需要定位球或远射。"
       },
       "matchup_graph": {
         "nodes": [
           {
             "id": "home_attack",
-            "label": "法国进攻",
+            "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 90,
-            "note": "姆巴佩等攻击手个人能力极强"
+            "weight": 95,
+            "note": "姆巴佩、格列兹曼等顶级攻击线，个人能力极强。"
           },
           {
             "id": "home_midfield",
-            "label": "法国中场/转换",
+            "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 85,
-            "note": "中场控制力出色"
+            "weight": 90,
+            "note": "琼阿梅尼、卡马文加控制力与拦截俱佳。"
           },
           {
             "id": "home_defense",
-            "label": "法国防守",
+            "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 80,
-            "note": "防线经验丰富"
+            "weight": 85,
+            "note": "后防经验丰富，但高位防线偶尔被快马冲击。"
           },
           {
             "id": "away_attack",
-            "label": "瑞典进攻",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 55,
-            "note": "进攻依赖反击和定位球"
-          },
-          {
-            "id": "away_midfield",
-            "label": "瑞典中场/转换",
+            "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
             "weight": 60,
-            "note": "中场拼抢积极但创造力不足"
+            "note": "伊萨克为主的反击点，库卢辅助，效率一般。"
+          },
+          {
+            "id": "away_midfield",
+            "label": "客队中场/转换",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 55,
+            "note": "缺少顶级组织者，靠跑动和拼抢弥补。"
           },
           {
             "id": "away_defense",
-            "label": "瑞典防守",
+            "label": "客队防守",
             "type": "team_phase",
             "side": "away",
             "weight": 65,
-            "note": "防守组织较严密"
+            "note": "林德洛夫领衔，整体防守较稳健，但转身慢。"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "法国强攻 vs 瑞典密集防守",
+            "label": "法国三叉戟 vs 瑞典低位防线",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "法国进攻火力有望撕破瑞典防线"
+            "note": "姆巴佩速度与突破考验瑞典后卫的单防能力。"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "瑞典反击 vs 法国防线",
-            "impact": "low",
+            "label": "伊萨克反越位 vs 高线中卫",
+            "impact": "medium",
             "direction": "away_to_home",
-            "note": "瑞典反击威胁有限"
+            "note": "瑞典唯一威胁是身后球，法国需注意防线身后空间。"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场控制权争夺",
-            "impact": "medium",
+            "label": "中场统治力对决",
+            "impact": "low",
             "direction": "balanced",
-            "note": "法国中场控制优势明显"
+            "note": "法国技术碾压，瑞典难有连续传递。"
           }
         ],
-        "summary": "法国全面占优，瑞典爆冷难度极大。",
+        "summary": "法国全场优势，瑞典只能死守待零星反击，爆冷可能性极低。",
         "advantage_side": "home",
-        "key_battle": "姆巴佩 vs 瑞典边卫",
-        "risk_trigger": "若法国久攻不下，瑞典可能利用定位球偷袭"
+        "key_battle": "法国破密集防守的效率，以及瑞典如何限制姆巴佩的冲刺空间。",
+        "risk_trigger": "法国久攻不下，心态急躁，瑞典利用定位球偷一球后摆大巴。"
       },
-      "tactical_matchup": "法国掌控球权，瑞典低位防守，寻找反击机会。",
+      "tactical_matchup": "法国惯用4-3-3压制，瑞典可能5-4-1龟缩。法国需边中结合，利用远射和头球。瑞典唯一出路是防守反击，依靠伊萨克单点。",
       "injury_adjustment": {
-        "home": "无已知伤病",
-        "away": "无已知伤病",
-        "summary": "双方阵容齐整"
+        "home": "无官方伤病确认，全员可战。",
+        "away": "无官方伤病确认，全员可战。",
+        "summary": "双方阵容完整，无重要缺阵。"
       },
-      "risk_analysis": "法国实力碾压，正常发挥获胜无悬念。",
-      "upset_probability": 25.32,
+      "risk_analysis": "虽然法国实力碾压，但淘汰赛变数仍存，瑞典的防守韧性可能让比赛意外胶着。",
+      "upset_probability": 10,
       "odds_comparison": {
         "market_implied": {
           "home_win": 77.27,
@@ -3712,11 +3712,11 @@
           "away_win": 9.52
         },
         "model_edge": {
-          "home_win": 74.68,
-          "draw": 16.11,
-          "away_win": 9.21
+          "home_win": 72,
+          "draw": 18,
+          "away_win": 10
         },
-        "deviation_analysis": "模型小幅降低法国胜率，反映市场过热。"
+        "deviation_analysis": "模型对法国取胜概率下调5%，增加了平局和客胜的可能，认为市场过度追捧。"
       },
       "confidence": "high"
     },
@@ -3833,7 +3833,7 @@
               "source": "ESPN World Cup news",
               "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
               "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-              "published": "2026-06-30T13:29:44Z",
+              "published": "2026-06-30T16:01:58Z",
               "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
             }
           ],
@@ -3842,13 +3842,13 @@
       },
       "match_id": "400021520",
       "win_draw_loss": {
-        "home_win": 41.85,
-        "draw": 33.78,
-        "away_win": 24.37
+        "home_win": 43,
+        "draw": 33,
+        "away_win": 24
       },
       "xg_prediction": {
-        "home": 1.2,
-        "away": 0.9
+        "home": 1.3,
+        "away": 1.0
       },
       "predicted_score": {
         "home": 1,
@@ -3858,119 +3858,119 @@
         {
           "score": "1-0",
           "rank": 1,
-          "reason": "墨西哥主场优势，厄瓜多尔进攻一般"
+          "reason": "墨西哥主场氛围加持，一球小胜，厄瓜多尔进攻乏力。"
         },
         {
           "score": "1-1",
           "rank": 2,
-          "reason": "南美球队韧性，可能平局"
+          "reason": "双方谨慎，平局合理，厄瓜多尔防守顽强。"
         },
         {
           "score": "2-1",
           "rank": 3,
-          "reason": "墨西哥攻击力稍强，或2-1取胜"
+          "reason": "墨西哥最后时刻发力，但厄瓜多尔能取得进球。"
         }
       ],
       "method_factors": {
-        "market_signal": "DraftKings赔率显示墨西哥主胜概率约43.48%，市场略微看好。",
-        "fifa_rank_prior": "FIFA排名不可用，两队长期实力接近。",
-        "recent_form": "近期表现未知。",
-        "group_context": "1/16决赛，单场淘汰制，比赛在墨西哥城进行。",
-        "injury_rotation": "厄瓜多尔媒体提及疑似伤病，但无具体球员；墨西哥无已知伤病。",
-        "weather_venue": "墨西哥城高原主场，海拔因素可能利于墨西哥。",
-        "tactical_key": "墨西哥中场控制，厄瓜多尔边路冲击。",
-        "uncertainty": "厄瓜多尔伤病情况不确定，高原影响待观察。"
+        "market_signal": "市场略看主队（+130），平局赔率较低，折射焦灼预期。",
+        "fifa_rank_prior": "墨西哥中北美强队，厄瓜多尔南美中游，实力接近。",
+        "recent_form": "近期状态未知，无正式比赛数据参考。",
+        "group_context": "32强淘汰赛，墨西哥有主场优势（墨西哥城），厄瓜多尔可能适应困难。",
+        "injury_rotation": "墨西哥无伤情，厄瓜多尔有可疑伤病报道，可能影响战力。",
+        "weather_venue": "墨西哥城体育场，高海拔或影响厄瓜多尔体能。",
+        "tactical_key": "墨西哥中场控制与两翼传中 vs 厄瓜多尔快速转换和边锋单打。",
+        "uncertainty": "厄瓜多尔伤病不明确，若核心缺阵，进攻威胁大减。"
       },
       "matchup_graph": {
         "nodes": [
           {
             "id": "home_attack",
-            "label": "墨西哥进攻",
+            "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
             "weight": 75,
-            "note": "技术细腻，前场配合熟练"
+            "note": "洛萨诺边路突破，希门尼斯抢点，但整体效率一般。"
           },
           {
             "id": "home_midfield",
-            "label": "墨西哥中场/转换",
+            "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
             "weight": 70,
-            "note": "中场控制力不错"
+            "note": "阿尔瓦雷斯组织，拦截能力不错。"
           },
           {
             "id": "home_defense",
-            "label": "墨西哥防守",
+            "label": "主队防守",
             "type": "team_phase",
             "side": "home",
             "weight": 70,
-            "note": "防线稳定"
+            "note": "经验老道，但转身速度偏慢。"
           },
           {
             "id": "away_attack",
-            "label": "厄瓜多尔进攻",
+            "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
             "weight": 65,
-            "note": "速度快，边路有威胁"
+            "note": "瓦伦西亚领衔，但创造力不足，依赖反击。"
           },
           {
             "id": "away_midfield",
-            "label": "厄瓜多尔中场/转换",
+            "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 68,
-            "note": "中场拼抢积极"
+            "weight": 60,
+            "note": "凯塞多覆盖面大，但向前传球能力平庸。"
           },
           {
             "id": "away_defense",
-            "label": "厄瓜多尔防守",
+            "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 65,
-            "note": "防守组织较好"
+            "weight": 70,
+            "note": "防线组织有序，定位球防守不错。"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "墨西哥渗透 vs 厄瓜多尔防线",
-            "impact": "medium",
+            "label": "墨西哥传中 vs 厄瓜多尔防空",
+            "impact": "high",
             "direction": "home_to_away",
-            "note": "墨西哥控球优势可能创造机会"
+            "note": "墨西哥擅长边路起球，厄瓜多尔中卫身高优势明显。"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "厄瓜多尔边路冲击 vs 墨西哥防线",
+            "label": "厄瓜多尔反击速度 vs 墨西哥回追",
             "impact": "medium",
             "direction": "away_to_home",
-            "note": "厄瓜多尔速度可能制造威胁"
+            "note": "厄瓜多尔前场速度点冲击墨西哥防线身后。"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场争夺",
+            "label": "控球权争夺",
             "impact": "low",
             "direction": "balanced",
-            "note": "双方中场实力接近"
+            "note": "墨西哥控球稍优，厄瓜多尔采取绞杀策略。"
           }
         ],
-        "summary": "墨西哥主场占优，但厄瓜多尔韧性十足。",
+        "summary": "墨西哥主场、海拔加成下略占优势，但厄瓜多尔防守稳固，比赛可能沉闷。",
         "advantage_side": "home",
-        "key_battle": "墨西哥中场发动机 vs 厄瓜多尔拦截",
-        "risk_trigger": "若墨西哥久攻不下，后防可能犯错"
+        "key_battle": "墨西哥如何拆解厄瓜多尔密集防守，以及厄瓜多尔反击对墨西哥老迈防线的冲击。",
+        "risk_trigger": "厄瓜多尔潜在伤病若属实，进攻瘫痪，墨西哥可从容取胜。"
       },
-      "tactical_matchup": "墨西哥主导控球，厄瓜多尔高位逼抢后快速反击。",
+      "tactical_matchup": "墨西哥4-3-3控球推进，厄瓜多尔4-4-2防守反击。墨西哥需要耐心倒脚寻找空当，厄瓜多尔抓转换瞬间。",
       "injury_adjustment": {
-        "home": "无已知伤病",
-        "away": "可能有伤病，媒体提及但无具体球员",
-        "summary": "厄瓜多尔阵容完整度存疑"
+        "home": "无官方伤病确认，全员可战。",
+        "away": "可疑伤病报道（来自ESPN），具体球员未知，可能影响进攻线。",
+        "summary": "厄瓜多尔有一则可疑伤病，可能削弱攻击力。"
       },
-      "risk_analysis": "墨西哥主场优势明显，但厄瓜多尔作为南美球队防守顽强，小胜或平局可能性较大。",
-      "upset_probability": 58.15,
+      "risk_analysis": "淘汰赛易出平局，墨西哥高原主场优势被市场部分消化，赔率较均衡，一球小胜格局。",
+      "upset_probability": 24,
       "odds_comparison": {
         "market_implied": {
           "home_win": 43.48,
@@ -3978,11 +3978,11 @@
           "away_win": 25.32
         },
         "model_edge": {
-          "home_win": 41.85,
-          "draw": 33.78,
-          "away_win": 24.37
+          "home_win": 43,
+          "draw": 33,
+          "away_win": 24
         },
-        "deviation_analysis": "模型概率与市场接近，主胜概率稍低。"
+        "deviation_analysis": "模型偏向降低平局概率，认为分胜负可能更大，与市场平局高估略有差异。"
       },
       "confidence": "medium"
     },
@@ -4116,135 +4116,135 @@
       },
       "match_id": "400021512",
       "win_draw_loss": {
-        "home_win": 74.42,
-        "draw": 18.22,
-        "away_win": 7.36
+        "home_win": 75,
+        "draw": 17,
+        "away_win": 8
       },
       "xg_prediction": {
-        "home": 2.3,
-        "away": 0.3
+        "home": 2.8,
+        "away": 0.4
       },
       "predicted_score": {
-        "home": 2,
+        "home": 3,
         "away": 0
       },
       "score_options": [
         {
-          "score": "2-0",
-          "rank": 1,
-          "reason": "英格兰实力碾压，刚果防守有一定韧性"
-        },
-        {
           "score": "3-0",
-          "rank": 2,
-          "reason": "英格兰攻击线强大"
+          "rank": 1,
+          "reason": "英格兰实力碾压，多点开花，刚果难以抵挡。"
         },
         {
-          "score": "1-0",
+          "score": "2-0",
+          "rank": 2,
+          "reason": "保守胜利，英格兰可能收着踢，为后续留力。"
+        },
+        {
+          "score": "4-0",
           "rank": 3,
-          "reason": "刚果摆大巴，或仅0-1"
+          "reason": "刚果若崩盘，英格兰可能大胜穿盘。"
         }
       ],
       "method_factors": {
-        "market_signal": "DraftKings赔率显示英格兰主胜概率约77.78%，市场强烈看好。",
-        "fifa_rank_prior": "FIFA排名不可用，英格兰长期世界强队。",
-        "recent_form": "近期表现未知。",
-        "group_context": "1/16决赛，单场淘汰制，比赛在亚特兰大进行。",
-        "injury_rotation": "双方均有媒体提及的疑似伤病，但皮克福德等核心预计出战。",
-        "weather_venue": "亚特兰大球场，天气未知。",
-        "tactical_key": "英格兰控球主攻，刚果防守反击。",
-        "uncertainty": "刚果爆冷可能性极低。"
+        "market_signal": "市场极度看好英格兰（-350），回报极低，显示巨大实力鸿沟。",
+        "fifa_rank_prior": "英格兰常年前五，刚果非洲中下游，差距悬殊。",
+        "recent_form": "近期状态未知，无正式比赛数据参考。",
+        "group_context": "32强淘汰赛，英格兰势在必得，刚果难有抵抗。",
+        "injury_rotation": "双方均有“可能伤病”报道，但无确认，核心均可能出场。",
+        "weather_venue": "亚特兰大体育场，天气未知，室内场地条件良好。",
+        "tactical_key": "英格兰定位球和凯恩支点 vs 刚果铁桶阵和零星快速反击。",
+        "uncertainty": "刚果能否顶住头30分钟不丢球是关键，否则可能惨败。"
       },
       "matchup_graph": {
         "nodes": [
           {
             "id": "home_attack",
-            "label": "英格兰进攻",
+            "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 88,
-            "note": "凯恩等攻击手状态正佳"
+            "weight": 92,
+            "note": "凯恩、萨卡、福登等顶级攻击手，破密集手段丰富。"
           },
           {
             "id": "home_midfield",
-            "label": "英格兰中场/转换",
+            "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 85,
-            "note": "中场控制力出色"
+            "weight": 88,
+            "note": "赖斯绞杀，贝林厄姆后插上，控制力强。"
           },
           {
             "id": "home_defense",
-            "label": "英格兰防守",
+            "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 82,
-            "note": "防守稳固"
+            "weight": 85,
+            "note": "斯通斯领衔，整体稳定，但偶尔走神。"
           },
           {
             "id": "away_attack",
-            "label": "刚果进攻",
+            "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
             "weight": 40,
-            "note": "进攻威胁有限"
+            "note": "巴坎布有一定冲击力，但整体配合生疏。"
           },
           {
             "id": "away_midfield",
-            "label": "刚果中场/转换",
+            "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 45,
-            "note": "中场组织能力弱"
+            "weight": 35,
+            "note": "欠缺创造力，只能靠长传找前锋。"
           },
           {
             "id": "away_defense",
-            "label": "刚果防守",
+            "label": "客队防守",
             "type": "team_phase",
             "side": "away",
             "weight": 50,
-            "note": "防守有一定硬度"
+            "note": "身材硬朗，但位置感差，容易被打身后。"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "英格兰围攻 vs 刚果密集防守",
+            "label": "英格兰立体进攻 vs 刚果混乱防线",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "英格兰攻击力有望打破僵局"
+            "note": "英格兰多种得分方式，刚果难以全面设防。"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "刚果反击 vs 英格兰防线",
+            "label": "刚果长传冲吊 vs 英格兰防空",
             "impact": "low",
             "direction": "away_to_home",
-            "note": "刚果反击难以构成威胁"
+            "note": "英格兰高空球防守极佳，刚果难有机会。"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场实力悬殊",
-            "impact": "high",
+            "label": "中场绞杀",
+            "impact": "low",
             "direction": "balanced",
-            "note": "英格兰中场碾压对手"
+            "note": "英格兰完全控制，刚果只能被动跟随。"
           }
         ],
-        "summary": "英格兰全面占优，刚果凶多吉少。",
+        "summary": "英格兰全维度碾压，刚果几乎无爆冷可能，比赛悬念仅在于净胜几球。",
         "advantage_side": "home",
-        "key_battle": "凯恩 vs 刚果中卫",
-        "risk_trigger": "若英格兰轻敌，刚果反击可能制造威胁"
+        "key_battle": "刚果能否守住前30分钟，以及英格兰如何破解密集防守。",
+        "risk_trigger": "英格兰轻敌导致久攻不下，刚果一次反击得手后死守。"
       },
-      "tactical_matchup": "英格兰掌控比赛，刚果全力防守期待死守。",
+      "tactical_matchup": "英格兰4-2-3-1传控强攻，刚果5-4-1全线退守。英格兰需利用宽度和定位球，刚果唯有长传找高点。",
       "injury_adjustment": {
-        "home": "媒体报道疑似伤病，无具体名单",
-        "away": "同样有疑似伤病",
-        "summary": "双方均可能有轻微伤病，但核心阵容预计完整"
+        "home": "可能伤病（ESPN报道提及皮克福德表态），但无具体名单，疑为烟雾弹。",
+        "away": "可能伤病报道，具体不明，或影响锋线。",
+        "summary": "双方均有可疑伤病，但不影响核心战力。"
       },
-      "risk_analysis": "英格兰实力远超对手，正常发挥获胜无悬念。",
-      "upset_probability": 25.58,
+      "risk_analysis": "单方碾压格局，但淘汰赛一分定生死，英格兰需避免意外红牌或低级失误。",
+      "upset_probability": 8,
       "odds_comparison": {
         "market_implied": {
           "home_win": 77.78,
@@ -4252,11 +4252,11 @@
           "away_win": 7.69
         },
         "model_edge": {
-          "home_win": 74.42,
-          "draw": 18.22,
-          "away_win": 7.36
+          "home_win": 75,
+          "draw": 17,
+          "away_win": 8
         },
-        "deviation_analysis": "模型小幅降低英格兰胜率，反映市场过热。"
+        "deviation_analysis": "模型与市场基本一致，仅略微调低英格兰取胜概率，反映市场已充分定价。"
       },
       "confidence": "high"
     },
@@ -4374,13 +4374,13 @@
       },
       "match_id": "400021525",
       "win_draw_loss": {
-        "home_win": 42.82,
-        "draw": 29.65,
-        "away_win": 27.53
+        "home_win": 44,
+        "draw": 29,
+        "away_win": 27
       },
       "xg_prediction": {
-        "home": 1.1,
-        "away": 1.0
+        "home": 1.5,
+        "away": 1.2
       },
       "predicted_score": {
         "home": 1,
@@ -4390,119 +4390,119 @@
         {
           "score": "1-1",
           "rank": 1,
-          "reason": "势均力敌，淘汰赛可能保守"
+          "reason": "实力接近，阵地战胶着，各自依靠核心得分。"
         },
         {
           "score": "2-1",
           "rank": 2,
-          "reason": "比利时攻击群稍强"
+          "reason": "比利时经验老到，最后时刻定位球制胜。"
         },
         {
           "score": "1-0",
           "rank": 3,
-          "reason": "塞内加尔防守稳固，或1-0小胜"
+          "reason": "一球小胜，谁先进球谁收缩防守。"
         }
       ],
       "method_factors": {
-        "market_signal": "DraftKings赔率显示比利时主胜概率约44.44%，稍有优势。",
-        "fifa_rank_prior": "FIFA排名不可用，双方都是世界强队。",
-        "recent_form": "近期表现未知。",
-        "group_context": "1/16决赛，单场淘汰制，比赛在西雅图进行。",
-        "injury_rotation": "双方伤病情况未知。",
-        "weather_venue": "西雅图球场，天气未知。",
-        "tactical_key": "比利时传控 vs 塞内加尔速度冲击。",
-        "uncertainty": "塞内加尔非洲球队爆发力不可小觑。"
+        "market_signal": "市场倾向比利时但优势微弱（+125），平局与客胜差距小，反映均势。",
+        "fifa_rank_prior": "比利时黄金一代尾声但战力犹存，塞内加尔非洲冠军势头上升。",
+        "recent_form": "近期状态未知，无正式比赛数据参考。",
+        "group_context": "32强淘汰赛，双方都具晋级野心，可能谨慎开局。",
+        "injury_rotation": "双方无官方伤病确认，预计全主力出战。",
+        "weather_venue": "西雅图体育场，天气未知，人工草皮或对技术型球员有影响。",
+        "tactical_key": "比利时控球与德布劳内直塞 vs 塞内加尔凶狠逼抢与马内速度。",
+        "uncertainty": "比利时阵容老化，体能在下半场可能下降，塞内加尔体能充沛。"
       },
       "matchup_graph": {
         "nodes": [
           {
             "id": "home_attack",
-            "label": "比利时进攻",
+            "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
             "weight": 80,
-            "note": "卢卡库等球星攻击力强"
+            "note": "卢卡库支点，德布劳内输送，但门前效率下降。"
           },
           {
             "id": "home_midfield",
-            "label": "比利时中场/转换",
+            "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
             "weight": 75,
-            "note": "德布劳内组织核心"
+            "note": "德布劳内创造力顶级，但防守覆盖不足。"
           },
           {
             "id": "home_defense",
-            "label": "比利时防守",
+            "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 70,
-            "note": "防线年龄偏大"
+            "weight": 65,
+            "note": "维尔通亨等老将转身慢，怕速度型冲击。"
           },
           {
             "id": "away_attack",
-            "label": "塞内加尔进攻",
+            "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
             "weight": 75,
-            "note": "马内领衔，速度极快"
+            "note": "马内、萨尔领衔的快马锋线，转换犀利。"
           },
           {
             "id": "away_midfield",
-            "label": "塞内加尔中场/转换",
+            "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
             "weight": 70,
-            "note": "中场硬度足"
+            "note": "盖耶和库亚特拦截凶悍，攻防枢纽。"
           },
           {
             "id": "away_defense",
-            "label": "塞内加尔防守",
+            "label": "客队防守",
             "type": "team_phase",
             "side": "away",
             "weight": 75,
-            "note": "防守坚固"
+            "note": "库利巴利领衔，身体对抗强，防空出色。"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "比利时攻击 vs 塞内加尔防守",
-            "impact": "medium",
+            "label": "卢卡库对位库利巴利",
+            "impact": "high",
             "direction": "home_to_away",
-            "note": "比利时攻击线面临考验"
+            "note": "身体碰撞激烈，卢卡库能否压制库利巴利是关键。"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "塞内加尔反击 vs 比利时防线",
-            "impact": "medium",
+            "label": "塞内加尔双速锋 vs 比利时老迈防线",
+            "impact": "high",
             "direction": "away_to_home",
-            "note": "塞内加尔速度可能冲击比利时高龄防线"
+            "note": "马内的速度将考验比利时中卫的回追。"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场对抗",
+            "label": "德布劳内 vs 中场绞杀",
             "impact": "medium",
             "direction": "balanced",
-            "note": "中场争夺激烈"
+            "note": "德布劳内能否摆脱盖耶的贴身纠缠。"
           }
         ],
-        "summary": "双方实力接近，比赛可能进入加时。",
+        "summary": "势均力敌，防线缺陷可能决定胜负，比利时技术稍优但体能存疑。",
         "advantage_side": "balanced",
-        "key_battle": "德布劳内 vs 塞内加尔后腰",
-        "risk_trigger": "比利时平均年龄偏大，体能可能影响"
+        "key_battle": "卢卡库与库利巴利的身体对抗，以及马内冲击比利时右路。",
+        "risk_trigger": "比利时早早领先后保守，塞内加尔疯狂反扑扳平甚至逆转。"
       },
-      "tactical_matchup": "比利时传控主导，塞内加尔快速反击与强硬对抗。",
+      "tactical_matchup": "比利时惯用3-4-3控球，塞内加尔4-3-3逼抢反击。比利时需保护后场空当，塞内加尔抓转换机会。",
       "injury_adjustment": {
-        "home": "无已知伤病",
-        "away": "无已知伤病",
-        "summary": "双方阵容齐整"
+        "home": "无官方伤病确认，全员可战。",
+        "away": "无官方伤病确认，全员可战。",
+        "summary": "双方阵容齐整，最强出击。"
       },
-      "risk_analysis": "比利时黄金一代最后机会，但塞内加尔近年非洲最强，比赛可能胶着。",
-      "upset_probability": 57.18,
+      "risk_analysis": "淘汰赛强强对话，平局概率不低，加时点球随时可能，两队均善于扑点。",
+      "upset_probability": 27,
       "odds_comparison": {
         "market_implied": {
           "home_win": 44.44,
@@ -4510,11 +4510,11 @@
           "away_win": 28.57
         },
         "model_edge": {
-          "home_win": 42.82,
-          "draw": 29.65,
-          "away_win": 27.53
+          "home_win": 44,
+          "draw": 29,
+          "away_win": 27
         },
-        "deviation_analysis": "模型与市场一致，比赛胶着。"
+        "deviation_analysis": "模型微调，与市场几乎一致，无明显价值偏离。"
       },
       "confidence": "medium"
     },
@@ -4632,13 +4632,13 @@
       },
       "match_id": "400021524",
       "win_draw_loss": {
-        "home_win": 69.73,
-        "draw": 19.6,
-        "away_win": 10.67
+        "home_win": 70,
+        "draw": 20,
+        "away_win": 10
       },
       "xg_prediction": {
-        "home": 1.8,
-        "away": 0.6
+        "home": 2.1,
+        "away": 0.7
       },
       "predicted_score": {
         "home": 2,
@@ -4648,119 +4648,119 @@
         {
           "score": "2-0",
           "rank": 1,
-          "reason": "美国主场作战，实力占优"
-        },
-        {
-          "score": "1-0",
-          "rank": 2,
-          "reason": "波黑防守有一定硬度，可能小胜"
+          "reason": "美国主场优势明显，波黑进攻乏力，遭零封合理。"
         },
         {
           "score": "2-1",
+          "rank": 2,
+          "reason": "美国丢一个定位球，但仍能掌控全局。"
+        },
+        {
+          "score": "1-0",
           "rank": 3,
-          "reason": "波黑可能打进一球"
+          "reason": "美国踢得保守，一球小胜经济实惠。"
         }
       ],
       "method_factors": {
-        "market_signal": "DraftKings赔率显示美国主胜概率约72.6%，市场看好。",
-        "fifa_rank_prior": "FIFA排名不可用，美国队近年崛起。",
-        "recent_form": "近期表现未知。",
-        "group_context": "1/16决赛，单场淘汰制，比赛在旧金山湾区进行。",
-        "injury_rotation": "双方伤病情况未知。",
-        "weather_venue": "旧金山湾区球场，天气未知。",
-        "tactical_key": "美国高位逼抢，波黑长传冲吊。",
-        "uncertainty": "波黑有爆冷基因。"
+        "market_signal": "市场看好美国（-265），反映东道主优势和对手偏弱。",
+        "fifa_rank_prior": "美国中北美劲旅，波黑欧洲二三流，实力差明显。",
+        "recent_form": "近期状态未知，无正式比赛数据参考。",
+        "group_context": "32强淘汰赛，东道主美国坐拥主场，波黑难以阻挡。",
+        "injury_rotation": "双方无官方伤病确认，预计全主力出战。",
+        "weather_venue": "旧金山湾区体育场，天气未知，场地条件良好。",
+        "tactical_key": "美国快速转换和边路突击 vs 波黑长传找哲科。",
+        "uncertainty": "波黑若哲科状态爆发，可能制造冷门。"
       },
       "matchup_graph": {
         "nodes": [
           {
             "id": "home_attack",
-            "label": "美国进攻",
+            "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 78,
-            "note": "普利西奇等球员攻击力强"
+            "weight": 80,
+            "note": "普利西奇、麦肯尼等快速灵活，擅长跑动穿插。"
           },
           {
             "id": "home_midfield",
-            "label": "美国中场/转换",
+            "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 75,
-            "note": "中场跑动积极"
+            "weight": 78,
+            "note": "亚当斯拦截，穆萨推进，节奏明快。"
           },
           {
             "id": "home_defense",
-            "label": "美国防守",
+            "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 72,
-            "note": "防线年轻有活力"
+            "weight": 75,
+            "note": "年轻但默契不错，高空球防哲科需警惕。"
           },
           {
             "id": "away_attack",
-            "label": "波黑进攻",
+            "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
             "weight": 55,
-            "note": "哲科等老将经验丰富"
+            "note": "哲科支点，皮亚尼奇输送，但运动能力不足。"
           },
           {
             "id": "away_midfield",
-            "label": "波黑中场/转换",
+            "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 58,
-            "note": "中场控制力一般"
+            "weight": 50,
+            "note": "皮亚尼奇老化，跑动能力下降，控制力不足。"
           },
           {
             "id": "away_defense",
-            "label": "波黑防守",
+            "label": "客队防守",
             "type": "team_phase",
             "side": "away",
             "weight": 60,
-            "note": "防守有一定硬度"
+            "note": "身体对抗还行，但面对灵活前锋易失位。"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "美国冲击 vs 波黑防线",
+            "label": "美国穿插跑动 vs 波黑防线协同",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "美国进攻有望得分"
+            "note": "普利西奇等人的灵活换位将考验波黑防线默契。"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "波黑反击 vs 美国防线",
-            "impact": "low",
+            "label": "哲科高空球 vs 美国中卫",
+            "impact": "medium",
             "direction": "away_to_home",
-            "note": "波黑反击效率有限"
+            "note": "波黑唯一可能得分的途径是定位球找哲科。"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场控制",
-            "impact": "medium",
+            "label": "中场活力对比",
+            "impact": "low",
             "direction": "balanced",
-            "note": "美国中场略占上风"
+            "note": "美国年轻能跑，波黑老将体能堪忧。"
           }
         ],
-        "summary": "美国主场胜面大，波黑难以逆袭。",
+        "summary": "美国主场作战，整体运转流畅，波黑仅靠老将个人闪光难以抗衡。",
         "advantage_side": "home",
-        "key_battle": "普利西奇 vs 波黑边卫",
-        "risk_trigger": "若美国久攻不下，定位球可能成为波黑机会"
+        "key_battle": "美国如何切断皮亚尼奇与哲科连线，以及自身前场小快灵的配合效率。",
+        "risk_trigger": "美国久攻不下被反击，波黑凭借哲科一击致命。"
       },
-      "tactical_matchup": "美国主动施压，波黑稳守反击。",
+      "tactical_matchup": "美国4-3-3高位压迫，波黑4-2-3-1稳守反击。美国需急躁出球，波黑等机会长传。",
       "injury_adjustment": {
-        "home": "无已知伤病",
-        "away": "无已知伤病",
-        "summary": "双方阵容齐整"
+        "home": "无官方伤病确认，全员可战。",
+        "away": "无官方伤病确认，全员可战。",
+        "summary": "双方阵容完整，无重要缺阵。"
       },
-      "risk_analysis": "美国主场优势明显，波黑整体实力稍逊，但淘汰赛一切皆有可能。",
-      "upset_probability": 30.27,
+      "risk_analysis": "美国实力占优但淘汰赛压力下，小胜或平局可能性不小，市场充分定价。",
+      "upset_probability": 10,
       "odds_comparison": {
         "market_implied": {
           "home_win": 72.6,
@@ -4768,13 +4768,13 @@
           "away_win": 11.11
         },
         "model_edge": {
-          "home_win": 69.73,
-          "draw": 19.6,
-          "away_win": 10.67
+          "home_win": 70,
+          "draw": 20,
+          "away_win": 10
         },
-        "deviation_analysis": "模型小幅降低美国胜率，波黑客场冷意需防。"
+        "deviation_analysis": "模型与市场基本趋同，略微下调主胜概率，无显著套利空间。"
       },
-      "confidence": "medium"
+      "confidence": "high"
     }
   ],
   "tournament_structure": {
@@ -4814,20 +4814,20 @@
           "match_number": 73,
           "round_key": "round_of_32",
           "stage": "round_of_32",
-          "group": "???",
-          "match_name": "?? vs ??",
+          "group": "淘汰赛",
+          "match_name": "待定 vs 待定",
           "teams": {
             "home": {
-              "name": "??",
-              "name_en": "??",
+              "name": "待定",
+              "name_en": "待定",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "??",
-              "name_en": "??",
+              "name": "待定",
+              "name_en": "待定",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -4836,7 +4836,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -4848,20 +4848,20 @@
           "match_number": 74,
           "round_key": "round_of_32",
           "stage": "round_of_32",
-          "group": "???",
-          "match_name": "?? vs ??",
+          "group": "淘汰赛",
+          "match_name": "待定 vs 待定",
           "teams": {
             "home": {
-              "name": "??",
-              "name_en": "??",
+              "name": "待定",
+              "name_en": "待定",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "??",
-              "name_en": "??",
+              "name": "待定",
+              "name_en": "待定",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -4870,7 +4870,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -4882,20 +4882,20 @@
           "match_number": 75,
           "round_key": "round_of_32",
           "stage": "round_of_32",
-          "group": "???",
-          "match_name": "?? vs ??",
+          "group": "淘汰赛",
+          "match_name": "待定 vs 待定",
           "teams": {
             "home": {
-              "name": "??",
-              "name_en": "??",
+              "name": "待定",
+              "name_en": "待定",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "??",
-              "name_en": "??",
+              "name": "待定",
+              "name_en": "待定",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -4904,7 +4904,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -4916,20 +4916,20 @@
           "match_number": 76,
           "round_key": "round_of_32",
           "stage": "round_of_32",
-          "group": "???",
-          "match_name": "?? vs ??",
+          "group": "淘汰赛",
+          "match_name": "待定 vs 待定",
           "teams": {
             "home": {
-              "name": "??",
-              "name_en": "??",
+              "name": "待定",
+              "name_en": "待定",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "??",
-              "name_en": "??",
+              "name": "待定",
+              "name_en": "待定",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -4938,7 +4938,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -4994,25 +4994,25 @@
             "end_iso": "2026-07-01T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 74.68,
-            "draw": 16.11,
-            "away_win": 9.21
+            "home_win": 72,
+            "draw": 18,
+            "away_win": 10
           },
           "score_options": [
             {
               "score": "2-0",
               "rank": 1,
-              "reason": "法国整体实力远超瑞典，瑞典难以破门"
+              "reason": "法国攻防俱佳，瑞典难破铁桶阵，姆巴佩等人锁定胜局。"
             },
             {
               "score": "3-0",
               "rank": 2,
-              "reason": "法国攻击线多点开花"
+              "reason": "法国若早进球，瑞典被迫压出，反击扩大比分。"
             },
             {
-              "score": "1-0",
+              "score": "2-1",
               "rank": 3,
-              "reason": "淘汰赛可能小胜"
+              "reason": "法国领先后松懈，瑞典定位球扳回一球。"
             }
           ],
           "current_window": true,
@@ -5037,7 +5037,7 @@
               "id_country": "CIV",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
               "score": null,
-              "tactics": null,
+              "tactics": "4-1-2-3",
               "country_code": "CIV",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
               "flag_emoji": "🇨🇮"
@@ -5050,7 +5050,7 @@
               "id_country": "NOR",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
               "score": null,
-              "tactics": null,
+              "tactics": "4-2-1-3",
               "country_code": "NOR",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
               "flag_emoji": "🇳🇴"
@@ -5067,25 +5067,25 @@
             "end_iso": "2026-07-01T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 27.06,
-            "draw": 28.26,
-            "away_win": 44.68
+            "home_win": 27,
+            "draw": 30,
+            "away_win": 43
           },
           "score_options": [
             {
-              "score": "0-1",
+              "score": "1-2",
               "rank": 1,
-              "reason": "挪威进攻效率更高，科特迪瓦防守组织一般"
+              "reason": "挪威进攻效率更高，科特迪瓦防守有漏洞，但主场速度可造威胁。"
             },
             {
               "score": "1-1",
               "rank": 2,
-              "reason": "淘汰赛可能保守，科特迪瓦主场优势"
+              "reason": "双方拉锯，中场缠斗导致机会不多，各入一球均势收场。"
             },
             {
               "score": "0-2",
               "rank": 3,
-              "reason": "挪威实力占优，若科特迪瓦失误"
+              "reason": "挪威控制中场完全压制，科特迪瓦反击失效，零封胜出。"
             }
           ],
           "current_window": true,
@@ -5140,25 +5140,25 @@
             "end_iso": "2026-07-01T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 41.85,
-            "draw": 33.78,
-            "away_win": 24.37
+            "home_win": 43,
+            "draw": 33,
+            "away_win": 24
           },
           "score_options": [
             {
               "score": "1-0",
               "rank": 1,
-              "reason": "墨西哥主场优势，厄瓜多尔进攻一般"
+              "reason": "墨西哥主场氛围加持，一球小胜，厄瓜多尔进攻乏力。"
             },
             {
               "score": "1-1",
               "rank": 2,
-              "reason": "南美球队韧性，可能平局"
+              "reason": "双方谨慎，平局合理，厄瓜多尔防守顽强。"
             },
             {
               "score": "2-1",
               "rank": 3,
-              "reason": "墨西哥攻击力稍强，或2-1取胜"
+              "reason": "墨西哥最后时刻发力，但厄瓜多尔能取得进球。"
             }
           ],
           "current_window": true,
@@ -5213,25 +5213,25 @@
             "end_iso": "2026-07-02T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 74.42,
-            "draw": 18.22,
-            "away_win": 7.36
+            "home_win": 75,
+            "draw": 17,
+            "away_win": 8
           },
           "score_options": [
             {
-              "score": "2-0",
-              "rank": 1,
-              "reason": "英格兰实力碾压，刚果防守有一定韧性"
-            },
-            {
               "score": "3-0",
-              "rank": 2,
-              "reason": "英格兰攻击线强大"
+              "rank": 1,
+              "reason": "英格兰实力碾压，多点开花，刚果难以抵挡。"
             },
             {
-              "score": "1-0",
+              "score": "2-0",
+              "rank": 2,
+              "reason": "保守胜利，英格兰可能收着踢，为后续留力。"
+            },
+            {
+              "score": "4-0",
               "rank": 3,
-              "reason": "刚果摆大巴，或仅0-1"
+              "reason": "刚果若崩盘，英格兰可能大胜穿盘。"
             }
           ],
           "current_window": true,
@@ -5286,25 +5286,25 @@
             "end_iso": "2026-07-02T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 69.73,
-            "draw": 19.6,
-            "away_win": 10.67
+            "home_win": 70,
+            "draw": 20,
+            "away_win": 10
           },
           "score_options": [
             {
               "score": "2-0",
               "rank": 1,
-              "reason": "美国主场作战，实力占优"
-            },
-            {
-              "score": "1-0",
-              "rank": 2,
-              "reason": "波黑防守有一定硬度，可能小胜"
+              "reason": "美国主场优势明显，波黑进攻乏力，遭零封合理。"
             },
             {
               "score": "2-1",
+              "rank": 2,
+              "reason": "美国丢一个定位球，但仍能掌控全局。"
+            },
+            {
+              "score": "1-0",
               "rank": 3,
-              "reason": "波黑可能打进一球"
+              "reason": "美国踢得保守，一球小胜经济实惠。"
             }
           ],
           "current_window": true,
@@ -5359,25 +5359,25 @@
             "end_iso": "2026-07-02T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 42.82,
-            "draw": 29.65,
-            "away_win": 27.53
+            "home_win": 44,
+            "draw": 29,
+            "away_win": 27
           },
           "score_options": [
             {
               "score": "1-1",
               "rank": 1,
-              "reason": "势均力敌，淘汰赛可能保守"
+              "reason": "实力接近，阵地战胶着，各自依靠核心得分。"
             },
             {
               "score": "2-1",
               "rank": 2,
-              "reason": "比利时攻击群稍强"
+              "reason": "比利时经验老到，最后时刻定位球制胜。"
             },
             {
               "score": "1-0",
               "rank": 3,
-              "reason": "塞内加尔防守稳固，或1-0小胜"
+              "reason": "一球小胜，谁先进球谁收缩防守。"
             }
           ],
           "current_window": true,
@@ -5708,20 +5708,20 @@
           "match_number": 89,
           "round_key": "round_of_16",
           "stage": "round_of_16",
-          "group": "???",
-          "match_name": "?? M73 vs ?? M74",
+          "group": "淘汰赛",
+          "match_name": "胜者 M73 vs 胜者 M74",
           "teams": {
             "home": {
-              "name": "?? M73",
-              "name_en": "?? M73",
+              "name": "胜者 M73",
+              "name_en": "胜者 M73",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "?? M74",
-              "name_en": "?? M74",
+              "name": "胜者 M74",
+              "name_en": "胜者 M74",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -5730,7 +5730,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -5795,20 +5795,20 @@
           "match_number": 91,
           "round_key": "round_of_16",
           "stage": "round_of_16",
-          "group": "???",
-          "match_name": "?? M77 vs ?? M78",
+          "group": "淘汰赛",
+          "match_name": "胜者 M77 vs 胜者 M78",
           "teams": {
             "home": {
-              "name": "?? M77",
-              "name_en": "?? M77",
+              "name": "胜者 M77",
+              "name_en": "胜者 M77",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "?? M78",
-              "name_en": "?? M78",
+              "name": "胜者 M78",
+              "name_en": "胜者 M78",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -5817,7 +5817,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -5829,20 +5829,20 @@
           "match_number": 92,
           "round_key": "round_of_16",
           "stage": "round_of_16",
-          "group": "???",
-          "match_name": "?? M79 vs ?? M80",
+          "group": "淘汰赛",
+          "match_name": "胜者 M79 vs 胜者 M80",
           "teams": {
             "home": {
-              "name": "?? M79",
-              "name_en": "?? M79",
+              "name": "胜者 M79",
+              "name_en": "胜者 M79",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "?? M80",
-              "name_en": "?? M80",
+              "name": "胜者 M80",
+              "name_en": "胜者 M80",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -5851,7 +5851,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -5863,20 +5863,20 @@
           "match_number": 93,
           "round_key": "round_of_16",
           "stage": "round_of_16",
-          "group": "???",
-          "match_name": "?? M81 vs ?? M82",
+          "group": "淘汰赛",
+          "match_name": "胜者 M81 vs 胜者 M82",
           "teams": {
             "home": {
-              "name": "?? M81",
-              "name_en": "?? M81",
+              "name": "胜者 M81",
+              "name_en": "胜者 M81",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "?? M82",
-              "name_en": "?? M82",
+              "name": "胜者 M82",
+              "name_en": "胜者 M82",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -5885,7 +5885,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -5897,20 +5897,20 @@
           "match_number": 94,
           "round_key": "round_of_16",
           "stage": "round_of_16",
-          "group": "???",
-          "match_name": "?? M83 vs ?? M84",
+          "group": "淘汰赛",
+          "match_name": "胜者 M83 vs 胜者 M84",
           "teams": {
             "home": {
-              "name": "?? M83",
-              "name_en": "?? M83",
+              "name": "胜者 M83",
+              "name_en": "胜者 M83",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "?? M84",
-              "name_en": "?? M84",
+              "name": "胜者 M84",
+              "name_en": "胜者 M84",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -5919,7 +5919,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -5931,20 +5931,20 @@
           "match_number": 95,
           "round_key": "round_of_16",
           "stage": "round_of_16",
-          "group": "???",
-          "match_name": "?? M85 vs ?? M86",
+          "group": "淘汰赛",
+          "match_name": "胜者 M85 vs 胜者 M86",
           "teams": {
             "home": {
-              "name": "?? M85",
-              "name_en": "?? M85",
+              "name": "胜者 M85",
+              "name_en": "胜者 M85",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "?? M86",
-              "name_en": "?? M86",
+              "name": "胜者 M86",
+              "name_en": "胜者 M86",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -5953,7 +5953,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -5965,20 +5965,20 @@
           "match_number": 96,
           "round_key": "round_of_16",
           "stage": "round_of_16",
-          "group": "???",
-          "match_name": "?? M87 vs ?? M88",
+          "group": "淘汰赛",
+          "match_name": "胜者 M87 vs 胜者 M88",
           "teams": {
             "home": {
-              "name": "?? M87",
-              "name_en": "?? M87",
+              "name": "胜者 M87",
+              "name_en": "胜者 M87",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "?? M88",
-              "name_en": "?? M88",
+              "name": "胜者 M88",
+              "name_en": "胜者 M88",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -5987,7 +5987,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -6001,20 +6001,20 @@
           "match_number": 97,
           "round_key": "quarter_finals",
           "stage": "quarter_finals",
-          "group": "???",
-          "match_name": "?? M89 vs ?? M90",
+          "group": "淘汰赛",
+          "match_name": "胜者 M89 vs 胜者 M90",
           "teams": {
             "home": {
-              "name": "?? M89",
-              "name_en": "?? M89",
+              "name": "胜者 M89",
+              "name_en": "胜者 M89",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "?? M90",
-              "name_en": "?? M90",
+              "name": "胜者 M90",
+              "name_en": "胜者 M90",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -6023,7 +6023,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -6035,20 +6035,20 @@
           "match_number": 98,
           "round_key": "quarter_finals",
           "stage": "quarter_finals",
-          "group": "???",
-          "match_name": "?? M91 vs ?? M92",
+          "group": "淘汰赛",
+          "match_name": "胜者 M91 vs 胜者 M92",
           "teams": {
             "home": {
-              "name": "?? M91",
-              "name_en": "?? M91",
+              "name": "胜者 M91",
+              "name_en": "胜者 M91",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "?? M92",
-              "name_en": "?? M92",
+              "name": "胜者 M92",
+              "name_en": "胜者 M92",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -6057,7 +6057,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -6069,20 +6069,20 @@
           "match_number": 99,
           "round_key": "quarter_finals",
           "stage": "quarter_finals",
-          "group": "???",
-          "match_name": "?? M93 vs ?? M94",
+          "group": "淘汰赛",
+          "match_name": "胜者 M93 vs 胜者 M94",
           "teams": {
             "home": {
-              "name": "?? M93",
-              "name_en": "?? M93",
+              "name": "胜者 M93",
+              "name_en": "胜者 M93",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "?? M94",
-              "name_en": "?? M94",
+              "name": "胜者 M94",
+              "name_en": "胜者 M94",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -6091,7 +6091,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -6103,20 +6103,20 @@
           "match_number": 100,
           "round_key": "quarter_finals",
           "stage": "quarter_finals",
-          "group": "???",
-          "match_name": "?? M95 vs ?? M96",
+          "group": "淘汰赛",
+          "match_name": "胜者 M95 vs 胜者 M96",
           "teams": {
             "home": {
-              "name": "?? M95",
-              "name_en": "?? M95",
+              "name": "胜者 M95",
+              "name_en": "胜者 M95",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "?? M96",
-              "name_en": "?? M96",
+              "name": "胜者 M96",
+              "name_en": "胜者 M96",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -6125,7 +6125,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -6139,20 +6139,20 @@
           "match_number": 101,
           "round_key": "semi_finals",
           "stage": "semi_finals",
-          "group": "???",
-          "match_name": "?? M97 vs ?? M98",
+          "group": "淘汰赛",
+          "match_name": "胜者 M97 vs 胜者 M98",
           "teams": {
             "home": {
-              "name": "?? M97",
-              "name_en": "?? M97",
+              "name": "胜者 M97",
+              "name_en": "胜者 M97",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "?? M98",
-              "name_en": "?? M98",
+              "name": "胜者 M98",
+              "name_en": "胜者 M98",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -6161,7 +6161,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -6173,20 +6173,20 @@
           "match_number": 102,
           "round_key": "semi_finals",
           "stage": "semi_finals",
-          "group": "???",
-          "match_name": "?? M99 vs ?? M100",
+          "group": "淘汰赛",
+          "match_name": "胜者 M99 vs 胜者 M100",
           "teams": {
             "home": {
-              "name": "?? M99",
-              "name_en": "?? M99",
+              "name": "胜者 M99",
+              "name_en": "胜者 M99",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "?? M100",
-              "name_en": "?? M100",
+              "name": "胜者 M100",
+              "name_en": "胜者 M100",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -6195,7 +6195,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -6209,20 +6209,20 @@
           "match_number": 104,
           "round_key": "final",
           "stage": "final",
-          "group": "???",
-          "match_name": "?? M101 vs ?? M102",
+          "group": "淘汰赛",
+          "match_name": "胜者 M101 vs 胜者 M102",
           "teams": {
             "home": {
-              "name": "?? M101",
-              "name_en": "?? M101",
+              "name": "胜者 M101",
+              "name_en": "胜者 M101",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
               "placeholder": true
             },
             "away": {
-              "name": "?? M102",
-              "name_en": "?? M102",
+              "name": "胜者 M102",
+              "name_en": "胜者 M102",
               "country_code": "",
               "flag_url": "",
               "flag_emoji": "",
@@ -6231,7 +6231,7 @@
           },
           "kickoff_utc": null,
           "kickoff_beijing": null,
-          "kickoff_display": "???? ??",
+          "kickoff_display": "北京时间 待定",
           "match_day": {},
           "win_draw_loss": null,
           "score_options": [],
@@ -6246,7 +6246,7 @@
       "start_iso": "2026-06-30T18:00:00+08:00",
       "end_iso": "2026-07-21T18:00:00+08:00",
       "display_range": "6月30日比赛日 - 7月20日比赛日",
-      "range": "???? 06-30 18:00 - 07-21 18:00",
+      "range": "北京时间 06-30 18:00 - 07-21 18:00",
       "match_days": [
         {
           "date": "2026-06-30",
@@ -6404,7 +6404,7 @@
     "start_iso": "2026-06-30T18:00:00+08:00",
     "end_iso": "2026-07-21T18:00:00+08:00",
     "display_range": "6月30日比赛日 - 7月20日比赛日",
-    "range": "???? 06-30 18:00 - 07-21 18:00",
+    "range": "北京时间 06-30 18:00 - 07-21 18:00",
     "match_days": [
       {
         "date": "2026-06-30",
@@ -6558,7 +6558,7 @@
   "research": {
     "schema_version": 3,
     "stage": "research",
-    "generated_at": "2026-06-30T16:19:20Z",
+    "generated_at": "2026-06-30T16:53:49Z",
     "window": {
       "start_date": "2026-06-30",
       "days": 3,
@@ -6577,7 +6577,7 @@
       "start_iso": "2026-06-30T18:00:00+08:00",
       "end_iso": "2026-07-02T18:00:00+08:00",
       "display_range": "6月30日比赛日 - 7月1日比赛日",
-      "range": "???? 06-30 18:00 - 07-02 18:00",
+      "range": "北京时间 06-30 18:00 - 07-02 18:00",
       "match_days": [
         {
           "date": "2026-06-30",
@@ -6601,7 +6601,7 @@
       "start_iso": "2026-06-30T18:00:00+08:00",
       "end_iso": "2026-07-21T18:00:00+08:00",
       "display_range": "6月30日比赛日 - 7月20日比赛日",
-      "range": "???? 06-30 18:00 - 07-21 18:00",
+      "range": "北京时间 06-30 18:00 - 07-21 18:00",
       "match_days": [
         {
           "date": "2026-06-30",
@@ -6897,7 +6897,7 @@
             "id_country": "CIV",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-1-2-3",
             "country_code": "CIV",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
             "flag_emoji": "🇨🇮"
@@ -6910,7 +6910,7 @@
             "id_country": "NOR",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-2-1-3",
             "country_code": "NOR",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
             "flag_emoji": "🇳🇴"
@@ -6948,21 +6948,21 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+255",
-            "draw": "+240",
+            "home": "+260",
+            "draw": "+230",
             "away": "+115"
           },
           "implied_probability": {
-            "home_win": 28.17,
-            "draw": 29.41,
+            "home_win": 27.78,
+            "draw": 30.3,
             "away_win": 46.51
           },
           "normalized_probability": {
-            "home_win": 27.06,
-            "draw": 28.26,
-            "away_win": 44.68
+            "home_win": 26.56,
+            "draw": 28.97,
+            "away_win": 44.47
           },
-          "overround": 4.09,
+          "overround": 4.59,
           "details": "NOR +115"
         },
         "injuries": {
@@ -7208,7 +7208,7 @@
                 "source": "ESPN World Cup news",
                 "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
                 "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-                "published": "2026-06-30T13:29:44Z",
+                "published": "2026-06-30T16:01:58Z",
                 "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
               }
             ],
@@ -7601,7 +7601,7 @@
             "id_country": "CIV",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-1-2-3",
             "country_code": "CIV",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
             "flag_emoji": "🇨🇮"
@@ -7614,7 +7614,7 @@
             "id_country": "NOR",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-2-1-3",
             "country_code": "NOR",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
             "flag_emoji": "🇳🇴"
@@ -7652,21 +7652,21 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+255",
-            "draw": "+240",
+            "home": "+260",
+            "draw": "+230",
             "away": "+115"
           },
           "implied_probability": {
-            "home_win": 28.17,
-            "draw": 29.41,
+            "home_win": 27.78,
+            "draw": 30.3,
             "away_win": 46.51
           },
           "normalized_probability": {
-            "home_win": 27.06,
-            "draw": 28.26,
-            "away_win": 44.68
+            "home_win": 26.56,
+            "draw": 28.97,
+            "away_win": 44.47
           },
-          "overround": 4.09,
+          "overround": 4.59,
           "details": "NOR +115"
         },
         "injuries": {
@@ -7912,7 +7912,7 @@
                 "source": "ESPN World Cup news",
                 "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
                 "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-                "published": "2026-06-30T13:29:44Z",
+                "published": "2026-06-30T16:01:58Z",
                 "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
               }
             ],
@@ -8305,7 +8305,7 @@
             "id_country": "CIV",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-1-2-3",
             "country_code": "CIV",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
             "flag_emoji": "🇨🇮"
@@ -8318,7 +8318,7 @@
             "id_country": "NOR",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-2-1-3",
             "country_code": "NOR",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
             "flag_emoji": "🇳🇴"
@@ -8356,21 +8356,21 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+255",
-            "draw": "+240",
+            "home": "+260",
+            "draw": "+230",
             "away": "+115"
           },
           "implied_probability": {
-            "home_win": 28.17,
-            "draw": 29.41,
+            "home_win": 27.78,
+            "draw": 30.3,
             "away_win": 46.51
           },
           "normalized_probability": {
-            "home_win": 27.06,
-            "draw": 28.26,
-            "away_win": 44.68
+            "home_win": 26.56,
+            "draw": 28.97,
+            "away_win": 44.47
           },
-          "overround": 4.09,
+          "overround": 4.59,
           "details": "NOR +115"
         },
         "injuries": {
@@ -8616,7 +8616,7 @@
                 "source": "ESPN World Cup news",
                 "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
                 "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-                "published": "2026-06-30T13:29:44Z",
+                "published": "2026-06-30T16:01:58Z",
                 "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
               }
             ],
@@ -9661,7 +9661,7 @@
     ],
     "daily_log": [
       {
-        "time": "2026-06-30T16:19:20Z",
+        "time": "2026-06-30T16:53:49Z",
         "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
         "status": "completed"
       }
@@ -9673,7 +9673,7 @@
     "start_iso": "2026-06-30T18:00:00+08:00",
     "end_iso": "2026-07-02T18:00:00+08:00",
     "display_range": "6月30日比赛日 - 7月1日比赛日",
-    "range": "???? 06-30 18:00 - 07-02 18:00",
+    "range": "北京时间 06-30 18:00 - 07-02 18:00",
     "match_days": [
       {
         "date": "2026-06-30",
@@ -9708,10 +9708,10 @@
     }
   ],
   "usage": {
-    "input_tokens": 27420,
-    "output_tokens": 15190,
-    "total_tokens": 42610,
-    "cost_estimate": 0.4261
+    "input_tokens": 27474,
+    "output_tokens": 11476,
+    "total_tokens": 38950,
+    "cost_estimate": 0.3895
   },
   "analysis_model": "deepseek-v4-pro",
   "model": {
@@ -9725,12 +9725,12 @@
   },
   "daily_log": [
     {
-      "time": "2026-06-30T16:19:20Z",
+      "time": "2026-06-30T16:53:49Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     },
     {
-      "time": "2026-06-30T16:24:27Z",
+      "time": "2026-06-30T16:59:10Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     }
