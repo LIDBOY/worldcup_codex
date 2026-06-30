@@ -1646,6 +1646,137 @@ def group_structure_html(structure: dict[str, Any]) -> str:
     return "".join(group_sections)
 
 
+def bracket_match_number(node: dict[str, Any]) -> str:
+    value = node.get("match_number") or node.get("match_no")
+    if value not in (None, ""):
+        text = str(value).strip()
+        return text if text.upper().startswith("M") else f"M{text}"
+    match_id = str(node.get("match_id") or "").strip()
+    if match_id and match_id.isdigit() and len(match_id) <= 4:
+        return f"M{match_id}"
+    return "M--"
+
+
+def bracket_team_label(entity: dict[str, Any] | str | None) -> str:
+    if isinstance(entity, dict):
+        raw = entity.get("name") or entity.get("name_en") or entity.get("short_name") or ""
+    else:
+        raw = entity or ""
+    value = str(raw).strip()
+    if not value:
+        return "待定"
+    lowered = value.lower()
+    if lowered in {"tbd", "to be determined", "unknown", "none", "null", "待定"}:
+        return "待定"
+    winner = re.search(r"winner\s+(?:of\s+)?(?:match\s*)?(\d+)", value, re.I)
+    if winner:
+        return f"胜者 M{winner.group(1)}"
+    loser = re.search(r"loser\s+(?:of\s+)?(?:match\s*)?(\d+)", value, re.I)
+    if loser:
+        return f"负者 M{loser.group(1)}"
+    return team_name_zh(value)
+
+
+def bracket_node_time(node: dict[str, Any]) -> str:
+    text = str(node.get("kickoff_display") or "北京时间 待定")
+    text = text.replace("北京时间 ", "")
+    return text or "待定"
+
+
+def bracket_wdl_html(node: dict[str, Any]) -> str:
+    wdl = node.get("win_draw_loss")
+    if not isinstance(wdl, dict):
+        return '<div class="bracket-status">待定</div>'
+    return "".join(
+        [
+            f'<span class="home">胜 {pct(wdl.get("home_win", 0))}</span>',
+            f'<span class="draw">平 {pct(wdl.get("draw", 0))}</span>',
+            f'<span class="away">负 {pct(wdl.get("away_win", 0))}</span>',
+        ]
+    )
+
+
+def placeholder_bracket_node(match_number: int, home_label: str, away_label: str, round_key: str) -> dict[str, Any]:
+    return {
+        "match_id": f"placeholder-{round_key}-{match_number}",
+        "match_number": match_number,
+        "stage": round_key,
+        "teams": {"home": {"name": home_label}, "away": {"name": away_label}},
+        "kickoff_display": "北京时间 待定",
+        "score_options": [],
+        "current_window": False,
+        "placeholder": True,
+    }
+
+
+def bracket_with_placeholders(bracket: dict[str, Any]) -> dict[str, list[dict[str, Any]]]:
+    order = ["round_of_32", "round_of_16", "quarter_finals", "semi_finals", "final"]
+    display: dict[str, list[dict[str, Any]]] = {}
+    for key in order:
+        display[key] = [node for node in bracket.get(key, []) if isinstance(node, dict)]
+    next_number = 57
+    existing_numbers = []
+    for nodes in display.values():
+        for node in nodes:
+            value = node.get("match_number")
+            try:
+                existing_numbers.append(int(value))
+            except (TypeError, ValueError):
+                continue
+    if existing_numbers:
+        next_number = max(existing_numbers) + 1
+    for index, key in enumerate(order[1:], start=1):
+        if display[key]:
+            continue
+        previous = display[order[index - 1]]
+        if not previous:
+            continue
+        generated: list[dict[str, Any]] = []
+        for pair_index in range(0, len(previous), 2):
+            first = previous[pair_index]
+            second = previous[pair_index + 1] if pair_index + 1 < len(previous) else None
+            first_label = f"胜者 {bracket_match_number(first)}"
+            second_label = f"胜者 {bracket_match_number(second)}" if second else "待定"
+            generated.append(placeholder_bracket_node(next_number, first_label, second_label, key))
+            next_number += 1
+        display[key] = generated
+    return display
+
+
+def bracket_score_tabs_html(node: dict[str, Any]) -> str:
+    options = ordered_score_options(node.get("score_options") or [])
+    if len(options) < 3:
+        return '<div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>'
+    return f'<div class="bracket-mini-title">前3预测比分</div>{mini_score_tabs_html(options)}'
+
+
+def bracket_structure_node_html(node: dict[str, Any], round_key: str) -> str:
+    teams = node.get("teams") or {}
+    home_name = bracket_team_label(teams.get("home"))
+    away_name = bracket_team_label(teams.get("away"))
+    current = bool(node.get("current_window"))
+    placeholder = bool(node.get("placeholder"))
+    classes = ["bracket-node", f"round-{round_key}"]
+    if current:
+        classes.append("current-window")
+    if placeholder:
+        classes.append("placeholder")
+    badge = '<span class="window-badge">当前窗口</span>' if current else ""
+    match_no = bracket_match_number(node)
+    return f"""
+      <article class="{' '.join(classes)}" data-match-id="{html_escape(node.get('match_id', ''))}">
+        <span class="bracket-match-number">{html_escape(match_no)}</span>
+        <div class="bracket-node-card">
+          <div class="bracket-node-top"><span>{html_escape(match_no)}</span>{badge}</div>
+          <strong>{html_escape(home_name)}<em>vs</em>{html_escape(away_name)}</strong>
+          <time>{html_escape(bracket_node_time(node))}</time>
+          {bracket_score_tabs_html(node)}
+          <div class="bracket-wdl-mini">{bracket_wdl_html(node)}</div>
+        </div>
+      </article>
+    """
+
+
 def bracket_structure_html(structure: dict[str, Any]) -> str:
     labels = {
         "round_of_32": "32强",
@@ -1654,21 +1785,35 @@ def bracket_structure_html(structure: dict[str, Any]) -> str:
         "semi_finals": "4强",
         "final": "决赛",
     }
-    bracket = structure.get("bracket") or {}
+    raw_bracket = structure.get("bracket") or {}
+    bracket = bracket_with_placeholders(raw_bracket)
     rounds = []
     for key, label in labels.items():
-        nodes = "".join(structure_match_node_html(node) for node in bracket.get(key, []) if isinstance(node, dict))
+        nodes = "".join(bracket_structure_node_html(node, key) for node in bracket.get(key, []) if isinstance(node, dict))
         if not nodes:
             nodes = '<div class="structure-empty">待定</div>'
         rounds.append(
             f"""
-        <section class="bracket-round">
+        <section class="bracket-round bracket-round-{key}">
           <h3>{label}</h3>
           <div class="bracket-node-list">{nodes}</div>
         </section>
             """
         )
-    return f'<div class="bracket-grid">{"".join(rounds)}</div>'
+    return f"""
+      <div class="bracket-shell">
+        <div class="bracket-stage-labels">{' '.join(f'<span>{label}</span>' for label in labels.values())}</div>
+        <div class="bracket-board">
+          <div class="bracket-grid">{''.join(rounds)}</div>
+        </div>
+        <div class="bracket-legend">
+          <span><i class="dot home"></i>胜率高</span>
+          <span><i class="dot draw"></i>平局倾向</span>
+          <span><i class="dot away"></i>负率高</span>
+          <span class="current-window-key">当前窗口：当前和下一个中国比赛日</span>
+        </div>
+      </div>
+    """
 
 
 def tournament_structure_html(payload: dict[str, Any]) -> str:
@@ -1941,6 +2086,16 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     summary = analysis.get("summary") or "V3 Agent 使用 FIFA 官方赛程作为主源，ESPN 完成第二来源校验和赔率读取，伤停信息按官方/媒体/unknown 规则展示。"
     risk_overview = analysis.get("risk_overview") or "整体风险以赛程真实性、伤停可信度、赔率可用性和模型置信度共同评估。"
     range_text = display_range_text(payload, matches)
+    structure = payload.get("tournament_structure") if isinstance(payload.get("tournament_structure"), dict) else {}
+    stage_label = "淘汰赛" if structure.get("stage") == "knockout" else "小组赛"
+    if structure.get("stage") == "knockout":
+        structure_count = sum(len(items or []) for items in (structure.get("bracket") or {}).values())
+    else:
+        structure_count = 0
+        for group in structure.get("groups") or []:
+            for day in group.get("match_days") or []:
+                structure_count += len(day.get("matches") or [])
+    total_count_label = structure_count or len(matches)
     structure_section = tournament_structure_html(payload)
     group_sections = []
     for info, items in groups:
@@ -2011,13 +2166,13 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     }}
     a {{ color: var(--blue); text-decoration: none; font-weight: 700; transition: color .18s ease, text-shadow .18s ease; }}
     a:hover {{ color: #91c4ff; text-shadow: 0 0 16px rgba(102, 170, 255, .45); }}
-    .page {{ width: min(980px, calc(100% - 28px)); margin: 0 auto; padding: 28px 0 44px; }}
+    .page {{ width: min(1180px, calc(100% - 28px)); margin: 0 auto; padding: 22px 0 44px; }}
     .night-card {{
       position: relative;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background: linear-gradient(145deg, rgba(31, 46, 66, .96), rgba(24, 35, 51, .96));
-      box-shadow: var(--shadow), inset 0 1px 0 rgba(255,255,255,.04);
+      border: 1px solid rgba(0, 174, 255, .36);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(5, 18, 31, .96), rgba(10, 27, 43, .95));
+      box-shadow: 0 22px 60px rgba(0, 0, 0, .52), inset 0 1px 0 rgba(255,255,255,.05);
       overflow: hidden;
     }}
     .night-card::before {{
@@ -2025,36 +2180,59 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
       position: absolute;
       inset: 0;
       pointer-events: none;
-      background: linear-gradient(120deg, rgba(86, 169, 255, .18), transparent 36%, rgba(43, 209, 111, .08));
-      opacity: .55;
+      background:
+        radial-gradient(circle at 91% 8%, rgba(0, 170, 255, .26), transparent 24%),
+        linear-gradient(120deg, rgba(0, 174, 255, .12), transparent 40%, rgba(246, 189, 39, .05));
+      opacity: .9;
     }}
     .hero {{
-      padding: 30px;
-      margin-bottom: 24px;
+      padding: 20px 22px 18px;
+      margin-bottom: 16px;
+      border-color: rgba(0, 174, 255, .62);
+      background: linear-gradient(140deg, rgba(3, 12, 23, .98), rgba(8, 35, 61, .94));
     }}
     .hero > * {{ position: relative; z-index: 1; }}
-    .hero h1 {{ margin: 0 0 18px; font-size: clamp(30px, 7vw, 46px); line-height: 1.08; font-weight: 850; }}
+    .hero h1 {{ display: flex; align-items: center; gap: 14px; margin: 0 0 14px; font-size: clamp(28px, 4.2vw, 44px); line-height: 1.08; font-weight: 900; text-shadow: 0 0 22px rgba(0, 174, 255, .2); }}
+    .hero-ball {{
+      display: inline-grid;
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 217, 255, .62);
+      background: radial-gradient(circle at 35% 30%, rgba(120, 235, 255, .95), rgba(0, 112, 205, .86) 52%, rgba(0, 27, 58, .96));
+      box-shadow: 0 0 22px rgba(0, 217, 255, .42), inset 0 0 16px rgba(255,255,255,.16);
+      font-size: 28px;
+      flex: 0 0 auto;
+    }}
     .range-pill {{
       display: inline-flex;
       align-items: center;
       max-width: 100%;
-      min-height: 40px;
-      padding: 0 18px;
+      min-height: 32px;
+      padding: 0 14px;
       border-radius: 999px;
-      background: rgba(246, 189, 39, .13);
+      background: rgba(246, 189, 39, .14);
       color: #ffdb54;
-      border: 1px solid rgba(246, 189, 39, .28);
-      font-weight: 800;
+      border: 1px solid rgba(246, 189, 39, .34);
+      font-weight: 850;
       overflow-wrap: anywhere;
     }}
     .hero-meta {{
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px 22px;
-      margin: 26px 0 0;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      margin: 16px 0 0;
+      border: 1px solid rgba(104, 190, 255, .18);
+      border-radius: 12px;
+      background: rgba(2, 12, 23, .32);
+      overflow: hidden;
     }}
-    .hero-meta div {{ color: var(--muted); line-height: 1.55; min-width: 0; overflow-wrap: anywhere; }}
-    .hero-meta strong {{ display: block; color: var(--text); font-weight: 780; }}
+    .hero-meta div {{ min-width: 0; padding: 15px 18px; color: var(--muted); line-height: 1.45; border-right: 1px solid rgba(104, 190, 255, .14); border-bottom: 1px solid rgba(104, 190, 255, .12); overflow-wrap: anywhere; }}
+    .hero-meta div:nth-child(3n) {{ border-right: 0; }}
+    .hero-meta div:nth-last-child(-n+3) {{ border-bottom: 0; }}
+    .hero-meta strong {{ display: block; margin-top: 4px; color: var(--text); font-size: 18px; font-weight: 760; }}
+    .hero-meta .meta-icon {{ color: #8feaff; margin-right: 7px; text-shadow: 0 0 12px rgba(0, 217, 255, .36); }}
     .overview {{
       padding: 24px;
       margin-bottom: 24px;
@@ -2098,10 +2276,11 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
       margin-bottom: 28px;
     }}
     .legend span {{ position: relative; z-index: 1; color: var(--muted); font-weight: 700; }}
-    .tournament-panel {{ padding: 22px; margin-bottom: 26px; border-color: rgba(83, 171, 255, .26); }}
-    .structure-title-row {{ position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px; align-items: end; margin-bottom: 18px; }}
-    .structure-title-row h2 {{ margin: 0 0 8px; font-size: 24px; color: #66d9ff; }}
-    .structure-count {{ border: 1px solid rgba(83, 171, 255, .34); border-radius: 999px; padding: 8px 14px; color: #9bdcff; background: rgba(83, 171, 255, .1); font-weight: 850; white-space: nowrap; }}
+    .tournament-panel {{ padding: 16px; margin-bottom: 16px; border-color: rgba(0, 174, 255, .58); background: linear-gradient(145deg, rgba(2, 12, 23, .98), rgba(5, 25, 41, .96)); }}
+    .structure-title-row {{ position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px; align-items: start; margin-bottom: 12px; }}
+    .structure-title-row h2 {{ margin: 0 0 8px; font-size: 26px; color: #eaf8ff; text-shadow: 0 0 16px rgba(0, 217, 255, .26); }}
+    .structure-title-row h2::before {{ content: "⌗"; color: #15d9ff; margin-right: 10px; }}
+    .structure-count {{ border: 1px solid rgba(0, 217, 255, .42); border-radius: 999px; padding: 8px 14px; color: #9beeff; background: rgba(0, 174, 255, .11); font-weight: 850; white-space: nowrap; box-shadow: 0 0 18px rgba(0, 174, 255, .12); }}
     .structure-group {{ position: relative; z-index: 1; border: 1px solid rgba(104, 136, 174, .24); border-radius: 16px; background: rgba(12, 20, 31, .38); padding: 12px; margin-top: 12px; }}
     .structure-group summary {{ cursor: pointer; color: #ffd64a; font-size: 18px; font-weight: 850; list-style-position: inside; }}
     .structure-day {{ margin-top: 14px; border-top: 1px solid rgba(104, 136, 174, .18); padding-top: 12px; }}
@@ -2123,11 +2302,47 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     .mini-score-tabs {{ display: flex; flex-wrap: wrap; gap: 6px; }}
     .mini-score-tab {{ border: 1px solid rgba(83, 171, 255, .34); border-radius: 999px; padding: 6px 9px; color: #bed8f6; background: rgba(12, 20, 31, .72); font-size: 12px; font-weight: 850; }}
     .mini-score-tab.active {{ border-color: rgba(246, 189, 39, .65); color: #ffe184; background: rgba(246, 189, 39, .16); box-shadow: 0 0 14px rgba(246, 189, 39, .14); }}
-    .bracket-grid {{ position: relative; z-index: 1; display: grid; grid-template-columns: repeat(5, minmax(170px, 1fr)); gap: 12px; overflow-x: auto; padding-bottom: 4px; }}
-    .bracket-round {{ min-width: 170px; border-left: 1px solid rgba(83, 171, 255, .24); padding-left: 10px; }}
-    .bracket-round h3 {{ margin: 0 0 10px; color: #ffd64a; font-size: 16px; }}
-    .bracket-node-list {{ display: grid; gap: 10px; }}
-    .structure-empty {{ border: 1px dashed rgba(104, 136, 174, .26); border-radius: 14px; background: rgba(12, 20, 31, .35); padding: 12px; color: var(--muted); font-size: 13px; }}    .dot {{
+    .bracket-shell {{ position: relative; z-index: 1; }}
+    .bracket-stage-labels {{ display: none; }}
+    .bracket-board {{ position: relative; overflow-x: auto; border: 1px solid rgba(104, 190, 255, .18); border-radius: 14px; background: linear-gradient(90deg, rgba(5, 20, 33, .82), rgba(1, 10, 19, .68)); box-shadow: inset 0 0 42px rgba(0, 174, 255, .07); }}
+    .bracket-grid {{ position: relative; z-index: 1; display: grid; grid-template-columns: repeat(5, minmax(190px, 1fr)); gap: 18px; min-width: 1080px; padding: 14px 12px 18px; }}
+    .bracket-round {{ position: relative; min-width: 190px; display: flex; flex-direction: column; border-left: 1px solid rgba(0, 174, 255, .14); padding-left: 10px; }}
+    .bracket-round:first-child {{ border-left: 0; padding-left: 0; }}
+    .bracket-round h3 {{ margin: 0 0 12px; color: #a8bbd4; font-size: 17px; font-weight: 780; text-align: center; }}
+    .bracket-node-list {{ flex: 1; display: flex; flex-direction: column; gap: 12px; min-height: 860px; }}
+    .bracket-round-round_of_16 .bracket-node-list, .bracket-round-quarter_finals .bracket-node-list, .bracket-round-semi_finals .bracket-node-list, .bracket-round-final .bracket-node-list {{ justify-content: space-around; }}
+    .bracket-node {{ position: relative; min-height: 132px; padding-left: 34px; transition: transform .18s ease; }}
+    .bracket-node:hover {{ transform: translateY(-2px); }}
+    .bracket-node:not(.round-final)::after {{ content: ""; position: absolute; right: -18px; top: 50%; width: 18px; height: 2px; background: linear-gradient(90deg, rgba(0, 217, 255, .88), rgba(0, 217, 255, .2)); box-shadow: 0 0 12px rgba(0, 217, 255, .45); }}
+    .bracket-match-number {{ position: absolute; left: 0; top: 50%; transform: translateY(-50%); color: #9fb5cf; font-size: 13px; font-weight: 850; }}
+    .bracket-node-card {{ position: relative; min-height: 132px; border: 1px solid rgba(104, 190, 255, .42); border-radius: 10px; background: linear-gradient(180deg, rgba(8, 23, 38, .94), rgba(3, 14, 25, .92)); padding: 10px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.02); transition: border-color .18s ease, box-shadow .18s ease, background .18s ease; }}
+    .bracket-node:hover .bracket-node-card {{ border-color: rgba(0, 217, 255, .7); box-shadow: 0 0 18px rgba(0, 217, 255, .16), inset 0 0 0 1px rgba(255,255,255,.04); }}
+    .bracket-node.current-window .bracket-node-card {{ border-color: #12dcff; background: linear-gradient(180deg, rgba(9, 44, 67, .96), rgba(3, 20, 34, .95)); box-shadow: 0 0 24px rgba(0, 217, 255, .48), inset 0 0 18px rgba(0, 217, 255, .1); }}
+    .bracket-node.placeholder .bracket-node-card {{ border-color: rgba(104, 190, 255, .28); background: rgba(7, 20, 33, .68); }}
+    .bracket-node-top {{ display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 22px; color: #91a8c2; font-size: 12px; font-weight: 850; }}
+    .bracket-node-card strong {{ display: grid; gap: 3px; margin-top: 5px; color: #edf7ff; font-size: 16px; line-height: 1.22; text-align: center; overflow-wrap: anywhere; }}
+    .bracket-node-card strong em {{ color: #9fb5cf; font-style: normal; font-size: 12px; font-weight: 700; }}
+    .bracket-node-card time {{ display: block; margin-top: 5px; color: #a8bbd4; font-size: 13px; text-align: center; }}
+    .bracket-mini-title {{ display: flex; align-items: center; gap: 8px; margin: 8px 0 6px; color: #a8bbd4; font-size: 12px; text-align: center; }}
+    .bracket-mini-title::before, .bracket-mini-title::after {{ content: ""; flex: 1; height: 1px; background: rgba(104, 190, 255, .34); }}
+    .bracket-node-card .mini-score-wrap {{ margin-top: 0; }}
+    .bracket-node-card .mini-score-wrap > span {{ display: none; }}
+    .bracket-node-card .mini-score-tabs {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }}
+    .bracket-node-card .mini-score-tab {{ display: grid; place-items: center; min-height: 46px; border-radius: 7px; padding: 5px; text-align: center; font-size: 11px; line-height: 1.15; }}
+    .bracket-node-card .mini-score-tab b {{ display: block; margin-top: 3px; color: #edf7ff; font-size: 18px; }}
+    .bracket-node-card .mini-score-tab.active {{ border-color: rgba(246, 189, 39, .82); color: #ffd64a; box-shadow: 0 0 14px rgba(246, 189, 39, .22); }}
+    .bracket-node-divider {{ height: 1px; margin: 10px 0 8px; background: linear-gradient(90deg, transparent, rgba(104, 190, 255, .32), transparent); }}
+    .bracket-node-pending {{ display: grid; place-items: center; min-height: 46px; border: 1px dashed rgba(104, 190, 255, .28); border-radius: 8px; color: #a8bbd4; background: rgba(4, 14, 24, .55); }}
+    .bracket-wdl-mini {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; margin-top: 7px; font-size: 12px; font-weight: 850; text-align: center; }}
+    .bracket-wdl-mini span.home {{ color: var(--green); }}
+    .bracket-wdl-mini span.draw {{ color: var(--yellow); }}
+    .bracket-wdl-mini span.away {{ color: var(--red); }}
+    .bracket-status {{ grid-column: 1 / -1; color: #a8bbd4; font-weight: 700; }}
+    .bracket-legend {{ display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-top: 9px; padding: 0 4px; color: #9fb5cf; font-size: 13px; }}
+    .bracket-legend span {{ display: inline-flex; align-items: center; }}
+    .current-window-key {{ margin-left: auto; border: 1px solid rgba(0, 174, 255, .32); border-radius: 999px; padding: 4px 10px; color: #8feaff; background: rgba(0, 174, 255, .1); }}
+    .structure-empty {{ border: 1px dashed rgba(104, 136, 174, .26); border-radius: 14px; background: rgba(12, 20, 31, .35); padding: 12px; color: var(--muted); font-size: 13px; }}
+    .dot {{
       display: inline-block;
       width: 11px;
       height: 11px;
@@ -2252,7 +2467,8 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     .score-tab-panel {{ display: none; margin-top: 10px; border: 1px solid rgba(104, 136, 174, .24); border-radius: 14px; background: rgba(12, 20, 31, .5); padding: 12px; }}
     .score-tab-panel.active {{ display: block; }}
     .score-tab-panel h5 {{ margin: 0 0 7px; color: var(--text); font-size: 14px; }}
-    .score-tab-panel p {{ margin: 0; color: #d8deea; font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }}    .factor-panel {{ color: var(--muted); }}
+    .score-tab-panel p {{ margin: 0; color: #d8deea; font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }}
+    .factor-panel {{ color: var(--muted); }}
     .factor-panel summary {{
       cursor: pointer;
       color: #ffd64a;
@@ -2350,8 +2566,12 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     }}
     @media (max-width: 760px) {{
       .page {{ width: min(100% - 24px, 640px); padding-top: 18px; }}
-      .hero, .overview, .usage-panel, .match-card {{ border-radius: 20px; padding: 20px; }}
+      .hero, .overview, .usage-panel, .tournament-panel, .match-card {{ border-radius: 18px; padding: 16px; }}
       .hero-meta, .usage-grid, .metric-grid, .score-tab-labels, .factor-grid, .graph-summary-grid, .graph-node-grid, .structure-title-row, .structure-node-grid {{ grid-template-columns: 1fr 1fr; }}
+      .hero-meta div:nth-child(3n) {{ border-right: 1px solid rgba(104, 190, 255, .14); }}
+      .hero-meta div:nth-child(2n) {{ border-right: 0; }}
+      .hero-meta div:nth-last-child(-n+3) {{ border-bottom: 1px solid rgba(104, 190, 255, .12); }}
+      .hero-meta div:nth-last-child(-n+2) {{ border-bottom: 0; }}
       .section-head, .match-topline {{ display: block; }}
       .day-count {{ display: inline-flex; margin-top: 12px; }}
       .match-topline time {{ display: inline-flex; margin-top: 12px; white-space: normal; }}
@@ -2362,6 +2582,9 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     }}
     @media (max-width: 460px) {{
       .hero-meta, .usage-grid, .metric-grid, .score-tab-labels, .factor-grid, .graph-summary-grid, .graph-node-grid, .structure-title-row, .structure-node-grid {{ grid-template-columns: 1fr; }}
+      .hero-meta div, .hero-meta div:nth-child(2n), .hero-meta div:nth-child(3n) {{ border-right: 0; }}
+      .hero-meta div, .hero-meta div:nth-last-child(-n+2), .hero-meta div:nth-last-child(-n+3) {{ border-bottom: 1px solid rgba(104, 190, 255, .12); }}
+      .hero-meta div:last-child {{ border-bottom: 0; }}
       .prob-labels {{ grid-template-columns: 1fr; gap: 6px; }}
       .prob-labels span, .prob-labels span:nth-child(2), .prob-labels span:nth-child(3) {{ text-align: left; }}
     }}
@@ -2370,20 +2593,19 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
 <body class="night-shell">
   <main class="page">
     <header class="hero night-card">
-      <h1>2026 世界杯 · 预测分析</h1>
+      <h1><span class="hero-ball">⚽</span><span>2026 世界杯 · 预测分析</span></h1>
       <span class="range-pill">{html_escape(range_text)}</span>
       <div class="hero-meta">
-        <div>生成时间<strong>{html_escape(generated_display)}</strong></div>
-        <div>总比赛场次<strong>{len(matches)} 场</strong></div>
-        <div>分析模型<strong>{ANALYSIS_MODEL}</strong></div>
-        <div>生成模型<strong>{RENDER_MODEL}</strong></div>
+        <div><span class="meta-icon">▦</span>比赛阶段<strong>{html_escape(stage_label)}</strong></div>
+        <div><span class="meta-icon">◷</span>生成时间<strong>{html_escape(generated_display)}</strong></div>
+        <div><span class="meta-icon">◎</span>总比赛场次<strong>{total_count_label} 场</strong></div>
+        <div><span class="meta-icon">◇</span>分析模型<strong>{ANALYSIS_MODEL}</strong></div>
+        <div><span class="meta-icon">⬡</span>渲染模型<strong>{RENDER_MODEL}</strong></div>
+        <div><span class="meta-icon">▥</span>数据来源<strong>FIFA + ESPN + DeepSeek</strong></div>
       </div>
     </header>
 
-    <section class="overview night-card">
-      <h2>总览</h2>
-      <p>{html_escape(summary)}</p>
-    </section>
+    {structure_section}
 
     <section class="usage-panel night-card">
       <h2>Token / Cost</h2>
@@ -2393,6 +2615,11 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
         <div class="usage-card total"><span>总 TOKEN</span><strong>{usage.get("total_tokens", 0)}</strong></div>
         <div class="usage-card cost"><span>预计成本</span><strong>{float(usage.get("cost_estimate", 0)):.6f}</strong></div>
       </div>
+    </section>
+
+    <section class="overview night-card">
+      <h2>总览</h2>
+      <p>{html_escape(summary)}</p>
     </section>
 
     <section class="overview night-card">
@@ -2407,7 +2634,6 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
       <span>置信度：高 / 中 / 低</span>
       <span><a href="latest.json">查看 data/latest.json</a></span>
     </section>
-    {structure_section}
     {''.join(group_sections)}
     <footer class="page-footer">
       V3 Agent：FIFA 官方赛程为主源，ESPN 用于第二来源校验和赔率；伤停无可靠来源时显示 unknown，赔率无真实源时显示 unavailable。所有可见比赛时间均为北京时间，比赛日按 18:00 至次日 18:00 划分。

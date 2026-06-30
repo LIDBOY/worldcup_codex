@@ -316,6 +316,9 @@ def validate_tournament_structure(data: dict[str, Any], matches: Any, render: An
             for label in BRACKET_LABELS:
                 if label not in render:
                     errors.append(f"render must include knockout round label {label}")
+            for fragment in ("bracket-board", "bracket-node-card", "bracket-match-number", "current-window-key"):
+                if fragment not in render:
+                    errors.append(f"render must include knockout bracket UI fragment {fragment}")
         for fragment in ("当前窗口", "前3预测比分", "主推荐", "Top 2", "Top 3"):
             if fragment not in render:
                 errors.append(f"render must include tournament structure score tab fragment {fragment}")
