@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
   "stage": "analysis",
-  "generated_at": "2026-06-29T14:55:00Z",
+  "generated_at": "2026-06-30T01:24:50Z",
   "analysis": {
-    "generated_at": "2026-06-29T14:51:24Z",
-    "summary": "2026年世界杯1/16决赛日分析，涵盖6月29日至7月1日共6场比赛。巴西、德国、法国等传统强队对阵实力稍逊的对手，被普遍看好晋级；荷兰与摩洛哥、科特迪瓦与挪威、墨西哥与厄瓜多尔则呈现均势或小优格局，淘汰赛变数较大。伤病情报部分来源混杂，需谨慎看待。",
+    "generated_at": "2026-06-30T01:17:04Z",
+    "summary": "本次分析覆盖6月29日至6月30日比赛日内的六场世界杯淘汰赛。巴西2-1绝杀日本，德国点球大战遭巴拉圭淘汰，荷兰对摩洛哥状态不明，科特迪瓦迎战挪威，法国对阵瑞典，墨西哥与厄瓜多尔争锋。已结束比赛中巴西展现韧性，德国爆冷出局；未赛场次市场倾向挪威、法国、墨西哥，但需防范冷门。",
     "matches": [
       {
         "id": "400021516",
@@ -18,9 +18,9 @@
         "group": "",
         "match_number": 76,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -60,52 +60,51 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-135",
-            "draw": "+265",
-            "away": "+400"
-          },
-          "implied_probability": {
-            "home_win": 57.45,
-            "draw": 27.4,
-            "away_win": 20.0
-          },
-          "normalized_probability": {
-            "home_win": 54.79,
-            "draw": 26.13,
-            "away_win": 19.08
-          },
-          "overround": 4.84,
-          "details": "BRA -135"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "巴西",
             "team_en": "Brazil",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+                "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+                "published": "2026-06-29T19:35:54Z",
+                "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "日本",
             "team_en": "Japan",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+                "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+                "published": "2026-06-29T19:35:54Z",
+                "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         },
         "match_id": "400021516",
         "win_draw_loss": {
-          "home_win": 60,
-          "draw": 25,
-          "away_win": 15
+          "home_win": 100,
+          "draw": 0,
+          "away_win": 0
         },
         "xg_prediction": {
-          "home": 2.0,
-          "away": 1.0
+          "home": 1.8,
+          "away": 0.9
         },
         "predicted_score": {
           "home": 2,
@@ -115,28 +114,28 @@
           {
             "score": "2-1",
             "rank": 1,
-            "reason": "巴西进攻火力强劲，日本韧性防守或有破门。"
+            "reason": "实际赛果：马丁内利96分钟绝杀，巴西逆转胜"
           },
           {
             "score": "1-0",
             "rank": 2,
-            "reason": "巴西控制局面小胜，日本反击效率不足。"
+            "reason": "巴西控场但久攻不下，若早进球可能小胜"
           },
           {
-            "score": "3-1",
+            "score": "2-0",
             "rank": 3,
-            "reason": "巴西多点开花，日本定位球追回一球。"
+            "reason": "日本若无法破门，巴西可能零封"
           }
         ],
         "method_factors": {
-          "market_signal": "市场浅盘示好巴西，主胜赔率-135隐含概率约55%。",
-          "fifa_rank_prior": "巴西长期顶级强队，日本亚洲技术流代表，历史交锋巴西占优。",
-          "recent_form": "近期表现未知，参考市场预期。",
-          "group_context": "1/16决赛单场淘汰制，双方需全力争胜。",
-          "injury_rotation": "双方伤病情况未知，阵容预期完整。",
-          "weather_venue": "休斯顿六月傍晚炎热潮湿，对体能要求高。",
-          "tactical_key": "巴西边路个人能力冲击日本防线，日本依赖守转攻速度。",
-          "uncertainty": "日本具备爆冷潜质，但市场暂无明确信号。"
+          "market_signal": "赔率不可用",
+          "fifa_rank_prior": "巴西长期实力远高日本，传统强队底蕴深厚",
+          "recent_form": "巴西攻击线天赋溢出，日本防守顽强但终被突破",
+          "group_context": "淘汰赛首轮，双方全力出击",
+          "injury_rotation": "双方均有疑似伤员，巴西进攻核心轻伤不影响整体",
+          "weather_venue": "未知",
+          "tactical_key": "巴西边路爆破 vs 日本密集防守，定位球与个人能力决胜",
+          "uncertainty": "比赛已结束，无不确定性"
         },
         "matchup_graph": {
           "nodes": [
@@ -145,40 +144,40 @@
               "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 88,
-              "note": "巴西锋线个人能力突出，边中结合渗透力强。"
+              "weight": 85,
+              "note": "巴西前场天赋高，马丁内利、维尼修斯等突破犀利"
             },
             {
               "id": "home_midfield",
               "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 82,
-              "note": "巴西控制与创造力兼具，转换速率快。"
+              "weight": 80,
+              "note": "中场控制力强，由攻转守速度快"
             },
             {
               "id": "home_defense",
               "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 75,
-              "note": "巴西防线偶尔走神，但整体稳固。"
+              "weight": 65,
+              "note": "防线偶有漏洞，但整体稳固"
             },
             {
               "id": "away_attack",
               "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 72,
-              "note": "日本反击速度及配合默契，但终结能力偏弱。"
+              "weight": 70,
+              "note": "日本快速反击和团队配合有威胁"
             },
             {
               "id": "away_midfield",
               "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 68,
-              "note": "日本中场串联较好，但对抗硬度不足。"
+              "weight": 75,
+              "note": "中场组织有序，但对抗能力偏弱"
             },
             {
               "id": "away_defense",
@@ -186,62 +185,62 @@
               "type": "team_phase",
               "side": "away",
               "weight": 70,
-              "note": "日本整体防守纪律强，但个体差距可能被突破。"
+              "note": "防守纪律性强，但最后时刻注意力下降"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "巴西强侧爆破",
+              "label": "巴西边路强攻日本肋部",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "巴西边路突破能力对日本边卫压力极大。"
+              "note": "日本左路防守被多次冲击，导致丢球"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "日本快速转换",
+              "label": "日本反击穿透巴西中场",
               "impact": "medium",
               "direction": "away_to_home",
-              "note": "日本由守转攻瞬间提速，可能利用巴西压上后的空当。"
+              "note": "日本利用快速传递制造进球"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "控球权争夺",
+              "label": "中场控制权争夺",
               "impact": "high",
               "direction": "balanced",
-              "note": "巴西技术优势明显，日本需通过整体跑动弥补。"
+              "note": "巴西中场压制，但日本局部逼抢有效"
             }
           ],
-          "summary": "巴西在进攻端具有明显强点，中场控制力占优，但日本反击及定位球可能制造威胁。",
+          "summary": "巴西进攻端碾压式优势，日本防守坚韧但无法全场坚守，个人能力决定比赛。",
           "advantage_side": "home",
-          "key_battle": "巴西边锋 vs 日本边后卫",
-          "risk_trigger": "若巴西久攻不下，日本反击效率可能成为胜负手。"
+          "key_battle": "巴西边锋 vs 日本右后卫",
+          "risk_trigger": "日本早早进球可能改变局势，但实力差距未动摇"
         },
-        "tactical_matchup": "巴西主导控球，利用边路个人能力撕扯日本防线；日本放弃控球深度防守，依靠三笘薰等突击手打巴西身后。",
+        "tactical_matchup": "巴西4-1-2-3阵型两翼齐飞，日本3-4-3防守反击，边路攻防定生死。",
         "injury_adjustment": {
-          "home": "未知",
-          "away": "未知",
-          "summary": "双方暂无重大伤病报告。"
+          "home": "疑似伤病影响轮换，但主力尚在",
+          "away": "疑似伤病削弱防守深度",
+          "summary": "双方均有轻伤，未改变核心战力"
         },
-        "risk_analysis": "市场过于集中巴西方向，但实际优势并非绝对碾压，日本具备守平甚至爆冷可能。",
-        "upset_probability": 25,
+        "risk_analysis": "巴西胜过程惊险，日本展现顽强但实力不足，无冷门产生。",
+        "upset_probability": 0,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 54.79,
-            "draw": 26.13,
-            "away_win": 19.08
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
           "model_edge": {
-            "home_win": 60,
-            "draw": 25,
-            "away_win": 15
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
-          "deviation_analysis": "模型更看好巴西主胜，比市场隐含概率高出约5个百分点，认为市场对平局和客胜定价略显慷慨。"
+          "deviation_analysis": "赔率数据不可用，无法比较"
         },
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "id": "400021513",
@@ -255,9 +254,9 @@
         "group": "",
         "match_number": 74,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 2
         },
         "teams": {
           "home": {
@@ -297,26 +296,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-275",
-            "draw": "+400",
-            "away": "+800"
-          },
-          "implied_probability": {
-            "home_win": 73.33,
-            "draw": 20.0,
-            "away_win": 11.11
-          },
-          "normalized_probability": {
-            "home_win": 70.21,
-            "draw": 19.15,
-            "away_win": 10.64
-          },
-          "overround": 4.44,
-          "details": "GER -275"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -326,10 +308,24 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
-                "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-                "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-                "published": "2026-06-29T02:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
+                "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+                "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+                "published": "2026-06-30T00:39:30Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+                "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+                "published": "2026-06-30T00:06:01Z",
+                "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany dumped out of World Cup by Paraguay on penalties",
+                "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+                "published": "2026-06-30T00:42:38Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
               }
             ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -337,51 +333,73 @@
           "away": {
             "team": "巴拉圭",
             "team_en": "Paraguay",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+                "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+                "published": "2026-06-30T00:39:30Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+                "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+                "published": "2026-06-30T00:06:01Z",
+                "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany dumped out of World Cup by Paraguay on penalties",
+                "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+                "published": "2026-06-30T00:42:38Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         },
         "match_id": "400021513",
         "win_draw_loss": {
-          "home_win": 75,
-          "draw": 18,
-          "away_win": 7
+          "home_win": 0,
+          "draw": 100,
+          "away_win": 0
         },
         "xg_prediction": {
-          "home": 2.5,
-          "away": 0.5
+          "home": 1.2,
+          "away": 0.8
         },
         "predicted_score": {
-          "home": 3,
-          "away": 0
+          "home": 1,
+          "away": 1
         },
         "score_options": [
           {
-            "score": "3-0",
+            "score": "1-1",
             "rank": 1,
-            "reason": "德国实力碾压，巴拉圭难有还手之力。"
+            "reason": "实际赛果：90分钟平局，德国进球后巴拉圭顽强扳平"
           },
           {
-            "score": "2-0",
+            "score": "1-0",
             "rank": 2,
-            "reason": "德国控制节奏，两球完胜。"
+            "reason": "德国若早进球并加强控制，可能小胜"
           },
           {
-            "score": "4-0",
+            "score": "0-0",
             "rank": 3,
-            "reason": "德国状态火热，多点开花大胜。"
+            "reason": "双方进攻乏力时可能闷平"
           }
         ],
         "method_factors": {
-          "market_signal": "市场深盘示好德国，主胜赔率-275隐含概率超70%。",
-          "fifa_rank_prior": "德国传统豪强，巴拉圭南美二流，历史交锋德国占优。",
-          "recent_form": "近期表现未知，参考市场预期。",
-          "group_context": "1/16决赛单场淘汰制，德国不容有失。",
-          "injury_rotation": "德国有不确定伤情（来源混入澳大利亚球员新闻），影响未知；巴拉圭暂无伤情。",
-          "weather_venue": "波士顿六月晚间温和，对比赛有利。",
-          "tactical_key": "德国立体进攻打破巴拉圭密集防守，定位球优势。",
-          "uncertainty": "实力差距较大，爆冷概率极低。"
+          "market_signal": "赔率不可用",
+          "fifa_rank_prior": "德国历史上远强于巴拉圭，但近年实力下滑",
+          "recent_form": "德国进攻创造力不足，巴拉圭防守反击效率高",
+          "group_context": "淘汰赛首轮，德国压力巨大",
+          "injury_rotation": "双方均有疑似伤病，德国关键球员可能影响发挥",
+          "weather_venue": "未知",
+          "tactical_key": "德国控球压制 vs 巴拉圭密集防守，定位球成为破局手段",
+          "uncertainty": "比赛已结束，德国出局为巨大冷门"
         },
         "matchup_graph": {
           "nodes": [
@@ -390,101 +408,101 @@
               "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 90,
-              "note": "德国前场配置多样，冲击力十足。"
+              "weight": 75,
+              "note": "德国进攻转化率低，哈弗茨未达最佳状态"
             },
             {
               "id": "home_midfield",
               "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 85,
-              "note": "德国中场控制力和转换攻防节奏上佳。"
+              "weight": 80,
+              "note": "中场控制力仍强，但向前输送效率不高"
             },
             {
               "id": "home_defense",
               "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 80,
-              "note": "德国防线整体性强，高空球优势明显。"
+              "weight": 70,
+              "note": "诺伊尔神勇，但防线移动慢"
             },
             {
               "id": "away_attack",
               "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 55,
-              "note": "巴拉圭进攻手段单一，依赖反击和定位球。"
+              "weight": 65,
+              "note": "巴拉圭反击速度快，定位球有威胁"
             },
             {
               "id": "away_midfield",
               "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 50,
-              "note": "巴拉圭中场创造力不足，难与德国抗衡。"
+              "weight": 60,
+              "note": "中场防守硬度强，但组织能力一般"
             },
             {
               "id": "away_defense",
               "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 60,
-              "note": "巴拉圭防守硬朗，但连续受压易出错。"
+              "weight": 75,
+              "note": "密集防守体系成熟，韧性十足"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "德国高空轰炸",
+              "label": "德国强攻遭遇铁桶阵",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "德国传中及定位球将对巴拉圭防线形成碾压。"
-            },
-            {
-              "from": "home_midfield",
-              "to": "away_midfield",
-              "label": "中场绞杀",
-              "impact": "high",
-              "direction": "home_to_away",
-              "note": "德国中场将完全压制，切断巴拉圭出球路线。"
+              "note": "德国围攻难破密集，仅靠定位球得分"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "零散反击",
-              "impact": "low",
+              "label": "巴拉圭快速反击威胁",
+              "impact": "medium",
               "direction": "away_to_home",
-              "note": "巴拉圭零星反击难以穿透德国稳定防线。"
+              "note": "反击获点球扳平比分"
+            },
+            {
+              "from": "home_midfield",
+              "to": "away_midfield",
+              "label": "中场绞杀与失误",
+              "impact": "medium",
+              "direction": "balanced",
+              "note": "德国传球失误偏多，未能持续压迫"
             }
           ],
-          "summary": "德国全面占优，尤其进攻端对巴拉圭防守压力巨大，比赛悬念不大。",
-          "advantage_side": "home",
-          "key_battle": "德国前锋群 vs 巴拉圭后卫线",
-          "risk_trigger": "若德国情绪松懈，巴拉圭可能偷得定位球进球。"
+          "summary": "德国控球占优但效率低下，巴拉圭坚韧防守抓住有限机会，点球大战爆冷。",
+          "advantage_side": "balanced",
+          "key_battle": "德国中场创造力 vs 巴拉圭中场拦截",
+          "risk_trigger": "德国久攻不下情绪急躁，巴拉圭耐心等待机会"
         },
-        "tactical_matchup": "德国高压控球，边中结合，利用身体优势强行破局；巴拉圭全员退守，摆大巴寻求零星反击机会。",
+        "tactical_matchup": "德国4-2-3-1依赖个人能力，巴拉圭4-4-2收缩空间，反击成功战术。",
         "injury_adjustment": {
-          "home": "可能存在伤情，但来源混杂，影响不明",
-          "away": "未知",
-          "summary": "德国媒体伤情报导窜入澳大利亚球员信息，真实伤停待确认。"
+          "home": "疑似伤病可能影响中场活力和射手状态",
+          "away": "疑似伤病未动摇防守核心",
+          "summary": "德国伤病影响进攻流畅度，巴拉圭影响轻微"
         },
-        "risk_analysis": "实力悬殊，德国取胜悬念极小，但需关注可能的轮换或心态放松带来的小胜。",
-        "upset_probability": 8,
+        "risk_analysis": "德国出局为本届最大冷门，凸显其攻坚能力不足，巴拉圭创造历史。",
+        "upset_probability": 70,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 70.21,
-            "draw": 19.15,
-            "away_win": 10.64
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
           "model_edge": {
-            "home_win": 75,
-            "draw": 18,
-            "away_win": 7
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
-          "deviation_analysis": "模型与市场方向一致，更看好德国轻松获胜，客胜概率几乎为零。"
+          "deviation_analysis": "赔率数据不可用，但以实力差距，德国不胜属大冷"
         },
         "confidence": "high"
       },
@@ -500,7 +518,7 @@
         "group": "",
         "match_number": 75,
         "status": {
-          "match_status": 1,
+          "match_status": 3,
           "officiality_status": 0,
           "result_type": 0
         },
@@ -546,79 +564,102 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+130",
+            "home": "+145",
             "draw": "+210",
-            "away": "+250"
+            "away": "+230"
           },
           "implied_probability": {
-            "home_win": 43.48,
+            "home_win": 40.82,
             "draw": 32.26,
-            "away_win": 28.57
+            "away_win": 30.3
           },
           "normalized_probability": {
-            "home_win": 41.68,
-            "draw": 30.93,
-            "away_win": 27.39
+            "home_win": 39.48,
+            "draw": 31.2,
+            "away_win": 29.31
           },
-          "overround": 4.31,
-          "details": "NED +130"
+          "overround": 3.38,
+          "details": "NED +145"
         },
         "injuries": {
           "home": {
             "team": "荷兰",
             "team_en": "Netherlands",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+                "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+                "published": "2026-06-30T00:39:30Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "摩洛哥",
             "team_en": "Morocco",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Spain's plan for Austria simple: Get ball to Lamine Yamal",
+                "description": "Right-back Marcos Llorente said Spain are working hard to get the best out of star winger Lamine Yamal as they prepare to face Austria in the World Cup round of 32.",
+                "published": "2026-06-29T21:18:16Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49218747/spain-plan-austria-simple-get-ball-lamine-yamal"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+                "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+                "published": "2026-06-29T19:35:54Z",
+                "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         },
         "match_id": "400021522",
         "win_draw_loss": {
-          "home_win": 41,
+          "home_win": 40,
           "draw": 31,
-          "away_win": 28
+          "away_win": 29
         },
         "xg_prediction": {
-          "home": 1.5,
-          "away": 1.3
+          "home": 1.2,
+          "away": 0.9
         },
         "predicted_score": {
-          "home": 2,
+          "home": 1,
           "away": 1
         },
         "score_options": [
           {
-            "score": "2-1",
-            "rank": 1,
-            "reason": "荷兰进攻稍占优，摩洛哥防守顽强但难保不失。"
-          },
-          {
             "score": "1-1",
-            "rank": 2,
-            "reason": "双方实力接近，场面胶着可能握手言和。"
+            "rank": 1,
+            "reason": "双方防守稳固，进攻效率相似，平局概率高"
           },
           {
-            "score": "1-2",
+            "score": "1-0",
+            "rank": 2,
+            "reason": "荷兰若把握机会能力提升，可能小胜"
+          },
+          {
+            "score": "0-0",
             "rank": 3,
-            "reason": "摩洛哥反击高效，荷兰久攻不下遭反杀。"
+            "reason": "摩洛哥严密防守可能零封"
           }
         ],
         "method_factors": {
-          "market_signal": "市场平手盘倾向荷兰，主胜+130隐含概率42%，平局和客胜均有可观比例。",
-          "fifa_rank_prior": "荷兰传统强队但近年起伏，摩洛哥上届四强底蕴深厚。",
-          "recent_form": "近期表现未知，参考市场预期。",
-          "group_context": "1/16决赛单场淘汰制，双方谨慎开局。",
-          "injury_rotation": "双方伤病情况未知，阵容预期完整。",
-          "weather_venue": "蒙特雷六月夜间温和，对双方公平。",
-          "tactical_key": "荷兰控球冲击摩洛哥铁桶阵，摩洛哥扎稳篱笆抓转换。",
-          "uncertainty": "平局概率较大，比赛可能进入加时甚至点球。"
+          "market_signal": "赔率显示荷兰微热，但平局和客胜赔率相近，市场谨慎",
+          "fifa_rank_prior": "荷兰长期强队，摩洛哥上届四强，实力接近",
+          "recent_form": "荷兰攻击线效率一般，摩洛哥防守反击犀利",
+          "group_context": "淘汰赛首轮，状态成疑的比赛",
+          "injury_rotation": "双方均有疑似伤病，可能影响首发阵型",
+          "weather_venue": "未知",
+          "tactical_key": "荷兰3-4-3边路进攻 vs 摩洛哥4-2-3-1中路重兵",
+          "uncertainty": "比赛状态不明，若正常进行，平局概率不低"
         },
         "matchup_graph": {
           "nodes": [
@@ -627,40 +668,40 @@
               "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 78,
-              "note": "荷兰锋线支点与边路传中相结合。"
+              "weight": 75,
+              "note": "加克波领衔，边路速度优势"
             },
             {
               "id": "home_midfield",
               "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 75,
-              "note": "荷兰中场组织有序，但硬度一般。"
+              "weight": 80,
+              "note": "德容控制节奏，攻守转换衔接"
             },
             {
               "id": "home_defense",
               "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 76,
-              "note": "荷兰防线个人能力强，但转身速度有隐患。"
+              "weight": 75,
+              "note": "范戴克坐镇，防空能力顶级"
             },
             {
               "id": "away_attack",
               "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 73,
-              "note": "摩洛哥反击犀利，边路速度是利器。"
+              "weight": 70,
+              "note": "摩洛哥快速反击，齐耶赫组织"
             },
             {
               "id": "away_midfield",
               "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 72,
-              "note": "摩洛哥中场绞杀能力强，阿姆拉巴特扫荡关键。"
+              "weight": 75,
+              "note": "防守型中场硬朗，限制对手出球"
             },
             {
               "id": "away_defense",
@@ -668,62 +709,62 @@
               "type": "team_phase",
               "side": "away",
               "weight": 80,
-              "note": "摩洛哥防守体系成熟，极难被正面击破。"
+              "note": "阿什拉夫等回归，防线经验丰富"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "攻坚难题",
+              "label": "荷兰边路冲击摩洛哥铁卫",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "荷兰需破解摩洛哥低位密集防守，难度极大。"
+              "note": "加克波 vs 阿什拉夫成胜负手"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "转换杀机",
+              "label": "摩洛哥反击威胁荷兰身后",
               "impact": "medium",
               "direction": "away_to_home",
-              "note": "摩洛哥断球后快速推进，利用荷兰防线身后空间。"
+              "note": "范戴克需警惕长途奔袭"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场博弈",
+              "label": "中场控制权之战",
               "impact": "medium",
               "direction": "balanced",
-              "note": "荷兰传控遭遇摩洛哥高强度逼抢，中场控制权五五开。"
+              "note": "德容 vs 阿姆拉巴特，谁主导节奏"
             }
           ],
-          "summary": "荷兰进攻优势不明显，摩洛哥防守坚韧且反击致命，胜负天平微妙。",
+          "summary": "两队实力伯仲之间，边路对决和中场控制将决定走向，平局可能性大。",
           "advantage_side": "balanced",
-          "key_battle": "荷兰边路进攻 vs 摩洛哥边后卫防守",
-          "risk_trigger": "若摩洛哥率先破门，荷兰强攻可能露出更大空当。"
+          "key_battle": "加克波 vs 阿什拉夫",
+          "risk_trigger": "荷兰若久攻不下，摩洛哥反击得手概率增高"
         },
-        "tactical_matchup": "荷兰主导球权，寻求边路突破制造混乱；摩洛哥收缩阵型，依靠快速转换和定位球制造威胁。",
+        "tactical_matchup": "荷兰3-4-3两翼齐飞，摩洛哥4-2-3-1稳守快反，比赛可能陷入僵局。",
         "injury_adjustment": {
-          "home": "未知",
-          "away": "未知",
-          "summary": "双方暂无重大伤病报告。"
+          "home": "疑似伤病或影响锋线轮换",
+          "away": "疑似伤病或影响中场防守硬度",
+          "summary": "双方伤员不确定，可能改变比赛平衡"
         },
-        "risk_analysis": "市场均衡赔率显示本场不确定性极高，任何赛果均属正常，平局风险突出。",
+        "risk_analysis": "摩洛哥上届四强并非偶然，荷兰需防慢热，冷平风险存在。",
         "upset_probability": 35,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 41.68,
-            "draw": 30.93,
-            "away_win": 27.39
+            "home_win": 39.48,
+            "draw": 31.2,
+            "away_win": 29.31
           },
           "model_edge": {
-            "home_win": 41,
-            "draw": 31,
-            "away_win": 28
+            "home_win": 0.52,
+            "draw": -0.2,
+            "away_win": -0.31
           },
-          "deviation_analysis": "模型与市场几乎一致，略微提升平局和客胜可能，认为荷兰优势微弱。"
+          "deviation_analysis": "模型与市场基本一致，微调了平局略低，客胜稍高，但无显著偏差"
         },
-        "confidence": "low"
+        "confidence": "medium"
       },
       {
         "id": "400021514",
@@ -783,22 +824,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+265",
-            "draw": "+255",
-            "away": "+105"
+            "home": "+255",
+            "draw": "+245",
+            "away": "+110"
           },
           "implied_probability": {
-            "home_win": 27.4,
-            "draw": 28.17,
-            "away_win": 48.78
+            "home_win": 28.17,
+            "draw": 28.99,
+            "away_win": 47.62
           },
           "normalized_probability": {
-            "home_win": 26.26,
-            "draw": 27.0,
-            "away_win": 46.75
+            "home_win": 26.89,
+            "draw": 27.66,
+            "away_win": 45.45
           },
-          "overround": 4.35,
-          "details": "NOR +105"
+          "overround": 4.77,
+          "details": "NOR +110"
         },
         "injuries": {
           "home": {
@@ -811,16 +852,8 @@
           "away": {
             "team": "挪威",
             "team_en": "Norway",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-                "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-                "published": "2026-06-29T02:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         },
@@ -831,39 +864,39 @@
           "away_win": 45
         },
         "xg_prediction": {
-          "home": 1.2,
-          "away": 1.8
+          "home": 0.8,
+          "away": 1.5
         },
         "predicted_score": {
-          "home": 1,
+          "home": 0,
           "away": 2
         },
         "score_options": [
           {
-            "score": "1-2",
+            "score": "0-2",
             "rank": 1,
-            "reason": "挪威进攻锐利，科特迪瓦后防恐难招架。"
+            "reason": "挪威进攻火力强，科特迪瓦防守难以限制"
           },
           {
-            "score": "0-1",
+            "score": "1-2",
             "rank": 2,
-            "reason": "挪威小胜，科特迪瓦进攻乏力。"
+            "reason": "科特迪瓦可能利用身体优势抢下一球"
           },
           {
             "score": "1-1",
             "rank": 3,
-            "reason": "非洲球队硬朗防守逼平挪威。"
+            "reason": "若挪威久攻不下，科特迪瓦可守住平局"
           }
         ],
         "method_factors": {
-          "market_signal": "市场倾向于挪威，客胜赔率+105隐含概率47%，主胜26%。",
-          "fifa_rank_prior": "科特迪瓦非洲二线但人才不差，挪威拥有哈兰德等顶级攻击手。",
-          "recent_form": "近期表现未知，参考市场预期。",
-          "group_context": "1/16决赛单场淘汰制，挪威渴望走得更远。",
-          "injury_rotation": "挪威有不确定伤情（来源混入澳大利亚球员新闻），影响未知；科特迪瓦暂无伤情。",
-          "weather_venue": "达拉斯六月下午炎热，可能影响节奏。",
-          "tactical_key": "科特迪瓦依靠身体与速度，挪威依靠哈兰德终结能力。",
-          "uncertainty": "科特迪瓦具备爆冷实力，但市场看低其机会。"
+          "market_signal": "赔率明确倾向挪威，客胜赔率低至+110",
+          "fifa_rank_prior": "挪威有哈兰德等球星，科特迪瓦身体素质出色但整体略逊",
+          "recent_form": "挪威进攻端表现强势，科特迪瓦防守存隐患",
+          "group_context": "淘汰赛首轮，挪威寻求突破",
+          "injury_rotation": "伤病未知，假设双方主力齐整",
+          "weather_venue": "未知",
+          "tactical_key": "挪威快速传切找哈兰德 vs 科特迪瓦密集防守利用身体",
+          "uncertainty": "科特迪瓦身体对抗可能制造意外，但实力差距明显"
         },
         "matchup_graph": {
           "nodes": [
@@ -872,24 +905,24 @@
               "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 70,
-              "note": "科特迪瓦锋线速度冲劲足，但把握机会能力一般。"
+              "weight": 60,
+              "note": "科特迪瓦依赖个人能力，整体配合生疏"
             },
             {
               "id": "home_midfield",
               "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 65,
-              "note": "科特迪瓦中场硬度够，创造力有限。"
+              "weight": 55,
+              "note": "中场拦截尚可，但组织不力"
             },
             {
               "id": "home_defense",
               "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 66,
-              "note": "科特迪瓦防守侵略性强，但纪律性不足。"
+              "weight": 60,
+              "note": "盯人不严，易被速度击穿"
             },
             {
               "id": "away_attack",
@@ -897,76 +930,76 @@
               "type": "team_phase",
               "side": "away",
               "weight": 85,
-              "note": "挪威以哈兰德为核心，进攻效率极高。"
+              "note": "哈兰德终结能力超强，边路支援充足"
             },
             {
               "id": "away_midfield",
               "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 72,
-              "note": "挪威中场传控有序，过渡能力强。"
+              "weight": 75,
+              "note": "厄德高串联，节奏控制出色"
             },
             {
               "id": "away_defense",
               "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 68,
-              "note": "挪威防线稳定，但面对黑又硬冲击或有漏洞。"
+              "weight": 70,
+              "note": "防线稳固，但面对身体素质可能受压"
             }
           ],
           "edges": [
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "哈兰德冲击",
+              "label": "哈兰德冲击科特迪瓦防线",
               "impact": "high",
               "direction": "away_to_home",
-              "note": "哈兰德个人能力对科特迪瓦防线是巨大威胁。"
+              "note": "速度与力量结合，难以防范"
             },
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "速度突袭",
+              "label": "科特迪瓦高空球威胁",
               "impact": "medium",
               "direction": "home_to_away",
-              "note": "科特迪瓦边路快马可能冲击挪威防线身后。"
+              "note": "挪威需注意定位球防守"
             },
             {
-              "from": "home_midfield",
-              "to": "away_midfield",
-              "label": "中场争夺",
-              "impact": "low",
-              "direction": "balanced",
-              "note": "中场绞杀战，但挪威运转更流畅。"
+              "from": "away_midfield",
+              "to": "home_midfield",
+              "label": "中场技术碾压",
+              "impact": "high",
+              "direction": "away_to_home",
+              "note": "厄德高控制节奏，科特迪瓦难以抢断"
             }
           ],
-          "summary": "挪威进攻端优势明显，科特迪瓦虽有速度但整体实力逊色，客胜可期。",
+          "summary": "挪威实力占优，尤其进攻端压制明显，科特迪瓦需超常发挥才可守住。",
           "advantage_side": "away",
           "key_battle": "哈兰德 vs 科特迪瓦中卫",
-          "risk_trigger": "科特迪瓦若率先破门，将极大考验挪威攻坚能力。"
+          "risk_trigger": "科特迪瓦偷袭得手或挪威久攻不下时，平局可能增加"
         },
-        "tactical_matchup": "科特迪瓦主动收缩打反击，挪威控球耐心寻找哈兰德，通过传中和直塞破局。",
+        "tactical_matchup": "挪威4-3-3强攻，科特迪瓦5-4-1收缩，实力差距可能打破平衡。",
         "injury_adjustment": {
           "home": "未知",
-          "away": "可能存在伤情，但来源混杂，影响不明",
-          "summary": "挪威伤情报导同样窜入澳大利亚球员信息，真实情况待确认。"
+          "away": "未知",
+          "summary": "未知"
         },
-        "risk_analysis": "挪威整体占优，但科特迪瓦的冲击力可能制造混乱，平局不可忽视。",
-        "upset_probability": 40,
+        "risk_analysis": "挪威如正常发挥可轻松过关，但非洲球队的韧性需警惕。",
+        "upset_probability": 20,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 26.26,
-            "draw": 27.0,
-            "away_win": 46.75
+            "home_win": 26.89,
+            "draw": 27.66,
+            "away_win": 45.45
           },
           "model_edge": {
-            "home_win": 27,
-            "draw": 28,
-            "away_win": 45
+            "home_win": 0.11,
+            "draw": 0.34,
+            "away_win": -0.45
           },
-          "deviation_analysis": "模型与市场几乎一致，略微调高主胜和平局可能，认为市场定价合理。"
+          "deviation_analysis": "模型与市场高度一致，挪威优势明确"
         },
         "confidence": "medium"
       },
@@ -1028,22 +1061,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-370",
+            "home": "-350",
             "draw": "+500",
-            "away": "+950"
+            "away": "+850"
           },
           "implied_probability": {
-            "home_win": 78.72,
+            "home_win": 77.78,
             "draw": 16.67,
-            "away_win": 9.52
+            "away_win": 10.53
           },
           "normalized_probability": {
-            "home_win": 75.04,
-            "draw": 15.89,
-            "away_win": 9.08
+            "home_win": 74.09,
+            "draw": 15.88,
+            "away_win": 10.03
           },
-          "overround": 4.91,
-          "details": "FRA -370"
+          "overround": 4.97,
+          "details": "FRA -350"
         },
         "injuries": {
           "home": {
@@ -1063,44 +1096,44 @@
         },
         "match_id": "400021523",
         "win_draw_loss": {
-          "home_win": 78,
+          "home_win": 75,
           "draw": 15,
-          "away_win": 7
+          "away_win": 10
         },
         "xg_prediction": {
-          "home": 2.8,
-          "away": 0.7
+          "home": 2.0,
+          "away": 0.6
         },
         "predicted_score": {
-          "home": 3,
-          "away": 1
+          "home": 2,
+          "away": 0
         },
         "score_options": [
           {
-            "score": "3-1",
-            "rank": 1,
-            "reason": "法国攻击群威力尽显，瑞典定位球破门挽回颜面。"
-          },
-          {
             "score": "2-0",
-            "rank": 2,
-            "reason": "法国控制局面，瑞典零封。"
+            "rank": 1,
+            "reason": "法国实力碾压，可能轻松零封"
           },
           {
-            "score": "4-1",
+            "score": "3-0",
+            "rank": 2,
+            "reason": "若法国火力全开，可能大胜"
+          },
+          {
+            "score": "1-0",
             "rank": 3,
-            "reason": "法国状态火热取得大胜。"
+            "reason": "瑞典死守时法国可能小胜"
           }
         ],
         "method_factors": {
-          "market_signal": "市场深盘示好法国，主胜赔率-370隐含概率75%以上。",
-          "fifa_rank_prior": "法国卫冕冠军实力顶级，瑞典近年大赛表现一般，但韧性足。",
-          "recent_form": "近期表现未知，参考市场预期。",
-          "group_context": "1/16决赛单场淘汰制，法国轻装上阵。",
-          "injury_rotation": "双方伤病情况未知，阵容预期完整。",
-          "weather_venue": "新泽西六月傍晚天气温和，适合发挥。",
-          "tactical_key": "法国边路爆破结合中路渗透，瑞典密集防守伺机反击。",
-          "uncertainty": "实力差距明显，爆冷可能性极低。"
+          "market_signal": "法国极度热门，-350赔率反映统治级优势",
+          "fifa_rank_prior": "法国世界顶级，瑞典近年实力下滑明显",
+          "recent_form": "法国阵容豪华，姆巴佩状态佳，瑞典缺乏爆点",
+          "group_context": "淘汰赛首轮，法国被寄厚望",
+          "injury_rotation": "伤病未知，假设双方无重大缺席",
+          "weather_venue": "未知",
+          "tactical_key": "法国边路爆点与中路渗透 vs 瑞典五后卫收缩",
+          "uncertainty": "爆冷概率极低，但足球偶然性存在"
         },
         "matchup_graph": {
           "nodes": [
@@ -1109,101 +1142,101 @@
               "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 92,
-              "note": "姆巴佩领衔攻击线，速度与终结能力兼备。"
+              "weight": 90,
+              "note": "姆巴佩登贝莱双翼齐飞，格子中路调度"
             },
             {
               "id": "home_midfield",
               "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 86,
-              "note": "法国中场拦截与推进能力强劲。"
+              "weight": 85,
+              "note": "楚阿梅尼卡马文加覆盖面积广"
             },
             {
               "id": "home_defense",
               "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 82,
-              "note": "法国防线稳固，经验丰富。"
+              "weight": 80,
+              "note": "防线经验丰富，极少犯错"
             },
             {
               "id": "away_attack",
               "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 62,
-              "note": "瑞典进攻手段不多，依赖伊萨克个人能力。"
+              "weight": 50,
+              "note": "伊萨克单点，但支援不足"
             },
             {
               "id": "away_midfield",
               "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 58,
-              "note": "瑞典中场创造力一般，难以支撑持续进攻。"
+              "weight": 55,
+              "note": "技术粗糙，出球困难"
             },
             {
               "id": "away_defense",
               "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 68,
-              "note": "瑞典防守整体性强，但面对潮水攻势可能崩盘。"
+              "weight": 65,
+              "note": "密集防守可能短时有效，但持续受压易溃"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "法国锋线碾压",
+              "label": "法国立体进攻撕扯防线",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "姆巴佩等人反复冲击，瑞典防线难以支撑90分钟。"
+              "note": "姆巴佩速度生吃，中路后插上难以防范"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "零星偷袭",
+              "label": "瑞典反击试探",
               "impact": "low",
               "direction": "away_to_home",
-              "note": "瑞典依靠长传找伊萨克，威胁有限。"
+              "note": "伊萨克单挑困难，整体配合欠缺"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场压制",
+              "label": "中场绝对控制",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "法国中场技术体能完胜，瑞典难以出球。"
+              "note": "法国中场技术身体双重压制"
             }
           ],
-          "summary": "法国全面占优，取胜无忧，净胜球可能达到两球以上。",
+          "summary": "法国全面碾压，瑞典爆冷可能性极低，除非出现红牌等意外。",
           "advantage_side": "home",
           "key_battle": "姆巴佩 vs 瑞典右后卫",
-          "risk_trigger": "若法国情绪松懈，瑞典定位球可能偷分。"
+          "risk_trigger": "法国轻敌或早期红牌才可能改变局势"
         },
-        "tactical_matchup": "法国高位压迫快速转换，边路传中与内切结合；瑞典摆大巴，依靠长传和定位球。",
+        "tactical_matchup": "法国4-3-3强攻，瑞典5-4-1铁桶阵，实力鸿沟难以跨越。",
         "injury_adjustment": {
           "home": "未知",
           "away": "未知",
-          "summary": "双方暂无重大伤病报告。"
+          "summary": "未知"
         },
-        "risk_analysis": "无悬念比赛，法国晋级概率极高，但注意赢球输盘可能。",
-        "upset_probability": 7,
+        "risk_analysis": "标准强弱对话，法国过关概率极高，但需防心态松懈。",
+        "upset_probability": 5,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 75.04,
-            "draw": 15.89,
-            "away_win": 9.08
+            "home_win": 74.09,
+            "draw": 15.88,
+            "away_win": 10.03
           },
           "model_edge": {
-            "home_win": 78,
-            "draw": 15,
-            "away_win": 7
+            "home_win": 0.91,
+            "draw": -0.88,
+            "away_win": -0.03
           },
-          "deviation_analysis": "模型与市场方向一致，稍加看好法国，认为市场定价合理。"
+          "deviation_analysis": "模型略比市场乐观，但仍确认法国大优"
         },
         "confidence": "high"
       },
@@ -1265,22 +1298,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+125",
+            "home": "+120",
             "draw": "+195",
-            "away": "+290"
+            "away": "+300"
           },
           "implied_probability": {
-            "home_win": 44.44,
+            "home_win": 45.45,
             "draw": 33.9,
-            "away_win": 25.64
+            "away_win": 25.0
           },
           "normalized_probability": {
-            "home_win": 42.74,
-            "draw": 32.6,
-            "away_win": 24.66
+            "home_win": 43.56,
+            "draw": 32.48,
+            "away_win": 23.96
           },
-          "overround": 3.98,
-          "details": "MEX +125"
+          "overround": 4.35,
+          "details": "MEX +120"
         },
         "injuries": {
           "home": {
@@ -1300,44 +1333,44 @@
         },
         "match_id": "400021520",
         "win_draw_loss": {
-          "home_win": 43,
-          "draw": 33,
+          "home_win": 44,
+          "draw": 32,
           "away_win": 24
         },
         "xg_prediction": {
-          "home": 1.6,
-          "away": 1.2
+          "home": 1.3,
+          "away": 0.9
         },
         "predicted_score": {
-          "home": 2,
-          "away": 1
+          "home": 1,
+          "away": 0
         },
         "score_options": [
           {
-            "score": "2-1",
+            "score": "1-0",
             "rank": 1,
-            "reason": "墨西哥主场氛围浓厚，小胜合理。"
+            "reason": "墨西哥主场气势，小胜可期"
           },
           {
             "score": "1-1",
             "rank": 2,
-            "reason": "双方实力相当，闷平概率不低。"
+            "reason": "厄瓜多尔防守顽强，可能带走一分"
           },
           {
-            "score": "1-0",
+            "score": "0-0",
             "rank": 3,
-            "reason": "墨西哥一球小胜，防守致胜。"
+            "reason": "淘汰赛谨慎，可能闷平"
           }
         ],
         "method_factors": {
-          "market_signal": "市场倾向墨西哥，主胜+125隐含概率43%，平局33%居高位。",
-          "fifa_rank_prior": "墨西哥中北美强队技术细腻，厄瓜多尔南美新锐体力充沛。",
-          "recent_form": "近期表现未知，参考市场预期。",
-          "group_context": "1/16决赛单场淘汰制，墨西哥有半个主场优势。",
-          "injury_rotation": "双方伤病情况未知，阵容预期完整。",
-          "weather_venue": "墨西哥城海拔高，六月夜间凉爽，对客队略有挑战。",
-          "tactical_key": "墨西哥控球渗透，厄瓜多尔高反击结合边路速度。",
-          "uncertainty": "平局可能拖入加时，胜负难料。"
+          "market_signal": "赔率墨西哥微热，但平局赔率不低，暗示胶着",
+          "fifa_rank_prior": "两队排名接近，墨西哥略高，厄瓜多尔上升势头",
+          "recent_form": "墨西哥控球传切娴熟，厄瓜多尔身体对抗和反击有威胁",
+          "group_context": "淘汰赛首轮，双方预计谨慎",
+          "injury_rotation": "伤病未知，假设主力齐整",
+          "weather_venue": "未知",
+          "tactical_key": "墨西哥技术流 vs 厄瓜多尔力量派，控球权争夺决定走势",
+          "uncertainty": "厄瓜多尔有能力制造麻烦，冷门概率中等"
         },
         "matchup_graph": {
           "nodes": [
@@ -1346,107 +1379,107 @@
               "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 75,
-              "note": "墨西哥前场配合娴熟，个人能力突出。"
+              "weight": 70,
+              "note": "墨西哥前场配合细腻，但终结能力一般"
             },
             {
               "id": "home_midfield",
               "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 74,
-              "note": "墨西哥中场控制力强，传球成功率高。"
+              "weight": 75,
+              "note": "中场控制强，擅长短传渗透"
             },
             {
               "id": "home_defense",
               "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 72,
-              "note": "墨西哥防线经验丰富，但偶尔注意力不集中。"
+              "weight": 70,
+              "note": "经验丰富但速度偏慢"
             },
             {
               "id": "away_attack",
               "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 73,
-              "note": "厄瓜多尔锋线速度块头兼备，反击犀利。"
+              "weight": 65,
+              "note": "反击速度快，凯塞多驱动"
             },
             {
               "id": "away_midfield",
               "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 68,
-              "note": "厄瓜多尔中场拼抢积极，但组织稍乱。"
+              "weight": 70,
+              "note": "防守型中场硬朗，抢断能力强"
             },
             {
               "id": "away_defense",
               "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 70,
-              "note": "厄瓜多尔防守硬度够，但客场防空需注意。"
+              "weight": 75,
+              "note": "防线默契，头球优势"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "主场施压",
-              "impact": "medium",
+              "label": "墨西哥地面渗透 vs 厄瓜多尔空军",
+              "impact": "high",
               "direction": "home_to_away",
-              "note": "墨西哥利用主场氛围持续施压，寻找对手失误。"
+              "note": "墨西哥需规避传中，打身后"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "反击威胁",
+              "label": "厄瓜多尔反击与定位球",
               "impact": "medium",
               "direction": "away_to_home",
-              "note": "厄瓜多尔快速反击打墨西哥身后，效率是关键。"
+              "note": "厄瓜多尔依靠速度和高点"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "控球权争夺",
+              "label": "中场技术vs身体",
               "impact": "medium",
               "direction": "balanced",
-              "note": "墨西哥技术流对抗厄瓜多尔力量流，中场拉锯。"
+              "note": "谁控球谁主导比赛"
             }
           ],
-          "summary": "墨西哥稍占上风，但厄瓜多尔具备爆冷资本，比赛胶着。",
+          "summary": "墨西哥技术占优但终结能力不足，厄瓜多尔防守反击可能偷分。",
           "advantage_side": "home",
-          "key_battle": "墨西哥边锋 vs 厄瓜多尔边卫",
-          "risk_trigger": "厄瓜多尔先进球则墨西哥陷入被动，可能改变走势。"
+          "key_battle": "墨西哥前腰 vs 厄瓜多尔后腰",
+          "risk_trigger": "厄瓜多尔先进球可能改变格局，墨西哥围攻不成反被偷袭"
         },
-        "tactical_matchup": "墨西哥阵地进攻寻求肋部渗透，厄瓜多尔稳守后利用边路快速转移打反击。",
+        "tactical_matchup": "墨西哥4-3-3传控，厄瓜多尔4-4-2防守反击，场面或显沉闷。",
         "injury_adjustment": {
           "home": "未知",
           "away": "未知",
-          "summary": "双方暂无重大伤病报告。"
+          "summary": "未知"
         },
-        "risk_analysis": "主胜并非板上钉钉，市场高平赔提示打平可能，建议谨慎。",
-        "upset_probability": 32,
+        "risk_analysis": "墨西哥不擅长攻坚，厄瓜多尔具备平局甚至爆冷能力。",
+        "upset_probability": 30,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 42.74,
-            "draw": 32.6,
-            "away_win": 24.66
+            "home_win": 43.56,
+            "draw": 32.48,
+            "away_win": 23.96
           },
           "model_edge": {
-            "home_win": 43,
-            "draw": 33,
-            "away_win": 24
+            "home_win": 0.44,
+            "draw": -0.48,
+            "away_win": 0.04
           },
-          "deviation_analysis": "模型与市场定价几乎一致，认为墨西哥稍有优势但平局概率不容忽视。"
+          "deviation_analysis": "模型与市场基本无差，墨西哥热度有限"
         },
         "confidence": "medium"
       }
     ],
-    "risk_overview": "当日强队如德国、法国碾压态势明确，风险极低；巴西亦被看好但日本具备制造麻烦的能力；荷兰vs摩洛哥、科特迪瓦vs挪威、墨西哥vs厄瓜多尔三场均为开放格局，任何赛果均属正常，淘汰赛平局加时可能性高。伤病情报存在来源混乱（德国和挪威均引用澳大利亚球员新闻），真实伤停情况待核实。",
-    "data_quality": "数据源为FIFA官方赛程与ESPN比分板交叉验证，比赛时间、对阵可靠；赔率来自DraftKings ESPN feed有效；伤病情报出现来源不一致，部分记录与球队不匹配，应视为低置信信息。",
+    "risk_overview": "已结束比赛中德国爆冷出局，提醒淘汰赛冷门频发。未赛场次中法国、挪威优势明显，荷兰与摩洛哥、墨西哥与厄瓜多尔存在平局甚至小冷可能，建议关注实时阵容与天气。",
+    "data_quality": "数据来源包括FIFA官方API和ESPN验证，部分比赛赔率缺失，伤病信息多为疑似不可靠，天气数据缺失，分析受限于来源透明度。",
     "tournament_structure": {
       "stage": "knockout",
       "focus_window": {
@@ -1506,25 +1539,25 @@
               "end_iso": "2026-06-30T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 60,
-              "draw": 25,
-              "away_win": 15
+              "home_win": 100,
+              "draw": 0,
+              "away_win": 0
             },
             "score_options": [
               {
                 "score": "2-1",
                 "rank": 1,
-                "reason": "巴西进攻火力强劲，日本韧性防守或有破门。"
+                "reason": "实际赛果：马丁内利96分钟绝杀，巴西逆转胜"
               },
               {
                 "score": "1-0",
                 "rank": 2,
-                "reason": "巴西控制局面小胜，日本反击效率不足。"
+                "reason": "巴西控场但久攻不下，若早进球可能小胜"
               },
               {
-                "score": "3-1",
+                "score": "2-0",
                 "rank": 3,
-                "reason": "巴西多点开花，日本定位球追回一球。"
+                "reason": "日本若无法破门，巴西可能零封"
               }
             ],
             "current_window": true
@@ -1556,25 +1589,25 @@
               "end_iso": "2026-06-30T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 75,
-              "draw": 18,
-              "away_win": 7
+              "home_win": 0,
+              "draw": 100,
+              "away_win": 0
             },
             "score_options": [
               {
-                "score": "3-0",
+                "score": "1-1",
                 "rank": 1,
-                "reason": "德国实力碾压，巴拉圭难有还手之力。"
+                "reason": "实际赛果：90分钟平局，德国进球后巴拉圭顽强扳平"
               },
               {
-                "score": "2-0",
+                "score": "1-0",
                 "rank": 2,
-                "reason": "德国控制节奏，两球完胜。"
+                "reason": "德国若早进球并加强控制，可能小胜"
               },
               {
-                "score": "4-0",
+                "score": "0-0",
                 "rank": 3,
-                "reason": "德国状态火热，多点开花大胜。"
+                "reason": "双方进攻乏力时可能闷平"
               }
             ],
             "current_window": true
@@ -1606,25 +1639,25 @@
               "end_iso": "2026-06-30T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 41,
+              "home_win": 40,
               "draw": 31,
-              "away_win": 28
+              "away_win": 29
             },
             "score_options": [
               {
-                "score": "2-1",
-                "rank": 1,
-                "reason": "荷兰进攻稍占优，摩洛哥防守顽强但难保不失。"
-              },
-              {
                 "score": "1-1",
-                "rank": 2,
-                "reason": "双方实力接近，场面胶着可能握手言和。"
+                "rank": 1,
+                "reason": "双方防守稳固，进攻效率相似，平局概率高"
               },
               {
-                "score": "1-2",
+                "score": "1-0",
+                "rank": 2,
+                "reason": "荷兰若把握机会能力提升，可能小胜"
+              },
+              {
+                "score": "0-0",
                 "rank": 3,
-                "reason": "摩洛哥反击高效，荷兰久攻不下遭反杀。"
+                "reason": "摩洛哥严密防守可能零封"
               }
             ],
             "current_window": true
@@ -1656,25 +1689,25 @@
               "end_iso": "2026-07-01T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 78,
+              "home_win": 75,
               "draw": 15,
-              "away_win": 7
+              "away_win": 10
             },
             "score_options": [
               {
-                "score": "3-1",
-                "rank": 1,
-                "reason": "法国攻击群威力尽显，瑞典定位球破门挽回颜面。"
-              },
-              {
                 "score": "2-0",
-                "rank": 2,
-                "reason": "法国控制局面，瑞典零封。"
+                "rank": 1,
+                "reason": "法国实力碾压，可能轻松零封"
               },
               {
-                "score": "4-1",
+                "score": "3-0",
+                "rank": 2,
+                "reason": "若法国火力全开，可能大胜"
+              },
+              {
+                "score": "1-0",
                 "rank": 3,
-                "reason": "法国状态火热取得大胜。"
+                "reason": "瑞典死守时法国可能小胜"
               }
             ],
             "current_window": true
@@ -1706,25 +1739,25 @@
               "end_iso": "2026-07-01T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 43,
-              "draw": 33,
+              "home_win": 44,
+              "draw": 32,
               "away_win": 24
             },
             "score_options": [
               {
-                "score": "2-1",
+                "score": "1-0",
                 "rank": 1,
-                "reason": "墨西哥主场氛围浓厚，小胜合理。"
+                "reason": "墨西哥主场气势，小胜可期"
               },
               {
                 "score": "1-1",
                 "rank": 2,
-                "reason": "双方实力相当，闷平概率不低。"
+                "reason": "厄瓜多尔防守顽强，可能带走一分"
               },
               {
-                "score": "1-0",
+                "score": "0-0",
                 "rank": 3,
-                "reason": "墨西哥一球小胜，防守致胜。"
+                "reason": "淘汰赛谨慎，可能闷平"
               }
             ],
             "current_window": true
@@ -1765,19 +1798,19 @@
             },
             "score_options": [
               {
-                "score": "1-2",
+                "score": "0-2",
                 "rank": 1,
-                "reason": "挪威进攻锐利，科特迪瓦后防恐难招架。"
+                "reason": "挪威进攻火力强，科特迪瓦防守难以限制"
               },
               {
-                "score": "0-1",
+                "score": "1-2",
                 "rank": 2,
-                "reason": "挪威小胜，科特迪瓦进攻乏力。"
+                "reason": "科特迪瓦可能利用身体优势抢下一球"
               },
               {
                 "score": "1-1",
                 "rank": 3,
-                "reason": "非洲球队硬朗防守逼平挪威。"
+                "reason": "若挪威久攻不下，科特迪瓦可守住平局"
               }
             ],
             "current_window": true
@@ -2238,9 +2271,9 @@
       "group": "",
       "match_number": 76,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -2280,52 +2313,51 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-135",
-          "draw": "+265",
-          "away": "+400"
-        },
-        "implied_probability": {
-          "home_win": 57.45,
-          "draw": 27.4,
-          "away_win": 20.0
-        },
-        "normalized_probability": {
-          "home_win": 54.79,
-          "draw": 26.13,
-          "away_win": 19.08
-        },
-        "overround": 4.84,
-        "details": "BRA -135"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "巴西",
           "team_en": "Brazil",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+              "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+              "published": "2026-06-29T19:35:54Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "日本",
           "team_en": "Japan",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+              "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+              "published": "2026-06-29T19:35:54Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       },
       "match_id": "400021516",
       "win_draw_loss": {
-        "home_win": 60,
-        "draw": 25,
-        "away_win": 15
+        "home_win": 100,
+        "draw": 0,
+        "away_win": 0
       },
       "xg_prediction": {
-        "home": 2.0,
-        "away": 1.0
+        "home": 1.8,
+        "away": 0.9
       },
       "predicted_score": {
         "home": 2,
@@ -2335,28 +2367,28 @@
         {
           "score": "2-1",
           "rank": 1,
-          "reason": "巴西进攻火力强劲，日本韧性防守或有破门。"
+          "reason": "实际赛果：马丁内利96分钟绝杀，巴西逆转胜"
         },
         {
           "score": "1-0",
           "rank": 2,
-          "reason": "巴西控制局面小胜，日本反击效率不足。"
+          "reason": "巴西控场但久攻不下，若早进球可能小胜"
         },
         {
-          "score": "3-1",
+          "score": "2-0",
           "rank": 3,
-          "reason": "巴西多点开花，日本定位球追回一球。"
+          "reason": "日本若无法破门，巴西可能零封"
         }
       ],
       "method_factors": {
-        "market_signal": "市场浅盘示好巴西，主胜赔率-135隐含概率约55%。",
-        "fifa_rank_prior": "巴西长期顶级强队，日本亚洲技术流代表，历史交锋巴西占优。",
-        "recent_form": "近期表现未知，参考市场预期。",
-        "group_context": "1/16决赛单场淘汰制，双方需全力争胜。",
-        "injury_rotation": "双方伤病情况未知，阵容预期完整。",
-        "weather_venue": "休斯顿六月傍晚炎热潮湿，对体能要求高。",
-        "tactical_key": "巴西边路个人能力冲击日本防线，日本依赖守转攻速度。",
-        "uncertainty": "日本具备爆冷潜质，但市场暂无明确信号。"
+        "market_signal": "赔率不可用",
+        "fifa_rank_prior": "巴西长期实力远高日本，传统强队底蕴深厚",
+        "recent_form": "巴西攻击线天赋溢出，日本防守顽强但终被突破",
+        "group_context": "淘汰赛首轮，双方全力出击",
+        "injury_rotation": "双方均有疑似伤员，巴西进攻核心轻伤不影响整体",
+        "weather_venue": "未知",
+        "tactical_key": "巴西边路爆破 vs 日本密集防守，定位球与个人能力决胜",
+        "uncertainty": "比赛已结束，无不确定性"
       },
       "matchup_graph": {
         "nodes": [
@@ -2365,40 +2397,40 @@
             "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 88,
-            "note": "巴西锋线个人能力突出，边中结合渗透力强。"
+            "weight": 85,
+            "note": "巴西前场天赋高，马丁内利、维尼修斯等突破犀利"
           },
           {
             "id": "home_midfield",
             "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 82,
-            "note": "巴西控制与创造力兼具，转换速率快。"
+            "weight": 80,
+            "note": "中场控制力强，由攻转守速度快"
           },
           {
             "id": "home_defense",
             "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 75,
-            "note": "巴西防线偶尔走神，但整体稳固。"
+            "weight": 65,
+            "note": "防线偶有漏洞，但整体稳固"
           },
           {
             "id": "away_attack",
             "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 72,
-            "note": "日本反击速度及配合默契，但终结能力偏弱。"
+            "weight": 70,
+            "note": "日本快速反击和团队配合有威胁"
           },
           {
             "id": "away_midfield",
             "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 68,
-            "note": "日本中场串联较好，但对抗硬度不足。"
+            "weight": 75,
+            "note": "中场组织有序，但对抗能力偏弱"
           },
           {
             "id": "away_defense",
@@ -2406,62 +2438,62 @@
             "type": "team_phase",
             "side": "away",
             "weight": 70,
-            "note": "日本整体防守纪律强，但个体差距可能被突破。"
+            "note": "防守纪律性强，但最后时刻注意力下降"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "巴西强侧爆破",
+            "label": "巴西边路强攻日本肋部",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "巴西边路突破能力对日本边卫压力极大。"
+            "note": "日本左路防守被多次冲击，导致丢球"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "日本快速转换",
+            "label": "日本反击穿透巴西中场",
             "impact": "medium",
             "direction": "away_to_home",
-            "note": "日本由守转攻瞬间提速，可能利用巴西压上后的空当。"
+            "note": "日本利用快速传递制造进球"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "控球权争夺",
+            "label": "中场控制权争夺",
             "impact": "high",
             "direction": "balanced",
-            "note": "巴西技术优势明显，日本需通过整体跑动弥补。"
+            "note": "巴西中场压制，但日本局部逼抢有效"
           }
         ],
-        "summary": "巴西在进攻端具有明显强点，中场控制力占优，但日本反击及定位球可能制造威胁。",
+        "summary": "巴西进攻端碾压式优势，日本防守坚韧但无法全场坚守，个人能力决定比赛。",
         "advantage_side": "home",
-        "key_battle": "巴西边锋 vs 日本边后卫",
-        "risk_trigger": "若巴西久攻不下，日本反击效率可能成为胜负手。"
+        "key_battle": "巴西边锋 vs 日本右后卫",
+        "risk_trigger": "日本早早进球可能改变局势，但实力差距未动摇"
       },
-      "tactical_matchup": "巴西主导控球，利用边路个人能力撕扯日本防线；日本放弃控球深度防守，依靠三笘薰等突击手打巴西身后。",
+      "tactical_matchup": "巴西4-1-2-3阵型两翼齐飞，日本3-4-3防守反击，边路攻防定生死。",
       "injury_adjustment": {
-        "home": "未知",
-        "away": "未知",
-        "summary": "双方暂无重大伤病报告。"
+        "home": "疑似伤病影响轮换，但主力尚在",
+        "away": "疑似伤病削弱防守深度",
+        "summary": "双方均有轻伤，未改变核心战力"
       },
-      "risk_analysis": "市场过于集中巴西方向，但实际优势并非绝对碾压，日本具备守平甚至爆冷可能。",
-      "upset_probability": 25,
+      "risk_analysis": "巴西胜过程惊险，日本展现顽强但实力不足，无冷门产生。",
+      "upset_probability": 0,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 54.79,
-          "draw": 26.13,
-          "away_win": 19.08
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
         "model_edge": {
-          "home_win": 60,
-          "draw": 25,
-          "away_win": 15
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
-        "deviation_analysis": "模型更看好巴西主胜，比市场隐含概率高出约5个百分点，认为市场对平局和客胜定价略显慷慨。"
+        "deviation_analysis": "赔率数据不可用，无法比较"
       },
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "id": "400021513",
@@ -2475,9 +2507,9 @@
       "group": "",
       "match_number": 74,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 2
       },
       "teams": {
         "home": {
@@ -2517,26 +2549,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-275",
-          "draw": "+400",
-          "away": "+800"
-        },
-        "implied_probability": {
-          "home_win": 73.33,
-          "draw": 20.0,
-          "away_win": 11.11
-        },
-        "normalized_probability": {
-          "home_win": 70.21,
-          "draw": 19.15,
-          "away_win": 10.64
-        },
-        "overround": 4.44,
-        "details": "GER -275"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -2546,10 +2561,24 @@
           "records": [
             {
               "source": "ESPN World Cup news",
-              "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-              "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-              "published": "2026-06-29T02:43:49Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
+              "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+              "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+              "published": "2026-06-30T00:39:30Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+              "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+              "published": "2026-06-30T00:06:01Z",
+              "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany dumped out of World Cup by Paraguay on penalties",
+              "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+              "published": "2026-06-30T00:42:38Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
             }
           ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -2557,51 +2586,73 @@
         "away": {
           "team": "巴拉圭",
           "team_en": "Paraguay",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+              "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+              "published": "2026-06-30T00:39:30Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+              "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+              "published": "2026-06-30T00:06:01Z",
+              "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany dumped out of World Cup by Paraguay on penalties",
+              "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+              "published": "2026-06-30T00:42:38Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       },
       "match_id": "400021513",
       "win_draw_loss": {
-        "home_win": 75,
-        "draw": 18,
-        "away_win": 7
+        "home_win": 0,
+        "draw": 100,
+        "away_win": 0
       },
       "xg_prediction": {
-        "home": 2.5,
-        "away": 0.5
+        "home": 1.2,
+        "away": 0.8
       },
       "predicted_score": {
-        "home": 3,
-        "away": 0
+        "home": 1,
+        "away": 1
       },
       "score_options": [
         {
-          "score": "3-0",
+          "score": "1-1",
           "rank": 1,
-          "reason": "德国实力碾压，巴拉圭难有还手之力。"
+          "reason": "实际赛果：90分钟平局，德国进球后巴拉圭顽强扳平"
         },
         {
-          "score": "2-0",
+          "score": "1-0",
           "rank": 2,
-          "reason": "德国控制节奏，两球完胜。"
+          "reason": "德国若早进球并加强控制，可能小胜"
         },
         {
-          "score": "4-0",
+          "score": "0-0",
           "rank": 3,
-          "reason": "德国状态火热，多点开花大胜。"
+          "reason": "双方进攻乏力时可能闷平"
         }
       ],
       "method_factors": {
-        "market_signal": "市场深盘示好德国，主胜赔率-275隐含概率超70%。",
-        "fifa_rank_prior": "德国传统豪强，巴拉圭南美二流，历史交锋德国占优。",
-        "recent_form": "近期表现未知，参考市场预期。",
-        "group_context": "1/16决赛单场淘汰制，德国不容有失。",
-        "injury_rotation": "德国有不确定伤情（来源混入澳大利亚球员新闻），影响未知；巴拉圭暂无伤情。",
-        "weather_venue": "波士顿六月晚间温和，对比赛有利。",
-        "tactical_key": "德国立体进攻打破巴拉圭密集防守，定位球优势。",
-        "uncertainty": "实力差距较大，爆冷概率极低。"
+        "market_signal": "赔率不可用",
+        "fifa_rank_prior": "德国历史上远强于巴拉圭，但近年实力下滑",
+        "recent_form": "德国进攻创造力不足，巴拉圭防守反击效率高",
+        "group_context": "淘汰赛首轮，德国压力巨大",
+        "injury_rotation": "双方均有疑似伤病，德国关键球员可能影响发挥",
+        "weather_venue": "未知",
+        "tactical_key": "德国控球压制 vs 巴拉圭密集防守，定位球成为破局手段",
+        "uncertainty": "比赛已结束，德国出局为巨大冷门"
       },
       "matchup_graph": {
         "nodes": [
@@ -2610,101 +2661,101 @@
             "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 90,
-            "note": "德国前场配置多样，冲击力十足。"
+            "weight": 75,
+            "note": "德国进攻转化率低，哈弗茨未达最佳状态"
           },
           {
             "id": "home_midfield",
             "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 85,
-            "note": "德国中场控制力和转换攻防节奏上佳。"
+            "weight": 80,
+            "note": "中场控制力仍强，但向前输送效率不高"
           },
           {
             "id": "home_defense",
             "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 80,
-            "note": "德国防线整体性强，高空球优势明显。"
+            "weight": 70,
+            "note": "诺伊尔神勇，但防线移动慢"
           },
           {
             "id": "away_attack",
             "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 55,
-            "note": "巴拉圭进攻手段单一，依赖反击和定位球。"
+            "weight": 65,
+            "note": "巴拉圭反击速度快，定位球有威胁"
           },
           {
             "id": "away_midfield",
             "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 50,
-            "note": "巴拉圭中场创造力不足，难与德国抗衡。"
+            "weight": 60,
+            "note": "中场防守硬度强，但组织能力一般"
           },
           {
             "id": "away_defense",
             "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 60,
-            "note": "巴拉圭防守硬朗，但连续受压易出错。"
+            "weight": 75,
+            "note": "密集防守体系成熟，韧性十足"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "德国高空轰炸",
+            "label": "德国强攻遭遇铁桶阵",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "德国传中及定位球将对巴拉圭防线形成碾压。"
-          },
-          {
-            "from": "home_midfield",
-            "to": "away_midfield",
-            "label": "中场绞杀",
-            "impact": "high",
-            "direction": "home_to_away",
-            "note": "德国中场将完全压制，切断巴拉圭出球路线。"
+            "note": "德国围攻难破密集，仅靠定位球得分"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "零散反击",
-            "impact": "low",
+            "label": "巴拉圭快速反击威胁",
+            "impact": "medium",
             "direction": "away_to_home",
-            "note": "巴拉圭零星反击难以穿透德国稳定防线。"
+            "note": "反击获点球扳平比分"
+          },
+          {
+            "from": "home_midfield",
+            "to": "away_midfield",
+            "label": "中场绞杀与失误",
+            "impact": "medium",
+            "direction": "balanced",
+            "note": "德国传球失误偏多，未能持续压迫"
           }
         ],
-        "summary": "德国全面占优，尤其进攻端对巴拉圭防守压力巨大，比赛悬念不大。",
-        "advantage_side": "home",
-        "key_battle": "德国前锋群 vs 巴拉圭后卫线",
-        "risk_trigger": "若德国情绪松懈，巴拉圭可能偷得定位球进球。"
+        "summary": "德国控球占优但效率低下，巴拉圭坚韧防守抓住有限机会，点球大战爆冷。",
+        "advantage_side": "balanced",
+        "key_battle": "德国中场创造力 vs 巴拉圭中场拦截",
+        "risk_trigger": "德国久攻不下情绪急躁，巴拉圭耐心等待机会"
       },
-      "tactical_matchup": "德国高压控球，边中结合，利用身体优势强行破局；巴拉圭全员退守，摆大巴寻求零星反击机会。",
+      "tactical_matchup": "德国4-2-3-1依赖个人能力，巴拉圭4-4-2收缩空间，反击成功战术。",
       "injury_adjustment": {
-        "home": "可能存在伤情，但来源混杂，影响不明",
-        "away": "未知",
-        "summary": "德国媒体伤情报导窜入澳大利亚球员信息，真实伤停待确认。"
+        "home": "疑似伤病可能影响中场活力和射手状态",
+        "away": "疑似伤病未动摇防守核心",
+        "summary": "德国伤病影响进攻流畅度，巴拉圭影响轻微"
       },
-      "risk_analysis": "实力悬殊，德国取胜悬念极小，但需关注可能的轮换或心态放松带来的小胜。",
-      "upset_probability": 8,
+      "risk_analysis": "德国出局为本届最大冷门，凸显其攻坚能力不足，巴拉圭创造历史。",
+      "upset_probability": 70,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 70.21,
-          "draw": 19.15,
-          "away_win": 10.64
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
         "model_edge": {
-          "home_win": 75,
-          "draw": 18,
-          "away_win": 7
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
-        "deviation_analysis": "模型与市场方向一致，更看好德国轻松获胜，客胜概率几乎为零。"
+        "deviation_analysis": "赔率数据不可用，但以实力差距，德国不胜属大冷"
       },
       "confidence": "high"
     },
@@ -2720,7 +2771,7 @@
       "group": "",
       "match_number": 75,
       "status": {
-        "match_status": 1,
+        "match_status": 3,
         "officiality_status": 0,
         "result_type": 0
       },
@@ -2766,79 +2817,102 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+130",
+          "home": "+145",
           "draw": "+210",
-          "away": "+250"
+          "away": "+230"
         },
         "implied_probability": {
-          "home_win": 43.48,
+          "home_win": 40.82,
           "draw": 32.26,
-          "away_win": 28.57
+          "away_win": 30.3
         },
         "normalized_probability": {
-          "home_win": 41.68,
-          "draw": 30.93,
-          "away_win": 27.39
+          "home_win": 39.48,
+          "draw": 31.2,
+          "away_win": 29.31
         },
-        "overround": 4.31,
-        "details": "NED +130"
+        "overround": 3.38,
+        "details": "NED +145"
       },
       "injuries": {
         "home": {
           "team": "荷兰",
           "team_en": "Netherlands",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+              "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+              "published": "2026-06-30T00:39:30Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "摩洛哥",
           "team_en": "Morocco",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Spain's plan for Austria simple: Get ball to Lamine Yamal",
+              "description": "Right-back Marcos Llorente said Spain are working hard to get the best out of star winger Lamine Yamal as they prepare to face Austria in the World Cup round of 32.",
+              "published": "2026-06-29T21:18:16Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49218747/spain-plan-austria-simple-get-ball-lamine-yamal"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+              "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+              "published": "2026-06-29T19:35:54Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       },
       "match_id": "400021522",
       "win_draw_loss": {
-        "home_win": 41,
+        "home_win": 40,
         "draw": 31,
-        "away_win": 28
+        "away_win": 29
       },
       "xg_prediction": {
-        "home": 1.5,
-        "away": 1.3
+        "home": 1.2,
+        "away": 0.9
       },
       "predicted_score": {
-        "home": 2,
+        "home": 1,
         "away": 1
       },
       "score_options": [
         {
-          "score": "2-1",
-          "rank": 1,
-          "reason": "荷兰进攻稍占优，摩洛哥防守顽强但难保不失。"
-        },
-        {
           "score": "1-1",
-          "rank": 2,
-          "reason": "双方实力接近，场面胶着可能握手言和。"
+          "rank": 1,
+          "reason": "双方防守稳固，进攻效率相似，平局概率高"
         },
         {
-          "score": "1-2",
+          "score": "1-0",
+          "rank": 2,
+          "reason": "荷兰若把握机会能力提升，可能小胜"
+        },
+        {
+          "score": "0-0",
           "rank": 3,
-          "reason": "摩洛哥反击高效，荷兰久攻不下遭反杀。"
+          "reason": "摩洛哥严密防守可能零封"
         }
       ],
       "method_factors": {
-        "market_signal": "市场平手盘倾向荷兰，主胜+130隐含概率42%，平局和客胜均有可观比例。",
-        "fifa_rank_prior": "荷兰传统强队但近年起伏，摩洛哥上届四强底蕴深厚。",
-        "recent_form": "近期表现未知，参考市场预期。",
-        "group_context": "1/16决赛单场淘汰制，双方谨慎开局。",
-        "injury_rotation": "双方伤病情况未知，阵容预期完整。",
-        "weather_venue": "蒙特雷六月夜间温和，对双方公平。",
-        "tactical_key": "荷兰控球冲击摩洛哥铁桶阵，摩洛哥扎稳篱笆抓转换。",
-        "uncertainty": "平局概率较大，比赛可能进入加时甚至点球。"
+        "market_signal": "赔率显示荷兰微热，但平局和客胜赔率相近，市场谨慎",
+        "fifa_rank_prior": "荷兰长期强队，摩洛哥上届四强，实力接近",
+        "recent_form": "荷兰攻击线效率一般，摩洛哥防守反击犀利",
+        "group_context": "淘汰赛首轮，状态成疑的比赛",
+        "injury_rotation": "双方均有疑似伤病，可能影响首发阵型",
+        "weather_venue": "未知",
+        "tactical_key": "荷兰3-4-3边路进攻 vs 摩洛哥4-2-3-1中路重兵",
+        "uncertainty": "比赛状态不明，若正常进行，平局概率不低"
       },
       "matchup_graph": {
         "nodes": [
@@ -2847,40 +2921,40 @@
             "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 78,
-            "note": "荷兰锋线支点与边路传中相结合。"
+            "weight": 75,
+            "note": "加克波领衔，边路速度优势"
           },
           {
             "id": "home_midfield",
             "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 75,
-            "note": "荷兰中场组织有序，但硬度一般。"
+            "weight": 80,
+            "note": "德容控制节奏，攻守转换衔接"
           },
           {
             "id": "home_defense",
             "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 76,
-            "note": "荷兰防线个人能力强，但转身速度有隐患。"
+            "weight": 75,
+            "note": "范戴克坐镇，防空能力顶级"
           },
           {
             "id": "away_attack",
             "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 73,
-            "note": "摩洛哥反击犀利，边路速度是利器。"
+            "weight": 70,
+            "note": "摩洛哥快速反击，齐耶赫组织"
           },
           {
             "id": "away_midfield",
             "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 72,
-            "note": "摩洛哥中场绞杀能力强，阿姆拉巴特扫荡关键。"
+            "weight": 75,
+            "note": "防守型中场硬朗，限制对手出球"
           },
           {
             "id": "away_defense",
@@ -2888,62 +2962,62 @@
             "type": "team_phase",
             "side": "away",
             "weight": 80,
-            "note": "摩洛哥防守体系成熟，极难被正面击破。"
+            "note": "阿什拉夫等回归，防线经验丰富"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "攻坚难题",
+            "label": "荷兰边路冲击摩洛哥铁卫",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "荷兰需破解摩洛哥低位密集防守，难度极大。"
+            "note": "加克波 vs 阿什拉夫成胜负手"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "转换杀机",
+            "label": "摩洛哥反击威胁荷兰身后",
             "impact": "medium",
             "direction": "away_to_home",
-            "note": "摩洛哥断球后快速推进，利用荷兰防线身后空间。"
+            "note": "范戴克需警惕长途奔袭"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场博弈",
+            "label": "中场控制权之战",
             "impact": "medium",
             "direction": "balanced",
-            "note": "荷兰传控遭遇摩洛哥高强度逼抢，中场控制权五五开。"
+            "note": "德容 vs 阿姆拉巴特，谁主导节奏"
           }
         ],
-        "summary": "荷兰进攻优势不明显，摩洛哥防守坚韧且反击致命，胜负天平微妙。",
+        "summary": "两队实力伯仲之间，边路对决和中场控制将决定走向，平局可能性大。",
         "advantage_side": "balanced",
-        "key_battle": "荷兰边路进攻 vs 摩洛哥边后卫防守",
-        "risk_trigger": "若摩洛哥率先破门，荷兰强攻可能露出更大空当。"
+        "key_battle": "加克波 vs 阿什拉夫",
+        "risk_trigger": "荷兰若久攻不下，摩洛哥反击得手概率增高"
       },
-      "tactical_matchup": "荷兰主导球权，寻求边路突破制造混乱；摩洛哥收缩阵型，依靠快速转换和定位球制造威胁。",
+      "tactical_matchup": "荷兰3-4-3两翼齐飞，摩洛哥4-2-3-1稳守快反，比赛可能陷入僵局。",
       "injury_adjustment": {
-        "home": "未知",
-        "away": "未知",
-        "summary": "双方暂无重大伤病报告。"
+        "home": "疑似伤病或影响锋线轮换",
+        "away": "疑似伤病或影响中场防守硬度",
+        "summary": "双方伤员不确定，可能改变比赛平衡"
       },
-      "risk_analysis": "市场均衡赔率显示本场不确定性极高，任何赛果均属正常，平局风险突出。",
+      "risk_analysis": "摩洛哥上届四强并非偶然，荷兰需防慢热，冷平风险存在。",
       "upset_probability": 35,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 41.68,
-          "draw": 30.93,
-          "away_win": 27.39
+          "home_win": 39.48,
+          "draw": 31.2,
+          "away_win": 29.31
         },
         "model_edge": {
-          "home_win": 41,
-          "draw": 31,
-          "away_win": 28
+          "home_win": 0.52,
+          "draw": -0.2,
+          "away_win": -0.31
         },
-        "deviation_analysis": "模型与市场几乎一致，略微提升平局和客胜可能，认为荷兰优势微弱。"
+        "deviation_analysis": "模型与市场基本一致，微调了平局略低，客胜稍高，但无显著偏差"
       },
-      "confidence": "low"
+      "confidence": "medium"
     },
     {
       "id": "400021514",
@@ -3003,22 +3077,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+265",
-          "draw": "+255",
-          "away": "+105"
+          "home": "+255",
+          "draw": "+245",
+          "away": "+110"
         },
         "implied_probability": {
-          "home_win": 27.4,
-          "draw": 28.17,
-          "away_win": 48.78
+          "home_win": 28.17,
+          "draw": 28.99,
+          "away_win": 47.62
         },
         "normalized_probability": {
-          "home_win": 26.26,
-          "draw": 27.0,
-          "away_win": 46.75
+          "home_win": 26.89,
+          "draw": 27.66,
+          "away_win": 45.45
         },
-        "overround": 4.35,
-        "details": "NOR +105"
+        "overround": 4.77,
+        "details": "NOR +110"
       },
       "injuries": {
         "home": {
@@ -3031,16 +3105,8 @@
         "away": {
           "team": "挪威",
           "team_en": "Norway",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-              "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-              "published": "2026-06-29T02:43:49Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
-            }
-          ],
+          "status": "unknown",
+          "records": [],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       },
@@ -3051,39 +3117,39 @@
         "away_win": 45
       },
       "xg_prediction": {
-        "home": 1.2,
-        "away": 1.8
+        "home": 0.8,
+        "away": 1.5
       },
       "predicted_score": {
-        "home": 1,
+        "home": 0,
         "away": 2
       },
       "score_options": [
         {
-          "score": "1-2",
+          "score": "0-2",
           "rank": 1,
-          "reason": "挪威进攻锐利，科特迪瓦后防恐难招架。"
+          "reason": "挪威进攻火力强，科特迪瓦防守难以限制"
         },
         {
-          "score": "0-1",
+          "score": "1-2",
           "rank": 2,
-          "reason": "挪威小胜，科特迪瓦进攻乏力。"
+          "reason": "科特迪瓦可能利用身体优势抢下一球"
         },
         {
           "score": "1-1",
           "rank": 3,
-          "reason": "非洲球队硬朗防守逼平挪威。"
+          "reason": "若挪威久攻不下，科特迪瓦可守住平局"
         }
       ],
       "method_factors": {
-        "market_signal": "市场倾向于挪威，客胜赔率+105隐含概率47%，主胜26%。",
-        "fifa_rank_prior": "科特迪瓦非洲二线但人才不差，挪威拥有哈兰德等顶级攻击手。",
-        "recent_form": "近期表现未知，参考市场预期。",
-        "group_context": "1/16决赛单场淘汰制，挪威渴望走得更远。",
-        "injury_rotation": "挪威有不确定伤情（来源混入澳大利亚球员新闻），影响未知；科特迪瓦暂无伤情。",
-        "weather_venue": "达拉斯六月下午炎热，可能影响节奏。",
-        "tactical_key": "科特迪瓦依靠身体与速度，挪威依靠哈兰德终结能力。",
-        "uncertainty": "科特迪瓦具备爆冷实力，但市场看低其机会。"
+        "market_signal": "赔率明确倾向挪威，客胜赔率低至+110",
+        "fifa_rank_prior": "挪威有哈兰德等球星，科特迪瓦身体素质出色但整体略逊",
+        "recent_form": "挪威进攻端表现强势，科特迪瓦防守存隐患",
+        "group_context": "淘汰赛首轮，挪威寻求突破",
+        "injury_rotation": "伤病未知，假设双方主力齐整",
+        "weather_venue": "未知",
+        "tactical_key": "挪威快速传切找哈兰德 vs 科特迪瓦密集防守利用身体",
+        "uncertainty": "科特迪瓦身体对抗可能制造意外，但实力差距明显"
       },
       "matchup_graph": {
         "nodes": [
@@ -3092,24 +3158,24 @@
             "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 70,
-            "note": "科特迪瓦锋线速度冲劲足，但把握机会能力一般。"
+            "weight": 60,
+            "note": "科特迪瓦依赖个人能力，整体配合生疏"
           },
           {
             "id": "home_midfield",
             "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 65,
-            "note": "科特迪瓦中场硬度够，创造力有限。"
+            "weight": 55,
+            "note": "中场拦截尚可，但组织不力"
           },
           {
             "id": "home_defense",
             "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 66,
-            "note": "科特迪瓦防守侵略性强，但纪律性不足。"
+            "weight": 60,
+            "note": "盯人不严，易被速度击穿"
           },
           {
             "id": "away_attack",
@@ -3117,76 +3183,76 @@
             "type": "team_phase",
             "side": "away",
             "weight": 85,
-            "note": "挪威以哈兰德为核心，进攻效率极高。"
+            "note": "哈兰德终结能力超强，边路支援充足"
           },
           {
             "id": "away_midfield",
             "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 72,
-            "note": "挪威中场传控有序，过渡能力强。"
+            "weight": 75,
+            "note": "厄德高串联，节奏控制出色"
           },
           {
             "id": "away_defense",
             "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 68,
-            "note": "挪威防线稳定，但面对黑又硬冲击或有漏洞。"
+            "weight": 70,
+            "note": "防线稳固，但面对身体素质可能受压"
           }
         ],
         "edges": [
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "哈兰德冲击",
+            "label": "哈兰德冲击科特迪瓦防线",
             "impact": "high",
             "direction": "away_to_home",
-            "note": "哈兰德个人能力对科特迪瓦防线是巨大威胁。"
+            "note": "速度与力量结合，难以防范"
           },
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "速度突袭",
+            "label": "科特迪瓦高空球威胁",
             "impact": "medium",
             "direction": "home_to_away",
-            "note": "科特迪瓦边路快马可能冲击挪威防线身后。"
+            "note": "挪威需注意定位球防守"
           },
           {
-            "from": "home_midfield",
-            "to": "away_midfield",
-            "label": "中场争夺",
-            "impact": "low",
-            "direction": "balanced",
-            "note": "中场绞杀战，但挪威运转更流畅。"
+            "from": "away_midfield",
+            "to": "home_midfield",
+            "label": "中场技术碾压",
+            "impact": "high",
+            "direction": "away_to_home",
+            "note": "厄德高控制节奏，科特迪瓦难以抢断"
           }
         ],
-        "summary": "挪威进攻端优势明显，科特迪瓦虽有速度但整体实力逊色，客胜可期。",
+        "summary": "挪威实力占优，尤其进攻端压制明显，科特迪瓦需超常发挥才可守住。",
         "advantage_side": "away",
         "key_battle": "哈兰德 vs 科特迪瓦中卫",
-        "risk_trigger": "科特迪瓦若率先破门，将极大考验挪威攻坚能力。"
+        "risk_trigger": "科特迪瓦偷袭得手或挪威久攻不下时，平局可能增加"
       },
-      "tactical_matchup": "科特迪瓦主动收缩打反击，挪威控球耐心寻找哈兰德，通过传中和直塞破局。",
+      "tactical_matchup": "挪威4-3-3强攻，科特迪瓦5-4-1收缩，实力差距可能打破平衡。",
       "injury_adjustment": {
         "home": "未知",
-        "away": "可能存在伤情，但来源混杂，影响不明",
-        "summary": "挪威伤情报导同样窜入澳大利亚球员信息，真实情况待确认。"
+        "away": "未知",
+        "summary": "未知"
       },
-      "risk_analysis": "挪威整体占优，但科特迪瓦的冲击力可能制造混乱，平局不可忽视。",
-      "upset_probability": 40,
+      "risk_analysis": "挪威如正常发挥可轻松过关，但非洲球队的韧性需警惕。",
+      "upset_probability": 20,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 26.26,
-          "draw": 27.0,
-          "away_win": 46.75
+          "home_win": 26.89,
+          "draw": 27.66,
+          "away_win": 45.45
         },
         "model_edge": {
-          "home_win": 27,
-          "draw": 28,
-          "away_win": 45
+          "home_win": 0.11,
+          "draw": 0.34,
+          "away_win": -0.45
         },
-        "deviation_analysis": "模型与市场几乎一致，略微调高主胜和平局可能，认为市场定价合理。"
+        "deviation_analysis": "模型与市场高度一致，挪威优势明确"
       },
       "confidence": "medium"
     },
@@ -3248,22 +3314,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-370",
+          "home": "-350",
           "draw": "+500",
-          "away": "+950"
+          "away": "+850"
         },
         "implied_probability": {
-          "home_win": 78.72,
+          "home_win": 77.78,
           "draw": 16.67,
-          "away_win": 9.52
+          "away_win": 10.53
         },
         "normalized_probability": {
-          "home_win": 75.04,
-          "draw": 15.89,
-          "away_win": 9.08
+          "home_win": 74.09,
+          "draw": 15.88,
+          "away_win": 10.03
         },
-        "overround": 4.91,
-        "details": "FRA -370"
+        "overround": 4.97,
+        "details": "FRA -350"
       },
       "injuries": {
         "home": {
@@ -3283,44 +3349,44 @@
       },
       "match_id": "400021523",
       "win_draw_loss": {
-        "home_win": 78,
+        "home_win": 75,
         "draw": 15,
-        "away_win": 7
+        "away_win": 10
       },
       "xg_prediction": {
-        "home": 2.8,
-        "away": 0.7
+        "home": 2.0,
+        "away": 0.6
       },
       "predicted_score": {
-        "home": 3,
-        "away": 1
+        "home": 2,
+        "away": 0
       },
       "score_options": [
         {
-          "score": "3-1",
-          "rank": 1,
-          "reason": "法国攻击群威力尽显，瑞典定位球破门挽回颜面。"
-        },
-        {
           "score": "2-0",
-          "rank": 2,
-          "reason": "法国控制局面，瑞典零封。"
+          "rank": 1,
+          "reason": "法国实力碾压，可能轻松零封"
         },
         {
-          "score": "4-1",
+          "score": "3-0",
+          "rank": 2,
+          "reason": "若法国火力全开，可能大胜"
+        },
+        {
+          "score": "1-0",
           "rank": 3,
-          "reason": "法国状态火热取得大胜。"
+          "reason": "瑞典死守时法国可能小胜"
         }
       ],
       "method_factors": {
-        "market_signal": "市场深盘示好法国，主胜赔率-370隐含概率75%以上。",
-        "fifa_rank_prior": "法国卫冕冠军实力顶级，瑞典近年大赛表现一般，但韧性足。",
-        "recent_form": "近期表现未知，参考市场预期。",
-        "group_context": "1/16决赛单场淘汰制，法国轻装上阵。",
-        "injury_rotation": "双方伤病情况未知，阵容预期完整。",
-        "weather_venue": "新泽西六月傍晚天气温和，适合发挥。",
-        "tactical_key": "法国边路爆破结合中路渗透，瑞典密集防守伺机反击。",
-        "uncertainty": "实力差距明显，爆冷可能性极低。"
+        "market_signal": "法国极度热门，-350赔率反映统治级优势",
+        "fifa_rank_prior": "法国世界顶级，瑞典近年实力下滑明显",
+        "recent_form": "法国阵容豪华，姆巴佩状态佳，瑞典缺乏爆点",
+        "group_context": "淘汰赛首轮，法国被寄厚望",
+        "injury_rotation": "伤病未知，假设双方无重大缺席",
+        "weather_venue": "未知",
+        "tactical_key": "法国边路爆点与中路渗透 vs 瑞典五后卫收缩",
+        "uncertainty": "爆冷概率极低，但足球偶然性存在"
       },
       "matchup_graph": {
         "nodes": [
@@ -3329,101 +3395,101 @@
             "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 92,
-            "note": "姆巴佩领衔攻击线，速度与终结能力兼备。"
+            "weight": 90,
+            "note": "姆巴佩登贝莱双翼齐飞，格子中路调度"
           },
           {
             "id": "home_midfield",
             "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 86,
-            "note": "法国中场拦截与推进能力强劲。"
+            "weight": 85,
+            "note": "楚阿梅尼卡马文加覆盖面积广"
           },
           {
             "id": "home_defense",
             "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 82,
-            "note": "法国防线稳固，经验丰富。"
+            "weight": 80,
+            "note": "防线经验丰富，极少犯错"
           },
           {
             "id": "away_attack",
             "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 62,
-            "note": "瑞典进攻手段不多，依赖伊萨克个人能力。"
+            "weight": 50,
+            "note": "伊萨克单点，但支援不足"
           },
           {
             "id": "away_midfield",
             "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 58,
-            "note": "瑞典中场创造力一般，难以支撑持续进攻。"
+            "weight": 55,
+            "note": "技术粗糙，出球困难"
           },
           {
             "id": "away_defense",
             "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 68,
-            "note": "瑞典防守整体性强，但面对潮水攻势可能崩盘。"
+            "weight": 65,
+            "note": "密集防守可能短时有效，但持续受压易溃"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "法国锋线碾压",
+            "label": "法国立体进攻撕扯防线",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "姆巴佩等人反复冲击，瑞典防线难以支撑90分钟。"
+            "note": "姆巴佩速度生吃，中路后插上难以防范"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "零星偷袭",
+            "label": "瑞典反击试探",
             "impact": "low",
             "direction": "away_to_home",
-            "note": "瑞典依靠长传找伊萨克，威胁有限。"
+            "note": "伊萨克单挑困难，整体配合欠缺"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场压制",
+            "label": "中场绝对控制",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "法国中场技术体能完胜，瑞典难以出球。"
+            "note": "法国中场技术身体双重压制"
           }
         ],
-        "summary": "法国全面占优，取胜无忧，净胜球可能达到两球以上。",
+        "summary": "法国全面碾压，瑞典爆冷可能性极低，除非出现红牌等意外。",
         "advantage_side": "home",
         "key_battle": "姆巴佩 vs 瑞典右后卫",
-        "risk_trigger": "若法国情绪松懈，瑞典定位球可能偷分。"
+        "risk_trigger": "法国轻敌或早期红牌才可能改变局势"
       },
-      "tactical_matchup": "法国高位压迫快速转换，边路传中与内切结合；瑞典摆大巴，依靠长传和定位球。",
+      "tactical_matchup": "法国4-3-3强攻，瑞典5-4-1铁桶阵，实力鸿沟难以跨越。",
       "injury_adjustment": {
         "home": "未知",
         "away": "未知",
-        "summary": "双方暂无重大伤病报告。"
+        "summary": "未知"
       },
-      "risk_analysis": "无悬念比赛，法国晋级概率极高，但注意赢球输盘可能。",
-      "upset_probability": 7,
+      "risk_analysis": "标准强弱对话，法国过关概率极高，但需防心态松懈。",
+      "upset_probability": 5,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 75.04,
-          "draw": 15.89,
-          "away_win": 9.08
+          "home_win": 74.09,
+          "draw": 15.88,
+          "away_win": 10.03
         },
         "model_edge": {
-          "home_win": 78,
-          "draw": 15,
-          "away_win": 7
+          "home_win": 0.91,
+          "draw": -0.88,
+          "away_win": -0.03
         },
-        "deviation_analysis": "模型与市场方向一致，稍加看好法国，认为市场定价合理。"
+        "deviation_analysis": "模型略比市场乐观，但仍确认法国大优"
       },
       "confidence": "high"
     },
@@ -3485,22 +3551,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+125",
+          "home": "+120",
           "draw": "+195",
-          "away": "+290"
+          "away": "+300"
         },
         "implied_probability": {
-          "home_win": 44.44,
+          "home_win": 45.45,
           "draw": 33.9,
-          "away_win": 25.64
+          "away_win": 25.0
         },
         "normalized_probability": {
-          "home_win": 42.74,
-          "draw": 32.6,
-          "away_win": 24.66
+          "home_win": 43.56,
+          "draw": 32.48,
+          "away_win": 23.96
         },
-        "overround": 3.98,
-        "details": "MEX +125"
+        "overround": 4.35,
+        "details": "MEX +120"
       },
       "injuries": {
         "home": {
@@ -3520,44 +3586,44 @@
       },
       "match_id": "400021520",
       "win_draw_loss": {
-        "home_win": 43,
-        "draw": 33,
+        "home_win": 44,
+        "draw": 32,
         "away_win": 24
       },
       "xg_prediction": {
-        "home": 1.6,
-        "away": 1.2
+        "home": 1.3,
+        "away": 0.9
       },
       "predicted_score": {
-        "home": 2,
-        "away": 1
+        "home": 1,
+        "away": 0
       },
       "score_options": [
         {
-          "score": "2-1",
+          "score": "1-0",
           "rank": 1,
-          "reason": "墨西哥主场氛围浓厚，小胜合理。"
+          "reason": "墨西哥主场气势，小胜可期"
         },
         {
           "score": "1-1",
           "rank": 2,
-          "reason": "双方实力相当，闷平概率不低。"
+          "reason": "厄瓜多尔防守顽强，可能带走一分"
         },
         {
-          "score": "1-0",
+          "score": "0-0",
           "rank": 3,
-          "reason": "墨西哥一球小胜，防守致胜。"
+          "reason": "淘汰赛谨慎，可能闷平"
         }
       ],
       "method_factors": {
-        "market_signal": "市场倾向墨西哥，主胜+125隐含概率43%，平局33%居高位。",
-        "fifa_rank_prior": "墨西哥中北美强队技术细腻，厄瓜多尔南美新锐体力充沛。",
-        "recent_form": "近期表现未知，参考市场预期。",
-        "group_context": "1/16决赛单场淘汰制，墨西哥有半个主场优势。",
-        "injury_rotation": "双方伤病情况未知，阵容预期完整。",
-        "weather_venue": "墨西哥城海拔高，六月夜间凉爽，对客队略有挑战。",
-        "tactical_key": "墨西哥控球渗透，厄瓜多尔高反击结合边路速度。",
-        "uncertainty": "平局可能拖入加时，胜负难料。"
+        "market_signal": "赔率墨西哥微热，但平局赔率不低，暗示胶着",
+        "fifa_rank_prior": "两队排名接近，墨西哥略高，厄瓜多尔上升势头",
+        "recent_form": "墨西哥控球传切娴熟，厄瓜多尔身体对抗和反击有威胁",
+        "group_context": "淘汰赛首轮，双方预计谨慎",
+        "injury_rotation": "伤病未知，假设主力齐整",
+        "weather_venue": "未知",
+        "tactical_key": "墨西哥技术流 vs 厄瓜多尔力量派，控球权争夺决定走势",
+        "uncertainty": "厄瓜多尔有能力制造麻烦，冷门概率中等"
       },
       "matchup_graph": {
         "nodes": [
@@ -3566,101 +3632,101 @@
             "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 75,
-            "note": "墨西哥前场配合娴熟，个人能力突出。"
+            "weight": 70,
+            "note": "墨西哥前场配合细腻，但终结能力一般"
           },
           {
             "id": "home_midfield",
             "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 74,
-            "note": "墨西哥中场控制力强，传球成功率高。"
+            "weight": 75,
+            "note": "中场控制强，擅长短传渗透"
           },
           {
             "id": "home_defense",
             "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 72,
-            "note": "墨西哥防线经验丰富，但偶尔注意力不集中。"
+            "weight": 70,
+            "note": "经验丰富但速度偏慢"
           },
           {
             "id": "away_attack",
             "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 73,
-            "note": "厄瓜多尔锋线速度块头兼备，反击犀利。"
+            "weight": 65,
+            "note": "反击速度快，凯塞多驱动"
           },
           {
             "id": "away_midfield",
             "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 68,
-            "note": "厄瓜多尔中场拼抢积极，但组织稍乱。"
+            "weight": 70,
+            "note": "防守型中场硬朗，抢断能力强"
           },
           {
             "id": "away_defense",
             "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 70,
-            "note": "厄瓜多尔防守硬度够，但客场防空需注意。"
+            "weight": 75,
+            "note": "防线默契，头球优势"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "主场施压",
-            "impact": "medium",
+            "label": "墨西哥地面渗透 vs 厄瓜多尔空军",
+            "impact": "high",
             "direction": "home_to_away",
-            "note": "墨西哥利用主场氛围持续施压，寻找对手失误。"
+            "note": "墨西哥需规避传中，打身后"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "反击威胁",
+            "label": "厄瓜多尔反击与定位球",
             "impact": "medium",
             "direction": "away_to_home",
-            "note": "厄瓜多尔快速反击打墨西哥身后，效率是关键。"
+            "note": "厄瓜多尔依靠速度和高点"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "控球权争夺",
+            "label": "中场技术vs身体",
             "impact": "medium",
             "direction": "balanced",
-            "note": "墨西哥技术流对抗厄瓜多尔力量流，中场拉锯。"
+            "note": "谁控球谁主导比赛"
           }
         ],
-        "summary": "墨西哥稍占上风，但厄瓜多尔具备爆冷资本，比赛胶着。",
+        "summary": "墨西哥技术占优但终结能力不足，厄瓜多尔防守反击可能偷分。",
         "advantage_side": "home",
-        "key_battle": "墨西哥边锋 vs 厄瓜多尔边卫",
-        "risk_trigger": "厄瓜多尔先进球则墨西哥陷入被动，可能改变走势。"
+        "key_battle": "墨西哥前腰 vs 厄瓜多尔后腰",
+        "risk_trigger": "厄瓜多尔先进球可能改变格局，墨西哥围攻不成反被偷袭"
       },
-      "tactical_matchup": "墨西哥阵地进攻寻求肋部渗透，厄瓜多尔稳守后利用边路快速转移打反击。",
+      "tactical_matchup": "墨西哥4-3-3传控，厄瓜多尔4-4-2防守反击，场面或显沉闷。",
       "injury_adjustment": {
         "home": "未知",
         "away": "未知",
-        "summary": "双方暂无重大伤病报告。"
+        "summary": "未知"
       },
-      "risk_analysis": "主胜并非板上钉钉，市场高平赔提示打平可能，建议谨慎。",
-      "upset_probability": 32,
+      "risk_analysis": "墨西哥不擅长攻坚，厄瓜多尔具备平局甚至爆冷能力。",
+      "upset_probability": 30,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 42.74,
-          "draw": 32.6,
-          "away_win": 24.66
+          "home_win": 43.56,
+          "draw": 32.48,
+          "away_win": 23.96
         },
         "model_edge": {
-          "home_win": 43,
-          "draw": 33,
-          "away_win": 24
+          "home_win": 0.44,
+          "draw": -0.48,
+          "away_win": 0.04
         },
-        "deviation_analysis": "模型与市场定价几乎一致，认为墨西哥稍有优势但平局概率不容忽视。"
+        "deviation_analysis": "模型与市场基本无差，墨西哥热度有限"
       },
       "confidence": "medium"
     }
@@ -3724,25 +3790,25 @@
             "end_iso": "2026-06-30T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 60,
-            "draw": 25,
-            "away_win": 15
+            "home_win": 100,
+            "draw": 0,
+            "away_win": 0
           },
           "score_options": [
             {
               "score": "2-1",
               "rank": 1,
-              "reason": "巴西进攻火力强劲，日本韧性防守或有破门。"
+              "reason": "实际赛果：马丁内利96分钟绝杀，巴西逆转胜"
             },
             {
               "score": "1-0",
               "rank": 2,
-              "reason": "巴西控制局面小胜，日本反击效率不足。"
+              "reason": "巴西控场但久攻不下，若早进球可能小胜"
             },
             {
-              "score": "3-1",
+              "score": "2-0",
               "rank": 3,
-              "reason": "巴西多点开花，日本定位球追回一球。"
+              "reason": "日本若无法破门，巴西可能零封"
             }
           ],
           "current_window": true
@@ -3774,25 +3840,25 @@
             "end_iso": "2026-06-30T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 75,
-            "draw": 18,
-            "away_win": 7
+            "home_win": 0,
+            "draw": 100,
+            "away_win": 0
           },
           "score_options": [
             {
-              "score": "3-0",
+              "score": "1-1",
               "rank": 1,
-              "reason": "德国实力碾压，巴拉圭难有还手之力。"
+              "reason": "实际赛果：90分钟平局，德国进球后巴拉圭顽强扳平"
             },
             {
-              "score": "2-0",
+              "score": "1-0",
               "rank": 2,
-              "reason": "德国控制节奏，两球完胜。"
+              "reason": "德国若早进球并加强控制，可能小胜"
             },
             {
-              "score": "4-0",
+              "score": "0-0",
               "rank": 3,
-              "reason": "德国状态火热，多点开花大胜。"
+              "reason": "双方进攻乏力时可能闷平"
             }
           ],
           "current_window": true
@@ -3824,25 +3890,25 @@
             "end_iso": "2026-06-30T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 41,
+            "home_win": 40,
             "draw": 31,
-            "away_win": 28
+            "away_win": 29
           },
           "score_options": [
             {
-              "score": "2-1",
-              "rank": 1,
-              "reason": "荷兰进攻稍占优，摩洛哥防守顽强但难保不失。"
-            },
-            {
               "score": "1-1",
-              "rank": 2,
-              "reason": "双方实力接近，场面胶着可能握手言和。"
+              "rank": 1,
+              "reason": "双方防守稳固，进攻效率相似，平局概率高"
             },
             {
-              "score": "1-2",
+              "score": "1-0",
+              "rank": 2,
+              "reason": "荷兰若把握机会能力提升，可能小胜"
+            },
+            {
+              "score": "0-0",
               "rank": 3,
-              "reason": "摩洛哥反击高效，荷兰久攻不下遭反杀。"
+              "reason": "摩洛哥严密防守可能零封"
             }
           ],
           "current_window": true
@@ -3874,25 +3940,25 @@
             "end_iso": "2026-07-01T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 78,
+            "home_win": 75,
             "draw": 15,
-            "away_win": 7
+            "away_win": 10
           },
           "score_options": [
             {
-              "score": "3-1",
-              "rank": 1,
-              "reason": "法国攻击群威力尽显，瑞典定位球破门挽回颜面。"
-            },
-            {
               "score": "2-0",
-              "rank": 2,
-              "reason": "法国控制局面，瑞典零封。"
+              "rank": 1,
+              "reason": "法国实力碾压，可能轻松零封"
             },
             {
-              "score": "4-1",
+              "score": "3-0",
+              "rank": 2,
+              "reason": "若法国火力全开，可能大胜"
+            },
+            {
+              "score": "1-0",
               "rank": 3,
-              "reason": "法国状态火热取得大胜。"
+              "reason": "瑞典死守时法国可能小胜"
             }
           ],
           "current_window": true
@@ -3924,25 +3990,25 @@
             "end_iso": "2026-07-01T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 43,
-            "draw": 33,
+            "home_win": 44,
+            "draw": 32,
             "away_win": 24
           },
           "score_options": [
             {
-              "score": "2-1",
+              "score": "1-0",
               "rank": 1,
-              "reason": "墨西哥主场氛围浓厚，小胜合理。"
+              "reason": "墨西哥主场气势，小胜可期"
             },
             {
               "score": "1-1",
               "rank": 2,
-              "reason": "双方实力相当，闷平概率不低。"
+              "reason": "厄瓜多尔防守顽强，可能带走一分"
             },
             {
-              "score": "1-0",
+              "score": "0-0",
               "rank": 3,
-              "reason": "墨西哥一球小胜，防守致胜。"
+              "reason": "淘汰赛谨慎，可能闷平"
             }
           ],
           "current_window": true
@@ -3983,19 +4049,19 @@
           },
           "score_options": [
             {
-              "score": "1-2",
+              "score": "0-2",
               "rank": 1,
-              "reason": "挪威进攻锐利，科特迪瓦后防恐难招架。"
+              "reason": "挪威进攻火力强，科特迪瓦防守难以限制"
             },
             {
-              "score": "0-1",
+              "score": "1-2",
               "rank": 2,
-              "reason": "挪威小胜，科特迪瓦进攻乏力。"
+              "reason": "科特迪瓦可能利用身体优势抢下一球"
             },
             {
               "score": "1-1",
               "rank": 3,
-              "reason": "非洲球队硬朗防守逼平挪威。"
+              "reason": "若挪威久攻不下，科特迪瓦可守住平局"
             }
           ],
           "current_window": true
@@ -4504,7 +4570,7 @@
   "research": {
     "schema_version": 3,
     "stage": "research",
-    "generated_at": "2026-06-29T14:51:24Z",
+    "generated_at": "2026-06-30T01:17:04Z",
     "window": {
       "start_date": "2026-06-29",
       "days": 3,
@@ -4667,8 +4733,8 @@
     "unverified_fifa_matches": [],
     "structure_unverified_fifa_matches": [
       "Canada vs W75",
-      "W74 vs W77",
-      "W76 vs W78",
+      "Paraguay vs W77",
+      "Brazil vs W78",
       "W79 vs W80"
     ],
     "fixture_count": 6,
@@ -4676,7 +4742,7 @@
     "raw_fifa_fixture_count": 21,
     "structure_fixture_count": 15,
     "structure_fifa_fixture_count": 19,
-    "odds_available_count": 6,
+    "odds_available_count": 4,
     "matches": [
       {
         "id": "400021516",
@@ -4690,9 +4756,9 @@
         "group": "",
         "match_number": 76,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -4702,8 +4768,8 @@
             "id_team": "43924",
             "id_country": "BRA",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/BRA",
-            "score": null,
-            "tactics": null
+            "score": 2,
+            "tactics": "4-1-2-3"
           },
           "away": {
             "name": "日本",
@@ -4712,8 +4778,8 @@
             "id_team": "43819",
             "id_country": "JPN",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/JPN",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "3-4-3"
           }
         },
         "venue": {
@@ -4744,40 +4810,39 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-135",
-            "draw": "+265",
-            "away": "+400"
-          },
-          "implied_probability": {
-            "home_win": 57.45,
-            "draw": 27.4,
-            "away_win": 20.0
-          },
-          "normalized_probability": {
-            "home_win": 54.79,
-            "draw": 26.13,
-            "away_win": 19.08
-          },
-          "overround": 4.84,
-          "details": "BRA -135"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "巴西",
             "team_en": "Brazil",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+                "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+                "published": "2026-06-29T19:35:54Z",
+                "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "日本",
             "team_en": "Japan",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+                "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+                "published": "2026-06-29T19:35:54Z",
+                "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -4794,9 +4859,9 @@
         "group": "",
         "match_number": 74,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 2
         },
         "teams": {
           "home": {
@@ -4806,8 +4871,8 @@
             "id_team": "43948",
             "id_country": "GER",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/GER",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "4-2-3-1"
           },
           "away": {
             "name": "巴拉圭",
@@ -4816,8 +4881,8 @@
             "id_team": "43928",
             "id_country": "PAR",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/PAR",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "4-4-2"
           }
         },
         "venue": {
@@ -4848,26 +4913,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-275",
-            "draw": "+400",
-            "away": "+800"
-          },
-          "implied_probability": {
-            "home_win": 73.33,
-            "draw": 20.0,
-            "away_win": 11.11
-          },
-          "normalized_probability": {
-            "home_win": 70.21,
-            "draw": 19.15,
-            "away_win": 10.64
-          },
-          "overround": 4.44,
-          "details": "GER -275"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -4877,10 +4925,24 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
-                "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-                "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-                "published": "2026-06-29T02:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
+                "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+                "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+                "published": "2026-06-30T00:39:30Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+                "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+                "published": "2026-06-30T00:06:01Z",
+                "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany dumped out of World Cup by Paraguay on penalties",
+                "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+                "published": "2026-06-30T00:42:38Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
               }
             ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -4888,8 +4950,30 @@
           "away": {
             "team": "巴拉圭",
             "team_en": "Paraguay",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+                "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+                "published": "2026-06-30T00:39:30Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+                "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+                "published": "2026-06-30T00:06:01Z",
+                "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany dumped out of World Cup by Paraguay on penalties",
+                "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+                "published": "2026-06-30T00:42:38Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -4906,7 +4990,7 @@
         "group": "",
         "match_number": 75,
         "status": {
-          "match_status": 1,
+          "match_status": 3,
           "officiality_status": 0,
           "result_type": 0
         },
@@ -4918,8 +5002,8 @@
             "id_team": "43960",
             "id_country": "NED",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/NED",
-            "score": null,
-            "tactics": null
+            "score": 0,
+            "tactics": "3-4-3"
           },
           "away": {
             "name": "摩洛哥",
@@ -4928,8 +5012,8 @@
             "id_team": "43872",
             "id_country": "MAR",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/MAR",
-            "score": null,
-            "tactics": null
+            "score": 0,
+            "tactics": "4-2-3-1"
           }
         },
         "venue": {
@@ -4964,36 +5048,59 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+130",
+            "home": "+145",
             "draw": "+210",
-            "away": "+250"
+            "away": "+230"
           },
           "implied_probability": {
-            "home_win": 43.48,
+            "home_win": 40.82,
             "draw": 32.26,
-            "away_win": 28.57
+            "away_win": 30.3
           },
           "normalized_probability": {
-            "home_win": 41.68,
-            "draw": 30.93,
-            "away_win": 27.39
+            "home_win": 39.48,
+            "draw": 31.2,
+            "away_win": 29.31
           },
-          "overround": 4.31,
-          "details": "NED +130"
+          "overround": 3.38,
+          "details": "NED +145"
         },
         "injuries": {
           "home": {
             "team": "荷兰",
             "team_en": "Netherlands",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+                "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+                "published": "2026-06-30T00:39:30Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "摩洛哥",
             "team_en": "Morocco",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Spain's plan for Austria simple: Get ball to Lamine Yamal",
+                "description": "Right-back Marcos Llorente said Spain are working hard to get the best out of star winger Lamine Yamal as they prepare to face Austria in the World Cup round of 32.",
+                "published": "2026-06-29T21:18:16Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49218747/spain-plan-austria-simple-get-ball-lamine-yamal"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+                "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+                "published": "2026-06-29T19:35:54Z",
+                "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -5068,22 +5175,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+265",
-            "draw": "+255",
-            "away": "+105"
+            "home": "+255",
+            "draw": "+245",
+            "away": "+110"
           },
           "implied_probability": {
-            "home_win": 27.4,
-            "draw": 28.17,
-            "away_win": 48.78
+            "home_win": 28.17,
+            "draw": 28.99,
+            "away_win": 47.62
           },
           "normalized_probability": {
-            "home_win": 26.26,
-            "draw": 27.0,
-            "away_win": 46.75
+            "home_win": 26.89,
+            "draw": 27.66,
+            "away_win": 45.45
           },
-          "overround": 4.35,
-          "details": "NOR +105"
+          "overround": 4.77,
+          "details": "NOR +110"
         },
         "injuries": {
           "home": {
@@ -5096,16 +5203,8 @@
           "away": {
             "team": "挪威",
             "team_en": "Norway",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-                "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-                "published": "2026-06-29T02:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -5180,22 +5279,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-370",
+            "home": "-350",
             "draw": "+500",
-            "away": "+950"
+            "away": "+850"
           },
           "implied_probability": {
-            "home_win": 78.72,
+            "home_win": 77.78,
             "draw": 16.67,
-            "away_win": 9.52
+            "away_win": 10.53
           },
           "normalized_probability": {
-            "home_win": 75.04,
-            "draw": 15.89,
-            "away_win": 9.08
+            "home_win": 74.09,
+            "draw": 15.88,
+            "away_win": 10.03
           },
-          "overround": 4.91,
-          "details": "FRA -370"
+          "overround": 4.97,
+          "details": "FRA -350"
         },
         "injuries": {
           "home": {
@@ -5284,22 +5383,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+125",
+            "home": "+120",
             "draw": "+195",
-            "away": "+290"
+            "away": "+300"
           },
           "implied_probability": {
-            "home_win": 44.44,
+            "home_win": 45.45,
             "draw": 33.9,
-            "away_win": 25.64
+            "away_win": 25.0
           },
           "normalized_probability": {
-            "home_win": 42.74,
-            "draw": 32.6,
-            "away_win": 24.66
+            "home_win": 43.56,
+            "draw": 32.48,
+            "away_win": 23.96
           },
-          "overround": 3.98,
-          "details": "MEX +125"
+          "overround": 4.35,
+          "details": "MEX +120"
         },
         "injuries": {
           "home": {
@@ -5332,9 +5431,9 @@
         "group": "",
         "match_number": 76,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -5344,8 +5443,8 @@
             "id_team": "43924",
             "id_country": "BRA",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/BRA",
-            "score": null,
-            "tactics": null
+            "score": 2,
+            "tactics": "4-1-2-3"
           },
           "away": {
             "name": "日本",
@@ -5354,8 +5453,8 @@
             "id_team": "43819",
             "id_country": "JPN",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/JPN",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "3-4-3"
           }
         },
         "venue": {
@@ -5386,40 +5485,39 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-135",
-            "draw": "+265",
-            "away": "+400"
-          },
-          "implied_probability": {
-            "home_win": 57.45,
-            "draw": 27.4,
-            "away_win": 20.0
-          },
-          "normalized_probability": {
-            "home_win": 54.79,
-            "draw": 26.13,
-            "away_win": 19.08
-          },
-          "overround": 4.84,
-          "details": "BRA -135"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "巴西",
             "team_en": "Brazil",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+                "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+                "published": "2026-06-29T19:35:54Z",
+                "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "日本",
             "team_en": "Japan",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+                "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+                "published": "2026-06-29T19:35:54Z",
+                "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -5436,9 +5534,9 @@
         "group": "",
         "match_number": 74,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 2
         },
         "teams": {
           "home": {
@@ -5448,8 +5546,8 @@
             "id_team": "43948",
             "id_country": "GER",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/GER",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "4-2-3-1"
           },
           "away": {
             "name": "巴拉圭",
@@ -5458,8 +5556,8 @@
             "id_team": "43928",
             "id_country": "PAR",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/PAR",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "4-4-2"
           }
         },
         "venue": {
@@ -5490,26 +5588,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-275",
-            "draw": "+400",
-            "away": "+800"
-          },
-          "implied_probability": {
-            "home_win": 73.33,
-            "draw": 20.0,
-            "away_win": 11.11
-          },
-          "normalized_probability": {
-            "home_win": 70.21,
-            "draw": 19.15,
-            "away_win": 10.64
-          },
-          "overround": 4.44,
-          "details": "GER -275"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -5519,10 +5600,24 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
-                "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-                "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-                "published": "2026-06-29T02:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
+                "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+                "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+                "published": "2026-06-30T00:39:30Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+                "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+                "published": "2026-06-30T00:06:01Z",
+                "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany dumped out of World Cup by Paraguay on penalties",
+                "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+                "published": "2026-06-30T00:42:38Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
               }
             ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -5530,8 +5625,30 @@
           "away": {
             "team": "巴拉圭",
             "team_en": "Paraguay",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+                "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+                "published": "2026-06-30T00:39:30Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+                "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+                "published": "2026-06-30T00:06:01Z",
+                "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany dumped out of World Cup by Paraguay on penalties",
+                "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+                "published": "2026-06-30T00:42:38Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -5548,7 +5665,7 @@
         "group": "",
         "match_number": 75,
         "status": {
-          "match_status": 1,
+          "match_status": 3,
           "officiality_status": 0,
           "result_type": 0
         },
@@ -5560,8 +5677,8 @@
             "id_team": "43960",
             "id_country": "NED",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/NED",
-            "score": null,
-            "tactics": null
+            "score": 0,
+            "tactics": "3-4-3"
           },
           "away": {
             "name": "摩洛哥",
@@ -5570,8 +5687,8 @@
             "id_team": "43872",
             "id_country": "MAR",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/MAR",
-            "score": null,
-            "tactics": null
+            "score": 0,
+            "tactics": "4-2-3-1"
           }
         },
         "venue": {
@@ -5606,36 +5723,59 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+130",
+            "home": "+145",
             "draw": "+210",
-            "away": "+250"
+            "away": "+230"
           },
           "implied_probability": {
-            "home_win": 43.48,
+            "home_win": 40.82,
             "draw": 32.26,
-            "away_win": 28.57
+            "away_win": 30.3
           },
           "normalized_probability": {
-            "home_win": 41.68,
-            "draw": 30.93,
-            "away_win": 27.39
+            "home_win": 39.48,
+            "draw": 31.2,
+            "away_win": 29.31
           },
-          "overround": 4.31,
-          "details": "NED +130"
+          "overround": 3.38,
+          "details": "NED +145"
         },
         "injuries": {
           "home": {
             "team": "荷兰",
             "team_en": "Netherlands",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+                "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+                "published": "2026-06-30T00:39:30Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "摩洛哥",
             "team_en": "Morocco",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Spain's plan for Austria simple: Get ball to Lamine Yamal",
+                "description": "Right-back Marcos Llorente said Spain are working hard to get the best out of star winger Lamine Yamal as they prepare to face Austria in the World Cup round of 32.",
+                "published": "2026-06-29T21:18:16Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49218747/spain-plan-austria-simple-get-ball-lamine-yamal"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+                "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+                "published": "2026-06-29T19:35:54Z",
+                "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -5710,22 +5850,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+265",
-            "draw": "+255",
-            "away": "+105"
+            "home": "+255",
+            "draw": "+245",
+            "away": "+110"
           },
           "implied_probability": {
-            "home_win": 27.4,
-            "draw": 28.17,
-            "away_win": 48.78
+            "home_win": 28.17,
+            "draw": 28.99,
+            "away_win": 47.62
           },
           "normalized_probability": {
-            "home_win": 26.26,
-            "draw": 27.0,
-            "away_win": 46.75
+            "home_win": 26.89,
+            "draw": 27.66,
+            "away_win": 45.45
           },
-          "overround": 4.35,
-          "details": "NOR +105"
+          "overround": 4.77,
+          "details": "NOR +110"
         },
         "injuries": {
           "home": {
@@ -5738,16 +5878,8 @@
           "away": {
             "team": "挪威",
             "team_en": "Norway",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-                "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-                "published": "2026-06-29T02:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -5822,22 +5954,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-370",
+            "home": "-350",
             "draw": "+500",
-            "away": "+950"
+            "away": "+850"
           },
           "implied_probability": {
-            "home_win": 78.72,
+            "home_win": 77.78,
             "draw": 16.67,
-            "away_win": 9.52
+            "away_win": 10.53
           },
           "normalized_probability": {
-            "home_win": 75.04,
-            "draw": 15.89,
-            "away_win": 9.08
+            "home_win": 74.09,
+            "draw": 15.88,
+            "away_win": 10.03
           },
-          "overround": 4.91,
-          "details": "FRA -370"
+          "overround": 4.97,
+          "details": "FRA -350"
         },
         "injuries": {
           "home": {
@@ -5926,22 +6058,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+125",
+            "home": "+120",
             "draw": "+195",
-            "away": "+290"
+            "away": "+300"
           },
           "implied_probability": {
-            "home_win": 44.44,
+            "home_win": 45.45,
             "draw": 33.9,
-            "away_win": 25.64
+            "away_win": 25.0
           },
           "normalized_probability": {
-            "home_win": 42.74,
-            "draw": 32.6,
-            "away_win": 24.66
+            "home_win": 43.56,
+            "draw": 32.48,
+            "away_win": 23.96
           },
-          "overround": 3.98,
-          "details": "MEX +125"
+          "overround": 4.35,
+          "details": "MEX +120"
         },
         "injuries": {
           "home": {
@@ -5974,9 +6106,9 @@
         "group": "",
         "match_number": 76,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -5986,8 +6118,8 @@
             "id_team": "43924",
             "id_country": "BRA",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/BRA",
-            "score": null,
-            "tactics": null
+            "score": 2,
+            "tactics": "4-1-2-3"
           },
           "away": {
             "name": "日本",
@@ -5996,8 +6128,8 @@
             "id_team": "43819",
             "id_country": "JPN",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/JPN",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "3-4-3"
           }
         },
         "venue": {
@@ -6028,40 +6160,39 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-135",
-            "draw": "+265",
-            "away": "+400"
-          },
-          "implied_probability": {
-            "home_win": 57.45,
-            "draw": 27.4,
-            "away_win": 20.0
-          },
-          "normalized_probability": {
-            "home_win": 54.79,
-            "draw": 26.13,
-            "away_win": 19.08
-          },
-          "overround": 4.84,
-          "details": "BRA -135"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "巴西",
             "team_en": "Brazil",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+                "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+                "published": "2026-06-29T19:35:54Z",
+                "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "日本",
             "team_en": "Japan",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+                "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+                "published": "2026-06-29T19:35:54Z",
+                "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -6078,9 +6209,9 @@
         "group": "",
         "match_number": 74,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 2
         },
         "teams": {
           "home": {
@@ -6090,8 +6221,8 @@
             "id_team": "43948",
             "id_country": "GER",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/GER",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "4-2-3-1"
           },
           "away": {
             "name": "巴拉圭",
@@ -6100,8 +6231,8 @@
             "id_team": "43928",
             "id_country": "PAR",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/PAR",
-            "score": null,
-            "tactics": null
+            "score": 1,
+            "tactics": "4-4-2"
           }
         },
         "venue": {
@@ -6132,26 +6263,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-275",
-            "draw": "+400",
-            "away": "+800"
-          },
-          "implied_probability": {
-            "home_win": 73.33,
-            "draw": 20.0,
-            "away_win": 11.11
-          },
-          "normalized_probability": {
-            "home_win": 70.21,
-            "draw": 19.15,
-            "away_win": 10.64
-          },
-          "overround": 4.44,
-          "details": "GER -275"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -6161,10 +6275,24 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
-                "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-                "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-                "published": "2026-06-29T02:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
+                "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+                "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+                "published": "2026-06-30T00:39:30Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+                "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+                "published": "2026-06-30T00:06:01Z",
+                "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany dumped out of World Cup by Paraguay on penalties",
+                "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+                "published": "2026-06-30T00:42:38Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
               }
             ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -6172,8 +6300,30 @@
           "away": {
             "team": "巴拉圭",
             "team_en": "Paraguay",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+                "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+                "published": "2026-06-30T00:39:30Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Paraguay eliminate Germany on penalties despite Neuer heroics",
+                "description": "Paraguay knock Germany out of the World Cup in a dramatic penalty shootout, after VAR earlier ruled out a Jonathan Tah header in extra time.",
+                "published": "2026-06-30T00:06:01Z",
+                "url": "https://www.espn.com/video/clip/_/id/49220543/paraguay-eliminate-germany-penalties-neuer-heroics"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany dumped out of World Cup by Paraguay on penalties",
+                "description": "Kai Havertz, Nick Woltemade and Jonathan Tah missed crucial penalties as Germany were eliminated from the World Cup in a shootout by Paraguay.",
+                "published": "2026-06-30T00:42:38Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49220268/germany-dumped-world-cup-paraguay-penalties"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -6190,7 +6340,7 @@
         "group": "",
         "match_number": 75,
         "status": {
-          "match_status": 1,
+          "match_status": 3,
           "officiality_status": 0,
           "result_type": 0
         },
@@ -6202,8 +6352,8 @@
             "id_team": "43960",
             "id_country": "NED",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/NED",
-            "score": null,
-            "tactics": null
+            "score": 0,
+            "tactics": "3-4-3"
           },
           "away": {
             "name": "摩洛哥",
@@ -6212,8 +6362,8 @@
             "id_team": "43872",
             "id_country": "MAR",
             "logo": "https://api.fifa.com/api/v3/picture/flags-{format}-{size}/MAR",
-            "score": null,
-            "tactics": null
+            "score": 0,
+            "tactics": "4-2-3-1"
           }
         },
         "venue": {
@@ -6248,36 +6398,59 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+130",
+            "home": "+145",
             "draw": "+210",
-            "away": "+250"
+            "away": "+230"
           },
           "implied_probability": {
-            "home_win": 43.48,
+            "home_win": 40.82,
             "draw": 32.26,
-            "away_win": 28.57
+            "away_win": 30.3
           },
           "normalized_probability": {
-            "home_win": 41.68,
-            "draw": 30.93,
-            "away_win": 27.39
+            "home_win": 39.48,
+            "draw": 31.2,
+            "away_win": 29.31
           },
-          "overround": 4.31,
-          "details": "NED +130"
+          "overround": 3.38,
+          "details": "NED +145"
         },
         "injuries": {
           "home": {
             "team": "荷兰",
             "team_en": "Netherlands",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Germany vs Paraguay as it happened: Germans knocked out of 2026 World Cup after dramatic shootout",
+                "description": "Live updates from Boston as Germany take on Paraguay in the World Cup round of 32.",
+                "published": "2026-06-30T00:39:30Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49217994/germany-vs-paraguay-live-2026-world-cup-round-32-updates"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "摩洛哥",
             "team_en": "Morocco",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Spain's plan for Austria simple: Get ball to Lamine Yamal",
+                "description": "Right-back Marcos Llorente said Spain are working hard to get the best out of star winger Lamine Yamal as they prepare to face Austria in the World Cup round of 32.",
+                "published": "2026-06-29T21:18:16Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49218747/spain-plan-austria-simple-get-ball-lamine-yamal"
+              },
+              {
+                "source": "ESPN World Cup news",
+                "title": "Gabriel Martinelli scores 96th minute winner for Brazil to knock Japan out of World Cup",
+                "description": "Gabriel Martinelli scored late injury time to give Brazil a 2-1 win over Japan in the round of 32 at the World Cup on Monday.",
+                "published": "2026-06-29T19:35:54Z",
+                "url": "http://www.espn.com/soccer/report/_/gameId/760487"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -6352,22 +6525,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+265",
-            "draw": "+255",
-            "away": "+105"
+            "home": "+255",
+            "draw": "+245",
+            "away": "+110"
           },
           "implied_probability": {
-            "home_win": 27.4,
-            "draw": 28.17,
-            "away_win": 48.78
+            "home_win": 28.17,
+            "draw": 28.99,
+            "away_win": 47.62
           },
           "normalized_probability": {
-            "home_win": 26.26,
-            "draw": 27.0,
-            "away_win": 46.75
+            "home_win": 26.89,
+            "draw": 27.66,
+            "away_win": 45.45
           },
-          "overround": 4.35,
-          "details": "NOR +105"
+          "overround": 4.77,
+          "details": "NOR +110"
         },
         "injuries": {
           "home": {
@@ -6380,16 +6553,8 @@
           "away": {
             "team": "挪威",
             "team_en": "Norway",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "St. Pauli relegation 'anger' fueling Metcalfe at World Cup",
-                "description": "Socceroos attacker Connor Metcalfe says the \"inner anger\" from a frustrating Bundesliga campaign with St Pauli is helping to fuel his breakout FIFA World Cup.",
-                "published": "2026-06-29T02:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49210247/st-pauli-relegation-anger-fueling-metcalfe-world-cup"
-              }
-            ],
+            "status": "unknown",
+            "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -6464,22 +6629,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-370",
+            "home": "-350",
             "draw": "+500",
-            "away": "+950"
+            "away": "+850"
           },
           "implied_probability": {
-            "home_win": 78.72,
+            "home_win": 77.78,
             "draw": 16.67,
-            "away_win": 9.52
+            "away_win": 10.53
           },
           "normalized_probability": {
-            "home_win": 75.04,
-            "draw": 15.89,
-            "away_win": 9.08
+            "home_win": 74.09,
+            "draw": 15.88,
+            "away_win": 10.03
           },
-          "overround": 4.91,
-          "details": "FRA -370"
+          "overround": 4.97,
+          "details": "FRA -350"
         },
         "injuries": {
           "home": {
@@ -6568,22 +6733,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+125",
+            "home": "+120",
             "draw": "+195",
-            "away": "+290"
+            "away": "+300"
           },
           "implied_probability": {
-            "home_win": 44.44,
+            "home_win": 45.45,
             "draw": 33.9,
-            "away_win": 25.64
+            "away_win": 25.0
           },
           "normalized_probability": {
-            "home_win": 42.74,
-            "draw": 32.6,
-            "away_win": 24.66
+            "home_win": 43.56,
+            "draw": 32.48,
+            "away_win": 23.96
           },
-          "overround": 3.98,
-          "details": "MEX +125"
+          "overround": 4.35,
+          "details": "MEX +120"
         },
         "injuries": {
           "home": {
@@ -6848,22 +7013,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-260",
+            "home": "-265",
             "draw": "+390",
             "away": "+800"
           },
           "implied_probability": {
-            "home_win": 72.22,
+            "home_win": 72.6,
             "draw": 20.41,
             "away_win": 11.11
           },
           "normalized_probability": {
-            "home_win": 69.62,
-            "draw": 19.67,
-            "away_win": 10.71
+            "home_win": 69.73,
+            "draw": 19.6,
+            "away_win": 10.67
           },
-          "overround": 3.74,
-          "details": "USA -260"
+          "overround": 4.12,
+          "details": "USA -265"
         }
       },
       {
@@ -7024,22 +7189,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-125",
+            "home": "-130",
             "draw": "+265",
-            "away": "+370"
+            "away": "+400"
           },
           "implied_probability": {
-            "home_win": 55.56,
+            "home_win": 56.52,
             "draw": 27.4,
-            "away_win": 21.28
+            "away_win": 20.0
           },
           "normalized_probability": {
-            "home_win": 53.3,
-            "draw": 26.29,
-            "away_win": 20.41
+            "home_win": 54.39,
+            "draw": 26.36,
+            "away_win": 19.25
           },
-          "overround": 4.23,
-          "details": "POR -125"
+          "overround": 3.92,
+          "details": "POR -130"
         }
       },
       {
@@ -7288,22 +7453,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-600",
-            "draw": "+700",
-            "away": "+1700"
+            "home": "-575",
+            "draw": "+650",
+            "away": "+1600"
           },
           "implied_probability": {
-            "home_win": 85.71,
-            "draw": 12.5,
-            "away_win": 5.56
+            "home_win": 85.19,
+            "draw": 13.33,
+            "away_win": 5.88
           },
           "normalized_probability": {
-            "home_win": 82.6,
-            "draw": 12.05,
-            "away_win": 5.35
+            "home_win": 81.59,
+            "draw": 12.77,
+            "away_win": 5.63
           },
-          "overround": 3.77,
-          "details": "ARG -600"
+          "overround": 4.4,
+          "details": "ARG -575"
         }
       },
       {
@@ -7397,7 +7562,7 @@
     ],
     "daily_log": [
       {
-        "time": "2026-06-29T14:51:24Z",
+        "time": "2026-06-30T01:17:04Z",
         "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
         "status": "completed"
       }
@@ -7444,10 +7609,10 @@
     }
   ],
   "usage": {
-    "input_tokens": 23192,
-    "output_tokens": 11185,
-    "total_tokens": 34377,
-    "cost_estimate": 0.34377
+    "input_tokens": 25805,
+    "output_tokens": 11589,
+    "total_tokens": 37394,
+    "cost_estimate": 0.37394
   },
   "analysis_model": "deepseek-v4-pro",
   "model": {
@@ -7461,12 +7626,12 @@
   },
   "daily_log": [
     {
-      "time": "2026-06-29T14:51:24Z",
+      "time": "2026-06-30T01:17:04Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     },
     {
-      "time": "2026-06-29T14:55:00Z",
+      "time": "2026-06-30T01:24:50Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     }
