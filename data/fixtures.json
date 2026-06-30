@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "stage": "research",
-  "generated_at": "2026-06-30T15:36:14Z",
+  "generated_at": "2026-06-30T16:19:20Z",
   "window": {
     "start_date": "2026-06-30",
     "days": 3,
@@ -20,7 +20,7 @@
     "start_iso": "2026-06-30T18:00:00+08:00",
     "end_iso": "2026-07-02T18:00:00+08:00",
     "display_range": "6月30日比赛日 - 7月1日比赛日",
-    "range": "北京时间 06-30 18:00 - 07-02 18:00",
+    "range": "???? 06-30 18:00 - 07-02 18:00",
     "match_days": [
       {
         "date": "2026-06-30",
@@ -44,7 +44,7 @@
     "start_iso": "2026-06-30T18:00:00+08:00",
     "end_iso": "2026-07-21T18:00:00+08:00",
     "display_range": "6月30日比赛日 - 7月20日比赛日",
-    "range": "北京时间 06-30 18:00 - 07-21 18:00",
+    "range": "???? 06-30 18:00 - 07-21 18:00",
     "match_days": [
       {
         "date": "2026-06-30",
@@ -3104,7 +3104,7 @@
   ],
   "daily_log": [
     {
-      "time": "2026-06-30T15:36:14Z",
+      "time": "2026-06-30T16:19:20Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     }
