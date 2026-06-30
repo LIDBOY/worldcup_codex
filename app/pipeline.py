@@ -274,7 +274,7 @@ def china_match_day_window(day_count: int = DEFAULT_DAYS, start_date: dt.date | 
         "start_iso": first_start.isoformat(),
         "end_iso": end.isoformat(),
         "display_range": f"{match_days[0]['title']} - {match_days[-1]['title']}",
-        "range": f"???? {first_start:%m-%d %H:%M} - {end:%m-%d %H:%M}",
+        "range": f"北京时间 {first_start:%m-%d %H:%M} - {end:%m-%d %H:%M}",
         "match_days": match_days,
     }
 
@@ -1124,12 +1124,12 @@ def analysis_messages(research_payload: dict[str, Any]) -> list[dict[str, str]]:
                 "},"
                 "\"matchup_graph\":{"
                 "\"nodes\":["
-                "{\"id\":\"home_attack\",\"label\":\"????\",\"type\":\"team_phase\",\"side\":\"home\",\"weight\":0,\"note\":\"Chinese note\"},"
-                "{\"id\":\"home_midfield\",\"label\":\"????/??\",\"type\":\"team_phase\",\"side\":\"home\",\"weight\":0,\"note\":\"Chinese note\"},"
-                "{\"id\":\"home_defense\",\"label\":\"????\",\"type\":\"team_phase\",\"side\":\"home\",\"weight\":0,\"note\":\"Chinese note\"},"
-                "{\"id\":\"away_attack\",\"label\":\"????\",\"type\":\"team_phase\",\"side\":\"away\",\"weight\":0,\"note\":\"Chinese note\"},"
-                "{\"id\":\"away_midfield\",\"label\":\"????/??\",\"type\":\"team_phase\",\"side\":\"away\",\"weight\":0,\"note\":\"Chinese note\"},"
-                "{\"id\":\"away_defense\",\"label\":\"????\",\"type\":\"team_phase\",\"side\":\"away\",\"weight\":0,\"note\":\"Chinese note\"}"
+                "{\"id\":\"home_attack\",\"label\":\"主队进攻\",\"type\":\"team_phase\",\"side\":\"home\",\"weight\":0,\"note\":\"Chinese note\"},"
+                "{\"id\":\"home_midfield\",\"label\":\"主队中场/转换\",\"type\":\"team_phase\",\"side\":\"home\",\"weight\":0,\"note\":\"Chinese note\"},"
+                "{\"id\":\"home_defense\",\"label\":\"主队防守\",\"type\":\"team_phase\",\"side\":\"home\",\"weight\":0,\"note\":\"Chinese note\"},"
+                "{\"id\":\"away_attack\",\"label\":\"客队进攻\",\"type\":\"team_phase\",\"side\":\"away\",\"weight\":0,\"note\":\"Chinese note\"},"
+                "{\"id\":\"away_midfield\",\"label\":\"客队中场/转换\",\"type\":\"team_phase\",\"side\":\"away\",\"weight\":0,\"note\":\"Chinese note\"},"
+                "{\"id\":\"away_defense\",\"label\":\"客队防守\",\"type\":\"team_phase\",\"side\":\"away\",\"weight\":0,\"note\":\"Chinese note\"}"
                 "],"
                 "\"edges\":["
                 "{\"from\":\"home_attack\",\"to\":\"away_defense\",\"label\":\"Chinese key relation\",\"impact\":\"high\",\"direction\":\"home_to_away\",\"note\":\"Chinese note\"},"
@@ -1270,7 +1270,7 @@ def render_messages(analysis_payload: dict[str, Any]) -> list[dict[str, str]]:
                 "front-three score tabs without score probabilities, method factors, matchup graph, tournament structure graph, risk analysis, upset probability, "
                 "injury information, odds comparison, token usage, and cost. "
                 "All visible match times must use Asia/Shanghai, never UTC. "
-                "Group main match cards by China match day, where each match day runs from 18:00 to next-day 18:00. Render tournament_structure as ??????? or ?????? with current-window highlights and score tabs. "
+                "Group main match cards by China match day, where each match day runs from 18:00 to next-day 18:00. Render tournament_structure as 小组对战结构图 or 淘汰赛对阵树 with current-window highlights and score tabs. "
                 "Use these exact placeholders inside the token panel: "
                 "{{INPUT_TOKENS}}, {{OUTPUT_TOKENS}}, {{TOTAL_TOKENS}}, {{COST_ESTIMATE}}. "
                 "Do not invent data. If source data says unknown or unavailable, display that clearly. "
@@ -1353,7 +1353,7 @@ def placeholder_team_node(team: dict[str, Any] | None) -> bool:
         return True
     value = str(team.get("name") or team.get("name_en") or "")
     normalized = normalize_team(value)
-    return not value.strip() or normalized in {"tbd", "to be determined", "unknown", "none", "null"} or normalized.startswith("group ") or value.startswith("??") or value == "??" or "??" in value
+    return not value.strip() or normalized in {"tbd", "to be determined", "unknown", "none", "null"} or normalized.startswith("group ") or value.startswith("胜者") or value == "待定" or "组第" in value
 
 
 def flag_url(team: dict[str, Any]) -> str | None:
@@ -1370,10 +1370,10 @@ def team_flag_html(team: dict[str, Any], *, small: bool = False) -> str:
     name = html_escape(team.get("name") or team.get("name_en") or "Unknown")
     logo = flag_url(team)
     if logo:
-        return f'<img class="{classes}" src="{html_escape(logo)}" alt="{name} ??" loading="lazy">'
+        return f'<img class="{classes}" src="{html_escape(logo)}" alt="{name} 国旗" loading="lazy">'
     emoji = team.get("flag_emoji")
     if emoji:
-        return f'<span class="{classes} emoji" role="img" aria-label="{name} ??">{html_escape(emoji)}</span>'
+        return f'<span class="{classes} emoji" role="img" aria-label="{name} 国旗">{html_escape(emoji)}</span>'
     return f'<span class="{classes} placeholder" aria-hidden="true"></span>'
 
 
@@ -1452,11 +1452,11 @@ def probability_segments(match: dict[str, Any]) -> str:
     draw = probability_number(probs.get("draw"))
     away_win = probability_number(probs.get("away_win"))
     return f"""
-      <div class="prob-heading">?? / ? / ????</div>
+      <div class="prob-heading">主胜 / 平 / 客胜概率</div>
       <div class="prob-labels">
-        <span><i class="dot home"></i>?? {pct(home_win)}</span>
-        <span><i class="dot draw"></i>?? {pct(draw)}</span>
-        <span><i class="dot away"></i>?? {pct(away_win)}</span>
+        <span><i class="dot home"></i>主胜 {pct(home_win)}</span>
+        <span><i class="dot draw"></i>平局 {pct(draw)}</span>
+        <span><i class="dot away"></i>客胜 {pct(away_win)}</span>
       </div>
       <div class="prob-stack" aria-hidden="true">
         <span class="seg home" style="width:{percent_width(home_win)}"></span>
@@ -1551,11 +1551,11 @@ def group_matches_for_expected_days(
 def display_range_text(payload: dict[str, Any], matches: list[dict[str, Any]]) -> str:
     window = display_window_from_payload(payload)
     if window:
-        return f"{window.get('display_range', '')} ? {window.get('range', '')}".strip(" ?")
+        return f"{window.get('display_range', '')} · {window.get('range', '')}".strip(" ·")
     days = match_days_from_payload(payload, matches)
     if days:
         return f"{days[0].get('title', '')} - {days[-1].get('title', '')}"
-    return "???????"
+    return "两个中国比赛日"
 
 
 def safe_dom_id(value: Any) -> str:
@@ -1582,7 +1582,7 @@ def score_option_label(rank: Any) -> str:
         rank_number = int(rank)
     except (TypeError, ValueError):
         rank_number = 0
-    return "???" if rank_number == 1 else f"Top {rank_number or '?'}"
+    return "主推荐" if rank_number == 1 else f"Top {rank_number or '?'}"
 
 
 def group_label_for_match(match: dict[str, Any]) -> str:
@@ -1590,14 +1590,14 @@ def group_label_for_match(match: dict[str, Any]) -> str:
     stage = str(match.get("stage") or "").strip()
     match = re.fullmatch(r"Group\s+([A-Za-z])", group, flags=re.IGNORECASE)
     if match:
-        return f"{match.group(1).upper()}?"
+        return f"{match.group(1).upper()}组"
     if group:
         return group
-    return stage or "???"
+    return stage or "未分组"
 
 
 def group_sort_key(name: str) -> tuple[int, str]:
-    match = re.match(r"([A-Z])?", name)
+    match = re.match(r"([A-Z])组", name)
     if match:
         return (0, match.group(1))
     match = re.match(r"Group\s+([A-Z])", name, flags=re.IGNORECASE)
@@ -1638,7 +1638,7 @@ def is_third_place_match(match: dict[str, Any]) -> bool:
         return True
     text = normalize_team(stage_text(match))
     raw = stage_text(match)
-    return any(fragment in text for fragment in ("third place", "3rd place", "bronze")) or "??" in raw
+    return any(fragment in text for fragment in ("third place", "3rd place", "bronze")) or "季军" in raw
 
 
 def is_knockout_match(match: dict[str, Any]) -> bool:
@@ -1658,7 +1658,7 @@ def is_knockout_match(match: dict[str, Any]) -> bool:
         "third place",
     )
     chinese_text = stage_text(match)
-    chinese_hints = ("??", "32?", "16?", "????", "????", "???", "??", "??")
+    chinese_hints = ("淘汰", "32强", "16强", "八分之一", "四分之一", "半决赛", "决赛", "季军")
     if any(hint in text for hint in knockout_hints) or any(hint in chinese_text for hint in chinese_hints):
         if "first stage" not in text and "group stage" not in text:
             return True
@@ -1678,15 +1678,15 @@ def round_key_for_match(match: dict[str, Any]) -> str:
         return "third_place"
     raw_text = stage_text(match)
     text = normalize_team(raw_text)
-    if re.search(r"round\s+of\s+32|round\s*32|last\s*32", text) or "32?" in raw_text:
+    if re.search(r"round\s+of\s+32|round\s*32|last\s*32", text) or "32强" in raw_text:
         return "round_of_32"
-    if re.search(r"round\s+of\s+16|round\s*16|last\s*16", text) or "16?" in raw_text or "????" in raw_text:
+    if re.search(r"round\s+of\s+16|round\s*16|last\s*16", text) or "16强" in raw_text or "八分之一" in raw_text:
         return "round_of_16"
-    if "quarter final" in text or "quarterfinal" in text or "????" in raw_text or "8?" in raw_text:
+    if "quarter final" in text or "quarterfinal" in text or "四分之一" in raw_text or "8强" in raw_text:
         return "quarter_finals"
-    if "semi final" in text or "semifinal" in text or "???" in raw_text or "4?" in raw_text:
+    if "semi final" in text or "semifinal" in text or "半决赛" in raw_text or "4强" in raw_text:
         return "semi_finals"
-    if "final" in text or "??" in raw_text:
+    if "final" in text or "决赛" in raw_text:
         return "final"
     number = match_number_int(match)
     if number is None:
@@ -1719,28 +1719,28 @@ def placeholder_team(label: str) -> dict[str, Any]:
 
 def unresolved_team_label(team: dict[str, Any]) -> bool:
     value = normalize_team(str(team.get("name_en") or team.get("name") or ""))
-    return not value or value in {"tbd", "to be determined", "unknown", "none", "null", "dai ding"} or value.startswith("winner") or value.startswith("loser") or "??" in str(team.get("name") or "") or "??" in str(team.get("name") or "")
+    return not value or value in {"tbd", "to be determined", "unknown", "none", "null", "dai ding"} or value.startswith("winner") or value.startswith("loser") or "待定" in str(team.get("name") or "") or "胜者" in str(team.get("name") or "")
 
 
 def bracket_placeholder_node(match_number: int, round_key: str) -> dict[str, Any]:
     feeds = BRACKET_WINNER_FEEDS.get(match_number)
     if feeds:
-        home_label = f"?? M{feeds[0]}"
-        away_label = f"?? M{feeds[1]}"
+        home_label = f"胜者 M{feeds[0]}"
+        away_label = f"胜者 M{feeds[1]}"
     else:
-        home_label = "??"
-        away_label = "??"
+        home_label = "待定"
+        away_label = "待定"
     return {
         "match_id": f"placeholder-M{match_number}",
         "match_number": match_number,
         "round_key": round_key,
         "stage": round_key,
-        "group": "???",
+        "group": "淘汰赛",
         "match_name": f"{home_label} vs {away_label}",
         "teams": {"home": placeholder_team(home_label), "away": placeholder_team(away_label)},
         "kickoff_utc": None,
         "kickoff_beijing": None,
-        "kickoff_display": "???? ??",
+        "kickoff_display": "北京时间 待定",
         "match_day": {},
         "win_draw_loss": None,
         "score_options": [],
@@ -1833,11 +1833,11 @@ def structure_match_node(
         "round_name": source.get("round_name"),
         "phase": source.get("phase"),
         "group": group_label_for_match(source),
-        "match_name": source.get("match_name") or f"{(teams.get('home') or {}).get('name', '??')} vs {(teams.get('away') or {}).get('name', '??')}",
+        "match_name": source.get("match_name") or f"{(teams.get('home') or {}).get('name', '待定')} vs {(teams.get('away') or {}).get('name', '待定')}",
         "teams": teams,
         "kickoff_utc": kickoff,
         "kickoff_beijing": source.get("kickoff_beijing"),
-        "kickoff_display": source.get("kickoff_display") or (format_beijing_time(kickoff) if kickoff else "???? ??"),
+        "kickoff_display": source.get("kickoff_display") or (format_beijing_time(kickoff) if kickoff else "北京时间 待定"),
         "match_day": match_day,
         "win_draw_loss": source.get("win_draw_loss") if is_current else None,
         "score_options": ordered_score_options(source) if is_current else [],
@@ -1875,7 +1875,7 @@ def build_tournament_structure(
         group_map: dict[str, dict[str, list[dict[str, Any]]]] = {}
         for match in [item for item in context_matches if not is_knockout_match(item)]:
             node = structure_match_node(match, current_by_id, highlight_ids)
-            group_name = node.get("group") or "???"
+            group_name = node.get("group") or "未分组"
             day = node.get("match_day") or {}
             day_key = day.get("date") or "unknown"
             group_map.setdefault(group_name, {}).setdefault(day_key, []).append(node)
@@ -1901,7 +1901,7 @@ def build_tournament_structure(
 def mini_score_tabs_html(options: list[dict[str, Any]]) -> str:
     ordered = ordered_score_options(options)
     if len(ordered) < 3:
-        return '<div class="mini-score-wrap unavailable"><span>?3????</span><em>????????</em></div>'
+        return '<div class="mini-score-wrap unavailable"><span>前3预测比分</span><em>当前窗口外不展开</em></div>'
     tabs = []
     for option in ordered:
         rank = option.get("rank")
@@ -1917,31 +1917,31 @@ def mini_score_tabs_html(options: list[dict[str, Any]]) -> str:
                 score=html_escape(option.get("score", "unknown")),
             )
         )
-    return f'<div class="mini-score-wrap"><span>?3????</span><div class="mini-score-tabs">{"".join(tabs)}</div></div>'
+    return f'<div class="mini-score-wrap"><span>前3预测比分</span><div class="mini-score-tabs">{"".join(tabs)}</div></div>'
 
 
 def structure_wdl_text(node: dict[str, Any]) -> str:
     wdl = node.get("win_draw_loss")
     if isinstance(wdl, dict):
         return render_probability_line(wdl)
-    return "??????????"
+    return "当前窗口外未生成分析"
 
 
 def structure_match_node_html(node: dict[str, Any]) -> str:
     teams = node.get("teams") or {}
     home = teams.get("home") or {}
     away = teams.get("away") or {}
-    home_name = home.get("name") or home.get("name_en") or "??"
-    away_name = away.get("name") or away.get("name_en") or "??"
+    home_name = home.get("name") or home.get("name_en") or "待定"
+    away_name = away.get("name") or away.get("name_en") or "待定"
     current = bool(node.get("current_window"))
     classes = "structure-match-node current-window" if current else "structure-match-node"
-    badge = '<span class="window-badge">????</span>' if current else '<span class="outside-badge">?????</span>'
+    badge = '<span class="window-badge">当前窗口</span>' if current else '<span class="outside-badge">结构上下文</span>'
     return f"""
       <article class="{classes}" data-match-id="{html_escape(node.get('match_id', ''))}">
-        <div class="structure-node-head"><span>{html_escape(node.get('group') or node.get('stage') or '???')}</span>{badge}</div>
+        <div class="structure-node-head"><span>{html_escape(node.get('group') or node.get('stage') or '未分组')}</span>{badge}</div>
         <strong>{html_escape(home_name)} vs {html_escape(away_name)}</strong>
-        <p>{html_escape(node.get('kickoff_display', '???? ??'))} ? ?? ID: {html_escape(node.get('match_id') or 'unknown')}</p>
-        <p class="structure-wdl">??????{html_escape(structure_wdl_text(node))}</p>
+        <p>{html_escape(node.get('kickoff_display', '北京时间 待定'))} · 比赛 ID: {html_escape(node.get('match_id') or 'unknown')}</p>
+        <p class="structure-wdl">胜平负摘要：{html_escape(structure_wdl_text(node))}</p>
         {mini_score_tabs_html(node.get('score_options') or [])}
       </article>
     """
@@ -1954,11 +1954,11 @@ def group_structure_html(structure: dict[str, Any]) -> str:
         for day in group.get("match_days") or []:
             nodes = "".join(structure_match_node_html(node) for node in day.get("matches") or [])
             if not nodes:
-                nodes = '<div class="structure-empty">?????????????</div>'
+                nodes = '<div class="structure-empty">该比赛日暂无双源校验赛程。</div>'
             day_sections.append(
                 f"""
           <section class="structure-day">
-            <h4>{html_escape(day.get('title', '???'))}</h4>
+            <h4>{html_escape(day.get('title', '比赛日'))}</h4>
             <p class="muted compact">{html_escape(day.get('range', ''))}</p>
             <div class="structure-node-grid">{nodes}</div>
           </section>
@@ -1967,13 +1967,13 @@ def group_structure_html(structure: dict[str, Any]) -> str:
         group_sections.append(
             f"""
         <details class="structure-group" open>
-          <summary>{html_escape(group.get('name', '???'))}</summary>
+          <summary>{html_escape(group.get('name', '未分组'))}</summary>
           {''.join(day_sections)}
         </details>
             """
         )
     if not group_sections:
-        group_sections.append('<div class="structure-empty">??????????????????</div>')
+        group_sections.append('<div class="structure-empty">暂无可用于小组结构图的双源校验赛程。</div>')
     return "".join(group_sections)
 
 
@@ -1995,16 +1995,16 @@ def bracket_team_label(entity: dict[str, Any] | str | None) -> str:
         raw = entity or ""
     value = str(raw).strip()
     if not value:
-        return "??"
+        return "待定"
     lowered = value.lower()
-    if lowered in {"tbd", "to be determined", "unknown", "none", "null", "??"}:
-        return "??"
+    if lowered in {"tbd", "to be determined", "unknown", "none", "null", "待定"}:
+        return "待定"
     winner = re.search(r"winner\s+(?:of\s+)?(?:match\s*)?(\d+)", value, re.I)
     if winner:
-        return f"?? M{winner.group(1)}"
+        return f"胜者 M{winner.group(1)}"
     loser = re.search(r"loser\s+(?:of\s+)?(?:match\s*)?(\d+)", value, re.I)
     if loser:
-        return f"?? M{loser.group(1)}"
+        return f"负者 M{loser.group(1)}"
     return team_name_zh(value)
 
 
@@ -2018,20 +2018,20 @@ def bracket_team_html(entity: dict[str, Any] | str | None) -> str:
 
 
 def bracket_node_time(node: dict[str, Any]) -> str:
-    text = str(node.get("kickoff_display") or "???? ??")
-    text = text.replace("???? ", "")
-    return text or "??"
+    text = str(node.get("kickoff_display") or "北京时间 待定")
+    text = text.replace("北京时间 ", "")
+    return text or "待定"
 
 
 def bracket_wdl_html(node: dict[str, Any]) -> str:
     wdl = node.get("win_draw_loss")
     if not isinstance(wdl, dict):
-        return '<div class="bracket-status">??</div>'
+        return '<div class="bracket-status">待定</div>'
     return "".join(
         [
-            f'<span class="home">? {pct(wdl.get("home_win", 0))}</span>',
-            f'<span class="draw">? {pct(wdl.get("draw", 0))}</span>',
-            f'<span class="away">? {pct(wdl.get("away_win", 0))}</span>',
+            f'<span class="home">胜 {pct(wdl.get("home_win", 0))}</span>',
+            f'<span class="draw">平 {pct(wdl.get("draw", 0))}</span>',
+            f'<span class="away">负 {pct(wdl.get("away_win", 0))}</span>',
         ]
     )
 
@@ -2042,7 +2042,7 @@ def placeholder_bracket_node(match_number: int, home_label: str, away_label: str
         "match_number": match_number,
         "stage": round_key,
         "teams": {"home": {"name": home_label}, "away": {"name": away_label}},
-        "kickoff_display": "???? ??",
+        "kickoff_display": "北京时间 待定",
         "score_options": [],
         "current_window": False,
         "placeholder": True,
@@ -2075,8 +2075,8 @@ def bracket_with_placeholders(bracket: dict[str, Any]) -> dict[str, list[dict[st
         for pair_index in range(0, len(previous), 2):
             first = previous[pair_index]
             second = previous[pair_index + 1] if pair_index + 1 < len(previous) else None
-            first_label = f"?? {bracket_match_number(first)}"
-            second_label = f"?? {bracket_match_number(second)}" if second else "??"
+            first_label = f"胜者 {bracket_match_number(first)}"
+            second_label = f"胜者 {bracket_match_number(second)}" if second else "待定"
             generated.append(placeholder_bracket_node(next_number, first_label, second_label, key))
             next_number += 1
         display[key] = generated
@@ -2086,8 +2086,8 @@ def bracket_with_placeholders(bracket: dict[str, Any]) -> dict[str, list[dict[st
 def bracket_score_tabs_html(node: dict[str, Any]) -> str:
     options = ordered_score_options(node.get("score_options") or [])
     if len(options) < 3:
-        return '<div class="bracket-node-divider"></div><div class="bracket-node-pending">??</div>'
-    return f'<div class="bracket-mini-title">?3????</div>{mini_score_tabs_html(options)}'
+        return '<div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>'
+    return f'<div class="bracket-mini-title">前3预测比分</div>{mini_score_tabs_html(options)}'
 
 
 def bracket_structure_node_html(node: dict[str, Any], round_key: str) -> str:
@@ -2101,7 +2101,7 @@ def bracket_structure_node_html(node: dict[str, Any], round_key: str) -> str:
         classes.append("current-window")
     if placeholder:
         classes.append("placeholder")
-    badge = '<span class="window-badge">????</span>' if current else ""
+    badge = '<span class="window-badge">当前窗口</span>' if current else ""
     match_no = bracket_match_number(node)
     return f"""
       <article class="{' '.join(classes)}" data-match-id="{html_escape(node.get('match_id', ''))}">
@@ -2119,11 +2119,11 @@ def bracket_structure_node_html(node: dict[str, Any], round_key: str) -> str:
 
 def bracket_structure_html(structure: dict[str, Any]) -> str:
     labels = {
-        "round_of_32": "32?",
-        "round_of_16": "16?",
-        "quarter_finals": "8?",
-        "semi_finals": "4?",
-        "final": "??",
+        "round_of_32": "32强",
+        "round_of_16": "16强",
+        "quarter_finals": "8强",
+        "semi_finals": "4强",
+        "final": "决赛",
     }
     raw_bracket = structure.get("bracket") or {}
     bracket = bracket_with_placeholders(raw_bracket)
@@ -2131,7 +2131,7 @@ def bracket_structure_html(structure: dict[str, Any]) -> str:
     for key, label in labels.items():
         nodes = "".join(bracket_structure_node_html(node, key) for node in bracket.get(key, []) if isinstance(node, dict))
         if not nodes:
-            nodes = '<div class="structure-empty">??</div>'
+            nodes = '<div class="structure-empty">待定</div>'
         rounds.append(
             f"""
         <section class="bracket-round bracket-round-{key}">
@@ -2147,10 +2147,10 @@ def bracket_structure_html(structure: dict[str, Any]) -> str:
           <div class="bracket-grid">{''.join(rounds)}</div>
         </div>
         <div class="bracket-legend">
-          <span><i class="dot home"></i>???</span>
-          <span><i class="dot draw"></i>????</span>
-          <span><i class="dot away"></i>???</span>
-          <span class="current-window-key">????????????????</span>
+          <span><i class="dot home"></i>胜率高</span>
+          <span><i class="dot draw"></i>平局倾向</span>
+          <span><i class="dot away"></i>负率高</span>
+          <span class="current-window-key">当前窗口：当前和下一个中国比赛日</span>
         </div>
       </div>
     """
@@ -2166,7 +2166,7 @@ def tournament_structure_html(payload: dict[str, Any]) -> str:
             (payload.get("research") or {}).get("structure_window") or payload.get("structure_window"),
         )
     stage = structure.get("stage")
-    title = "??????" if stage == "knockout" else "???????"
+    title = "淘汰赛对阵树" if stage == "knockout" else "小组对战结构图"
     body = bracket_structure_html(structure) if stage == "knockout" else group_structure_html(structure)
     highlight_count = len(structure.get("highlight_match_ids") or [])
     context_count = 0
@@ -2181,23 +2181,23 @@ def tournament_structure_html(payload: dict[str, Any]) -> str:
       <div class="structure-title-row">
         <div>
           <h2>{title}</h2>
-          <p class="muted compact">????? FIFA ????? ESPN ????????????????? {highlight_count} ?????</p>
+          <p class="muted compact">结构图基于 FIFA 官方赛程与 ESPN 第二来源校验；当前两个中国比赛日内 {highlight_count} 场已高亮。</p>
         </div>
-        <div class="structure-count">???? {context_count} ?</div>
+        <div class="structure-count">结构赛程 {context_count} 场</div>
       </div>
       {body}
     </section>
     """
 
 METHOD_FACTOR_LABELS = (
-    ("market_signal", "????"),
-    ("fifa_rank_prior", "FIFA ????"),
-    ("recent_form", "????"),
-    ("group_context", "????"),
-    ("injury_rotation", "??/??"),
-    ("weather_venue", "??/??"),
-    ("tactical_key", "????"),
-    ("uncertainty", "????"),
+    ("market_signal", "市场信号"),
+    ("fifa_rank_prior", "FIFA 实力先验"),
+    ("recent_form", "近期状态"),
+    ("group_context", "小组形势"),
+    ("injury_rotation", "伤停/轮换"),
+    ("weather_venue", "天气/场地"),
+    ("tactical_key", "战术关键"),
+    ("uncertainty", "不确定性"),
 )
 
 
@@ -2229,7 +2229,7 @@ def score_options_html(match: dict[str, Any]) -> str:
         )
         panels.append(
             '<article class="score-tab-panel{active}" role="tabpanel" data-score-panel="{tab_id}">'
-            '<h5>{label} ? {score}</h5><p>{reason}</p></article>'.format(
+            '<h5>{label} · {score}</h5><p>{reason}</p></article>'.format(
                 active=active,
                 tab_id=html_escape(tab_id),
                 label=html_escape(label),
@@ -2239,7 +2239,7 @@ def score_options_html(match: dict[str, Any]) -> str:
         )
     return f"""
         <section class="score-options" data-score-tabs>
-          <h4>?3????</h4>
+          <h4>前3预测比分</h4>
           <div class="score-tab-labels" role="tablist">{''.join(buttons)}</div>
           <div class="score-tab-panels">{''.join(panels)}</div>
         </section>
@@ -2255,18 +2255,18 @@ def method_factors_html(match: dict[str, Any]) -> str:
         )
     return f"""
         <details class="factor-panel" open>
-          <summary>????</summary>
+          <summary>分析因子</summary>
           <div class="factor-grid">{''.join(items)}</div>
         </details>
     """
 
 
 def impact_text(value: str | None) -> str:
-    return {"high": "?", "medium": "?", "low": "?"}.get(value or "", value or "unknown")
+    return {"high": "高", "medium": "中", "low": "低"}.get(value or "", value or "unknown")
 
 
 def advantage_text(value: str | None) -> str:
-    return {"home": "??", "away": "??", "balanced": "??"}.get(value or "", value or "unknown")
+    return {"home": "主队", "away": "客队", "balanced": "均衡"}.get(value or "", value or "unknown")
 
 
 def graph_weight(value: Any) -> str:
@@ -2287,7 +2287,7 @@ def graph_nodes_html(nodes: list[Any], side: str) -> str:
     for node in side_nodes:
         cards.append(
             "<article class=\"graph-node {side}\">"
-            "<div><strong>{label}</strong><span>?? {weight}/100</span></div>"
+            "<div><strong>{label}</strong><span>强度 {weight}/100</span></div>"
             "<p>{note}</p>"
             "</article>".format(
                 side=html_escape(side),
@@ -2312,7 +2312,7 @@ def graph_edges_html(edges: list[Any]) -> str:
             "<article class=\"graph-edge impact-{impact}\">"
             "<div><strong>{label}</strong><span>{impact_text}</span></div>"
             "<p>{note}</p>"
-            "<small>{source} ? {target} ? {direction}</small>"
+            "<small>{source} → {target} · {direction}</small>"
             "</article>".format(
                 impact=html_escape(impact),
                 label=html_escape(edge.get("label", "unknown")),
@@ -2336,19 +2336,19 @@ def matchup_graph_html(match: dict[str, Any]) -> str:
         edges = []
     return f"""
         <details class="matchup-panel" open>
-          <summary>?????</summary>
+          <summary>对战结构图</summary>
           <div class="graph-summary-grid">
-            <span><b>???</b>{html_escape(advantage_text(graph.get('advantage_side') if isinstance(graph, dict) else None))}</span>
-            <span><b>????</b>{html_escape(graph.get('key_battle', 'unknown') if isinstance(graph, dict) else 'unknown')}</span>
-            <span><b>?????</b>{html_escape(graph.get('risk_trigger', 'unknown') if isinstance(graph, dict) else 'unknown')}</span>
+            <span><b>优势方</b>{html_escape(advantage_text(graph.get('advantage_side') if isinstance(graph, dict) else None))}</span>
+            <span><b>关键对位</b>{html_escape(graph.get('key_battle', 'unknown') if isinstance(graph, dict) else 'unknown')}</span>
+            <span><b>风险触发点</b>{html_escape(graph.get('risk_trigger', 'unknown') if isinstance(graph, dict) else 'unknown')}</span>
           </div>
           <p class="graph-summary">{html_escape(graph.get('summary', 'unknown') if isinstance(graph, dict) else 'unknown')}</p>
           <div class="graph-node-grid">
-            <section><h5>????</h5>{graph_nodes_html(nodes, 'home')}</section>
-            <section><h5>????</h5>{graph_nodes_html(nodes, 'away')}</section>
+            <section><h5>主队结构</h5>{graph_nodes_html(nodes, 'home')}</section>
+            <section><h5>客队结构</h5>{graph_nodes_html(nodes, 'away')}</section>
           </div>
           <div class="graph-edge-list">
-            <h5>????</h5>
+            <h5>关键关系</h5>
             {graph_edges_html(edges)}
           </div>
         </details>
@@ -2369,8 +2369,8 @@ def match_card(match: dict[str, Any]) -> str:
     venue = venue_text(match)
     source = source_link(match)
     match_id = match.get("match_id") or match.get("id") or match.get("fifa_match_id") or "unknown"
-    home_name = home.get("name") or home.get("name_en") or "??"
-    away_name = away.get("name") or away.get("name_en") or "??"
+    home_name = home.get("name") or home.get("name_en") or "主队"
+    away_name = away.get("name") or away.get("name_en") or "客队"
     home_inline = team_inline_html(home)
     away_inline = team_inline_html(away, reverse=True)
     confidence_raw = match.get("confidence")
@@ -2397,22 +2397,22 @@ def match_card(match: dict[str, Any]) -> str:
         <div class="metric-grid">
           <span><b>xG</b>{html_escape(home_name)} {number_text(xg.get("home"))}</span>
           <span><b>xG</b>{html_escape(away_name)} {number_text(xg.get("away"))}</span>
-          <span><b>????</b>{pct(upset)}</span>
-          <span><b>??</b>{html_escape(odds_badge(match))}</span>
+          <span><b>爆冷概率</b>{pct(upset)}</span>
+          <span><b>赔率</b>{html_escape(odds_badge(match))}</span>
         </div>
         {score_options_html(match)}
         {matchup_graph_html(match)}
         {method_factors_html(match)}
         <div class="analysis-block">
-          <section><h4>????</h4><p>{html_escape(tactical)}</p></section>
-          <section><h4>????</h4><p class="risk-text">{html_escape(risk)}</p></section>
-          <section><h4>????</h4><p>{html_escape(injury_summary(match))}</p><p class="muted compact">{html_escape(injury_adjustment)}</p></section>
-          <section><h4>????</h4><p>{html_escape(odds_summary(match))}</p></section>
+          <section><h4>战术分析</h4><p>{html_escape(tactical)}</p></section>
+          <section><h4>风险分析</h4><p class="risk-text">{html_escape(risk)}</p></section>
+          <section><h4>伤停信息</h4><p>{html_escape(injury_summary(match))}</p><p class="muted compact">{html_escape(injury_adjustment)}</p></section>
+          <section><h4>赔率对比</h4><p>{html_escape(odds_summary(match))}</p></section>
         </div>
         <div class="match-footer">
-          <span>??? <b class="confidence {confidence_class(confidence_raw)}">{html_escape(confidence)}</b></span>
-          <span>?? ID: {html_escape(match_id)}</span>
-          <a class="source-link" href="{html_escape(source)}" rel="noopener" target="_blank">??</a>
+          <span>置信度 <b class="confidence {confidence_class(confidence_raw)}">{html_escape(confidence)}</b></span>
+          <span>比赛 ID: {html_escape(match_id)}</span>
+          <a class="source-link" href="{html_escape(source)}" rel="noopener" target="_blank">来源</a>
         </div>
         <p class="venue-line">{html_escape(venue)}</p>
       </article>
@@ -2425,11 +2425,11 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     generated_display = format_beijing_time(payload.get("generated_at", iso_utc(utc_now())))
     groups = group_matches_for_expected_days(payload, matches)
     analysis = payload.get("analysis") or {}
-    summary = analysis.get("summary") or "V3 Agent ?? FIFA ?????????ESPN ?????????????????????/??/unknown ?????"
-    risk_overview = analysis.get("risk_overview") or "?????????????????????????????????"
+    summary = analysis.get("summary") or "V3 Agent 使用 FIFA 官方赛程作为主源，ESPN 完成第二来源校验和赔率读取，伤停信息按官方/媒体/unknown 规则展示。"
+    risk_overview = analysis.get("risk_overview") or "整体风险以赛程真实性、伤停可信度、赔率可用性和模型置信度共同评估。"
     range_text = display_range_text(payload, matches)
     structure = payload.get("tournament_structure") if isinstance(payload.get("tournament_structure"), dict) else {}
-    stage_label = "???" if structure.get("stage") == "knockout" else "???"
+    stage_label = "淘汰赛" if structure.get("stage") == "knockout" else "小组赛"
     if structure.get("stage") == "knockout":
         structure_count = sum(len(items or []) for items in (structure.get("bracket") or {}).values())
     else:
@@ -2443,29 +2443,29 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     for info, items in groups:
         cards = "\n".join(match_card(match) for match in items)
         if not cards:
-            cards = '<div class="empty">?????????? FIFA + ESPN ???????????</div>'
+            cards = '<div class="empty">该中国比赛日暂无通过 FIFA + ESPN 双源校验的世界杯比赛。</div>'
         group_sections.append(
             f"""
     <section class="match-day" data-match-day="{html_escape(info['date'])}">
       <div class="section-head">
         <div>
           <h2>{html_escape(info['title'])}</h2>
-          <p class="muted compact">{html_escape(info['range'])}??????????</p>
+          <p class="muted compact">{html_escape(info['range'])}，按北京时间升序排列</p>
         </div>
-        <div class="day-count">{len(items)} ?</div>
+        <div class="day-count">{len(items)} 场</div>
       </div>
       <section class="match-grid">{cards}</section>
     </section>
             """
         )
     if not group_sections:
-        group_sections.append('<div class="empty">??????????????????????</div>')
+        group_sections.append('<div class="empty">当前两个中国比赛日暂无双源验证的世界杯比赛。</div>')
     return f"""<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>2026 ??? ? ????</title>
+  <title>2026 世界杯 · 预测分析</title>
   <style>
     :root {{
       color-scheme: dark;
@@ -2621,7 +2621,7 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     .tournament-panel {{ padding: 16px; margin-bottom: 16px; border-color: rgba(0, 174, 255, .58); background: linear-gradient(145deg, rgba(2, 12, 23, .98), rgba(5, 25, 41, .96)); }}
     .structure-title-row {{ position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 14px; align-items: start; margin-bottom: 12px; }}
     .structure-title-row h2 {{ margin: 0 0 8px; font-size: 26px; color: #eaf8ff; text-shadow: 0 0 16px rgba(0, 217, 255, .26); }}
-    .structure-title-row h2::before {{ content: "?"; color: #15d9ff; margin-right: 10px; }}
+    .structure-title-row h2::before {{ content: "⌗"; color: #15d9ff; margin-right: 10px; }}
     .structure-count {{ border: 1px solid rgba(0, 217, 255, .42); border-radius: 999px; padding: 8px 14px; color: #9beeff; background: rgba(0, 174, 255, .11); font-weight: 850; white-space: nowrap; box-shadow: 0 0 18px rgba(0, 174, 255, .12); }}
     .structure-group {{ position: relative; z-index: 1; border: 1px solid rgba(104, 136, 174, .24); border-radius: 16px; background: rgba(12, 20, 31, .38); padding: 12px; margin-top: 12px; }}
     .structure-group summary {{ cursor: pointer; color: #ffd64a; font-size: 18px; font-weight: 850; list-style-position: inside; }}
@@ -2946,15 +2946,15 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
 <body class="night-shell">
   <main class="page">
     <header class="hero night-card">
-      <h1><span class="hero-ball">?</span><span>2026 ??? ? ????</span></h1>
+      <h1><span class="hero-ball">⚽</span><span>2026 世界杯 · 预测分析</span></h1>
       <span class="range-pill">{html_escape(range_text)}</span>
       <div class="hero-meta">
-        <div><span class="meta-icon">?</span>????<strong>{html_escape(stage_label)}</strong></div>
-        <div><span class="meta-icon">?</span>????<strong>{html_escape(generated_display)}</strong></div>
-        <div><span class="meta-icon">?</span>?????<strong>{total_count_label} ?</strong></div>
-        <div><span class="meta-icon">?</span>????<strong>{ANALYSIS_MODEL}</strong></div>
-        <div><span class="meta-icon">?</span>????<strong>{RENDER_MODEL}</strong></div>
-        <div><span class="meta-icon">?</span>????<strong>FIFA + ESPN + DeepSeek</strong></div>
+        <div><span class="meta-icon">▦</span>比赛阶段<strong>{html_escape(stage_label)}</strong></div>
+        <div><span class="meta-icon">◷</span>生成时间<strong>{html_escape(generated_display)}</strong></div>
+        <div><span class="meta-icon">◎</span>总比赛场次<strong>{total_count_label} 场</strong></div>
+        <div><span class="meta-icon">◇</span>分析模型<strong>{ANALYSIS_MODEL}</strong></div>
+        <div><span class="meta-icon">⬡</span>渲染模型<strong>{RENDER_MODEL}</strong></div>
+        <div><span class="meta-icon">▥</span>数据来源<strong>FIFA + ESPN + DeepSeek</strong></div>
       </div>
     </header>
 
@@ -2963,33 +2963,33 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     <section class="usage-panel night-card">
       <h2>Token / Cost</h2>
       <div class="usage-grid">
-        <div class="usage-card input"><span>?? TOKEN</span><strong>{usage.get("input_tokens", 0)}</strong></div>
-        <div class="usage-card output"><span>?? TOKEN</span><strong>{usage.get("output_tokens", 0)}</strong></div>
-        <div class="usage-card total"><span>? TOKEN</span><strong>{usage.get("total_tokens", 0)}</strong></div>
-        <div class="usage-card cost"><span>????</span><strong>{float(usage.get("cost_estimate", 0)):.6f}</strong></div>
+        <div class="usage-card input"><span>输入 TOKEN</span><strong>{usage.get("input_tokens", 0)}</strong></div>
+        <div class="usage-card output"><span>输出 TOKEN</span><strong>{usage.get("output_tokens", 0)}</strong></div>
+        <div class="usage-card total"><span>总 TOKEN</span><strong>{usage.get("total_tokens", 0)}</strong></div>
+        <div class="usage-card cost"><span>预计成本</span><strong>{float(usage.get("cost_estimate", 0)):.6f}</strong></div>
       </div>
     </section>
 
     <section class="overview night-card">
-      <h2>??</h2>
+      <h2>总览</h2>
       <p>{html_escape(summary)}</p>
     </section>
 
     <section class="overview night-card">
-      <h2>????</h2>
+      <h2>风险概览</h2>
       <p>{html_escape(risk_overview)}</p>
     </section>
 
     <section class="legend night-card">
-      <span><i class="dot home"></i>??</span>
-      <span><i class="dot draw"></i>??</span>
-      <span><i class="dot away"></i>??</span>
-      <span>????? / ? / ?</span>
-      <span><a href="latest.json">?? data/latest.json</a></span>
+      <span><i class="dot home"></i>主胜</span>
+      <span><i class="dot draw"></i>平局</span>
+      <span><i class="dot away"></i>客胜</span>
+      <span>置信度：高 / 中 / 低</span>
+      <span><a href="latest.json">查看 data/latest.json</a></span>
     </section>
     {''.join(group_sections)}
     <footer class="page-footer">
-      V3 Agent?FIFA ????????ESPN ?????????????????????? unknown?????????? unavailable???????????????????? 18:00 ??? 18:00 ???
+      V3 Agent：FIFA 官方赛程为主源，ESPN 用于第二来源校验和赔率；伤停无可靠来源时显示 unknown，赔率无真实源时显示 unavailable。所有可见比赛时间均为北京时间，比赛日按 18:00 至次日 18:00 划分。
     </footer>
   </main>
   <script>
