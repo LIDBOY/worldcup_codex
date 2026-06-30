@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "stage": "research",
-  "generated_at": "2026-06-30T16:19:20Z",
+  "generated_at": "2026-06-30T16:53:49Z",
   "window": {
     "start_date": "2026-06-30",
     "days": 3,
@@ -20,7 +20,7 @@
     "start_iso": "2026-06-30T18:00:00+08:00",
     "end_iso": "2026-07-02T18:00:00+08:00",
     "display_range": "6月30日比赛日 - 7月1日比赛日",
-    "range": "???? 06-30 18:00 - 07-02 18:00",
+    "range": "北京时间 06-30 18:00 - 07-02 18:00",
     "match_days": [
       {
         "date": "2026-06-30",
@@ -44,7 +44,7 @@
     "start_iso": "2026-06-30T18:00:00+08:00",
     "end_iso": "2026-07-21T18:00:00+08:00",
     "display_range": "6月30日比赛日 - 7月20日比赛日",
-    "range": "???? 06-30 18:00 - 07-21 18:00",
+    "range": "北京时间 06-30 18:00 - 07-21 18:00",
     "match_days": [
       {
         "date": "2026-06-30",
@@ -340,7 +340,7 @@
           "id_country": "CIV",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-1-2-3",
           "country_code": "CIV",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
           "flag_emoji": "🇨🇮"
@@ -353,7 +353,7 @@
           "id_country": "NOR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-2-1-3",
           "country_code": "NOR",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
           "flag_emoji": "🇳🇴"
@@ -391,21 +391,21 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+255",
-          "draw": "+240",
+          "home": "+260",
+          "draw": "+230",
           "away": "+115"
         },
         "implied_probability": {
-          "home_win": 28.17,
-          "draw": 29.41,
+          "home_win": 27.78,
+          "draw": 30.3,
           "away_win": 46.51
         },
         "normalized_probability": {
-          "home_win": 27.06,
-          "draw": 28.26,
-          "away_win": 44.68
+          "home_win": 26.56,
+          "draw": 28.97,
+          "away_win": 44.47
         },
-        "overround": 4.09,
+        "overround": 4.59,
         "details": "NOR +115"
       },
       "injuries": {
@@ -651,7 +651,7 @@
               "source": "ESPN World Cup news",
               "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
               "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-              "published": "2026-06-30T13:29:44Z",
+              "published": "2026-06-30T16:01:58Z",
               "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
             }
           ],
@@ -1044,7 +1044,7 @@
           "id_country": "CIV",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-1-2-3",
           "country_code": "CIV",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
           "flag_emoji": "🇨🇮"
@@ -1057,7 +1057,7 @@
           "id_country": "NOR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-2-1-3",
           "country_code": "NOR",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
           "flag_emoji": "🇳🇴"
@@ -1095,21 +1095,21 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+255",
-          "draw": "+240",
+          "home": "+260",
+          "draw": "+230",
           "away": "+115"
         },
         "implied_probability": {
-          "home_win": 28.17,
-          "draw": 29.41,
+          "home_win": 27.78,
+          "draw": 30.3,
           "away_win": 46.51
         },
         "normalized_probability": {
-          "home_win": 27.06,
-          "draw": 28.26,
-          "away_win": 44.68
+          "home_win": 26.56,
+          "draw": 28.97,
+          "away_win": 44.47
         },
-        "overround": 4.09,
+        "overround": 4.59,
         "details": "NOR +115"
       },
       "injuries": {
@@ -1355,7 +1355,7 @@
               "source": "ESPN World Cup news",
               "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
               "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-              "published": "2026-06-30T13:29:44Z",
+              "published": "2026-06-30T16:01:58Z",
               "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
             }
           ],
@@ -1748,7 +1748,7 @@
           "id_country": "CIV",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-1-2-3",
           "country_code": "CIV",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
           "flag_emoji": "🇨🇮"
@@ -1761,7 +1761,7 @@
           "id_country": "NOR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-2-1-3",
           "country_code": "NOR",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
           "flag_emoji": "🇳🇴"
@@ -1799,21 +1799,21 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+255",
-          "draw": "+240",
+          "home": "+260",
+          "draw": "+230",
           "away": "+115"
         },
         "implied_probability": {
-          "home_win": 28.17,
-          "draw": 29.41,
+          "home_win": 27.78,
+          "draw": 30.3,
           "away_win": 46.51
         },
         "normalized_probability": {
-          "home_win": 27.06,
-          "draw": 28.26,
-          "away_win": 44.68
+          "home_win": 26.56,
+          "draw": 28.97,
+          "away_win": 44.47
         },
-        "overround": 4.09,
+        "overround": 4.59,
         "details": "NOR +115"
       },
       "injuries": {
@@ -2059,7 +2059,7 @@
               "source": "ESPN World Cup news",
               "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
               "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-              "published": "2026-06-30T13:29:44Z",
+              "published": "2026-06-30T16:01:58Z",
               "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
             }
           ],
@@ -3104,7 +3104,7 @@
   ],
   "daily_log": [
     {
-      "time": "2026-06-30T16:19:20Z",
+      "time": "2026-06-30T16:53:49Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     }
