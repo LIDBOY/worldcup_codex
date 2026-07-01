@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
   "stage": "analysis",
-  "generated_at": "2026-06-30T16:59:10Z",
+  "generated_at": "2026-07-01T01:30:48Z",
   "analysis": {
-    "generated_at": "2026-06-30T16:53:49Z",
-    "summary": "6场已确认世界杯32强比赛分析，基于FIFA赛程、ESPN核实及DraftKings赔率。整体上强队占优，但科特迪瓦vs挪威及比利时vs塞内加尔存在悬念。厄瓜多尔、英格兰、刚果（金）有伤病疑云。所有赔率及伤病信息均来自官方来源，无虚构数据。",
+    "generated_at": "2026-07-01T01:22:18Z",
+    "summary": "2026世界杯1/16决赛及后续赛程分析：已完成的两场比赛挪威和法国顺利晋级；即将进行的比赛中英格兰、美国东道主优势明显，比利时与塞内加尔势均力敌，墨西哥主场迎战厄瓜多尔稍占上风。赔率市场清晰，伤病影响有限，需关注平局风险。",
     "matches": [
       {
         "id": "400021514",
@@ -21,9 +21,9 @@
         "group": "",
         "match_number": 78,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -33,7 +33,7 @@
             "id_team": "4789",
             "id_country": "CIV",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
-            "score": null,
+            "score": 1,
             "tactics": "4-1-2-3",
             "country_code": "CIV",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
@@ -46,7 +46,7 @@
             "id_team": "464",
             "id_country": "NOR",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "score": null,
+            "score": 2,
             "tactics": "4-2-1-3",
             "country_code": "NOR",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
@@ -81,52 +81,51 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+260",
-            "draw": "+230",
-            "away": "+115"
-          },
-          "implied_probability": {
-            "home_win": 27.78,
-            "draw": 30.3,
-            "away_win": 46.51
-          },
-          "normalized_probability": {
-            "home_win": 26.56,
-            "draw": 28.97,
-            "away_win": 44.47
-          },
-          "overround": 4.59,
-          "details": "NOR +115"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "科特迪瓦",
             "team_en": "Ivory Coast",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+                "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+                "published": "2026-06-30T19:41:43Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "挪威",
             "team_en": "Norway",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+                "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+                "published": "2026-06-30T19:41:43Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         },
         "match_id": "400021514",
         "win_draw_loss": {
-          "home_win": 27,
-          "draw": 30,
-          "away_win": 43
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 100
         },
         "xg_prediction": {
           "home": 1.1,
-          "away": 1.6
+          "away": 1.9
         },
         "predicted_score": {
           "home": 1,
@@ -136,28 +135,28 @@
           {
             "score": "1-2",
             "rank": 1,
-            "reason": "挪威进攻效率更高，科特迪瓦防守有漏洞，但主场速度可造威胁。"
+            "reason": "哈兰德绝杀助挪威晋级"
           },
           {
             "score": "1-1",
             "rank": 2,
-            "reason": "双方拉锯，中场缠斗导致机会不多，各入一球均势收场。"
+            "reason": "科特迪瓦顽强逼平可能"
           },
           {
             "score": "0-2",
             "rank": 3,
-            "reason": "挪威控制中场完全压制，科特迪瓦反击失效，零封胜出。"
+            "reason": "挪威完胜局面"
           }
         ],
         "method_factors": {
-          "market_signal": "市场明显偏向挪威（+115），平局赔率也较低，科特迪瓦受冷落。",
-          "fifa_rank_prior": "科特迪瓦近年实力回升，挪威有哈兰德领衔，长期强度略优。",
-          "recent_form": "近期状态未知，无正式比赛数据参考。",
-          "group_context": "32强淘汰赛，一场定胜负，双方需全力争胜，平局后加时点球可能性存在。",
-          "injury_rotation": "双方均无官方伤病确认，预计全主力出战。",
-          "weather_venue": "达拉斯体育场，天气未知，场地条件良好。",
-          "tactical_key": "科特迪瓦边路速度 vs 挪威中路支点哈兰德的头球与做球。",
-          "uncertainty": "科特迪瓦上限波动大，挪威依赖球星个人能力，若哈兰德受限可能爆冷。"
+          "market_signal": "赔率不可用，无市场信号",
+          "fifa_rank_prior": "挪威长期实力略优，科特迪瓦非洲强队但稳定性不足",
+          "recent_form": "挪威凭借哈兰德绝杀晋级，展现关键球能力",
+          "group_context": "1/16决赛，胜者对阵巴西",
+          "injury_rotation": "双方均有疑似伤病但核心球员均首发出场",
+          "weather_venue": "达拉斯，天气未知",
+          "tactical_key": "科特迪瓦先入一球后挪威加强进攻，哈兰德86分钟破门",
+          "uncertainty": "低，比赛已结束"
         },
         "matchup_graph": {
           "nodes": [
@@ -167,23 +166,23 @@
               "type": "team_phase",
               "side": "home",
               "weight": 70,
-              "note": "科特迪瓦依赖边锋突破和速度，射门转化一般。"
+              "note": "科特迪瓦进攻有一定速度，但终结能力不足"
             },
             {
               "id": "home_midfield",
               "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 65,
-              "note": "中场拦截能力尚可，但组织创造力有限。"
+              "weight": 60,
+              "note": "中场拦截较强，但创造力有限"
             },
             {
               "id": "home_defense",
               "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 60,
-              "note": "防空能力偏弱，面对高中锋可能吃力。"
+              "weight": 65,
+              "note": "防线组织尚可，但应对高空球有漏洞"
             },
             {
               "id": "away_attack",
@@ -191,7 +190,7 @@
               "type": "team_phase",
               "side": "away",
               "weight": 85,
-              "note": "哈兰德支点作用明显，两翼传中威胁大。"
+              "note": "哈兰德领衔，进攻火力强大"
             },
             {
               "id": "away_midfield",
@@ -199,7 +198,7 @@
               "type": "team_phase",
               "side": "away",
               "weight": 75,
-              "note": "厄德高组织调度，控制节奏能力强。"
+              "note": "厄德高组织调度，控制力强"
             },
             {
               "id": "away_defense",
@@ -207,62 +206,62 @@
               "type": "team_phase",
               "side": "away",
               "weight": 70,
-              "note": "整体防守纪律性好，但边后卫偶尔身后空当。"
+              "note": "防线稳固，但偶有失误"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "边路突破 vs 边卫防守",
-              "impact": "high",
+              "label": "科特迪瓦反击冲击挪威防线",
+              "impact": "medium",
               "direction": "home_to_away",
-              "note": "科特迪瓦专注打击挪威边后卫助攻留下的空当。"
+              "note": "科特迪瓦利用速度制造威胁"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "哈兰德争顶 vs 中卫防线",
+              "label": "哈兰德空中优势明显",
               "impact": "high",
               "direction": "away_to_home",
-              "note": "哈兰德身高压制，科特迪瓦中卫需包夹保护。"
+              "note": "挪威通过传中和定位球施压"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场控制权争夺",
-              "impact": "medium",
+              "label": "中场对抗",
+              "impact": "low",
               "direction": "balanced",
-              "note": "厄德高主导下的挪威中场控制力更强。"
+              "note": "双方争夺控制权"
             }
           ],
-          "summary": "挪威整体实力占优，尤其进攻端威胁明显；科特迪瓦需依靠速度和反击制造意外。",
+          "summary": "挪威整体占优，进攻端哈兰德关键",
           "advantage_side": "away",
-          "key_battle": "科特迪瓦边路突破 vs 挪威边后卫防守，以及哈兰德高空轰炸与科特迪瓦中卫的对决。",
-          "risk_trigger": "若挪威迟迟无法破门，科特迪瓦的反击可能一击致命。"
+          "key_battle": "哈兰德 vs 科特迪瓦中卫",
+          "risk_trigger": "哈兰德被限制时挪威进攻受阻"
         },
-        "tactical_matchup": "科特迪瓦的4-1-2-3阵型强调边路速度，挪威4-2-1-3则通过厄德高串联，直接找哈兰德。挪威控球优势下，科特迪瓦需要高效转换。",
+        "tactical_matchup": "挪威利用边路传中和定位球，科特迪瓦依靠反击速度",
         "injury_adjustment": {
-          "home": "无官方伤病确认，全员可战。",
-          "away": "无官方伤病确认，全员可战。",
-          "summary": "双方阵容完整，无重要缺阵。"
+          "home": "疑似伤病但无具体球员缺席，核心阵容在场",
+          "away": "疑似伤病但哈兰德等核心均首发出战",
+          "summary": "伤病影响微弱，双方主力基本齐整"
         },
-        "risk_analysis": "科特迪瓦具备爆冷潜能，但挪威近期大赛表现稳健，市场低估平局价值。",
-        "upset_probability": 27,
+        "risk_analysis": "比赛进程激烈，哈兰德绝杀体现关键球能力，比赛已结束无风险",
+        "upset_probability": 0,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 27.78,
-            "draw": 30.3,
-            "away_win": 46.51
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
           "model_edge": {
-            "home_win": 27,
-            "draw": 30,
-            "away_win": 43
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 100
           },
-          "deviation_analysis": "模型对挪威取胜概率下调3.5%，对平局和主胜基本一致，认为市场略微高估挪威。"
+          "deviation_analysis": "赔率不可用，模型基于实际结果评估"
         },
-        "confidence": "medium"
+        "confidence": "high"
       },
       {
         "id": "400021523",
@@ -279,9 +278,9 @@
         "group": "",
         "match_number": 77,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -291,8 +290,8 @@
             "id_team": "478",
             "id_country": "FRA",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-            "score": null,
-            "tactics": null,
+            "score": 3,
+            "tactics": "4-2-3-1",
             "country_code": "FRA",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
             "flag_emoji": "🇫🇷"
@@ -304,8 +303,8 @@
             "id_team": "466",
             "id_country": "SWE",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-            "score": null,
-            "tactics": null,
+            "score": 0,
+            "tactics": "4-4-2",
             "country_code": "SWE",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
             "flag_emoji": "🇸🇪"
@@ -339,26 +338,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-340",
-            "draw": "+500",
-            "away": "+950"
-          },
-          "implied_probability": {
-            "home_win": 77.27,
-            "draw": 16.67,
-            "away_win": 9.52
-          },
-          "normalized_probability": {
-            "home_win": 74.69,
-            "draw": 16.11,
-            "away_win": 9.21
-          },
-          "overround": 3.46,
-          "details": "FRA -340"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -378,44 +360,44 @@
         },
         "match_id": "400021523",
         "win_draw_loss": {
-          "home_win": 72,
-          "draw": 18,
-          "away_win": 10
+          "home_win": 100,
+          "draw": 0,
+          "away_win": 0
         },
         "xg_prediction": {
           "home": 2.5,
-          "away": 0.6
+          "away": 0.5
         },
         "predicted_score": {
-          "home": 2,
+          "home": 3,
           "away": 0
         },
         "score_options": [
           {
-            "score": "2-0",
-            "rank": 1,
-            "reason": "法国攻防俱佳，瑞典难破铁桶阵，姆巴佩等人锁定胜局。"
-          },
-          {
             "score": "3-0",
-            "rank": 2,
-            "reason": "法国若早进球，瑞典被迫压出，反击扩大比分。"
+            "rank": 1,
+            "reason": "法国全面压制轻松取胜"
           },
           {
-            "score": "2-1",
+            "score": "2-0",
+            "rank": 2,
+            "reason": "法国掌控比赛但进球稍少"
+          },
+          {
+            "score": "3-1",
             "rank": 3,
-            "reason": "法国领先后松懈，瑞典定位球扳回一球。"
+            "reason": "瑞典可能打入安慰球"
           }
         ],
         "method_factors": {
-          "market_signal": "市场极度看好法国（-340），平局和客胜赔率高企，反映悬殊。",
-          "fifa_rank_prior": "法国世界冠军班底，瑞典近年下滑，长期实力差距明显。",
-          "recent_form": "近期状态未知，无正式比赛数据参考。",
-          "group_context": "32强淘汰赛，法国作为夺冠热门必须晋级，瑞典考验不大。",
-          "injury_rotation": "双方无官方伤病确认，预计全主力出战。",
-          "weather_venue": "纽约/新泽西体育场，天气未知，场地条件良好。",
-          "tactical_key": "法国多点开花的进攻 vs 瑞典压缩防线+伊萨克反击。",
-          "uncertainty": "瑞典若摆大巴，法国破密集能力成疑，可能需要定位球或远射。"
+          "market_signal": "赔率不可用，无市场信号",
+          "fifa_rank_prior": "法国世界顶级强队，瑞典实力中等",
+          "recent_form": "法国小组赛表现强势，瑞典晋级已属不易",
+          "group_context": "1/16决赛，胜者对阵巴拉圭",
+          "injury_rotation": "无伤病报告",
+          "weather_venue": "新泽西，天气未知",
+          "tactical_key": "法国姆巴佩吉鲁组合高效，瑞典防线无力招架",
+          "uncertainty": "低，比赛已结束"
         },
         "matchup_graph": {
           "nodes": [
@@ -424,101 +406,101 @@
               "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 95,
-              "note": "姆巴佩、格列兹曼等顶级攻击线，个人能力极强。"
+              "weight": 90,
+              "note": "姆巴佩领衔，速度与技术兼备"
             },
             {
               "id": "home_midfield",
               "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 90,
-              "note": "琼阿梅尼、卡马文加控制力与拦截俱佳。"
+              "weight": 85,
+              "note": "坎特与楚阿梅尼控制力强"
             },
             {
               "id": "home_defense",
               "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 85,
-              "note": "后防经验丰富，但高位防线偶尔被快马冲击。"
+              "weight": 80,
+              "note": "瓦拉内等经验丰富，体系稳固"
             },
             {
               "id": "away_attack",
               "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 60,
-              "note": "伊萨克为主的反击点，库卢辅助，效率一般。"
+              "weight": 65,
+              "note": "伊萨克个人能力突出，但支援不足"
             },
             {
               "id": "away_midfield",
               "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 55,
-              "note": "缺少顶级组织者，靠跑动和拼抢弥补。"
+              "weight": 60,
+              "note": "福斯贝里组织，整体偏慢"
             },
             {
               "id": "away_defense",
               "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 65,
-              "note": "林德洛夫领衔，整体防守较稳健，但转身慢。"
+              "weight": 55,
+              "note": "林德洛夫缺阵影响防线稳定性"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "法国三叉戟 vs 瑞典低位防线",
+              "label": "法国前场三叉戟冲击",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "姆巴佩速度与突破考验瑞典后卫的单防能力。"
+              "note": "瑞典防线难以应对速度"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "伊萨克反越位 vs 高线中卫",
+              "label": "伊萨克单兵反击",
               "impact": "medium",
               "direction": "away_to_home",
-              "note": "瑞典唯一威胁是身后球，法国需注意防线身后空间。"
+              "note": "瑞典依赖个人能力"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场统治力对决",
-              "impact": "low",
-              "direction": "balanced",
-              "note": "法国技术碾压，瑞典难有连续传递。"
+              "label": "中场碾压",
+              "impact": "high",
+              "direction": "home_to_away",
+              "note": "法国控球占优"
             }
           ],
-          "summary": "法国全场优势，瑞典只能死守待零星反击，爆冷可能性极低。",
+          "summary": "法国全面占优，进攻端多点开花",
           "advantage_side": "home",
-          "key_battle": "法国破密集防守的效率，以及瑞典如何限制姆巴佩的冲刺空间。",
-          "risk_trigger": "法国久攻不下，心态急躁，瑞典利用定位球偷一球后摆大巴。"
+          "key_battle": "姆巴佩 vs 瑞典右后卫",
+          "risk_trigger": "法国轻敌导致失误"
         },
-        "tactical_matchup": "法国惯用4-3-3压制，瑞典可能5-4-1龟缩。法国需边中结合，利用远射和头球。瑞典唯一出路是防守反击，依靠伊萨克单点。",
+        "tactical_matchup": "法国控球进攻，瑞典防守反击",
         "injury_adjustment": {
-          "home": "无官方伤病确认，全员可战。",
-          "away": "无官方伤病确认，全员可战。",
-          "summary": "双方阵容完整，无重要缺阵。"
+          "home": "无",
+          "away": "无",
+          "summary": "无伤病影响"
         },
-        "risk_analysis": "虽然法国实力碾压，但淘汰赛变数仍存，瑞典的防守韧性可能让比赛意外胶着。",
-        "upset_probability": 10,
+        "risk_analysis": "法国实力碾压，比赛无悬念，已结束",
+        "upset_probability": 0,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 77.27,
-            "draw": 16.67,
-            "away_win": 9.52
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
           "model_edge": {
-            "home_win": 72,
-            "draw": 18,
-            "away_win": 10
+            "home_win": 100,
+            "draw": 0,
+            "away_win": 0
           },
-          "deviation_analysis": "模型对法国取胜概率下调5%，增加了平局和客胜的可能，认为市场过度追捧。"
+          "deviation_analysis": "赔率不可用，模型与实际结果一致"
         },
         "confidence": "high"
       },
@@ -527,7 +509,7 @@
         "fifa_match_id": "400021520",
         "match_name": "墨西哥 vs 厄瓜多尔",
         "match_name_en": "Mexico vs Ecuador",
-        "kickoff_utc": "2026-07-01T01:00:00Z",
+        "kickoff_utc": "2026-07-01T02:00:00Z",
         "competition": "FIFA World Cup™",
         "season": "FIFA World Cup 2026™",
         "stage": "Round of 32",
@@ -537,7 +519,7 @@
         "group": "",
         "match_number": 79,
         "status": {
-          "match_status": 1,
+          "match_status": 10,
           "officiality_status": 0,
           "result_type": 0
         },
@@ -550,7 +532,7 @@
             "id_country": "MEX",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-1-2-3",
             "country_code": "MEX",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
             "flag_emoji": "🇲🇽"
@@ -563,7 +545,7 @@
             "id_country": "ECU",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-4-2",
             "country_code": "ECU",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
             "flag_emoji": "🇪🇨"
@@ -602,20 +584,20 @@
           "provider": "DraftKings",
           "moneyline_american": {
             "home": "+130",
-            "draw": "+185",
-            "away": "+295"
+            "draw": "+175",
+            "away": "+300"
           },
           "implied_probability": {
             "home_win": 43.48,
-            "draw": 35.09,
-            "away_win": 25.32
+            "draw": 36.36,
+            "away_win": 25.0
           },
           "normalized_probability": {
-            "home_win": 41.85,
-            "draw": 33.78,
-            "away_win": 24.37
+            "home_win": 41.47,
+            "draw": 34.68,
+            "away_win": 23.85
           },
-          "overround": 3.88,
+          "overround": 4.84,
           "details": "MEX +130"
         },
         "injuries": {
@@ -635,7 +617,7 @@
                 "source": "ESPN World Cup news",
                 "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
                 "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-                "published": "2026-06-30T16:01:58Z",
+                "published": "2026-06-30T20:47:01Z",
                 "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
               }
             ],
@@ -644,44 +626,44 @@
         },
         "match_id": "400021520",
         "win_draw_loss": {
-          "home_win": 43,
+          "home_win": 42,
           "draw": 33,
-          "away_win": 24
+          "away_win": 25
         },
         "xg_prediction": {
-          "home": 1.3,
-          "away": 1.0
+          "home": 1.35,
+          "away": 1.05
         },
         "predicted_score": {
-          "home": 1,
-          "away": 0
+          "home": 2,
+          "away": 1
         },
         "score_options": [
           {
-            "score": "1-0",
+            "score": "2-1",
             "rank": 1,
-            "reason": "墨西哥主场氛围加持，一球小胜，厄瓜多尔进攻乏力。"
+            "reason": "墨西哥主场优势，进攻效率稍高"
           },
           {
             "score": "1-1",
             "rank": 2,
-            "reason": "双方谨慎，平局合理，厄瓜多尔防守顽强。"
+            "reason": "厄瓜多尔防守稳固，可能逼平"
           },
           {
-            "score": "2-1",
+            "score": "1-0",
             "rank": 3,
-            "reason": "墨西哥最后时刻发力，但厄瓜多尔能取得进球。"
+            "reason": "墨西哥小胜可能性"
           }
         ],
         "method_factors": {
-          "market_signal": "市场略看主队（+130），平局赔率较低，折射焦灼预期。",
-          "fifa_rank_prior": "墨西哥中北美强队，厄瓜多尔南美中游，实力接近。",
-          "recent_form": "近期状态未知，无正式比赛数据参考。",
-          "group_context": "32强淘汰赛，墨西哥有主场优势（墨西哥城），厄瓜多尔可能适应困难。",
-          "injury_rotation": "墨西哥无伤情，厄瓜多尔有可疑伤病报道，可能影响战力。",
-          "weather_venue": "墨西哥城体育场，高海拔或影响厄瓜多尔体能。",
-          "tactical_key": "墨西哥中场控制与两翼传中 vs 厄瓜多尔快速转换和边锋单打。",
-          "uncertainty": "厄瓜多尔伤病不明确，若核心缺阵，进攻威胁大减。"
+          "market_signal": "DraftKings 墨西哥+130，市场认为墨西哥略优",
+          "fifa_rank_prior": "墨西哥中北美强队，厄瓜多尔南美中游，墨西哥经验稍占优",
+          "recent_form": "小组赛表现未知，墨西哥主场氛围佳",
+          "group_context": "1/16决赛，胜者对阵后续强敌",
+          "injury_rotation": "墨西哥无伤病，厄瓜多尔有疑似伤病，影响待定",
+          "weather_venue": "墨西哥城，高海拔，天气未知",
+          "tactical_key": "墨西哥边路进攻 vs 厄瓜多尔密集防守",
+          "uncertainty": "中等"
         },
         "matchup_graph": {
           "nodes": [
@@ -691,7 +673,7 @@
               "type": "team_phase",
               "side": "home",
               "weight": 75,
-              "note": "洛萨诺边路突破，希门尼斯抢点，但整体效率一般。"
+              "note": "洛萨诺边路突破能力强"
             },
             {
               "id": "home_midfield",
@@ -699,7 +681,7 @@
               "type": "team_phase",
               "side": "home",
               "weight": 70,
-              "note": "阿尔瓦雷斯组织，拦截能力不错。"
+              "note": "埃雷拉调度，控球占优"
             },
             {
               "id": "home_defense",
@@ -707,7 +689,7 @@
               "type": "team_phase",
               "side": "home",
               "weight": 70,
-              "note": "经验老道，但转身速度偏慢。"
+              "note": "奥乔亚门线技术好，但整体速度偏慢"
             },
             {
               "id": "away_attack",
@@ -715,7 +697,7 @@
               "type": "team_phase",
               "side": "away",
               "weight": 65,
-              "note": "瓦伦西亚领衔，但创造力不足，依赖反击。"
+              "note": "瓦伦西亚支点作用明显"
             },
             {
               "id": "away_midfield",
@@ -723,68 +705,68 @@
               "type": "team_phase",
               "side": "away",
               "weight": 60,
-              "note": "凯塞多覆盖面大，但向前传球能力平庸。"
+              "note": "凯塞多拦截，但创造力有限"
             },
             {
               "id": "away_defense",
               "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 70,
-              "note": "防线组织有序，定位球防守不错。"
+              "weight": 65,
+              "note": "埃斯图皮尼安镇守，组织较好"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "墨西哥传中 vs 厄瓜多尔防空",
-              "impact": "high",
+              "label": "洛萨诺对抗埃斯图皮尼安",
+              "impact": "medium",
               "direction": "home_to_away",
-              "note": "墨西哥擅长边路起球，厄瓜多尔中卫身高优势明显。"
+              "note": "墨西哥边路传中威胁"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "厄瓜多尔反击速度 vs 墨西哥回追",
+              "label": "瓦伦西亚头球威胁",
               "impact": "medium",
               "direction": "away_to_home",
-              "note": "厄瓜多尔前场速度点冲击墨西哥防线身后。"
+              "note": "厄瓜多尔定位球战术"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "控球权争夺",
+              "label": "中场控制争夺",
               "impact": "low",
               "direction": "balanced",
-              "note": "墨西哥控球稍优，厄瓜多尔采取绞杀策略。"
+              "note": "埃雷拉 vs 凯塞多"
             }
           ],
-          "summary": "墨西哥主场、海拔加成下略占优势，但厄瓜多尔防守稳固，比赛可能沉闷。",
+          "summary": "墨西哥主场稍占优势，厄瓜多尔防守韧性强",
           "advantage_side": "home",
-          "key_battle": "墨西哥如何拆解厄瓜多尔密集防守，以及厄瓜多尔反击对墨西哥老迈防线的冲击。",
-          "risk_trigger": "厄瓜多尔潜在伤病若属实，进攻瘫痪，墨西哥可从容取胜。"
+          "key_battle": "洛萨诺 vs 埃斯图皮尼安",
+          "risk_trigger": "墨西哥久攻不下被反击"
         },
-        "tactical_matchup": "墨西哥4-3-3控球推进，厄瓜多尔4-4-2防守反击。墨西哥需要耐心倒脚寻找空当，厄瓜多尔抓转换瞬间。",
+        "tactical_matchup": "墨西哥主导控球，厄瓜多尔防守反击",
         "injury_adjustment": {
-          "home": "无官方伤病确认，全员可战。",
-          "away": "可疑伤病报道（来自ESPN），具体球员未知，可能影响进攻线。",
-          "summary": "厄瓜多尔有一则可疑伤病，可能削弱攻击力。"
+          "home": "无伤病",
+          "away": "疑似伤病，具体球员不明",
+          "summary": "厄瓜多尔可能部分轮换，影响有限"
         },
-        "risk_analysis": "淘汰赛易出平局，墨西哥高原主场优势被市场部分消化，赔率较均衡，一球小胜格局。",
-        "upset_probability": 24,
+        "risk_analysis": "墨西哥主场优势，但厄瓜多尔防守韧性强，存在平局可能",
+        "upset_probability": 25,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 43.48,
-            "draw": 35.09,
-            "away_win": 25.32
+            "home_win": 41.47,
+            "draw": 34.68,
+            "away_win": 23.85
           },
           "model_edge": {
-            "home_win": 43,
+            "home_win": 42,
             "draw": 33,
-            "away_win": 24
+            "away_win": 25
           },
-          "deviation_analysis": "模型偏向降低平局概率，认为分胜负可能更大，与市场平局高估略有差异。"
+          "deviation_analysis": "模型略倾向主胜，与市场一致，主胜概率微幅上调"
         },
         "confidence": "medium"
       },
@@ -892,6 +874,13 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
+                "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+                "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+                "published": "2026-06-30T23:53:47Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+              },
+              {
+                "source": "ESPN World Cup news",
                 "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
                 "description": "England goalkeeper Jordan Pickford is in no doubt the players will be \"ready to go to war\" for manager Thomas Tuchel when they take on Congo DR for a place in the World Cup round of 16.",
                 "published": "2026-06-30T13:26:18Z",
@@ -907,6 +896,13 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
+                "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+                "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+                "published": "2026-06-30T23:53:47Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+              },
+              {
+                "source": "ESPN World Cup news",
                 "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
                 "description": "England goalkeeper Jordan Pickford is in no doubt the players will be \"ready to go to war\" for manager Thomas Tuchel when they take on Congo DR for a place in the World Cup round of 16.",
                 "published": "2026-06-30T13:26:18Z",
@@ -919,12 +915,12 @@
         "match_id": "400021512",
         "win_draw_loss": {
           "home_win": 75,
-          "draw": 17,
-          "away_win": 8
+          "draw": 18,
+          "away_win": 7
         },
         "xg_prediction": {
-          "home": 2.8,
-          "away": 0.4
+          "home": 2.5,
+          "away": 0.6
         },
         "predicted_score": {
           "home": 3,
@@ -934,28 +930,28 @@
           {
             "score": "3-0",
             "rank": 1,
-            "reason": "英格兰实力碾压，多点开花，刚果难以抵挡。"
+            "reason": "英格兰实力碾压，轻松大胜"
           },
           {
             "score": "2-0",
             "rank": 2,
-            "reason": "保守胜利，英格兰可能收着踢，为后续留力。"
+            "reason": "刚果防守硬度稍阻，但仍落败"
           },
           {
             "score": "4-0",
             "rank": 3,
-            "reason": "刚果若崩盘，英格兰可能大胜穿盘。"
+            "reason": "英格兰火力全开可能性"
           }
         ],
         "method_factors": {
-          "market_signal": "市场极度看好英格兰（-350），回报极低，显示巨大实力鸿沟。",
-          "fifa_rank_prior": "英格兰常年前五，刚果非洲中下游，差距悬殊。",
-          "recent_form": "近期状态未知，无正式比赛数据参考。",
-          "group_context": "32强淘汰赛，英格兰势在必得，刚果难有抵抗。",
-          "injury_rotation": "双方均有“可能伤病”报道，但无确认，核心均可能出场。",
-          "weather_venue": "亚特兰大体育场，天气未知，室内场地条件良好。",
-          "tactical_key": "英格兰定位球和凯恩支点 vs 刚果铁桶阵和零星快速反击。",
-          "uncertainty": "刚果能否顶住头30分钟不丢球是关键，否则可能惨败。"
+          "market_signal": "DraftKings 英格兰-350，市场强烈看好",
+          "fifa_rank_prior": "英格兰世界顶级，刚果民主共和国实力较弱",
+          "recent_form": "英格兰小组赛表现稳定，刚果黑马晋级",
+          "group_context": "1/16决赛，胜者对阵强敌",
+          "injury_rotation": "英格兰里斯-詹姆斯和宽萨缺阵，影响有限；刚果可能有伤病",
+          "weather_venue": "亚特兰大，天气未知",
+          "tactical_key": "英格兰边路突破与定位球，刚果防守反击",
+          "uncertainty": "低"
         },
         "matchup_graph": {
           "nodes": [
@@ -964,101 +960,101 @@
               "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 92,
-              "note": "凯恩、萨卡、福登等顶级攻击手，破密集手段丰富。"
+              "weight": 90,
+              "note": "凯恩、萨卡、福登等顶级攻击线"
             },
             {
               "id": "home_midfield",
               "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 88,
-              "note": "赖斯绞杀，贝林厄姆后插上，控制力强。"
+              "weight": 85,
+              "note": "贝林厄姆、赖斯控制力强"
             },
             {
               "id": "home_defense",
               "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 85,
-              "note": "斯通斯领衔，整体稳定，但偶尔走神。"
+              "weight": 80,
+              "note": "斯通斯、马奎尔稳固"
             },
             {
               "id": "away_attack",
               "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 40,
-              "note": "巴坎布有一定冲击力，但整体配合生疏。"
+              "weight": 50,
+              "note": "巴坎布等有一定速度"
             },
             {
               "id": "away_midfield",
               "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 35,
-              "note": "欠缺创造力，只能靠长传找前锋。"
+              "weight": 45,
+              "note": "技术粗糙，对抗能力一般"
             },
             {
               "id": "away_defense",
               "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 50,
-              "note": "身材硬朗，但位置感差，容易被打身后。"
+              "weight": 40,
+              "note": "经验不足，容易失误"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "英格兰立体进攻 vs 刚果混乱防线",
+              "label": "英格兰多点围攻",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "英格兰多种得分方式，刚果难以全面设防。"
+              "note": "刚果防线难以招架"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "刚果长传冲吊 vs 英格兰防空",
+              "label": "刚果反击速度",
               "impact": "low",
               "direction": "away_to_home",
-              "note": "英格兰高空球防守极佳，刚果难有机会。"
+              "note": "偶尔制造威胁"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场绞杀",
-              "impact": "low",
-              "direction": "balanced",
-              "note": "英格兰完全控制，刚果只能被动跟随。"
+              "label": "中场完全压制",
+              "impact": "high",
+              "direction": "home_to_away",
+              "note": "英格兰控球率70%以上"
             }
           ],
-          "summary": "英格兰全维度碾压，刚果几乎无爆冷可能，比赛悬念仅在于净胜几球。",
+          "summary": "英格兰全面占优，刚果难以抵挡",
           "advantage_side": "home",
-          "key_battle": "刚果能否守住前30分钟，以及英格兰如何破解密集防守。",
-          "risk_trigger": "英格兰轻敌导致久攻不下，刚果一次反击得手后死守。"
+          "key_battle": "凯恩 vs 刚果中卫",
+          "risk_trigger": "英格兰轻敌导致慢热"
         },
-        "tactical_matchup": "英格兰4-2-3-1传控强攻，刚果5-4-1全线退守。英格兰需利用宽度和定位球，刚果唯有长传找高点。",
+        "tactical_matchup": "英格兰控球猛攻，刚果密集防守寻找反击",
         "injury_adjustment": {
-          "home": "可能伤病（ESPN报道提及皮克福德表态），但无具体名单，疑为烟雾弹。",
-          "away": "可能伤病报道，具体不明，或影响锋线。",
-          "summary": "双方均有可疑伤病，但不影响核心战力。"
+          "home": "里斯-詹姆斯、宽萨缺阵",
+          "away": "疑似伤病，具体不明",
+          "summary": "英格兰轮换不影响实力，刚果可能受影响"
         },
-        "risk_analysis": "单方碾压格局，但淘汰赛一分定生死，英格兰需避免意外红牌或低级失误。",
-        "upset_probability": 8,
+        "risk_analysis": "极大概率英格兰大胜，爆冷可能极低",
+        "upset_probability": 5,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 77.78,
-            "draw": 19.05,
-            "away_win": 7.69
+            "home_win": 74.42,
+            "draw": 18.22,
+            "away_win": 7.36
           },
           "model_edge": {
             "home_win": 75,
-            "draw": 17,
-            "away_win": 8
+            "draw": 18,
+            "away_win": 7
           },
-          "deviation_analysis": "模型与市场基本一致，仅略微调低英格兰取胜概率，反映市场已充分定价。"
+          "deviation_analysis": "模型与市场基本一致，英格兰大热"
         },
         "confidence": "high"
       },
@@ -1141,22 +1137,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+125",
-            "draw": "+225",
-            "away": "+250"
+            "home": "+115",
+            "draw": "+230",
+            "away": "+265"
           },
           "implied_probability": {
-            "home_win": 44.44,
-            "draw": 30.77,
-            "away_win": 28.57
+            "home_win": 46.51,
+            "draw": 30.3,
+            "away_win": 27.4
           },
           "normalized_probability": {
-            "home_win": 42.82,
-            "draw": 29.65,
-            "away_win": 27.53
+            "home_win": 44.63,
+            "draw": 29.08,
+            "away_win": 26.29
           },
-          "overround": 3.79,
-          "details": "BEL +125"
+          "overround": 4.21,
+          "details": "BEL +115"
         },
         "injuries": {
           "home": {
@@ -1169,19 +1165,27 @@
           "away": {
             "team": "塞内加尔",
             "team_en": "Senegal",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+                "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+                "published": "2026-06-30T19:41:43Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         },
         "match_id": "400021525",
         "win_draw_loss": {
-          "home_win": 44,
+          "home_win": 45,
           "draw": 29,
-          "away_win": 27
+          "away_win": 26
         },
         "xg_prediction": {
-          "home": 1.5,
+          "home": 1.3,
           "away": 1.2
         },
         "predicted_score": {
@@ -1192,28 +1196,28 @@
           {
             "score": "1-1",
             "rank": 1,
-            "reason": "实力接近，阵地战胶着，各自依靠核心得分。"
+            "reason": "两队实力接近，各进一球平局"
           },
           {
             "score": "2-1",
             "rank": 2,
-            "reason": "比利时经验老到，最后时刻定位球制胜。"
+            "reason": "比利时进攻爆发，小胜"
           },
           {
-            "score": "1-0",
+            "score": "1-2",
             "rank": 3,
-            "reason": "一球小胜，谁先进球谁收缩防守。"
+            "reason": "塞内加尔反击高效，客场取胜"
           }
         ],
         "method_factors": {
-          "market_signal": "市场倾向比利时但优势微弱（+125），平局与客胜差距小，反映均势。",
-          "fifa_rank_prior": "比利时黄金一代尾声但战力犹存，塞内加尔非洲冠军势头上升。",
-          "recent_form": "近期状态未知，无正式比赛数据参考。",
-          "group_context": "32强淘汰赛，双方都具晋级野心，可能谨慎开局。",
-          "injury_rotation": "双方无官方伤病确认，预计全主力出战。",
-          "weather_venue": "西雅图体育场，天气未知，人工草皮或对技术型球员有影响。",
-          "tactical_key": "比利时控球与德布劳内直塞 vs 塞内加尔凶狠逼抢与马内速度。",
-          "uncertainty": "比利时阵容老化，体能在下半场可能下降，塞内加尔体能充沛。"
+          "market_signal": "DraftKings 比利时+115，市场认为比利时微优",
+          "fifa_rank_prior": "比利时黄金一代老去，塞内加尔非洲冠军上升期",
+          "recent_form": "小组赛表现均不俗",
+          "group_context": "1/16决赛，胜者对阵后续强敌",
+          "injury_rotation": "比利时无伤病，塞内加尔疑似伤病",
+          "weather_venue": "西雅图，天气未知",
+          "tactical_key": "比利时卢卡库支点 vs 塞内加尔马内速度",
+          "uncertainty": "高"
         },
         "matchup_graph": {
           "nodes": [
@@ -1222,8 +1226,8 @@
               "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 80,
-              "note": "卢卡库支点，德布劳内输送，但门前效率下降。"
+              "weight": 78,
+              "note": "卢卡库状态，德布劳内输送"
             },
             {
               "id": "home_midfield",
@@ -1231,23 +1235,23 @@
               "type": "team_phase",
               "side": "home",
               "weight": 75,
-              "note": "德布劳内创造力顶级，但防守覆盖不足。"
+              "note": "蒂勒曼斯组织，但防守硬度一般"
             },
             {
               "id": "home_defense",
               "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 65,
-              "note": "维尔通亨等老将转身慢，怕速度型冲击。"
+              "weight": 68,
+              "note": "维尔通亨老迈，替补水平"
             },
             {
               "id": "away_attack",
               "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 75,
-              "note": "马内、萨尔领衔的快马锋线，转换犀利。"
+              "weight": 76,
+              "note": "马内、萨尔速度快，冲击力强"
             },
             {
               "id": "away_midfield",
@@ -1255,68 +1259,68 @@
               "type": "team_phase",
               "side": "away",
               "weight": 70,
-              "note": "盖耶和库亚特拦截凶悍，攻防枢纽。"
+              "note": "盖耶拦截，向前输送"
             },
             {
               "id": "away_defense",
               "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 75,
-              "note": "库利巴利领衔，身体对抗强，防空出色。"
+              "weight": 72,
+              "note": "库利巴利领衔，稳定性好"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "卢卡库对位库利巴利",
+              "label": "卢卡库对抗库利巴利",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "身体碰撞激烈，卢卡库能否压制库利巴利是关键。"
+              "note": "身体对抗激烈"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "塞内加尔双速锋 vs 比利时老迈防线",
+              "label": "马内速度冲击边路",
               "impact": "high",
               "direction": "away_to_home",
-              "note": "马内的速度将考验比利时中卫的回追。"
+              "note": "比利时边卫回追慢"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "德布劳内 vs 中场绞杀",
+              "label": "德布劳内创造 vs 中场绞杀",
               "impact": "medium",
               "direction": "balanced",
-              "note": "德布劳内能否摆脱盖耶的贴身纠缠。"
+              "note": "比利时创造力占优"
             }
           ],
-          "summary": "势均力敌，防线缺陷可能决定胜负，比利时技术稍优但体能存疑。",
+          "summary": "实力伯仲，比利时进攻创造性稍强，塞内加尔防守反击犀利",
           "advantage_side": "balanced",
-          "key_battle": "卢卡库与库利巴利的身体对抗，以及马内冲击比利时右路。",
-          "risk_trigger": "比利时早早领先后保守，塞内加尔疯狂反扑扳平甚至逆转。"
+          "key_battle": "德布劳内 vs 盖耶",
+          "risk_trigger": "比利时防线失误被反击"
         },
-        "tactical_matchup": "比利时惯用3-4-3控球，塞内加尔4-3-3逼抢反击。比利时需保护后场空当，塞内加尔抓转换机会。",
+        "tactical_matchup": "比利时控球进攻，塞内加尔高速反击",
         "injury_adjustment": {
-          "home": "无官方伤病确认，全员可战。",
-          "away": "无官方伤病确认，全员可战。",
-          "summary": "双方阵容齐整，最强出击。"
+          "home": "无",
+          "away": "疑似伤病",
+          "summary": "塞内加尔可能有球员缺阵，影响待定"
         },
-        "risk_analysis": "淘汰赛强强对话，平局概率不低，加时点球随时可能，两队均善于扑点。",
-        "upset_probability": 27,
+        "risk_analysis": "实力伯仲，平局可能性高，胜负手在于关键球员发挥",
+        "upset_probability": 45,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 44.44,
-            "draw": 30.77,
-            "away_win": 28.57
+            "home_win": 44.63,
+            "draw": 29.08,
+            "away_win": 26.29
           },
           "model_edge": {
-            "home_win": 44,
+            "home_win": 45,
             "draw": 29,
-            "away_win": 27
+            "away_win": 26
           },
-          "deviation_analysis": "模型微调，与市场几乎一致，无明显价值偏离。"
+          "deviation_analysis": "模型与市场几乎一致，看好小胜或平局"
         },
         "confidence": "medium"
       },
@@ -1400,20 +1404,20 @@
           "provider": "DraftKings",
           "moneyline_american": {
             "home": "-265",
-            "draw": "+390",
+            "draw": "+400",
             "away": "+800"
           },
           "implied_probability": {
             "home_win": 72.6,
-            "draw": 20.41,
+            "draw": 20.0,
             "away_win": 11.11
           },
           "normalized_probability": {
-            "home_win": 69.73,
-            "draw": 19.6,
-            "away_win": 10.67
+            "home_win": 70.0,
+            "draw": 19.28,
+            "away_win": 10.71
           },
-          "overround": 4.12,
+          "overround": 3.71,
           "details": "USA -265"
         },
         "injuries": {
@@ -1439,7 +1443,7 @@
           "away_win": 10
         },
         "xg_prediction": {
-          "home": 2.1,
+          "home": 2.0,
           "away": 0.7
         },
         "predicted_score": {
@@ -1450,28 +1454,28 @@
           {
             "score": "2-0",
             "rank": 1,
-            "reason": "美国主场优势明显，波黑进攻乏力，遭零封合理。"
+            "reason": "美国整体实力占优，波黑进攻乏力"
           },
           {
             "score": "2-1",
             "rank": 2,
-            "reason": "美国丢一个定位球，但仍能掌控全局。"
+            "reason": "美国可能失球但仍胜"
           },
           {
             "score": "1-0",
             "rank": 3,
-            "reason": "美国踢得保守，一球小胜经济实惠。"
+            "reason": "美国小胜，波黑防守顽强"
           }
         ],
         "method_factors": {
-          "market_signal": "市场看好美国（-265），反映东道主优势和对手偏弱。",
-          "fifa_rank_prior": "美国中北美劲旅，波黑欧洲二三流，实力差明显。",
-          "recent_form": "近期状态未知，无正式比赛数据参考。",
-          "group_context": "32强淘汰赛，东道主美国坐拥主场，波黑难以阻挡。",
-          "injury_rotation": "双方无官方伤病确认，预计全主力出战。",
-          "weather_venue": "旧金山湾区体育场，天气未知，场地条件良好。",
-          "tactical_key": "美国快速转换和边路突击 vs 波黑长传找哲科。",
-          "uncertainty": "波黑若哲科状态爆发，可能制造冷门。"
+          "market_signal": "DraftKings 美国-265，市场看好东道主",
+          "fifa_rank_prior": "美国中北美强队，波黑欧洲二流",
+          "recent_form": "美国小组赛主场优势，波黑晋级不易",
+          "group_context": "1/16决赛，胜者对阵强敌",
+          "injury_rotation": "双方无伤病报告",
+          "weather_venue": "旧金山湾区，天气未知",
+          "tactical_key": "美国普利西奇边路 vs 波黑哲科高点",
+          "uncertainty": "低"
         },
         "matchup_graph": {
           "nodes": [
@@ -1480,8 +1484,8 @@
               "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 80,
-              "note": "普利西奇、麦肯尼等快速灵活，擅长跑动穿插。"
+              "weight": 82,
+              "note": "普利西奇、巴洛贡等年轻有活力"
             },
             {
               "id": "home_midfield",
@@ -1489,7 +1493,7 @@
               "type": "team_phase",
               "side": "home",
               "weight": 78,
-              "note": "亚当斯拦截，穆萨推进，节奏明快。"
+              "note": "麦肯尼、亚当斯覆盖强"
             },
             {
               "id": "home_defense",
@@ -1497,90 +1501,90 @@
               "type": "team_phase",
               "side": "home",
               "weight": 75,
-              "note": "年轻但默契不错，高空球防哲科需警惕。"
+              "note": "特纳门将稳定，罗宾逊边路"
             },
             {
               "id": "away_attack",
               "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 55,
-              "note": "哲科支点，皮亚尼奇输送，但运动能力不足。"
+              "weight": 65,
+              "note": "哲科经验丰富但年龄大，支援不足"
             },
             {
               "id": "away_midfield",
               "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 50,
-              "note": "皮亚尼奇老化，跑动能力下降，控制力不足。"
+              "weight": 60,
+              "note": "皮亚尼奇组织，但状态下滑"
             },
             {
               "id": "away_defense",
               "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 60,
-              "note": "身体对抗还行，但面对灵活前锋易失位。"
+              "weight": 62,
+              "note": "防线有一定硬度"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "美国穿插跑动 vs 波黑防线协同",
+              "label": "美国快速突破",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "普利西奇等人的灵活换位将考验波黑防线默契。"
+              "note": "美国年轻锋线冲击力强"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "哲科高空球 vs 美国中卫",
+              "label": "哲科高空争顶",
               "impact": "medium",
               "direction": "away_to_home",
-              "note": "波黑唯一可能得分的途径是定位球找哲科。"
+              "note": "波黑依赖传中"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场活力对比",
-              "impact": "low",
-              "direction": "balanced",
-              "note": "美国年轻能跑，波黑老将体能堪忧。"
+              "label": "中场拼抢",
+              "impact": "medium",
+              "direction": "home_to_away",
+              "note": "美国体能优势"
             }
           ],
-          "summary": "美国主场作战，整体运转流畅，波黑仅靠老将个人闪光难以抗衡。",
+          "summary": "美国东道主优势明显，波黑老将哲科是唯一威胁",
           "advantage_side": "home",
-          "key_battle": "美国如何切断皮亚尼奇与哲科连线，以及自身前场小快灵的配合效率。",
-          "risk_trigger": "美国久攻不下被反击，波黑凭借哲科一击致命。"
+          "key_battle": "普利西奇 vs 波黑右路",
+          "risk_trigger": "美国攻坚不力被偷"
         },
-        "tactical_matchup": "美国4-3-3高位压迫，波黑4-2-3-1稳守反击。美国需急躁出球，波黑等机会长传。",
+        "tactical_matchup": "美国高压逼抢，波黑稳守反击",
         "injury_adjustment": {
-          "home": "无官方伤病确认，全员可战。",
-          "away": "无官方伤病确认，全员可战。",
-          "summary": "双方阵容完整，无重要缺阵。"
+          "home": "无",
+          "away": "无",
+          "summary": "无伤病影响"
         },
-        "risk_analysis": "美国实力占优但淘汰赛压力下，小胜或平局可能性不小，市场充分定价。",
+        "risk_analysis": "东道主占据天时地利，波黑爆冷可能低",
         "upset_probability": 10,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 72.6,
-            "draw": 20.41,
-            "away_win": 11.11
+            "home_win": 70.0,
+            "draw": 19.28,
+            "away_win": 10.71
           },
           "model_edge": {
             "home_win": 70,
             "draw": 20,
             "away_win": 10
           },
-          "deviation_analysis": "模型与市场基本趋同，略微下调主胜概率，无显著套利空间。"
+          "deviation_analysis": "模型与市场一致，美国大热"
         },
         "confidence": "high"
       }
     ],
-    "risk_overview": "6场比赛中，法国、英格兰、美国三场强弱分明，爆冷概率低；墨西哥vs厄瓜多尔、科特迪瓦vs挪威存在一定变数；比利时vs塞内加尔最为均衡，平局可能较高。需关注厄瓜多尔伤病动向及英格兰可能轮换。",
-    "data_quality": "数据来源：FIFA官方赛程API、ESPN公开记分板交叉验证确保对阵无误；赔率取自DraftKings（ESPN odds feed）；伤病信息基于ESPN新闻，仅有两则有可疑报道但无具体球员；FIFA排名未公开，以长期实力先验替代；天气信息缺失。整体可靠性较高，但缺失近期状态和确切排名。",
+    "risk_overview": "整体赛事进入淘汰赛阶段，强弱对话较多，赔率市场清晰；部分场次实力接近，平局可能性需要关注；伤病影响有限，天气因素未知。数据来源：FIFA官方和ESPN，已交叉验证。",
+    "data_quality": "数据源: FIFA官方赛程+ESPN比分板交叉验证，赔率来自DraftKings，伤病信息来自ESPN新闻但非官方确认。排名数据缺失，采用长期实力评估。",
     "tournament_structure": {
       "stage": "knockout",
       "focus_window": {
@@ -1767,8 +1771,8 @@
                 "id_team": "478",
                 "id_country": "FRA",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-                "score": null,
-                "tactics": null,
+                "score": 3,
+                "tactics": "4-2-3-1",
                 "country_code": "FRA",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
                 "flag_emoji": "🇫🇷"
@@ -1780,8 +1784,8 @@
                 "id_team": "466",
                 "id_country": "SWE",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-                "score": null,
-                "tactics": null,
+                "score": 0,
+                "tactics": "4-4-2",
                 "country_code": "SWE",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
                 "flag_emoji": "🇸🇪"
@@ -1798,25 +1802,25 @@
               "end_iso": "2026-07-01T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 72,
-              "draw": 18,
-              "away_win": 10
+              "home_win": 100,
+              "draw": 0,
+              "away_win": 0
             },
             "score_options": [
               {
-                "score": "2-0",
-                "rank": 1,
-                "reason": "法国攻防俱佳，瑞典难破铁桶阵，姆巴佩等人锁定胜局。"
-              },
-              {
                 "score": "3-0",
-                "rank": 2,
-                "reason": "法国若早进球，瑞典被迫压出，反击扩大比分。"
+                "rank": 1,
+                "reason": "法国全面压制轻松取胜"
               },
               {
-                "score": "2-1",
+                "score": "2-0",
+                "rank": 2,
+                "reason": "法国掌控比赛但进球稍少"
+              },
+              {
+                "score": "3-1",
                 "rank": 3,
-                "reason": "法国领先后松懈，瑞典定位球扳回一球。"
+                "reason": "瑞典可能打入安慰球"
               }
             ],
             "current_window": true,
@@ -1840,7 +1844,7 @@
                 "id_team": "4789",
                 "id_country": "CIV",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
-                "score": null,
+                "score": 1,
                 "tactics": "4-1-2-3",
                 "country_code": "CIV",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
@@ -1853,7 +1857,7 @@
                 "id_team": "464",
                 "id_country": "NOR",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-                "score": null,
+                "score": 2,
                 "tactics": "4-2-1-3",
                 "country_code": "NOR",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
@@ -1871,25 +1875,25 @@
               "end_iso": "2026-07-01T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 27,
-              "draw": 30,
-              "away_win": 43
+              "home_win": 0,
+              "draw": 0,
+              "away_win": 100
             },
             "score_options": [
               {
                 "score": "1-2",
                 "rank": 1,
-                "reason": "挪威进攻效率更高，科特迪瓦防守有漏洞，但主场速度可造威胁。"
+                "reason": "哈兰德绝杀助挪威晋级"
               },
               {
                 "score": "1-1",
                 "rank": 2,
-                "reason": "双方拉锯，中场缠斗导致机会不多，各入一球均势收场。"
+                "reason": "科特迪瓦顽强逼平可能"
               },
               {
                 "score": "0-2",
                 "rank": 3,
-                "reason": "挪威控制中场完全压制，科特迪瓦反击失效，零封胜出。"
+                "reason": "挪威完胜局面"
               }
             ],
             "current_window": true,
@@ -1914,7 +1918,7 @@
                 "id_country": "MEX",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
                 "score": null,
-                "tactics": null,
+                "tactics": "4-1-2-3",
                 "country_code": "MEX",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
                 "flag_emoji": "🇲🇽"
@@ -1927,15 +1931,15 @@
                 "id_country": "ECU",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
                 "score": null,
-                "tactics": null,
+                "tactics": "4-4-2",
                 "country_code": "ECU",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
                 "flag_emoji": "🇪🇨"
               }
             },
-            "kickoff_utc": "2026-07-01T01:00:00Z",
-            "kickoff_beijing": "2026-07-01T09:00:00+08:00",
-            "kickoff_display": "北京时间 07-01 09:00",
+            "kickoff_utc": "2026-07-01T02:00:00Z",
+            "kickoff_beijing": "2026-07-01T10:00:00+08:00",
+            "kickoff_display": "北京时间 07-01 10:00",
             "match_day": {
               "date": "2026-06-30",
               "title": "6月30日比赛日",
@@ -1944,25 +1948,25 @@
               "end_iso": "2026-07-01T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 43,
+              "home_win": 42,
               "draw": 33,
-              "away_win": 24
+              "away_win": 25
             },
             "score_options": [
               {
-                "score": "1-0",
+                "score": "2-1",
                 "rank": 1,
-                "reason": "墨西哥主场氛围加持，一球小胜，厄瓜多尔进攻乏力。"
+                "reason": "墨西哥主场优势，进攻效率稍高"
               },
               {
                 "score": "1-1",
                 "rank": 2,
-                "reason": "双方谨慎，平局合理，厄瓜多尔防守顽强。"
+                "reason": "厄瓜多尔防守稳固，可能逼平"
               },
               {
-                "score": "2-1",
+                "score": "1-0",
                 "rank": 3,
-                "reason": "墨西哥最后时刻发力，但厄瓜多尔能取得进球。"
+                "reason": "墨西哥小胜可能性"
               }
             ],
             "current_window": true,
@@ -2018,24 +2022,24 @@
             },
             "win_draw_loss": {
               "home_win": 75,
-              "draw": 17,
-              "away_win": 8
+              "draw": 18,
+              "away_win": 7
             },
             "score_options": [
               {
                 "score": "3-0",
                 "rank": 1,
-                "reason": "英格兰实力碾压，多点开花，刚果难以抵挡。"
+                "reason": "英格兰实力碾压，轻松大胜"
               },
               {
                 "score": "2-0",
                 "rank": 2,
-                "reason": "保守胜利，英格兰可能收着踢，为后续留力。"
+                "reason": "刚果防守硬度稍阻，但仍落败"
               },
               {
                 "score": "4-0",
                 "rank": 3,
-                "reason": "刚果若崩盘，英格兰可能大胜穿盘。"
+                "reason": "英格兰火力全开可能性"
               }
             ],
             "current_window": true,
@@ -2098,17 +2102,17 @@
               {
                 "score": "2-0",
                 "rank": 1,
-                "reason": "美国主场优势明显，波黑进攻乏力，遭零封合理。"
+                "reason": "美国整体实力占优，波黑进攻乏力"
               },
               {
                 "score": "2-1",
                 "rank": 2,
-                "reason": "美国丢一个定位球，但仍能掌控全局。"
+                "reason": "美国可能失球但仍胜"
               },
               {
                 "score": "1-0",
                 "rank": 3,
-                "reason": "美国踢得保守，一球小胜经济实惠。"
+                "reason": "美国小胜，波黑防守顽强"
               }
             ],
             "current_window": true,
@@ -2163,25 +2167,25 @@
               "end_iso": "2026-07-02T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 44,
+              "home_win": 45,
               "draw": 29,
-              "away_win": 27
+              "away_win": 26
             },
             "score_options": [
               {
                 "score": "1-1",
                 "rank": 1,
-                "reason": "实力接近，阵地战胶着，各自依靠核心得分。"
+                "reason": "两队实力接近，各进一球平局"
               },
               {
                 "score": "2-1",
                 "rank": 2,
-                "reason": "比利时经验老到，最后时刻定位球制胜。"
+                "reason": "比利时进攻爆发，小胜"
               },
               {
-                "score": "1-0",
+                "score": "1-2",
                 "rank": 3,
-                "reason": "一球小胜，谁先进球谁收缩防守。"
+                "reason": "塞内加尔反击高效，客场取胜"
               }
             ],
             "current_window": true,
@@ -2508,38 +2512,57 @@
         ],
         "round_of_16": [
           {
-            "match_id": "placeholder-M89",
+            "match_id": "400021533",
             "match_number": 89,
             "round_key": "round_of_16",
-            "stage": "round_of_16",
-            "group": "淘汰赛",
-            "match_name": "胜者 M73 vs 胜者 M74",
+            "stage": "Round of 16",
+            "stage_name": "Round of 16",
+            "round_name": "",
+            "phase": "",
+            "group": "Round of 16",
+            "match_name": "巴拉圭 vs 法国",
             "teams": {
               "home": {
-                "name": "胜者 M73",
-                "name_en": "胜者 M73",
-                "country_code": "",
-                "flag_url": "",
-                "flag_emoji": "",
-                "placeholder": true
+                "name": "巴拉圭",
+                "name_en": "Paraguay",
+                "abbreviation": "PAR",
+                "id_team": "210",
+                "id_country": "PAR",
+                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+                "score": null,
+                "tactics": null,
+                "country_code": "PAR",
+                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+                "flag_emoji": "🇵🇾"
               },
               "away": {
-                "name": "胜者 M74",
-                "name_en": "胜者 M74",
-                "country_code": "",
-                "flag_url": "",
-                "flag_emoji": "",
-                "placeholder": true
+                "name": "法国",
+                "name_en": "France",
+                "abbreviation": "FRA",
+                "id_team": "478",
+                "id_country": "FRA",
+                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+                "score": null,
+                "tactics": null,
+                "country_code": "FRA",
+                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+                "flag_emoji": "🇫🇷"
               }
             },
-            "kickoff_utc": null,
-            "kickoff_beijing": null,
-            "kickoff_display": "北京时间 待定",
-            "match_day": {},
+            "kickoff_utc": "2026-07-04T21:00:00Z",
+            "kickoff_beijing": "2026-07-05T05:00:00+08:00",
+            "kickoff_display": "北京时间 07-05 05:00",
+            "match_day": {
+              "date": "2026-07-04",
+              "title": "7月4日比赛日",
+              "range": "北京时间 07-04 18:00 - 07-05 18:00",
+              "start_iso": "2026-07-04T18:00:00+08:00",
+              "end_iso": "2026-07-05T18:00:00+08:00"
+            },
             "win_draw_loss": null,
             "score_options": [],
             "current_window": false,
-            "placeholder": true
+            "placeholder": false
           },
           {
             "match_id": "400021530",
@@ -2595,38 +2618,57 @@
             "placeholder": false
           },
           {
-            "match_id": "placeholder-M91",
+            "match_id": "400021532",
             "match_number": 91,
             "round_key": "round_of_16",
-            "stage": "round_of_16",
-            "group": "淘汰赛",
-            "match_name": "胜者 M77 vs 胜者 M78",
+            "stage": "Round of 16",
+            "stage_name": "Round of 16",
+            "round_name": "",
+            "phase": "",
+            "group": "Round of 16",
+            "match_name": "巴西 vs 挪威",
             "teams": {
               "home": {
-                "name": "胜者 M77",
-                "name_en": "胜者 M77",
-                "country_code": "",
-                "flag_url": "",
-                "flag_emoji": "",
-                "placeholder": true
+                "name": "巴西",
+                "name_en": "Brazil",
+                "abbreviation": "BRA",
+                "id_team": "205",
+                "id_country": "BRA",
+                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+                "score": null,
+                "tactics": null,
+                "country_code": "BRA",
+                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+                "flag_emoji": "🇧🇷"
               },
               "away": {
-                "name": "胜者 M78",
-                "name_en": "胜者 M78",
-                "country_code": "",
-                "flag_url": "",
-                "flag_emoji": "",
-                "placeholder": true
+                "name": "挪威",
+                "name_en": "Norway",
+                "abbreviation": "NOR",
+                "id_team": "464",
+                "id_country": "NOR",
+                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+                "score": null,
+                "tactics": null,
+                "country_code": "NOR",
+                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+                "flag_emoji": "🇳🇴"
               }
             },
-            "kickoff_utc": null,
-            "kickoff_beijing": null,
-            "kickoff_display": "北京时间 待定",
-            "match_day": {},
+            "kickoff_utc": "2026-07-05T20:00:00Z",
+            "kickoff_beijing": "2026-07-06T04:00:00+08:00",
+            "kickoff_display": "北京时间 07-06 04:00",
+            "match_day": {
+              "date": "2026-07-05",
+              "title": "7月5日比赛日",
+              "range": "北京时间 07-05 18:00 - 07-06 18:00",
+              "start_iso": "2026-07-05T18:00:00+08:00",
+              "end_iso": "2026-07-06T18:00:00+08:00"
+            },
             "win_draw_loss": null,
             "score_options": [],
             "current_window": false,
-            "placeholder": true
+            "placeholder": false
           },
           {
             "match_id": "placeholder-M92",
@@ -3219,9 +3261,9 @@
       "group": "",
       "match_number": 78,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -3231,7 +3273,7 @@
           "id_team": "4789",
           "id_country": "CIV",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
-          "score": null,
+          "score": 1,
           "tactics": "4-1-2-3",
           "country_code": "CIV",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
@@ -3244,7 +3286,7 @@
           "id_team": "464",
           "id_country": "NOR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-          "score": null,
+          "score": 2,
           "tactics": "4-2-1-3",
           "country_code": "NOR",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
@@ -3279,52 +3321,51 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+260",
-          "draw": "+230",
-          "away": "+115"
-        },
-        "implied_probability": {
-          "home_win": 27.78,
-          "draw": 30.3,
-          "away_win": 46.51
-        },
-        "normalized_probability": {
-          "home_win": 26.56,
-          "draw": 28.97,
-          "away_win": 44.47
-        },
-        "overround": 4.59,
-        "details": "NOR +115"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "科特迪瓦",
           "team_en": "Ivory Coast",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+              "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+              "published": "2026-06-30T19:41:43Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "挪威",
           "team_en": "Norway",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+              "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+              "published": "2026-06-30T19:41:43Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       },
       "match_id": "400021514",
       "win_draw_loss": {
-        "home_win": 27,
-        "draw": 30,
-        "away_win": 43
+        "home_win": 0,
+        "draw": 0,
+        "away_win": 100
       },
       "xg_prediction": {
         "home": 1.1,
-        "away": 1.6
+        "away": 1.9
       },
       "predicted_score": {
         "home": 1,
@@ -3334,28 +3375,28 @@
         {
           "score": "1-2",
           "rank": 1,
-          "reason": "挪威进攻效率更高，科特迪瓦防守有漏洞，但主场速度可造威胁。"
+          "reason": "哈兰德绝杀助挪威晋级"
         },
         {
           "score": "1-1",
           "rank": 2,
-          "reason": "双方拉锯，中场缠斗导致机会不多，各入一球均势收场。"
+          "reason": "科特迪瓦顽强逼平可能"
         },
         {
           "score": "0-2",
           "rank": 3,
-          "reason": "挪威控制中场完全压制，科特迪瓦反击失效，零封胜出。"
+          "reason": "挪威完胜局面"
         }
       ],
       "method_factors": {
-        "market_signal": "市场明显偏向挪威（+115），平局赔率也较低，科特迪瓦受冷落。",
-        "fifa_rank_prior": "科特迪瓦近年实力回升，挪威有哈兰德领衔，长期强度略优。",
-        "recent_form": "近期状态未知，无正式比赛数据参考。",
-        "group_context": "32强淘汰赛，一场定胜负，双方需全力争胜，平局后加时点球可能性存在。",
-        "injury_rotation": "双方均无官方伤病确认，预计全主力出战。",
-        "weather_venue": "达拉斯体育场，天气未知，场地条件良好。",
-        "tactical_key": "科特迪瓦边路速度 vs 挪威中路支点哈兰德的头球与做球。",
-        "uncertainty": "科特迪瓦上限波动大，挪威依赖球星个人能力，若哈兰德受限可能爆冷。"
+        "market_signal": "赔率不可用，无市场信号",
+        "fifa_rank_prior": "挪威长期实力略优，科特迪瓦非洲强队但稳定性不足",
+        "recent_form": "挪威凭借哈兰德绝杀晋级，展现关键球能力",
+        "group_context": "1/16决赛，胜者对阵巴西",
+        "injury_rotation": "双方均有疑似伤病但核心球员均首发出场",
+        "weather_venue": "达拉斯，天气未知",
+        "tactical_key": "科特迪瓦先入一球后挪威加强进攻，哈兰德86分钟破门",
+        "uncertainty": "低，比赛已结束"
       },
       "matchup_graph": {
         "nodes": [
@@ -3365,23 +3406,23 @@
             "type": "team_phase",
             "side": "home",
             "weight": 70,
-            "note": "科特迪瓦依赖边锋突破和速度，射门转化一般。"
+            "note": "科特迪瓦进攻有一定速度，但终结能力不足"
           },
           {
             "id": "home_midfield",
             "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 65,
-            "note": "中场拦截能力尚可，但组织创造力有限。"
+            "weight": 60,
+            "note": "中场拦截较强，但创造力有限"
           },
           {
             "id": "home_defense",
             "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 60,
-            "note": "防空能力偏弱，面对高中锋可能吃力。"
+            "weight": 65,
+            "note": "防线组织尚可，但应对高空球有漏洞"
           },
           {
             "id": "away_attack",
@@ -3389,7 +3430,7 @@
             "type": "team_phase",
             "side": "away",
             "weight": 85,
-            "note": "哈兰德支点作用明显，两翼传中威胁大。"
+            "note": "哈兰德领衔，进攻火力强大"
           },
           {
             "id": "away_midfield",
@@ -3397,7 +3438,7 @@
             "type": "team_phase",
             "side": "away",
             "weight": 75,
-            "note": "厄德高组织调度，控制节奏能力强。"
+            "note": "厄德高组织调度，控制力强"
           },
           {
             "id": "away_defense",
@@ -3405,62 +3446,62 @@
             "type": "team_phase",
             "side": "away",
             "weight": 70,
-            "note": "整体防守纪律性好，但边后卫偶尔身后空当。"
+            "note": "防线稳固，但偶有失误"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "边路突破 vs 边卫防守",
-            "impact": "high",
+            "label": "科特迪瓦反击冲击挪威防线",
+            "impact": "medium",
             "direction": "home_to_away",
-            "note": "科特迪瓦专注打击挪威边后卫助攻留下的空当。"
+            "note": "科特迪瓦利用速度制造威胁"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "哈兰德争顶 vs 中卫防线",
+            "label": "哈兰德空中优势明显",
             "impact": "high",
             "direction": "away_to_home",
-            "note": "哈兰德身高压制，科特迪瓦中卫需包夹保护。"
+            "note": "挪威通过传中和定位球施压"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场控制权争夺",
-            "impact": "medium",
+            "label": "中场对抗",
+            "impact": "low",
             "direction": "balanced",
-            "note": "厄德高主导下的挪威中场控制力更强。"
+            "note": "双方争夺控制权"
           }
         ],
-        "summary": "挪威整体实力占优，尤其进攻端威胁明显；科特迪瓦需依靠速度和反击制造意外。",
+        "summary": "挪威整体占优，进攻端哈兰德关键",
         "advantage_side": "away",
-        "key_battle": "科特迪瓦边路突破 vs 挪威边后卫防守，以及哈兰德高空轰炸与科特迪瓦中卫的对决。",
-        "risk_trigger": "若挪威迟迟无法破门，科特迪瓦的反击可能一击致命。"
+        "key_battle": "哈兰德 vs 科特迪瓦中卫",
+        "risk_trigger": "哈兰德被限制时挪威进攻受阻"
       },
-      "tactical_matchup": "科特迪瓦的4-1-2-3阵型强调边路速度，挪威4-2-1-3则通过厄德高串联，直接找哈兰德。挪威控球优势下，科特迪瓦需要高效转换。",
+      "tactical_matchup": "挪威利用边路传中和定位球，科特迪瓦依靠反击速度",
       "injury_adjustment": {
-        "home": "无官方伤病确认，全员可战。",
-        "away": "无官方伤病确认，全员可战。",
-        "summary": "双方阵容完整，无重要缺阵。"
+        "home": "疑似伤病但无具体球员缺席，核心阵容在场",
+        "away": "疑似伤病但哈兰德等核心均首发出战",
+        "summary": "伤病影响微弱，双方主力基本齐整"
       },
-      "risk_analysis": "科特迪瓦具备爆冷潜能，但挪威近期大赛表现稳健，市场低估平局价值。",
-      "upset_probability": 27,
+      "risk_analysis": "比赛进程激烈，哈兰德绝杀体现关键球能力，比赛已结束无风险",
+      "upset_probability": 0,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 27.78,
-          "draw": 30.3,
-          "away_win": 46.51
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
         "model_edge": {
-          "home_win": 27,
-          "draw": 30,
-          "away_win": 43
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 100
         },
-        "deviation_analysis": "模型对挪威取胜概率下调3.5%，对平局和主胜基本一致，认为市场略微高估挪威。"
+        "deviation_analysis": "赔率不可用，模型基于实际结果评估"
       },
-      "confidence": "medium"
+      "confidence": "high"
     },
     {
       "id": "400021523",
@@ -3477,9 +3518,9 @@
       "group": "",
       "match_number": 77,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -3489,8 +3530,8 @@
           "id_team": "478",
           "id_country": "FRA",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-          "score": null,
-          "tactics": null,
+          "score": 3,
+          "tactics": "4-2-3-1",
           "country_code": "FRA",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
           "flag_emoji": "🇫🇷"
@@ -3502,8 +3543,8 @@
           "id_team": "466",
           "id_country": "SWE",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-          "score": null,
-          "tactics": null,
+          "score": 0,
+          "tactics": "4-4-2",
           "country_code": "SWE",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
           "flag_emoji": "🇸🇪"
@@ -3537,26 +3578,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-340",
-          "draw": "+500",
-          "away": "+950"
-        },
-        "implied_probability": {
-          "home_win": 77.27,
-          "draw": 16.67,
-          "away_win": 9.52
-        },
-        "normalized_probability": {
-          "home_win": 74.69,
-          "draw": 16.11,
-          "away_win": 9.21
-        },
-        "overround": 3.46,
-        "details": "FRA -340"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -3576,44 +3600,44 @@
       },
       "match_id": "400021523",
       "win_draw_loss": {
-        "home_win": 72,
-        "draw": 18,
-        "away_win": 10
+        "home_win": 100,
+        "draw": 0,
+        "away_win": 0
       },
       "xg_prediction": {
         "home": 2.5,
-        "away": 0.6
+        "away": 0.5
       },
       "predicted_score": {
-        "home": 2,
+        "home": 3,
         "away": 0
       },
       "score_options": [
         {
-          "score": "2-0",
-          "rank": 1,
-          "reason": "法国攻防俱佳，瑞典难破铁桶阵，姆巴佩等人锁定胜局。"
-        },
-        {
           "score": "3-0",
-          "rank": 2,
-          "reason": "法国若早进球，瑞典被迫压出，反击扩大比分。"
+          "rank": 1,
+          "reason": "法国全面压制轻松取胜"
         },
         {
-          "score": "2-1",
+          "score": "2-0",
+          "rank": 2,
+          "reason": "法国掌控比赛但进球稍少"
+        },
+        {
+          "score": "3-1",
           "rank": 3,
-          "reason": "法国领先后松懈，瑞典定位球扳回一球。"
+          "reason": "瑞典可能打入安慰球"
         }
       ],
       "method_factors": {
-        "market_signal": "市场极度看好法国（-340），平局和客胜赔率高企，反映悬殊。",
-        "fifa_rank_prior": "法国世界冠军班底，瑞典近年下滑，长期实力差距明显。",
-        "recent_form": "近期状态未知，无正式比赛数据参考。",
-        "group_context": "32强淘汰赛，法国作为夺冠热门必须晋级，瑞典考验不大。",
-        "injury_rotation": "双方无官方伤病确认，预计全主力出战。",
-        "weather_venue": "纽约/新泽西体育场，天气未知，场地条件良好。",
-        "tactical_key": "法国多点开花的进攻 vs 瑞典压缩防线+伊萨克反击。",
-        "uncertainty": "瑞典若摆大巴，法国破密集能力成疑，可能需要定位球或远射。"
+        "market_signal": "赔率不可用，无市场信号",
+        "fifa_rank_prior": "法国世界顶级强队，瑞典实力中等",
+        "recent_form": "法国小组赛表现强势，瑞典晋级已属不易",
+        "group_context": "1/16决赛，胜者对阵巴拉圭",
+        "injury_rotation": "无伤病报告",
+        "weather_venue": "新泽西，天气未知",
+        "tactical_key": "法国姆巴佩吉鲁组合高效，瑞典防线无力招架",
+        "uncertainty": "低，比赛已结束"
       },
       "matchup_graph": {
         "nodes": [
@@ -3622,101 +3646,101 @@
             "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 95,
-            "note": "姆巴佩、格列兹曼等顶级攻击线，个人能力极强。"
+            "weight": 90,
+            "note": "姆巴佩领衔，速度与技术兼备"
           },
           {
             "id": "home_midfield",
             "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 90,
-            "note": "琼阿梅尼、卡马文加控制力与拦截俱佳。"
+            "weight": 85,
+            "note": "坎特与楚阿梅尼控制力强"
           },
           {
             "id": "home_defense",
             "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 85,
-            "note": "后防经验丰富，但高位防线偶尔被快马冲击。"
+            "weight": 80,
+            "note": "瓦拉内等经验丰富，体系稳固"
           },
           {
             "id": "away_attack",
             "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 60,
-            "note": "伊萨克为主的反击点，库卢辅助，效率一般。"
+            "weight": 65,
+            "note": "伊萨克个人能力突出，但支援不足"
           },
           {
             "id": "away_midfield",
             "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 55,
-            "note": "缺少顶级组织者，靠跑动和拼抢弥补。"
+            "weight": 60,
+            "note": "福斯贝里组织，整体偏慢"
           },
           {
             "id": "away_defense",
             "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 65,
-            "note": "林德洛夫领衔，整体防守较稳健，但转身慢。"
+            "weight": 55,
+            "note": "林德洛夫缺阵影响防线稳定性"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "法国三叉戟 vs 瑞典低位防线",
+            "label": "法国前场三叉戟冲击",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "姆巴佩速度与突破考验瑞典后卫的单防能力。"
+            "note": "瑞典防线难以应对速度"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "伊萨克反越位 vs 高线中卫",
+            "label": "伊萨克单兵反击",
             "impact": "medium",
             "direction": "away_to_home",
-            "note": "瑞典唯一威胁是身后球，法国需注意防线身后空间。"
+            "note": "瑞典依赖个人能力"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场统治力对决",
-            "impact": "low",
-            "direction": "balanced",
-            "note": "法国技术碾压，瑞典难有连续传递。"
+            "label": "中场碾压",
+            "impact": "high",
+            "direction": "home_to_away",
+            "note": "法国控球占优"
           }
         ],
-        "summary": "法国全场优势，瑞典只能死守待零星反击，爆冷可能性极低。",
+        "summary": "法国全面占优，进攻端多点开花",
         "advantage_side": "home",
-        "key_battle": "法国破密集防守的效率，以及瑞典如何限制姆巴佩的冲刺空间。",
-        "risk_trigger": "法国久攻不下，心态急躁，瑞典利用定位球偷一球后摆大巴。"
+        "key_battle": "姆巴佩 vs 瑞典右后卫",
+        "risk_trigger": "法国轻敌导致失误"
       },
-      "tactical_matchup": "法国惯用4-3-3压制，瑞典可能5-4-1龟缩。法国需边中结合，利用远射和头球。瑞典唯一出路是防守反击，依靠伊萨克单点。",
+      "tactical_matchup": "法国控球进攻，瑞典防守反击",
       "injury_adjustment": {
-        "home": "无官方伤病确认，全员可战。",
-        "away": "无官方伤病确认，全员可战。",
-        "summary": "双方阵容完整，无重要缺阵。"
+        "home": "无",
+        "away": "无",
+        "summary": "无伤病影响"
       },
-      "risk_analysis": "虽然法国实力碾压，但淘汰赛变数仍存，瑞典的防守韧性可能让比赛意外胶着。",
-      "upset_probability": 10,
+      "risk_analysis": "法国实力碾压，比赛无悬念，已结束",
+      "upset_probability": 0,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 77.27,
-          "draw": 16.67,
-          "away_win": 9.52
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
         "model_edge": {
-          "home_win": 72,
-          "draw": 18,
-          "away_win": 10
+          "home_win": 100,
+          "draw": 0,
+          "away_win": 0
         },
-        "deviation_analysis": "模型对法国取胜概率下调5%，增加了平局和客胜的可能，认为市场过度追捧。"
+        "deviation_analysis": "赔率不可用，模型与实际结果一致"
       },
       "confidence": "high"
     },
@@ -3725,7 +3749,7 @@
       "fifa_match_id": "400021520",
       "match_name": "墨西哥 vs 厄瓜多尔",
       "match_name_en": "Mexico vs Ecuador",
-      "kickoff_utc": "2026-07-01T01:00:00Z",
+      "kickoff_utc": "2026-07-01T02:00:00Z",
       "competition": "FIFA World Cup™",
       "season": "FIFA World Cup 2026™",
       "stage": "Round of 32",
@@ -3735,7 +3759,7 @@
       "group": "",
       "match_number": 79,
       "status": {
-        "match_status": 1,
+        "match_status": 10,
         "officiality_status": 0,
         "result_type": 0
       },
@@ -3748,7 +3772,7 @@
           "id_country": "MEX",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-1-2-3",
           "country_code": "MEX",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
           "flag_emoji": "🇲🇽"
@@ -3761,7 +3785,7 @@
           "id_country": "ECU",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-4-2",
           "country_code": "ECU",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
           "flag_emoji": "🇪🇨"
@@ -3800,20 +3824,20 @@
         "provider": "DraftKings",
         "moneyline_american": {
           "home": "+130",
-          "draw": "+185",
-          "away": "+295"
+          "draw": "+175",
+          "away": "+300"
         },
         "implied_probability": {
           "home_win": 43.48,
-          "draw": 35.09,
-          "away_win": 25.32
+          "draw": 36.36,
+          "away_win": 25.0
         },
         "normalized_probability": {
-          "home_win": 41.85,
-          "draw": 33.78,
-          "away_win": 24.37
+          "home_win": 41.47,
+          "draw": 34.68,
+          "away_win": 23.85
         },
-        "overround": 3.88,
+        "overround": 4.84,
         "details": "MEX +130"
       },
       "injuries": {
@@ -3833,7 +3857,7 @@
               "source": "ESPN World Cup news",
               "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
               "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-              "published": "2026-06-30T16:01:58Z",
+              "published": "2026-06-30T20:47:01Z",
               "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
             }
           ],
@@ -3842,44 +3866,44 @@
       },
       "match_id": "400021520",
       "win_draw_loss": {
-        "home_win": 43,
+        "home_win": 42,
         "draw": 33,
-        "away_win": 24
+        "away_win": 25
       },
       "xg_prediction": {
-        "home": 1.3,
-        "away": 1.0
+        "home": 1.35,
+        "away": 1.05
       },
       "predicted_score": {
-        "home": 1,
-        "away": 0
+        "home": 2,
+        "away": 1
       },
       "score_options": [
         {
-          "score": "1-0",
+          "score": "2-1",
           "rank": 1,
-          "reason": "墨西哥主场氛围加持，一球小胜，厄瓜多尔进攻乏力。"
+          "reason": "墨西哥主场优势，进攻效率稍高"
         },
         {
           "score": "1-1",
           "rank": 2,
-          "reason": "双方谨慎，平局合理，厄瓜多尔防守顽强。"
+          "reason": "厄瓜多尔防守稳固，可能逼平"
         },
         {
-          "score": "2-1",
+          "score": "1-0",
           "rank": 3,
-          "reason": "墨西哥最后时刻发力，但厄瓜多尔能取得进球。"
+          "reason": "墨西哥小胜可能性"
         }
       ],
       "method_factors": {
-        "market_signal": "市场略看主队（+130），平局赔率较低，折射焦灼预期。",
-        "fifa_rank_prior": "墨西哥中北美强队，厄瓜多尔南美中游，实力接近。",
-        "recent_form": "近期状态未知，无正式比赛数据参考。",
-        "group_context": "32强淘汰赛，墨西哥有主场优势（墨西哥城），厄瓜多尔可能适应困难。",
-        "injury_rotation": "墨西哥无伤情，厄瓜多尔有可疑伤病报道，可能影响战力。",
-        "weather_venue": "墨西哥城体育场，高海拔或影响厄瓜多尔体能。",
-        "tactical_key": "墨西哥中场控制与两翼传中 vs 厄瓜多尔快速转换和边锋单打。",
-        "uncertainty": "厄瓜多尔伤病不明确，若核心缺阵，进攻威胁大减。"
+        "market_signal": "DraftKings 墨西哥+130，市场认为墨西哥略优",
+        "fifa_rank_prior": "墨西哥中北美强队，厄瓜多尔南美中游，墨西哥经验稍占优",
+        "recent_form": "小组赛表现未知，墨西哥主场氛围佳",
+        "group_context": "1/16决赛，胜者对阵后续强敌",
+        "injury_rotation": "墨西哥无伤病，厄瓜多尔有疑似伤病，影响待定",
+        "weather_venue": "墨西哥城，高海拔，天气未知",
+        "tactical_key": "墨西哥边路进攻 vs 厄瓜多尔密集防守",
+        "uncertainty": "中等"
       },
       "matchup_graph": {
         "nodes": [
@@ -3889,7 +3913,7 @@
             "type": "team_phase",
             "side": "home",
             "weight": 75,
-            "note": "洛萨诺边路突破，希门尼斯抢点，但整体效率一般。"
+            "note": "洛萨诺边路突破能力强"
           },
           {
             "id": "home_midfield",
@@ -3897,7 +3921,7 @@
             "type": "team_phase",
             "side": "home",
             "weight": 70,
-            "note": "阿尔瓦雷斯组织，拦截能力不错。"
+            "note": "埃雷拉调度，控球占优"
           },
           {
             "id": "home_defense",
@@ -3905,7 +3929,7 @@
             "type": "team_phase",
             "side": "home",
             "weight": 70,
-            "note": "经验老道，但转身速度偏慢。"
+            "note": "奥乔亚门线技术好，但整体速度偏慢"
           },
           {
             "id": "away_attack",
@@ -3913,7 +3937,7 @@
             "type": "team_phase",
             "side": "away",
             "weight": 65,
-            "note": "瓦伦西亚领衔，但创造力不足，依赖反击。"
+            "note": "瓦伦西亚支点作用明显"
           },
           {
             "id": "away_midfield",
@@ -3921,68 +3945,68 @@
             "type": "team_phase",
             "side": "away",
             "weight": 60,
-            "note": "凯塞多覆盖面大，但向前传球能力平庸。"
+            "note": "凯塞多拦截，但创造力有限"
           },
           {
             "id": "away_defense",
             "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 70,
-            "note": "防线组织有序，定位球防守不错。"
+            "weight": 65,
+            "note": "埃斯图皮尼安镇守，组织较好"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "墨西哥传中 vs 厄瓜多尔防空",
-            "impact": "high",
+            "label": "洛萨诺对抗埃斯图皮尼安",
+            "impact": "medium",
             "direction": "home_to_away",
-            "note": "墨西哥擅长边路起球，厄瓜多尔中卫身高优势明显。"
+            "note": "墨西哥边路传中威胁"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "厄瓜多尔反击速度 vs 墨西哥回追",
+            "label": "瓦伦西亚头球威胁",
             "impact": "medium",
             "direction": "away_to_home",
-            "note": "厄瓜多尔前场速度点冲击墨西哥防线身后。"
+            "note": "厄瓜多尔定位球战术"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "控球权争夺",
+            "label": "中场控制争夺",
             "impact": "low",
             "direction": "balanced",
-            "note": "墨西哥控球稍优，厄瓜多尔采取绞杀策略。"
+            "note": "埃雷拉 vs 凯塞多"
           }
         ],
-        "summary": "墨西哥主场、海拔加成下略占优势，但厄瓜多尔防守稳固，比赛可能沉闷。",
+        "summary": "墨西哥主场稍占优势，厄瓜多尔防守韧性强",
         "advantage_side": "home",
-        "key_battle": "墨西哥如何拆解厄瓜多尔密集防守，以及厄瓜多尔反击对墨西哥老迈防线的冲击。",
-        "risk_trigger": "厄瓜多尔潜在伤病若属实，进攻瘫痪，墨西哥可从容取胜。"
+        "key_battle": "洛萨诺 vs 埃斯图皮尼安",
+        "risk_trigger": "墨西哥久攻不下被反击"
       },
-      "tactical_matchup": "墨西哥4-3-3控球推进，厄瓜多尔4-4-2防守反击。墨西哥需要耐心倒脚寻找空当，厄瓜多尔抓转换瞬间。",
+      "tactical_matchup": "墨西哥主导控球，厄瓜多尔防守反击",
       "injury_adjustment": {
-        "home": "无官方伤病确认，全员可战。",
-        "away": "可疑伤病报道（来自ESPN），具体球员未知，可能影响进攻线。",
-        "summary": "厄瓜多尔有一则可疑伤病，可能削弱攻击力。"
+        "home": "无伤病",
+        "away": "疑似伤病，具体球员不明",
+        "summary": "厄瓜多尔可能部分轮换，影响有限"
       },
-      "risk_analysis": "淘汰赛易出平局，墨西哥高原主场优势被市场部分消化，赔率较均衡，一球小胜格局。",
-      "upset_probability": 24,
+      "risk_analysis": "墨西哥主场优势，但厄瓜多尔防守韧性强，存在平局可能",
+      "upset_probability": 25,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 43.48,
-          "draw": 35.09,
-          "away_win": 25.32
+          "home_win": 41.47,
+          "draw": 34.68,
+          "away_win": 23.85
         },
         "model_edge": {
-          "home_win": 43,
+          "home_win": 42,
           "draw": 33,
-          "away_win": 24
+          "away_win": 25
         },
-        "deviation_analysis": "模型偏向降低平局概率，认为分胜负可能更大，与市场平局高估略有差异。"
+        "deviation_analysis": "模型略倾向主胜，与市场一致，主胜概率微幅上调"
       },
       "confidence": "medium"
     },
@@ -4090,6 +4114,13 @@
           "records": [
             {
               "source": "ESPN World Cup news",
+              "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+              "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+              "published": "2026-06-30T23:53:47Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+            },
+            {
+              "source": "ESPN World Cup news",
               "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
               "description": "England goalkeeper Jordan Pickford is in no doubt the players will be \"ready to go to war\" for manager Thomas Tuchel when they take on Congo DR for a place in the World Cup round of 16.",
               "published": "2026-06-30T13:26:18Z",
@@ -4105,6 +4136,13 @@
           "records": [
             {
               "source": "ESPN World Cup news",
+              "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+              "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+              "published": "2026-06-30T23:53:47Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+            },
+            {
+              "source": "ESPN World Cup news",
               "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
               "description": "England goalkeeper Jordan Pickford is in no doubt the players will be \"ready to go to war\" for manager Thomas Tuchel when they take on Congo DR for a place in the World Cup round of 16.",
               "published": "2026-06-30T13:26:18Z",
@@ -4117,12 +4155,12 @@
       "match_id": "400021512",
       "win_draw_loss": {
         "home_win": 75,
-        "draw": 17,
-        "away_win": 8
+        "draw": 18,
+        "away_win": 7
       },
       "xg_prediction": {
-        "home": 2.8,
-        "away": 0.4
+        "home": 2.5,
+        "away": 0.6
       },
       "predicted_score": {
         "home": 3,
@@ -4132,28 +4170,28 @@
         {
           "score": "3-0",
           "rank": 1,
-          "reason": "英格兰实力碾压，多点开花，刚果难以抵挡。"
+          "reason": "英格兰实力碾压，轻松大胜"
         },
         {
           "score": "2-0",
           "rank": 2,
-          "reason": "保守胜利，英格兰可能收着踢，为后续留力。"
+          "reason": "刚果防守硬度稍阻，但仍落败"
         },
         {
           "score": "4-0",
           "rank": 3,
-          "reason": "刚果若崩盘，英格兰可能大胜穿盘。"
+          "reason": "英格兰火力全开可能性"
         }
       ],
       "method_factors": {
-        "market_signal": "市场极度看好英格兰（-350），回报极低，显示巨大实力鸿沟。",
-        "fifa_rank_prior": "英格兰常年前五，刚果非洲中下游，差距悬殊。",
-        "recent_form": "近期状态未知，无正式比赛数据参考。",
-        "group_context": "32强淘汰赛，英格兰势在必得，刚果难有抵抗。",
-        "injury_rotation": "双方均有“可能伤病”报道，但无确认，核心均可能出场。",
-        "weather_venue": "亚特兰大体育场，天气未知，室内场地条件良好。",
-        "tactical_key": "英格兰定位球和凯恩支点 vs 刚果铁桶阵和零星快速反击。",
-        "uncertainty": "刚果能否顶住头30分钟不丢球是关键，否则可能惨败。"
+        "market_signal": "DraftKings 英格兰-350，市场强烈看好",
+        "fifa_rank_prior": "英格兰世界顶级，刚果民主共和国实力较弱",
+        "recent_form": "英格兰小组赛表现稳定，刚果黑马晋级",
+        "group_context": "1/16决赛，胜者对阵强敌",
+        "injury_rotation": "英格兰里斯-詹姆斯和宽萨缺阵，影响有限；刚果可能有伤病",
+        "weather_venue": "亚特兰大，天气未知",
+        "tactical_key": "英格兰边路突破与定位球，刚果防守反击",
+        "uncertainty": "低"
       },
       "matchup_graph": {
         "nodes": [
@@ -4162,101 +4200,101 @@
             "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 92,
-            "note": "凯恩、萨卡、福登等顶级攻击手，破密集手段丰富。"
+            "weight": 90,
+            "note": "凯恩、萨卡、福登等顶级攻击线"
           },
           {
             "id": "home_midfield",
             "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 88,
-            "note": "赖斯绞杀，贝林厄姆后插上，控制力强。"
+            "weight": 85,
+            "note": "贝林厄姆、赖斯控制力强"
           },
           {
             "id": "home_defense",
             "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 85,
-            "note": "斯通斯领衔，整体稳定，但偶尔走神。"
+            "weight": 80,
+            "note": "斯通斯、马奎尔稳固"
           },
           {
             "id": "away_attack",
             "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 40,
-            "note": "巴坎布有一定冲击力，但整体配合生疏。"
+            "weight": 50,
+            "note": "巴坎布等有一定速度"
           },
           {
             "id": "away_midfield",
             "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 35,
-            "note": "欠缺创造力，只能靠长传找前锋。"
+            "weight": 45,
+            "note": "技术粗糙，对抗能力一般"
           },
           {
             "id": "away_defense",
             "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 50,
-            "note": "身材硬朗，但位置感差，容易被打身后。"
+            "weight": 40,
+            "note": "经验不足，容易失误"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "英格兰立体进攻 vs 刚果混乱防线",
+            "label": "英格兰多点围攻",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "英格兰多种得分方式，刚果难以全面设防。"
+            "note": "刚果防线难以招架"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "刚果长传冲吊 vs 英格兰防空",
+            "label": "刚果反击速度",
             "impact": "low",
             "direction": "away_to_home",
-            "note": "英格兰高空球防守极佳，刚果难有机会。"
+            "note": "偶尔制造威胁"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场绞杀",
-            "impact": "low",
-            "direction": "balanced",
-            "note": "英格兰完全控制，刚果只能被动跟随。"
+            "label": "中场完全压制",
+            "impact": "high",
+            "direction": "home_to_away",
+            "note": "英格兰控球率70%以上"
           }
         ],
-        "summary": "英格兰全维度碾压，刚果几乎无爆冷可能，比赛悬念仅在于净胜几球。",
+        "summary": "英格兰全面占优，刚果难以抵挡",
         "advantage_side": "home",
-        "key_battle": "刚果能否守住前30分钟，以及英格兰如何破解密集防守。",
-        "risk_trigger": "英格兰轻敌导致久攻不下，刚果一次反击得手后死守。"
+        "key_battle": "凯恩 vs 刚果中卫",
+        "risk_trigger": "英格兰轻敌导致慢热"
       },
-      "tactical_matchup": "英格兰4-2-3-1传控强攻，刚果5-4-1全线退守。英格兰需利用宽度和定位球，刚果唯有长传找高点。",
+      "tactical_matchup": "英格兰控球猛攻，刚果密集防守寻找反击",
       "injury_adjustment": {
-        "home": "可能伤病（ESPN报道提及皮克福德表态），但无具体名单，疑为烟雾弹。",
-        "away": "可能伤病报道，具体不明，或影响锋线。",
-        "summary": "双方均有可疑伤病，但不影响核心战力。"
+        "home": "里斯-詹姆斯、宽萨缺阵",
+        "away": "疑似伤病，具体不明",
+        "summary": "英格兰轮换不影响实力，刚果可能受影响"
       },
-      "risk_analysis": "单方碾压格局，但淘汰赛一分定生死，英格兰需避免意外红牌或低级失误。",
-      "upset_probability": 8,
+      "risk_analysis": "极大概率英格兰大胜，爆冷可能极低",
+      "upset_probability": 5,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 77.78,
-          "draw": 19.05,
-          "away_win": 7.69
+          "home_win": 74.42,
+          "draw": 18.22,
+          "away_win": 7.36
         },
         "model_edge": {
           "home_win": 75,
-          "draw": 17,
-          "away_win": 8
+          "draw": 18,
+          "away_win": 7
         },
-        "deviation_analysis": "模型与市场基本一致，仅略微调低英格兰取胜概率，反映市场已充分定价。"
+        "deviation_analysis": "模型与市场基本一致，英格兰大热"
       },
       "confidence": "high"
     },
@@ -4339,22 +4377,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+125",
-          "draw": "+225",
-          "away": "+250"
+          "home": "+115",
+          "draw": "+230",
+          "away": "+265"
         },
         "implied_probability": {
-          "home_win": 44.44,
-          "draw": 30.77,
-          "away_win": 28.57
+          "home_win": 46.51,
+          "draw": 30.3,
+          "away_win": 27.4
         },
         "normalized_probability": {
-          "home_win": 42.82,
-          "draw": 29.65,
-          "away_win": 27.53
+          "home_win": 44.63,
+          "draw": 29.08,
+          "away_win": 26.29
         },
-        "overround": 3.79,
-        "details": "BEL +125"
+        "overround": 4.21,
+        "details": "BEL +115"
       },
       "injuries": {
         "home": {
@@ -4367,19 +4405,27 @@
         "away": {
           "team": "塞内加尔",
           "team_en": "Senegal",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+              "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+              "published": "2026-06-30T19:41:43Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       },
       "match_id": "400021525",
       "win_draw_loss": {
-        "home_win": 44,
+        "home_win": 45,
         "draw": 29,
-        "away_win": 27
+        "away_win": 26
       },
       "xg_prediction": {
-        "home": 1.5,
+        "home": 1.3,
         "away": 1.2
       },
       "predicted_score": {
@@ -4390,28 +4436,28 @@
         {
           "score": "1-1",
           "rank": 1,
-          "reason": "实力接近，阵地战胶着，各自依靠核心得分。"
+          "reason": "两队实力接近，各进一球平局"
         },
         {
           "score": "2-1",
           "rank": 2,
-          "reason": "比利时经验老到，最后时刻定位球制胜。"
+          "reason": "比利时进攻爆发，小胜"
         },
         {
-          "score": "1-0",
+          "score": "1-2",
           "rank": 3,
-          "reason": "一球小胜，谁先进球谁收缩防守。"
+          "reason": "塞内加尔反击高效，客场取胜"
         }
       ],
       "method_factors": {
-        "market_signal": "市场倾向比利时但优势微弱（+125），平局与客胜差距小，反映均势。",
-        "fifa_rank_prior": "比利时黄金一代尾声但战力犹存，塞内加尔非洲冠军势头上升。",
-        "recent_form": "近期状态未知，无正式比赛数据参考。",
-        "group_context": "32强淘汰赛，双方都具晋级野心，可能谨慎开局。",
-        "injury_rotation": "双方无官方伤病确认，预计全主力出战。",
-        "weather_venue": "西雅图体育场，天气未知，人工草皮或对技术型球员有影响。",
-        "tactical_key": "比利时控球与德布劳内直塞 vs 塞内加尔凶狠逼抢与马内速度。",
-        "uncertainty": "比利时阵容老化，体能在下半场可能下降，塞内加尔体能充沛。"
+        "market_signal": "DraftKings 比利时+115，市场认为比利时微优",
+        "fifa_rank_prior": "比利时黄金一代老去，塞内加尔非洲冠军上升期",
+        "recent_form": "小组赛表现均不俗",
+        "group_context": "1/16决赛，胜者对阵后续强敌",
+        "injury_rotation": "比利时无伤病，塞内加尔疑似伤病",
+        "weather_venue": "西雅图，天气未知",
+        "tactical_key": "比利时卢卡库支点 vs 塞内加尔马内速度",
+        "uncertainty": "高"
       },
       "matchup_graph": {
         "nodes": [
@@ -4420,8 +4466,8 @@
             "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 80,
-            "note": "卢卡库支点，德布劳内输送，但门前效率下降。"
+            "weight": 78,
+            "note": "卢卡库状态，德布劳内输送"
           },
           {
             "id": "home_midfield",
@@ -4429,23 +4475,23 @@
             "type": "team_phase",
             "side": "home",
             "weight": 75,
-            "note": "德布劳内创造力顶级，但防守覆盖不足。"
+            "note": "蒂勒曼斯组织，但防守硬度一般"
           },
           {
             "id": "home_defense",
             "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 65,
-            "note": "维尔通亨等老将转身慢，怕速度型冲击。"
+            "weight": 68,
+            "note": "维尔通亨老迈，替补水平"
           },
           {
             "id": "away_attack",
             "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 75,
-            "note": "马内、萨尔领衔的快马锋线，转换犀利。"
+            "weight": 76,
+            "note": "马内、萨尔速度快，冲击力强"
           },
           {
             "id": "away_midfield",
@@ -4453,68 +4499,68 @@
             "type": "team_phase",
             "side": "away",
             "weight": 70,
-            "note": "盖耶和库亚特拦截凶悍，攻防枢纽。"
+            "note": "盖耶拦截，向前输送"
           },
           {
             "id": "away_defense",
             "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 75,
-            "note": "库利巴利领衔，身体对抗强，防空出色。"
+            "weight": 72,
+            "note": "库利巴利领衔，稳定性好"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "卢卡库对位库利巴利",
+            "label": "卢卡库对抗库利巴利",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "身体碰撞激烈，卢卡库能否压制库利巴利是关键。"
+            "note": "身体对抗激烈"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "塞内加尔双速锋 vs 比利时老迈防线",
+            "label": "马内速度冲击边路",
             "impact": "high",
             "direction": "away_to_home",
-            "note": "马内的速度将考验比利时中卫的回追。"
+            "note": "比利时边卫回追慢"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "德布劳内 vs 中场绞杀",
+            "label": "德布劳内创造 vs 中场绞杀",
             "impact": "medium",
             "direction": "balanced",
-            "note": "德布劳内能否摆脱盖耶的贴身纠缠。"
+            "note": "比利时创造力占优"
           }
         ],
-        "summary": "势均力敌，防线缺陷可能决定胜负，比利时技术稍优但体能存疑。",
+        "summary": "实力伯仲，比利时进攻创造性稍强，塞内加尔防守反击犀利",
         "advantage_side": "balanced",
-        "key_battle": "卢卡库与库利巴利的身体对抗，以及马内冲击比利时右路。",
-        "risk_trigger": "比利时早早领先后保守，塞内加尔疯狂反扑扳平甚至逆转。"
+        "key_battle": "德布劳内 vs 盖耶",
+        "risk_trigger": "比利时防线失误被反击"
       },
-      "tactical_matchup": "比利时惯用3-4-3控球，塞内加尔4-3-3逼抢反击。比利时需保护后场空当，塞内加尔抓转换机会。",
+      "tactical_matchup": "比利时控球进攻，塞内加尔高速反击",
       "injury_adjustment": {
-        "home": "无官方伤病确认，全员可战。",
-        "away": "无官方伤病确认，全员可战。",
-        "summary": "双方阵容齐整，最强出击。"
+        "home": "无",
+        "away": "疑似伤病",
+        "summary": "塞内加尔可能有球员缺阵，影响待定"
       },
-      "risk_analysis": "淘汰赛强强对话，平局概率不低，加时点球随时可能，两队均善于扑点。",
-      "upset_probability": 27,
+      "risk_analysis": "实力伯仲，平局可能性高，胜负手在于关键球员发挥",
+      "upset_probability": 45,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 44.44,
-          "draw": 30.77,
-          "away_win": 28.57
+          "home_win": 44.63,
+          "draw": 29.08,
+          "away_win": 26.29
         },
         "model_edge": {
-          "home_win": 44,
+          "home_win": 45,
           "draw": 29,
-          "away_win": 27
+          "away_win": 26
         },
-        "deviation_analysis": "模型微调，与市场几乎一致，无明显价值偏离。"
+        "deviation_analysis": "模型与市场几乎一致，看好小胜或平局"
       },
       "confidence": "medium"
     },
@@ -4598,20 +4644,20 @@
         "provider": "DraftKings",
         "moneyline_american": {
           "home": "-265",
-          "draw": "+390",
+          "draw": "+400",
           "away": "+800"
         },
         "implied_probability": {
           "home_win": 72.6,
-          "draw": 20.41,
+          "draw": 20.0,
           "away_win": 11.11
         },
         "normalized_probability": {
-          "home_win": 69.73,
-          "draw": 19.6,
-          "away_win": 10.67
+          "home_win": 70.0,
+          "draw": 19.28,
+          "away_win": 10.71
         },
-        "overround": 4.12,
+        "overround": 3.71,
         "details": "USA -265"
       },
       "injuries": {
@@ -4637,7 +4683,7 @@
         "away_win": 10
       },
       "xg_prediction": {
-        "home": 2.1,
+        "home": 2.0,
         "away": 0.7
       },
       "predicted_score": {
@@ -4648,28 +4694,28 @@
         {
           "score": "2-0",
           "rank": 1,
-          "reason": "美国主场优势明显，波黑进攻乏力，遭零封合理。"
+          "reason": "美国整体实力占优，波黑进攻乏力"
         },
         {
           "score": "2-1",
           "rank": 2,
-          "reason": "美国丢一个定位球，但仍能掌控全局。"
+          "reason": "美国可能失球但仍胜"
         },
         {
           "score": "1-0",
           "rank": 3,
-          "reason": "美国踢得保守，一球小胜经济实惠。"
+          "reason": "美国小胜，波黑防守顽强"
         }
       ],
       "method_factors": {
-        "market_signal": "市场看好美国（-265），反映东道主优势和对手偏弱。",
-        "fifa_rank_prior": "美国中北美劲旅，波黑欧洲二三流，实力差明显。",
-        "recent_form": "近期状态未知，无正式比赛数据参考。",
-        "group_context": "32强淘汰赛，东道主美国坐拥主场，波黑难以阻挡。",
-        "injury_rotation": "双方无官方伤病确认，预计全主力出战。",
-        "weather_venue": "旧金山湾区体育场，天气未知，场地条件良好。",
-        "tactical_key": "美国快速转换和边路突击 vs 波黑长传找哲科。",
-        "uncertainty": "波黑若哲科状态爆发，可能制造冷门。"
+        "market_signal": "DraftKings 美国-265，市场看好东道主",
+        "fifa_rank_prior": "美国中北美强队，波黑欧洲二流",
+        "recent_form": "美国小组赛主场优势，波黑晋级不易",
+        "group_context": "1/16决赛，胜者对阵强敌",
+        "injury_rotation": "双方无伤病报告",
+        "weather_venue": "旧金山湾区，天气未知",
+        "tactical_key": "美国普利西奇边路 vs 波黑哲科高点",
+        "uncertainty": "低"
       },
       "matchup_graph": {
         "nodes": [
@@ -4678,8 +4724,8 @@
             "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 80,
-            "note": "普利西奇、麦肯尼等快速灵活，擅长跑动穿插。"
+            "weight": 82,
+            "note": "普利西奇、巴洛贡等年轻有活力"
           },
           {
             "id": "home_midfield",
@@ -4687,7 +4733,7 @@
             "type": "team_phase",
             "side": "home",
             "weight": 78,
-            "note": "亚当斯拦截，穆萨推进，节奏明快。"
+            "note": "麦肯尼、亚当斯覆盖强"
           },
           {
             "id": "home_defense",
@@ -4695,84 +4741,84 @@
             "type": "team_phase",
             "side": "home",
             "weight": 75,
-            "note": "年轻但默契不错，高空球防哲科需警惕。"
+            "note": "特纳门将稳定，罗宾逊边路"
           },
           {
             "id": "away_attack",
             "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 55,
-            "note": "哲科支点，皮亚尼奇输送，但运动能力不足。"
+            "weight": 65,
+            "note": "哲科经验丰富但年龄大，支援不足"
           },
           {
             "id": "away_midfield",
             "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 50,
-            "note": "皮亚尼奇老化，跑动能力下降，控制力不足。"
+            "weight": 60,
+            "note": "皮亚尼奇组织，但状态下滑"
           },
           {
             "id": "away_defense",
             "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 60,
-            "note": "身体对抗还行，但面对灵活前锋易失位。"
+            "weight": 62,
+            "note": "防线有一定硬度"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "美国穿插跑动 vs 波黑防线协同",
+            "label": "美国快速突破",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "普利西奇等人的灵活换位将考验波黑防线默契。"
+            "note": "美国年轻锋线冲击力强"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "哲科高空球 vs 美国中卫",
+            "label": "哲科高空争顶",
             "impact": "medium",
             "direction": "away_to_home",
-            "note": "波黑唯一可能得分的途径是定位球找哲科。"
+            "note": "波黑依赖传中"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场活力对比",
-            "impact": "low",
-            "direction": "balanced",
-            "note": "美国年轻能跑，波黑老将体能堪忧。"
+            "label": "中场拼抢",
+            "impact": "medium",
+            "direction": "home_to_away",
+            "note": "美国体能优势"
           }
         ],
-        "summary": "美国主场作战，整体运转流畅，波黑仅靠老将个人闪光难以抗衡。",
+        "summary": "美国东道主优势明显，波黑老将哲科是唯一威胁",
         "advantage_side": "home",
-        "key_battle": "美国如何切断皮亚尼奇与哲科连线，以及自身前场小快灵的配合效率。",
-        "risk_trigger": "美国久攻不下被反击，波黑凭借哲科一击致命。"
+        "key_battle": "普利西奇 vs 波黑右路",
+        "risk_trigger": "美国攻坚不力被偷"
       },
-      "tactical_matchup": "美国4-3-3高位压迫，波黑4-2-3-1稳守反击。美国需急躁出球，波黑等机会长传。",
+      "tactical_matchup": "美国高压逼抢，波黑稳守反击",
       "injury_adjustment": {
-        "home": "无官方伤病确认，全员可战。",
-        "away": "无官方伤病确认，全员可战。",
-        "summary": "双方阵容完整，无重要缺阵。"
+        "home": "无",
+        "away": "无",
+        "summary": "无伤病影响"
       },
-      "risk_analysis": "美国实力占优但淘汰赛压力下，小胜或平局可能性不小，市场充分定价。",
+      "risk_analysis": "东道主占据天时地利，波黑爆冷可能低",
       "upset_probability": 10,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 72.6,
-          "draw": 20.41,
-          "away_win": 11.11
+          "home_win": 70.0,
+          "draw": 19.28,
+          "away_win": 10.71
         },
         "model_edge": {
           "home_win": 70,
           "draw": 20,
           "away_win": 10
         },
-        "deviation_analysis": "模型与市场基本趋同，略微下调主胜概率，无显著套利空间。"
+        "deviation_analysis": "模型与市场一致，美国大热"
       },
       "confidence": "high"
     }
@@ -4963,8 +5009,8 @@
               "id_team": "478",
               "id_country": "FRA",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-              "score": null,
-              "tactics": null,
+              "score": 3,
+              "tactics": "4-2-3-1",
               "country_code": "FRA",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
               "flag_emoji": "🇫🇷"
@@ -4976,8 +5022,8 @@
               "id_team": "466",
               "id_country": "SWE",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-              "score": null,
-              "tactics": null,
+              "score": 0,
+              "tactics": "4-4-2",
               "country_code": "SWE",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
               "flag_emoji": "🇸🇪"
@@ -4994,25 +5040,25 @@
             "end_iso": "2026-07-01T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 72,
-            "draw": 18,
-            "away_win": 10
+            "home_win": 100,
+            "draw": 0,
+            "away_win": 0
           },
           "score_options": [
             {
-              "score": "2-0",
-              "rank": 1,
-              "reason": "法国攻防俱佳，瑞典难破铁桶阵，姆巴佩等人锁定胜局。"
-            },
-            {
               "score": "3-0",
-              "rank": 2,
-              "reason": "法国若早进球，瑞典被迫压出，反击扩大比分。"
+              "rank": 1,
+              "reason": "法国全面压制轻松取胜"
             },
             {
-              "score": "2-1",
+              "score": "2-0",
+              "rank": 2,
+              "reason": "法国掌控比赛但进球稍少"
+            },
+            {
+              "score": "3-1",
               "rank": 3,
-              "reason": "法国领先后松懈，瑞典定位球扳回一球。"
+              "reason": "瑞典可能打入安慰球"
             }
           ],
           "current_window": true,
@@ -5036,7 +5082,7 @@
               "id_team": "4789",
               "id_country": "CIV",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
-              "score": null,
+              "score": 1,
               "tactics": "4-1-2-3",
               "country_code": "CIV",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
@@ -5049,7 +5095,7 @@
               "id_team": "464",
               "id_country": "NOR",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-              "score": null,
+              "score": 2,
               "tactics": "4-2-1-3",
               "country_code": "NOR",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
@@ -5067,25 +5113,25 @@
             "end_iso": "2026-07-01T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 27,
-            "draw": 30,
-            "away_win": 43
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 100
           },
           "score_options": [
             {
               "score": "1-2",
               "rank": 1,
-              "reason": "挪威进攻效率更高，科特迪瓦防守有漏洞，但主场速度可造威胁。"
+              "reason": "哈兰德绝杀助挪威晋级"
             },
             {
               "score": "1-1",
               "rank": 2,
-              "reason": "双方拉锯，中场缠斗导致机会不多，各入一球均势收场。"
+              "reason": "科特迪瓦顽强逼平可能"
             },
             {
               "score": "0-2",
               "rank": 3,
-              "reason": "挪威控制中场完全压制，科特迪瓦反击失效，零封胜出。"
+              "reason": "挪威完胜局面"
             }
           ],
           "current_window": true,
@@ -5110,7 +5156,7 @@
               "id_country": "MEX",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
               "score": null,
-              "tactics": null,
+              "tactics": "4-1-2-3",
               "country_code": "MEX",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
               "flag_emoji": "🇲🇽"
@@ -5123,15 +5169,15 @@
               "id_country": "ECU",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
               "score": null,
-              "tactics": null,
+              "tactics": "4-4-2",
               "country_code": "ECU",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
               "flag_emoji": "🇪🇨"
             }
           },
-          "kickoff_utc": "2026-07-01T01:00:00Z",
-          "kickoff_beijing": "2026-07-01T09:00:00+08:00",
-          "kickoff_display": "北京时间 07-01 09:00",
+          "kickoff_utc": "2026-07-01T02:00:00Z",
+          "kickoff_beijing": "2026-07-01T10:00:00+08:00",
+          "kickoff_display": "北京时间 07-01 10:00",
           "match_day": {
             "date": "2026-06-30",
             "title": "6月30日比赛日",
@@ -5140,25 +5186,25 @@
             "end_iso": "2026-07-01T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 43,
+            "home_win": 42,
             "draw": 33,
-            "away_win": 24
+            "away_win": 25
           },
           "score_options": [
             {
-              "score": "1-0",
+              "score": "2-1",
               "rank": 1,
-              "reason": "墨西哥主场氛围加持，一球小胜，厄瓜多尔进攻乏力。"
+              "reason": "墨西哥主场优势，进攻效率稍高"
             },
             {
               "score": "1-1",
               "rank": 2,
-              "reason": "双方谨慎，平局合理，厄瓜多尔防守顽强。"
+              "reason": "厄瓜多尔防守稳固，可能逼平"
             },
             {
-              "score": "2-1",
+              "score": "1-0",
               "rank": 3,
-              "reason": "墨西哥最后时刻发力，但厄瓜多尔能取得进球。"
+              "reason": "墨西哥小胜可能性"
             }
           ],
           "current_window": true,
@@ -5214,24 +5260,24 @@
           },
           "win_draw_loss": {
             "home_win": 75,
-            "draw": 17,
-            "away_win": 8
+            "draw": 18,
+            "away_win": 7
           },
           "score_options": [
             {
               "score": "3-0",
               "rank": 1,
-              "reason": "英格兰实力碾压，多点开花，刚果难以抵挡。"
+              "reason": "英格兰实力碾压，轻松大胜"
             },
             {
               "score": "2-0",
               "rank": 2,
-              "reason": "保守胜利，英格兰可能收着踢，为后续留力。"
+              "reason": "刚果防守硬度稍阻，但仍落败"
             },
             {
               "score": "4-0",
               "rank": 3,
-              "reason": "刚果若崩盘，英格兰可能大胜穿盘。"
+              "reason": "英格兰火力全开可能性"
             }
           ],
           "current_window": true,
@@ -5294,17 +5340,17 @@
             {
               "score": "2-0",
               "rank": 1,
-              "reason": "美国主场优势明显，波黑进攻乏力，遭零封合理。"
+              "reason": "美国整体实力占优，波黑进攻乏力"
             },
             {
               "score": "2-1",
               "rank": 2,
-              "reason": "美国丢一个定位球，但仍能掌控全局。"
+              "reason": "美国可能失球但仍胜"
             },
             {
               "score": "1-0",
               "rank": 3,
-              "reason": "美国踢得保守，一球小胜经济实惠。"
+              "reason": "美国小胜，波黑防守顽强"
             }
           ],
           "current_window": true,
@@ -5359,25 +5405,25 @@
             "end_iso": "2026-07-02T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 44,
+            "home_win": 45,
             "draw": 29,
-            "away_win": 27
+            "away_win": 26
           },
           "score_options": [
             {
               "score": "1-1",
               "rank": 1,
-              "reason": "实力接近，阵地战胶着，各自依靠核心得分。"
+              "reason": "两队实力接近，各进一球平局"
             },
             {
               "score": "2-1",
               "rank": 2,
-              "reason": "比利时经验老到，最后时刻定位球制胜。"
+              "reason": "比利时进攻爆发，小胜"
             },
             {
-              "score": "1-0",
+              "score": "1-2",
               "rank": 3,
-              "reason": "一球小胜，谁先进球谁收缩防守。"
+              "reason": "塞内加尔反击高效，客场取胜"
             }
           ],
           "current_window": true,
@@ -5704,38 +5750,57 @@
       ],
       "round_of_16": [
         {
-          "match_id": "placeholder-M89",
+          "match_id": "400021533",
           "match_number": 89,
           "round_key": "round_of_16",
-          "stage": "round_of_16",
-          "group": "淘汰赛",
-          "match_name": "胜者 M73 vs 胜者 M74",
+          "stage": "Round of 16",
+          "stage_name": "Round of 16",
+          "round_name": "",
+          "phase": "",
+          "group": "Round of 16",
+          "match_name": "巴拉圭 vs 法国",
           "teams": {
             "home": {
-              "name": "胜者 M73",
-              "name_en": "胜者 M73",
-              "country_code": "",
-              "flag_url": "",
-              "flag_emoji": "",
-              "placeholder": true
+              "name": "巴拉圭",
+              "name_en": "Paraguay",
+              "abbreviation": "PAR",
+              "id_team": "210",
+              "id_country": "PAR",
+              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+              "score": null,
+              "tactics": null,
+              "country_code": "PAR",
+              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+              "flag_emoji": "🇵🇾"
             },
             "away": {
-              "name": "胜者 M74",
-              "name_en": "胜者 M74",
-              "country_code": "",
-              "flag_url": "",
-              "flag_emoji": "",
-              "placeholder": true
+              "name": "法国",
+              "name_en": "France",
+              "abbreviation": "FRA",
+              "id_team": "478",
+              "id_country": "FRA",
+              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+              "score": null,
+              "tactics": null,
+              "country_code": "FRA",
+              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+              "flag_emoji": "🇫🇷"
             }
           },
-          "kickoff_utc": null,
-          "kickoff_beijing": null,
-          "kickoff_display": "北京时间 待定",
-          "match_day": {},
+          "kickoff_utc": "2026-07-04T21:00:00Z",
+          "kickoff_beijing": "2026-07-05T05:00:00+08:00",
+          "kickoff_display": "北京时间 07-05 05:00",
+          "match_day": {
+            "date": "2026-07-04",
+            "title": "7月4日比赛日",
+            "range": "北京时间 07-04 18:00 - 07-05 18:00",
+            "start_iso": "2026-07-04T18:00:00+08:00",
+            "end_iso": "2026-07-05T18:00:00+08:00"
+          },
           "win_draw_loss": null,
           "score_options": [],
           "current_window": false,
-          "placeholder": true
+          "placeholder": false
         },
         {
           "match_id": "400021530",
@@ -5791,38 +5856,57 @@
           "placeholder": false
         },
         {
-          "match_id": "placeholder-M91",
+          "match_id": "400021532",
           "match_number": 91,
           "round_key": "round_of_16",
-          "stage": "round_of_16",
-          "group": "淘汰赛",
-          "match_name": "胜者 M77 vs 胜者 M78",
+          "stage": "Round of 16",
+          "stage_name": "Round of 16",
+          "round_name": "",
+          "phase": "",
+          "group": "Round of 16",
+          "match_name": "巴西 vs 挪威",
           "teams": {
             "home": {
-              "name": "胜者 M77",
-              "name_en": "胜者 M77",
-              "country_code": "",
-              "flag_url": "",
-              "flag_emoji": "",
-              "placeholder": true
+              "name": "巴西",
+              "name_en": "Brazil",
+              "abbreviation": "BRA",
+              "id_team": "205",
+              "id_country": "BRA",
+              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+              "score": null,
+              "tactics": null,
+              "country_code": "BRA",
+              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+              "flag_emoji": "🇧🇷"
             },
             "away": {
-              "name": "胜者 M78",
-              "name_en": "胜者 M78",
-              "country_code": "",
-              "flag_url": "",
-              "flag_emoji": "",
-              "placeholder": true
+              "name": "挪威",
+              "name_en": "Norway",
+              "abbreviation": "NOR",
+              "id_team": "464",
+              "id_country": "NOR",
+              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+              "score": null,
+              "tactics": null,
+              "country_code": "NOR",
+              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+              "flag_emoji": "🇳🇴"
             }
           },
-          "kickoff_utc": null,
-          "kickoff_beijing": null,
-          "kickoff_display": "北京时间 待定",
-          "match_day": {},
+          "kickoff_utc": "2026-07-05T20:00:00Z",
+          "kickoff_beijing": "2026-07-06T04:00:00+08:00",
+          "kickoff_display": "北京时间 07-06 04:00",
+          "match_day": {
+            "date": "2026-07-05",
+            "title": "7月5日比赛日",
+            "range": "北京时间 07-05 18:00 - 07-06 18:00",
+            "start_iso": "2026-07-05T18:00:00+08:00",
+            "end_iso": "2026-07-06T18:00:00+08:00"
+          },
           "win_draw_loss": null,
           "score_options": [],
           "current_window": false,
-          "placeholder": true
+          "placeholder": false
         },
         {
           "match_id": "placeholder-M92",
@@ -6558,7 +6642,7 @@
   "research": {
     "schema_version": 3,
     "stage": "research",
-    "generated_at": "2026-06-30T16:53:49Z",
+    "generated_at": "2026-07-01T01:22:18Z",
     "window": {
       "start_date": "2026-06-30",
       "days": 3,
@@ -6846,8 +6930,6 @@
     "warnings": [],
     "unverified_fifa_matches": [],
     "structure_unverified_fifa_matches": [
-      "Paraguay vs W77",
-      "Brazil vs W78",
       "W79 vs W80",
       "W83 vs W84",
       "W81 vs W82",
@@ -6865,9 +6947,9 @@
     "fixture_count": 6,
     "fifa_fixture_count": 6,
     "raw_fifa_fixture_count": 29,
-    "structure_fixture_count": 13,
+    "structure_fixture_count": 15,
     "structure_fifa_fixture_count": 28,
-    "odds_available_count": 6,
+    "odds_available_count": 4,
     "matches": [
       {
         "id": "400021514",
@@ -6884,9 +6966,9 @@
         "group": "",
         "match_number": 78,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -6896,7 +6978,7 @@
             "id_team": "4789",
             "id_country": "CIV",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
-            "score": null,
+            "score": 1,
             "tactics": "4-1-2-3",
             "country_code": "CIV",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
@@ -6909,7 +6991,7 @@
             "id_team": "464",
             "id_country": "NOR",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "score": null,
+            "score": 2,
             "tactics": "4-2-1-3",
             "country_code": "NOR",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
@@ -6944,40 +7026,39 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+260",
-            "draw": "+230",
-            "away": "+115"
-          },
-          "implied_probability": {
-            "home_win": 27.78,
-            "draw": 30.3,
-            "away_win": 46.51
-          },
-          "normalized_probability": {
-            "home_win": 26.56,
-            "draw": 28.97,
-            "away_win": 44.47
-          },
-          "overround": 4.59,
-          "details": "NOR +115"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "科特迪瓦",
             "team_en": "Ivory Coast",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+                "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+                "published": "2026-06-30T19:41:43Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "挪威",
             "team_en": "Norway",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+                "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+                "published": "2026-06-30T19:41:43Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -6997,9 +7078,9 @@
         "group": "",
         "match_number": 77,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -7009,8 +7090,8 @@
             "id_team": "478",
             "id_country": "FRA",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-            "score": null,
-            "tactics": null,
+            "score": 3,
+            "tactics": "4-2-3-1",
             "country_code": "FRA",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
             "flag_emoji": "🇫🇷"
@@ -7022,8 +7103,8 @@
             "id_team": "466",
             "id_country": "SWE",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-            "score": null,
-            "tactics": null,
+            "score": 0,
+            "tactics": "4-4-2",
             "country_code": "SWE",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
             "flag_emoji": "🇸🇪"
@@ -7057,26 +7138,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-340",
-            "draw": "+500",
-            "away": "+950"
-          },
-          "implied_probability": {
-            "home_win": 77.27,
-            "draw": 16.67,
-            "away_win": 9.52
-          },
-          "normalized_probability": {
-            "home_win": 74.69,
-            "draw": 16.11,
-            "away_win": 9.21
-          },
-          "overround": 3.46,
-          "details": "FRA -340"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -7100,7 +7164,7 @@
         "fifa_match_id": "400021520",
         "match_name": "墨西哥 vs 厄瓜多尔",
         "match_name_en": "Mexico vs Ecuador",
-        "kickoff_utc": "2026-07-01T01:00:00Z",
+        "kickoff_utc": "2026-07-01T02:00:00Z",
         "competition": "FIFA World Cup™",
         "season": "FIFA World Cup 2026™",
         "stage": "Round of 32",
@@ -7110,7 +7174,7 @@
         "group": "",
         "match_number": 79,
         "status": {
-          "match_status": 1,
+          "match_status": 10,
           "officiality_status": 0,
           "result_type": 0
         },
@@ -7123,7 +7187,7 @@
             "id_country": "MEX",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-1-2-3",
             "country_code": "MEX",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
             "flag_emoji": "🇲🇽"
@@ -7136,7 +7200,7 @@
             "id_country": "ECU",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-4-2",
             "country_code": "ECU",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
             "flag_emoji": "🇪🇨"
@@ -7175,20 +7239,20 @@
           "provider": "DraftKings",
           "moneyline_american": {
             "home": "+130",
-            "draw": "+185",
-            "away": "+295"
+            "draw": "+175",
+            "away": "+300"
           },
           "implied_probability": {
             "home_win": 43.48,
-            "draw": 35.09,
-            "away_win": 25.32
+            "draw": 36.36,
+            "away_win": 25.0
           },
           "normalized_probability": {
-            "home_win": 41.85,
-            "draw": 33.78,
-            "away_win": 24.37
+            "home_win": 41.47,
+            "draw": 34.68,
+            "away_win": 23.85
           },
-          "overround": 3.88,
+          "overround": 4.84,
           "details": "MEX +130"
         },
         "injuries": {
@@ -7208,7 +7272,7 @@
                 "source": "ESPN World Cup news",
                 "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
                 "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-                "published": "2026-06-30T16:01:58Z",
+                "published": "2026-06-30T20:47:01Z",
                 "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
               }
             ],
@@ -7320,6 +7384,13 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
+                "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+                "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+                "published": "2026-06-30T23:53:47Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+              },
+              {
+                "source": "ESPN World Cup news",
                 "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
                 "description": "England goalkeeper Jordan Pickford is in no doubt the players will be \"ready to go to war\" for manager Thomas Tuchel when they take on Congo DR for a place in the World Cup round of 16.",
                 "published": "2026-06-30T13:26:18Z",
@@ -7333,6 +7404,13 @@
             "team_en": "Congo DR",
             "status": "probable injury",
             "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+                "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+                "published": "2026-06-30T23:53:47Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+              },
               {
                 "source": "ESPN World Cup news",
                 "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
@@ -7424,22 +7502,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+125",
-            "draw": "+225",
-            "away": "+250"
+            "home": "+115",
+            "draw": "+230",
+            "away": "+265"
           },
           "implied_probability": {
-            "home_win": 44.44,
-            "draw": 30.77,
-            "away_win": 28.57
+            "home_win": 46.51,
+            "draw": 30.3,
+            "away_win": 27.4
           },
           "normalized_probability": {
-            "home_win": 42.82,
-            "draw": 29.65,
-            "away_win": 27.53
+            "home_win": 44.63,
+            "draw": 29.08,
+            "away_win": 26.29
           },
-          "overround": 3.79,
-          "details": "BEL +125"
+          "overround": 4.21,
+          "details": "BEL +115"
         },
         "injuries": {
           "home": {
@@ -7452,8 +7530,16 @@
           "away": {
             "team": "塞内加尔",
             "team_en": "Senegal",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+                "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+                "published": "2026-06-30T19:41:43Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -7538,20 +7624,20 @@
           "provider": "DraftKings",
           "moneyline_american": {
             "home": "-265",
-            "draw": "+390",
+            "draw": "+400",
             "away": "+800"
           },
           "implied_probability": {
             "home_win": 72.6,
-            "draw": 20.41,
+            "draw": 20.0,
             "away_win": 11.11
           },
           "normalized_probability": {
-            "home_win": 69.73,
-            "draw": 19.6,
-            "away_win": 10.67
+            "home_win": 70.0,
+            "draw": 19.28,
+            "away_win": 10.71
           },
-          "overround": 4.12,
+          "overround": 3.71,
           "details": "USA -265"
         },
         "injuries": {
@@ -7588,9 +7674,9 @@
         "group": "",
         "match_number": 78,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -7600,7 +7686,7 @@
             "id_team": "4789",
             "id_country": "CIV",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
-            "score": null,
+            "score": 1,
             "tactics": "4-1-2-3",
             "country_code": "CIV",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
@@ -7613,7 +7699,7 @@
             "id_team": "464",
             "id_country": "NOR",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "score": null,
+            "score": 2,
             "tactics": "4-2-1-3",
             "country_code": "NOR",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
@@ -7648,40 +7734,39 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+260",
-            "draw": "+230",
-            "away": "+115"
-          },
-          "implied_probability": {
-            "home_win": 27.78,
-            "draw": 30.3,
-            "away_win": 46.51
-          },
-          "normalized_probability": {
-            "home_win": 26.56,
-            "draw": 28.97,
-            "away_win": 44.47
-          },
-          "overround": 4.59,
-          "details": "NOR +115"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "科特迪瓦",
             "team_en": "Ivory Coast",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+                "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+                "published": "2026-06-30T19:41:43Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "挪威",
             "team_en": "Norway",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+                "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+                "published": "2026-06-30T19:41:43Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -7701,9 +7786,9 @@
         "group": "",
         "match_number": 77,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -7713,8 +7798,8 @@
             "id_team": "478",
             "id_country": "FRA",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-            "score": null,
-            "tactics": null,
+            "score": 3,
+            "tactics": "4-2-3-1",
             "country_code": "FRA",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
             "flag_emoji": "🇫🇷"
@@ -7726,8 +7811,8 @@
             "id_team": "466",
             "id_country": "SWE",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-            "score": null,
-            "tactics": null,
+            "score": 0,
+            "tactics": "4-4-2",
             "country_code": "SWE",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
             "flag_emoji": "🇸🇪"
@@ -7761,26 +7846,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-340",
-            "draw": "+500",
-            "away": "+950"
-          },
-          "implied_probability": {
-            "home_win": 77.27,
-            "draw": 16.67,
-            "away_win": 9.52
-          },
-          "normalized_probability": {
-            "home_win": 74.69,
-            "draw": 16.11,
-            "away_win": 9.21
-          },
-          "overround": 3.46,
-          "details": "FRA -340"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -7804,7 +7872,7 @@
         "fifa_match_id": "400021520",
         "match_name": "墨西哥 vs 厄瓜多尔",
         "match_name_en": "Mexico vs Ecuador",
-        "kickoff_utc": "2026-07-01T01:00:00Z",
+        "kickoff_utc": "2026-07-01T02:00:00Z",
         "competition": "FIFA World Cup™",
         "season": "FIFA World Cup 2026™",
         "stage": "Round of 32",
@@ -7814,7 +7882,7 @@
         "group": "",
         "match_number": 79,
         "status": {
-          "match_status": 1,
+          "match_status": 10,
           "officiality_status": 0,
           "result_type": 0
         },
@@ -7827,7 +7895,7 @@
             "id_country": "MEX",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-1-2-3",
             "country_code": "MEX",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
             "flag_emoji": "🇲🇽"
@@ -7840,7 +7908,7 @@
             "id_country": "ECU",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-4-2",
             "country_code": "ECU",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
             "flag_emoji": "🇪🇨"
@@ -7879,20 +7947,20 @@
           "provider": "DraftKings",
           "moneyline_american": {
             "home": "+130",
-            "draw": "+185",
-            "away": "+295"
+            "draw": "+175",
+            "away": "+300"
           },
           "implied_probability": {
             "home_win": 43.48,
-            "draw": 35.09,
-            "away_win": 25.32
+            "draw": 36.36,
+            "away_win": 25.0
           },
           "normalized_probability": {
-            "home_win": 41.85,
-            "draw": 33.78,
-            "away_win": 24.37
+            "home_win": 41.47,
+            "draw": 34.68,
+            "away_win": 23.85
           },
-          "overround": 3.88,
+          "overround": 4.84,
           "details": "MEX +130"
         },
         "injuries": {
@@ -7912,7 +7980,7 @@
                 "source": "ESPN World Cup news",
                 "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
                 "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-                "published": "2026-06-30T16:01:58Z",
+                "published": "2026-06-30T20:47:01Z",
                 "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
               }
             ],
@@ -8024,6 +8092,13 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
+                "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+                "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+                "published": "2026-06-30T23:53:47Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+              },
+              {
+                "source": "ESPN World Cup news",
                 "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
                 "description": "England goalkeeper Jordan Pickford is in no doubt the players will be \"ready to go to war\" for manager Thomas Tuchel when they take on Congo DR for a place in the World Cup round of 16.",
                 "published": "2026-06-30T13:26:18Z",
@@ -8037,6 +8112,13 @@
             "team_en": "Congo DR",
             "status": "probable injury",
             "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+                "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+                "published": "2026-06-30T23:53:47Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+              },
               {
                 "source": "ESPN World Cup news",
                 "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
@@ -8128,22 +8210,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+125",
-            "draw": "+225",
-            "away": "+250"
+            "home": "+115",
+            "draw": "+230",
+            "away": "+265"
           },
           "implied_probability": {
-            "home_win": 44.44,
-            "draw": 30.77,
-            "away_win": 28.57
+            "home_win": 46.51,
+            "draw": 30.3,
+            "away_win": 27.4
           },
           "normalized_probability": {
-            "home_win": 42.82,
-            "draw": 29.65,
-            "away_win": 27.53
+            "home_win": 44.63,
+            "draw": 29.08,
+            "away_win": 26.29
           },
-          "overround": 3.79,
-          "details": "BEL +125"
+          "overround": 4.21,
+          "details": "BEL +115"
         },
         "injuries": {
           "home": {
@@ -8156,8 +8238,16 @@
           "away": {
             "team": "塞内加尔",
             "team_en": "Senegal",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+                "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+                "published": "2026-06-30T19:41:43Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -8242,20 +8332,20 @@
           "provider": "DraftKings",
           "moneyline_american": {
             "home": "-265",
-            "draw": "+390",
+            "draw": "+400",
             "away": "+800"
           },
           "implied_probability": {
             "home_win": 72.6,
-            "draw": 20.41,
+            "draw": 20.0,
             "away_win": 11.11
           },
           "normalized_probability": {
-            "home_win": 69.73,
-            "draw": 19.6,
-            "away_win": 10.67
+            "home_win": 70.0,
+            "draw": 19.28,
+            "away_win": 10.71
           },
-          "overround": 4.12,
+          "overround": 3.71,
           "details": "USA -265"
         },
         "injuries": {
@@ -8292,9 +8382,9 @@
         "group": "",
         "match_number": 78,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -8304,7 +8394,7 @@
             "id_team": "4789",
             "id_country": "CIV",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
-            "score": null,
+            "score": 1,
             "tactics": "4-1-2-3",
             "country_code": "CIV",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
@@ -8317,7 +8407,7 @@
             "id_team": "464",
             "id_country": "NOR",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "score": null,
+            "score": 2,
             "tactics": "4-2-1-3",
             "country_code": "NOR",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
@@ -8352,40 +8442,39 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+260",
-            "draw": "+230",
-            "away": "+115"
-          },
-          "implied_probability": {
-            "home_win": 27.78,
-            "draw": 30.3,
-            "away_win": 46.51
-          },
-          "normalized_probability": {
-            "home_win": 26.56,
-            "draw": 28.97,
-            "away_win": 44.47
-          },
-          "overround": 4.59,
-          "details": "NOR +115"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "科特迪瓦",
             "team_en": "Ivory Coast",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+                "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+                "published": "2026-06-30T19:41:43Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "挪威",
             "team_en": "Norway",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+                "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+                "published": "2026-06-30T19:41:43Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -8405,9 +8494,9 @@
         "group": "",
         "match_number": 77,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -8417,8 +8506,8 @@
             "id_team": "478",
             "id_country": "FRA",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-            "score": null,
-            "tactics": null,
+            "score": 3,
+            "tactics": "4-2-3-1",
             "country_code": "FRA",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
             "flag_emoji": "🇫🇷"
@@ -8430,8 +8519,8 @@
             "id_team": "466",
             "id_country": "SWE",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-            "score": null,
-            "tactics": null,
+            "score": 0,
+            "tactics": "4-4-2",
             "country_code": "SWE",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
             "flag_emoji": "🇸🇪"
@@ -8465,26 +8554,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-340",
-            "draw": "+500",
-            "away": "+950"
-          },
-          "implied_probability": {
-            "home_win": 77.27,
-            "draw": 16.67,
-            "away_win": 9.52
-          },
-          "normalized_probability": {
-            "home_win": 74.69,
-            "draw": 16.11,
-            "away_win": 9.21
-          },
-          "overround": 3.46,
-          "details": "FRA -340"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -8508,7 +8580,7 @@
         "fifa_match_id": "400021520",
         "match_name": "墨西哥 vs 厄瓜多尔",
         "match_name_en": "Mexico vs Ecuador",
-        "kickoff_utc": "2026-07-01T01:00:00Z",
+        "kickoff_utc": "2026-07-01T02:00:00Z",
         "competition": "FIFA World Cup™",
         "season": "FIFA World Cup 2026™",
         "stage": "Round of 32",
@@ -8518,7 +8590,7 @@
         "group": "",
         "match_number": 79,
         "status": {
-          "match_status": 1,
+          "match_status": 10,
           "officiality_status": 0,
           "result_type": 0
         },
@@ -8531,7 +8603,7 @@
             "id_country": "MEX",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-1-2-3",
             "country_code": "MEX",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
             "flag_emoji": "🇲🇽"
@@ -8544,7 +8616,7 @@
             "id_country": "ECU",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
             "score": null,
-            "tactics": null,
+            "tactics": "4-4-2",
             "country_code": "ECU",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
             "flag_emoji": "🇪🇨"
@@ -8583,20 +8655,20 @@
           "provider": "DraftKings",
           "moneyline_american": {
             "home": "+130",
-            "draw": "+185",
-            "away": "+295"
+            "draw": "+175",
+            "away": "+300"
           },
           "implied_probability": {
             "home_win": 43.48,
-            "draw": 35.09,
-            "away_win": 25.32
+            "draw": 36.36,
+            "away_win": 25.0
           },
           "normalized_probability": {
-            "home_win": 41.85,
-            "draw": 33.78,
-            "away_win": 24.37
+            "home_win": 41.47,
+            "draw": 34.68,
+            "away_win": 23.85
           },
-          "overround": 3.88,
+          "overround": 4.84,
           "details": "MEX +130"
         },
         "injuries": {
@@ -8616,7 +8688,7 @@
                 "source": "ESPN World Cup news",
                 "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
                 "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-                "published": "2026-06-30T16:01:58Z",
+                "published": "2026-06-30T20:47:01Z",
                 "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
               }
             ],
@@ -8728,6 +8800,13 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
+                "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+                "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+                "published": "2026-06-30T23:53:47Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+              },
+              {
+                "source": "ESPN World Cup news",
                 "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
                 "description": "England goalkeeper Jordan Pickford is in no doubt the players will be \"ready to go to war\" for manager Thomas Tuchel when they take on Congo DR for a place in the World Cup round of 16.",
                 "published": "2026-06-30T13:26:18Z",
@@ -8741,6 +8820,13 @@
             "team_en": "Congo DR",
             "status": "probable injury",
             "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+                "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+                "published": "2026-06-30T23:53:47Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+              },
               {
                 "source": "ESPN World Cup news",
                 "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
@@ -8832,22 +8918,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+125",
-            "draw": "+225",
-            "away": "+250"
+            "home": "+115",
+            "draw": "+230",
+            "away": "+265"
           },
           "implied_probability": {
-            "home_win": 44.44,
-            "draw": 30.77,
-            "away_win": 28.57
+            "home_win": 46.51,
+            "draw": 30.3,
+            "away_win": 27.4
           },
           "normalized_probability": {
-            "home_win": 42.82,
-            "draw": 29.65,
-            "away_win": 27.53
+            "home_win": 44.63,
+            "draw": 29.08,
+            "away_win": 26.29
           },
-          "overround": 3.79,
-          "details": "BEL +125"
+          "overround": 4.21,
+          "details": "BEL +115"
         },
         "injuries": {
           "home": {
@@ -8860,8 +8946,16 @@
           "away": {
             "team": "塞内加尔",
             "team_en": "Senegal",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+                "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+                "published": "2026-06-30T19:41:43Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -8946,20 +9040,20 @@
           "provider": "DraftKings",
           "moneyline_american": {
             "home": "-265",
-            "draw": "+390",
+            "draw": "+400",
             "away": "+800"
           },
           "implied_probability": {
             "home_win": 72.6,
-            "draw": 20.41,
+            "draw": 20.0,
             "away_win": 11.11
           },
           "normalized_probability": {
-            "home_win": 69.73,
-            "draw": 19.6,
-            "away_win": 10.67
+            "home_win": 70.0,
+            "draw": 19.28,
+            "away_win": 10.71
           },
-          "overround": 4.12,
+          "overround": 3.71,
           "details": "USA -265"
         },
         "injuries": {
@@ -9155,22 +9249,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-130",
-            "draw": "+265",
-            "away": "+400"
+            "home": "-125",
+            "draw": "+260",
+            "away": "+380"
           },
           "implied_probability": {
-            "home_win": 56.52,
-            "draw": 27.4,
-            "away_win": 20.0
+            "home_win": 55.56,
+            "draw": 27.78,
+            "away_win": 20.83
           },
           "normalized_probability": {
-            "home_win": 54.39,
-            "draw": 26.36,
-            "away_win": 19.25
+            "home_win": 53.33,
+            "draw": 26.67,
+            "away_win": 20.0
           },
-          "overround": 3.92,
-          "details": "POR -130"
+          "overround": 4.17,
+          "details": "POR -125"
         }
       },
       {
@@ -9252,22 +9346,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+110",
+            "home": "+105",
             "draw": "+230",
-            "away": "+290"
+            "away": "+300"
           },
           "implied_probability": {
-            "home_win": 47.62,
+            "home_win": 48.78,
             "draw": 30.3,
-            "away_win": 25.64
+            "away_win": 25.0
           },
           "normalized_probability": {
-            "home_win": 45.98,
-            "draw": 29.26,
-            "away_win": 24.76
+            "home_win": 46.87,
+            "draw": 29.11,
+            "away_win": 24.02
           },
-          "overround": 3.56,
-          "details": "SUI +110"
+          "overround": 4.08,
+          "details": "SUI +105"
         }
       },
       {
@@ -9640,28 +9734,222 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+400",
+            "home": "+380",
             "draw": "+255",
-            "away": "-125"
+            "away": "-120"
           },
           "implied_probability": {
-            "home_win": 20.0,
+            "home_win": 20.83,
             "draw": 28.17,
-            "away_win": 55.56
+            "away_win": 54.55
           },
           "normalized_probability": {
-            "home_win": 19.28,
-            "draw": 27.16,
-            "away_win": 53.56
+            "home_win": 20.12,
+            "draw": 27.2,
+            "away_win": 52.68
           },
-          "overround": 3.72,
-          "details": "MAR -125"
+          "overround": 3.55,
+          "details": "MAR -120"
+        }
+      },
+      {
+        "id": "400021533",
+        "fifa_match_id": "400021533",
+        "match_name": "巴拉圭 vs 法国",
+        "match_name_en": "Paraguay vs France",
+        "kickoff_utc": "2026-07-04T21:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Round of 16",
+        "stage_name": "Round of 16",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 89,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "teams": {
+          "home": {
+            "name": "巴拉圭",
+            "name_en": "Paraguay",
+            "abbreviation": "PAR",
+            "id_team": "210",
+            "id_country": "PAR",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+            "score": null,
+            "tactics": null,
+            "country_code": "PAR",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+            "flag_emoji": "🇵🇾"
+          },
+          "away": {
+            "name": "法国",
+            "name_en": "France",
+            "abbreviation": "FRA",
+            "id_team": "478",
+            "id_country": "FRA",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+            "score": null,
+            "tactics": null,
+            "country_code": "FRA",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+            "flag_emoji": "🇫🇷"
+          }
+        },
+        "venue": {
+          "name": "Philadelphia Stadium",
+          "city": "Philadelphia",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021533"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760503"
+          }
+        },
+        "espn_event_id": "760503",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "+1400",
+            "draw": "+600",
+            "away": "-500"
+          },
+          "implied_probability": {
+            "home_win": 6.67,
+            "draw": 14.29,
+            "away_win": 83.33
+          },
+          "normalized_probability": {
+            "home_win": 6.39,
+            "draw": 13.7,
+            "away_win": 79.91
+          },
+          "overround": 4.29,
+          "details": "FRA -500"
+        }
+      },
+      {
+        "id": "400021532",
+        "fifa_match_id": "400021532",
+        "match_name": "巴西 vs 挪威",
+        "match_name_en": "Brazil vs Norway",
+        "kickoff_utc": "2026-07-05T20:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Round of 16",
+        "stage_name": "Round of 16",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 91,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "teams": {
+          "home": {
+            "name": "巴西",
+            "name_en": "Brazil",
+            "abbreviation": "BRA",
+            "id_team": "205",
+            "id_country": "BRA",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+            "score": null,
+            "tactics": null,
+            "country_code": "BRA",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+            "flag_emoji": "🇧🇷"
+          },
+          "away": {
+            "name": "挪威",
+            "name_en": "Norway",
+            "abbreviation": "NOR",
+            "id_team": "464",
+            "id_country": "NOR",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+            "score": null,
+            "tactics": null,
+            "country_code": "NOR",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+            "flag_emoji": "🇳🇴"
+          }
+        },
+        "venue": {
+          "name": "New York/New Jersey Stadium",
+          "city": "New Jersey",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021532"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760504"
+          }
+        },
+        "espn_event_id": "760504",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "-110",
+            "draw": "+260",
+            "away": "+310"
+          },
+          "implied_probability": {
+            "home_win": 52.38,
+            "draw": 27.78,
+            "away_win": 24.39
+          },
+          "normalized_probability": {
+            "home_win": 50.1,
+            "draw": 26.57,
+            "away_win": 23.33
+          },
+          "overround": 4.55,
+          "details": "BRA -110"
         }
       }
     ],
     "daily_log": [
       {
-        "time": "2026-06-30T16:53:49Z",
+        "time": "2026-07-01T01:22:18Z",
         "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
         "status": "completed"
       }
@@ -9708,10 +9996,10 @@
     }
   ],
   "usage": {
-    "input_tokens": 27474,
-    "output_tokens": 11476,
-    "total_tokens": 38950,
-    "cost_estimate": 0.3895
+    "input_tokens": 30256,
+    "output_tokens": 15422,
+    "total_tokens": 45678,
+    "cost_estimate": 0.45678
   },
   "analysis_model": "deepseek-v4-pro",
   "model": {
@@ -9725,12 +10013,12 @@
   },
   "daily_log": [
     {
-      "time": "2026-06-30T16:53:49Z",
+      "time": "2026-07-01T01:22:18Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     },
     {
-      "time": "2026-06-30T16:59:10Z",
+      "time": "2026-07-01T01:30:48Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     }
