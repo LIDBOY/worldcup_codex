@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "stage": "research",
-  "generated_at": "2026-06-30T16:53:49Z",
+  "generated_at": "2026-07-01T01:22:18Z",
   "window": {
     "start_date": "2026-06-30",
     "days": 3,
@@ -289,8 +289,6 @@
   "warnings": [],
   "unverified_fifa_matches": [],
   "structure_unverified_fifa_matches": [
-    "Paraguay vs W77",
-    "Brazil vs W78",
     "W79 vs W80",
     "W83 vs W84",
     "W81 vs W82",
@@ -308,9 +306,9 @@
   "fixture_count": 6,
   "fifa_fixture_count": 6,
   "raw_fifa_fixture_count": 29,
-  "structure_fixture_count": 13,
+  "structure_fixture_count": 15,
   "structure_fifa_fixture_count": 28,
-  "odds_available_count": 6,
+  "odds_available_count": 4,
   "matches": [
     {
       "id": "400021514",
@@ -327,9 +325,9 @@
       "group": "",
       "match_number": 78,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -339,7 +337,7 @@
           "id_team": "4789",
           "id_country": "CIV",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
-          "score": null,
+          "score": 1,
           "tactics": "4-1-2-3",
           "country_code": "CIV",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
@@ -352,7 +350,7 @@
           "id_team": "464",
           "id_country": "NOR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-          "score": null,
+          "score": 2,
           "tactics": "4-2-1-3",
           "country_code": "NOR",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
@@ -387,40 +385,39 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+260",
-          "draw": "+230",
-          "away": "+115"
-        },
-        "implied_probability": {
-          "home_win": 27.78,
-          "draw": 30.3,
-          "away_win": 46.51
-        },
-        "normalized_probability": {
-          "home_win": 26.56,
-          "draw": 28.97,
-          "away_win": 44.47
-        },
-        "overround": 4.59,
-        "details": "NOR +115"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "科特迪瓦",
           "team_en": "Ivory Coast",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+              "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+              "published": "2026-06-30T19:41:43Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "挪威",
           "team_en": "Norway",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+              "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+              "published": "2026-06-30T19:41:43Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -440,9 +437,9 @@
       "group": "",
       "match_number": 77,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -452,8 +449,8 @@
           "id_team": "478",
           "id_country": "FRA",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-          "score": null,
-          "tactics": null,
+          "score": 3,
+          "tactics": "4-2-3-1",
           "country_code": "FRA",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
           "flag_emoji": "🇫🇷"
@@ -465,8 +462,8 @@
           "id_team": "466",
           "id_country": "SWE",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-          "score": null,
-          "tactics": null,
+          "score": 0,
+          "tactics": "4-4-2",
           "country_code": "SWE",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
           "flag_emoji": "🇸🇪"
@@ -500,26 +497,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-340",
-          "draw": "+500",
-          "away": "+950"
-        },
-        "implied_probability": {
-          "home_win": 77.27,
-          "draw": 16.67,
-          "away_win": 9.52
-        },
-        "normalized_probability": {
-          "home_win": 74.69,
-          "draw": 16.11,
-          "away_win": 9.21
-        },
-        "overround": 3.46,
-        "details": "FRA -340"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -543,7 +523,7 @@
       "fifa_match_id": "400021520",
       "match_name": "墨西哥 vs 厄瓜多尔",
       "match_name_en": "Mexico vs Ecuador",
-      "kickoff_utc": "2026-07-01T01:00:00Z",
+      "kickoff_utc": "2026-07-01T02:00:00Z",
       "competition": "FIFA World Cup™",
       "season": "FIFA World Cup 2026™",
       "stage": "Round of 32",
@@ -553,7 +533,7 @@
       "group": "",
       "match_number": 79,
       "status": {
-        "match_status": 1,
+        "match_status": 10,
         "officiality_status": 0,
         "result_type": 0
       },
@@ -566,7 +546,7 @@
           "id_country": "MEX",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-1-2-3",
           "country_code": "MEX",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
           "flag_emoji": "🇲🇽"
@@ -579,7 +559,7 @@
           "id_country": "ECU",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-4-2",
           "country_code": "ECU",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
           "flag_emoji": "🇪🇨"
@@ -618,20 +598,20 @@
         "provider": "DraftKings",
         "moneyline_american": {
           "home": "+130",
-          "draw": "+185",
-          "away": "+295"
+          "draw": "+175",
+          "away": "+300"
         },
         "implied_probability": {
           "home_win": 43.48,
-          "draw": 35.09,
-          "away_win": 25.32
+          "draw": 36.36,
+          "away_win": 25.0
         },
         "normalized_probability": {
-          "home_win": 41.85,
-          "draw": 33.78,
-          "away_win": 24.37
+          "home_win": 41.47,
+          "draw": 34.68,
+          "away_win": 23.85
         },
-        "overround": 3.88,
+        "overround": 4.84,
         "details": "MEX +130"
       },
       "injuries": {
@@ -651,7 +631,7 @@
               "source": "ESPN World Cup news",
               "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
               "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-              "published": "2026-06-30T16:01:58Z",
+              "published": "2026-06-30T20:47:01Z",
               "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
             }
           ],
@@ -763,6 +743,13 @@
           "records": [
             {
               "source": "ESPN World Cup news",
+              "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+              "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+              "published": "2026-06-30T23:53:47Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+            },
+            {
+              "source": "ESPN World Cup news",
               "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
               "description": "England goalkeeper Jordan Pickford is in no doubt the players will be \"ready to go to war\" for manager Thomas Tuchel when they take on Congo DR for a place in the World Cup round of 16.",
               "published": "2026-06-30T13:26:18Z",
@@ -776,6 +763,13 @@
           "team_en": "Congo DR",
           "status": "probable injury",
           "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+              "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+              "published": "2026-06-30T23:53:47Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+            },
             {
               "source": "ESPN World Cup news",
               "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
@@ -867,22 +861,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+125",
-          "draw": "+225",
-          "away": "+250"
+          "home": "+115",
+          "draw": "+230",
+          "away": "+265"
         },
         "implied_probability": {
-          "home_win": 44.44,
-          "draw": 30.77,
-          "away_win": 28.57
+          "home_win": 46.51,
+          "draw": 30.3,
+          "away_win": 27.4
         },
         "normalized_probability": {
-          "home_win": 42.82,
-          "draw": 29.65,
-          "away_win": 27.53
+          "home_win": 44.63,
+          "draw": 29.08,
+          "away_win": 26.29
         },
-        "overround": 3.79,
-        "details": "BEL +125"
+        "overround": 4.21,
+        "details": "BEL +115"
       },
       "injuries": {
         "home": {
@@ -895,8 +889,16 @@
         "away": {
           "team": "塞内加尔",
           "team_en": "Senegal",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+              "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+              "published": "2026-06-30T19:41:43Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -981,20 +983,20 @@
         "provider": "DraftKings",
         "moneyline_american": {
           "home": "-265",
-          "draw": "+390",
+          "draw": "+400",
           "away": "+800"
         },
         "implied_probability": {
           "home_win": 72.6,
-          "draw": 20.41,
+          "draw": 20.0,
           "away_win": 11.11
         },
         "normalized_probability": {
-          "home_win": 69.73,
-          "draw": 19.6,
-          "away_win": 10.67
+          "home_win": 70.0,
+          "draw": 19.28,
+          "away_win": 10.71
         },
-        "overround": 4.12,
+        "overround": 3.71,
         "details": "USA -265"
       },
       "injuries": {
@@ -1031,9 +1033,9 @@
       "group": "",
       "match_number": 78,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -1043,7 +1045,7 @@
           "id_team": "4789",
           "id_country": "CIV",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
-          "score": null,
+          "score": 1,
           "tactics": "4-1-2-3",
           "country_code": "CIV",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
@@ -1056,7 +1058,7 @@
           "id_team": "464",
           "id_country": "NOR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-          "score": null,
+          "score": 2,
           "tactics": "4-2-1-3",
           "country_code": "NOR",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
@@ -1091,40 +1093,39 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+260",
-          "draw": "+230",
-          "away": "+115"
-        },
-        "implied_probability": {
-          "home_win": 27.78,
-          "draw": 30.3,
-          "away_win": 46.51
-        },
-        "normalized_probability": {
-          "home_win": 26.56,
-          "draw": 28.97,
-          "away_win": 44.47
-        },
-        "overround": 4.59,
-        "details": "NOR +115"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "科特迪瓦",
           "team_en": "Ivory Coast",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+              "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+              "published": "2026-06-30T19:41:43Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "挪威",
           "team_en": "Norway",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+              "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+              "published": "2026-06-30T19:41:43Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -1144,9 +1145,9 @@
       "group": "",
       "match_number": 77,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -1156,8 +1157,8 @@
           "id_team": "478",
           "id_country": "FRA",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-          "score": null,
-          "tactics": null,
+          "score": 3,
+          "tactics": "4-2-3-1",
           "country_code": "FRA",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
           "flag_emoji": "🇫🇷"
@@ -1169,8 +1170,8 @@
           "id_team": "466",
           "id_country": "SWE",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-          "score": null,
-          "tactics": null,
+          "score": 0,
+          "tactics": "4-4-2",
           "country_code": "SWE",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
           "flag_emoji": "🇸🇪"
@@ -1204,26 +1205,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-340",
-          "draw": "+500",
-          "away": "+950"
-        },
-        "implied_probability": {
-          "home_win": 77.27,
-          "draw": 16.67,
-          "away_win": 9.52
-        },
-        "normalized_probability": {
-          "home_win": 74.69,
-          "draw": 16.11,
-          "away_win": 9.21
-        },
-        "overround": 3.46,
-        "details": "FRA -340"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -1247,7 +1231,7 @@
       "fifa_match_id": "400021520",
       "match_name": "墨西哥 vs 厄瓜多尔",
       "match_name_en": "Mexico vs Ecuador",
-      "kickoff_utc": "2026-07-01T01:00:00Z",
+      "kickoff_utc": "2026-07-01T02:00:00Z",
       "competition": "FIFA World Cup™",
       "season": "FIFA World Cup 2026™",
       "stage": "Round of 32",
@@ -1257,7 +1241,7 @@
       "group": "",
       "match_number": 79,
       "status": {
-        "match_status": 1,
+        "match_status": 10,
         "officiality_status": 0,
         "result_type": 0
       },
@@ -1270,7 +1254,7 @@
           "id_country": "MEX",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-1-2-3",
           "country_code": "MEX",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
           "flag_emoji": "🇲🇽"
@@ -1283,7 +1267,7 @@
           "id_country": "ECU",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-4-2",
           "country_code": "ECU",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
           "flag_emoji": "🇪🇨"
@@ -1322,20 +1306,20 @@
         "provider": "DraftKings",
         "moneyline_american": {
           "home": "+130",
-          "draw": "+185",
-          "away": "+295"
+          "draw": "+175",
+          "away": "+300"
         },
         "implied_probability": {
           "home_win": 43.48,
-          "draw": 35.09,
-          "away_win": 25.32
+          "draw": 36.36,
+          "away_win": 25.0
         },
         "normalized_probability": {
-          "home_win": 41.85,
-          "draw": 33.78,
-          "away_win": 24.37
+          "home_win": 41.47,
+          "draw": 34.68,
+          "away_win": 23.85
         },
-        "overround": 3.88,
+        "overround": 4.84,
         "details": "MEX +130"
       },
       "injuries": {
@@ -1355,7 +1339,7 @@
               "source": "ESPN World Cup news",
               "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
               "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-              "published": "2026-06-30T16:01:58Z",
+              "published": "2026-06-30T20:47:01Z",
               "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
             }
           ],
@@ -1467,6 +1451,13 @@
           "records": [
             {
               "source": "ESPN World Cup news",
+              "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+              "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+              "published": "2026-06-30T23:53:47Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+            },
+            {
+              "source": "ESPN World Cup news",
               "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
               "description": "England goalkeeper Jordan Pickford is in no doubt the players will be \"ready to go to war\" for manager Thomas Tuchel when they take on Congo DR for a place in the World Cup round of 16.",
               "published": "2026-06-30T13:26:18Z",
@@ -1480,6 +1471,13 @@
           "team_en": "Congo DR",
           "status": "probable injury",
           "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+              "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+              "published": "2026-06-30T23:53:47Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+            },
             {
               "source": "ESPN World Cup news",
               "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
@@ -1571,22 +1569,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+125",
-          "draw": "+225",
-          "away": "+250"
+          "home": "+115",
+          "draw": "+230",
+          "away": "+265"
         },
         "implied_probability": {
-          "home_win": 44.44,
-          "draw": 30.77,
-          "away_win": 28.57
+          "home_win": 46.51,
+          "draw": 30.3,
+          "away_win": 27.4
         },
         "normalized_probability": {
-          "home_win": 42.82,
-          "draw": 29.65,
-          "away_win": 27.53
+          "home_win": 44.63,
+          "draw": 29.08,
+          "away_win": 26.29
         },
-        "overround": 3.79,
-        "details": "BEL +125"
+        "overround": 4.21,
+        "details": "BEL +115"
       },
       "injuries": {
         "home": {
@@ -1599,8 +1597,16 @@
         "away": {
           "team": "塞内加尔",
           "team_en": "Senegal",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+              "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+              "published": "2026-06-30T19:41:43Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -1685,20 +1691,20 @@
         "provider": "DraftKings",
         "moneyline_american": {
           "home": "-265",
-          "draw": "+390",
+          "draw": "+400",
           "away": "+800"
         },
         "implied_probability": {
           "home_win": 72.6,
-          "draw": 20.41,
+          "draw": 20.0,
           "away_win": 11.11
         },
         "normalized_probability": {
-          "home_win": 69.73,
-          "draw": 19.6,
-          "away_win": 10.67
+          "home_win": 70.0,
+          "draw": 19.28,
+          "away_win": 10.71
         },
-        "overround": 4.12,
+        "overround": 3.71,
         "details": "USA -265"
       },
       "injuries": {
@@ -1735,9 +1741,9 @@
       "group": "",
       "match_number": 78,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -1747,7 +1753,7 @@
           "id_team": "4789",
           "id_country": "CIV",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
-          "score": null,
+          "score": 1,
           "tactics": "4-1-2-3",
           "country_code": "CIV",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
@@ -1760,7 +1766,7 @@
           "id_team": "464",
           "id_country": "NOR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-          "score": null,
+          "score": 2,
           "tactics": "4-2-1-3",
           "country_code": "NOR",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
@@ -1795,40 +1801,39 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+260",
-          "draw": "+230",
-          "away": "+115"
-        },
-        "implied_probability": {
-          "home_win": 27.78,
-          "draw": 30.3,
-          "away_win": 46.51
-        },
-        "normalized_probability": {
-          "home_win": 26.56,
-          "draw": 28.97,
-          "away_win": 44.47
-        },
-        "overround": 4.59,
-        "details": "NOR +115"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "科特迪瓦",
           "team_en": "Ivory Coast",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+              "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+              "published": "2026-06-30T19:41:43Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "挪威",
           "team_en": "Norway",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+              "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+              "published": "2026-06-30T19:41:43Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -1848,9 +1853,9 @@
       "group": "",
       "match_number": 77,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -1860,8 +1865,8 @@
           "id_team": "478",
           "id_country": "FRA",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-          "score": null,
-          "tactics": null,
+          "score": 3,
+          "tactics": "4-2-3-1",
           "country_code": "FRA",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
           "flag_emoji": "🇫🇷"
@@ -1873,8 +1878,8 @@
           "id_team": "466",
           "id_country": "SWE",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-          "score": null,
-          "tactics": null,
+          "score": 0,
+          "tactics": "4-4-2",
           "country_code": "SWE",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
           "flag_emoji": "🇸🇪"
@@ -1908,26 +1913,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-340",
-          "draw": "+500",
-          "away": "+950"
-        },
-        "implied_probability": {
-          "home_win": 77.27,
-          "draw": 16.67,
-          "away_win": 9.52
-        },
-        "normalized_probability": {
-          "home_win": 74.69,
-          "draw": 16.11,
-          "away_win": 9.21
-        },
-        "overround": 3.46,
-        "details": "FRA -340"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -1951,7 +1939,7 @@
       "fifa_match_id": "400021520",
       "match_name": "墨西哥 vs 厄瓜多尔",
       "match_name_en": "Mexico vs Ecuador",
-      "kickoff_utc": "2026-07-01T01:00:00Z",
+      "kickoff_utc": "2026-07-01T02:00:00Z",
       "competition": "FIFA World Cup™",
       "season": "FIFA World Cup 2026™",
       "stage": "Round of 32",
@@ -1961,7 +1949,7 @@
       "group": "",
       "match_number": 79,
       "status": {
-        "match_status": 1,
+        "match_status": 10,
         "officiality_status": 0,
         "result_type": 0
       },
@@ -1974,7 +1962,7 @@
           "id_country": "MEX",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-1-2-3",
           "country_code": "MEX",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
           "flag_emoji": "🇲🇽"
@@ -1987,7 +1975,7 @@
           "id_country": "ECU",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
           "score": null,
-          "tactics": null,
+          "tactics": "4-4-2",
           "country_code": "ECU",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
           "flag_emoji": "🇪🇨"
@@ -2026,20 +2014,20 @@
         "provider": "DraftKings",
         "moneyline_american": {
           "home": "+130",
-          "draw": "+185",
-          "away": "+295"
+          "draw": "+175",
+          "away": "+300"
         },
         "implied_probability": {
           "home_win": 43.48,
-          "draw": 35.09,
-          "away_win": 25.32
+          "draw": 36.36,
+          "away_win": 25.0
         },
         "normalized_probability": {
-          "home_win": 41.85,
-          "draw": 33.78,
-          "away_win": 24.37
+          "home_win": 41.47,
+          "draw": 34.68,
+          "away_win": 23.85
         },
-        "overround": 3.88,
+        "overround": 4.84,
         "details": "MEX +130"
       },
       "injuries": {
@@ -2059,7 +2047,7 @@
               "source": "ESPN World Cup news",
               "title": "U.S. Homeland Security Secretary 'so happy' Iran made World Cup exit",
               "description": "U.S. Department of Homeland Security Secretary Markwayne Mullin has said he is \"so happy\" that Iran are out of the World Cup.",
-              "published": "2026-06-30T16:01:58Z",
+              "published": "2026-06-30T20:47:01Z",
               "url": "https://www.espn.com/soccer/story/_/id/49224162/top-us-government-official-happy-iran-made-world-cup-exit"
             }
           ],
@@ -2171,6 +2159,13 @@
           "records": [
             {
               "source": "ESPN World Cup news",
+              "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+              "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+              "published": "2026-06-30T23:53:47Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+            },
+            {
+              "source": "ESPN World Cup news",
               "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
               "description": "England goalkeeper Jordan Pickford is in no doubt the players will be \"ready to go to war\" for manager Thomas Tuchel when they take on Congo DR for a place in the World Cup round of 16.",
               "published": "2026-06-30T13:26:18Z",
@@ -2184,6 +2179,13 @@
           "team_en": "Congo DR",
           "status": "probable injury",
           "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Reece James, Jarell Quansah out of England's World Cup clash with Congo DR",
+              "description": "Thomas Tuchel has confirmed Reece James and Jarell Quansah will miss England's round of 32 clash with Congo DR on Wednesday.",
+              "published": "2026-06-30T23:53:47Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49230675/reece-james-jarell-quansah-england-world-cup-clash-congo-dr"
+            },
             {
               "source": "ESPN World Cup news",
               "title": "Jordan Pickford: England 'ready to go to war' for Thomas Tuchel",
@@ -2275,22 +2277,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+125",
-          "draw": "+225",
-          "away": "+250"
+          "home": "+115",
+          "draw": "+230",
+          "away": "+265"
         },
         "implied_probability": {
-          "home_win": 44.44,
-          "draw": 30.77,
-          "away_win": 28.57
+          "home_win": 46.51,
+          "draw": 30.3,
+          "away_win": 27.4
         },
         "normalized_probability": {
-          "home_win": 42.82,
-          "draw": 29.65,
-          "away_win": 27.53
+          "home_win": 44.63,
+          "draw": 29.08,
+          "away_win": 26.29
         },
-        "overround": 3.79,
-        "details": "BEL +125"
+        "overround": 4.21,
+        "details": "BEL +115"
       },
       "injuries": {
         "home": {
@@ -2303,8 +2305,16 @@
         "away": {
           "team": "塞内加尔",
           "team_en": "Senegal",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Haaland scores late as Norway send Ivory Coast out of World Cup",
+              "description": "Erling Haaland sent Norway into a round-of-16 clash with Brazil by scoring an 86th-minute winner against Ivory Coast in Dallas.",
+              "published": "2026-06-30T19:41:43Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49227955/norway-ivory-coast-erling-haaland-world-cup-match-report-last-32"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -2389,20 +2399,20 @@
         "provider": "DraftKings",
         "moneyline_american": {
           "home": "-265",
-          "draw": "+390",
+          "draw": "+400",
           "away": "+800"
         },
         "implied_probability": {
           "home_win": 72.6,
-          "draw": 20.41,
+          "draw": 20.0,
           "away_win": 11.11
         },
         "normalized_probability": {
-          "home_win": 69.73,
-          "draw": 19.6,
-          "away_win": 10.67
+          "home_win": 70.0,
+          "draw": 19.28,
+          "away_win": 10.71
         },
-        "overround": 4.12,
+        "overround": 3.71,
         "details": "USA -265"
       },
       "injuries": {
@@ -2598,22 +2608,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-130",
-          "draw": "+265",
-          "away": "+400"
+          "home": "-125",
+          "draw": "+260",
+          "away": "+380"
         },
         "implied_probability": {
-          "home_win": 56.52,
-          "draw": 27.4,
-          "away_win": 20.0
+          "home_win": 55.56,
+          "draw": 27.78,
+          "away_win": 20.83
         },
         "normalized_probability": {
-          "home_win": 54.39,
-          "draw": 26.36,
-          "away_win": 19.25
+          "home_win": 53.33,
+          "draw": 26.67,
+          "away_win": 20.0
         },
-        "overround": 3.92,
-        "details": "POR -130"
+        "overround": 4.17,
+        "details": "POR -125"
       }
     },
     {
@@ -2695,22 +2705,22 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+110",
+          "home": "+105",
           "draw": "+230",
-          "away": "+290"
+          "away": "+300"
         },
         "implied_probability": {
-          "home_win": 47.62,
+          "home_win": 48.78,
           "draw": 30.3,
-          "away_win": 25.64
+          "away_win": 25.0
         },
         "normalized_probability": {
-          "home_win": 45.98,
-          "draw": 29.26,
-          "away_win": 24.76
+          "home_win": 46.87,
+          "draw": 29.11,
+          "away_win": 24.02
         },
-        "overround": 3.56,
-        "details": "SUI +110"
+        "overround": 4.08,
+        "details": "SUI +105"
       }
     },
     {
@@ -3083,28 +3093,222 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+400",
+          "home": "+380",
           "draw": "+255",
-          "away": "-125"
+          "away": "-120"
         },
         "implied_probability": {
-          "home_win": 20.0,
+          "home_win": 20.83,
           "draw": 28.17,
-          "away_win": 55.56
+          "away_win": 54.55
         },
         "normalized_probability": {
-          "home_win": 19.28,
-          "draw": 27.16,
-          "away_win": 53.56
+          "home_win": 20.12,
+          "draw": 27.2,
+          "away_win": 52.68
         },
-        "overround": 3.72,
-        "details": "MAR -125"
+        "overround": 3.55,
+        "details": "MAR -120"
+      }
+    },
+    {
+      "id": "400021533",
+      "fifa_match_id": "400021533",
+      "match_name": "巴拉圭 vs 法国",
+      "match_name_en": "Paraguay vs France",
+      "kickoff_utc": "2026-07-04T21:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Round of 16",
+      "stage_name": "Round of 16",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 89,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "巴拉圭",
+          "name_en": "Paraguay",
+          "abbreviation": "PAR",
+          "id_team": "210",
+          "id_country": "PAR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "PAR",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
+          "flag_emoji": "🇵🇾"
+        },
+        "away": {
+          "name": "法国",
+          "name_en": "France",
+          "abbreviation": "FRA",
+          "id_team": "478",
+          "id_country": "FRA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "FRA",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+          "flag_emoji": "🇫🇷"
+        }
+      },
+      "venue": {
+        "name": "Philadelphia Stadium",
+        "city": "Philadelphia",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021533"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760503"
+        }
+      },
+      "espn_event_id": "760503",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+1400",
+          "draw": "+600",
+          "away": "-500"
+        },
+        "implied_probability": {
+          "home_win": 6.67,
+          "draw": 14.29,
+          "away_win": 83.33
+        },
+        "normalized_probability": {
+          "home_win": 6.39,
+          "draw": 13.7,
+          "away_win": 79.91
+        },
+        "overround": 4.29,
+        "details": "FRA -500"
+      }
+    },
+    {
+      "id": "400021532",
+      "fifa_match_id": "400021532",
+      "match_name": "巴西 vs 挪威",
+      "match_name_en": "Brazil vs Norway",
+      "kickoff_utc": "2026-07-05T20:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Round of 16",
+      "stage_name": "Round of 16",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 91,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "巴西",
+          "name_en": "Brazil",
+          "abbreviation": "BRA",
+          "id_team": "205",
+          "id_country": "BRA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "BRA",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
+          "flag_emoji": "🇧🇷"
+        },
+        "away": {
+          "name": "挪威",
+          "name_en": "Norway",
+          "abbreviation": "NOR",
+          "id_team": "464",
+          "id_country": "NOR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "NOR",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+          "flag_emoji": "🇳🇴"
+        }
+      },
+      "venue": {
+        "name": "New York/New Jersey Stadium",
+        "city": "New Jersey",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021532"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760504"
+        }
+      },
+      "espn_event_id": "760504",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "-110",
+          "draw": "+260",
+          "away": "+310"
+        },
+        "implied_probability": {
+          "home_win": 52.38,
+          "draw": 27.78,
+          "away_win": 24.39
+        },
+        "normalized_probability": {
+          "home_win": 50.1,
+          "draw": 26.57,
+          "away_win": 23.33
+        },
+        "overround": 4.55,
+        "details": "BRA -110"
       }
     }
   ],
   "daily_log": [
     {
-      "time": "2026-06-30T16:53:49Z",
+      "time": "2026-07-01T01:22:18Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     }
