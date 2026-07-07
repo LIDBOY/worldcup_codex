@@ -1,15 +1,15 @@
 {
   "schema_version": 3,
   "stage": "research",
-  "generated_at": "2026-07-06T04:36:16Z",
+  "generated_at": "2026-07-07T04:14:18Z",
   "window": {
-    "start_date": "2026-07-05",
+    "start_date": "2026-07-06",
     "days": 3,
     "timezone": "UTC",
     "mode": "derived from China match-day display window"
   },
   "structure_utc_window": {
-    "start_date": "2026-07-05",
+    "start_date": "2026-07-06",
     "days": 22,
     "timezone": "UTC",
     "mode": "derived from China match-day structure window"
@@ -17,42 +17,35 @@
   "display_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 2,
-    "start_iso": "2026-07-05T18:00:00+08:00",
-    "end_iso": "2026-07-07T18:00:00+08:00",
-    "display_range": "7月5日比赛日 - 7月6日比赛日",
-    "range": "北京时间 07-05 18:00 - 07-07 18:00",
+    "start_iso": "2026-07-06T18:00:00+08:00",
+    "end_iso": "2026-07-08T18:00:00+08:00",
+    "display_range": "7月6日比赛日 - 7月7日比赛日",
+    "range": "北京时间 07-06 18:00 - 07-08 18:00",
     "match_days": [
-      {
-        "date": "2026-07-05",
-        "title": "7月5日比赛日",
-        "range": "北京时间 07-05 18:00 - 07-06 18:00",
-        "start_iso": "2026-07-05T18:00:00+08:00",
-        "end_iso": "2026-07-06T18:00:00+08:00"
-      },
       {
         "date": "2026-07-06",
         "title": "7月6日比赛日",
         "range": "北京时间 07-06 18:00 - 07-07 18:00",
         "start_iso": "2026-07-06T18:00:00+08:00",
         "end_iso": "2026-07-07T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-07",
+        "title": "7月7日比赛日",
+        "range": "北京时间 07-07 18:00 - 07-08 18:00",
+        "start_iso": "2026-07-07T18:00:00+08:00",
+        "end_iso": "2026-07-08T18:00:00+08:00"
       }
     ]
   },
   "structure_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 21,
-    "start_iso": "2026-07-05T18:00:00+08:00",
-    "end_iso": "2026-07-26T18:00:00+08:00",
-    "display_range": "7月5日比赛日 - 7月25日比赛日",
-    "range": "北京时间 07-05 18:00 - 07-26 18:00",
+    "start_iso": "2026-07-06T18:00:00+08:00",
+    "end_iso": "2026-07-27T18:00:00+08:00",
+    "display_range": "7月6日比赛日 - 7月26日比赛日",
+    "range": "北京时间 07-06 18:00 - 07-27 18:00",
     "match_days": [
-      {
-        "date": "2026-07-05",
-        "title": "7月5日比赛日",
-        "range": "北京时间 07-05 18:00 - 07-06 18:00",
-        "start_iso": "2026-07-05T18:00:00+08:00",
-        "end_iso": "2026-07-06T18:00:00+08:00"
-      },
       {
         "date": "2026-07-06",
         "title": "7月6日比赛日",
@@ -192,23 +185,30 @@
         "range": "北京时间 07-25 18:00 - 07-26 18:00",
         "start_iso": "2026-07-25T18:00:00+08:00",
         "end_iso": "2026-07-26T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-26",
+        "title": "7月26日比赛日",
+        "range": "北京时间 07-26 18:00 - 07-27 18:00",
+        "start_iso": "2026-07-26T18:00:00+08:00",
+        "end_iso": "2026-07-27T18:00:00+08:00"
       }
     ]
   },
   "china_match_days": [
-    {
-      "date": "2026-07-05",
-      "title": "7月5日比赛日",
-      "range": "北京时间 07-05 18:00 - 07-06 18:00",
-      "start_iso": "2026-07-05T18:00:00+08:00",
-      "end_iso": "2026-07-06T18:00:00+08:00"
-    },
     {
       "date": "2026-07-06",
       "title": "7月6日比赛日",
       "range": "北京时间 07-06 18:00 - 07-07 18:00",
       "start_iso": "2026-07-06T18:00:00+08:00",
       "end_iso": "2026-07-07T18:00:00+08:00"
+    },
+    {
+      "date": "2026-07-07",
+      "title": "7月7日比赛日",
+      "range": "北京时间 07-07 18:00 - 07-08 18:00",
+      "start_iso": "2026-07-07T18:00:00+08:00",
+      "end_iso": "2026-07-08T18:00:00+08:00"
     }
   ],
   "data_sources": {
@@ -220,12 +220,11 @@
   "source": {
     "fifa": {
       "name": "FIFA official calendar API",
-      "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-07-05&to=2026-07-27&language=en&count=500&idCompetition=17&idSeason=285023"
+      "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-07-06&to=2026-07-28&language=en&count=500&idCompetition=17&idSeason=285023"
     },
     "verification": {
       "name": "ESPN public FIFA World Cup scoreboard",
       "urls": [
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260704&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260705&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260706&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260707&limit=100",
@@ -248,7 +247,8 @@
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260724&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260725&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260726&limit=100",
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260727&limit=100"
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260727&limit=100",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260728&limit=100"
       ]
     },
     "injury": {
@@ -259,7 +259,6 @@
     "odds": {
       "name": "ESPN odds feed",
       "urls": [
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260704&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260705&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260706&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260707&limit=100",
@@ -282,14 +281,14 @@
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260724&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260725&limit=100",
         "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260726&limit=100",
-        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260727&limit=100"
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260727&limit=100",
+        "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260728&limit=100"
       ]
     }
   },
   "warnings": [],
   "unverified_fifa_matches": [],
   "structure_unverified_fifa_matches": [
-    "W93 vs W94",
     "W95 vs W96",
     "W97 vs W98",
     "W99 vs W100",
@@ -298,212 +297,12 @@
   ],
   "fixture_count": 4,
   "fifa_fixture_count": 4,
-  "raw_fifa_fixture_count": 14,
-  "structure_fixture_count": 8,
-  "structure_fifa_fixture_count": 14,
+  "raw_fifa_fixture_count": 13,
+  "structure_fixture_count": 7,
+  "structure_fifa_fixture_count": 12,
   "odds_available_count": 2,
   "matches": [
     {
-      "id": "400021532",
-      "fifa_match_id": "400021532",
-      "match_name": "巴西 vs 挪威",
-      "match_name_en": "Brazil vs Norway",
-      "kickoff_utc": "2026-07-05T20:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Round of 16",
-      "stage_name": "Round of 16",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 91,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 1,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "巴西",
-          "name_en": "Brazil",
-          "abbreviation": "BRA",
-          "id_team": "205",
-          "id_country": "BRA",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-          "score": 1,
-          "tactics": "4-1-2-3",
-          "country_code": "BRA",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-          "flag_emoji": "🇧🇷"
-        },
-        "away": {
-          "name": "挪威",
-          "name_en": "Norway",
-          "abbreviation": "NOR",
-          "id_team": "464",
-          "id_country": "NOR",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-          "score": 2,
-          "tactics": "4-1-2-3",
-          "country_code": "NOR",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-          "flag_emoji": "🇳🇴"
-        }
-      },
-      "venue": {
-        "name": "New York/New Jersey Stadium",
-        "city": "New Jersey",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021532"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760504"
-        }
-      },
-      "espn_event_id": "760504",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "巴西",
-          "team_en": "Brazil",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Carlo Ancelotti vows to start 'new cycle' after Brazil's World Cup exit",
-              "description": "Brazil coach Carlo Ancelotti said he's looking to oversee a \"new cycle\" with the team after they crashed out of the World Cup on Sunday in the round of 16.",
-              "published": "2026-07-06T02:22:27Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49281885/carlo-ancelotti-vows-start-new-cycle-brazil-world-cup-exit"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "挪威",
-          "team_en": "Norway",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021531",
-      "fifa_match_id": "400021531",
-      "match_name": "墨西哥 vs 英格兰",
-      "match_name_en": "Mexico vs England",
-      "kickoff_utc": "2026-07-06T01:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Round of 16",
-      "stage_name": "Round of 16",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 92,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 1,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "墨西哥",
-          "name_en": "Mexico",
-          "abbreviation": "MEX",
-          "id_team": "203",
-          "id_country": "MEX",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-          "score": 2,
-          "tactics": "4-1-2-3",
-          "country_code": "MEX",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-          "flag_emoji": "🇲🇽"
-        },
-        "away": {
-          "name": "英格兰",
-          "name_en": "England",
-          "abbreviation": "ENG",
-          "id_team": "448",
-          "id_country": "ENG",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-          "score": 3,
-          "tactics": "4-2-3-1",
-          "country_code": "ENG",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-          "flag_emoji": ""
-        }
-      },
-      "venue": {
-        "name": "Mexico City Stadium",
-        "city": "Mexico City",
-        "country": "MEX"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021531"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760505"
-        }
-      },
-      "espn_event_id": "760505",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "墨西哥",
-          "team_en": "Mexico",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "英格兰",
-          "team_en": "England",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
       "id": "400021529",
       "fifa_match_id": "400021529",
       "match_name": "葡萄牙 vs 西班牙",
@@ -518,9 +317,9 @@
       "group": "",
       "match_number": 93,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -530,8 +329,8 @@
           "id_team": "482",
           "id_country": "POR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-          "score": null,
-          "tactics": null,
+          "score": 0,
+          "tactics": "4-2-3-1",
           "country_code": "POR",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
           "flag_emoji": "🇵🇹"
@@ -543,8 +342,8 @@
           "id_team": "164",
           "id_country": "ESP",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-          "score": null,
-          "tactics": null,
+          "score": 1,
+          "tactics": "4-1-2-3",
           "country_code": "ESP",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
           "flag_emoji": "🇪🇸"
@@ -578,40 +377,53 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+285",
-          "draw": "+265",
-          "away": "-110"
-        },
-        "implied_probability": {
-          "home_win": 25.97,
-          "draw": 27.4,
-          "away_win": 52.38
-        },
-        "normalized_probability": {
-          "home_win": 24.56,
-          "draw": 25.91,
-          "away_win": 49.53
-        },
-        "overround": 5.75,
-        "details": "ESP -110"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "葡萄牙",
           "team_en": "Portugal",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
+              "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
+              "published": "2026-07-06T21:31:50Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760506"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "西班牙",
           "team_en": "Spain",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
+              "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
+              "published": "2026-07-06T21:31:50Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760506"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Giuliani: U.S. involvement in Balogun red reversal won't affect USMNT legacy",
+              "description": "Andrew Giuliani, the head of the White House task force on the World Cup, told ESPN on Monday that he has no concerns at all over FIFA's decision to reduce Folarin Balogun's suspension affecting the legacy or credibility of what the USMNT accomplishes.",
+              "published": "2026-07-06T18:43:51Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49288020/giuliani-us-involvement-balogun-red-reversal-not-affect-usmnt-legacy"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "England's Jordan Henderson out of World Cup with suspected broken arm - sources",
+              "description": "Jordan Henderson is expected to be ruled out for the rest of the World Cup after suffering a suspected broken bone in celebrating England's 3-2 win over Mexico, sources have told ESPN.",
+              "published": "2026-07-06T17:52:34Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49285549/england-jordan-henderson-world-cup-suspected-broken-arm-sources"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -631,9 +443,9 @@
       "group": "",
       "match_number": 94,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -643,473 +455,8 @@
           "id_team": "660",
           "id_country": "USA",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-          "score": null,
-          "tactics": null,
-          "country_code": "USA",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-          "flag_emoji": "🇺🇸"
-        },
-        "away": {
-          "name": "比利时",
-          "name_en": "Belgium",
-          "abbreviation": "BEL",
-          "id_team": "459",
-          "id_country": "BEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-          "score": null,
-          "tactics": null,
-          "country_code": "BEL",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-          "flag_emoji": "🇧🇪"
-        }
-      },
-      "venue": {
-        "name": "Seattle Stadium",
-        "city": "Seattle",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021534"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760507"
-        }
-      },
-      "espn_event_id": "760507",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": true,
-        "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+155",
-          "draw": "+240",
-          "away": "+175"
-        },
-        "implied_probability": {
-          "home_win": 39.22,
-          "draw": 29.41,
-          "away_win": 36.36
-        },
-        "normalized_probability": {
-          "home_win": 37.35,
-          "draw": 28.01,
-          "away_win": 34.63
-        },
-        "overround": 4.99,
-        "details": "USA +155"
-      },
-      "injuries": {
-        "home": {
-          "team": "美国",
-          "team_en": "United States",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Pochettino says U.S. 'punished enough' for Balogun red card",
-              "description": "United States manager Mauricio Pochettino praised FIFA's decision to lift the suspension on U.S. forward Folarin Balogun, saying the USMNT was \"punished enough\" by having to play shorthanded against Bosnia-Herzegovina for 35 minutes.",
-              "published": "2026-07-06T00:05:04Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49281013/pochettino-says-us-punished-enough-balogun-red-card"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Belgium furious over suspension of Balogun ban: It's April Fools'",
-              "description": "Belgium coach Rudi Garcia said he thought it was a joke when he first heard news that suspended United States striker Folarin Balogun was cleared to play in the Americans' round-of-16 match.",
-              "published": "2026-07-06T04:04:32Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49279471/belgium-usa-folarin-balogun-ban-suspended-fifa-world-cup-2026"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "比利时",
-          "team_en": "Belgium",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Nobody benefits from FIFA letting Balogun off the hook -- not even the USMNT",
-              "description": "The U.S. will be buzzing to have Folarin Balogun available vs. Belgium on Monday, but FIFA's U-turn on his suspension is a bad look for this World Cup",
-              "published": "2026-07-06T00:45:36Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49278521/nobody-benefits-fifa-letting-balogun-hook-not-even-usmnt"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Folarin Balogun channels Michael Jackson after red card suspended",
-              "description": "Balogun posted a clever message on social media after FIFA's disciplinary committee suspended his red card, making him available to play against Belgium.",
-              "published": "2026-07-05T21:50:32Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49278467/folarin-balogun-usmnt-red-card-suspension-fifa-2026-world-cup"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Belgium furious over suspension of Balogun ban: It's April Fools'",
-              "description": "Belgium coach Rudi Garcia said he thought it was a joke when he first heard news that suspended United States striker Folarin Balogun was cleared to play in the Americans' round-of-16 match.",
-              "published": "2026-07-06T04:04:32Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49279471/belgium-usa-folarin-balogun-ban-suspended-fifa-world-cup-2026"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    }
-  ],
-  "fixtures": [
-    {
-      "id": "400021532",
-      "fifa_match_id": "400021532",
-      "match_name": "巴西 vs 挪威",
-      "match_name_en": "Brazil vs Norway",
-      "kickoff_utc": "2026-07-05T20:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Round of 16",
-      "stage_name": "Round of 16",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 91,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 1,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "巴西",
-          "name_en": "Brazil",
-          "abbreviation": "BRA",
-          "id_team": "205",
-          "id_country": "BRA",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
           "score": 1,
-          "tactics": "4-1-2-3",
-          "country_code": "BRA",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-          "flag_emoji": "🇧🇷"
-        },
-        "away": {
-          "name": "挪威",
-          "name_en": "Norway",
-          "abbreviation": "NOR",
-          "id_team": "464",
-          "id_country": "NOR",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-          "score": 2,
-          "tactics": "4-1-2-3",
-          "country_code": "NOR",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-          "flag_emoji": "🇳🇴"
-        }
-      },
-      "venue": {
-        "name": "New York/New Jersey Stadium",
-        "city": "New Jersey",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021532"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760504"
-        }
-      },
-      "espn_event_id": "760504",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "巴西",
-          "team_en": "Brazil",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Carlo Ancelotti vows to start 'new cycle' after Brazil's World Cup exit",
-              "description": "Brazil coach Carlo Ancelotti said he's looking to oversee a \"new cycle\" with the team after they crashed out of the World Cup on Sunday in the round of 16.",
-              "published": "2026-07-06T02:22:27Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49281885/carlo-ancelotti-vows-start-new-cycle-brazil-world-cup-exit"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "挪威",
-          "team_en": "Norway",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021531",
-      "fifa_match_id": "400021531",
-      "match_name": "墨西哥 vs 英格兰",
-      "match_name_en": "Mexico vs England",
-      "kickoff_utc": "2026-07-06T01:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Round of 16",
-      "stage_name": "Round of 16",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 92,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 1,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "墨西哥",
-          "name_en": "Mexico",
-          "abbreviation": "MEX",
-          "id_team": "203",
-          "id_country": "MEX",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-          "score": 2,
-          "tactics": "4-1-2-3",
-          "country_code": "MEX",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-          "flag_emoji": "🇲🇽"
-        },
-        "away": {
-          "name": "英格兰",
-          "name_en": "England",
-          "abbreviation": "ENG",
-          "id_team": "448",
-          "id_country": "ENG",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-          "score": 3,
-          "tactics": "4-2-3-1",
-          "country_code": "ENG",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-          "flag_emoji": ""
-        }
-      },
-      "venue": {
-        "name": "Mexico City Stadium",
-        "city": "Mexico City",
-        "country": "MEX"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021531"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760505"
-        }
-      },
-      "espn_event_id": "760505",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "墨西哥",
-          "team_en": "Mexico",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "英格兰",
-          "team_en": "England",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021529",
-      "fifa_match_id": "400021529",
-      "match_name": "葡萄牙 vs 西班牙",
-      "match_name_en": "Portugal vs Spain",
-      "kickoff_utc": "2026-07-06T19:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Round of 16",
-      "stage_name": "Round of 16",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 93,
-      "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
-      },
-      "teams": {
-        "home": {
-          "name": "葡萄牙",
-          "name_en": "Portugal",
-          "abbreviation": "POR",
-          "id_team": "482",
-          "id_country": "POR",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-          "score": null,
-          "tactics": null,
-          "country_code": "POR",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-          "flag_emoji": "🇵🇹"
-        },
-        "away": {
-          "name": "西班牙",
-          "name_en": "Spain",
-          "abbreviation": "ESP",
-          "id_team": "164",
-          "id_country": "ESP",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-          "score": null,
-          "tactics": null,
-          "country_code": "ESP",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-          "flag_emoji": "🇪🇸"
-        }
-      },
-      "venue": {
-        "name": "Dallas Stadium",
-        "city": "Dallas",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021529"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760506"
-        }
-      },
-      "espn_event_id": "760506",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": true,
-        "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+285",
-          "draw": "+265",
-          "away": "-110"
-        },
-        "implied_probability": {
-          "home_win": 25.97,
-          "draw": 27.4,
-          "away_win": 52.38
-        },
-        "normalized_probability": {
-          "home_win": 24.56,
-          "draw": 25.91,
-          "away_win": 49.53
-        },
-        "overround": 5.75,
-        "details": "ESP -110"
-      },
-      "injuries": {
-        "home": {
-          "team": "葡萄牙",
-          "team_en": "Portugal",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "西班牙",
-          "team_en": "Spain",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021534",
-      "fifa_match_id": "400021534",
-      "match_name": "美国 vs 比利时",
-      "match_name_en": "USA vs Belgium",
-      "kickoff_utc": "2026-07-07T00:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Round of 16",
-      "stage_name": "Round of 16",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 94,
-      "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
-      },
-      "teams": {
-        "home": {
-          "name": "美国",
-          "name_en": "United States",
-          "abbreviation": "USA",
-          "id_team": "660",
-          "id_country": "USA",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-          "score": null,
-          "tactics": null,
+          "tactics": "3-5-2",
           "country_code": "USA",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
           "flag_emoji": "🇺🇸"
@@ -1121,8 +468,8 @@
           "id_team": "459",
           "id_country": "BEL",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-          "score": null,
-          "tactics": null,
+          "score": 4,
+          "tactics": "4-2-3-1",
           "country_code": "BEL",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
           "flag_emoji": "🇧🇪"
@@ -1156,26 +503,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+155",
-          "draw": "+240",
-          "away": "+175"
-        },
-        "implied_probability": {
-          "home_win": 39.22,
-          "draw": 29.41,
-          "away_win": 36.36
-        },
-        "normalized_probability": {
-          "home_win": 37.35,
-          "draw": 28.01,
-          "away_win": 34.63
-        },
-        "overround": 4.99,
-        "details": "USA +155"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -1185,17 +515,24 @@
           "records": [
             {
               "source": "ESPN World Cup news",
-              "title": "Pochettino says U.S. 'punished enough' for Balogun red card",
-              "description": "United States manager Mauricio Pochettino praised FIFA's decision to lift the suspension on U.S. forward Folarin Balogun, saying the USMNT was \"punished enough\" by having to play shorthanded against Bosnia-Herzegovina for 35 minutes.",
-              "published": "2026-07-06T00:05:04Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49281013/pochettino-says-us-punished-enough-balogun-red-card"
+              "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
+              "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
+              "published": "2026-07-07T03:43:49Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
             },
             {
               "source": "ESPN World Cup news",
-              "title": "Belgium furious over suspension of Balogun ban: It's April Fools'",
-              "description": "Belgium coach Rudi Garcia said he thought it was a joke when he first heard news that suspended United States striker Folarin Balogun was cleared to play in the Americans' round-of-16 match.",
-              "published": "2026-07-06T04:04:32Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49279471/belgium-usa-folarin-balogun-ban-suspended-fifa-world-cup-2026"
+              "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
+              "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
+              "published": "2026-07-07T03:20:43Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760507"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
+              "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
+              "published": "2026-07-07T03:48:31Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
             }
           ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -1207,489 +544,24 @@
           "records": [
             {
               "source": "ESPN World Cup news",
-              "title": "Nobody benefits from FIFA letting Balogun off the hook -- not even the USMNT",
-              "description": "The U.S. will be buzzing to have Folarin Balogun available vs. Belgium on Monday, but FIFA's U-turn on his suspension is a bad look for this World Cup",
-              "published": "2026-07-06T00:45:36Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49278521/nobody-benefits-fifa-letting-balogun-hook-not-even-usmnt"
+              "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
+              "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
+              "published": "2026-07-07T03:43:49Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
             },
             {
               "source": "ESPN World Cup news",
-              "title": "Folarin Balogun channels Michael Jackson after red card suspended",
-              "description": "Balogun posted a clever message on social media after FIFA's disciplinary committee suspended his red card, making him available to play against Belgium.",
-              "published": "2026-07-05T21:50:32Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49278467/folarin-balogun-usmnt-red-card-suspension-fifa-2026-world-cup"
+              "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
+              "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
+              "published": "2026-07-07T03:20:43Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760507"
             },
             {
               "source": "ESPN World Cup news",
-              "title": "Belgium furious over suspension of Balogun ban: It's April Fools'",
-              "description": "Belgium coach Rudi Garcia said he thought it was a joke when he first heard news that suspended United States striker Folarin Balogun was cleared to play in the Americans' round-of-16 match.",
-              "published": "2026-07-06T04:04:32Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49279471/belgium-usa-folarin-balogun-ban-suspended-fifa-world-cup-2026"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    }
-  ],
-  "structure_matches": [
-    {
-      "id": "400021532",
-      "fifa_match_id": "400021532",
-      "match_name": "巴西 vs 挪威",
-      "match_name_en": "Brazil vs Norway",
-      "kickoff_utc": "2026-07-05T20:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Round of 16",
-      "stage_name": "Round of 16",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 91,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 1,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "巴西",
-          "name_en": "Brazil",
-          "abbreviation": "BRA",
-          "id_team": "205",
-          "id_country": "BRA",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-          "score": 1,
-          "tactics": "4-1-2-3",
-          "country_code": "BRA",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
-          "flag_emoji": "🇧🇷"
-        },
-        "away": {
-          "name": "挪威",
-          "name_en": "Norway",
-          "abbreviation": "NOR",
-          "id_team": "464",
-          "id_country": "NOR",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-          "score": 2,
-          "tactics": "4-1-2-3",
-          "country_code": "NOR",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-          "flag_emoji": "🇳🇴"
-        }
-      },
-      "venue": {
-        "name": "New York/New Jersey Stadium",
-        "city": "New Jersey",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021532"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760504"
-        }
-      },
-      "espn_event_id": "760504",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "巴西",
-          "team_en": "Brazil",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Carlo Ancelotti vows to start 'new cycle' after Brazil's World Cup exit",
-              "description": "Brazil coach Carlo Ancelotti said he's looking to oversee a \"new cycle\" with the team after they crashed out of the World Cup on Sunday in the round of 16.",
-              "published": "2026-07-06T02:22:27Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49281885/carlo-ancelotti-vows-start-new-cycle-brazil-world-cup-exit"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "挪威",
-          "team_en": "Norway",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021531",
-      "fifa_match_id": "400021531",
-      "match_name": "墨西哥 vs 英格兰",
-      "match_name_en": "Mexico vs England",
-      "kickoff_utc": "2026-07-06T01:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Round of 16",
-      "stage_name": "Round of 16",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 92,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 1,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "墨西哥",
-          "name_en": "Mexico",
-          "abbreviation": "MEX",
-          "id_team": "203",
-          "id_country": "MEX",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-          "score": 2,
-          "tactics": "4-1-2-3",
-          "country_code": "MEX",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
-          "flag_emoji": "🇲🇽"
-        },
-        "away": {
-          "name": "英格兰",
-          "name_en": "England",
-          "abbreviation": "ENG",
-          "id_team": "448",
-          "id_country": "ENG",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-          "score": 3,
-          "tactics": "4-2-3-1",
-          "country_code": "ENG",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-          "flag_emoji": ""
-        }
-      },
-      "venue": {
-        "name": "Mexico City Stadium",
-        "city": "Mexico City",
-        "country": "MEX"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021531"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760505"
-        }
-      },
-      "espn_event_id": "760505",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "墨西哥",
-          "team_en": "Mexico",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "英格兰",
-          "team_en": "England",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021529",
-      "fifa_match_id": "400021529",
-      "match_name": "葡萄牙 vs 西班牙",
-      "match_name_en": "Portugal vs Spain",
-      "kickoff_utc": "2026-07-06T19:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Round of 16",
-      "stage_name": "Round of 16",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 93,
-      "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
-      },
-      "teams": {
-        "home": {
-          "name": "葡萄牙",
-          "name_en": "Portugal",
-          "abbreviation": "POR",
-          "id_team": "482",
-          "id_country": "POR",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-          "score": null,
-          "tactics": null,
-          "country_code": "POR",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-          "flag_emoji": "🇵🇹"
-        },
-        "away": {
-          "name": "西班牙",
-          "name_en": "Spain",
-          "abbreviation": "ESP",
-          "id_team": "164",
-          "id_country": "ESP",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-          "score": null,
-          "tactics": null,
-          "country_code": "ESP",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-          "flag_emoji": "🇪🇸"
-        }
-      },
-      "venue": {
-        "name": "Dallas Stadium",
-        "city": "Dallas",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021529"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760506"
-        }
-      },
-      "espn_event_id": "760506",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": true,
-        "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+285",
-          "draw": "+265",
-          "away": "-110"
-        },
-        "implied_probability": {
-          "home_win": 25.97,
-          "draw": 27.4,
-          "away_win": 52.38
-        },
-        "normalized_probability": {
-          "home_win": 24.56,
-          "draw": 25.91,
-          "away_win": 49.53
-        },
-        "overround": 5.75,
-        "details": "ESP -110"
-      },
-      "injuries": {
-        "home": {
-          "team": "葡萄牙",
-          "team_en": "Portugal",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "西班牙",
-          "team_en": "Spain",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      }
-    },
-    {
-      "id": "400021534",
-      "fifa_match_id": "400021534",
-      "match_name": "美国 vs 比利时",
-      "match_name_en": "USA vs Belgium",
-      "kickoff_utc": "2026-07-07T00:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Round of 16",
-      "stage_name": "Round of 16",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 94,
-      "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
-      },
-      "teams": {
-        "home": {
-          "name": "美国",
-          "name_en": "United States",
-          "abbreviation": "USA",
-          "id_team": "660",
-          "id_country": "USA",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-          "score": null,
-          "tactics": null,
-          "country_code": "USA",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-          "flag_emoji": "🇺🇸"
-        },
-        "away": {
-          "name": "比利时",
-          "name_en": "Belgium",
-          "abbreviation": "BEL",
-          "id_team": "459",
-          "id_country": "BEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-          "score": null,
-          "tactics": null,
-          "country_code": "BEL",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-          "flag_emoji": "🇧🇪"
-        }
-      },
-      "venue": {
-        "name": "Seattle Stadium",
-        "city": "Seattle",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021534"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760507"
-        }
-      },
-      "espn_event_id": "760507",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": true,
-        "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+155",
-          "draw": "+240",
-          "away": "+175"
-        },
-        "implied_probability": {
-          "home_win": 39.22,
-          "draw": 29.41,
-          "away_win": 36.36
-        },
-        "normalized_probability": {
-          "home_win": 37.35,
-          "draw": 28.01,
-          "away_win": 34.63
-        },
-        "overround": 4.99,
-        "details": "USA +155"
-      },
-      "injuries": {
-        "home": {
-          "team": "美国",
-          "team_en": "United States",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Pochettino says U.S. 'punished enough' for Balogun red card",
-              "description": "United States manager Mauricio Pochettino praised FIFA's decision to lift the suspension on U.S. forward Folarin Balogun, saying the USMNT was \"punished enough\" by having to play shorthanded against Bosnia-Herzegovina for 35 minutes.",
-              "published": "2026-07-06T00:05:04Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49281013/pochettino-says-us-punished-enough-balogun-red-card"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Belgium furious over suspension of Balogun ban: It's April Fools'",
-              "description": "Belgium coach Rudi Garcia said he thought it was a joke when he first heard news that suspended United States striker Folarin Balogun was cleared to play in the Americans' round-of-16 match.",
-              "published": "2026-07-06T04:04:32Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49279471/belgium-usa-folarin-balogun-ban-suspended-fifa-world-cup-2026"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "比利时",
-          "team_en": "Belgium",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Nobody benefits from FIFA letting Balogun off the hook -- not even the USMNT",
-              "description": "The U.S. will be buzzing to have Folarin Balogun available vs. Belgium on Monday, but FIFA's U-turn on his suspension is a bad look for this World Cup",
-              "published": "2026-07-06T00:45:36Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49278521/nobody-benefits-fifa-letting-balogun-hook-not-even-usmnt"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Folarin Balogun channels Michael Jackson after red card suspended",
-              "description": "Balogun posted a clever message on social media after FIFA's disciplinary committee suspended his red card, making him available to play against Belgium.",
-              "published": "2026-07-05T21:50:32Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49278467/folarin-balogun-usmnt-red-card-suspension-fifa-2026-world-cup"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Belgium furious over suspension of Balogun ban: It's April Fools'",
-              "description": "Belgium coach Rudi Garcia said he thought it was a joke when he first heard news that suspended United States striker Folarin Balogun was cleared to play in the Americans' round-of-16 match.",
-              "published": "2026-07-06T04:04:32Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49279471/belgium-usa-folarin-balogun-ban-suspended-fifa-world-cup-2026"
+              "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
+              "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
+              "published": "2026-07-07T03:48:31Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
             }
           ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -1775,22 +647,38 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "-255",
-          "draw": "+360",
-          "away": "+750"
+          "home": "-285",
+          "draw": "+380",
+          "away": "+900"
         },
         "implied_probability": {
-          "home_win": 71.83,
-          "draw": 21.74,
-          "away_win": 11.76
+          "home_win": 74.03,
+          "draw": 20.83,
+          "away_win": 10.0
         },
         "normalized_probability": {
-          "home_win": 68.19,
-          "draw": 20.64,
-          "away_win": 11.17
+          "home_win": 70.6,
+          "draw": 19.87,
+          "away_win": 9.54
         },
-        "overround": 5.33,
-        "details": "ARG -255"
+        "overround": 4.86,
+        "details": "ARG -285"
+      },
+      "injuries": {
+        "home": {
+          "team": "阿根廷",
+          "team_en": "Argentina",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "埃及",
+          "team_en": "Egypt",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
       }
     },
     {
@@ -1872,22 +760,1026 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+240",
+          "home": "+245",
           "draw": "+210",
-          "away": "+130"
+          "away": "+125"
         },
         "implied_probability": {
-          "home_win": 29.41,
+          "home_win": 28.99,
           "draw": 32.26,
-          "away_win": 43.48
+          "away_win": 44.44
         },
         "normalized_probability": {
-          "home_win": 27.97,
-          "draw": 30.68,
-          "away_win": 41.35
+          "home_win": 27.43,
+          "draw": 30.52,
+          "away_win": 42.05
         },
-        "overround": 5.15,
-        "details": "COL +130"
+        "overround": 5.69,
+        "details": "COL +125"
+      },
+      "injuries": {
+        "home": {
+          "team": "瑞士",
+          "team_en": "Switzerland",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "哥伦比亚",
+          "team_en": "Colombia",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "400021529",
+      "fifa_match_id": "400021529",
+      "match_name": "葡萄牙 vs 西班牙",
+      "match_name_en": "Portugal vs Spain",
+      "kickoff_utc": "2026-07-06T19:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Round of 16",
+      "stage_name": "Round of 16",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 93,
+      "status": {
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
+      },
+      "teams": {
+        "home": {
+          "name": "葡萄牙",
+          "name_en": "Portugal",
+          "abbreviation": "POR",
+          "id_team": "482",
+          "id_country": "POR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+          "score": 0,
+          "tactics": "4-2-3-1",
+          "country_code": "POR",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+          "flag_emoji": "🇵🇹"
+        },
+        "away": {
+          "name": "西班牙",
+          "name_en": "Spain",
+          "abbreviation": "ESP",
+          "id_team": "164",
+          "id_country": "ESP",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+          "score": 1,
+          "tactics": "4-1-2-3",
+          "country_code": "ESP",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+          "flag_emoji": "🇪🇸"
+        }
+      },
+      "venue": {
+        "name": "Dallas Stadium",
+        "city": "Dallas",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021529"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760506"
+        }
+      },
+      "espn_event_id": "760506",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": false,
+        "source": "ESPN odds feed",
+        "reason": "moneyline odds unavailable"
+      },
+      "injuries": {
+        "home": {
+          "team": "葡萄牙",
+          "team_en": "Portugal",
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
+              "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
+              "published": "2026-07-06T21:31:50Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760506"
+            }
+          ],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "西班牙",
+          "team_en": "Spain",
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
+              "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
+              "published": "2026-07-06T21:31:50Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760506"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Giuliani: U.S. involvement in Balogun red reversal won't affect USMNT legacy",
+              "description": "Andrew Giuliani, the head of the White House task force on the World Cup, told ESPN on Monday that he has no concerns at all over FIFA's decision to reduce Folarin Balogun's suspension affecting the legacy or credibility of what the USMNT accomplishes.",
+              "published": "2026-07-06T18:43:51Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49288020/giuliani-us-involvement-balogun-red-reversal-not-affect-usmnt-legacy"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "England's Jordan Henderson out of World Cup with suspected broken arm - sources",
+              "description": "Jordan Henderson is expected to be ruled out for the rest of the World Cup after suffering a suspected broken bone in celebrating England's 3-2 win over Mexico, sources have told ESPN.",
+              "published": "2026-07-06T17:52:34Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49285549/england-jordan-henderson-world-cup-suspected-broken-arm-sources"
+            }
+          ],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021534",
+      "fifa_match_id": "400021534",
+      "match_name": "美国 vs 比利时",
+      "match_name_en": "USA vs Belgium",
+      "kickoff_utc": "2026-07-07T00:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Round of 16",
+      "stage_name": "Round of 16",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 94,
+      "status": {
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
+      },
+      "teams": {
+        "home": {
+          "name": "美国",
+          "name_en": "United States",
+          "abbreviation": "USA",
+          "id_team": "660",
+          "id_country": "USA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+          "score": 1,
+          "tactics": "3-5-2",
+          "country_code": "USA",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+          "flag_emoji": "🇺🇸"
+        },
+        "away": {
+          "name": "比利时",
+          "name_en": "Belgium",
+          "abbreviation": "BEL",
+          "id_team": "459",
+          "id_country": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+          "score": 4,
+          "tactics": "4-2-3-1",
+          "country_code": "BEL",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+          "flag_emoji": "🇧🇪"
+        }
+      },
+      "venue": {
+        "name": "Seattle Stadium",
+        "city": "Seattle",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021534"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760507"
+        }
+      },
+      "espn_event_id": "760507",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": false,
+        "source": "ESPN odds feed",
+        "reason": "moneyline odds unavailable"
+      },
+      "injuries": {
+        "home": {
+          "team": "美国",
+          "team_en": "United States",
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
+              "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
+              "published": "2026-07-07T03:43:49Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
+              "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
+              "published": "2026-07-07T03:20:43Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760507"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
+              "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
+              "published": "2026-07-07T03:48:31Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
+            }
+          ],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "比利时",
+          "team_en": "Belgium",
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
+              "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
+              "published": "2026-07-07T03:43:49Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
+              "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
+              "published": "2026-07-07T03:20:43Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760507"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
+              "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
+              "published": "2026-07-07T03:48:31Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
+            }
+          ],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021528",
+      "fifa_match_id": "400021528",
+      "match_name": "阿根廷 vs 埃及",
+      "match_name_en": "Argentina vs Egypt",
+      "kickoff_utc": "2026-07-07T16:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Round of 16",
+      "stage_name": "Round of 16",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 95,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "阿根廷",
+          "name_en": "Argentina",
+          "abbreviation": "ARG",
+          "id_team": "202",
+          "id_country": "ARG",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "ARG",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+          "flag_emoji": "🇦🇷"
+        },
+        "away": {
+          "name": "埃及",
+          "name_en": "Egypt",
+          "abbreviation": "EGY",
+          "id_team": "2620",
+          "id_country": "EGY",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "EGY",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+          "flag_emoji": "🇪🇬"
+        }
+      },
+      "venue": {
+        "name": "Atlanta Stadium",
+        "city": "Atlanta",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021528"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760509"
+        }
+      },
+      "espn_event_id": "760509",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "-285",
+          "draw": "+380",
+          "away": "+900"
+        },
+        "implied_probability": {
+          "home_win": 74.03,
+          "draw": 20.83,
+          "away_win": 10.0
+        },
+        "normalized_probability": {
+          "home_win": 70.6,
+          "draw": 19.87,
+          "away_win": 9.54
+        },
+        "overround": 4.86,
+        "details": "ARG -285"
+      },
+      "injuries": {
+        "home": {
+          "team": "阿根廷",
+          "team_en": "Argentina",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "埃及",
+          "team_en": "Egypt",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021535",
+      "fifa_match_id": "400021535",
+      "match_name": "瑞士 vs 哥伦比亚",
+      "match_name_en": "Switzerland vs Colombia",
+      "kickoff_utc": "2026-07-07T20:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Round of 16",
+      "stage_name": "Round of 16",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 96,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "瑞士",
+          "name_en": "Switzerland",
+          "abbreviation": "SUI",
+          "id_team": "475",
+          "id_country": "SUI",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "SUI",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+          "flag_emoji": "🇨🇭"
+        },
+        "away": {
+          "name": "哥伦比亚",
+          "name_en": "Colombia",
+          "abbreviation": "COL",
+          "id_team": "208",
+          "id_country": "COL",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "COL",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+          "flag_emoji": "🇨🇴"
+        }
+      },
+      "venue": {
+        "name": "BC Place Vancouver",
+        "city": "Vancouver",
+        "country": "CAN"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021535"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760508"
+        }
+      },
+      "espn_event_id": "760508",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+245",
+          "draw": "+210",
+          "away": "+125"
+        },
+        "implied_probability": {
+          "home_win": 28.99,
+          "draw": 32.26,
+          "away_win": 44.44
+        },
+        "normalized_probability": {
+          "home_win": 27.43,
+          "draw": 30.52,
+          "away_win": 42.05
+        },
+        "overround": 5.69,
+        "details": "COL +125"
+      },
+      "injuries": {
+        "home": {
+          "team": "瑞士",
+          "team_en": "Switzerland",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "哥伦比亚",
+          "team_en": "Colombia",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    }
+  ],
+  "structure_matches": [
+    {
+      "id": "400021529",
+      "fifa_match_id": "400021529",
+      "match_name": "葡萄牙 vs 西班牙",
+      "match_name_en": "Portugal vs Spain",
+      "kickoff_utc": "2026-07-06T19:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Round of 16",
+      "stage_name": "Round of 16",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 93,
+      "status": {
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
+      },
+      "teams": {
+        "home": {
+          "name": "葡萄牙",
+          "name_en": "Portugal",
+          "abbreviation": "POR",
+          "id_team": "482",
+          "id_country": "POR",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+          "score": 0,
+          "tactics": "4-2-3-1",
+          "country_code": "POR",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
+          "flag_emoji": "🇵🇹"
+        },
+        "away": {
+          "name": "西班牙",
+          "name_en": "Spain",
+          "abbreviation": "ESP",
+          "id_team": "164",
+          "id_country": "ESP",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+          "score": 1,
+          "tactics": "4-1-2-3",
+          "country_code": "ESP",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+          "flag_emoji": "🇪🇸"
+        }
+      },
+      "venue": {
+        "name": "Dallas Stadium",
+        "city": "Dallas",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021529"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760506"
+        }
+      },
+      "espn_event_id": "760506",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": false,
+        "source": "ESPN odds feed",
+        "reason": "moneyline odds unavailable"
+      },
+      "injuries": {
+        "home": {
+          "team": "葡萄牙",
+          "team_en": "Portugal",
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
+              "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
+              "published": "2026-07-06T21:31:50Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760506"
+            }
+          ],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "西班牙",
+          "team_en": "Spain",
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
+              "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
+              "published": "2026-07-06T21:31:50Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760506"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Giuliani: U.S. involvement in Balogun red reversal won't affect USMNT legacy",
+              "description": "Andrew Giuliani, the head of the White House task force on the World Cup, told ESPN on Monday that he has no concerns at all over FIFA's decision to reduce Folarin Balogun's suspension affecting the legacy or credibility of what the USMNT accomplishes.",
+              "published": "2026-07-06T18:43:51Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49288020/giuliani-us-involvement-balogun-red-reversal-not-affect-usmnt-legacy"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "England's Jordan Henderson out of World Cup with suspected broken arm - sources",
+              "description": "Jordan Henderson is expected to be ruled out for the rest of the World Cup after suffering a suspected broken bone in celebrating England's 3-2 win over Mexico, sources have told ESPN.",
+              "published": "2026-07-06T17:52:34Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49285549/england-jordan-henderson-world-cup-suspected-broken-arm-sources"
+            }
+          ],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021534",
+      "fifa_match_id": "400021534",
+      "match_name": "美国 vs 比利时",
+      "match_name_en": "USA vs Belgium",
+      "kickoff_utc": "2026-07-07T00:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Round of 16",
+      "stage_name": "Round of 16",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 94,
+      "status": {
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
+      },
+      "teams": {
+        "home": {
+          "name": "美国",
+          "name_en": "United States",
+          "abbreviation": "USA",
+          "id_team": "660",
+          "id_country": "USA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+          "score": 1,
+          "tactics": "3-5-2",
+          "country_code": "USA",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
+          "flag_emoji": "🇺🇸"
+        },
+        "away": {
+          "name": "比利时",
+          "name_en": "Belgium",
+          "abbreviation": "BEL",
+          "id_team": "459",
+          "id_country": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+          "score": 4,
+          "tactics": "4-2-3-1",
+          "country_code": "BEL",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+          "flag_emoji": "🇧🇪"
+        }
+      },
+      "venue": {
+        "name": "Seattle Stadium",
+        "city": "Seattle",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021534"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760507"
+        }
+      },
+      "espn_event_id": "760507",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": false,
+        "source": "ESPN odds feed",
+        "reason": "moneyline odds unavailable"
+      },
+      "injuries": {
+        "home": {
+          "team": "美国",
+          "team_en": "United States",
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
+              "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
+              "published": "2026-07-07T03:43:49Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
+              "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
+              "published": "2026-07-07T03:20:43Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760507"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
+              "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
+              "published": "2026-07-07T03:48:31Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
+            }
+          ],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "比利时",
+          "team_en": "Belgium",
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
+              "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
+              "published": "2026-07-07T03:43:49Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
+              "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
+              "published": "2026-07-07T03:20:43Z",
+              "url": "http://www.espn.com/soccer/report/_/gameId/760507"
+            },
+            {
+              "source": "ESPN World Cup news",
+              "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
+              "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
+              "published": "2026-07-07T03:48:31Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
+            }
+          ],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021528",
+      "fifa_match_id": "400021528",
+      "match_name": "阿根廷 vs 埃及",
+      "match_name_en": "Argentina vs Egypt",
+      "kickoff_utc": "2026-07-07T16:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Round of 16",
+      "stage_name": "Round of 16",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 95,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "阿根廷",
+          "name_en": "Argentina",
+          "abbreviation": "ARG",
+          "id_team": "202",
+          "id_country": "ARG",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "ARG",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+          "flag_emoji": "🇦🇷"
+        },
+        "away": {
+          "name": "埃及",
+          "name_en": "Egypt",
+          "abbreviation": "EGY",
+          "id_team": "2620",
+          "id_country": "EGY",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "EGY",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
+          "flag_emoji": "🇪🇬"
+        }
+      },
+      "venue": {
+        "name": "Atlanta Stadium",
+        "city": "Atlanta",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021528"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760509"
+        }
+      },
+      "espn_event_id": "760509",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "-285",
+          "draw": "+380",
+          "away": "+900"
+        },
+        "implied_probability": {
+          "home_win": 74.03,
+          "draw": 20.83,
+          "away_win": 10.0
+        },
+        "normalized_probability": {
+          "home_win": 70.6,
+          "draw": 19.87,
+          "away_win": 9.54
+        },
+        "overround": 4.86,
+        "details": "ARG -285"
+      },
+      "injuries": {
+        "home": {
+          "team": "阿根廷",
+          "team_en": "Argentina",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "埃及",
+          "team_en": "Egypt",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021535",
+      "fifa_match_id": "400021535",
+      "match_name": "瑞士 vs 哥伦比亚",
+      "match_name_en": "Switzerland vs Colombia",
+      "kickoff_utc": "2026-07-07T20:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Round of 16",
+      "stage_name": "Round of 16",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 96,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "瑞士",
+          "name_en": "Switzerland",
+          "abbreviation": "SUI",
+          "id_team": "475",
+          "id_country": "SUI",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "SUI",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+          "flag_emoji": "🇨🇭"
+        },
+        "away": {
+          "name": "哥伦比亚",
+          "name_en": "Colombia",
+          "abbreviation": "COL",
+          "id_team": "208",
+          "id_country": "COL",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "COL",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
+          "flag_emoji": "🇨🇴"
+        }
+      },
+      "venue": {
+        "name": "BC Place Vancouver",
+        "city": "Vancouver",
+        "country": "CAN"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021535"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760508"
+        }
+      },
+      "espn_event_id": "760508",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+245",
+          "draw": "+210",
+          "away": "+125"
+        },
+        "implied_probability": {
+          "home_win": 28.99,
+          "draw": 32.26,
+          "away_win": 44.44
+        },
+        "normalized_probability": {
+          "home_win": 27.43,
+          "draw": 30.52,
+          "away_win": 42.05
+        },
+        "overround": 5.69,
+        "details": "COL +125"
+      },
+      "injuries": {
+        "home": {
+          "team": "瑞士",
+          "team_en": "Switzerland",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "哥伦比亚",
+          "team_en": "Colombia",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
       }
     },
     {
@@ -1988,6 +1880,103 @@
       }
     },
     {
+      "id": "400021538",
+      "fifa_match_id": "400021538",
+      "match_name": "西班牙 vs 比利时",
+      "match_name_en": "Spain vs Belgium",
+      "kickoff_utc": "2026-07-10T19:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Quarter-final",
+      "stage_name": "Quarter-final",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 98,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "西班牙",
+          "name_en": "Spain",
+          "abbreviation": "ESP",
+          "id_team": "164",
+          "id_country": "ESP",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "ESP",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+          "flag_emoji": "🇪🇸"
+        },
+        "away": {
+          "name": "比利时",
+          "name_en": "Belgium",
+          "abbreviation": "BEL",
+          "id_team": "459",
+          "id_country": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "BEL",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+          "flag_emoji": "🇧🇪"
+        }
+      },
+      "venue": {
+        "name": "Los Angeles Stadium",
+        "city": "Los Angeles",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021538"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760511"
+        }
+      },
+      "espn_event_id": "760511",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "-160",
+          "draw": "+290",
+          "away": "+450"
+        },
+        "implied_probability": {
+          "home_win": 61.54,
+          "draw": 25.64,
+          "away_win": 18.18
+        },
+        "normalized_probability": {
+          "home_win": 58.41,
+          "draw": 24.34,
+          "away_win": 17.26
+        },
+        "overround": 5.36,
+        "details": "ESP -160"
+      }
+    },
+    {
       "id": "400021539",
       "fifa_match_id": "400021539",
       "match_name": "挪威 vs 英格兰",
@@ -2066,28 +2055,28 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+280",
-          "draw": "+250",
-          "away": "-105"
+          "home": "+295",
+          "draw": "+270",
+          "away": "-115"
         },
         "implied_probability": {
-          "home_win": 26.32,
-          "draw": 28.57,
-          "away_win": 51.22
+          "home_win": 25.32,
+          "draw": 27.03,
+          "away_win": 53.49
         },
         "normalized_probability": {
-          "home_win": 24.8,
-          "draw": 26.93,
-          "away_win": 48.27
+          "home_win": 23.92,
+          "draw": 25.54,
+          "away_win": 50.54
         },
-        "overround": 6.11,
-        "details": "ENG -105"
+        "overround": 5.83,
+        "details": "ENG -115"
       }
     }
   ],
   "daily_log": [
     {
-      "time": "2026-07-06T04:36:16Z",
+      "time": "2026-07-07T04:14:18Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     }
