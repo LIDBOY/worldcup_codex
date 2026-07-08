@@ -1,567 +1,11 @@
 {
   "schema_version": 3,
   "stage": "analysis",
-  "generated_at": "2026-07-07T04:31:33Z",
+  "generated_at": "2026-07-08T03:52:44Z",
   "analysis": {
-    "generated_at": "2026-07-07T04:14:18Z",
-    "summary": "7月6日至7日进行4场1/8决赛：葡萄牙与西班牙伊比利亚德比难分高下，比利时客场挑战美国实力占优，阿根廷对阵埃及优势明显，瑞士与哥伦比亚势均力敌。",
+    "generated_at": "2026-07-08T03:39:55Z",
+    "summary": "2026世界杯1/8决赛分析：阿根廷对阵埃及实力占优，预计控制比赛节奏，埃及需依赖防守反击；瑞士与哥伦比亚势均力敌，平局可能性较高，比赛可能陷入中场缠斗。",
     "matches": [
-      {
-        "id": "400021529",
-        "fifa_match_id": "400021529",
-        "match_name": "葡萄牙 vs 西班牙",
-        "match_name_en": "Portugal vs Spain",
-        "kickoff_utc": "2026-07-06T19:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Round of 16",
-        "stage_name": "Round of 16",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 93,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 1
-        },
-        "teams": {
-          "home": {
-            "name": "葡萄牙",
-            "name_en": "Portugal",
-            "abbreviation": "POR",
-            "id_team": "482",
-            "id_country": "POR",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-            "score": 0,
-            "tactics": "4-2-3-1",
-            "country_code": "POR",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-            "flag_emoji": "🇵🇹"
-          },
-          "away": {
-            "name": "西班牙",
-            "name_en": "Spain",
-            "abbreviation": "ESP",
-            "id_team": "164",
-            "id_country": "ESP",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "score": 1,
-            "tactics": "4-1-2-3",
-            "country_code": "ESP",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "flag_emoji": "🇪🇸"
-          }
-        },
-        "venue": {
-          "name": "Dallas Stadium",
-          "city": "Dallas",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021529"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760506"
-          }
-        },
-        "espn_event_id": "760506",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "葡萄牙",
-            "team_en": "Portugal",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
-                "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
-                "published": "2026-07-06T21:31:50Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760506"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "西班牙",
-            "team_en": "Spain",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
-                "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
-                "published": "2026-07-06T21:31:50Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760506"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Giuliani: U.S. involvement in Balogun red reversal won't affect USMNT legacy",
-                "description": "Andrew Giuliani, the head of the White House task force on the World Cup, told ESPN on Monday that he has no concerns at all over FIFA's decision to reduce Folarin Balogun's suspension affecting the legacy or credibility of what the USMNT accomplishes.",
-                "published": "2026-07-06T18:43:51Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49288020/giuliani-us-involvement-balogun-red-reversal-not-affect-usmnt-legacy"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "England's Jordan Henderson out of World Cup with suspected broken arm - sources",
-                "description": "Jordan Henderson is expected to be ruled out for the rest of the World Cup after suffering a suspected broken bone in celebrating England's 3-2 win over Mexico, sources have told ESPN.",
-                "published": "2026-07-06T17:52:34Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49285549/england-jordan-henderson-world-cup-suspected-broken-arm-sources"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        },
-        "match_id": "400021529",
-        "win_draw_loss": {
-          "home_win": 30,
-          "draw": 40,
-          "away_win": 30
-        },
-        "xg_prediction": {
-          "home": 1.1,
-          "away": 1.2
-        },
-        "predicted_score": {
-          "home": 1,
-          "away": 1
-        },
-        "score_options": [
-          {
-            "score": "1-1",
-            "rank": 1,
-            "reason": "两队实力接近，淘汰赛可能谨慎，平局概率高"
-          },
-          {
-            "score": "0-1",
-            "rank": 2,
-            "reason": "西班牙控球优势可能限制葡萄牙机会，小胜可期"
-          },
-          {
-            "score": "1-0",
-            "rank": 3,
-            "reason": "葡萄牙依赖C罗反击，若先入球可守胜"
-          }
-        ],
-        "method_factors": {
-          "market_signal": "赔率不可用",
-          "fifa_rank_prior": "葡萄牙与西班牙均为世界前十强队，长期实力均衡",
-          "recent_form": "小组赛表现未知，假定均顺利出线",
-          "group_context": "1/8决赛，双方谨慎避免失误",
-          "injury_rotation": "葡萄牙及西班牙均有疑似伤病，详情不明，可能影响有限",
-          "weather_venue": "达拉斯场馆，天气状况未知",
-          "tactical_key": "葡萄牙4-2-3-1对西班牙4-1-2-3，中场控制与边路突破成胜负手",
-          "uncertainty": "核心球员状态及战术执行不确定性较高"
-        },
-        "matchup_graph": {
-          "nodes": [
-            {
-              "id": "home_attack",
-              "label": "主队进攻",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 75,
-              "note": "C罗领衔的锋线经验丰富，但团队配合待检验"
-            },
-            {
-              "id": "home_midfield",
-              "label": "主队中场/转换",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 70,
-              "note": "技术型中场，创造力依赖布鲁诺·费尔南德斯"
-            },
-            {
-              "id": "home_defense",
-              "label": "主队防守",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 70,
-              "note": "佩佩老将坐镇，但整体速度偏慢"
-            },
-            {
-              "id": "away_attack",
-              "label": "客队进攻",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 80,
-              "note": "年轻锋线冲击力强，边路突破犀利"
-            },
-            {
-              "id": "away_midfield",
-              "label": "客队中场/转换",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 75,
-              "note": "佩德里、加维控制节奏，短传渗透"
-            },
-            {
-              "id": "away_defense",
-              "label": "客队防守",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 75,
-              "note": "拉波尔特领衔，高位防线可能暴露空档"
-            }
-          ],
-          "edges": [
-            {
-              "from": "home_attack",
-              "to": "away_defense",
-              "label": "葡萄牙锋线对西班牙防线",
-              "impact": "high",
-              "direction": "home_to_away",
-              "note": "C罗的抢点能力考验西班牙中卫组合"
-            },
-            {
-              "from": "away_attack",
-              "to": "home_defense",
-              "label": "西班牙边锋对葡萄牙边后卫",
-              "impact": "high",
-              "direction": "away_to_home",
-              "note": "尼科·威廉姆斯的速度可能击穿葡萄牙右路"
-            },
-            {
-              "from": "home_midfield",
-              "to": "away_midfield",
-              "label": "中场控制权争夺",
-              "impact": "medium",
-              "direction": "balanced",
-              "note": "双方均擅传控，失误少的一方将主导比赛"
-            }
-          ],
-          "summary": "伊比利亚德比势均力敌，西班牙进攻端稍占优，葡萄牙需依靠反击效率",
-          "advantage_side": "balanced",
-          "key_battle": "西班牙边锋 vs 葡萄牙边后卫",
-          "risk_trigger": "若葡萄牙过早丢球，可能被迫压上暴露更多空档"
-        },
-        "tactical_matchup": "葡萄牙4-2-3-1侧重稳守反击，西班牙4-1-2-3主控球与高位压迫，比赛可能在中场胶着。",
-        "injury_adjustment": {
-          "home": "疑似伤病，具体球员未公布，可能影响替补深度",
-          "away": "疑似伤病，情况不明，首发阵容或存变数",
-          "summary": "双方均有不确定性，但核心框架预计保持"
-        },
-        "risk_analysis": "淘汰赛性质使双方趋于保守，平局可能性高，若进入加时变数增大。",
-        "upset_probability": 15,
-        "odds_comparison": {
-          "market_implied": {
-            "home_win": 0,
-            "draw": 0,
-            "away_win": 0
-          },
-          "model_edge": {
-            "home_win": 30,
-            "draw": 40,
-            "away_win": 30
-          },
-          "deviation_analysis": "市场赔率不可用，模型基于先验实力给出均衡预测"
-        },
-        "confidence": "medium"
-      },
-      {
-        "id": "400021534",
-        "fifa_match_id": "400021534",
-        "match_name": "美国 vs 比利时",
-        "match_name_en": "USA vs Belgium",
-        "kickoff_utc": "2026-07-07T00:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Round of 16",
-        "stage_name": "Round of 16",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 94,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 1
-        },
-        "teams": {
-          "home": {
-            "name": "美国",
-            "name_en": "United States",
-            "abbreviation": "USA",
-            "id_team": "660",
-            "id_country": "USA",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-            "score": 1,
-            "tactics": "3-5-2",
-            "country_code": "USA",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-            "flag_emoji": "🇺🇸"
-          },
-          "away": {
-            "name": "比利时",
-            "name_en": "Belgium",
-            "abbreviation": "BEL",
-            "id_team": "459",
-            "id_country": "BEL",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "score": 4,
-            "tactics": "4-2-3-1",
-            "country_code": "BEL",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "flag_emoji": "🇧🇪"
-          }
-        },
-        "venue": {
-          "name": "Seattle Stadium",
-          "city": "Seattle",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021534"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760507"
-          }
-        },
-        "espn_event_id": "760507",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "美国",
-            "team_en": "United States",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
-                "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
-                "published": "2026-07-07T03:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
-                "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
-                "published": "2026-07-07T03:20:43Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760507"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
-                "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
-                "published": "2026-07-07T03:48:31Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "比利时",
-            "team_en": "Belgium",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
-                "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
-                "published": "2026-07-07T03:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
-                "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
-                "published": "2026-07-07T03:20:43Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760507"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
-                "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
-                "published": "2026-07-07T03:48:31Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        },
-        "match_id": "400021534",
-        "win_draw_loss": {
-          "home_win": 25,
-          "draw": 30,
-          "away_win": 45
-        },
-        "xg_prediction": {
-          "home": 0.9,
-          "away": 1.5
-        },
-        "predicted_score": {
-          "home": 1,
-          "away": 2
-        },
-        "score_options": [
-          {
-            "score": "1-2",
-            "rank": 1,
-            "reason": "比利时整体实力占优，美国主场或有进球但难阻失利"
-          },
-          {
-            "score": "0-1",
-            "rank": 2,
-            "reason": "美国防守稳固，比利时需苦战小胜"
-          },
-          {
-            "score": "1-1",
-            "rank": 3,
-            "reason": "美国利用主场球迷气势逼平，拖入加时"
-          }
-        ],
-        "method_factors": {
-          "market_signal": "赔率不可用",
-          "fifa_rank_prior": "比利时长期位列前十，美国中游偏上，实力差距明显",
-          "recent_form": "小组赛表现未知，假定比利时状态更佳",
-          "group_context": "淘汰赛压力下，比利时经验更丰富",
-          "injury_rotation": "美国有疑似伤病，包括普利希奇疑带伤，比利时亦有不明伤病，影响待评估",
-          "weather_venue": "西雅图场馆，天气未知",
-          "tactical_key": "美国3-5-2对4-2-3-1，三后卫体系考验比利时渗透能力",
-          "uncertainty": "美国核心球员状态成疑，不确定性较高"
-        },
-        "matchup_graph": {
-          "nodes": [
-            {
-              "id": "home_attack",
-              "label": "主队进攻",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 70,
-              "note": "巴洛贡、普利希奇领衔，速度型攻击线"
-            },
-            {
-              "id": "home_midfield",
-              "label": "主队中场/转换",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 65,
-              "note": "麦肯尼、亚当斯提供硬度，创造力不足"
-            },
-            {
-              "id": "home_defense",
-              "label": "主队防守",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 60,
-              "note": "三后卫体系默契一般，转身速度是隐患"
-            },
-            {
-              "id": "away_attack",
-              "label": "客队进攻",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 85,
-              "note": "德凯特拉雷、多库组合兼具技术与速度"
-            },
-            {
-              "id": "away_midfield",
-              "label": "客队中场/转换",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 75,
-              "note": "蒂勒芒斯调度，奥纳纳拦截，控制力强"
-            },
-            {
-              "id": "away_defense",
-              "label": "客队防守",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 70,
-              "note": "费斯、维尔通亨经验丰富，但整体速度偏慢"
-            }
-          ],
-          "edges": [
-            {
-              "from": "home_attack",
-              "to": "away_defense",
-              "label": "美国速度冲击比利时防线",
-              "impact": "medium",
-              "direction": "home_to_away",
-              "note": "美国锋线速度可能制造威胁，但比利时防线站位稳健"
-            },
-            {
-              "from": "away_attack",
-              "to": "home_defense",
-              "label": "比利时技术流考验美国三后卫",
-              "impact": "high",
-              "direction": "away_to_home",
-              "note": "多库与德凯特拉雷的个人能力可能轻松撕破防线"
-            },
-            {
-              "from": "home_midfield",
-              "to": "away_midfield",
-              "label": "中场对抗",
-              "impact": "low",
-              "direction": "balanced",
-              "note": "比利时中场技术优势明显，美国需依赖拼抢"
-            }
-          ],
-          "summary": "比利时整体实力占优，尤其是进攻端，美国若爆冷需要超常发挥",
-          "advantage_side": "away",
-          "key_battle": "比利时边路攻击群 vs 美国三后卫",
-          "risk_trigger": "美国若先失球，可能被迫压上，给比利时更多反击空间"
-        },
-        "tactical_matchup": "美国3-5-2注重边翼卫助攻，比利时4-2-3-1擅长肋部渗透，比赛可能成为攻防演练。",
-        "injury_adjustment": {
-          "home": "普利希奇疑似脚踝伤，若缺阵或影响进攻核心",
-          "away": "具体伤情不明，多数主力应可出战",
-          "summary": "伤病对美国影响可能更大，攻击力或打折扣"
-        },
-        "risk_analysis": "美国虽有主场之利，但实力差距和关键球员伤病使爆冷难度极大。",
-        "upset_probability": 20,
-        "odds_comparison": {
-          "market_implied": {
-            "home_win": 0,
-            "draw": 0,
-            "away_win": 0
-          },
-          "model_edge": {
-            "home_win": 25,
-            "draw": 30,
-            "away_win": 45
-          },
-          "deviation_analysis": "市场赔率不可用，模型看好比利时相对优势"
-        },
-        "confidence": "medium"
-      },
       {
         "id": "400021528",
         "fifa_match_id": "400021528",
@@ -577,9 +21,9 @@
         "group": "",
         "match_number": 95,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -589,8 +33,8 @@
             "id_team": "202",
             "id_country": "ARG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": null,
-            "tactics": null,
+            "score": 3,
+            "tactics": "4-1-3-2",
             "country_code": "ARG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
             "flag_emoji": "🇦🇷"
@@ -602,8 +46,8 @@
             "id_team": "2620",
             "id_country": "EGY",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
-            "score": null,
-            "tactics": null,
+            "score": 2,
+            "tactics": "4-2-3-1",
             "country_code": "EGY",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
             "flag_emoji": "🇪🇬"
@@ -637,26 +81,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-285",
-            "draw": "+380",
-            "away": "+900"
-          },
-          "implied_probability": {
-            "home_win": 74.03,
-            "draw": 20.83,
-            "away_win": 10.0
-          },
-          "normalized_probability": {
-            "home_win": 70.6,
-            "draw": 19.87,
-            "away_win": 9.54
-          },
-          "overround": 4.86,
-          "details": "ARG -285"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -676,13 +103,13 @@
         },
         "match_id": "400021528",
         "win_draw_loss": {
-          "home_win": 65,
+          "home_win": 60,
           "draw": 25,
-          "away_win": 10
+          "away_win": 15
         },
         "xg_prediction": {
-          "home": 2.1,
-          "away": 0.6
+          "home": 1.8,
+          "away": 0.5
         },
         "predicted_score": {
           "home": 2,
@@ -692,28 +119,28 @@
           {
             "score": "2-0",
             "rank": 1,
-            "reason": "阿根廷实力碾压，埃及难有还手之力"
+            "reason": "阿根廷技术优势明显，埃及防守顽强但难以限制全程。"
           },
           {
             "score": "1-0",
             "rank": 2,
-            "reason": "阿根廷围攻未果，埃及顽强抵抗至小负"
+            "reason": "埃及密集防守可能让阿根廷陷入苦战，但仍难保平。"
           },
           {
-            "score": "3-0",
+            "score": "2-1",
             "rank": 3,
-            "reason": "阿根廷锋线爆发，早定胜局"
+            "reason": "埃及反击得手，但阿根廷整体实力确保胜利。"
           }
         ],
         "method_factors": {
-          "market_signal": "DraftKings赔率阿根廷-285，主胜概率超70%",
-          "fifa_rank_prior": "阿根廷现世界排名前五，埃及三十名开外，实力差距显著",
-          "recent_form": "小组赛表现未知，但阿根廷状态通常稳定，埃及晋级已属突破",
-          "group_context": "淘汰赛阿根廷不容有失，埃及无压力放手一搏",
-          "injury_rotation": "阿根廷暂无伤病报告，阵容齐整；埃及亦无重大伤情",
-          "weather_venue": "亚特兰大场馆，天气未知",
-          "tactical_key": "阿根廷控球围攻，埃及密集防守寻求反击",
-          "uncertainty": "淘汰赛存在偶然性，但阿根廷过冷风险低"
+          "market_signal": "市场赔率不可用，根据历史实力评估。",
+          "fifa_rank_prior": "FIFA排名未提供，阿根廷长期为世界顶级强队，埃及为非洲中上游。",
+          "recent_form": "近期状态未知，假设阿根廷状态良好，埃及韧性足。",
+          "group_context": "1/8决赛，阿根廷小组头名出线，埃及小组第二晋级。",
+          "injury_rotation": "伤病信息未知，假设阵容齐整。",
+          "weather_venue": "亚特兰大球场，天气未知。",
+          "tactical_key": "阿根廷4-1-3-2侧重中路渗透，埃及4-2-3-1防守反击，中场控制定胜负。",
+          "uncertainty": "缺乏官方赔率和伤病信息，不确定性高。"
         },
         "matchup_graph": {
           "nodes": [
@@ -722,40 +149,40 @@
               "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 90,
-              "note": "梅西、劳塔罗、阿尔瓦雷斯组成豪华攻击群"
+              "weight": 70,
+              "note": "拥有梅西等顶级攻击手，创造机会能力强。"
             },
             {
               "id": "home_midfield",
               "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 85,
-              "note": "恩佐、麦卡利斯特控球与创造力俱佳"
+              "weight": 65,
+              "note": "控球和传递能力出色，但防守硬度一般。"
             },
             {
               "id": "home_defense",
               "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 75,
-              "note": "奥塔门迪领衔，经验丰富但偶尔走神"
+              "weight": 60,
+              "note": "防线经验丰富，但速度偏慢可能被反击利用。"
             },
             {
               "id": "away_attack",
               "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 60,
-              "note": "萨拉赫单核驱动，队友支持有限"
+              "weight": 55,
+              "note": "依赖萨拉赫的个人能力，整体配合有限。"
             },
             {
               "id": "away_midfield",
               "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 55,
-              "note": "防守为主，向前传递能力弱"
+              "weight": 50,
+              "note": "防守型中场为主，组织能力较弱。"
             },
             {
               "id": "away_defense",
@@ -763,62 +190,62 @@
               "type": "team_phase",
               "side": "away",
               "weight": 65,
-              "note": "门将希纳维是关键，防线将承受巨大压力"
+              "note": "纪律性强，擅于密集防守和定位球防守。"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "阿根廷围攻埃及禁区",
+              "label": "阿根廷渗透 vs 埃及密集防守",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "阿根廷多点开花，埃及防线难以招架"
+              "note": "阿根廷需破解铁桶阵，埃及防守是比赛胜负手。"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "埃及反击偷袭",
-              "impact": "low",
+              "label": "埃及反击 vs 阿根廷防线空当",
+              "impact": "medium",
               "direction": "away_to_home",
-              "note": "仅靠萨拉赫个人能力，可能制造零星威胁"
+              "note": "萨拉赫的速度可能制造威胁。"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "完全中场控制",
-              "impact": "medium",
+              "label": "中场控制权争夺",
+              "impact": "low",
               "direction": "balanced",
-              "note": "阿根廷将主导球权，埃及中场退守"
+              "note": "阿根廷主导控球，埃及不易抢夺。"
             }
           ],
-          "summary": "阿根廷占据绝对优势，正常发挥必取三分",
+          "summary": "阿根廷掌控球权并持续施压，埃及退守半场寻求快速反击机会。",
           "advantage_side": "home",
-          "key_battle": "埃及防线能否顶住阿根廷立体进攻",
-          "risk_trigger": "阿根廷久攻不下可能急躁，反被埃及偷袭"
+          "key_battle": "阿根廷前腰 vs 埃及后腰",
+          "risk_trigger": "阿根廷久攻不下，埃及反击得手。"
         },
-        "tactical_matchup": "阿根廷4-3-3全面控场，埃及5-4-1收缩防守，比赛可能演变为半场攻防。",
+        "tactical_matchup": "阿根廷4-1-3-2攻击阵型对埃及4-2-3-1防守阵型，中场人数优势将转化为控球优势，埃及必须依靠高位逼抢和快速转换。",
         "injury_adjustment": {
-          "home": "全员健康，无伤病困扰",
-          "away": "无重大伤病，可全主力出战",
-          "summary": "双方阵容齐整，阿根廷优势不受影响"
+          "home": "伤病未知，不调整。",
+          "away": "伤病未知，不调整。",
+          "summary": "无调整。"
         },
-        "risk_analysis": "爆冷概率极低，但淘汰赛性质使埃及时有偶然性，需防久攻不下。",
-        "upset_probability": 10,
+        "risk_analysis": "阿根廷主导比赛但埃及反击有威胁，若阿根廷轻敌或防守失误可能被拖入加时。",
+        "upset_probability": 15,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 70.6,
-            "draw": 19.87,
-            "away_win": 9.54
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
           "model_edge": {
-            "home_win": 65,
+            "home_win": 60,
             "draw": 25,
-            "away_win": 10
+            "away_win": 15
           },
-          "deviation_analysis": "模型主胜概率稍低于市场，平局和客胜略高，体现淘汰赛谨慎因素"
+          "deviation_analysis": "市场赔率缺失，无法对比。"
         },
-        "confidence": "high"
+        "confidence": "medium"
       },
       {
         "id": "400021535",
@@ -835,9 +262,9 @@
         "group": "",
         "match_number": 96,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 2
         },
         "teams": {
           "home": {
@@ -847,8 +274,8 @@
             "id_team": "475",
             "id_country": "SUI",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "score": null,
-            "tactics": null,
+            "score": 0,
+            "tactics": "4-1-2-3",
             "country_code": "SUI",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
             "flag_emoji": "🇨🇭"
@@ -860,8 +287,8 @@
             "id_team": "208",
             "id_country": "COL",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
-            "score": null,
-            "tactics": null,
+            "score": 0,
+            "tactics": "4-1-2-3",
             "country_code": "COL",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
             "flag_emoji": "🇨🇴"
@@ -895,26 +322,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+245",
-            "draw": "+210",
-            "away": "+125"
-          },
-          "implied_probability": {
-            "home_win": 28.99,
-            "draw": 32.26,
-            "away_win": 44.44
-          },
-          "normalized_probability": {
-            "home_win": 27.43,
-            "draw": 30.52,
-            "away_win": 42.05
-          },
-          "overround": 5.69,
-          "details": "COL +125"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -934,13 +344,13 @@
         },
         "match_id": "400021535",
         "win_draw_loss": {
-          "home_win": 25,
+          "home_win": 35,
           "draw": 35,
-          "away_win": 40
+          "away_win": 30
         },
         "xg_prediction": {
-          "home": 0.8,
-          "away": 1.0
+          "home": 1.0,
+          "away": 0.9
         },
         "predicted_score": {
           "home": 1,
@@ -950,28 +360,28 @@
           {
             "score": "1-1",
             "rank": 1,
-            "reason": "瑞士防守稳固，哥伦比亚攻击线锐利，各取所需"
-          },
-          {
-            "score": "0-1",
-            "rank": 2,
-            "reason": "哥伦比亚整体实力占优，或一球小胜"
+            "reason": "两队实力接近，防守稳固，各进一球平局合理。"
           },
           {
             "score": "0-0",
+            "rank": 2,
+            "reason": "强强对话可能陷入僵局，进球不易。"
+          },
+          {
+            "score": "1-0",
             "rank": 3,
-            "reason": "双方防守至上，闷平进入加时"
+            "reason": "瑞士利用定位球或主场优势小胜。"
           }
         ],
         "method_factors": {
-          "market_signal": "DraftKings赔率哥伦比亚+125，客胜概率42%",
-          "fifa_rank_prior": "瑞士长期稳定前20，哥伦比亚略低但技术出色，差距不大",
-          "recent_form": "两队小组赛表现未知，均以韧性著称",
-          "group_context": "淘汰赛遭遇战，策略性强，进球不易",
-          "injury_rotation": "两队暂无伤病报告，可全员出战",
-          "weather_venue": "温哥华BC Place，室内场地条件良好",
-          "tactical_key": "瑞士高位逼抢对哥伦比亚传控，转换效率决胜",
-          "uncertainty": "进攻端效率依赖明星球员发挥，不确定性中等"
+          "market_signal": "市场赔率不可用，根据历史实力评估。",
+          "fifa_rank_prior": "FIFA排名未提供，瑞士和哥伦比亚均为世界杯常客，竞争力相当。",
+          "recent_form": "近期状态未知，假设均为正常水平。",
+          "group_context": "1/8决赛，同为小组第二晋级，实力差距微小。",
+          "injury_rotation": "伤病信息未知，假设阵容齐整。",
+          "weather_venue": "温哥华BC Place球场，天气未知。",
+          "tactical_key": "双方均为4-1-2-3阵型，中场拦截和边路突击是关键，比赛可能演变为中场绞杀。",
+          "uncertainty": "缺乏官方赔率和伤病信息，不确定性高。"
         },
         "matchup_graph": {
           "nodes": [
@@ -980,132 +390,130 @@
               "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 65,
-              "note": "恩博洛、巴尔加斯速度见长，但阵地战手段单一"
+              "weight": 60,
+              "note": "依赖边路传中和沙奇里的创造力。"
             },
             {
               "id": "home_midfield",
               "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 70,
-              "note": "扎卡组织调度，弗罗伊勒提供硬度"
+              "weight": 65,
+              "note": "防守硬朗，转换迅速。"
             },
             {
               "id": "home_defense",
               "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 75,
-              "note": "阿坎吉、索默领衔，防线组织严密"
+              "weight": 70,
+              "note": "组织有序，身体对抗强。"
             },
             {
               "id": "away_attack",
               "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 75,
-              "note": "路易斯·迪亚斯、J罗技术出众，创造力强"
+              "weight": 65,
+              "note": "技术细腻，个人突破能力强。"
             },
             {
               "id": "away_midfield",
               "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 70,
-              "note": "莱尔马、乌里韦扫荡，传球能力尚可"
+              "weight": 60,
+              "note": "控球和盘带好，但防守硬度稍弱。"
             },
             {
               "id": "away_defense",
               "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 70,
-              "note": "米纳、桑切斯身体对抗出色，但有时鲁莽"
+              "weight": 65,
+              "note": "经验丰富，善于高位防守。"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "瑞士反击冲击哥伦比亚",
+              "label": "瑞士边路传中 vs 哥伦比亚防空",
               "impact": "medium",
               "direction": "home_to_away",
-              "note": "瑞士速度型前锋可能利用哥伦比亚防线身后空档"
+              "note": "瑞士利用高度优势，哥伦比亚需注意第二落点。"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "哥伦比亚技术渗透瑞士铁壁",
-              "impact": "high",
+              "label": "哥伦比亚技术渗透 vs 瑞士防线",
+              "impact": "medium",
               "direction": "away_to_home",
-              "note": "迪亚斯突破与J罗传球是破防关键"
+              "note": "哥伦比亚小范围配合可能撕开瑞士防线。"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场绞杀",
+              "label": "中场对抗",
               "impact": "low",
               "direction": "balanced",
-              "note": "双方均以防守型中场为主，创造力依赖前场"
+              "note": "双方中场实力接近，缠斗将消耗体能。"
             }
           ],
-          "summary": "势均力敌的防守大战，哥伦比亚稍占技术优势，瑞士韧性足",
+          "summary": "势均力敌的比赛，中场绞杀是主旋律，双方进攻端都难有绝对优势。",
           "advantage_side": "balanced",
-          "key_battle": "路易斯·迪亚斯 vs 瑞士右后卫",
-          "risk_trigger": "若瑞士先失球，破密集能力不足易陷入被动"
+          "key_battle": "瑞士后腰 vs 哥伦比亚前腰",
+          "risk_trigger": "定位球或远射可能打破平衡。"
         },
-        "tactical_matchup": "瑞士4-2-3-1高位压迫，哥伦比亚4-3-3传控推进，比赛节奏可能偏慢。",
+        "tactical_matchup": "同阵型4-1-2-3，瑞士更强调身体对抗和边路冲击，哥伦比亚则偏重中路渗透和控球。",
         "injury_adjustment": {
-          "home": "全员健康，无轮换担忧",
-          "away": "阵容齐整，核心无伤病",
-          "summary": "双方均可派出最强阵容，公平对决"
+          "home": "伤病未知，不调整。",
+          "away": "伤病未知，不调整。",
+          "summary": "无调整。"
         },
-        "risk_analysis": "两队防守稳固，进球可能不多，加时或点球大战概率不低。",
-        "upset_probability": 25,
+        "risk_analysis": "两队实力接近，任何一方犯错都可能导致失利，平局概率高。",
+        "upset_probability": 30,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 27.43,
-            "draw": 30.52,
-            "away_win": 42.05
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
           "model_edge": {
-            "home_win": 25,
+            "home_win": 35,
             "draw": 35,
-            "away_win": 40
+            "away_win": 30
           },
-          "deviation_analysis": "模型与市场接近，略调高平局概率，认为淘汰赛易出平局"
+          "deviation_analysis": "市场赔率缺失，无法对比。"
         },
-        "confidence": "high"
+        "confidence": "medium"
       }
     ],
-    "risk_overview": "4场1/8决赛，阿根廷优势最大，其余三场均存悬念。美国vs比利时实力差距明显，葡萄牙vs西班牙难分伯仲，瑞士vs哥伦比亚防御战可能拖入加时。",
-    "data_quality": "比赛对阵来自FIFA官方与ESPN双重验证，赔率数据由DraftKings提供（仅后两场），伤病信息源于ESPN新闻，部分比赛伤病细节不足，置信度中等。",
+    "risk_overview": "两场比赛均缺乏关键信息（赔率、伤病），分析依赖历史实力和战术推测，存在较大不确定性。",
+    "data_quality": "数据源于FIFA和ESPN验证赛程，但赔率、伤病、天气信息均缺失，影响预测置信度。",
     "tournament_structure": {
       "stage": "knockout",
       "focus_window": {
         "timezone": "Asia/Shanghai",
         "china_match_days": [
           {
-            "date": "2026-07-06",
-            "title": "7月6日比赛日",
-            "range": "北京时间 07-06 18:00 - 07-07 18:00",
-            "start_iso": "2026-07-06T18:00:00+08:00",
-            "end_iso": "2026-07-07T18:00:00+08:00"
-          },
-          {
             "date": "2026-07-07",
             "title": "7月7日比赛日",
             "range": "北京时间 07-07 18:00 - 07-08 18:00",
             "start_iso": "2026-07-07T18:00:00+08:00",
             "end_iso": "2026-07-08T18:00:00+08:00"
+          },
+          {
+            "date": "2026-07-08",
+            "title": "7月8日比赛日",
+            "range": "北京时间 07-08 18:00 - 07-09 18:00",
+            "start_iso": "2026-07-08T18:00:00+08:00",
+            "end_iso": "2026-07-09T18:00:00+08:00"
           }
         ]
       },
       "highlight_match_ids": [
         "400021528",
-        "400021529",
-        "400021534",
         "400021535"
       ],
       "groups": null,
@@ -1794,150 +1202,72 @@
             "placeholder": true
           },
           {
-            "match_id": "400021529",
+            "match_id": "placeholder-M93",
             "match_number": 93,
             "round_key": "round_of_16",
-            "stage": "Round of 16",
-            "stage_name": "Round of 16",
-            "round_name": "",
-            "phase": "",
-            "group": "Round of 16",
-            "match_name": "葡萄牙 vs 西班牙",
+            "stage": "round_of_16",
+            "group": "淘汰赛",
+            "match_name": "胜者 M81 vs 胜者 M82",
             "teams": {
               "home": {
-                "name": "葡萄牙",
-                "name_en": "Portugal",
-                "abbreviation": "POR",
-                "id_team": "482",
-                "id_country": "POR",
-                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-                "score": 0,
-                "tactics": "4-2-3-1",
-                "country_code": "POR",
-                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-                "flag_emoji": "🇵🇹"
+                "name": "胜者 M81",
+                "name_en": "胜者 M81",
+                "country_code": "",
+                "flag_url": "",
+                "flag_emoji": "",
+                "placeholder": true
               },
               "away": {
-                "name": "西班牙",
-                "name_en": "Spain",
-                "abbreviation": "ESP",
-                "id_team": "164",
-                "id_country": "ESP",
-                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-                "score": 1,
-                "tactics": "4-1-2-3",
-                "country_code": "ESP",
-                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-                "flag_emoji": "🇪🇸"
+                "name": "胜者 M82",
+                "name_en": "胜者 M82",
+                "country_code": "",
+                "flag_url": "",
+                "flag_emoji": "",
+                "placeholder": true
               }
             },
-            "kickoff_utc": "2026-07-06T19:00:00Z",
-            "kickoff_beijing": "2026-07-07T03:00:00+08:00",
-            "kickoff_display": "北京时间 07-07 03:00",
-            "match_day": {
-              "date": "2026-07-06",
-              "title": "7月6日比赛日",
-              "range": "北京时间 07-06 18:00 - 07-07 18:00",
-              "start_iso": "2026-07-06T18:00:00+08:00",
-              "end_iso": "2026-07-07T18:00:00+08:00"
-            },
-            "win_draw_loss": {
-              "home_win": 30,
-              "draw": 40,
-              "away_win": 30
-            },
-            "score_options": [
-              {
-                "score": "1-1",
-                "rank": 1,
-                "reason": "两队实力接近，淘汰赛可能谨慎，平局概率高"
-              },
-              {
-                "score": "0-1",
-                "rank": 2,
-                "reason": "西班牙控球优势可能限制葡萄牙机会，小胜可期"
-              },
-              {
-                "score": "1-0",
-                "rank": 3,
-                "reason": "葡萄牙依赖C罗反击，若先入球可守胜"
-              }
-            ],
-            "current_window": true,
-            "placeholder": false
+            "kickoff_utc": null,
+            "kickoff_beijing": null,
+            "kickoff_display": "北京时间 待定",
+            "match_day": {},
+            "win_draw_loss": null,
+            "score_options": [],
+            "current_window": false,
+            "placeholder": true
           },
           {
-            "match_id": "400021534",
+            "match_id": "placeholder-M94",
             "match_number": 94,
             "round_key": "round_of_16",
-            "stage": "Round of 16",
-            "stage_name": "Round of 16",
-            "round_name": "",
-            "phase": "",
-            "group": "Round of 16",
-            "match_name": "美国 vs 比利时",
+            "stage": "round_of_16",
+            "group": "淘汰赛",
+            "match_name": "胜者 M83 vs 胜者 M84",
             "teams": {
               "home": {
-                "name": "美国",
-                "name_en": "United States",
-                "abbreviation": "USA",
-                "id_team": "660",
-                "id_country": "USA",
-                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-                "score": 1,
-                "tactics": "3-5-2",
-                "country_code": "USA",
-                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-                "flag_emoji": "🇺🇸"
+                "name": "胜者 M83",
+                "name_en": "胜者 M83",
+                "country_code": "",
+                "flag_url": "",
+                "flag_emoji": "",
+                "placeholder": true
               },
               "away": {
-                "name": "比利时",
-                "name_en": "Belgium",
-                "abbreviation": "BEL",
-                "id_team": "459",
-                "id_country": "BEL",
-                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-                "score": 4,
-                "tactics": "4-2-3-1",
-                "country_code": "BEL",
-                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-                "flag_emoji": "🇧🇪"
+                "name": "胜者 M84",
+                "name_en": "胜者 M84",
+                "country_code": "",
+                "flag_url": "",
+                "flag_emoji": "",
+                "placeholder": true
               }
             },
-            "kickoff_utc": "2026-07-07T00:00:00Z",
-            "kickoff_beijing": "2026-07-07T08:00:00+08:00",
-            "kickoff_display": "北京时间 07-07 08:00",
-            "match_day": {
-              "date": "2026-07-06",
-              "title": "7月6日比赛日",
-              "range": "北京时间 07-06 18:00 - 07-07 18:00",
-              "start_iso": "2026-07-06T18:00:00+08:00",
-              "end_iso": "2026-07-07T18:00:00+08:00"
-            },
-            "win_draw_loss": {
-              "home_win": 25,
-              "draw": 30,
-              "away_win": 45
-            },
-            "score_options": [
-              {
-                "score": "1-2",
-                "rank": 1,
-                "reason": "比利时整体实力占优，美国主场或有进球但难阻失利"
-              },
-              {
-                "score": "0-1",
-                "rank": 2,
-                "reason": "美国防守稳固，比利时需苦战小胜"
-              },
-              {
-                "score": "1-1",
-                "rank": 3,
-                "reason": "美国利用主场球迷气势逼平，拖入加时"
-              }
-            ],
-            "current_window": true,
-            "placeholder": false
+            "kickoff_utc": null,
+            "kickoff_beijing": null,
+            "kickoff_display": "北京时间 待定",
+            "match_day": {},
+            "win_draw_loss": null,
+            "score_options": [],
+            "current_window": false,
+            "placeholder": true
           },
           {
             "match_id": "400021528",
@@ -1957,8 +1287,8 @@
                 "id_team": "202",
                 "id_country": "ARG",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-                "score": null,
-                "tactics": null,
+                "score": 3,
+                "tactics": "4-1-3-2",
                 "country_code": "ARG",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
                 "flag_emoji": "🇦🇷"
@@ -1970,8 +1300,8 @@
                 "id_team": "2620",
                 "id_country": "EGY",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
-                "score": null,
-                "tactics": null,
+                "score": 2,
+                "tactics": "4-2-3-1",
                 "country_code": "EGY",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
                 "flag_emoji": "🇪🇬"
@@ -1988,25 +1318,25 @@
               "end_iso": "2026-07-08T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 65,
+              "home_win": 60,
               "draw": 25,
-              "away_win": 10
+              "away_win": 15
             },
             "score_options": [
               {
                 "score": "2-0",
                 "rank": 1,
-                "reason": "阿根廷实力碾压，埃及难有还手之力"
+                "reason": "阿根廷技术优势明显，埃及防守顽强但难以限制全程。"
               },
               {
                 "score": "1-0",
                 "rank": 2,
-                "reason": "阿根廷围攻未果，埃及顽强抵抗至小负"
+                "reason": "埃及密集防守可能让阿根廷陷入苦战，但仍难保平。"
               },
               {
-                "score": "3-0",
+                "score": "2-1",
                 "rank": 3,
-                "reason": "阿根廷锋线爆发，早定胜局"
+                "reason": "埃及反击得手，但阿根廷整体实力确保胜利。"
               }
             ],
             "current_window": true,
@@ -2030,8 +1360,8 @@
                 "id_team": "475",
                 "id_country": "SUI",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-                "score": null,
-                "tactics": null,
+                "score": 0,
+                "tactics": "4-1-2-3",
                 "country_code": "SUI",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
                 "flag_emoji": "🇨🇭"
@@ -2043,8 +1373,8 @@
                 "id_team": "208",
                 "id_country": "COL",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
-                "score": null,
-                "tactics": null,
+                "score": 0,
+                "tactics": "4-1-2-3",
                 "country_code": "COL",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
                 "flag_emoji": "🇨🇴"
@@ -2061,25 +1391,25 @@
               "end_iso": "2026-07-08T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 25,
+              "home_win": 35,
               "draw": 35,
-              "away_win": 40
+              "away_win": 30
             },
             "score_options": [
               {
                 "score": "1-1",
                 "rank": 1,
-                "reason": "瑞士防守稳固，哥伦比亚攻击线锐利，各取所需"
-              },
-              {
-                "score": "0-1",
-                "rank": 2,
-                "reason": "哥伦比亚整体实力占优，或一球小胜"
+                "reason": "两队实力接近，防守稳固，各进一球平局合理。"
               },
               {
                 "score": "0-0",
+                "rank": 2,
+                "reason": "强强对话可能陷入僵局，进球不易。"
+              },
+              {
+                "score": "1-0",
                 "rank": 3,
-                "reason": "双方防守至上，闷平进入加时"
+                "reason": "瑞士利用定位球或主场优势小胜。"
               }
             ],
             "current_window": true,
@@ -2247,38 +1577,57 @@
             "placeholder": false
           },
           {
-            "match_id": "placeholder-M100",
+            "match_id": "400021537",
             "match_number": 100,
             "round_key": "quarter_finals",
-            "stage": "quarter_finals",
-            "group": "淘汰赛",
-            "match_name": "胜者 M95 vs 胜者 M96",
+            "stage": "Quarter-final",
+            "stage_name": "Quarter-final",
+            "round_name": "",
+            "phase": "",
+            "group": "Quarter-final",
+            "match_name": "阿根廷 vs 瑞士",
             "teams": {
               "home": {
-                "name": "胜者 M95",
-                "name_en": "胜者 M95",
-                "country_code": "",
-                "flag_url": "",
-                "flag_emoji": "",
-                "placeholder": true
+                "name": "阿根廷",
+                "name_en": "Argentina",
+                "abbreviation": "ARG",
+                "id_team": "202",
+                "id_country": "ARG",
+                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+                "score": null,
+                "tactics": null,
+                "country_code": "ARG",
+                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+                "flag_emoji": "🇦🇷"
               },
               "away": {
-                "name": "胜者 M96",
-                "name_en": "胜者 M96",
-                "country_code": "",
-                "flag_url": "",
-                "flag_emoji": "",
-                "placeholder": true
+                "name": "瑞士",
+                "name_en": "Switzerland",
+                "abbreviation": "SUI",
+                "id_team": "475",
+                "id_country": "SUI",
+                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+                "score": null,
+                "tactics": null,
+                "country_code": "SUI",
+                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+                "flag_emoji": "🇨🇭"
               }
             },
-            "kickoff_utc": null,
-            "kickoff_beijing": null,
-            "kickoff_display": "北京时间 待定",
-            "match_day": {},
+            "kickoff_utc": "2026-07-12T01:00:00Z",
+            "kickoff_beijing": "2026-07-12T09:00:00+08:00",
+            "kickoff_display": "北京时间 07-12 09:00",
+            "match_day": {
+              "date": "2026-07-11",
+              "title": "7月11日比赛日",
+              "range": "北京时间 07-11 18:00 - 07-12 18:00",
+              "start_iso": "2026-07-11T18:00:00+08:00",
+              "end_iso": "2026-07-12T18:00:00+08:00"
+            },
             "win_draw_loss": null,
             "score_options": [],
             "current_window": false,
-            "placeholder": true
+            "placeholder": false
           }
         ],
         "semi_finals": [
@@ -2391,18 +1740,11 @@
       "structure_window": {
         "timezone": "Asia/Shanghai",
         "match_day_count": 21,
-        "start_iso": "2026-07-06T18:00:00+08:00",
-        "end_iso": "2026-07-27T18:00:00+08:00",
-        "display_range": "7月6日比赛日 - 7月26日比赛日",
-        "range": "北京时间 07-06 18:00 - 07-27 18:00",
+        "start_iso": "2026-07-07T18:00:00+08:00",
+        "end_iso": "2026-07-28T18:00:00+08:00",
+        "display_range": "7月7日比赛日 - 7月27日比赛日",
+        "range": "北京时间 07-07 18:00 - 07-28 18:00",
         "match_days": [
-          {
-            "date": "2026-07-06",
-            "title": "7月6日比赛日",
-            "range": "北京时间 07-06 18:00 - 07-07 18:00",
-            "start_iso": "2026-07-06T18:00:00+08:00",
-            "end_iso": "2026-07-07T18:00:00+08:00"
-          },
           {
             "date": "2026-07-07",
             "title": "7月7日比赛日",
@@ -2542,568 +1884,19 @@
             "range": "北京时间 07-26 18:00 - 07-27 18:00",
             "start_iso": "2026-07-26T18:00:00+08:00",
             "end_iso": "2026-07-27T18:00:00+08:00"
+          },
+          {
+            "date": "2026-07-27",
+            "title": "7月27日比赛日",
+            "range": "北京时间 07-27 18:00 - 07-28 18:00",
+            "start_iso": "2026-07-27T18:00:00+08:00",
+            "end_iso": "2026-07-28T18:00:00+08:00"
           }
         ]
       }
     }
   },
   "matches": [
-    {
-      "id": "400021529",
-      "fifa_match_id": "400021529",
-      "match_name": "葡萄牙 vs 西班牙",
-      "match_name_en": "Portugal vs Spain",
-      "kickoff_utc": "2026-07-06T19:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Round of 16",
-      "stage_name": "Round of 16",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 93,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 1,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "葡萄牙",
-          "name_en": "Portugal",
-          "abbreviation": "POR",
-          "id_team": "482",
-          "id_country": "POR",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-          "score": 0,
-          "tactics": "4-2-3-1",
-          "country_code": "POR",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-          "flag_emoji": "🇵🇹"
-        },
-        "away": {
-          "name": "西班牙",
-          "name_en": "Spain",
-          "abbreviation": "ESP",
-          "id_team": "164",
-          "id_country": "ESP",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-          "score": 1,
-          "tactics": "4-1-2-3",
-          "country_code": "ESP",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-          "flag_emoji": "🇪🇸"
-        }
-      },
-      "venue": {
-        "name": "Dallas Stadium",
-        "city": "Dallas",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021529"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760506"
-        }
-      },
-      "espn_event_id": "760506",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "葡萄牙",
-          "team_en": "Portugal",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
-              "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
-              "published": "2026-07-06T21:31:50Z",
-              "url": "http://www.espn.com/soccer/report/_/gameId/760506"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "西班牙",
-          "team_en": "Spain",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
-              "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
-              "published": "2026-07-06T21:31:50Z",
-              "url": "http://www.espn.com/soccer/report/_/gameId/760506"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Giuliani: U.S. involvement in Balogun red reversal won't affect USMNT legacy",
-              "description": "Andrew Giuliani, the head of the White House task force on the World Cup, told ESPN on Monday that he has no concerns at all over FIFA's decision to reduce Folarin Balogun's suspension affecting the legacy or credibility of what the USMNT accomplishes.",
-              "published": "2026-07-06T18:43:51Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49288020/giuliani-us-involvement-balogun-red-reversal-not-affect-usmnt-legacy"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "England's Jordan Henderson out of World Cup with suspected broken arm - sources",
-              "description": "Jordan Henderson is expected to be ruled out for the rest of the World Cup after suffering a suspected broken bone in celebrating England's 3-2 win over Mexico, sources have told ESPN.",
-              "published": "2026-07-06T17:52:34Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49285549/england-jordan-henderson-world-cup-suspected-broken-arm-sources"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      },
-      "match_id": "400021529",
-      "win_draw_loss": {
-        "home_win": 30,
-        "draw": 40,
-        "away_win": 30
-      },
-      "xg_prediction": {
-        "home": 1.1,
-        "away": 1.2
-      },
-      "predicted_score": {
-        "home": 1,
-        "away": 1
-      },
-      "score_options": [
-        {
-          "score": "1-1",
-          "rank": 1,
-          "reason": "两队实力接近，淘汰赛可能谨慎，平局概率高"
-        },
-        {
-          "score": "0-1",
-          "rank": 2,
-          "reason": "西班牙控球优势可能限制葡萄牙机会，小胜可期"
-        },
-        {
-          "score": "1-0",
-          "rank": 3,
-          "reason": "葡萄牙依赖C罗反击，若先入球可守胜"
-        }
-      ],
-      "method_factors": {
-        "market_signal": "赔率不可用",
-        "fifa_rank_prior": "葡萄牙与西班牙均为世界前十强队，长期实力均衡",
-        "recent_form": "小组赛表现未知，假定均顺利出线",
-        "group_context": "1/8决赛，双方谨慎避免失误",
-        "injury_rotation": "葡萄牙及西班牙均有疑似伤病，详情不明，可能影响有限",
-        "weather_venue": "达拉斯场馆，天气状况未知",
-        "tactical_key": "葡萄牙4-2-3-1对西班牙4-1-2-3，中场控制与边路突破成胜负手",
-        "uncertainty": "核心球员状态及战术执行不确定性较高"
-      },
-      "matchup_graph": {
-        "nodes": [
-          {
-            "id": "home_attack",
-            "label": "主队进攻",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 75,
-            "note": "C罗领衔的锋线经验丰富，但团队配合待检验"
-          },
-          {
-            "id": "home_midfield",
-            "label": "主队中场/转换",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 70,
-            "note": "技术型中场，创造力依赖布鲁诺·费尔南德斯"
-          },
-          {
-            "id": "home_defense",
-            "label": "主队防守",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 70,
-            "note": "佩佩老将坐镇，但整体速度偏慢"
-          },
-          {
-            "id": "away_attack",
-            "label": "客队进攻",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 80,
-            "note": "年轻锋线冲击力强，边路突破犀利"
-          },
-          {
-            "id": "away_midfield",
-            "label": "客队中场/转换",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 75,
-            "note": "佩德里、加维控制节奏，短传渗透"
-          },
-          {
-            "id": "away_defense",
-            "label": "客队防守",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 75,
-            "note": "拉波尔特领衔，高位防线可能暴露空档"
-          }
-        ],
-        "edges": [
-          {
-            "from": "home_attack",
-            "to": "away_defense",
-            "label": "葡萄牙锋线对西班牙防线",
-            "impact": "high",
-            "direction": "home_to_away",
-            "note": "C罗的抢点能力考验西班牙中卫组合"
-          },
-          {
-            "from": "away_attack",
-            "to": "home_defense",
-            "label": "西班牙边锋对葡萄牙边后卫",
-            "impact": "high",
-            "direction": "away_to_home",
-            "note": "尼科·威廉姆斯的速度可能击穿葡萄牙右路"
-          },
-          {
-            "from": "home_midfield",
-            "to": "away_midfield",
-            "label": "中场控制权争夺",
-            "impact": "medium",
-            "direction": "balanced",
-            "note": "双方均擅传控，失误少的一方将主导比赛"
-          }
-        ],
-        "summary": "伊比利亚德比势均力敌，西班牙进攻端稍占优，葡萄牙需依靠反击效率",
-        "advantage_side": "balanced",
-        "key_battle": "西班牙边锋 vs 葡萄牙边后卫",
-        "risk_trigger": "若葡萄牙过早丢球，可能被迫压上暴露更多空档"
-      },
-      "tactical_matchup": "葡萄牙4-2-3-1侧重稳守反击，西班牙4-1-2-3主控球与高位压迫，比赛可能在中场胶着。",
-      "injury_adjustment": {
-        "home": "疑似伤病，具体球员未公布，可能影响替补深度",
-        "away": "疑似伤病，情况不明，首发阵容或存变数",
-        "summary": "双方均有不确定性，但核心框架预计保持"
-      },
-      "risk_analysis": "淘汰赛性质使双方趋于保守，平局可能性高，若进入加时变数增大。",
-      "upset_probability": 15,
-      "odds_comparison": {
-        "market_implied": {
-          "home_win": 0,
-          "draw": 0,
-          "away_win": 0
-        },
-        "model_edge": {
-          "home_win": 30,
-          "draw": 40,
-          "away_win": 30
-        },
-        "deviation_analysis": "市场赔率不可用，模型基于先验实力给出均衡预测"
-      },
-      "confidence": "medium"
-    },
-    {
-      "id": "400021534",
-      "fifa_match_id": "400021534",
-      "match_name": "美国 vs 比利时",
-      "match_name_en": "USA vs Belgium",
-      "kickoff_utc": "2026-07-07T00:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Round of 16",
-      "stage_name": "Round of 16",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 94,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 1,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "美国",
-          "name_en": "United States",
-          "abbreviation": "USA",
-          "id_team": "660",
-          "id_country": "USA",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-          "score": 1,
-          "tactics": "3-5-2",
-          "country_code": "USA",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-          "flag_emoji": "🇺🇸"
-        },
-        "away": {
-          "name": "比利时",
-          "name_en": "Belgium",
-          "abbreviation": "BEL",
-          "id_team": "459",
-          "id_country": "BEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-          "score": 4,
-          "tactics": "4-2-3-1",
-          "country_code": "BEL",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-          "flag_emoji": "🇧🇪"
-        }
-      },
-      "venue": {
-        "name": "Seattle Stadium",
-        "city": "Seattle",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021534"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760507"
-        }
-      },
-      "espn_event_id": "760507",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "美国",
-          "team_en": "United States",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
-              "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
-              "published": "2026-07-07T03:43:49Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
-              "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
-              "published": "2026-07-07T03:20:43Z",
-              "url": "http://www.espn.com/soccer/report/_/gameId/760507"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
-              "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
-              "published": "2026-07-07T03:48:31Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "比利时",
-          "team_en": "Belgium",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
-              "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
-              "published": "2026-07-07T03:43:49Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
-              "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
-              "published": "2026-07-07T03:20:43Z",
-              "url": "http://www.espn.com/soccer/report/_/gameId/760507"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
-              "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
-              "published": "2026-07-07T03:48:31Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      },
-      "match_id": "400021534",
-      "win_draw_loss": {
-        "home_win": 25,
-        "draw": 30,
-        "away_win": 45
-      },
-      "xg_prediction": {
-        "home": 0.9,
-        "away": 1.5
-      },
-      "predicted_score": {
-        "home": 1,
-        "away": 2
-      },
-      "score_options": [
-        {
-          "score": "1-2",
-          "rank": 1,
-          "reason": "比利时整体实力占优，美国主场或有进球但难阻失利"
-        },
-        {
-          "score": "0-1",
-          "rank": 2,
-          "reason": "美国防守稳固，比利时需苦战小胜"
-        },
-        {
-          "score": "1-1",
-          "rank": 3,
-          "reason": "美国利用主场球迷气势逼平，拖入加时"
-        }
-      ],
-      "method_factors": {
-        "market_signal": "赔率不可用",
-        "fifa_rank_prior": "比利时长期位列前十，美国中游偏上，实力差距明显",
-        "recent_form": "小组赛表现未知，假定比利时状态更佳",
-        "group_context": "淘汰赛压力下，比利时经验更丰富",
-        "injury_rotation": "美国有疑似伤病，包括普利希奇疑带伤，比利时亦有不明伤病，影响待评估",
-        "weather_venue": "西雅图场馆，天气未知",
-        "tactical_key": "美国3-5-2对4-2-3-1，三后卫体系考验比利时渗透能力",
-        "uncertainty": "美国核心球员状态成疑，不确定性较高"
-      },
-      "matchup_graph": {
-        "nodes": [
-          {
-            "id": "home_attack",
-            "label": "主队进攻",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 70,
-            "note": "巴洛贡、普利希奇领衔，速度型攻击线"
-          },
-          {
-            "id": "home_midfield",
-            "label": "主队中场/转换",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 65,
-            "note": "麦肯尼、亚当斯提供硬度，创造力不足"
-          },
-          {
-            "id": "home_defense",
-            "label": "主队防守",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 60,
-            "note": "三后卫体系默契一般，转身速度是隐患"
-          },
-          {
-            "id": "away_attack",
-            "label": "客队进攻",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 85,
-            "note": "德凯特拉雷、多库组合兼具技术与速度"
-          },
-          {
-            "id": "away_midfield",
-            "label": "客队中场/转换",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 75,
-            "note": "蒂勒芒斯调度，奥纳纳拦截，控制力强"
-          },
-          {
-            "id": "away_defense",
-            "label": "客队防守",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 70,
-            "note": "费斯、维尔通亨经验丰富，但整体速度偏慢"
-          }
-        ],
-        "edges": [
-          {
-            "from": "home_attack",
-            "to": "away_defense",
-            "label": "美国速度冲击比利时防线",
-            "impact": "medium",
-            "direction": "home_to_away",
-            "note": "美国锋线速度可能制造威胁，但比利时防线站位稳健"
-          },
-          {
-            "from": "away_attack",
-            "to": "home_defense",
-            "label": "比利时技术流考验美国三后卫",
-            "impact": "high",
-            "direction": "away_to_home",
-            "note": "多库与德凯特拉雷的个人能力可能轻松撕破防线"
-          },
-          {
-            "from": "home_midfield",
-            "to": "away_midfield",
-            "label": "中场对抗",
-            "impact": "low",
-            "direction": "balanced",
-            "note": "比利时中场技术优势明显，美国需依赖拼抢"
-          }
-        ],
-        "summary": "比利时整体实力占优，尤其是进攻端，美国若爆冷需要超常发挥",
-        "advantage_side": "away",
-        "key_battle": "比利时边路攻击群 vs 美国三后卫",
-        "risk_trigger": "美国若先失球，可能被迫压上，给比利时更多反击空间"
-      },
-      "tactical_matchup": "美国3-5-2注重边翼卫助攻，比利时4-2-3-1擅长肋部渗透，比赛可能成为攻防演练。",
-      "injury_adjustment": {
-        "home": "普利希奇疑似脚踝伤，若缺阵或影响进攻核心",
-        "away": "具体伤情不明，多数主力应可出战",
-        "summary": "伤病对美国影响可能更大，攻击力或打折扣"
-      },
-      "risk_analysis": "美国虽有主场之利，但实力差距和关键球员伤病使爆冷难度极大。",
-      "upset_probability": 20,
-      "odds_comparison": {
-        "market_implied": {
-          "home_win": 0,
-          "draw": 0,
-          "away_win": 0
-        },
-        "model_edge": {
-          "home_win": 25,
-          "draw": 30,
-          "away_win": 45
-        },
-        "deviation_analysis": "市场赔率不可用，模型看好比利时相对优势"
-      },
-      "confidence": "medium"
-    },
     {
       "id": "400021528",
       "fifa_match_id": "400021528",
@@ -3119,9 +1912,9 @@
       "group": "",
       "match_number": 95,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -3131,8 +1924,8 @@
           "id_team": "202",
           "id_country": "ARG",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-          "score": null,
-          "tactics": null,
+          "score": 3,
+          "tactics": "4-1-3-2",
           "country_code": "ARG",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
           "flag_emoji": "🇦🇷"
@@ -3144,8 +1937,8 @@
           "id_team": "2620",
           "id_country": "EGY",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
-          "score": null,
-          "tactics": null,
+          "score": 2,
+          "tactics": "4-2-3-1",
           "country_code": "EGY",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
           "flag_emoji": "🇪🇬"
@@ -3179,26 +1972,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-285",
-          "draw": "+380",
-          "away": "+900"
-        },
-        "implied_probability": {
-          "home_win": 74.03,
-          "draw": 20.83,
-          "away_win": 10.0
-        },
-        "normalized_probability": {
-          "home_win": 70.6,
-          "draw": 19.87,
-          "away_win": 9.54
-        },
-        "overround": 4.86,
-        "details": "ARG -285"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -3218,13 +1994,13 @@
       },
       "match_id": "400021528",
       "win_draw_loss": {
-        "home_win": 65,
+        "home_win": 60,
         "draw": 25,
-        "away_win": 10
+        "away_win": 15
       },
       "xg_prediction": {
-        "home": 2.1,
-        "away": 0.6
+        "home": 1.8,
+        "away": 0.5
       },
       "predicted_score": {
         "home": 2,
@@ -3234,28 +2010,28 @@
         {
           "score": "2-0",
           "rank": 1,
-          "reason": "阿根廷实力碾压，埃及难有还手之力"
+          "reason": "阿根廷技术优势明显，埃及防守顽强但难以限制全程。"
         },
         {
           "score": "1-0",
           "rank": 2,
-          "reason": "阿根廷围攻未果，埃及顽强抵抗至小负"
+          "reason": "埃及密集防守可能让阿根廷陷入苦战，但仍难保平。"
         },
         {
-          "score": "3-0",
+          "score": "2-1",
           "rank": 3,
-          "reason": "阿根廷锋线爆发，早定胜局"
+          "reason": "埃及反击得手，但阿根廷整体实力确保胜利。"
         }
       ],
       "method_factors": {
-        "market_signal": "DraftKings赔率阿根廷-285，主胜概率超70%",
-        "fifa_rank_prior": "阿根廷现世界排名前五，埃及三十名开外，实力差距显著",
-        "recent_form": "小组赛表现未知，但阿根廷状态通常稳定，埃及晋级已属突破",
-        "group_context": "淘汰赛阿根廷不容有失，埃及无压力放手一搏",
-        "injury_rotation": "阿根廷暂无伤病报告，阵容齐整；埃及亦无重大伤情",
-        "weather_venue": "亚特兰大场馆，天气未知",
-        "tactical_key": "阿根廷控球围攻，埃及密集防守寻求反击",
-        "uncertainty": "淘汰赛存在偶然性，但阿根廷过冷风险低"
+        "market_signal": "市场赔率不可用，根据历史实力评估。",
+        "fifa_rank_prior": "FIFA排名未提供，阿根廷长期为世界顶级强队，埃及为非洲中上游。",
+        "recent_form": "近期状态未知，假设阿根廷状态良好，埃及韧性足。",
+        "group_context": "1/8决赛，阿根廷小组头名出线，埃及小组第二晋级。",
+        "injury_rotation": "伤病信息未知，假设阵容齐整。",
+        "weather_venue": "亚特兰大球场，天气未知。",
+        "tactical_key": "阿根廷4-1-3-2侧重中路渗透，埃及4-2-3-1防守反击，中场控制定胜负。",
+        "uncertainty": "缺乏官方赔率和伤病信息，不确定性高。"
       },
       "matchup_graph": {
         "nodes": [
@@ -3264,40 +2040,40 @@
             "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 90,
-            "note": "梅西、劳塔罗、阿尔瓦雷斯组成豪华攻击群"
+            "weight": 70,
+            "note": "拥有梅西等顶级攻击手，创造机会能力强。"
           },
           {
             "id": "home_midfield",
             "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 85,
-            "note": "恩佐、麦卡利斯特控球与创造力俱佳"
+            "weight": 65,
+            "note": "控球和传递能力出色，但防守硬度一般。"
           },
           {
             "id": "home_defense",
             "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 75,
-            "note": "奥塔门迪领衔，经验丰富但偶尔走神"
+            "weight": 60,
+            "note": "防线经验丰富，但速度偏慢可能被反击利用。"
           },
           {
             "id": "away_attack",
             "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 60,
-            "note": "萨拉赫单核驱动，队友支持有限"
+            "weight": 55,
+            "note": "依赖萨拉赫的个人能力，整体配合有限。"
           },
           {
             "id": "away_midfield",
             "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 55,
-            "note": "防守为主，向前传递能力弱"
+            "weight": 50,
+            "note": "防守型中场为主，组织能力较弱。"
           },
           {
             "id": "away_defense",
@@ -3305,62 +2081,62 @@
             "type": "team_phase",
             "side": "away",
             "weight": 65,
-            "note": "门将希纳维是关键，防线将承受巨大压力"
+            "note": "纪律性强，擅于密集防守和定位球防守。"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "阿根廷围攻埃及禁区",
+            "label": "阿根廷渗透 vs 埃及密集防守",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "阿根廷多点开花，埃及防线难以招架"
+            "note": "阿根廷需破解铁桶阵，埃及防守是比赛胜负手。"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "埃及反击偷袭",
-            "impact": "low",
+            "label": "埃及反击 vs 阿根廷防线空当",
+            "impact": "medium",
             "direction": "away_to_home",
-            "note": "仅靠萨拉赫个人能力，可能制造零星威胁"
+            "note": "萨拉赫的速度可能制造威胁。"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "完全中场控制",
-            "impact": "medium",
+            "label": "中场控制权争夺",
+            "impact": "low",
             "direction": "balanced",
-            "note": "阿根廷将主导球权，埃及中场退守"
+            "note": "阿根廷主导控球，埃及不易抢夺。"
           }
         ],
-        "summary": "阿根廷占据绝对优势，正常发挥必取三分",
+        "summary": "阿根廷掌控球权并持续施压，埃及退守半场寻求快速反击机会。",
         "advantage_side": "home",
-        "key_battle": "埃及防线能否顶住阿根廷立体进攻",
-        "risk_trigger": "阿根廷久攻不下可能急躁，反被埃及偷袭"
+        "key_battle": "阿根廷前腰 vs 埃及后腰",
+        "risk_trigger": "阿根廷久攻不下，埃及反击得手。"
       },
-      "tactical_matchup": "阿根廷4-3-3全面控场，埃及5-4-1收缩防守，比赛可能演变为半场攻防。",
+      "tactical_matchup": "阿根廷4-1-3-2攻击阵型对埃及4-2-3-1防守阵型，中场人数优势将转化为控球优势，埃及必须依靠高位逼抢和快速转换。",
       "injury_adjustment": {
-        "home": "全员健康，无伤病困扰",
-        "away": "无重大伤病，可全主力出战",
-        "summary": "双方阵容齐整，阿根廷优势不受影响"
+        "home": "伤病未知，不调整。",
+        "away": "伤病未知，不调整。",
+        "summary": "无调整。"
       },
-      "risk_analysis": "爆冷概率极低，但淘汰赛性质使埃及时有偶然性，需防久攻不下。",
-      "upset_probability": 10,
+      "risk_analysis": "阿根廷主导比赛但埃及反击有威胁，若阿根廷轻敌或防守失误可能被拖入加时。",
+      "upset_probability": 15,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 70.6,
-          "draw": 19.87,
-          "away_win": 9.54
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
         "model_edge": {
-          "home_win": 65,
+          "home_win": 60,
           "draw": 25,
-          "away_win": 10
+          "away_win": 15
         },
-        "deviation_analysis": "模型主胜概率稍低于市场，平局和客胜略高，体现淘汰赛谨慎因素"
+        "deviation_analysis": "市场赔率缺失，无法对比。"
       },
-      "confidence": "high"
+      "confidence": "medium"
     },
     {
       "id": "400021535",
@@ -3377,9 +2153,9 @@
       "group": "",
       "match_number": 96,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 2
       },
       "teams": {
         "home": {
@@ -3389,8 +2165,8 @@
           "id_team": "475",
           "id_country": "SUI",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-          "score": null,
-          "tactics": null,
+          "score": 0,
+          "tactics": "4-1-2-3",
           "country_code": "SUI",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
           "flag_emoji": "🇨🇭"
@@ -3402,8 +2178,8 @@
           "id_team": "208",
           "id_country": "COL",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
-          "score": null,
-          "tactics": null,
+          "score": 0,
+          "tactics": "4-1-2-3",
           "country_code": "COL",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
           "flag_emoji": "🇨🇴"
@@ -3437,26 +2213,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+245",
-          "draw": "+210",
-          "away": "+125"
-        },
-        "implied_probability": {
-          "home_win": 28.99,
-          "draw": 32.26,
-          "away_win": 44.44
-        },
-        "normalized_probability": {
-          "home_win": 27.43,
-          "draw": 30.52,
-          "away_win": 42.05
-        },
-        "overround": 5.69,
-        "details": "COL +125"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -3476,13 +2235,13 @@
       },
       "match_id": "400021535",
       "win_draw_loss": {
-        "home_win": 25,
+        "home_win": 35,
         "draw": 35,
-        "away_win": 40
+        "away_win": 30
       },
       "xg_prediction": {
-        "home": 0.8,
-        "away": 1.0
+        "home": 1.0,
+        "away": 0.9
       },
       "predicted_score": {
         "home": 1,
@@ -3492,28 +2251,28 @@
         {
           "score": "1-1",
           "rank": 1,
-          "reason": "瑞士防守稳固，哥伦比亚攻击线锐利，各取所需"
-        },
-        {
-          "score": "0-1",
-          "rank": 2,
-          "reason": "哥伦比亚整体实力占优，或一球小胜"
+          "reason": "两队实力接近，防守稳固，各进一球平局合理。"
         },
         {
           "score": "0-0",
+          "rank": 2,
+          "reason": "强强对话可能陷入僵局，进球不易。"
+        },
+        {
+          "score": "1-0",
           "rank": 3,
-          "reason": "双方防守至上，闷平进入加时"
+          "reason": "瑞士利用定位球或主场优势小胜。"
         }
       ],
       "method_factors": {
-        "market_signal": "DraftKings赔率哥伦比亚+125，客胜概率42%",
-        "fifa_rank_prior": "瑞士长期稳定前20，哥伦比亚略低但技术出色，差距不大",
-        "recent_form": "两队小组赛表现未知，均以韧性著称",
-        "group_context": "淘汰赛遭遇战，策略性强，进球不易",
-        "injury_rotation": "两队暂无伤病报告，可全员出战",
-        "weather_venue": "温哥华BC Place，室内场地条件良好",
-        "tactical_key": "瑞士高位逼抢对哥伦比亚传控，转换效率决胜",
-        "uncertainty": "进攻端效率依赖明星球员发挥，不确定性中等"
+        "market_signal": "市场赔率不可用，根据历史实力评估。",
+        "fifa_rank_prior": "FIFA排名未提供，瑞士和哥伦比亚均为世界杯常客，竞争力相当。",
+        "recent_form": "近期状态未知，假设均为正常水平。",
+        "group_context": "1/8决赛，同为小组第二晋级，实力差距微小。",
+        "injury_rotation": "伤病信息未知，假设阵容齐整。",
+        "weather_venue": "温哥华BC Place球场，天气未知。",
+        "tactical_key": "双方均为4-1-2-3阵型，中场拦截和边路突击是关键，比赛可能演变为中场绞杀。",
+        "uncertainty": "缺乏官方赔率和伤病信息，不确定性高。"
       },
       "matchup_graph": {
         "nodes": [
@@ -3522,103 +2281,103 @@
             "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 65,
-            "note": "恩博洛、巴尔加斯速度见长，但阵地战手段单一"
+            "weight": 60,
+            "note": "依赖边路传中和沙奇里的创造力。"
           },
           {
             "id": "home_midfield",
             "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 70,
-            "note": "扎卡组织调度，弗罗伊勒提供硬度"
+            "weight": 65,
+            "note": "防守硬朗，转换迅速。"
           },
           {
             "id": "home_defense",
             "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 75,
-            "note": "阿坎吉、索默领衔，防线组织严密"
+            "weight": 70,
+            "note": "组织有序，身体对抗强。"
           },
           {
             "id": "away_attack",
             "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 75,
-            "note": "路易斯·迪亚斯、J罗技术出众，创造力强"
+            "weight": 65,
+            "note": "技术细腻，个人突破能力强。"
           },
           {
             "id": "away_midfield",
             "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 70,
-            "note": "莱尔马、乌里韦扫荡，传球能力尚可"
+            "weight": 60,
+            "note": "控球和盘带好，但防守硬度稍弱。"
           },
           {
             "id": "away_defense",
             "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 70,
-            "note": "米纳、桑切斯身体对抗出色，但有时鲁莽"
+            "weight": 65,
+            "note": "经验丰富，善于高位防守。"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "瑞士反击冲击哥伦比亚",
+            "label": "瑞士边路传中 vs 哥伦比亚防空",
             "impact": "medium",
             "direction": "home_to_away",
-            "note": "瑞士速度型前锋可能利用哥伦比亚防线身后空档"
+            "note": "瑞士利用高度优势，哥伦比亚需注意第二落点。"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "哥伦比亚技术渗透瑞士铁壁",
-            "impact": "high",
+            "label": "哥伦比亚技术渗透 vs 瑞士防线",
+            "impact": "medium",
             "direction": "away_to_home",
-            "note": "迪亚斯突破与J罗传球是破防关键"
+            "note": "哥伦比亚小范围配合可能撕开瑞士防线。"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场绞杀",
+            "label": "中场对抗",
             "impact": "low",
             "direction": "balanced",
-            "note": "双方均以防守型中场为主，创造力依赖前场"
+            "note": "双方中场实力接近，缠斗将消耗体能。"
           }
         ],
-        "summary": "势均力敌的防守大战，哥伦比亚稍占技术优势，瑞士韧性足",
+        "summary": "势均力敌的比赛，中场绞杀是主旋律，双方进攻端都难有绝对优势。",
         "advantage_side": "balanced",
-        "key_battle": "路易斯·迪亚斯 vs 瑞士右后卫",
-        "risk_trigger": "若瑞士先失球，破密集能力不足易陷入被动"
+        "key_battle": "瑞士后腰 vs 哥伦比亚前腰",
+        "risk_trigger": "定位球或远射可能打破平衡。"
       },
-      "tactical_matchup": "瑞士4-2-3-1高位压迫，哥伦比亚4-3-3传控推进，比赛节奏可能偏慢。",
+      "tactical_matchup": "同阵型4-1-2-3，瑞士更强调身体对抗和边路冲击，哥伦比亚则偏重中路渗透和控球。",
       "injury_adjustment": {
-        "home": "全员健康，无轮换担忧",
-        "away": "阵容齐整，核心无伤病",
-        "summary": "双方均可派出最强阵容，公平对决"
+        "home": "伤病未知，不调整。",
+        "away": "伤病未知，不调整。",
+        "summary": "无调整。"
       },
-      "risk_analysis": "两队防守稳固，进球可能不多，加时或点球大战概率不低。",
-      "upset_probability": 25,
+      "risk_analysis": "两队实力接近，任何一方犯错都可能导致失利，平局概率高。",
+      "upset_probability": 30,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 27.43,
-          "draw": 30.52,
-          "away_win": 42.05
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
         "model_edge": {
-          "home_win": 25,
+          "home_win": 35,
           "draw": 35,
-          "away_win": 40
+          "away_win": 30
         },
-        "deviation_analysis": "模型与市场接近，略调高平局概率，认为淘汰赛易出平局"
+        "deviation_analysis": "市场赔率缺失，无法对比。"
       },
-      "confidence": "high"
+      "confidence": "medium"
     }
   ],
   "tournament_structure": {
@@ -3627,25 +2386,23 @@
       "timezone": "Asia/Shanghai",
       "china_match_days": [
         {
-          "date": "2026-07-06",
-          "title": "7月6日比赛日",
-          "range": "北京时间 07-06 18:00 - 07-07 18:00",
-          "start_iso": "2026-07-06T18:00:00+08:00",
-          "end_iso": "2026-07-07T18:00:00+08:00"
-        },
-        {
           "date": "2026-07-07",
           "title": "7月7日比赛日",
           "range": "北京时间 07-07 18:00 - 07-08 18:00",
           "start_iso": "2026-07-07T18:00:00+08:00",
           "end_iso": "2026-07-08T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-08",
+          "title": "7月8日比赛日",
+          "range": "北京时间 07-08 18:00 - 07-09 18:00",
+          "start_iso": "2026-07-08T18:00:00+08:00",
+          "end_iso": "2026-07-09T18:00:00+08:00"
         }
       ]
     },
     "highlight_match_ids": [
       "400021528",
-      "400021529",
-      "400021534",
       "400021535"
     ],
     "groups": null,
@@ -4334,150 +3091,72 @@
           "placeholder": true
         },
         {
-          "match_id": "400021529",
+          "match_id": "placeholder-M93",
           "match_number": 93,
           "round_key": "round_of_16",
-          "stage": "Round of 16",
-          "stage_name": "Round of 16",
-          "round_name": "",
-          "phase": "",
-          "group": "Round of 16",
-          "match_name": "葡萄牙 vs 西班牙",
+          "stage": "round_of_16",
+          "group": "淘汰赛",
+          "match_name": "胜者 M81 vs 胜者 M82",
           "teams": {
             "home": {
-              "name": "葡萄牙",
-              "name_en": "Portugal",
-              "abbreviation": "POR",
-              "id_team": "482",
-              "id_country": "POR",
-              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-              "score": 0,
-              "tactics": "4-2-3-1",
-              "country_code": "POR",
-              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-              "flag_emoji": "🇵🇹"
+              "name": "胜者 M81",
+              "name_en": "胜者 M81",
+              "country_code": "",
+              "flag_url": "",
+              "flag_emoji": "",
+              "placeholder": true
             },
             "away": {
-              "name": "西班牙",
-              "name_en": "Spain",
-              "abbreviation": "ESP",
-              "id_team": "164",
-              "id_country": "ESP",
-              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-              "score": 1,
-              "tactics": "4-1-2-3",
-              "country_code": "ESP",
-              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-              "flag_emoji": "🇪🇸"
+              "name": "胜者 M82",
+              "name_en": "胜者 M82",
+              "country_code": "",
+              "flag_url": "",
+              "flag_emoji": "",
+              "placeholder": true
             }
           },
-          "kickoff_utc": "2026-07-06T19:00:00Z",
-          "kickoff_beijing": "2026-07-07T03:00:00+08:00",
-          "kickoff_display": "北京时间 07-07 03:00",
-          "match_day": {
-            "date": "2026-07-06",
-            "title": "7月6日比赛日",
-            "range": "北京时间 07-06 18:00 - 07-07 18:00",
-            "start_iso": "2026-07-06T18:00:00+08:00",
-            "end_iso": "2026-07-07T18:00:00+08:00"
-          },
-          "win_draw_loss": {
-            "home_win": 30,
-            "draw": 40,
-            "away_win": 30
-          },
-          "score_options": [
-            {
-              "score": "1-1",
-              "rank": 1,
-              "reason": "两队实力接近，淘汰赛可能谨慎，平局概率高"
-            },
-            {
-              "score": "0-1",
-              "rank": 2,
-              "reason": "西班牙控球优势可能限制葡萄牙机会，小胜可期"
-            },
-            {
-              "score": "1-0",
-              "rank": 3,
-              "reason": "葡萄牙依赖C罗反击，若先入球可守胜"
-            }
-          ],
-          "current_window": true,
-          "placeholder": false
+          "kickoff_utc": null,
+          "kickoff_beijing": null,
+          "kickoff_display": "北京时间 待定",
+          "match_day": {},
+          "win_draw_loss": null,
+          "score_options": [],
+          "current_window": false,
+          "placeholder": true
         },
         {
-          "match_id": "400021534",
+          "match_id": "placeholder-M94",
           "match_number": 94,
           "round_key": "round_of_16",
-          "stage": "Round of 16",
-          "stage_name": "Round of 16",
-          "round_name": "",
-          "phase": "",
-          "group": "Round of 16",
-          "match_name": "美国 vs 比利时",
+          "stage": "round_of_16",
+          "group": "淘汰赛",
+          "match_name": "胜者 M83 vs 胜者 M84",
           "teams": {
             "home": {
-              "name": "美国",
-              "name_en": "United States",
-              "abbreviation": "USA",
-              "id_team": "660",
-              "id_country": "USA",
-              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-              "score": 1,
-              "tactics": "3-5-2",
-              "country_code": "USA",
-              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-              "flag_emoji": "🇺🇸"
+              "name": "胜者 M83",
+              "name_en": "胜者 M83",
+              "country_code": "",
+              "flag_url": "",
+              "flag_emoji": "",
+              "placeholder": true
             },
             "away": {
-              "name": "比利时",
-              "name_en": "Belgium",
-              "abbreviation": "BEL",
-              "id_team": "459",
-              "id_country": "BEL",
-              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-              "score": 4,
-              "tactics": "4-2-3-1",
-              "country_code": "BEL",
-              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-              "flag_emoji": "🇧🇪"
+              "name": "胜者 M84",
+              "name_en": "胜者 M84",
+              "country_code": "",
+              "flag_url": "",
+              "flag_emoji": "",
+              "placeholder": true
             }
           },
-          "kickoff_utc": "2026-07-07T00:00:00Z",
-          "kickoff_beijing": "2026-07-07T08:00:00+08:00",
-          "kickoff_display": "北京时间 07-07 08:00",
-          "match_day": {
-            "date": "2026-07-06",
-            "title": "7月6日比赛日",
-            "range": "北京时间 07-06 18:00 - 07-07 18:00",
-            "start_iso": "2026-07-06T18:00:00+08:00",
-            "end_iso": "2026-07-07T18:00:00+08:00"
-          },
-          "win_draw_loss": {
-            "home_win": 25,
-            "draw": 30,
-            "away_win": 45
-          },
-          "score_options": [
-            {
-              "score": "1-2",
-              "rank": 1,
-              "reason": "比利时整体实力占优，美国主场或有进球但难阻失利"
-            },
-            {
-              "score": "0-1",
-              "rank": 2,
-              "reason": "美国防守稳固，比利时需苦战小胜"
-            },
-            {
-              "score": "1-1",
-              "rank": 3,
-              "reason": "美国利用主场球迷气势逼平，拖入加时"
-            }
-          ],
-          "current_window": true,
-          "placeholder": false
+          "kickoff_utc": null,
+          "kickoff_beijing": null,
+          "kickoff_display": "北京时间 待定",
+          "match_day": {},
+          "win_draw_loss": null,
+          "score_options": [],
+          "current_window": false,
+          "placeholder": true
         },
         {
           "match_id": "400021528",
@@ -4497,8 +3176,8 @@
               "id_team": "202",
               "id_country": "ARG",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-              "score": null,
-              "tactics": null,
+              "score": 3,
+              "tactics": "4-1-3-2",
               "country_code": "ARG",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
               "flag_emoji": "🇦🇷"
@@ -4510,8 +3189,8 @@
               "id_team": "2620",
               "id_country": "EGY",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
-              "score": null,
-              "tactics": null,
+              "score": 2,
+              "tactics": "4-2-3-1",
               "country_code": "EGY",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
               "flag_emoji": "🇪🇬"
@@ -4528,25 +3207,25 @@
             "end_iso": "2026-07-08T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 65,
+            "home_win": 60,
             "draw": 25,
-            "away_win": 10
+            "away_win": 15
           },
           "score_options": [
             {
               "score": "2-0",
               "rank": 1,
-              "reason": "阿根廷实力碾压，埃及难有还手之力"
+              "reason": "阿根廷技术优势明显，埃及防守顽强但难以限制全程。"
             },
             {
               "score": "1-0",
               "rank": 2,
-              "reason": "阿根廷围攻未果，埃及顽强抵抗至小负"
+              "reason": "埃及密集防守可能让阿根廷陷入苦战，但仍难保平。"
             },
             {
-              "score": "3-0",
+              "score": "2-1",
               "rank": 3,
-              "reason": "阿根廷锋线爆发，早定胜局"
+              "reason": "埃及反击得手，但阿根廷整体实力确保胜利。"
             }
           ],
           "current_window": true,
@@ -4570,8 +3249,8 @@
               "id_team": "475",
               "id_country": "SUI",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-              "score": null,
-              "tactics": null,
+              "score": 0,
+              "tactics": "4-1-2-3",
               "country_code": "SUI",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
               "flag_emoji": "🇨🇭"
@@ -4583,8 +3262,8 @@
               "id_team": "208",
               "id_country": "COL",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
-              "score": null,
-              "tactics": null,
+              "score": 0,
+              "tactics": "4-1-2-3",
               "country_code": "COL",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
               "flag_emoji": "🇨🇴"
@@ -4601,25 +3280,25 @@
             "end_iso": "2026-07-08T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 25,
+            "home_win": 35,
             "draw": 35,
-            "away_win": 40
+            "away_win": 30
           },
           "score_options": [
             {
               "score": "1-1",
               "rank": 1,
-              "reason": "瑞士防守稳固，哥伦比亚攻击线锐利，各取所需"
-            },
-            {
-              "score": "0-1",
-              "rank": 2,
-              "reason": "哥伦比亚整体实力占优，或一球小胜"
+              "reason": "两队实力接近，防守稳固，各进一球平局合理。"
             },
             {
               "score": "0-0",
+              "rank": 2,
+              "reason": "强强对话可能陷入僵局，进球不易。"
+            },
+            {
+              "score": "1-0",
               "rank": 3,
-              "reason": "双方防守至上，闷平进入加时"
+              "reason": "瑞士利用定位球或主场优势小胜。"
             }
           ],
           "current_window": true,
@@ -4787,38 +3466,57 @@
           "placeholder": false
         },
         {
-          "match_id": "placeholder-M100",
+          "match_id": "400021537",
           "match_number": 100,
           "round_key": "quarter_finals",
-          "stage": "quarter_finals",
-          "group": "淘汰赛",
-          "match_name": "胜者 M95 vs 胜者 M96",
+          "stage": "Quarter-final",
+          "stage_name": "Quarter-final",
+          "round_name": "",
+          "phase": "",
+          "group": "Quarter-final",
+          "match_name": "阿根廷 vs 瑞士",
           "teams": {
             "home": {
-              "name": "胜者 M95",
-              "name_en": "胜者 M95",
-              "country_code": "",
-              "flag_url": "",
-              "flag_emoji": "",
-              "placeholder": true
+              "name": "阿根廷",
+              "name_en": "Argentina",
+              "abbreviation": "ARG",
+              "id_team": "202",
+              "id_country": "ARG",
+              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+              "score": null,
+              "tactics": null,
+              "country_code": "ARG",
+              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+              "flag_emoji": "🇦🇷"
             },
             "away": {
-              "name": "胜者 M96",
-              "name_en": "胜者 M96",
-              "country_code": "",
-              "flag_url": "",
-              "flag_emoji": "",
-              "placeholder": true
+              "name": "瑞士",
+              "name_en": "Switzerland",
+              "abbreviation": "SUI",
+              "id_team": "475",
+              "id_country": "SUI",
+              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+              "score": null,
+              "tactics": null,
+              "country_code": "SUI",
+              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+              "flag_emoji": "🇨🇭"
             }
           },
-          "kickoff_utc": null,
-          "kickoff_beijing": null,
-          "kickoff_display": "北京时间 待定",
-          "match_day": {},
+          "kickoff_utc": "2026-07-12T01:00:00Z",
+          "kickoff_beijing": "2026-07-12T09:00:00+08:00",
+          "kickoff_display": "北京时间 07-12 09:00",
+          "match_day": {
+            "date": "2026-07-11",
+            "title": "7月11日比赛日",
+            "range": "北京时间 07-11 18:00 - 07-12 18:00",
+            "start_iso": "2026-07-11T18:00:00+08:00",
+            "end_iso": "2026-07-12T18:00:00+08:00"
+          },
           "win_draw_loss": null,
           "score_options": [],
           "current_window": false,
-          "placeholder": true
+          "placeholder": false
         }
       ],
       "semi_finals": [
@@ -4931,18 +3629,11 @@
     "structure_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 21,
-      "start_iso": "2026-07-06T18:00:00+08:00",
-      "end_iso": "2026-07-27T18:00:00+08:00",
-      "display_range": "7月6日比赛日 - 7月26日比赛日",
-      "range": "北京时间 07-06 18:00 - 07-27 18:00",
+      "start_iso": "2026-07-07T18:00:00+08:00",
+      "end_iso": "2026-07-28T18:00:00+08:00",
+      "display_range": "7月7日比赛日 - 7月27日比赛日",
+      "range": "北京时间 07-07 18:00 - 07-28 18:00",
       "match_days": [
-        {
-          "date": "2026-07-06",
-          "title": "7月6日比赛日",
-          "range": "北京时间 07-06 18:00 - 07-07 18:00",
-          "start_iso": "2026-07-06T18:00:00+08:00",
-          "end_iso": "2026-07-07T18:00:00+08:00"
-        },
         {
           "date": "2026-07-07",
           "title": "7月7日比赛日",
@@ -5082,6 +3773,13 @@
           "range": "北京时间 07-26 18:00 - 07-27 18:00",
           "start_iso": "2026-07-26T18:00:00+08:00",
           "end_iso": "2026-07-27T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-27",
+          "title": "7月27日比赛日",
+          "range": "北京时间 07-27 18:00 - 07-28 18:00",
+          "start_iso": "2026-07-27T18:00:00+08:00",
+          "end_iso": "2026-07-28T18:00:00+08:00"
         }
       ]
     }
@@ -5089,18 +3787,11 @@
   "structure_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 21,
-    "start_iso": "2026-07-06T18:00:00+08:00",
-    "end_iso": "2026-07-27T18:00:00+08:00",
-    "display_range": "7月6日比赛日 - 7月26日比赛日",
-    "range": "北京时间 07-06 18:00 - 07-27 18:00",
+    "start_iso": "2026-07-07T18:00:00+08:00",
+    "end_iso": "2026-07-28T18:00:00+08:00",
+    "display_range": "7月7日比赛日 - 7月27日比赛日",
+    "range": "北京时间 07-07 18:00 - 07-28 18:00",
     "match_days": [
-      {
-        "date": "2026-07-06",
-        "title": "7月6日比赛日",
-        "range": "北京时间 07-06 18:00 - 07-07 18:00",
-        "start_iso": "2026-07-06T18:00:00+08:00",
-        "end_iso": "2026-07-07T18:00:00+08:00"
-      },
       {
         "date": "2026-07-07",
         "title": "7月7日比赛日",
@@ -5240,21 +3931,28 @@
         "range": "北京时间 07-26 18:00 - 07-27 18:00",
         "start_iso": "2026-07-26T18:00:00+08:00",
         "end_iso": "2026-07-27T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-27",
+        "title": "7月27日比赛日",
+        "range": "北京时间 07-27 18:00 - 07-28 18:00",
+        "start_iso": "2026-07-27T18:00:00+08:00",
+        "end_iso": "2026-07-28T18:00:00+08:00"
       }
     ]
   },
   "research": {
     "schema_version": 3,
     "stage": "research",
-    "generated_at": "2026-07-07T04:14:18Z",
+    "generated_at": "2026-07-08T03:39:55Z",
     "window": {
-      "start_date": "2026-07-06",
+      "start_date": "2026-07-07",
       "days": 3,
       "timezone": "UTC",
       "mode": "derived from China match-day display window"
     },
     "structure_utc_window": {
-      "start_date": "2026-07-06",
+      "start_date": "2026-07-07",
       "days": 22,
       "timezone": "UTC",
       "mode": "derived from China match-day structure window"
@@ -5262,42 +3960,35 @@
     "display_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 2,
-      "start_iso": "2026-07-06T18:00:00+08:00",
-      "end_iso": "2026-07-08T18:00:00+08:00",
-      "display_range": "7月6日比赛日 - 7月7日比赛日",
-      "range": "北京时间 07-06 18:00 - 07-08 18:00",
+      "start_iso": "2026-07-07T18:00:00+08:00",
+      "end_iso": "2026-07-09T18:00:00+08:00",
+      "display_range": "7月7日比赛日 - 7月8日比赛日",
+      "range": "北京时间 07-07 18:00 - 07-09 18:00",
       "match_days": [
-        {
-          "date": "2026-07-06",
-          "title": "7月6日比赛日",
-          "range": "北京时间 07-06 18:00 - 07-07 18:00",
-          "start_iso": "2026-07-06T18:00:00+08:00",
-          "end_iso": "2026-07-07T18:00:00+08:00"
-        },
         {
           "date": "2026-07-07",
           "title": "7月7日比赛日",
           "range": "北京时间 07-07 18:00 - 07-08 18:00",
           "start_iso": "2026-07-07T18:00:00+08:00",
           "end_iso": "2026-07-08T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-08",
+          "title": "7月8日比赛日",
+          "range": "北京时间 07-08 18:00 - 07-09 18:00",
+          "start_iso": "2026-07-08T18:00:00+08:00",
+          "end_iso": "2026-07-09T18:00:00+08:00"
         }
       ]
     },
     "structure_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 21,
-      "start_iso": "2026-07-06T18:00:00+08:00",
-      "end_iso": "2026-07-27T18:00:00+08:00",
-      "display_range": "7月6日比赛日 - 7月26日比赛日",
-      "range": "北京时间 07-06 18:00 - 07-27 18:00",
+      "start_iso": "2026-07-07T18:00:00+08:00",
+      "end_iso": "2026-07-28T18:00:00+08:00",
+      "display_range": "7月7日比赛日 - 7月27日比赛日",
+      "range": "北京时间 07-07 18:00 - 07-28 18:00",
       "match_days": [
-        {
-          "date": "2026-07-06",
-          "title": "7月6日比赛日",
-          "range": "北京时间 07-06 18:00 - 07-07 18:00",
-          "start_iso": "2026-07-06T18:00:00+08:00",
-          "end_iso": "2026-07-07T18:00:00+08:00"
-        },
         {
           "date": "2026-07-07",
           "title": "7月7日比赛日",
@@ -5437,23 +4128,30 @@
           "range": "北京时间 07-26 18:00 - 07-27 18:00",
           "start_iso": "2026-07-26T18:00:00+08:00",
           "end_iso": "2026-07-27T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-27",
+          "title": "7月27日比赛日",
+          "range": "北京时间 07-27 18:00 - 07-28 18:00",
+          "start_iso": "2026-07-27T18:00:00+08:00",
+          "end_iso": "2026-07-28T18:00:00+08:00"
         }
       ]
     },
     "china_match_days": [
-      {
-        "date": "2026-07-06",
-        "title": "7月6日比赛日",
-        "range": "北京时间 07-06 18:00 - 07-07 18:00",
-        "start_iso": "2026-07-06T18:00:00+08:00",
-        "end_iso": "2026-07-07T18:00:00+08:00"
-      },
       {
         "date": "2026-07-07",
         "title": "7月7日比赛日",
         "range": "北京时间 07-07 18:00 - 07-08 18:00",
         "start_iso": "2026-07-07T18:00:00+08:00",
         "end_iso": "2026-07-08T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-08",
+        "title": "7月8日比赛日",
+        "range": "北京时间 07-08 18:00 - 07-09 18:00",
+        "start_iso": "2026-07-08T18:00:00+08:00",
+        "end_iso": "2026-07-09T18:00:00+08:00"
       }
     ],
     "data_sources": {
@@ -5465,12 +4163,11 @@
     "source": {
       "fifa": {
         "name": "FIFA official calendar API",
-        "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-07-06&to=2026-07-28&language=en&count=500&idCompetition=17&idSeason=285023"
+        "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-07-07&to=2026-07-29&language=en&count=500&idCompetition=17&idSeason=285023"
       },
       "verification": {
         "name": "ESPN public FIFA World Cup scoreboard",
         "urls": [
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260705&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260706&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260707&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260708&limit=100",
@@ -5493,7 +4190,8 @@
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260725&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260726&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260727&limit=100",
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260728&limit=100"
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260728&limit=100",
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260729&limit=100"
         ]
       },
       "injury": {
@@ -5504,7 +4202,6 @@
       "odds": {
         "name": "ESPN odds feed",
         "urls": [
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260705&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260706&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260707&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260708&limit=100",
@@ -5527,292 +4224,26 @@
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260725&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260726&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260727&limit=100",
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260728&limit=100"
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260728&limit=100",
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260729&limit=100"
         ]
       }
     },
     "warnings": [],
     "unverified_fifa_matches": [],
     "structure_unverified_fifa_matches": [
-      "W95 vs W96",
       "W97 vs W98",
       "W99 vs W100",
       "RU101 vs RU102",
       "W101 vs W102"
     ],
-    "fixture_count": 4,
-    "fifa_fixture_count": 4,
-    "raw_fifa_fixture_count": 13,
-    "structure_fixture_count": 7,
-    "structure_fifa_fixture_count": 12,
-    "odds_available_count": 2,
+    "fixture_count": 2,
+    "fifa_fixture_count": 2,
+    "raw_fifa_fixture_count": 11,
+    "structure_fixture_count": 6,
+    "structure_fifa_fixture_count": 10,
+    "odds_available_count": 0,
     "matches": [
-      {
-        "id": "400021529",
-        "fifa_match_id": "400021529",
-        "match_name": "葡萄牙 vs 西班牙",
-        "match_name_en": "Portugal vs Spain",
-        "kickoff_utc": "2026-07-06T19:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Round of 16",
-        "stage_name": "Round of 16",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 93,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 1
-        },
-        "teams": {
-          "home": {
-            "name": "葡萄牙",
-            "name_en": "Portugal",
-            "abbreviation": "POR",
-            "id_team": "482",
-            "id_country": "POR",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-            "score": 0,
-            "tactics": "4-2-3-1",
-            "country_code": "POR",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-            "flag_emoji": "🇵🇹"
-          },
-          "away": {
-            "name": "西班牙",
-            "name_en": "Spain",
-            "abbreviation": "ESP",
-            "id_team": "164",
-            "id_country": "ESP",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "score": 1,
-            "tactics": "4-1-2-3",
-            "country_code": "ESP",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "flag_emoji": "🇪🇸"
-          }
-        },
-        "venue": {
-          "name": "Dallas Stadium",
-          "city": "Dallas",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021529"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760506"
-          }
-        },
-        "espn_event_id": "760506",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "葡萄牙",
-            "team_en": "Portugal",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
-                "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
-                "published": "2026-07-06T21:31:50Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760506"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "西班牙",
-            "team_en": "Spain",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
-                "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
-                "published": "2026-07-06T21:31:50Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760506"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Giuliani: U.S. involvement in Balogun red reversal won't affect USMNT legacy",
-                "description": "Andrew Giuliani, the head of the White House task force on the World Cup, told ESPN on Monday that he has no concerns at all over FIFA's decision to reduce Folarin Balogun's suspension affecting the legacy or credibility of what the USMNT accomplishes.",
-                "published": "2026-07-06T18:43:51Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49288020/giuliani-us-involvement-balogun-red-reversal-not-affect-usmnt-legacy"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "England's Jordan Henderson out of World Cup with suspected broken arm - sources",
-                "description": "Jordan Henderson is expected to be ruled out for the rest of the World Cup after suffering a suspected broken bone in celebrating England's 3-2 win over Mexico, sources have told ESPN.",
-                "published": "2026-07-06T17:52:34Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49285549/england-jordan-henderson-world-cup-suspected-broken-arm-sources"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      },
-      {
-        "id": "400021534",
-        "fifa_match_id": "400021534",
-        "match_name": "美国 vs 比利时",
-        "match_name_en": "USA vs Belgium",
-        "kickoff_utc": "2026-07-07T00:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Round of 16",
-        "stage_name": "Round of 16",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 94,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 1
-        },
-        "teams": {
-          "home": {
-            "name": "美国",
-            "name_en": "United States",
-            "abbreviation": "USA",
-            "id_team": "660",
-            "id_country": "USA",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-            "score": 1,
-            "tactics": "3-5-2",
-            "country_code": "USA",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-            "flag_emoji": "🇺🇸"
-          },
-          "away": {
-            "name": "比利时",
-            "name_en": "Belgium",
-            "abbreviation": "BEL",
-            "id_team": "459",
-            "id_country": "BEL",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "score": 4,
-            "tactics": "4-2-3-1",
-            "country_code": "BEL",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "flag_emoji": "🇧🇪"
-          }
-        },
-        "venue": {
-          "name": "Seattle Stadium",
-          "city": "Seattle",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021534"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760507"
-          }
-        },
-        "espn_event_id": "760507",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "美国",
-            "team_en": "United States",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
-                "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
-                "published": "2026-07-07T03:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
-                "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
-                "published": "2026-07-07T03:20:43Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760507"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
-                "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
-                "published": "2026-07-07T03:48:31Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "比利时",
-            "team_en": "Belgium",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
-                "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
-                "published": "2026-07-07T03:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
-                "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
-                "published": "2026-07-07T03:20:43Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760507"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
-                "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
-                "published": "2026-07-07T03:48:31Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      },
       {
         "id": "400021528",
         "fifa_match_id": "400021528",
@@ -5828,9 +4259,9 @@
         "group": "",
         "match_number": 95,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -5840,8 +4271,8 @@
             "id_team": "202",
             "id_country": "ARG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": null,
-            "tactics": null,
+            "score": 3,
+            "tactics": "4-1-3-2",
             "country_code": "ARG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
             "flag_emoji": "🇦🇷"
@@ -5853,8 +4284,8 @@
             "id_team": "2620",
             "id_country": "EGY",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
-            "score": null,
-            "tactics": null,
+            "score": 2,
+            "tactics": "4-2-3-1",
             "country_code": "EGY",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
             "flag_emoji": "🇪🇬"
@@ -5888,26 +4319,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-285",
-            "draw": "+380",
-            "away": "+900"
-          },
-          "implied_probability": {
-            "home_win": 74.03,
-            "draw": 20.83,
-            "away_win": 10.0
-          },
-          "normalized_probability": {
-            "home_win": 70.6,
-            "draw": 19.87,
-            "away_win": 9.54
-          },
-          "overround": 4.86,
-          "details": "ARG -285"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -5941,9 +4355,9 @@
         "group": "",
         "match_number": 96,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 2
         },
         "teams": {
           "home": {
@@ -5953,8 +4367,8 @@
             "id_team": "475",
             "id_country": "SUI",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "score": null,
-            "tactics": null,
+            "score": 0,
+            "tactics": "4-1-2-3",
             "country_code": "SUI",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
             "flag_emoji": "🇨🇭"
@@ -5966,8 +4380,8 @@
             "id_team": "208",
             "id_country": "COL",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
-            "score": null,
-            "tactics": null,
+            "score": 0,
+            "tactics": "4-1-2-3",
             "country_code": "COL",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
             "flag_emoji": "🇨🇴"
@@ -6001,26 +4415,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+245",
-            "draw": "+210",
-            "away": "+125"
-          },
-          "implied_probability": {
-            "home_win": 28.99,
-            "draw": 32.26,
-            "away_win": 44.44
-          },
-          "normalized_probability": {
-            "home_win": 27.43,
-            "draw": 30.52,
-            "away_win": 42.05
-          },
-          "overround": 5.69,
-          "details": "COL +125"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -6042,272 +4439,6 @@
     ],
     "fixtures": [
       {
-        "id": "400021529",
-        "fifa_match_id": "400021529",
-        "match_name": "葡萄牙 vs 西班牙",
-        "match_name_en": "Portugal vs Spain",
-        "kickoff_utc": "2026-07-06T19:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Round of 16",
-        "stage_name": "Round of 16",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 93,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 1
-        },
-        "teams": {
-          "home": {
-            "name": "葡萄牙",
-            "name_en": "Portugal",
-            "abbreviation": "POR",
-            "id_team": "482",
-            "id_country": "POR",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-            "score": 0,
-            "tactics": "4-2-3-1",
-            "country_code": "POR",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-            "flag_emoji": "🇵🇹"
-          },
-          "away": {
-            "name": "西班牙",
-            "name_en": "Spain",
-            "abbreviation": "ESP",
-            "id_team": "164",
-            "id_country": "ESP",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "score": 1,
-            "tactics": "4-1-2-3",
-            "country_code": "ESP",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "flag_emoji": "🇪🇸"
-          }
-        },
-        "venue": {
-          "name": "Dallas Stadium",
-          "city": "Dallas",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021529"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760506"
-          }
-        },
-        "espn_event_id": "760506",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "葡萄牙",
-            "team_en": "Portugal",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
-                "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
-                "published": "2026-07-06T21:31:50Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760506"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "西班牙",
-            "team_en": "Spain",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
-                "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
-                "published": "2026-07-06T21:31:50Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760506"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Giuliani: U.S. involvement in Balogun red reversal won't affect USMNT legacy",
-                "description": "Andrew Giuliani, the head of the White House task force on the World Cup, told ESPN on Monday that he has no concerns at all over FIFA's decision to reduce Folarin Balogun's suspension affecting the legacy or credibility of what the USMNT accomplishes.",
-                "published": "2026-07-06T18:43:51Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49288020/giuliani-us-involvement-balogun-red-reversal-not-affect-usmnt-legacy"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "England's Jordan Henderson out of World Cup with suspected broken arm - sources",
-                "description": "Jordan Henderson is expected to be ruled out for the rest of the World Cup after suffering a suspected broken bone in celebrating England's 3-2 win over Mexico, sources have told ESPN.",
-                "published": "2026-07-06T17:52:34Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49285549/england-jordan-henderson-world-cup-suspected-broken-arm-sources"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      },
-      {
-        "id": "400021534",
-        "fifa_match_id": "400021534",
-        "match_name": "美国 vs 比利时",
-        "match_name_en": "USA vs Belgium",
-        "kickoff_utc": "2026-07-07T00:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Round of 16",
-        "stage_name": "Round of 16",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 94,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 1
-        },
-        "teams": {
-          "home": {
-            "name": "美国",
-            "name_en": "United States",
-            "abbreviation": "USA",
-            "id_team": "660",
-            "id_country": "USA",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-            "score": 1,
-            "tactics": "3-5-2",
-            "country_code": "USA",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-            "flag_emoji": "🇺🇸"
-          },
-          "away": {
-            "name": "比利时",
-            "name_en": "Belgium",
-            "abbreviation": "BEL",
-            "id_team": "459",
-            "id_country": "BEL",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "score": 4,
-            "tactics": "4-2-3-1",
-            "country_code": "BEL",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "flag_emoji": "🇧🇪"
-          }
-        },
-        "venue": {
-          "name": "Seattle Stadium",
-          "city": "Seattle",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021534"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760507"
-          }
-        },
-        "espn_event_id": "760507",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "美国",
-            "team_en": "United States",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
-                "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
-                "published": "2026-07-07T03:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
-                "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
-                "published": "2026-07-07T03:20:43Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760507"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
-                "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
-                "published": "2026-07-07T03:48:31Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "比利时",
-            "team_en": "Belgium",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
-                "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
-                "published": "2026-07-07T03:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
-                "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
-                "published": "2026-07-07T03:20:43Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760507"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
-                "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
-                "published": "2026-07-07T03:48:31Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      },
-      {
         "id": "400021528",
         "fifa_match_id": "400021528",
         "match_name": "阿根廷 vs 埃及",
@@ -6322,9 +4453,9 @@
         "group": "",
         "match_number": 95,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -6334,8 +4465,8 @@
             "id_team": "202",
             "id_country": "ARG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": null,
-            "tactics": null,
+            "score": 3,
+            "tactics": "4-1-3-2",
             "country_code": "ARG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
             "flag_emoji": "🇦🇷"
@@ -6347,8 +4478,8 @@
             "id_team": "2620",
             "id_country": "EGY",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
-            "score": null,
-            "tactics": null,
+            "score": 2,
+            "tactics": "4-2-3-1",
             "country_code": "EGY",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
             "flag_emoji": "🇪🇬"
@@ -6382,26 +4513,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-285",
-            "draw": "+380",
-            "away": "+900"
-          },
-          "implied_probability": {
-            "home_win": 74.03,
-            "draw": 20.83,
-            "away_win": 10.0
-          },
-          "normalized_probability": {
-            "home_win": 70.6,
-            "draw": 19.87,
-            "away_win": 9.54
-          },
-          "overround": 4.86,
-          "details": "ARG -285"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -6435,9 +4549,9 @@
         "group": "",
         "match_number": 96,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 2
         },
         "teams": {
           "home": {
@@ -6447,8 +4561,8 @@
             "id_team": "475",
             "id_country": "SUI",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "score": null,
-            "tactics": null,
+            "score": 0,
+            "tactics": "4-1-2-3",
             "country_code": "SUI",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
             "flag_emoji": "🇨🇭"
@@ -6460,8 +4574,8 @@
             "id_team": "208",
             "id_country": "COL",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
-            "score": null,
-            "tactics": null,
+            "score": 0,
+            "tactics": "4-1-2-3",
             "country_code": "COL",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
             "flag_emoji": "🇨🇴"
@@ -6495,26 +4609,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+245",
-            "draw": "+210",
-            "away": "+125"
-          },
-          "implied_probability": {
-            "home_win": 28.99,
-            "draw": 32.26,
-            "away_win": 44.44
-          },
-          "normalized_probability": {
-            "home_win": 27.43,
-            "draw": 30.52,
-            "away_win": 42.05
-          },
-          "overround": 5.69,
-          "details": "COL +125"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -6536,272 +4633,6 @@
     ],
     "structure_matches": [
       {
-        "id": "400021529",
-        "fifa_match_id": "400021529",
-        "match_name": "葡萄牙 vs 西班牙",
-        "match_name_en": "Portugal vs Spain",
-        "kickoff_utc": "2026-07-06T19:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Round of 16",
-        "stage_name": "Round of 16",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 93,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 1
-        },
-        "teams": {
-          "home": {
-            "name": "葡萄牙",
-            "name_en": "Portugal",
-            "abbreviation": "POR",
-            "id_team": "482",
-            "id_country": "POR",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-            "score": 0,
-            "tactics": "4-2-3-1",
-            "country_code": "POR",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/por.png",
-            "flag_emoji": "🇵🇹"
-          },
-          "away": {
-            "name": "西班牙",
-            "name_en": "Spain",
-            "abbreviation": "ESP",
-            "id_team": "164",
-            "id_country": "ESP",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "score": 1,
-            "tactics": "4-1-2-3",
-            "country_code": "ESP",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "flag_emoji": "🇪🇸"
-          }
-        },
-        "venue": {
-          "name": "Dallas Stadium",
-          "city": "Dallas",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021529"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760506"
-          }
-        },
-        "espn_event_id": "760506",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "葡萄牙",
-            "team_en": "Portugal",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
-                "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
-                "published": "2026-07-06T21:31:50Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760506"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "西班牙",
-            "team_en": "Spain",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Cristiano Ronaldo's World Cup career ends as Spain beat Portugal",
-                "description": "Cristiano Ronaldo's World Cup dream ended in tears as Mikel Merino stepped off the bench to fire Spain into the quarterfinals with an injury-time winner in Dallas.",
-                "published": "2026-07-06T21:31:50Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760506"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Giuliani: U.S. involvement in Balogun red reversal won't affect USMNT legacy",
-                "description": "Andrew Giuliani, the head of the White House task force on the World Cup, told ESPN on Monday that he has no concerns at all over FIFA's decision to reduce Folarin Balogun's suspension affecting the legacy or credibility of what the USMNT accomplishes.",
-                "published": "2026-07-06T18:43:51Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49288020/giuliani-us-involvement-balogun-red-reversal-not-affect-usmnt-legacy"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "England's Jordan Henderson out of World Cup with suspected broken arm - sources",
-                "description": "Jordan Henderson is expected to be ruled out for the rest of the World Cup after suffering a suspected broken bone in celebrating England's 3-2 win over Mexico, sources have told ESPN.",
-                "published": "2026-07-06T17:52:34Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49285549/england-jordan-henderson-world-cup-suspected-broken-arm-sources"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      },
-      {
-        "id": "400021534",
-        "fifa_match_id": "400021534",
-        "match_name": "美国 vs 比利时",
-        "match_name_en": "USA vs Belgium",
-        "kickoff_utc": "2026-07-07T00:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Round of 16",
-        "stage_name": "Round of 16",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 94,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 1
-        },
-        "teams": {
-          "home": {
-            "name": "美国",
-            "name_en": "United States",
-            "abbreviation": "USA",
-            "id_team": "660",
-            "id_country": "USA",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-            "score": 1,
-            "tactics": "3-5-2",
-            "country_code": "USA",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
-            "flag_emoji": "🇺🇸"
-          },
-          "away": {
-            "name": "比利时",
-            "name_en": "Belgium",
-            "abbreviation": "BEL",
-            "id_team": "459",
-            "id_country": "BEL",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "score": 4,
-            "tactics": "4-2-3-1",
-            "country_code": "BEL",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "flag_emoji": "🇧🇪"
-          }
-        },
-        "venue": {
-          "name": "Seattle Stadium",
-          "city": "Seattle",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021534"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760507"
-          }
-        },
-        "espn_event_id": "760507",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "美国",
-            "team_en": "United States",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
-                "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
-                "published": "2026-07-07T03:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
-                "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
-                "published": "2026-07-07T03:20:43Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760507"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
-                "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
-                "published": "2026-07-07T03:48:31Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "比利时",
-            "team_en": "Belgium",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT's World Cup dream crushed by Belgium in round of 16",
-                "description": "Even with Folarin Balogun back up front, the United States men's national team crashed out of the World Cup in the round of 16 once again.",
-                "published": "2026-07-07T03:43:49Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291529/usa-belgium-20206-fifa-world-cup"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "USMNT dumped out of World Cup as Belgium hit four in Seattle",
-                "description": "The United States' hopes for a deep World Cup run at home ended when Charles De Ketelaere scored twice and assisted on another goal, helping Belgium expose the Americans' defensive liabilities in a 4-1 win Monday night that earned a quarterfinal berth.",
-                "published": "2026-07-07T03:20:43Z",
-                "url": "http://www.espn.com/soccer/report/_/gameId/760507"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Christian Pulisic limps off with foot injury in U.S. World Cup exit",
-                "description": "Christian Pulisic was forced off with an injury in the second half of the United States' World Cup round of 16 loss  against Belgium.",
-                "published": "2026-07-07T03:48:31Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49291866/christian-pulisic-injury-usa-belgium-2026-world-cup"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      },
-      {
         "id": "400021528",
         "fifa_match_id": "400021528",
         "match_name": "阿根廷 vs 埃及",
@@ -6816,9 +4647,9 @@
         "group": "",
         "match_number": 95,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -6828,8 +4659,8 @@
             "id_team": "202",
             "id_country": "ARG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": null,
-            "tactics": null,
+            "score": 3,
+            "tactics": "4-1-3-2",
             "country_code": "ARG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
             "flag_emoji": "🇦🇷"
@@ -6841,8 +4672,8 @@
             "id_team": "2620",
             "id_country": "EGY",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
-            "score": null,
-            "tactics": null,
+            "score": 2,
+            "tactics": "4-2-3-1",
             "country_code": "EGY",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/egy.png",
             "flag_emoji": "🇪🇬"
@@ -6876,26 +4707,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-285",
-            "draw": "+380",
-            "away": "+900"
-          },
-          "implied_probability": {
-            "home_win": 74.03,
-            "draw": 20.83,
-            "away_win": 10.0
-          },
-          "normalized_probability": {
-            "home_win": 70.6,
-            "draw": 19.87,
-            "away_win": 9.54
-          },
-          "overround": 4.86,
-          "details": "ARG -285"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -6929,9 +4743,9 @@
         "group": "",
         "match_number": 96,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 2
         },
         "teams": {
           "home": {
@@ -6941,8 +4755,8 @@
             "id_team": "475",
             "id_country": "SUI",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "score": null,
-            "tactics": null,
+            "score": 0,
+            "tactics": "4-1-2-3",
             "country_code": "SUI",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
             "flag_emoji": "🇨🇭"
@@ -6954,8 +4768,8 @@
             "id_team": "208",
             "id_country": "COL",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
-            "score": null,
-            "tactics": null,
+            "score": 0,
+            "tactics": "4-1-2-3",
             "country_code": "COL",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/col.png",
             "flag_emoji": "🇨🇴"
@@ -6989,26 +4803,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+245",
-            "draw": "+210",
-            "away": "+125"
-          },
-          "implied_probability": {
-            "home_win": 28.99,
-            "draw": 32.26,
-            "away_win": 44.44
-          },
-          "normalized_probability": {
-            "home_win": 27.43,
-            "draw": 30.52,
-            "away_win": 42.05
-          },
-          "overround": 5.69,
-          "details": "COL +125"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -7203,22 +5000,22 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "-160",
-            "draw": "+290",
+            "home": "-165",
+            "draw": "+295",
             "away": "+450"
           },
           "implied_probability": {
-            "home_win": 61.54,
-            "draw": 25.64,
+            "home_win": 62.26,
+            "draw": 25.32,
             "away_win": 18.18
           },
           "normalized_probability": {
-            "home_win": 58.41,
-            "draw": 24.34,
-            "away_win": 17.26
+            "home_win": 58.87,
+            "draw": 23.94,
+            "away_win": 17.19
           },
-          "overround": 5.36,
-          "details": "ESP -160"
+          "overround": 5.76,
+          "details": "ESP -165"
         }
       },
       {
@@ -7300,28 +5097,125 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+295",
+            "home": "+310",
             "draw": "+270",
             "away": "-115"
           },
           "implied_probability": {
-            "home_win": 25.32,
+            "home_win": 24.39,
             "draw": 27.03,
             "away_win": 53.49
           },
           "normalized_probability": {
-            "home_win": 23.92,
-            "draw": 25.54,
-            "away_win": 50.54
+            "home_win": 23.25,
+            "draw": 25.76,
+            "away_win": 50.99
           },
-          "overround": 5.83,
+          "overround": 4.91,
           "details": "ENG -115"
+        }
+      },
+      {
+        "id": "400021537",
+        "fifa_match_id": "400021537",
+        "match_name": "阿根廷 vs 瑞士",
+        "match_name_en": "Argentina vs Switzerland",
+        "kickoff_utc": "2026-07-12T01:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Quarter-final",
+        "stage_name": "Quarter-final",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 100,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "teams": {
+          "home": {
+            "name": "阿根廷",
+            "name_en": "Argentina",
+            "abbreviation": "ARG",
+            "id_team": "202",
+            "id_country": "ARG",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+            "score": null,
+            "tactics": null,
+            "country_code": "ARG",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+            "flag_emoji": "🇦🇷"
+          },
+          "away": {
+            "name": "瑞士",
+            "name_en": "Switzerland",
+            "abbreviation": "SUI",
+            "id_team": "475",
+            "id_country": "SUI",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+            "score": null,
+            "tactics": null,
+            "country_code": "SUI",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+            "flag_emoji": "🇨🇭"
+          }
+        },
+        "venue": {
+          "name": "Kansas City Stadium",
+          "city": "Kansas City",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021537"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760513"
+          }
+        },
+        "espn_event_id": "760513",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "-140",
+            "draw": "+250",
+            "away": "+425"
+          },
+          "implied_probability": {
+            "home_win": 58.33,
+            "draw": 28.57,
+            "away_win": 19.05
+          },
+          "normalized_probability": {
+            "home_win": 55.06,
+            "draw": 26.97,
+            "away_win": 17.98
+          },
+          "overround": 5.95,
+          "details": "ARG -140"
         }
       }
     ],
     "daily_log": [
       {
-        "time": "2026-07-07T04:14:18Z",
+        "time": "2026-07-08T03:39:55Z",
         "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
         "status": "completed"
       }
@@ -7330,48 +5224,48 @@
   "display_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 2,
-    "start_iso": "2026-07-06T18:00:00+08:00",
-    "end_iso": "2026-07-08T18:00:00+08:00",
-    "display_range": "7月6日比赛日 - 7月7日比赛日",
-    "range": "北京时间 07-06 18:00 - 07-08 18:00",
+    "start_iso": "2026-07-07T18:00:00+08:00",
+    "end_iso": "2026-07-09T18:00:00+08:00",
+    "display_range": "7月7日比赛日 - 7月8日比赛日",
+    "range": "北京时间 07-07 18:00 - 07-09 18:00",
     "match_days": [
-      {
-        "date": "2026-07-06",
-        "title": "7月6日比赛日",
-        "range": "北京时间 07-06 18:00 - 07-07 18:00",
-        "start_iso": "2026-07-06T18:00:00+08:00",
-        "end_iso": "2026-07-07T18:00:00+08:00"
-      },
       {
         "date": "2026-07-07",
         "title": "7月7日比赛日",
         "range": "北京时间 07-07 18:00 - 07-08 18:00",
         "start_iso": "2026-07-07T18:00:00+08:00",
         "end_iso": "2026-07-08T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-08",
+        "title": "7月8日比赛日",
+        "range": "北京时间 07-08 18:00 - 07-09 18:00",
+        "start_iso": "2026-07-08T18:00:00+08:00",
+        "end_iso": "2026-07-09T18:00:00+08:00"
       }
     ]
   },
   "china_match_days": [
-    {
-      "date": "2026-07-06",
-      "title": "7月6日比赛日",
-      "range": "北京时间 07-06 18:00 - 07-07 18:00",
-      "start_iso": "2026-07-06T18:00:00+08:00",
-      "end_iso": "2026-07-07T18:00:00+08:00"
-    },
     {
       "date": "2026-07-07",
       "title": "7月7日比赛日",
       "range": "北京时间 07-07 18:00 - 07-08 18:00",
       "start_iso": "2026-07-07T18:00:00+08:00",
       "end_iso": "2026-07-08T18:00:00+08:00"
+    },
+    {
+      "date": "2026-07-08",
+      "title": "7月8日比赛日",
+      "range": "北京时间 07-08 18:00 - 07-09 18:00",
+      "start_iso": "2026-07-08T18:00:00+08:00",
+      "end_iso": "2026-07-09T18:00:00+08:00"
     }
   ],
   "usage": {
-    "input_tokens": 21294,
-    "output_tokens": 8962,
-    "total_tokens": 30256,
-    "cost_estimate": 0.30256
+    "input_tokens": 13265,
+    "output_tokens": 4225,
+    "total_tokens": 17490,
+    "cost_estimate": 0.1749
   },
   "analysis_model": "deepseek-v4-pro",
   "model": {
@@ -7385,12 +5279,12 @@
   },
   "daily_log": [
     {
-      "time": "2026-07-07T04:14:18Z",
+      "time": "2026-07-08T03:39:55Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     },
     {
-      "time": "2026-07-07T04:31:33Z",
+      "time": "2026-07-08T03:52:44Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     }
