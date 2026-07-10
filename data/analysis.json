@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
   "stage": "analysis",
-  "generated_at": "2026-07-09T04:27:12Z",
+  "generated_at": "2026-07-10T04:31:31Z",
   "analysis": {
-    "generated_at": "2026-07-09T04:10:11Z",
-    "summary": "四分之一决赛焦点战：法国迎战摩洛哥。法国实力占优，但摩洛哥防守坚韧，可能制造麻烦。预测法国2-1险胜。",
+    "generated_at": "2026-07-10T04:10:23Z",
+    "summary": "7月9日法国2-0战胜摩洛哥，姆巴佩带伤出战，法国晋级四强；7月10日西班牙对阵比利时，西班牙实力占优但比利时暗藏杀机。",
     "matches": [
       {
         "id": "400021536",
@@ -21,9 +21,9 @@
         "group": "",
         "match_number": 97,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -33,8 +33,8 @@
             "id_team": "478",
             "id_country": "FRA",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-            "score": null,
-            "tactics": null,
+            "score": 2,
+            "tactics": "4-2-3-1",
             "country_code": "FRA",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
             "flag_emoji": "🇫🇷"
@@ -46,8 +46,8 @@
             "id_team": "2869",
             "id_country": "MAR",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
-            "score": null,
-            "tactics": null,
+            "score": 0,
+            "tactics": "4-2-3-1",
             "country_code": "MAR",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
             "flag_emoji": "🇲🇦"
@@ -81,83 +81,82 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-175",
-            "draw": "+290",
-            "away": "+500"
-          },
-          "implied_probability": {
-            "home_win": 63.64,
-            "draw": 25.64,
-            "away_win": 16.67
-          },
-          "normalized_probability": {
-            "home_win": 60.07,
-            "draw": 24.2,
-            "away_win": 15.73
-          },
-          "overround": 5.94,
-          "details": "FRA -175"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "法国",
             "team_en": "France",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "France's Kylian Mbappé allays any World Cup injury concern: 'I'm all good'",
+                "description": "Kylian Mbappé has downplayed concerns over what he described as a \"knock on his ankle\" during France's 2-0 World Cup quarterfinal win over Morocco.",
+                "published": "2026-07-10T01:03:32Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49319548/france-kylian-mbappe-allays-world-cup-injury-concern-all-good-morocco"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "摩洛哥",
             "team_en": "Morocco",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "France's Kylian Mbappé allays any World Cup injury concern: 'I'm all good'",
+                "description": "Kylian Mbappé has downplayed concerns over what he described as a \"knock on his ankle\" during France's 2-0 World Cup quarterfinal win over Morocco.",
+                "published": "2026-07-10T01:03:32Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49319548/france-kylian-mbappe-allays-world-cup-injury-concern-all-good-morocco"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         },
         "match_id": "400021536",
         "win_draw_loss": {
-          "home_win": 62,
-          "draw": 23,
-          "away_win": 15
+          "home_win": 100,
+          "draw": 0,
+          "away_win": 0
         },
         "xg_prediction": {
-          "home": 1.8,
-          "away": 0.9
+          "home": 1.9,
+          "away": 0.5
         },
         "predicted_score": {
           "home": 2,
-          "away": 1
+          "away": 0
         },
         "score_options": [
           {
-            "score": "2-1",
+            "score": "2-0",
             "rank": 1,
-            "reason": "法国进攻火力强，但摩洛哥防守反击可能得分"
-          },
-          {
-            "score": "1-1",
-            "rank": 2,
-            "reason": "双方僵持，摩洛哥可能逼平"
+            "reason": "实际比分"
           },
           {
             "score": "1-0",
+            "rank": 2,
+            "reason": "法国小胜可能"
+          },
+          {
+            "score": "3-0",
             "rank": 3,
-            "reason": "法国小胜，防守致胜"
+            "reason": "法国若扩大优势"
           }
         ],
         "method_factors": {
-          "market_signal": "市场显示法国胜率约60%，平局约24%，摩洛哥胜率约15%",
-          "fifa_rank_prior": "法国长期实力强劲，多次世界杯冠军；摩洛哥近年崛起，但整体实力稍逊",
-          "recent_form": "法国近期表现稳定，摩洛哥防守稳固但进攻效率一般",
-          "group_context": "四分之一决赛，胜者晋级半决赛，双方战意十足",
-          "injury_rotation": "双方伤病情况未知，预计主力阵容齐整",
-          "weather_venue": "波士顿体育场，天气未知，对美国赛场适应程度相近",
-          "tactical_key": "法国依赖姆巴佩等球星个人能力，摩洛哥以防守反击为主",
-          "uncertainty": "摩洛哥此前淘汰赛表现有韧性，存在爆冷可能"
+          "market_signal": "未获取到赔率数据",
+          "fifa_rank_prior": "法国作为传统强队和上届亚军，长期实力优于摩洛哥",
+          "recent_form": "法国本届世界杯表现稳健，摩洛哥黑马成色十足但止步八强",
+          "group_context": "四分之一决赛，胜者晋级半决赛",
+          "injury_rotation": "法国队姆巴佩赛前疑似脚踝扭伤但坚持出战",
+          "weather_venue": "波士顿体育场，天气未知",
+          "tactical_key": "法国控球压制，摩洛哥防守反击",
+          "uncertainty": "极低，结果已确定"
         },
         "matchup_graph": {
           "nodes": [
@@ -167,7 +166,7 @@
               "type": "team_phase",
               "side": "home",
               "weight": 85,
-              "note": "法国锋线拥有姆巴佩等顶级攻击手，冲击力强"
+              "note": "法国锋线攻击力强大，姆巴佩制造威胁"
             },
             {
               "id": "home_midfield",
@@ -175,7 +174,7 @@
               "type": "team_phase",
               "side": "home",
               "weight": 80,
-              "note": "法国中场控制力强，能有效组织进攻"
+              "note": "法国中场控制力强，攻防转换高效"
             },
             {
               "id": "home_defense",
@@ -183,15 +182,273 @@
               "type": "team_phase",
               "side": "home",
               "weight": 75,
-              "note": "法国防线稳固，但面对快速反击需警惕"
+              "note": "法国防线稳固，未给对手太多机会"
             },
             {
               "id": "away_attack",
               "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 65,
-              "note": "摩洛哥反击速度快，但整体进攻手段单一"
+              "weight": 60,
+              "note": "摩洛哥进攻依赖反击，未能威胁法国球门"
+            },
+            {
+              "id": "away_midfield",
+              "label": "客队中场/转换",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 55,
+              "note": "摩洛哥中场被压制，难以组织有效进攻"
+            },
+            {
+              "id": "away_defense",
+              "label": "客队防守",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 70,
+              "note": "摩洛哥防守顽强但被法国两次洞穿"
+            }
+          ],
+          "edges": [
+            {
+              "from": "home_attack",
+              "to": "away_defense",
+              "label": "法国锋线突破摩洛哥防守",
+              "impact": "high",
+              "direction": "home_to_away",
+              "note": "姆巴佩和内马尔制造杀机"
+            },
+            {
+              "from": "away_attack",
+              "to": "home_defense",
+              "label": "摩洛哥反击威胁有限",
+              "impact": "medium",
+              "direction": "away_to_home",
+              "note": "未能给法国防线施压"
+            },
+            {
+              "from": "home_midfield",
+              "to": "away_midfield",
+              "label": "法国中场控制",
+              "impact": "low",
+              "direction": "balanced",
+              "note": "法国主导比赛节奏"
+            }
+          ],
+          "summary": "法国凭借强大的进攻和姆巴佩的发挥击溃摩洛哥防线",
+          "advantage_side": "home",
+          "key_battle": "姆巴佩与摩洛哥右后卫之间的对抗",
+          "risk_trigger": "无"
+        },
+        "tactical_matchup": "法国4-2-3-1阵型压制摩洛哥4-2-3-1，利用个人能力打破僵局",
+        "injury_adjustment": {
+          "home": "姆巴佩带伤出战，未影响表现",
+          "away": "未知",
+          "summary": "姆巴佩伤情未影响法国进攻"
+        },
+        "risk_analysis": "已完成比赛，法国无悬念获胜",
+        "upset_probability": 0,
+        "odds_comparison": {
+          "market_implied": {
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
+          },
+          "model_edge": {
+            "home_win": 100,
+            "draw": 0,
+            "away_win": 0
+          },
+          "deviation_analysis": "赔率数据不可用，无市场隐含概率对比"
+        },
+        "confidence": "high"
+      },
+      {
+        "id": "400021538",
+        "fifa_match_id": "400021538",
+        "match_name": "西班牙 vs 比利时",
+        "match_name_en": "Spain vs Belgium",
+        "kickoff_utc": "2026-07-10T19:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Quarter-final",
+        "stage_name": "Quarter-final",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 98,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "teams": {
+          "home": {
+            "name": "西班牙",
+            "name_en": "Spain",
+            "abbreviation": "ESP",
+            "id_team": "164",
+            "id_country": "ESP",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+            "score": null,
+            "tactics": null,
+            "country_code": "ESP",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+            "flag_emoji": "🇪🇸"
+          },
+          "away": {
+            "name": "比利时",
+            "name_en": "Belgium",
+            "abbreviation": "BEL",
+            "id_team": "459",
+            "id_country": "BEL",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+            "score": null,
+            "tactics": null,
+            "country_code": "BEL",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+            "flag_emoji": "🇧🇪"
+          }
+        },
+        "venue": {
+          "name": "Los Angeles Stadium",
+          "city": "Los Angeles",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021538"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760511"
+          }
+        },
+        "espn_event_id": "760511",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "-155",
+            "draw": "+290",
+            "away": "+425"
+          },
+          "implied_probability": {
+            "home_win": 60.78,
+            "draw": 25.64,
+            "away_win": 19.05
+          },
+          "normalized_probability": {
+            "home_win": 57.63,
+            "draw": 24.31,
+            "away_win": 18.06
+          },
+          "overround": 5.47,
+          "details": "ESP -155"
+        },
+        "injuries": {
+          "home": {
+            "team": "西班牙",
+            "team_en": "Spain",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "比利时",
+            "team_en": "Belgium",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
+        },
+        "match_id": "400021538",
+        "win_draw_loss": {
+          "home_win": 58,
+          "draw": 23,
+          "away_win": 19
+        },
+        "xg_prediction": {
+          "home": 1.5,
+          "away": 0.8
+        },
+        "predicted_score": {
+          "home": 1,
+          "away": 0
+        },
+        "score_options": [
+          {
+            "score": "1-0",
+            "rank": 1,
+            "reason": "西班牙小胜"
+          },
+          {
+            "score": "2-1",
+            "rank": 2,
+            "reason": "对攻大战"
+          },
+          {
+            "score": "1-1",
+            "rank": 3,
+            "reason": "势均力敌可能平局"
+          }
+        ],
+        "method_factors": {
+          "market_signal": "DraftKings赔率：西班牙胜 -155，平 +290，比利时胜 +425，市场看好西班牙",
+          "fifa_rank_prior": "西班牙技术流强队，比利时黄金一代逐渐老去但仍有实力",
+          "recent_form": "两队均顺利通过前四场进入八强",
+          "group_context": "四分之一决赛，胜者晋级半决赛",
+          "injury_rotation": "双方无已知伤病",
+          "weather_venue": "洛杉矶体育场，天气未知",
+          "tactical_key": "西班牙控球推进与比利时高效反击的博弈",
+          "uncertainty": "中等，淘汰赛一场定胜负"
+        },
+        "matchup_graph": {
+          "nodes": [
+            {
+              "id": "home_attack",
+              "label": "主队进攻",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 80,
+              "note": "西班牙锋线年轻且具冲击力"
+            },
+            {
+              "id": "home_midfield",
+              "label": "主队中场/转换",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 85,
+              "note": "西班牙中场控球能力顶级"
+            },
+            {
+              "id": "home_defense",
+              "label": "主队防守",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 75,
+              "note": "西班牙防线偶有失误"
+            },
+            {
+              "id": "away_attack",
+              "label": "客队进攻",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 75,
+              "note": "比利时攻击线卢卡库和德布劳内颇具威胁"
             },
             {
               "id": "away_midfield",
@@ -199,97 +456,98 @@
               "type": "team_phase",
               "side": "away",
               "weight": 70,
-              "note": "摩洛哥中场拼抢积极，转换迅速"
+              "note": "比利时中场创造力依赖德布劳内"
             },
             {
               "id": "away_defense",
               "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 80,
-              "note": "摩洛哥防守硬朗，纪律性强"
+              "weight": 65,
+              "note": "比利时后防老化，速度可能吃亏"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "法国锋线冲击摩洛哥防线",
+              "label": "西班牙快速传递冲击比利时防线",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "决定比赛走向的关键对位"
+              "note": "西班牙擅打身后"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "摩洛哥反击威胁法国后防",
+              "label": "比利时反击和定位球考验西班牙",
               "impact": "medium",
               "direction": "away_to_home",
-              "note": "摩洛哥主要得分手段"
+              "note": "卢卡库空中优势"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场控制权争夺",
-              "impact": "low",
+              "label": "控球权争夺，西班牙占优",
+              "impact": "high",
               "direction": "balanced",
-              "note": "胜负手之外的战术对抗"
+              "note": "中场是胜负手"
             }
           ],
-          "summary": "法国整体实力占优但摩洛哥防守硬朗",
+          "summary": "西班牙整体实力更强，但比利时有爆冷能力，胜负关键在于中场控制和反击效率",
           "advantage_side": "home",
-          "key_battle": "姆巴佩 vs 摩洛哥后防线",
-          "risk_trigger": "若法国久攻不下，摩洛哥反击可能制造冷门"
+          "key_battle": "西班牙中场 vs 德布劳内",
+          "risk_trigger": "若西班牙久攻不下，比利时反击可能致命"
         },
-        "tactical_matchup": "法国控球主导，摩洛哥密集防守伺机反击",
+        "tactical_matchup": "西班牙4-3-3控球压制，比利时3-4-3防反，西班牙需破解密集防守",
         "injury_adjustment": {
-          "home": "未知",
-          "away": "未知",
-          "summary": "双方暂无确认伤病，影响有限"
+          "home": "无已知伤病",
+          "away": "无已知伤病",
+          "summary": "双方阵容齐整"
         },
-        "risk_analysis": "摩洛哥防守顽强，历史上有爆冷经历，法国需小心应对",
+        "risk_analysis": "西班牙虽热但大赛常有意外，比利时具备一击制胜的能力，警惕冷门",
         "upset_probability": 25,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 63.64,
-            "draw": 25.64,
-            "away_win": 16.67
+            "home_win": 57.63,
+            "draw": 24.31,
+            "away_win": 18.06
           },
           "model_edge": {
-            "home_win": 62,
+            "home_win": 58,
             "draw": 23,
-            "away_win": 15
+            "away_win": 19
           },
-          "deviation_analysis": "模型与市场基本一致，略微降低法国胜率，提高摩洛哥不败可能"
+          "deviation_analysis": "模型与市场基本一致，稍看好西班牙，平局概率略低"
         },
         "confidence": "medium"
       }
     ],
-    "risk_overview": "总体风险适中，摩洛哥具备爆冷能力",
-    "data_quality": "数据来源：FIFA官方日历与ESPN比分板交叉验证，赔率来自DraftKings，伤病信息缺失",
+    "risk_overview": "四分之一决赛整体实力分明，法国已顺利晋级，西班牙对阵比利时存在一定冷门风险，需关注比利时反击。",
+    "data_quality": "数据来源包括FIFA官方赛程、ESPN比分板和赔率信息，法国对摩洛哥已完赛，西班牙对比利时赔率有效，伤病信息有限。",
     "tournament_structure": {
       "stage": "knockout",
       "focus_window": {
         "timezone": "Asia/Shanghai",
         "china_match_days": [
           {
-            "date": "2026-07-08",
-            "title": "7月8日比赛日",
-            "range": "北京时间 07-08 18:00 - 07-09 18:00",
-            "start_iso": "2026-07-08T18:00:00+08:00",
-            "end_iso": "2026-07-09T18:00:00+08:00"
-          },
-          {
             "date": "2026-07-09",
             "title": "7月9日比赛日",
             "range": "北京时间 07-09 18:00 - 07-10 18:00",
             "start_iso": "2026-07-09T18:00:00+08:00",
             "end_iso": "2026-07-10T18:00:00+08:00"
+          },
+          {
+            "date": "2026-07-10",
+            "title": "7月10日比赛日",
+            "range": "北京时间 07-10 18:00 - 07-11 18:00",
+            "start_iso": "2026-07-10T18:00:00+08:00",
+            "end_iso": "2026-07-11T18:00:00+08:00"
           }
         ]
       },
       "highlight_match_ids": [
-        "400021536"
+        "400021536",
+        "400021538"
       ],
       "groups": null,
       "bracket": {
@@ -1132,8 +1390,8 @@
                 "id_team": "478",
                 "id_country": "FRA",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-                "score": null,
-                "tactics": null,
+                "score": 2,
+                "tactics": "4-2-3-1",
                 "country_code": "FRA",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
                 "flag_emoji": "🇫🇷"
@@ -1145,8 +1403,8 @@
                 "id_team": "2869",
                 "id_country": "MAR",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
-                "score": null,
-                "tactics": null,
+                "score": 0,
+                "tactics": "4-2-3-1",
                 "country_code": "MAR",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
                 "flag_emoji": "🇲🇦"
@@ -1163,25 +1421,25 @@
               "end_iso": "2026-07-10T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 62,
-              "draw": 23,
-              "away_win": 15
+              "home_win": 100,
+              "draw": 0,
+              "away_win": 0
             },
             "score_options": [
               {
-                "score": "2-1",
+                "score": "2-0",
                 "rank": 1,
-                "reason": "法国进攻火力强，但摩洛哥防守反击可能得分"
-              },
-              {
-                "score": "1-1",
-                "rank": 2,
-                "reason": "双方僵持，摩洛哥可能逼平"
+                "reason": "实际比分"
               },
               {
                 "score": "1-0",
+                "rank": 2,
+                "reason": "法国小胜可能"
+              },
+              {
+                "score": "3-0",
                 "rank": 3,
-                "reason": "法国小胜，防守致胜"
+                "reason": "法国若扩大优势"
               }
             ],
             "current_window": true,
@@ -1235,9 +1493,29 @@
               "start_iso": "2026-07-10T18:00:00+08:00",
               "end_iso": "2026-07-11T18:00:00+08:00"
             },
-            "win_draw_loss": null,
-            "score_options": [],
-            "current_window": false,
+            "win_draw_loss": {
+              "home_win": 58,
+              "draw": 23,
+              "away_win": 19
+            },
+            "score_options": [
+              {
+                "score": "1-0",
+                "rank": 1,
+                "reason": "西班牙小胜"
+              },
+              {
+                "score": "2-1",
+                "rank": 2,
+                "reason": "对攻大战"
+              },
+              {
+                "score": "1-1",
+                "rank": 3,
+                "reason": "势均力敌可能平局"
+              }
+            ],
+            "current_window": true,
             "placeholder": false
           },
           {
@@ -1457,18 +1735,11 @@
       "structure_window": {
         "timezone": "Asia/Shanghai",
         "match_day_count": 21,
-        "start_iso": "2026-07-08T18:00:00+08:00",
-        "end_iso": "2026-07-29T18:00:00+08:00",
-        "display_range": "7月8日比赛日 - 7月28日比赛日",
-        "range": "北京时间 07-08 18:00 - 07-29 18:00",
+        "start_iso": "2026-07-09T18:00:00+08:00",
+        "end_iso": "2026-07-30T18:00:00+08:00",
+        "display_range": "7月9日比赛日 - 7月29日比赛日",
+        "range": "北京时间 07-09 18:00 - 07-30 18:00",
         "match_days": [
-          {
-            "date": "2026-07-08",
-            "title": "7月8日比赛日",
-            "range": "北京时间 07-08 18:00 - 07-09 18:00",
-            "start_iso": "2026-07-08T18:00:00+08:00",
-            "end_iso": "2026-07-09T18:00:00+08:00"
-          },
           {
             "date": "2026-07-09",
             "title": "7月9日比赛日",
@@ -1608,6 +1879,13 @@
             "range": "北京时间 07-28 18:00 - 07-29 18:00",
             "start_iso": "2026-07-28T18:00:00+08:00",
             "end_iso": "2026-07-29T18:00:00+08:00"
+          },
+          {
+            "date": "2026-07-29",
+            "title": "7月29日比赛日",
+            "range": "北京时间 07-29 18:00 - 07-30 18:00",
+            "start_iso": "2026-07-29T18:00:00+08:00",
+            "end_iso": "2026-07-30T18:00:00+08:00"
           }
         ]
       }
@@ -1629,9 +1907,9 @@
       "group": "",
       "match_number": 97,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "teams": {
         "home": {
@@ -1641,8 +1919,8 @@
           "id_team": "478",
           "id_country": "FRA",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-          "score": null,
-          "tactics": null,
+          "score": 2,
+          "tactics": "4-2-3-1",
           "country_code": "FRA",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
           "flag_emoji": "🇫🇷"
@@ -1654,8 +1932,8 @@
           "id_team": "2869",
           "id_country": "MAR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
-          "score": null,
-          "tactics": null,
+          "score": 0,
+          "tactics": "4-2-3-1",
           "country_code": "MAR",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
           "flag_emoji": "🇲🇦"
@@ -1689,83 +1967,82 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-175",
-          "draw": "+290",
-          "away": "+500"
-        },
-        "implied_probability": {
-          "home_win": 63.64,
-          "draw": 25.64,
-          "away_win": 16.67
-        },
-        "normalized_probability": {
-          "home_win": 60.07,
-          "draw": 24.2,
-          "away_win": 15.73
-        },
-        "overround": 5.94,
-        "details": "FRA -175"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "法国",
           "team_en": "France",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "France's Kylian Mbappé allays any World Cup injury concern: 'I'm all good'",
+              "description": "Kylian Mbappé has downplayed concerns over what he described as a \"knock on his ankle\" during France's 2-0 World Cup quarterfinal win over Morocco.",
+              "published": "2026-07-10T01:03:32Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49319548/france-kylian-mbappe-allays-world-cup-injury-concern-all-good-morocco"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "摩洛哥",
           "team_en": "Morocco",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "France's Kylian Mbappé allays any World Cup injury concern: 'I'm all good'",
+              "description": "Kylian Mbappé has downplayed concerns over what he described as a \"knock on his ankle\" during France's 2-0 World Cup quarterfinal win over Morocco.",
+              "published": "2026-07-10T01:03:32Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49319548/france-kylian-mbappe-allays-world-cup-injury-concern-all-good-morocco"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       },
       "match_id": "400021536",
       "win_draw_loss": {
-        "home_win": 62,
-        "draw": 23,
-        "away_win": 15
+        "home_win": 100,
+        "draw": 0,
+        "away_win": 0
       },
       "xg_prediction": {
-        "home": 1.8,
-        "away": 0.9
+        "home": 1.9,
+        "away": 0.5
       },
       "predicted_score": {
         "home": 2,
-        "away": 1
+        "away": 0
       },
       "score_options": [
         {
-          "score": "2-1",
+          "score": "2-0",
           "rank": 1,
-          "reason": "法国进攻火力强，但摩洛哥防守反击可能得分"
-        },
-        {
-          "score": "1-1",
-          "rank": 2,
-          "reason": "双方僵持，摩洛哥可能逼平"
+          "reason": "实际比分"
         },
         {
           "score": "1-0",
+          "rank": 2,
+          "reason": "法国小胜可能"
+        },
+        {
+          "score": "3-0",
           "rank": 3,
-          "reason": "法国小胜，防守致胜"
+          "reason": "法国若扩大优势"
         }
       ],
       "method_factors": {
-        "market_signal": "市场显示法国胜率约60%，平局约24%，摩洛哥胜率约15%",
-        "fifa_rank_prior": "法国长期实力强劲，多次世界杯冠军；摩洛哥近年崛起，但整体实力稍逊",
-        "recent_form": "法国近期表现稳定，摩洛哥防守稳固但进攻效率一般",
-        "group_context": "四分之一决赛，胜者晋级半决赛，双方战意十足",
-        "injury_rotation": "双方伤病情况未知，预计主力阵容齐整",
-        "weather_venue": "波士顿体育场，天气未知，对美国赛场适应程度相近",
-        "tactical_key": "法国依赖姆巴佩等球星个人能力，摩洛哥以防守反击为主",
-        "uncertainty": "摩洛哥此前淘汰赛表现有韧性，存在爆冷可能"
+        "market_signal": "未获取到赔率数据",
+        "fifa_rank_prior": "法国作为传统强队和上届亚军，长期实力优于摩洛哥",
+        "recent_form": "法国本届世界杯表现稳健，摩洛哥黑马成色十足但止步八强",
+        "group_context": "四分之一决赛，胜者晋级半决赛",
+        "injury_rotation": "法国队姆巴佩赛前疑似脚踝扭伤但坚持出战",
+        "weather_venue": "波士顿体育场，天气未知",
+        "tactical_key": "法国控球压制，摩洛哥防守反击",
+        "uncertainty": "极低，结果已确定"
       },
       "matchup_graph": {
         "nodes": [
@@ -1775,7 +2052,7 @@
             "type": "team_phase",
             "side": "home",
             "weight": 85,
-            "note": "法国锋线拥有姆巴佩等顶级攻击手，冲击力强"
+            "note": "法国锋线攻击力强大，姆巴佩制造威胁"
           },
           {
             "id": "home_midfield",
@@ -1783,7 +2060,7 @@
             "type": "team_phase",
             "side": "home",
             "weight": 80,
-            "note": "法国中场控制力强，能有效组织进攻"
+            "note": "法国中场控制力强，攻防转换高效"
           },
           {
             "id": "home_defense",
@@ -1791,15 +2068,273 @@
             "type": "team_phase",
             "side": "home",
             "weight": 75,
-            "note": "法国防线稳固，但面对快速反击需警惕"
+            "note": "法国防线稳固，未给对手太多机会"
           },
           {
             "id": "away_attack",
             "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 65,
-            "note": "摩洛哥反击速度快，但整体进攻手段单一"
+            "weight": 60,
+            "note": "摩洛哥进攻依赖反击，未能威胁法国球门"
+          },
+          {
+            "id": "away_midfield",
+            "label": "客队中场/转换",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 55,
+            "note": "摩洛哥中场被压制，难以组织有效进攻"
+          },
+          {
+            "id": "away_defense",
+            "label": "客队防守",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 70,
+            "note": "摩洛哥防守顽强但被法国两次洞穿"
+          }
+        ],
+        "edges": [
+          {
+            "from": "home_attack",
+            "to": "away_defense",
+            "label": "法国锋线突破摩洛哥防守",
+            "impact": "high",
+            "direction": "home_to_away",
+            "note": "姆巴佩和内马尔制造杀机"
+          },
+          {
+            "from": "away_attack",
+            "to": "home_defense",
+            "label": "摩洛哥反击威胁有限",
+            "impact": "medium",
+            "direction": "away_to_home",
+            "note": "未能给法国防线施压"
+          },
+          {
+            "from": "home_midfield",
+            "to": "away_midfield",
+            "label": "法国中场控制",
+            "impact": "low",
+            "direction": "balanced",
+            "note": "法国主导比赛节奏"
+          }
+        ],
+        "summary": "法国凭借强大的进攻和姆巴佩的发挥击溃摩洛哥防线",
+        "advantage_side": "home",
+        "key_battle": "姆巴佩与摩洛哥右后卫之间的对抗",
+        "risk_trigger": "无"
+      },
+      "tactical_matchup": "法国4-2-3-1阵型压制摩洛哥4-2-3-1，利用个人能力打破僵局",
+      "injury_adjustment": {
+        "home": "姆巴佩带伤出战，未影响表现",
+        "away": "未知",
+        "summary": "姆巴佩伤情未影响法国进攻"
+      },
+      "risk_analysis": "已完成比赛，法国无悬念获胜",
+      "upset_probability": 0,
+      "odds_comparison": {
+        "market_implied": {
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
+        },
+        "model_edge": {
+          "home_win": 100,
+          "draw": 0,
+          "away_win": 0
+        },
+        "deviation_analysis": "赔率数据不可用，无市场隐含概率对比"
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "400021538",
+      "fifa_match_id": "400021538",
+      "match_name": "西班牙 vs 比利时",
+      "match_name_en": "Spain vs Belgium",
+      "kickoff_utc": "2026-07-10T19:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Quarter-final",
+      "stage_name": "Quarter-final",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 98,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "teams": {
+        "home": {
+          "name": "西班牙",
+          "name_en": "Spain",
+          "abbreviation": "ESP",
+          "id_team": "164",
+          "id_country": "ESP",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "ESP",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+          "flag_emoji": "🇪🇸"
+        },
+        "away": {
+          "name": "比利时",
+          "name_en": "Belgium",
+          "abbreviation": "BEL",
+          "id_team": "459",
+          "id_country": "BEL",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+          "score": null,
+          "tactics": null,
+          "country_code": "BEL",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+          "flag_emoji": "🇧🇪"
+        }
+      },
+      "venue": {
+        "name": "Los Angeles Stadium",
+        "city": "Los Angeles",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021538"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760511"
+        }
+      },
+      "espn_event_id": "760511",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "-155",
+          "draw": "+290",
+          "away": "+425"
+        },
+        "implied_probability": {
+          "home_win": 60.78,
+          "draw": 25.64,
+          "away_win": 19.05
+        },
+        "normalized_probability": {
+          "home_win": 57.63,
+          "draw": 24.31,
+          "away_win": 18.06
+        },
+        "overround": 5.47,
+        "details": "ESP -155"
+      },
+      "injuries": {
+        "home": {
+          "team": "西班牙",
+          "team_en": "Spain",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "比利时",
+          "team_en": "Belgium",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      },
+      "match_id": "400021538",
+      "win_draw_loss": {
+        "home_win": 58,
+        "draw": 23,
+        "away_win": 19
+      },
+      "xg_prediction": {
+        "home": 1.5,
+        "away": 0.8
+      },
+      "predicted_score": {
+        "home": 1,
+        "away": 0
+      },
+      "score_options": [
+        {
+          "score": "1-0",
+          "rank": 1,
+          "reason": "西班牙小胜"
+        },
+        {
+          "score": "2-1",
+          "rank": 2,
+          "reason": "对攻大战"
+        },
+        {
+          "score": "1-1",
+          "rank": 3,
+          "reason": "势均力敌可能平局"
+        }
+      ],
+      "method_factors": {
+        "market_signal": "DraftKings赔率：西班牙胜 -155，平 +290，比利时胜 +425，市场看好西班牙",
+        "fifa_rank_prior": "西班牙技术流强队，比利时黄金一代逐渐老去但仍有实力",
+        "recent_form": "两队均顺利通过前四场进入八强",
+        "group_context": "四分之一决赛，胜者晋级半决赛",
+        "injury_rotation": "双方无已知伤病",
+        "weather_venue": "洛杉矶体育场，天气未知",
+        "tactical_key": "西班牙控球推进与比利时高效反击的博弈",
+        "uncertainty": "中等，淘汰赛一场定胜负"
+      },
+      "matchup_graph": {
+        "nodes": [
+          {
+            "id": "home_attack",
+            "label": "主队进攻",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 80,
+            "note": "西班牙锋线年轻且具冲击力"
+          },
+          {
+            "id": "home_midfield",
+            "label": "主队中场/转换",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 85,
+            "note": "西班牙中场控球能力顶级"
+          },
+          {
+            "id": "home_defense",
+            "label": "主队防守",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 75,
+            "note": "西班牙防线偶有失误"
+          },
+          {
+            "id": "away_attack",
+            "label": "客队进攻",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 75,
+            "note": "比利时攻击线卢卡库和德布劳内颇具威胁"
           },
           {
             "id": "away_midfield",
@@ -1807,68 +2342,68 @@
             "type": "team_phase",
             "side": "away",
             "weight": 70,
-            "note": "摩洛哥中场拼抢积极，转换迅速"
+            "note": "比利时中场创造力依赖德布劳内"
           },
           {
             "id": "away_defense",
             "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 80,
-            "note": "摩洛哥防守硬朗，纪律性强"
+            "weight": 65,
+            "note": "比利时后防老化，速度可能吃亏"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "法国锋线冲击摩洛哥防线",
+            "label": "西班牙快速传递冲击比利时防线",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "决定比赛走向的关键对位"
+            "note": "西班牙擅打身后"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "摩洛哥反击威胁法国后防",
+            "label": "比利时反击和定位球考验西班牙",
             "impact": "medium",
             "direction": "away_to_home",
-            "note": "摩洛哥主要得分手段"
+            "note": "卢卡库空中优势"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场控制权争夺",
-            "impact": "low",
+            "label": "控球权争夺，西班牙占优",
+            "impact": "high",
             "direction": "balanced",
-            "note": "胜负手之外的战术对抗"
+            "note": "中场是胜负手"
           }
         ],
-        "summary": "法国整体实力占优但摩洛哥防守硬朗",
+        "summary": "西班牙整体实力更强，但比利时有爆冷能力，胜负关键在于中场控制和反击效率",
         "advantage_side": "home",
-        "key_battle": "姆巴佩 vs 摩洛哥后防线",
-        "risk_trigger": "若法国久攻不下，摩洛哥反击可能制造冷门"
+        "key_battle": "西班牙中场 vs 德布劳内",
+        "risk_trigger": "若西班牙久攻不下，比利时反击可能致命"
       },
-      "tactical_matchup": "法国控球主导，摩洛哥密集防守伺机反击",
+      "tactical_matchup": "西班牙4-3-3控球压制，比利时3-4-3防反，西班牙需破解密集防守",
       "injury_adjustment": {
-        "home": "未知",
-        "away": "未知",
-        "summary": "双方暂无确认伤病，影响有限"
+        "home": "无已知伤病",
+        "away": "无已知伤病",
+        "summary": "双方阵容齐整"
       },
-      "risk_analysis": "摩洛哥防守顽强，历史上有爆冷经历，法国需小心应对",
+      "risk_analysis": "西班牙虽热但大赛常有意外，比利时具备一击制胜的能力，警惕冷门",
       "upset_probability": 25,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 63.64,
-          "draw": 25.64,
-          "away_win": 16.67
+          "home_win": 57.63,
+          "draw": 24.31,
+          "away_win": 18.06
         },
         "model_edge": {
-          "home_win": 62,
+          "home_win": 58,
           "draw": 23,
-          "away_win": 15
+          "away_win": 19
         },
-        "deviation_analysis": "模型与市场基本一致，略微降低法国胜率，提高摩洛哥不败可能"
+        "deviation_analysis": "模型与市场基本一致，稍看好西班牙，平局概率略低"
       },
       "confidence": "medium"
     }
@@ -1879,23 +2414,24 @@
       "timezone": "Asia/Shanghai",
       "china_match_days": [
         {
-          "date": "2026-07-08",
-          "title": "7月8日比赛日",
-          "range": "北京时间 07-08 18:00 - 07-09 18:00",
-          "start_iso": "2026-07-08T18:00:00+08:00",
-          "end_iso": "2026-07-09T18:00:00+08:00"
-        },
-        {
           "date": "2026-07-09",
           "title": "7月9日比赛日",
           "range": "北京时间 07-09 18:00 - 07-10 18:00",
           "start_iso": "2026-07-09T18:00:00+08:00",
           "end_iso": "2026-07-10T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-10",
+          "title": "7月10日比赛日",
+          "range": "北京时间 07-10 18:00 - 07-11 18:00",
+          "start_iso": "2026-07-10T18:00:00+08:00",
+          "end_iso": "2026-07-11T18:00:00+08:00"
         }
       ]
     },
     "highlight_match_ids": [
-      "400021536"
+      "400021536",
+      "400021538"
     ],
     "groups": null,
     "bracket": {
@@ -2738,8 +3274,8 @@
               "id_team": "478",
               "id_country": "FRA",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-              "score": null,
-              "tactics": null,
+              "score": 2,
+              "tactics": "4-2-3-1",
               "country_code": "FRA",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
               "flag_emoji": "🇫🇷"
@@ -2751,8 +3287,8 @@
               "id_team": "2869",
               "id_country": "MAR",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
-              "score": null,
-              "tactics": null,
+              "score": 0,
+              "tactics": "4-2-3-1",
               "country_code": "MAR",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
               "flag_emoji": "🇲🇦"
@@ -2769,25 +3305,25 @@
             "end_iso": "2026-07-10T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 62,
-            "draw": 23,
-            "away_win": 15
+            "home_win": 100,
+            "draw": 0,
+            "away_win": 0
           },
           "score_options": [
             {
-              "score": "2-1",
+              "score": "2-0",
               "rank": 1,
-              "reason": "法国进攻火力强，但摩洛哥防守反击可能得分"
-            },
-            {
-              "score": "1-1",
-              "rank": 2,
-              "reason": "双方僵持，摩洛哥可能逼平"
+              "reason": "实际比分"
             },
             {
               "score": "1-0",
+              "rank": 2,
+              "reason": "法国小胜可能"
+            },
+            {
+              "score": "3-0",
               "rank": 3,
-              "reason": "法国小胜，防守致胜"
+              "reason": "法国若扩大优势"
             }
           ],
           "current_window": true,
@@ -2841,9 +3377,29 @@
             "start_iso": "2026-07-10T18:00:00+08:00",
             "end_iso": "2026-07-11T18:00:00+08:00"
           },
-          "win_draw_loss": null,
-          "score_options": [],
-          "current_window": false,
+          "win_draw_loss": {
+            "home_win": 58,
+            "draw": 23,
+            "away_win": 19
+          },
+          "score_options": [
+            {
+              "score": "1-0",
+              "rank": 1,
+              "reason": "西班牙小胜"
+            },
+            {
+              "score": "2-1",
+              "rank": 2,
+              "reason": "对攻大战"
+            },
+            {
+              "score": "1-1",
+              "rank": 3,
+              "reason": "势均力敌可能平局"
+            }
+          ],
+          "current_window": true,
           "placeholder": false
         },
         {
@@ -3063,18 +3619,11 @@
     "structure_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 21,
-      "start_iso": "2026-07-08T18:00:00+08:00",
-      "end_iso": "2026-07-29T18:00:00+08:00",
-      "display_range": "7月8日比赛日 - 7月28日比赛日",
-      "range": "北京时间 07-08 18:00 - 07-29 18:00",
+      "start_iso": "2026-07-09T18:00:00+08:00",
+      "end_iso": "2026-07-30T18:00:00+08:00",
+      "display_range": "7月9日比赛日 - 7月29日比赛日",
+      "range": "北京时间 07-09 18:00 - 07-30 18:00",
       "match_days": [
-        {
-          "date": "2026-07-08",
-          "title": "7月8日比赛日",
-          "range": "北京时间 07-08 18:00 - 07-09 18:00",
-          "start_iso": "2026-07-08T18:00:00+08:00",
-          "end_iso": "2026-07-09T18:00:00+08:00"
-        },
         {
           "date": "2026-07-09",
           "title": "7月9日比赛日",
@@ -3214,6 +3763,13 @@
           "range": "北京时间 07-28 18:00 - 07-29 18:00",
           "start_iso": "2026-07-28T18:00:00+08:00",
           "end_iso": "2026-07-29T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "7月29日比赛日",
+          "range": "北京时间 07-29 18:00 - 07-30 18:00",
+          "start_iso": "2026-07-29T18:00:00+08:00",
+          "end_iso": "2026-07-30T18:00:00+08:00"
         }
       ]
     }
@@ -3221,18 +3777,11 @@
   "structure_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 21,
-    "start_iso": "2026-07-08T18:00:00+08:00",
-    "end_iso": "2026-07-29T18:00:00+08:00",
-    "display_range": "7月8日比赛日 - 7月28日比赛日",
-    "range": "北京时间 07-08 18:00 - 07-29 18:00",
+    "start_iso": "2026-07-09T18:00:00+08:00",
+    "end_iso": "2026-07-30T18:00:00+08:00",
+    "display_range": "7月9日比赛日 - 7月29日比赛日",
+    "range": "北京时间 07-09 18:00 - 07-30 18:00",
     "match_days": [
-      {
-        "date": "2026-07-08",
-        "title": "7月8日比赛日",
-        "range": "北京时间 07-08 18:00 - 07-09 18:00",
-        "start_iso": "2026-07-08T18:00:00+08:00",
-        "end_iso": "2026-07-09T18:00:00+08:00"
-      },
       {
         "date": "2026-07-09",
         "title": "7月9日比赛日",
@@ -3372,21 +3921,28 @@
         "range": "北京时间 07-28 18:00 - 07-29 18:00",
         "start_iso": "2026-07-28T18:00:00+08:00",
         "end_iso": "2026-07-29T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-29",
+        "title": "7月29日比赛日",
+        "range": "北京时间 07-29 18:00 - 07-30 18:00",
+        "start_iso": "2026-07-29T18:00:00+08:00",
+        "end_iso": "2026-07-30T18:00:00+08:00"
       }
     ]
   },
   "research": {
     "schema_version": 3,
     "stage": "research",
-    "generated_at": "2026-07-09T04:10:11Z",
+    "generated_at": "2026-07-10T04:10:23Z",
     "window": {
-      "start_date": "2026-07-08",
+      "start_date": "2026-07-09",
       "days": 3,
       "timezone": "UTC",
       "mode": "derived from China match-day display window"
     },
     "structure_utc_window": {
-      "start_date": "2026-07-08",
+      "start_date": "2026-07-09",
       "days": 22,
       "timezone": "UTC",
       "mode": "derived from China match-day structure window"
@@ -3394,42 +3950,35 @@
     "display_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 2,
-      "start_iso": "2026-07-08T18:00:00+08:00",
-      "end_iso": "2026-07-10T18:00:00+08:00",
-      "display_range": "7月8日比赛日 - 7月9日比赛日",
-      "range": "北京时间 07-08 18:00 - 07-10 18:00",
+      "start_iso": "2026-07-09T18:00:00+08:00",
+      "end_iso": "2026-07-11T18:00:00+08:00",
+      "display_range": "7月9日比赛日 - 7月10日比赛日",
+      "range": "北京时间 07-09 18:00 - 07-11 18:00",
       "match_days": [
-        {
-          "date": "2026-07-08",
-          "title": "7月8日比赛日",
-          "range": "北京时间 07-08 18:00 - 07-09 18:00",
-          "start_iso": "2026-07-08T18:00:00+08:00",
-          "end_iso": "2026-07-09T18:00:00+08:00"
-        },
         {
           "date": "2026-07-09",
           "title": "7月9日比赛日",
           "range": "北京时间 07-09 18:00 - 07-10 18:00",
           "start_iso": "2026-07-09T18:00:00+08:00",
           "end_iso": "2026-07-10T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-10",
+          "title": "7月10日比赛日",
+          "range": "北京时间 07-10 18:00 - 07-11 18:00",
+          "start_iso": "2026-07-10T18:00:00+08:00",
+          "end_iso": "2026-07-11T18:00:00+08:00"
         }
       ]
     },
     "structure_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 21,
-      "start_iso": "2026-07-08T18:00:00+08:00",
-      "end_iso": "2026-07-29T18:00:00+08:00",
-      "display_range": "7月8日比赛日 - 7月28日比赛日",
-      "range": "北京时间 07-08 18:00 - 07-29 18:00",
+      "start_iso": "2026-07-09T18:00:00+08:00",
+      "end_iso": "2026-07-30T18:00:00+08:00",
+      "display_range": "7月9日比赛日 - 7月29日比赛日",
+      "range": "北京时间 07-09 18:00 - 07-30 18:00",
       "match_days": [
-        {
-          "date": "2026-07-08",
-          "title": "7月8日比赛日",
-          "range": "北京时间 07-08 18:00 - 07-09 18:00",
-          "start_iso": "2026-07-08T18:00:00+08:00",
-          "end_iso": "2026-07-09T18:00:00+08:00"
-        },
         {
           "date": "2026-07-09",
           "title": "7月9日比赛日",
@@ -3569,23 +4118,30 @@
           "range": "北京时间 07-28 18:00 - 07-29 18:00",
           "start_iso": "2026-07-28T18:00:00+08:00",
           "end_iso": "2026-07-29T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-29",
+          "title": "7月29日比赛日",
+          "range": "北京时间 07-29 18:00 - 07-30 18:00",
+          "start_iso": "2026-07-29T18:00:00+08:00",
+          "end_iso": "2026-07-30T18:00:00+08:00"
         }
       ]
     },
     "china_match_days": [
-      {
-        "date": "2026-07-08",
-        "title": "7月8日比赛日",
-        "range": "北京时间 07-08 18:00 - 07-09 18:00",
-        "start_iso": "2026-07-08T18:00:00+08:00",
-        "end_iso": "2026-07-09T18:00:00+08:00"
-      },
       {
         "date": "2026-07-09",
         "title": "7月9日比赛日",
         "range": "北京时间 07-09 18:00 - 07-10 18:00",
         "start_iso": "2026-07-09T18:00:00+08:00",
         "end_iso": "2026-07-10T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-10",
+        "title": "7月10日比赛日",
+        "range": "北京时间 07-10 18:00 - 07-11 18:00",
+        "start_iso": "2026-07-10T18:00:00+08:00",
+        "end_iso": "2026-07-11T18:00:00+08:00"
       }
     ],
     "data_sources": {
@@ -3597,12 +4153,11 @@
     "source": {
       "fifa": {
         "name": "FIFA official calendar API",
-        "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-07-08&to=2026-07-30&language=en&count=500&idCompetition=17&idSeason=285023"
+        "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-07-09&to=2026-07-31&language=en&count=500&idCompetition=17&idSeason=285023"
       },
       "verification": {
         "name": "ESPN public FIFA World Cup scoreboard",
         "urls": [
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260707&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260708&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260709&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260710&limit=100",
@@ -3625,7 +4180,8 @@
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260727&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260728&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260729&limit=100",
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260730&limit=100"
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260730&limit=100",
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260731&limit=100"
         ]
       },
       "injury": {
@@ -3636,7 +4192,6 @@
       "odds": {
         "name": "ESPN odds feed",
         "urls": [
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260707&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260708&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260709&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260710&limit=100",
@@ -3659,20 +4214,21 @@
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260727&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260728&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260729&limit=100",
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260730&limit=100"
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260730&limit=100",
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260731&limit=100"
         ]
       }
     },
     "warnings": [],
     "unverified_fifa_matches": [],
     "structure_unverified_fifa_matches": [
-      "W97 vs W98",
+      "France vs W98",
       "W99 vs W100",
       "RU101 vs RU102",
       "W101 vs W102"
     ],
-    "fixture_count": 1,
-    "fifa_fixture_count": 1,
+    "fixture_count": 2,
+    "fifa_fixture_count": 2,
     "raw_fifa_fixture_count": 8,
     "structure_fixture_count": 4,
     "structure_fifa_fixture_count": 8,
@@ -3693,9 +4249,9 @@
         "group": "",
         "match_number": 97,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "teams": {
           "home": {
@@ -3705,8 +4261,8 @@
             "id_team": "478",
             "id_country": "FRA",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-            "score": null,
-            "tactics": null,
+            "score": 2,
+            "tactics": "4-2-3-1",
             "country_code": "FRA",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
             "flag_emoji": "🇫🇷"
@@ -3718,8 +4274,8 @@
             "id_team": "2869",
             "id_country": "MAR",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
-            "score": null,
-            "tactics": null,
+            "score": 0,
+            "tactics": "4-2-3-1",
             "country_code": "MAR",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
             "flag_emoji": "🇲🇦"
@@ -3753,270 +4309,39 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-175",
-            "draw": "+290",
-            "away": "+500"
-          },
-          "implied_probability": {
-            "home_win": 63.64,
-            "draw": 25.64,
-            "away_win": 16.67
-          },
-          "normalized_probability": {
-            "home_win": 60.07,
-            "draw": 24.2,
-            "away_win": 15.73
-          },
-          "overround": 5.94,
-          "details": "FRA -175"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "法国",
             "team_en": "France",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "France's Kylian Mbappé allays any World Cup injury concern: 'I'm all good'",
+                "description": "Kylian Mbappé has downplayed concerns over what he described as a \"knock on his ankle\" during France's 2-0 World Cup quarterfinal win over Morocco.",
+                "published": "2026-07-10T01:03:32Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49319548/france-kylian-mbappe-allays-world-cup-injury-concern-all-good-morocco"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "摩洛哥",
             "team_en": "Morocco",
-            "status": "unknown",
-            "records": [],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      }
-    ],
-    "fixtures": [
-      {
-        "id": "400021536",
-        "fifa_match_id": "400021536",
-        "match_name": "法国 vs 摩洛哥",
-        "match_name_en": "France vs Morocco",
-        "kickoff_utc": "2026-07-09T20:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Quarter-final",
-        "stage_name": "Quarter-final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 97,
-        "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
-        },
-        "teams": {
-          "home": {
-            "name": "法国",
-            "name_en": "France",
-            "abbreviation": "FRA",
-            "id_team": "478",
-            "id_country": "FRA",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-            "score": null,
-            "tactics": null,
-            "country_code": "FRA",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-            "flag_emoji": "🇫🇷"
-          },
-          "away": {
-            "name": "摩洛哥",
-            "name_en": "Morocco",
-            "abbreviation": "MAR",
-            "id_team": "2869",
-            "id_country": "MAR",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
-            "score": null,
-            "tactics": null,
-            "country_code": "MAR",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
-            "flag_emoji": "🇲🇦"
-          }
-        },
-        "venue": {
-          "name": "Boston Stadium",
-          "city": "Boston",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021536"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760510"
-          }
-        },
-        "espn_event_id": "760510",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": true,
-          "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-175",
-            "draw": "+290",
-            "away": "+500"
-          },
-          "implied_probability": {
-            "home_win": 63.64,
-            "draw": 25.64,
-            "away_win": 16.67
-          },
-          "normalized_probability": {
-            "home_win": 60.07,
-            "draw": 24.2,
-            "away_win": 15.73
-          },
-          "overround": 5.94,
-          "details": "FRA -175"
-        },
-        "injuries": {
-          "home": {
-            "team": "法国",
-            "team_en": "France",
-            "status": "unknown",
-            "records": [],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "摩洛哥",
-            "team_en": "Morocco",
-            "status": "unknown",
-            "records": [],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      }
-    ],
-    "structure_matches": [
-      {
-        "id": "400021536",
-        "fifa_match_id": "400021536",
-        "match_name": "法国 vs 摩洛哥",
-        "match_name_en": "France vs Morocco",
-        "kickoff_utc": "2026-07-09T20:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Quarter-final",
-        "stage_name": "Quarter-final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 97,
-        "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
-        },
-        "teams": {
-          "home": {
-            "name": "法国",
-            "name_en": "France",
-            "abbreviation": "FRA",
-            "id_team": "478",
-            "id_country": "FRA",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-            "score": null,
-            "tactics": null,
-            "country_code": "FRA",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-            "flag_emoji": "🇫🇷"
-          },
-          "away": {
-            "name": "摩洛哥",
-            "name_en": "Morocco",
-            "abbreviation": "MAR",
-            "id_team": "2869",
-            "id_country": "MAR",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
-            "score": null,
-            "tactics": null,
-            "country_code": "MAR",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
-            "flag_emoji": "🇲🇦"
-          }
-        },
-        "venue": {
-          "name": "Boston Stadium",
-          "city": "Boston",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021536"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760510"
-          }
-        },
-        "espn_event_id": "760510",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": true,
-          "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-175",
-            "draw": "+290",
-            "away": "+500"
-          },
-          "implied_probability": {
-            "home_win": 63.64,
-            "draw": 25.64,
-            "away_win": 16.67
-          },
-          "normalized_probability": {
-            "home_win": 60.07,
-            "draw": 24.2,
-            "away_win": 15.73
-          },
-          "overround": 5.94,
-          "details": "FRA -175"
-        },
-        "injuries": {
-          "home": {
-            "team": "法国",
-            "team_en": "France",
-            "status": "unknown",
-            "records": [],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "摩洛哥",
-            "team_en": "Morocco",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "France's Kylian Mbappé allays any World Cup injury concern: 'I'm all good'",
+                "description": "Kylian Mbappé has downplayed concerns over what he described as a \"knock on his ankle\" during France's 2-0 World Cup quarterfinal win over Morocco.",
+                "published": "2026-07-10T01:03:32Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49319548/france-kylian-mbappe-allays-world-cup-injury-concern-all-good-morocco"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -4116,6 +4441,476 @@
           },
           "overround": 5.47,
           "details": "ESP -155"
+        },
+        "injuries": {
+          "home": {
+            "team": "西班牙",
+            "team_en": "Spain",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "比利时",
+            "team_en": "Belgium",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
+        }
+      }
+    ],
+    "fixtures": [
+      {
+        "id": "400021536",
+        "fifa_match_id": "400021536",
+        "match_name": "法国 vs 摩洛哥",
+        "match_name_en": "France vs Morocco",
+        "kickoff_utc": "2026-07-09T20:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Quarter-final",
+        "stage_name": "Quarter-final",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 97,
+        "status": {
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
+        },
+        "teams": {
+          "home": {
+            "name": "法国",
+            "name_en": "France",
+            "abbreviation": "FRA",
+            "id_team": "478",
+            "id_country": "FRA",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+            "score": 2,
+            "tactics": "4-2-3-1",
+            "country_code": "FRA",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+            "flag_emoji": "🇫🇷"
+          },
+          "away": {
+            "name": "摩洛哥",
+            "name_en": "Morocco",
+            "abbreviation": "MAR",
+            "id_team": "2869",
+            "id_country": "MAR",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+            "score": 0,
+            "tactics": "4-2-3-1",
+            "country_code": "MAR",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+            "flag_emoji": "🇲🇦"
+          }
+        },
+        "venue": {
+          "name": "Boston Stadium",
+          "city": "Boston",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021536"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760510"
+          }
+        },
+        "espn_event_id": "760510",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check"
+        },
+        "odds": {
+          "available": false,
+          "source": "ESPN odds feed",
+          "reason": "moneyline odds unavailable"
+        },
+        "injuries": {
+          "home": {
+            "team": "法国",
+            "team_en": "France",
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "France's Kylian Mbappé allays any World Cup injury concern: 'I'm all good'",
+                "description": "Kylian Mbappé has downplayed concerns over what he described as a \"knock on his ankle\" during France's 2-0 World Cup quarterfinal win over Morocco.",
+                "published": "2026-07-10T01:03:32Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49319548/france-kylian-mbappe-allays-world-cup-injury-concern-all-good-morocco"
+              }
+            ],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "摩洛哥",
+            "team_en": "Morocco",
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "France's Kylian Mbappé allays any World Cup injury concern: 'I'm all good'",
+                "description": "Kylian Mbappé has downplayed concerns over what he described as a \"knock on his ankle\" during France's 2-0 World Cup quarterfinal win over Morocco.",
+                "published": "2026-07-10T01:03:32Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49319548/france-kylian-mbappe-allays-world-cup-injury-concern-all-good-morocco"
+              }
+            ],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
+        }
+      },
+      {
+        "id": "400021538",
+        "fifa_match_id": "400021538",
+        "match_name": "西班牙 vs 比利时",
+        "match_name_en": "Spain vs Belgium",
+        "kickoff_utc": "2026-07-10T19:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Quarter-final",
+        "stage_name": "Quarter-final",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 98,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "teams": {
+          "home": {
+            "name": "西班牙",
+            "name_en": "Spain",
+            "abbreviation": "ESP",
+            "id_team": "164",
+            "id_country": "ESP",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+            "score": null,
+            "tactics": null,
+            "country_code": "ESP",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+            "flag_emoji": "🇪🇸"
+          },
+          "away": {
+            "name": "比利时",
+            "name_en": "Belgium",
+            "abbreviation": "BEL",
+            "id_team": "459",
+            "id_country": "BEL",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+            "score": null,
+            "tactics": null,
+            "country_code": "BEL",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+            "flag_emoji": "🇧🇪"
+          }
+        },
+        "venue": {
+          "name": "Los Angeles Stadium",
+          "city": "Los Angeles",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021538"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760511"
+          }
+        },
+        "espn_event_id": "760511",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "-155",
+            "draw": "+290",
+            "away": "+425"
+          },
+          "implied_probability": {
+            "home_win": 60.78,
+            "draw": 25.64,
+            "away_win": 19.05
+          },
+          "normalized_probability": {
+            "home_win": 57.63,
+            "draw": 24.31,
+            "away_win": 18.06
+          },
+          "overround": 5.47,
+          "details": "ESP -155"
+        },
+        "injuries": {
+          "home": {
+            "team": "西班牙",
+            "team_en": "Spain",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "比利时",
+            "team_en": "Belgium",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
+        }
+      }
+    ],
+    "structure_matches": [
+      {
+        "id": "400021536",
+        "fifa_match_id": "400021536",
+        "match_name": "法国 vs 摩洛哥",
+        "match_name_en": "France vs Morocco",
+        "kickoff_utc": "2026-07-09T20:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Quarter-final",
+        "stage_name": "Quarter-final",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 97,
+        "status": {
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
+        },
+        "teams": {
+          "home": {
+            "name": "法国",
+            "name_en": "France",
+            "abbreviation": "FRA",
+            "id_team": "478",
+            "id_country": "FRA",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+            "score": 2,
+            "tactics": "4-2-3-1",
+            "country_code": "FRA",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+            "flag_emoji": "🇫🇷"
+          },
+          "away": {
+            "name": "摩洛哥",
+            "name_en": "Morocco",
+            "abbreviation": "MAR",
+            "id_team": "2869",
+            "id_country": "MAR",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+            "score": 0,
+            "tactics": "4-2-3-1",
+            "country_code": "MAR",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
+            "flag_emoji": "🇲🇦"
+          }
+        },
+        "venue": {
+          "name": "Boston Stadium",
+          "city": "Boston",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021536"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760510"
+          }
+        },
+        "espn_event_id": "760510",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check"
+        },
+        "odds": {
+          "available": false,
+          "source": "ESPN odds feed",
+          "reason": "moneyline odds unavailable"
+        },
+        "injuries": {
+          "home": {
+            "team": "法国",
+            "team_en": "France",
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "France's Kylian Mbappé allays any World Cup injury concern: 'I'm all good'",
+                "description": "Kylian Mbappé has downplayed concerns over what he described as a \"knock on his ankle\" during France's 2-0 World Cup quarterfinal win over Morocco.",
+                "published": "2026-07-10T01:03:32Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49319548/france-kylian-mbappe-allays-world-cup-injury-concern-all-good-morocco"
+              }
+            ],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "摩洛哥",
+            "team_en": "Morocco",
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "France's Kylian Mbappé allays any World Cup injury concern: 'I'm all good'",
+                "description": "Kylian Mbappé has downplayed concerns over what he described as a \"knock on his ankle\" during France's 2-0 World Cup quarterfinal win over Morocco.",
+                "published": "2026-07-10T01:03:32Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49319548/france-kylian-mbappe-allays-world-cup-injury-concern-all-good-morocco"
+              }
+            ],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
+        }
+      },
+      {
+        "id": "400021538",
+        "fifa_match_id": "400021538",
+        "match_name": "西班牙 vs 比利时",
+        "match_name_en": "Spain vs Belgium",
+        "kickoff_utc": "2026-07-10T19:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Quarter-final",
+        "stage_name": "Quarter-final",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 98,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "teams": {
+          "home": {
+            "name": "西班牙",
+            "name_en": "Spain",
+            "abbreviation": "ESP",
+            "id_team": "164",
+            "id_country": "ESP",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+            "score": null,
+            "tactics": null,
+            "country_code": "ESP",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+            "flag_emoji": "🇪🇸"
+          },
+          "away": {
+            "name": "比利时",
+            "name_en": "Belgium",
+            "abbreviation": "BEL",
+            "id_team": "459",
+            "id_country": "BEL",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+            "score": null,
+            "tactics": null,
+            "country_code": "BEL",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+            "flag_emoji": "🇧🇪"
+          }
+        },
+        "venue": {
+          "name": "Los Angeles Stadium",
+          "city": "Los Angeles",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021538"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760511"
+          }
+        },
+        "espn_event_id": "760511",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "-155",
+            "draw": "+290",
+            "away": "+425"
+          },
+          "implied_probability": {
+            "home_win": 60.78,
+            "draw": 25.64,
+            "away_win": 19.05
+          },
+          "normalized_probability": {
+            "home_win": 57.63,
+            "draw": 24.31,
+            "away_win": 18.06
+          },
+          "overround": 5.47,
+          "details": "ESP -155"
+        },
+        "injuries": {
+          "home": {
+            "team": "西班牙",
+            "team_en": "Spain",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "比利时",
+            "team_en": "Belgium",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
         }
       },
       {
@@ -4315,7 +5110,7 @@
     ],
     "daily_log": [
       {
-        "time": "2026-07-09T04:10:11Z",
+        "time": "2026-07-10T04:10:23Z",
         "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
         "status": "completed"
       }
@@ -4324,48 +5119,48 @@
   "display_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 2,
-    "start_iso": "2026-07-08T18:00:00+08:00",
-    "end_iso": "2026-07-10T18:00:00+08:00",
-    "display_range": "7月8日比赛日 - 7月9日比赛日",
-    "range": "北京时间 07-08 18:00 - 07-10 18:00",
+    "start_iso": "2026-07-09T18:00:00+08:00",
+    "end_iso": "2026-07-11T18:00:00+08:00",
+    "display_range": "7月9日比赛日 - 7月10日比赛日",
+    "range": "北京时间 07-09 18:00 - 07-11 18:00",
     "match_days": [
-      {
-        "date": "2026-07-08",
-        "title": "7月8日比赛日",
-        "range": "北京时间 07-08 18:00 - 07-09 18:00",
-        "start_iso": "2026-07-08T18:00:00+08:00",
-        "end_iso": "2026-07-09T18:00:00+08:00"
-      },
       {
         "date": "2026-07-09",
         "title": "7月9日比赛日",
         "range": "北京时间 07-09 18:00 - 07-10 18:00",
         "start_iso": "2026-07-09T18:00:00+08:00",
         "end_iso": "2026-07-10T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-10",
+        "title": "7月10日比赛日",
+        "range": "北京时间 07-10 18:00 - 07-11 18:00",
+        "start_iso": "2026-07-10T18:00:00+08:00",
+        "end_iso": "2026-07-11T18:00:00+08:00"
       }
     ]
   },
   "china_match_days": [
-    {
-      "date": "2026-07-08",
-      "title": "7月8日比赛日",
-      "range": "北京时间 07-08 18:00 - 07-09 18:00",
-      "start_iso": "2026-07-08T18:00:00+08:00",
-      "end_iso": "2026-07-09T18:00:00+08:00"
-    },
     {
       "date": "2026-07-09",
       "title": "7月9日比赛日",
       "range": "北京时间 07-09 18:00 - 07-10 18:00",
       "start_iso": "2026-07-09T18:00:00+08:00",
       "end_iso": "2026-07-10T18:00:00+08:00"
+    },
+    {
+      "date": "2026-07-10",
+      "title": "7月10日比赛日",
+      "range": "北京时间 07-10 18:00 - 07-11 18:00",
+      "start_iso": "2026-07-10T18:00:00+08:00",
+      "end_iso": "2026-07-11T18:00:00+08:00"
     }
   ],
   "usage": {
-    "input_tokens": 10623,
-    "output_tokens": 3068,
-    "total_tokens": 13691,
-    "cost_estimate": 0.13691
+    "input_tokens": 12952,
+    "output_tokens": 6466,
+    "total_tokens": 19418,
+    "cost_estimate": 0.19418
   },
   "analysis_model": "deepseek-v4-pro",
   "model": {
@@ -4379,12 +5174,12 @@
   },
   "daily_log": [
     {
-      "time": "2026-07-09T04:10:11Z",
+      "time": "2026-07-10T04:10:23Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     },
     {
-      "time": "2026-07-09T04:27:12Z",
+      "time": "2026-07-10T04:31:31Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     }
