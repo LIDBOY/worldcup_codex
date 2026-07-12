@@ -1,296 +1,11 @@
 {
   "schema_version": 3,
   "stage": "analysis",
-  "generated_at": "2026-07-11T03:51:25Z",
+  "generated_at": "2026-07-12T04:06:07Z",
   "analysis": {
-    "generated_at": "2026-07-11T03:37:44Z",
-    "summary": "四分之一决赛分析：西班牙已2-1击败比利时晋级，展现了强大的控制力；挪威与英格兰的对决中，英格兰凭借整体实力和赔率优势被看好；阿根廷面对瑞士，市场强烈倾向阿根廷，瑞士需依靠防守反击制造冷门。整体来看，已结束比赛西班牙实至名归，剩余两场强队过关概率较高，但挪威和瑞士均有爆冷可能。",
+    "generated_at": "2026-07-12T03:52:18Z",
+    "summary": "本窗口分析两场世界杯四分之一决赛：挪威对英格兰，阿根廷对瑞士。基于长期实力和阵容评估，预测英格兰和阿根廷晋级，但缺乏赔率和实时伤病数据，不确定性较高。",
     "matches": [
-      {
-        "id": "400021538",
-        "fifa_match_id": "400021538",
-        "match_name": "西班牙 vs 比利时",
-        "match_name_en": "Spain vs Belgium",
-        "kickoff_utc": "2026-07-10T19:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Quarter-final",
-        "stage_name": "Quarter-final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 98,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 1
-        },
-        "teams": {
-          "home": {
-            "name": "西班牙",
-            "name_en": "Spain",
-            "abbreviation": "ESP",
-            "id_team": "164",
-            "id_country": "ESP",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "score": 2,
-            "tactics": "4-2-3-1",
-            "country_code": "ESP",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "flag_emoji": "🇪🇸"
-          },
-          "away": {
-            "name": "比利时",
-            "name_en": "Belgium",
-            "abbreviation": "BEL",
-            "id_team": "459",
-            "id_country": "BEL",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "score": 1,
-            "tactics": "4-2-3-1",
-            "country_code": "BEL",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "flag_emoji": "🇧🇪"
-          }
-        },
-        "venue": {
-          "name": "Los Angeles Stadium",
-          "city": "Los Angeles",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021538"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760511"
-          }
-        },
-        "espn_event_id": "760511",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "西班牙",
-            "team_en": "Spain",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Merino puts Spain through to semifinals",
-                "description": "HL - Merino puts Spain through to semifinals   CAP - Spain knock Belgium out of the World Cup with an 88th-minute winner from Mikel Merino.",
-                "published": "2026-07-11T00:10:17Z",
-                "url": "https://www.espn.com/video/clip/_/id/49329398/merino-puts-spain-semifinals"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-11T02:50:46Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49330344/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-10T23:30:47Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328835/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "比利时",
-            "team_en": "Belgium",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Merino puts Spain through to semifinals",
-                "description": "HL - Merino puts Spain through to semifinals   CAP - Spain knock Belgium out of the World Cup with an 88th-minute winner from Mikel Merino.",
-                "published": "2026-07-11T00:10:17Z",
-                "url": "https://www.espn.com/video/clip/_/id/49329398/merino-puts-spain-semifinals"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-11T02:50:46Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49330344/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-10T23:30:47Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328835/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        },
-        "match_id": "400021538",
-        "win_draw_loss": {
-          "home_win": 100,
-          "draw": 0,
-          "away_win": 0
-        },
-        "xg_prediction": {
-          "home": 1.8,
-          "away": 1.2
-        },
-        "predicted_score": {
-          "home": 2,
-          "away": 1
-        },
-        "score_options": [
-          {
-            "score": "2-1",
-            "rank": 1,
-            "reason": "实际比赛结果，西班牙凭借梅里诺的绝杀获胜，符合赛前技术传控优势的预期。"
-          },
-          {
-            "score": "1-0",
-            "rank": 2,
-            "reason": "若西班牙未能把握机会，可能以小胜收场，比利时防守反击威胁有限。"
-          },
-          {
-            "score": "1-1",
-            "rank": 3,
-            "reason": "平局可能性存在，但比利时整体老化，难以抵挡西班牙的持续施压。"
-          }
-        ],
-        "method_factors": {
-          "market_signal": "赔率不可用，比赛已结束，实际结果西班牙2-1胜。",
-          "fifa_rank_prior": "西班牙为世界顶级强队，长期位列前10；比利时黄金一代老化，排名下滑但仍属欧洲劲旅。",
-          "recent_form": "西班牙本届赛事控球率场均超65%，进攻流畅；比利时小组赛磕磕绊绊，依赖德布劳内个人能力。",
-          "group_context": "四分之一决赛，胜者晋级半决赛对阵法国。",
-          "injury_rotation": "双方均有疑似伤病报道，但无官方确认核心缺阵，梅里诺替补绝杀成为关键。",
-          "weather_venue": "洛杉矶体育场，天气状况未知，对技术型球队无明显影响。",
-          "tactical_key": "西班牙的4-2-3-1控球体系压制比利时中场，限制德布劳内出球；比利时反击效率决定比赛走向。",
-          "uncertainty": "赔率缺失增加赛前预测不确定性，但最终结果验证西班牙实力占优。"
-        },
-        "matchup_graph": {
-          "nodes": [
-            {
-              "id": "home_attack",
-              "label": "主队进攻",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 85,
-              "note": "西班牙前场配合娴熟，边路突破能力强，创造机会多"
-            },
-            {
-              "id": "home_midfield",
-              "label": "主队中场/转换",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 90,
-              "note": "佩德里、加维控制节奏，传球成功率高，主导比赛"
-            },
-            {
-              "id": "home_defense",
-              "label": "主队防守",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 80,
-              "note": "防线稳固，但面对快速反击偶有漏洞"
-            },
-            {
-              "id": "away_attack",
-              "label": "客队进攻",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 75,
-              "note": "卢卡库支点作用下降，依赖德布劳内创造，效率不高"
-            },
-            {
-              "id": "away_midfield",
-              "label": "客队中场/转换",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 70,
-              "note": "比利时中场老化，跑动能力不足，难以抗衡西班牙传控"
-            },
-            {
-              "id": "away_defense",
-              "label": "客队防守",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 65,
-              "note": "费尔通亨等老将经验丰富，但速度慢，易被打身后"
-            }
-          ],
-          "edges": [
-            {
-              "from": "home_attack",
-              "to": "away_defense",
-              "label": "西班牙边路冲击比利时防线身后",
-              "impact": "high",
-              "direction": "home_to_away",
-              "note": "西班牙边锋速度优势明显，比利时防线转身慢是致命弱点"
-            },
-            {
-              "from": "away_attack",
-              "to": "home_defense",
-              "label": "德布劳内直塞找卢卡库",
-              "impact": "medium",
-              "direction": "away_to_home",
-              "note": "比利时反击依赖德布劳内手术刀传球，但西班牙中卫拉波尔特位置感好"
-            },
-            {
-              "from": "home_midfield",
-              "to": "away_midfield",
-              "label": "西班牙中场碾压式控制",
-              "impact": "high",
-              "direction": "balanced",
-              "note": "西班牙中场人数和跑动完胜，比利时难以组织有效推进"
-            }
-          ],
-          "summary": "西班牙在三条线均占据优势，尤其中场控制力碾压比利时，比赛胜负手在于西班牙能否尽早破门打破比利时铁桶阵。",
-          "advantage_side": "home",
-          "key_battle": "西班牙中场 vs 德布劳内：限制德布劳内出球是西班牙取胜关键",
-          "risk_trigger": "若西班牙久攻不下，比利时反击可能偷得进球，但最终西班牙绝杀避免意外。"
-        },
-        "tactical_matchup": "西班牙4-2-3-1对阵比利时4-2-3-1，西班牙通过高控球和边中结合持续施压，比利时收缩防守等待反击，但终因体能和实力差距在最后时刻丢球。",
-        "injury_adjustment": {
-          "home": "西班牙有疑似伤病报道，但无核心球员确认缺阵，替补奇兵梅里诺发挥关键作用。",
-          "away": "比利时同样有疑似伤病，可能影响阵容深度，德布劳内带伤作战状态并非最佳。",
-          "summary": "双方伤病影响有限，西班牙板凳深度更优，成为比赛胜负手之一。"
-        },
-        "risk_analysis": "西班牙控场能力极强，但一球领先时仍暴露防守空当，比利时差点逼平，强队过关风险可控但并非绝对安全。",
-        "upset_probability": 0,
-        "odds_comparison": {
-          "market_implied": {
-            "home_win": 0,
-            "draw": 0,
-            "away_win": 0
-          },
-          "model_edge": {
-            "home_win": 0,
-            "draw": 0,
-            "away_win": 0
-          },
-          "deviation_analysis": "本场赔率数据缺失，无法进行市场偏差分析。"
-        },
-        "confidence": "high"
-      },
       {
         "id": "400021539",
         "fifa_match_id": "400021539",
@@ -306,9 +21,9 @@
         "group": "",
         "match_number": 99,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 3
         },
         "teams": {
           "home": {
@@ -318,8 +33,8 @@
             "id_team": "464",
             "id_country": "NOR",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "score": null,
-            "tactics": null,
+            "score": 1,
+            "tactics": "4-1-2-3",
             "country_code": "NOR",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
             "flag_emoji": "🇳🇴"
@@ -331,8 +46,8 @@
             "id_team": "448",
             "id_country": "ENG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": null,
-            "tactics": null,
+            "score": 2,
+            "tactics": "4-2-3-1",
             "country_code": "ENG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
             "flag_emoji": ""
@@ -366,26 +81,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+290",
-            "draw": "+265",
-            "away": "-110"
-          },
-          "implied_probability": {
-            "home_win": 25.64,
-            "draw": 27.4,
-            "away_win": 52.38
-          },
-          "normalized_probability": {
-            "home_win": 24.32,
-            "draw": 25.99,
-            "away_win": 49.69
-          },
-          "overround": 5.42,
-          "details": "ENG -110"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -395,10 +93,10 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
-                "title": "England given World Cup boost as Marc Guéhi, Declan Rice return to training ahead of Norway clash",
-                "description": "Marc Guéhi and Declan Rice handed England a fitness boost as they both trained ahead of the World Cup quarter-final with Norway in Miami.",
-                "published": "2026-07-11T00:44:29Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328075/england-marc-guehi-declan-rice-back-training-ahead-norway-world-cup-clash"
+                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "published": "2026-07-12T00:02:25Z",
+                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
               }
             ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -410,10 +108,10 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
-                "title": "England given World Cup boost as Marc Guéhi, Declan Rice return to training ahead of Norway clash",
-                "description": "Marc Guéhi and Declan Rice handed England a fitness boost as they both trained ahead of the World Cup quarter-final with Norway in Miami.",
-                "published": "2026-07-11T00:44:29Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328075/england-marc-guehi-declan-rice-back-training-ahead-norway-world-cup-clash"
+                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "published": "2026-07-12T00:02:25Z",
+                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
               }
             ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -421,8 +119,8 @@
         },
         "match_id": "400021539",
         "win_draw_loss": {
-          "home_win": 24,
-          "draw": 26,
+          "home_win": 22,
+          "draw": 28,
           "away_win": 50
         },
         "xg_prediction": {
@@ -437,28 +135,28 @@
           {
             "score": "1-2",
             "rank": 1,
-            "reason": "英格兰整体实力更强，挪威虽有哈兰德但中场输送不足，预计英格兰小胜。"
-          },
-          {
-            "score": "0-2",
-            "rank": 2,
-            "reason": "若英格兰开场快速进球，挪威被迫压出，可能被再下一城。"
+            "reason": "英格兰整体实力占优，挪威依赖哈兰德个人能力，但难敌英格兰多点进攻。"
           },
           {
             "score": "1-1",
+            "rank": 2,
+            "reason": "挪威反击高效，英格兰可能久攻不下，平局进入加时。"
+          },
+          {
+            "score": "0-2",
             "rank": 3,
-            "reason": "挪威依靠哈兰德个人能力和定位球或能扳平，但英格兰大概率控制比赛。"
+            "reason": "英格兰防守稳固，挪威进攻哑火。"
           }
         ],
         "method_factors": {
-          "market_signal": "DraftKings赔率强烈倾向英格兰（-110），隐含胜率约50%，挪威+290冷门意味。",
-          "fifa_rank_prior": "英格兰长期位居世界前10，大赛表现稳定；挪威近年崛起，哈兰德领衔但整体实力仍在欧洲二三流。",
-          "recent_form": "英格兰小组赛全胜，攻防俱佳；挪威凭借哈兰德抢分，但面对强队时中场失控成短板。",
-          "group_context": "四分之一决赛，胜者将对阵阿根廷与瑞士的胜者。",
-          "injury_rotation": "英格兰赖斯、格希恢复训练，大概率出战；挪威有疑似伤病报道，具体影响未知，可能影响关键位置。",
-          "weather_venue": "迈阿密体育场，天气湿热，对两队体能都是考验，但英格兰阵容深度更足。",
-          "tactical_key": "英格兰需限制哈兰德接球转身，挪威则要利用哈兰德冲击斯通斯等中卫；中场对决贝林厄姆 vs 厄德高左右战局。",
-          "uncertainty": "赔率隐含概率接近五成，说明市场认为英格兰优势并非绝对，挪威爆冷可能性不低。"
+          "market_signal": "赔率数据不可用",
+          "fifa_rank_prior": "FIFA排名不可用；长期实力：英格兰历史强队，挪威中上游但拥有顶级射手",
+          "recent_form": "近期状态未知；两队均进入八强，表明状态良好",
+          "group_context": "无小组赛，四分之一决赛单场淘汰",
+          "injury_rotation": "伤病情况未知",
+          "weather_venue": "迈阿密体育场，天气未知",
+          "tactical_key": "挪威4-1-2-3阵型依赖哈兰德；英格兰4-2-3-1控制中场，边路突破",
+          "uncertainty": "高不确定性：缺乏赔率和伤病数据"
         },
         "matchup_graph": {
           "nodes": [
@@ -467,24 +165,24 @@
               "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 70,
-              "note": "哈兰德单点爆破能力世界级，但缺乏稳定中场支援"
+              "weight": 80,
+              "note": "哈兰德领衔，个人能力突出"
             },
             {
               "id": "home_midfield",
               "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 55,
-              "note": "厄德高组织核心，但整体硬度不足，面对英格兰逼抢容易丢球"
+              "weight": 60,
+              "note": "厄德高组织，但拦截能力一般"
             },
             {
               "id": "home_defense",
               "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 60,
-              "note": "防线整体身高体壮，但转身慢，惧怕英格兰前场快速换位"
+              "weight": 50,
+              "note": "防线经验不足，易被打反击"
             },
             {
               "id": "away_attack",
@@ -492,76 +190,76 @@
               "type": "team_phase",
               "side": "away",
               "weight": 85,
-              "note": "凯恩回撤组织，福登、萨卡边路突破犀利，进攻手段多样"
+              "note": "凯恩、萨卡等攻击点多"
             },
             {
               "id": "away_midfield",
               "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 80,
-              "note": "贝林厄姆、赖斯攻守兼备，控制力极强"
+              "weight": 75,
+              "note": "贝林厄姆控制力强，攻守均衡"
             },
             {
               "id": "away_defense",
               "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 75,
-              "note": "斯通斯、格希搭档稳定，但哈兰德冲击力是考验"
+              "weight": 70,
+              "note": "斯通斯领衔，防空与地面俱佳"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "哈兰德 vs 斯通斯",
+              "label": "哈兰德 vs 英格兰防线",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "挪威进攻几乎全部依赖哈兰德对英格兰防线的冲击，能否破门决定比赛走向"
+              "note": "挪威主要得分手段，英格兰需重点盯防"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "英格兰边中结合打击挪威防线肋部",
+              "label": "英格兰多样进攻 vs 挪威薄弱防线",
               "impact": "high",
               "direction": "away_to_home",
-              "note": "英格兰前场换位频繁，挪威高大中卫易被拉扯出空当"
+              "note": "英格兰边中结合，挪威防线压力大"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "厄德高 vs 贝林厄姆",
+              "label": "中场控制权争夺",
               "impact": "medium",
               "direction": "balanced",
-              "note": "双方组织核心的直接对话，厄德高需摆脱贝林厄姆的缠斗来向前输送"
+              "note": "厄德高 vs 贝林厄姆，控球与转换关键"
             }
           ],
-          "summary": "英格兰在整体实力、中场控制和进攻多样性上全面占优，挪威唯一优势在于哈兰德的个人能力，但只要英格兰切断其接球路线，挪威威胁将大幅降低。",
+          "summary": "英格兰整体实力占优，挪威依靠哈兰德个人能力制造威胁，但防线漏洞可能被英格兰利用。",
           "advantage_side": "away",
-          "key_battle": "英格兰中场能否锁死厄德高-哈兰德连线？",
-          "risk_trigger": "若英格兰得势不得分，挪威定位球或反击偷一个后全线退守，可能制造冷门。"
+          "key_battle": "哈兰德 vs 英格兰中卫组合",
+          "risk_trigger": "挪威若打出高效反击，可能拖入加时"
         },
-        "tactical_matchup": "挪威预计使用4-4-2或4-2-3-1，长传找哈兰德支点；英格兰4-3-3高位压迫，强攻边路。比赛或演变为半场攻防，英格兰破密集能力是关键。",
+        "tactical_matchup": "挪威4-1-2-3主打防守反击，英格兰4-2-3-1控球压迫。英格兰中场优势明显，边路进攻丰富。",
         "injury_adjustment": {
-          "home": "挪威有疑似伤病报道，细节未知，可能影响中场防守硬度或边后卫回追速度。",
-          "away": "英格兰赖斯、格希恢复训练，基本可出战，阵容相对完整。",
-          "summary": "英格兰受伤病影响更小，阵容深度优势明显，挪威若有核心缺阵则爆冷难度陡增。"
+          "home": "伤病情况未知",
+          "away": "伤病情况未知",
+          "summary": "无关键伤病信息，双方主力预计出战"
         },
-        "risk_analysis": "英格兰实力占优但赔率并未完全一边倒，挪威手握哈兰德这一超级武器，随时可能改写比分，比赛存在一定爆冷风险。",
-        "upset_probability": 26,
+        "risk_analysis": "英格兰纸面实力占优，但挪威拥有顶级终结者，冷门风险中等。缺乏赔率数据，预测不确定性较高。",
+        "upset_probability": 22,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 24.32,
-            "draw": 25.99,
-            "away_win": 49.69
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
           "model_edge": {
-            "home_win": 24,
-            "draw": 26,
+            "home_win": 22,
+            "draw": 28,
             "away_win": 50
           },
-          "deviation_analysis": "模型预测与市场概率基本一致，市场已合理消化英格兰优势，没有明显套利空间。"
+          "deviation_analysis": "市场赔率不可用，无法比较偏差。模型基于长期实力和阵容评估。"
         },
         "confidence": "medium"
       },
@@ -580,9 +278,9 @@
         "group": "",
         "match_number": 100,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 2,
+          "result_type": 3
         },
         "teams": {
           "home": {
@@ -592,8 +290,8 @@
             "id_team": "202",
             "id_country": "ARG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": null,
-            "tactics": null,
+            "score": 3,
+            "tactics": "4-1-3-2",
             "country_code": "ARG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
             "flag_emoji": "🇦🇷"
@@ -605,8 +303,8 @@
             "id_team": "475",
             "id_country": "SUI",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "score": null,
-            "tactics": null,
+            "score": 1,
+            "tactics": "4-2-3-1",
             "country_code": "SUI",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
             "flag_emoji": "🇨🇭"
@@ -640,26 +338,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-145",
-            "draw": "+255",
-            "away": "+450"
-          },
-          "implied_probability": {
-            "home_win": 59.18,
-            "draw": 28.17,
-            "away_win": 18.18
-          },
-          "normalized_probability": {
-            "home_win": 56.08,
-            "draw": 26.69,
-            "away_win": 17.23
-          },
-          "overround": 5.53,
-          "details": "ARG -145"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -679,13 +360,13 @@
         },
         "match_id": "400021537",
         "win_draw_loss": {
-          "home_win": 57,
-          "draw": 26,
-          "away_win": 17
+          "home_win": 60,
+          "draw": 25,
+          "away_win": 15
         },
         "xg_prediction": {
-          "home": 1.9,
-          "away": 0.6
+          "home": 2.1,
+          "away": 0.7
         },
         "predicted_score": {
           "home": 2,
@@ -695,28 +376,28 @@
           {
             "score": "2-0",
             "rank": 1,
-            "reason": "阿根廷控场并多点开花，瑞士进攻乏力，预计零封获胜。"
+            "reason": "阿根廷整体实力强劲，梅西领衔攻击线，瑞士难破防线。"
+          },
+          {
+            "score": "3-1",
+            "rank": 2,
+            "reason": "瑞士可能通过定位球破门，但阿根廷进攻多点开花。"
           },
           {
             "score": "1-0",
-            "rank": 2,
-            "reason": "若瑞士严防死守，阿根廷可能仅靠球星灵光一闪小胜。"
-          },
-          {
-            "score": "2-1",
             "rank": 3,
-            "reason": "瑞士通过定位球或反击可能偷得一球，但难以阻挡阿根廷取胜。"
+            "reason": "瑞士防守顽强，阿根廷小胜过关。"
           }
         ],
         "method_factors": {
-          "market_signal": "DraftKings赔率阿根廷-145，隐含胜率56%，瑞士+450为明显下狗，市场信心强烈。",
-          "fifa_rank_prior": "阿根廷世界冠军，长期位居前列，阵容均衡；瑞士稳定在前20，防守坚韧但缺乏顶级球星。",
-          "recent_form": "阿根廷小组赛场均控球率超60%，梅西状态正佳；瑞士小组赛磕碰出线，进攻效率一般。",
-          "group_context": "四分之一决赛，胜者将与挪威与英格兰的胜者争夺决赛席位。",
-          "injury_rotation": "双方目前均无官方伤病报告，预计可全主力出战。",
-          "weather_venue": "堪萨斯城体育场，天气状况未知，对技术型球队无明显影响。",
-          "tactical_key": "阿根廷需要破解瑞士的双后腰铁桶阵，梅西的传球和远射是攻坚利器；瑞士则寄望反击和沙奇里的创造力。",
-          "uncertainty": "瑞士的防守体系向来稳固，可能给阿根廷带来麻烦，但赔率优势明确，冷门概率较低。"
+          "market_signal": "赔率数据不可用",
+          "fifa_rank_prior": "FIFA排名不可用；长期实力：阿根廷世界冠军，瑞士稳定中上游",
+          "recent_form": "近期状态未知；两队均晋级八强，状态良好",
+          "group_context": "无小组赛，四分之一决赛单场淘汰",
+          "injury_rotation": "伤病情况未知",
+          "weather_venue": "堪萨斯城体育场，天气未知",
+          "tactical_key": "阿根廷4-1-3-2阵型强调中场控制与梅西的创造力；瑞士4-2-3-1注重防守与边路反击",
+          "uncertainty": "中高不确定性：缺乏赔率数据，但阿根廷实力明显占优"
         },
         "matchup_graph": {
           "nodes": [
@@ -726,7 +407,7 @@
               "type": "team_phase",
               "side": "home",
               "weight": 90,
-              "note": "梅西、阿尔瓦雷斯、迪马利亚组成豪华攻击线，创造力顶级"
+              "note": "梅西、阿尔瓦雷斯，创造力与终结兼备"
             },
             {
               "id": "home_midfield",
@@ -734,122 +415,121 @@
               "type": "team_phase",
               "side": "home",
               "weight": 85,
-              "note": "恩佐、麦卡利斯特控传俱佳，中场控制力强"
+              "note": "恩佐、麦卡利斯特控制节奏，攻防转换快"
             },
             {
               "id": "home_defense",
               "label": "主队防守",
               "type": "team_phase",
               "side": "home",
-              "weight": 80,
-              "note": "奥塔门迪、罗梅罗经验丰富，但回追速度可能受考验"
+              "weight": 75,
+              "note": "经验丰富，整体协防好"
             },
             {
               "id": "away_attack",
               "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 55,
-              "note": "恩博洛冲击力不错，但整体进攻套路单一，得分效率低"
+              "weight": 65,
+              "note": "恩博洛速度，沙奇里远射，但缺乏稳定输出"
             },
             {
               "id": "away_midfield",
               "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 65,
-              "note": "扎卡、弗罗伊勒双后腰防守硬朗，但组织能力一般"
+              "weight": 70,
+              "note": "扎卡组织，防守型中场拦截"
             },
             {
               "id": "away_defense",
               "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 70,
-              "note": "阿坎吉领衔的防线组织严密，但面对顶级攻击手仍有漏洞"
+              "weight": 75,
+              "note": "阿坎吉领衔，纪律性强"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "梅西突破 vs 瑞士链式防守",
+              "label": "阿根廷攻击群 vs 瑞士严密防线",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "阿根廷进攻的成败系于梅西能否撕裂瑞士多层防线"
+              "note": "梅西的突破和分球是撕开瑞士防线的关键"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "瑞士快速反击冲击阿根廷高位防线",
+              "label": "瑞士快速反击 vs 阿根廷防线回追",
               "impact": "medium",
               "direction": "away_to_home",
-              "note": "阿根廷大举压上时，恩博洛的速度可能制造威胁"
+              "note": "瑞士可能利用阿根廷压上后的空当"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "阿根廷中场穿透 vs 瑞士双后腰拦截",
+              "label": "中场控制权",
               "impact": "medium",
               "direction": "balanced",
-              "note": "阿根廷需要快速转移球来避开扎卡和弗罗伊勒的扫荡"
+              "note": "阿根廷技术占优，瑞士身体对抗强"
             }
           ],
-          "summary": "阿根廷全面占优，瑞士唯一的生机在于密集防守并抓住仅有的反击机会，但梅西的灵光一闪极可能决定胜负。",
+          "summary": "阿根廷整体实力明显占优，瑞士防守稳固但进攻威胁有限。",
           "advantage_side": "home",
-          "key_battle": "梅西 vs 阿坎吉：梅西的带球突破将是击穿瑞士防线的关键",
-          "risk_trigger": "若阿根廷久攻不下心态急躁，瑞士可能偷袭得手，重演上届淘汰法国的戏码。"
+          "key_battle": "梅西 vs 扎卡的中场对决",
+          "risk_trigger": "瑞士若先进球，可能全线退守，增加阿根廷破门难度"
         },
-        "tactical_matchup": "阿根廷4-3-3掌控球权，瑞士5-4-1或4-2-3-1低位防守，比赛预计演变为阿根廷的半场进攻演练，瑞士伺机反击。",
+        "tactical_matchup": "阿根廷4-1-3-2通过中场人数优势掌控比赛，梅西自由人角色创造威胁。瑞士4-2-3-1双后腰保护防线，依靠两翼反击。",
         "injury_adjustment": {
-          "home": "阿根廷目前无伤病忧虑，全主力可出战。",
-          "away": "瑞士同样阵容齐整，无伤病影响。",
-          "summary": "双方均以最强阵出战，战术执行度将是胜负手。"
+          "home": "伤病情况未知",
+          "away": "伤病情况未知",
+          "summary": "无关键伤病报告，双方主力预计出战"
         },
-        "risk_analysis": "阿根廷实力明显高出一筹，但瑞士善于缠斗强队，且淘汰赛一场定胜负，爆冷系数不可完全忽略。",
-        "upset_probability": 17,
+        "risk_analysis": "阿根廷晋级热门，但瑞士曾在大赛中制造冷门。缺乏实时数据，预测基于传统实力对比。",
+        "upset_probability": 15,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 56.08,
-            "draw": 26.69,
-            "away_win": 17.23
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
           "model_edge": {
-            "home_win": 57,
-            "draw": 26,
-            "away_win": 17
+            "home_win": 60,
+            "draw": 25,
+            "away_win": 15
           },
-          "deviation_analysis": "模型预测与市场概率高度吻合，市场已充分反映了阿根廷的优势，赔率基本合理无偏差。"
+          "deviation_analysis": "市场赔率不可用，无法比较偏差。模型基于长期实力和阵容评估。"
         },
-        "confidence": "high"
+        "confidence": "medium"
       }
     ],
-    "risk_overview": "已结束的西班牙vs比利时无风险；挪威vs英格兰存在中等爆冷风险，挪威依靠哈兰德可能制造麻烦；阿根廷vs瑞士爆冷概率较低，但瑞士的防守韧性不可小觑。整体而言，强队晋级概率大，但足球比赛充满变数。",
-    "data_quality": "数据来源可靠：FIFA官方赛程、ESPN比分及赔率均已交叉验证，伤病信息基于媒体报告但非官方确认，天气数据暂无可靠来源。分析结合市场信号和球队近期表现，置信度较高。",
+    "risk_overview": "两场比赛均存在冷门可能，挪威的哈兰德和瑞士的防守韧性是主要风险点。",
+    "data_quality": "数据来源与FIFA和ESPN验证，但赔率和伤病信息不完整，预测置信度中等。",
     "tournament_structure": {
       "stage": "knockout",
       "focus_window": {
         "timezone": "Asia/Shanghai",
         "china_match_days": [
           {
-            "date": "2026-07-10",
-            "title": "7月10日比赛日",
-            "range": "北京时间 07-10 18:00 - 07-11 18:00",
-            "start_iso": "2026-07-10T18:00:00+08:00",
-            "end_iso": "2026-07-11T18:00:00+08:00"
-          },
-          {
             "date": "2026-07-11",
             "title": "7月11日比赛日",
             "range": "北京时间 07-11 18:00 - 07-12 18:00",
             "start_iso": "2026-07-11T18:00:00+08:00",
             "end_iso": "2026-07-12T18:00:00+08:00"
+          },
+          {
+            "date": "2026-07-12",
+            "title": "7月12日比赛日",
+            "range": "北京时间 07-12 18:00 - 07-13 18:00",
+            "start_iso": "2026-07-12T18:00:00+08:00",
+            "end_iso": "2026-07-13T18:00:00+08:00"
           }
         ]
       },
       "highlight_match_ids": [
         "400021537",
-        "400021538",
         "400021539"
       ],
       "groups": null,
@@ -1710,77 +1390,38 @@
             "placeholder": true
           },
           {
-            "match_id": "400021538",
+            "match_id": "placeholder-M98",
             "match_number": 98,
             "round_key": "quarter_finals",
-            "stage": "Quarter-final",
-            "stage_name": "Quarter-final",
-            "round_name": "",
-            "phase": "",
-            "group": "Quarter-final",
-            "match_name": "西班牙 vs 比利时",
+            "stage": "quarter_finals",
+            "group": "淘汰赛",
+            "match_name": "胜者 M91 vs 胜者 M92",
             "teams": {
               "home": {
-                "name": "西班牙",
-                "name_en": "Spain",
-                "abbreviation": "ESP",
-                "id_team": "164",
-                "id_country": "ESP",
-                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-                "score": 2,
-                "tactics": "4-2-3-1",
-                "country_code": "ESP",
-                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-                "flag_emoji": "🇪🇸"
+                "name": "胜者 M91",
+                "name_en": "胜者 M91",
+                "country_code": "",
+                "flag_url": "",
+                "flag_emoji": "",
+                "placeholder": true
               },
               "away": {
-                "name": "比利时",
-                "name_en": "Belgium",
-                "abbreviation": "BEL",
-                "id_team": "459",
-                "id_country": "BEL",
-                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-                "score": 1,
-                "tactics": "4-2-3-1",
-                "country_code": "BEL",
-                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-                "flag_emoji": "🇧🇪"
+                "name": "胜者 M92",
+                "name_en": "胜者 M92",
+                "country_code": "",
+                "flag_url": "",
+                "flag_emoji": "",
+                "placeholder": true
               }
             },
-            "kickoff_utc": "2026-07-10T19:00:00Z",
-            "kickoff_beijing": "2026-07-11T03:00:00+08:00",
-            "kickoff_display": "北京时间 07-11 03:00",
-            "match_day": {
-              "date": "2026-07-10",
-              "title": "7月10日比赛日",
-              "range": "北京时间 07-10 18:00 - 07-11 18:00",
-              "start_iso": "2026-07-10T18:00:00+08:00",
-              "end_iso": "2026-07-11T18:00:00+08:00"
-            },
-            "win_draw_loss": {
-              "home_win": 100,
-              "draw": 0,
-              "away_win": 0
-            },
-            "score_options": [
-              {
-                "score": "2-1",
-                "rank": 1,
-                "reason": "实际比赛结果，西班牙凭借梅里诺的绝杀获胜，符合赛前技术传控优势的预期。"
-              },
-              {
-                "score": "1-0",
-                "rank": 2,
-                "reason": "若西班牙未能把握机会，可能以小胜收场，比利时防守反击威胁有限。"
-              },
-              {
-                "score": "1-1",
-                "rank": 3,
-                "reason": "平局可能性存在，但比利时整体老化，难以抵挡西班牙的持续施压。"
-              }
-            ],
-            "current_window": true,
-            "placeholder": false
+            "kickoff_utc": null,
+            "kickoff_beijing": null,
+            "kickoff_display": "北京时间 待定",
+            "match_day": {},
+            "win_draw_loss": null,
+            "score_options": [],
+            "current_window": false,
+            "placeholder": true
           },
           {
             "match_id": "400021539",
@@ -1800,8 +1441,8 @@
                 "id_team": "464",
                 "id_country": "NOR",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-                "score": null,
-                "tactics": null,
+                "score": 1,
+                "tactics": "4-1-2-3",
                 "country_code": "NOR",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
                 "flag_emoji": "🇳🇴"
@@ -1813,8 +1454,8 @@
                 "id_team": "448",
                 "id_country": "ENG",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-                "score": null,
-                "tactics": null,
+                "score": 2,
+                "tactics": "4-2-3-1",
                 "country_code": "ENG",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
                 "flag_emoji": ""
@@ -1831,25 +1472,25 @@
               "end_iso": "2026-07-12T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 24,
-              "draw": 26,
+              "home_win": 22,
+              "draw": 28,
               "away_win": 50
             },
             "score_options": [
               {
                 "score": "1-2",
                 "rank": 1,
-                "reason": "英格兰整体实力更强，挪威虽有哈兰德但中场输送不足，预计英格兰小胜。"
-              },
-              {
-                "score": "0-2",
-                "rank": 2,
-                "reason": "若英格兰开场快速进球，挪威被迫压出，可能被再下一城。"
+                "reason": "英格兰整体实力占优，挪威依赖哈兰德个人能力，但难敌英格兰多点进攻。"
               },
               {
                 "score": "1-1",
+                "rank": 2,
+                "reason": "挪威反击高效，英格兰可能久攻不下，平局进入加时。"
+              },
+              {
+                "score": "0-2",
                 "rank": 3,
-                "reason": "挪威依靠哈兰德个人能力和定位球或能扳平，但英格兰大概率控制比赛。"
+                "reason": "英格兰防守稳固，挪威进攻哑火。"
               }
             ],
             "current_window": true,
@@ -1873,8 +1514,8 @@
                 "id_team": "202",
                 "id_country": "ARG",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-                "score": null,
-                "tactics": null,
+                "score": 3,
+                "tactics": "4-1-3-2",
                 "country_code": "ARG",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
                 "flag_emoji": "🇦🇷"
@@ -1886,8 +1527,8 @@
                 "id_team": "475",
                 "id_country": "SUI",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-                "score": null,
-                "tactics": null,
+                "score": 1,
+                "tactics": "4-2-3-1",
                 "country_code": "SUI",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
                 "flag_emoji": "🇨🇭"
@@ -1904,25 +1545,25 @@
               "end_iso": "2026-07-12T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 57,
-              "draw": 26,
-              "away_win": 17
+              "home_win": 60,
+              "draw": 25,
+              "away_win": 15
             },
             "score_options": [
               {
                 "score": "2-0",
                 "rank": 1,
-                "reason": "阿根廷控场并多点开花，瑞士进攻乏力，预计零封获胜。"
+                "reason": "阿根廷整体实力强劲，梅西领衔攻击线，瑞士难破防线。"
+              },
+              {
+                "score": "3-1",
+                "rank": 2,
+                "reason": "瑞士可能通过定位球破门，但阿根廷进攻多点开花。"
               },
               {
                 "score": "1-0",
-                "rank": 2,
-                "reason": "若瑞士严防死守，阿根廷可能仅靠球星灵光一闪小胜。"
-              },
-              {
-                "score": "2-1",
                 "rank": 3,
-                "reason": "瑞士通过定位球或反击可能偷得一球，但难以阻挡阿根廷取胜。"
+                "reason": "瑞士防守顽强，阿根廷小胜过关。"
               }
             ],
             "current_window": true,
@@ -1984,38 +1625,57 @@
             "placeholder": false
           },
           {
-            "match_id": "placeholder-M102",
+            "match_id": "400021540",
             "match_number": 102,
             "round_key": "semi_finals",
-            "stage": "semi_finals",
-            "group": "淘汰赛",
-            "match_name": "胜者 M99 vs 胜者 M100",
+            "stage": "Semi-final",
+            "stage_name": "Semi-final",
+            "round_name": "",
+            "phase": "",
+            "group": "Semi-final",
+            "match_name": "英格兰 vs 阿根廷",
             "teams": {
               "home": {
-                "name": "胜者 M99",
-                "name_en": "胜者 M99",
-                "country_code": "",
-                "flag_url": "",
-                "flag_emoji": "",
-                "placeholder": true
+                "name": "英格兰",
+                "name_en": "England",
+                "abbreviation": "ENG",
+                "id_team": "448",
+                "id_country": "ENG",
+                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+                "score": null,
+                "tactics": null,
+                "country_code": "ENG",
+                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+                "flag_emoji": ""
               },
               "away": {
-                "name": "胜者 M100",
-                "name_en": "胜者 M100",
-                "country_code": "",
-                "flag_url": "",
-                "flag_emoji": "",
-                "placeholder": true
+                "name": "阿根廷",
+                "name_en": "Argentina",
+                "abbreviation": "ARG",
+                "id_team": "202",
+                "id_country": "ARG",
+                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+                "score": null,
+                "tactics": null,
+                "country_code": "ARG",
+                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+                "flag_emoji": "🇦🇷"
               }
             },
-            "kickoff_utc": null,
-            "kickoff_beijing": null,
-            "kickoff_display": "北京时间 待定",
-            "match_day": {},
+            "kickoff_utc": "2026-07-15T19:00:00Z",
+            "kickoff_beijing": "2026-07-16T03:00:00+08:00",
+            "kickoff_display": "北京时间 07-16 03:00",
+            "match_day": {
+              "date": "2026-07-15",
+              "title": "7月15日比赛日",
+              "range": "北京时间 07-15 18:00 - 07-16 18:00",
+              "start_iso": "2026-07-15T18:00:00+08:00",
+              "end_iso": "2026-07-16T18:00:00+08:00"
+            },
             "win_draw_loss": null,
             "score_options": [],
             "current_window": false,
-            "placeholder": true
+            "placeholder": false
           }
         ],
         "final": [
@@ -2058,18 +1718,11 @@
       "structure_window": {
         "timezone": "Asia/Shanghai",
         "match_day_count": 21,
-        "start_iso": "2026-07-10T18:00:00+08:00",
-        "end_iso": "2026-07-31T18:00:00+08:00",
-        "display_range": "7月10日比赛日 - 7月30日比赛日",
-        "range": "北京时间 07-10 18:00 - 07-31 18:00",
+        "start_iso": "2026-07-11T18:00:00+08:00",
+        "end_iso": "2026-08-01T18:00:00+08:00",
+        "display_range": "7月11日比赛日 - 7月31日比赛日",
+        "range": "北京时间 07-11 18:00 - 08-01 18:00",
         "match_days": [
-          {
-            "date": "2026-07-10",
-            "title": "7月10日比赛日",
-            "range": "北京时间 07-10 18:00 - 07-11 18:00",
-            "start_iso": "2026-07-10T18:00:00+08:00",
-            "end_iso": "2026-07-11T18:00:00+08:00"
-          },
           {
             "date": "2026-07-11",
             "title": "7月11日比赛日",
@@ -2209,297 +1862,19 @@
             "range": "北京时间 07-30 18:00 - 07-31 18:00",
             "start_iso": "2026-07-30T18:00:00+08:00",
             "end_iso": "2026-07-31T18:00:00+08:00"
+          },
+          {
+            "date": "2026-07-31",
+            "title": "7月31日比赛日",
+            "range": "北京时间 07-31 18:00 - 08-01 18:00",
+            "start_iso": "2026-07-31T18:00:00+08:00",
+            "end_iso": "2026-08-01T18:00:00+08:00"
           }
         ]
       }
     }
   },
   "matches": [
-    {
-      "id": "400021538",
-      "fifa_match_id": "400021538",
-      "match_name": "西班牙 vs 比利时",
-      "match_name_en": "Spain vs Belgium",
-      "kickoff_utc": "2026-07-10T19:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Quarter-final",
-      "stage_name": "Quarter-final",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 98,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 1,
-        "result_type": 1
-      },
-      "teams": {
-        "home": {
-          "name": "西班牙",
-          "name_en": "Spain",
-          "abbreviation": "ESP",
-          "id_team": "164",
-          "id_country": "ESP",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-          "score": 2,
-          "tactics": "4-2-3-1",
-          "country_code": "ESP",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-          "flag_emoji": "🇪🇸"
-        },
-        "away": {
-          "name": "比利时",
-          "name_en": "Belgium",
-          "abbreviation": "BEL",
-          "id_team": "459",
-          "id_country": "BEL",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-          "score": 1,
-          "tactics": "4-2-3-1",
-          "country_code": "BEL",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-          "flag_emoji": "🇧🇪"
-        }
-      },
-      "venue": {
-        "name": "Los Angeles Stadium",
-        "city": "Los Angeles",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021538"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760511"
-        }
-      },
-      "espn_event_id": "760511",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "西班牙",
-          "team_en": "Spain",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Merino puts Spain through to semifinals",
-              "description": "HL - Merino puts Spain through to semifinals   CAP - Spain knock Belgium out of the World Cup with an 88th-minute winner from Mikel Merino.",
-              "published": "2026-07-11T00:10:17Z",
-              "url": "https://www.espn.com/video/clip/_/id/49329398/merino-puts-spain-semifinals"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-              "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-              "published": "2026-07-11T02:50:46Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49330344/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-              "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-              "published": "2026-07-10T23:30:47Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49328835/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "比利时",
-          "team_en": "Belgium",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Merino puts Spain through to semifinals",
-              "description": "HL - Merino puts Spain through to semifinals   CAP - Spain knock Belgium out of the World Cup with an 88th-minute winner from Mikel Merino.",
-              "published": "2026-07-11T00:10:17Z",
-              "url": "https://www.espn.com/video/clip/_/id/49329398/merino-puts-spain-semifinals"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-              "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-              "published": "2026-07-11T02:50:46Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49330344/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-            },
-            {
-              "source": "ESPN World Cup news",
-              "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-              "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-              "published": "2026-07-10T23:30:47Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49328835/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      },
-      "match_id": "400021538",
-      "win_draw_loss": {
-        "home_win": 100,
-        "draw": 0,
-        "away_win": 0
-      },
-      "xg_prediction": {
-        "home": 1.8,
-        "away": 1.2
-      },
-      "predicted_score": {
-        "home": 2,
-        "away": 1
-      },
-      "score_options": [
-        {
-          "score": "2-1",
-          "rank": 1,
-          "reason": "实际比赛结果，西班牙凭借梅里诺的绝杀获胜，符合赛前技术传控优势的预期。"
-        },
-        {
-          "score": "1-0",
-          "rank": 2,
-          "reason": "若西班牙未能把握机会，可能以小胜收场，比利时防守反击威胁有限。"
-        },
-        {
-          "score": "1-1",
-          "rank": 3,
-          "reason": "平局可能性存在，但比利时整体老化，难以抵挡西班牙的持续施压。"
-        }
-      ],
-      "method_factors": {
-        "market_signal": "赔率不可用，比赛已结束，实际结果西班牙2-1胜。",
-        "fifa_rank_prior": "西班牙为世界顶级强队，长期位列前10；比利时黄金一代老化，排名下滑但仍属欧洲劲旅。",
-        "recent_form": "西班牙本届赛事控球率场均超65%，进攻流畅；比利时小组赛磕磕绊绊，依赖德布劳内个人能力。",
-        "group_context": "四分之一决赛，胜者晋级半决赛对阵法国。",
-        "injury_rotation": "双方均有疑似伤病报道，但无官方确认核心缺阵，梅里诺替补绝杀成为关键。",
-        "weather_venue": "洛杉矶体育场，天气状况未知，对技术型球队无明显影响。",
-        "tactical_key": "西班牙的4-2-3-1控球体系压制比利时中场，限制德布劳内出球；比利时反击效率决定比赛走向。",
-        "uncertainty": "赔率缺失增加赛前预测不确定性，但最终结果验证西班牙实力占优。"
-      },
-      "matchup_graph": {
-        "nodes": [
-          {
-            "id": "home_attack",
-            "label": "主队进攻",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 85,
-            "note": "西班牙前场配合娴熟，边路突破能力强，创造机会多"
-          },
-          {
-            "id": "home_midfield",
-            "label": "主队中场/转换",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 90,
-            "note": "佩德里、加维控制节奏，传球成功率高，主导比赛"
-          },
-          {
-            "id": "home_defense",
-            "label": "主队防守",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 80,
-            "note": "防线稳固，但面对快速反击偶有漏洞"
-          },
-          {
-            "id": "away_attack",
-            "label": "客队进攻",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 75,
-            "note": "卢卡库支点作用下降，依赖德布劳内创造，效率不高"
-          },
-          {
-            "id": "away_midfield",
-            "label": "客队中场/转换",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 70,
-            "note": "比利时中场老化，跑动能力不足，难以抗衡西班牙传控"
-          },
-          {
-            "id": "away_defense",
-            "label": "客队防守",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 65,
-            "note": "费尔通亨等老将经验丰富，但速度慢，易被打身后"
-          }
-        ],
-        "edges": [
-          {
-            "from": "home_attack",
-            "to": "away_defense",
-            "label": "西班牙边路冲击比利时防线身后",
-            "impact": "high",
-            "direction": "home_to_away",
-            "note": "西班牙边锋速度优势明显，比利时防线转身慢是致命弱点"
-          },
-          {
-            "from": "away_attack",
-            "to": "home_defense",
-            "label": "德布劳内直塞找卢卡库",
-            "impact": "medium",
-            "direction": "away_to_home",
-            "note": "比利时反击依赖德布劳内手术刀传球，但西班牙中卫拉波尔特位置感好"
-          },
-          {
-            "from": "home_midfield",
-            "to": "away_midfield",
-            "label": "西班牙中场碾压式控制",
-            "impact": "high",
-            "direction": "balanced",
-            "note": "西班牙中场人数和跑动完胜，比利时难以组织有效推进"
-          }
-        ],
-        "summary": "西班牙在三条线均占据优势，尤其中场控制力碾压比利时，比赛胜负手在于西班牙能否尽早破门打破比利时铁桶阵。",
-        "advantage_side": "home",
-        "key_battle": "西班牙中场 vs 德布劳内：限制德布劳内出球是西班牙取胜关键",
-        "risk_trigger": "若西班牙久攻不下，比利时反击可能偷得进球，但最终西班牙绝杀避免意外。"
-      },
-      "tactical_matchup": "西班牙4-2-3-1对阵比利时4-2-3-1，西班牙通过高控球和边中结合持续施压，比利时收缩防守等待反击，但终因体能和实力差距在最后时刻丢球。",
-      "injury_adjustment": {
-        "home": "西班牙有疑似伤病报道，但无核心球员确认缺阵，替补奇兵梅里诺发挥关键作用。",
-        "away": "比利时同样有疑似伤病，可能影响阵容深度，德布劳内带伤作战状态并非最佳。",
-        "summary": "双方伤病影响有限，西班牙板凳深度更优，成为比赛胜负手之一。"
-      },
-      "risk_analysis": "西班牙控场能力极强，但一球领先时仍暴露防守空当，比利时差点逼平，强队过关风险可控但并非绝对安全。",
-      "upset_probability": 0,
-      "odds_comparison": {
-        "market_implied": {
-          "home_win": 0,
-          "draw": 0,
-          "away_win": 0
-        },
-        "model_edge": {
-          "home_win": 0,
-          "draw": 0,
-          "away_win": 0
-        },
-        "deviation_analysis": "本场赔率数据缺失，无法进行市场偏差分析。"
-      },
-      "confidence": "high"
-    },
     {
       "id": "400021539",
       "fifa_match_id": "400021539",
@@ -2515,9 +1890,9 @@
       "group": "",
       "match_number": 99,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 3
       },
       "teams": {
         "home": {
@@ -2527,8 +1902,8 @@
           "id_team": "464",
           "id_country": "NOR",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-          "score": null,
-          "tactics": null,
+          "score": 1,
+          "tactics": "4-1-2-3",
           "country_code": "NOR",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
           "flag_emoji": "🇳🇴"
@@ -2540,8 +1915,8 @@
           "id_team": "448",
           "id_country": "ENG",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-          "score": null,
-          "tactics": null,
+          "score": 2,
+          "tactics": "4-2-3-1",
           "country_code": "ENG",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
           "flag_emoji": ""
@@ -2575,26 +1950,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+290",
-          "draw": "+265",
-          "away": "-110"
-        },
-        "implied_probability": {
-          "home_win": 25.64,
-          "draw": 27.4,
-          "away_win": 52.38
-        },
-        "normalized_probability": {
-          "home_win": 24.32,
-          "draw": 25.99,
-          "away_win": 49.69
-        },
-        "overround": 5.42,
-        "details": "ENG -110"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -2604,10 +1962,10 @@
           "records": [
             {
               "source": "ESPN World Cup news",
-              "title": "England given World Cup boost as Marc Guéhi, Declan Rice return to training ahead of Norway clash",
-              "description": "Marc Guéhi and Declan Rice handed England a fitness boost as they both trained ahead of the World Cup quarter-final with Norway in Miami.",
-              "published": "2026-07-11T00:44:29Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49328075/england-marc-guehi-declan-rice-back-training-ahead-norway-world-cup-clash"
+              "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+              "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+              "published": "2026-07-12T00:02:25Z",
+              "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
             }
           ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -2619,10 +1977,10 @@
           "records": [
             {
               "source": "ESPN World Cup news",
-              "title": "England given World Cup boost as Marc Guéhi, Declan Rice return to training ahead of Norway clash",
-              "description": "Marc Guéhi and Declan Rice handed England a fitness boost as they both trained ahead of the World Cup quarter-final with Norway in Miami.",
-              "published": "2026-07-11T00:44:29Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49328075/england-marc-guehi-declan-rice-back-training-ahead-norway-world-cup-clash"
+              "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+              "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+              "published": "2026-07-12T00:02:25Z",
+              "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
             }
           ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -2630,8 +1988,8 @@
       },
       "match_id": "400021539",
       "win_draw_loss": {
-        "home_win": 24,
-        "draw": 26,
+        "home_win": 22,
+        "draw": 28,
         "away_win": 50
       },
       "xg_prediction": {
@@ -2646,28 +2004,28 @@
         {
           "score": "1-2",
           "rank": 1,
-          "reason": "英格兰整体实力更强，挪威虽有哈兰德但中场输送不足，预计英格兰小胜。"
-        },
-        {
-          "score": "0-2",
-          "rank": 2,
-          "reason": "若英格兰开场快速进球，挪威被迫压出，可能被再下一城。"
+          "reason": "英格兰整体实力占优，挪威依赖哈兰德个人能力，但难敌英格兰多点进攻。"
         },
         {
           "score": "1-1",
+          "rank": 2,
+          "reason": "挪威反击高效，英格兰可能久攻不下，平局进入加时。"
+        },
+        {
+          "score": "0-2",
           "rank": 3,
-          "reason": "挪威依靠哈兰德个人能力和定位球或能扳平，但英格兰大概率控制比赛。"
+          "reason": "英格兰防守稳固，挪威进攻哑火。"
         }
       ],
       "method_factors": {
-        "market_signal": "DraftKings赔率强烈倾向英格兰（-110），隐含胜率约50%，挪威+290冷门意味。",
-        "fifa_rank_prior": "英格兰长期位居世界前10，大赛表现稳定；挪威近年崛起，哈兰德领衔但整体实力仍在欧洲二三流。",
-        "recent_form": "英格兰小组赛全胜，攻防俱佳；挪威凭借哈兰德抢分，但面对强队时中场失控成短板。",
-        "group_context": "四分之一决赛，胜者将对阵阿根廷与瑞士的胜者。",
-        "injury_rotation": "英格兰赖斯、格希恢复训练，大概率出战；挪威有疑似伤病报道，具体影响未知，可能影响关键位置。",
-        "weather_venue": "迈阿密体育场，天气湿热，对两队体能都是考验，但英格兰阵容深度更足。",
-        "tactical_key": "英格兰需限制哈兰德接球转身，挪威则要利用哈兰德冲击斯通斯等中卫；中场对决贝林厄姆 vs 厄德高左右战局。",
-        "uncertainty": "赔率隐含概率接近五成，说明市场认为英格兰优势并非绝对，挪威爆冷可能性不低。"
+        "market_signal": "赔率数据不可用",
+        "fifa_rank_prior": "FIFA排名不可用；长期实力：英格兰历史强队，挪威中上游但拥有顶级射手",
+        "recent_form": "近期状态未知；两队均进入八强，表明状态良好",
+        "group_context": "无小组赛，四分之一决赛单场淘汰",
+        "injury_rotation": "伤病情况未知",
+        "weather_venue": "迈阿密体育场，天气未知",
+        "tactical_key": "挪威4-1-2-3阵型依赖哈兰德；英格兰4-2-3-1控制中场，边路突破",
+        "uncertainty": "高不确定性：缺乏赔率和伤病数据"
       },
       "matchup_graph": {
         "nodes": [
@@ -2676,24 +2034,24 @@
             "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 70,
-            "note": "哈兰德单点爆破能力世界级，但缺乏稳定中场支援"
+            "weight": 80,
+            "note": "哈兰德领衔，个人能力突出"
           },
           {
             "id": "home_midfield",
             "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 55,
-            "note": "厄德高组织核心，但整体硬度不足，面对英格兰逼抢容易丢球"
+            "weight": 60,
+            "note": "厄德高组织，但拦截能力一般"
           },
           {
             "id": "home_defense",
             "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 60,
-            "note": "防线整体身高体壮，但转身慢，惧怕英格兰前场快速换位"
+            "weight": 50,
+            "note": "防线经验不足，易被打反击"
           },
           {
             "id": "away_attack",
@@ -2701,76 +2059,76 @@
             "type": "team_phase",
             "side": "away",
             "weight": 85,
-            "note": "凯恩回撤组织，福登、萨卡边路突破犀利，进攻手段多样"
+            "note": "凯恩、萨卡等攻击点多"
           },
           {
             "id": "away_midfield",
             "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 80,
-            "note": "贝林厄姆、赖斯攻守兼备，控制力极强"
+            "weight": 75,
+            "note": "贝林厄姆控制力强，攻守均衡"
           },
           {
             "id": "away_defense",
             "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 75,
-            "note": "斯通斯、格希搭档稳定，但哈兰德冲击力是考验"
+            "weight": 70,
+            "note": "斯通斯领衔，防空与地面俱佳"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "哈兰德 vs 斯通斯",
+            "label": "哈兰德 vs 英格兰防线",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "挪威进攻几乎全部依赖哈兰德对英格兰防线的冲击，能否破门决定比赛走向"
+            "note": "挪威主要得分手段，英格兰需重点盯防"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "英格兰边中结合打击挪威防线肋部",
+            "label": "英格兰多样进攻 vs 挪威薄弱防线",
             "impact": "high",
             "direction": "away_to_home",
-            "note": "英格兰前场换位频繁，挪威高大中卫易被拉扯出空当"
+            "note": "英格兰边中结合，挪威防线压力大"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "厄德高 vs 贝林厄姆",
+            "label": "中场控制权争夺",
             "impact": "medium",
             "direction": "balanced",
-            "note": "双方组织核心的直接对话，厄德高需摆脱贝林厄姆的缠斗来向前输送"
+            "note": "厄德高 vs 贝林厄姆，控球与转换关键"
           }
         ],
-        "summary": "英格兰在整体实力、中场控制和进攻多样性上全面占优，挪威唯一优势在于哈兰德的个人能力，但只要英格兰切断其接球路线，挪威威胁将大幅降低。",
+        "summary": "英格兰整体实力占优，挪威依靠哈兰德个人能力制造威胁，但防线漏洞可能被英格兰利用。",
         "advantage_side": "away",
-        "key_battle": "英格兰中场能否锁死厄德高-哈兰德连线？",
-        "risk_trigger": "若英格兰得势不得分，挪威定位球或反击偷一个后全线退守，可能制造冷门。"
+        "key_battle": "哈兰德 vs 英格兰中卫组合",
+        "risk_trigger": "挪威若打出高效反击，可能拖入加时"
       },
-      "tactical_matchup": "挪威预计使用4-4-2或4-2-3-1，长传找哈兰德支点；英格兰4-3-3高位压迫，强攻边路。比赛或演变为半场攻防，英格兰破密集能力是关键。",
+      "tactical_matchup": "挪威4-1-2-3主打防守反击，英格兰4-2-3-1控球压迫。英格兰中场优势明显，边路进攻丰富。",
       "injury_adjustment": {
-        "home": "挪威有疑似伤病报道，细节未知，可能影响中场防守硬度或边后卫回追速度。",
-        "away": "英格兰赖斯、格希恢复训练，基本可出战，阵容相对完整。",
-        "summary": "英格兰受伤病影响更小，阵容深度优势明显，挪威若有核心缺阵则爆冷难度陡增。"
+        "home": "伤病情况未知",
+        "away": "伤病情况未知",
+        "summary": "无关键伤病信息，双方主力预计出战"
       },
-      "risk_analysis": "英格兰实力占优但赔率并未完全一边倒，挪威手握哈兰德这一超级武器，随时可能改写比分，比赛存在一定爆冷风险。",
-      "upset_probability": 26,
+      "risk_analysis": "英格兰纸面实力占优，但挪威拥有顶级终结者，冷门风险中等。缺乏赔率数据，预测不确定性较高。",
+      "upset_probability": 22,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 24.32,
-          "draw": 25.99,
-          "away_win": 49.69
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
         "model_edge": {
-          "home_win": 24,
-          "draw": 26,
+          "home_win": 22,
+          "draw": 28,
           "away_win": 50
         },
-        "deviation_analysis": "模型预测与市场概率基本一致，市场已合理消化英格兰优势，没有明显套利空间。"
+        "deviation_analysis": "市场赔率不可用，无法比较偏差。模型基于长期实力和阵容评估。"
       },
       "confidence": "medium"
     },
@@ -2789,9 +2147,9 @@
       "group": "",
       "match_number": 100,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 2,
+        "result_type": 3
       },
       "teams": {
         "home": {
@@ -2801,8 +2159,8 @@
           "id_team": "202",
           "id_country": "ARG",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-          "score": null,
-          "tactics": null,
+          "score": 3,
+          "tactics": "4-1-3-2",
           "country_code": "ARG",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
           "flag_emoji": "🇦🇷"
@@ -2814,8 +2172,8 @@
           "id_team": "475",
           "id_country": "SUI",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-          "score": null,
-          "tactics": null,
+          "score": 1,
+          "tactics": "4-2-3-1",
           "country_code": "SUI",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
           "flag_emoji": "🇨🇭"
@@ -2849,26 +2207,9 @@
         "method": "team-pair and kickoff-time cross-check"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-145",
-          "draw": "+255",
-          "away": "+450"
-        },
-        "implied_probability": {
-          "home_win": 59.18,
-          "draw": 28.17,
-          "away_win": 18.18
-        },
-        "normalized_probability": {
-          "home_win": 56.08,
-          "draw": 26.69,
-          "away_win": 17.23
-        },
-        "overround": 5.53,
-        "details": "ARG -145"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -2888,13 +2229,13 @@
       },
       "match_id": "400021537",
       "win_draw_loss": {
-        "home_win": 57,
-        "draw": 26,
-        "away_win": 17
+        "home_win": 60,
+        "draw": 25,
+        "away_win": 15
       },
       "xg_prediction": {
-        "home": 1.9,
-        "away": 0.6
+        "home": 2.1,
+        "away": 0.7
       },
       "predicted_score": {
         "home": 2,
@@ -2904,28 +2245,28 @@
         {
           "score": "2-0",
           "rank": 1,
-          "reason": "阿根廷控场并多点开花，瑞士进攻乏力，预计零封获胜。"
+          "reason": "阿根廷整体实力强劲，梅西领衔攻击线，瑞士难破防线。"
+        },
+        {
+          "score": "3-1",
+          "rank": 2,
+          "reason": "瑞士可能通过定位球破门，但阿根廷进攻多点开花。"
         },
         {
           "score": "1-0",
-          "rank": 2,
-          "reason": "若瑞士严防死守，阿根廷可能仅靠球星灵光一闪小胜。"
-        },
-        {
-          "score": "2-1",
           "rank": 3,
-          "reason": "瑞士通过定位球或反击可能偷得一球，但难以阻挡阿根廷取胜。"
+          "reason": "瑞士防守顽强，阿根廷小胜过关。"
         }
       ],
       "method_factors": {
-        "market_signal": "DraftKings赔率阿根廷-145，隐含胜率56%，瑞士+450为明显下狗，市场信心强烈。",
-        "fifa_rank_prior": "阿根廷世界冠军，长期位居前列，阵容均衡；瑞士稳定在前20，防守坚韧但缺乏顶级球星。",
-        "recent_form": "阿根廷小组赛场均控球率超60%，梅西状态正佳；瑞士小组赛磕碰出线，进攻效率一般。",
-        "group_context": "四分之一决赛，胜者将与挪威与英格兰的胜者争夺决赛席位。",
-        "injury_rotation": "双方目前均无官方伤病报告，预计可全主力出战。",
-        "weather_venue": "堪萨斯城体育场，天气状况未知，对技术型球队无明显影响。",
-        "tactical_key": "阿根廷需要破解瑞士的双后腰铁桶阵，梅西的传球和远射是攻坚利器；瑞士则寄望反击和沙奇里的创造力。",
-        "uncertainty": "瑞士的防守体系向来稳固，可能给阿根廷带来麻烦，但赔率优势明确，冷门概率较低。"
+        "market_signal": "赔率数据不可用",
+        "fifa_rank_prior": "FIFA排名不可用；长期实力：阿根廷世界冠军，瑞士稳定中上游",
+        "recent_form": "近期状态未知；两队均晋级八强，状态良好",
+        "group_context": "无小组赛，四分之一决赛单场淘汰",
+        "injury_rotation": "伤病情况未知",
+        "weather_venue": "堪萨斯城体育场，天气未知",
+        "tactical_key": "阿根廷4-1-3-2阵型强调中场控制与梅西的创造力；瑞士4-2-3-1注重防守与边路反击",
+        "uncertainty": "中高不确定性：缺乏赔率数据，但阿根廷实力明显占优"
       },
       "matchup_graph": {
         "nodes": [
@@ -2935,7 +2276,7 @@
             "type": "team_phase",
             "side": "home",
             "weight": 90,
-            "note": "梅西、阿尔瓦雷斯、迪马利亚组成豪华攻击线，创造力顶级"
+            "note": "梅西、阿尔瓦雷斯，创造力与终结兼备"
           },
           {
             "id": "home_midfield",
@@ -2943,94 +2284,94 @@
             "type": "team_phase",
             "side": "home",
             "weight": 85,
-            "note": "恩佐、麦卡利斯特控传俱佳，中场控制力强"
+            "note": "恩佐、麦卡利斯特控制节奏，攻防转换快"
           },
           {
             "id": "home_defense",
             "label": "主队防守",
             "type": "team_phase",
             "side": "home",
-            "weight": 80,
-            "note": "奥塔门迪、罗梅罗经验丰富，但回追速度可能受考验"
+            "weight": 75,
+            "note": "经验丰富，整体协防好"
           },
           {
             "id": "away_attack",
             "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 55,
-            "note": "恩博洛冲击力不错，但整体进攻套路单一，得分效率低"
+            "weight": 65,
+            "note": "恩博洛速度，沙奇里远射，但缺乏稳定输出"
           },
           {
             "id": "away_midfield",
             "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 65,
-            "note": "扎卡、弗罗伊勒双后腰防守硬朗，但组织能力一般"
+            "weight": 70,
+            "note": "扎卡组织，防守型中场拦截"
           },
           {
             "id": "away_defense",
             "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 70,
-            "note": "阿坎吉领衔的防线组织严密，但面对顶级攻击手仍有漏洞"
+            "weight": 75,
+            "note": "阿坎吉领衔，纪律性强"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "梅西突破 vs 瑞士链式防守",
+            "label": "阿根廷攻击群 vs 瑞士严密防线",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "阿根廷进攻的成败系于梅西能否撕裂瑞士多层防线"
+            "note": "梅西的突破和分球是撕开瑞士防线的关键"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "瑞士快速反击冲击阿根廷高位防线",
+            "label": "瑞士快速反击 vs 阿根廷防线回追",
             "impact": "medium",
             "direction": "away_to_home",
-            "note": "阿根廷大举压上时，恩博洛的速度可能制造威胁"
+            "note": "瑞士可能利用阿根廷压上后的空当"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "阿根廷中场穿透 vs 瑞士双后腰拦截",
+            "label": "中场控制权",
             "impact": "medium",
             "direction": "balanced",
-            "note": "阿根廷需要快速转移球来避开扎卡和弗罗伊勒的扫荡"
+            "note": "阿根廷技术占优，瑞士身体对抗强"
           }
         ],
-        "summary": "阿根廷全面占优，瑞士唯一的生机在于密集防守并抓住仅有的反击机会，但梅西的灵光一闪极可能决定胜负。",
+        "summary": "阿根廷整体实力明显占优，瑞士防守稳固但进攻威胁有限。",
         "advantage_side": "home",
-        "key_battle": "梅西 vs 阿坎吉：梅西的带球突破将是击穿瑞士防线的关键",
-        "risk_trigger": "若阿根廷久攻不下心态急躁，瑞士可能偷袭得手，重演上届淘汰法国的戏码。"
+        "key_battle": "梅西 vs 扎卡的中场对决",
+        "risk_trigger": "瑞士若先进球，可能全线退守，增加阿根廷破门难度"
       },
-      "tactical_matchup": "阿根廷4-3-3掌控球权，瑞士5-4-1或4-2-3-1低位防守，比赛预计演变为阿根廷的半场进攻演练，瑞士伺机反击。",
+      "tactical_matchup": "阿根廷4-1-3-2通过中场人数优势掌控比赛，梅西自由人角色创造威胁。瑞士4-2-3-1双后腰保护防线，依靠两翼反击。",
       "injury_adjustment": {
-        "home": "阿根廷目前无伤病忧虑，全主力可出战。",
-        "away": "瑞士同样阵容齐整，无伤病影响。",
-        "summary": "双方均以最强阵出战，战术执行度将是胜负手。"
+        "home": "伤病情况未知",
+        "away": "伤病情况未知",
+        "summary": "无关键伤病报告，双方主力预计出战"
       },
-      "risk_analysis": "阿根廷实力明显高出一筹，但瑞士善于缠斗强队，且淘汰赛一场定胜负，爆冷系数不可完全忽略。",
-      "upset_probability": 17,
+      "risk_analysis": "阿根廷晋级热门，但瑞士曾在大赛中制造冷门。缺乏实时数据，预测基于传统实力对比。",
+      "upset_probability": 15,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 56.08,
-          "draw": 26.69,
-          "away_win": 17.23
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
         "model_edge": {
-          "home_win": 57,
-          "draw": 26,
-          "away_win": 17
+          "home_win": 60,
+          "draw": 25,
+          "away_win": 15
         },
-        "deviation_analysis": "模型预测与市场概率高度吻合，市场已充分反映了阿根廷的优势，赔率基本合理无偏差。"
+        "deviation_analysis": "市场赔率不可用，无法比较偏差。模型基于长期实力和阵容评估。"
       },
-      "confidence": "high"
+      "confidence": "medium"
     }
   ],
   "tournament_structure": {
@@ -3039,24 +2380,23 @@
       "timezone": "Asia/Shanghai",
       "china_match_days": [
         {
-          "date": "2026-07-10",
-          "title": "7月10日比赛日",
-          "range": "北京时间 07-10 18:00 - 07-11 18:00",
-          "start_iso": "2026-07-10T18:00:00+08:00",
-          "end_iso": "2026-07-11T18:00:00+08:00"
-        },
-        {
           "date": "2026-07-11",
           "title": "7月11日比赛日",
           "range": "北京时间 07-11 18:00 - 07-12 18:00",
           "start_iso": "2026-07-11T18:00:00+08:00",
           "end_iso": "2026-07-12T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-12",
+          "title": "7月12日比赛日",
+          "range": "北京时间 07-12 18:00 - 07-13 18:00",
+          "start_iso": "2026-07-12T18:00:00+08:00",
+          "end_iso": "2026-07-13T18:00:00+08:00"
         }
       ]
     },
     "highlight_match_ids": [
       "400021537",
-      "400021538",
       "400021539"
     ],
     "groups": null,
@@ -3917,77 +3257,38 @@
           "placeholder": true
         },
         {
-          "match_id": "400021538",
+          "match_id": "placeholder-M98",
           "match_number": 98,
           "round_key": "quarter_finals",
-          "stage": "Quarter-final",
-          "stage_name": "Quarter-final",
-          "round_name": "",
-          "phase": "",
-          "group": "Quarter-final",
-          "match_name": "西班牙 vs 比利时",
+          "stage": "quarter_finals",
+          "group": "淘汰赛",
+          "match_name": "胜者 M91 vs 胜者 M92",
           "teams": {
             "home": {
-              "name": "西班牙",
-              "name_en": "Spain",
-              "abbreviation": "ESP",
-              "id_team": "164",
-              "id_country": "ESP",
-              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-              "score": 2,
-              "tactics": "4-2-3-1",
-              "country_code": "ESP",
-              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-              "flag_emoji": "🇪🇸"
+              "name": "胜者 M91",
+              "name_en": "胜者 M91",
+              "country_code": "",
+              "flag_url": "",
+              "flag_emoji": "",
+              "placeholder": true
             },
             "away": {
-              "name": "比利时",
-              "name_en": "Belgium",
-              "abbreviation": "BEL",
-              "id_team": "459",
-              "id_country": "BEL",
-              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-              "score": 1,
-              "tactics": "4-2-3-1",
-              "country_code": "BEL",
-              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-              "flag_emoji": "🇧🇪"
+              "name": "胜者 M92",
+              "name_en": "胜者 M92",
+              "country_code": "",
+              "flag_url": "",
+              "flag_emoji": "",
+              "placeholder": true
             }
           },
-          "kickoff_utc": "2026-07-10T19:00:00Z",
-          "kickoff_beijing": "2026-07-11T03:00:00+08:00",
-          "kickoff_display": "北京时间 07-11 03:00",
-          "match_day": {
-            "date": "2026-07-10",
-            "title": "7月10日比赛日",
-            "range": "北京时间 07-10 18:00 - 07-11 18:00",
-            "start_iso": "2026-07-10T18:00:00+08:00",
-            "end_iso": "2026-07-11T18:00:00+08:00"
-          },
-          "win_draw_loss": {
-            "home_win": 100,
-            "draw": 0,
-            "away_win": 0
-          },
-          "score_options": [
-            {
-              "score": "2-1",
-              "rank": 1,
-              "reason": "实际比赛结果，西班牙凭借梅里诺的绝杀获胜，符合赛前技术传控优势的预期。"
-            },
-            {
-              "score": "1-0",
-              "rank": 2,
-              "reason": "若西班牙未能把握机会，可能以小胜收场，比利时防守反击威胁有限。"
-            },
-            {
-              "score": "1-1",
-              "rank": 3,
-              "reason": "平局可能性存在，但比利时整体老化，难以抵挡西班牙的持续施压。"
-            }
-          ],
-          "current_window": true,
-          "placeholder": false
+          "kickoff_utc": null,
+          "kickoff_beijing": null,
+          "kickoff_display": "北京时间 待定",
+          "match_day": {},
+          "win_draw_loss": null,
+          "score_options": [],
+          "current_window": false,
+          "placeholder": true
         },
         {
           "match_id": "400021539",
@@ -4007,8 +3308,8 @@
               "id_team": "464",
               "id_country": "NOR",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-              "score": null,
-              "tactics": null,
+              "score": 1,
+              "tactics": "4-1-2-3",
               "country_code": "NOR",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
               "flag_emoji": "🇳🇴"
@@ -4020,8 +3321,8 @@
               "id_team": "448",
               "id_country": "ENG",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-              "score": null,
-              "tactics": null,
+              "score": 2,
+              "tactics": "4-2-3-1",
               "country_code": "ENG",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
               "flag_emoji": ""
@@ -4038,25 +3339,25 @@
             "end_iso": "2026-07-12T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 24,
-            "draw": 26,
+            "home_win": 22,
+            "draw": 28,
             "away_win": 50
           },
           "score_options": [
             {
               "score": "1-2",
               "rank": 1,
-              "reason": "英格兰整体实力更强，挪威虽有哈兰德但中场输送不足，预计英格兰小胜。"
-            },
-            {
-              "score": "0-2",
-              "rank": 2,
-              "reason": "若英格兰开场快速进球，挪威被迫压出，可能被再下一城。"
+              "reason": "英格兰整体实力占优，挪威依赖哈兰德个人能力，但难敌英格兰多点进攻。"
             },
             {
               "score": "1-1",
+              "rank": 2,
+              "reason": "挪威反击高效，英格兰可能久攻不下，平局进入加时。"
+            },
+            {
+              "score": "0-2",
               "rank": 3,
-              "reason": "挪威依靠哈兰德个人能力和定位球或能扳平，但英格兰大概率控制比赛。"
+              "reason": "英格兰防守稳固，挪威进攻哑火。"
             }
           ],
           "current_window": true,
@@ -4080,8 +3381,8 @@
               "id_team": "202",
               "id_country": "ARG",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-              "score": null,
-              "tactics": null,
+              "score": 3,
+              "tactics": "4-1-3-2",
               "country_code": "ARG",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
               "flag_emoji": "🇦🇷"
@@ -4093,8 +3394,8 @@
               "id_team": "475",
               "id_country": "SUI",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-              "score": null,
-              "tactics": null,
+              "score": 1,
+              "tactics": "4-2-3-1",
               "country_code": "SUI",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
               "flag_emoji": "🇨🇭"
@@ -4111,25 +3412,25 @@
             "end_iso": "2026-07-12T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 57,
-            "draw": 26,
-            "away_win": 17
+            "home_win": 60,
+            "draw": 25,
+            "away_win": 15
           },
           "score_options": [
             {
               "score": "2-0",
               "rank": 1,
-              "reason": "阿根廷控场并多点开花，瑞士进攻乏力，预计零封获胜。"
+              "reason": "阿根廷整体实力强劲，梅西领衔攻击线，瑞士难破防线。"
+            },
+            {
+              "score": "3-1",
+              "rank": 2,
+              "reason": "瑞士可能通过定位球破门，但阿根廷进攻多点开花。"
             },
             {
               "score": "1-0",
-              "rank": 2,
-              "reason": "若瑞士严防死守，阿根廷可能仅靠球星灵光一闪小胜。"
-            },
-            {
-              "score": "2-1",
               "rank": 3,
-              "reason": "瑞士通过定位球或反击可能偷得一球，但难以阻挡阿根廷取胜。"
+              "reason": "瑞士防守顽强，阿根廷小胜过关。"
             }
           ],
           "current_window": true,
@@ -4191,38 +3492,57 @@
           "placeholder": false
         },
         {
-          "match_id": "placeholder-M102",
+          "match_id": "400021540",
           "match_number": 102,
           "round_key": "semi_finals",
-          "stage": "semi_finals",
-          "group": "淘汰赛",
-          "match_name": "胜者 M99 vs 胜者 M100",
+          "stage": "Semi-final",
+          "stage_name": "Semi-final",
+          "round_name": "",
+          "phase": "",
+          "group": "Semi-final",
+          "match_name": "英格兰 vs 阿根廷",
           "teams": {
             "home": {
-              "name": "胜者 M99",
-              "name_en": "胜者 M99",
-              "country_code": "",
-              "flag_url": "",
-              "flag_emoji": "",
-              "placeholder": true
+              "name": "英格兰",
+              "name_en": "England",
+              "abbreviation": "ENG",
+              "id_team": "448",
+              "id_country": "ENG",
+              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+              "score": null,
+              "tactics": null,
+              "country_code": "ENG",
+              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+              "flag_emoji": ""
             },
             "away": {
-              "name": "胜者 M100",
-              "name_en": "胜者 M100",
-              "country_code": "",
-              "flag_url": "",
-              "flag_emoji": "",
-              "placeholder": true
+              "name": "阿根廷",
+              "name_en": "Argentina",
+              "abbreviation": "ARG",
+              "id_team": "202",
+              "id_country": "ARG",
+              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+              "score": null,
+              "tactics": null,
+              "country_code": "ARG",
+              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+              "flag_emoji": "🇦🇷"
             }
           },
-          "kickoff_utc": null,
-          "kickoff_beijing": null,
-          "kickoff_display": "北京时间 待定",
-          "match_day": {},
+          "kickoff_utc": "2026-07-15T19:00:00Z",
+          "kickoff_beijing": "2026-07-16T03:00:00+08:00",
+          "kickoff_display": "北京时间 07-16 03:00",
+          "match_day": {
+            "date": "2026-07-15",
+            "title": "7月15日比赛日",
+            "range": "北京时间 07-15 18:00 - 07-16 18:00",
+            "start_iso": "2026-07-15T18:00:00+08:00",
+            "end_iso": "2026-07-16T18:00:00+08:00"
+          },
           "win_draw_loss": null,
           "score_options": [],
           "current_window": false,
-          "placeholder": true
+          "placeholder": false
         }
       ],
       "final": [
@@ -4265,18 +3585,11 @@
     "structure_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 21,
-      "start_iso": "2026-07-10T18:00:00+08:00",
-      "end_iso": "2026-07-31T18:00:00+08:00",
-      "display_range": "7月10日比赛日 - 7月30日比赛日",
-      "range": "北京时间 07-10 18:00 - 07-31 18:00",
+      "start_iso": "2026-07-11T18:00:00+08:00",
+      "end_iso": "2026-08-01T18:00:00+08:00",
+      "display_range": "7月11日比赛日 - 7月31日比赛日",
+      "range": "北京时间 07-11 18:00 - 08-01 18:00",
       "match_days": [
-        {
-          "date": "2026-07-10",
-          "title": "7月10日比赛日",
-          "range": "北京时间 07-10 18:00 - 07-11 18:00",
-          "start_iso": "2026-07-10T18:00:00+08:00",
-          "end_iso": "2026-07-11T18:00:00+08:00"
-        },
         {
           "date": "2026-07-11",
           "title": "7月11日比赛日",
@@ -4416,6 +3729,13 @@
           "range": "北京时间 07-30 18:00 - 07-31 18:00",
           "start_iso": "2026-07-30T18:00:00+08:00",
           "end_iso": "2026-07-31T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "7月31日比赛日",
+          "range": "北京时间 07-31 18:00 - 08-01 18:00",
+          "start_iso": "2026-07-31T18:00:00+08:00",
+          "end_iso": "2026-08-01T18:00:00+08:00"
         }
       ]
     }
@@ -4423,18 +3743,11 @@
   "structure_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 21,
-    "start_iso": "2026-07-10T18:00:00+08:00",
-    "end_iso": "2026-07-31T18:00:00+08:00",
-    "display_range": "7月10日比赛日 - 7月30日比赛日",
-    "range": "北京时间 07-10 18:00 - 07-31 18:00",
+    "start_iso": "2026-07-11T18:00:00+08:00",
+    "end_iso": "2026-08-01T18:00:00+08:00",
+    "display_range": "7月11日比赛日 - 7月31日比赛日",
+    "range": "北京时间 07-11 18:00 - 08-01 18:00",
     "match_days": [
-      {
-        "date": "2026-07-10",
-        "title": "7月10日比赛日",
-        "range": "北京时间 07-10 18:00 - 07-11 18:00",
-        "start_iso": "2026-07-10T18:00:00+08:00",
-        "end_iso": "2026-07-11T18:00:00+08:00"
-      },
       {
         "date": "2026-07-11",
         "title": "7月11日比赛日",
@@ -4574,21 +3887,28 @@
         "range": "北京时间 07-30 18:00 - 07-31 18:00",
         "start_iso": "2026-07-30T18:00:00+08:00",
         "end_iso": "2026-07-31T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-31",
+        "title": "7月31日比赛日",
+        "range": "北京时间 07-31 18:00 - 08-01 18:00",
+        "start_iso": "2026-07-31T18:00:00+08:00",
+        "end_iso": "2026-08-01T18:00:00+08:00"
       }
     ]
   },
   "research": {
     "schema_version": 3,
     "stage": "research",
-    "generated_at": "2026-07-11T03:37:44Z",
+    "generated_at": "2026-07-12T03:52:18Z",
     "window": {
-      "start_date": "2026-07-10",
+      "start_date": "2026-07-11",
       "days": 3,
       "timezone": "UTC",
       "mode": "derived from China match-day display window"
     },
     "structure_utc_window": {
-      "start_date": "2026-07-10",
+      "start_date": "2026-07-11",
       "days": 22,
       "timezone": "UTC",
       "mode": "derived from China match-day structure window"
@@ -4596,42 +3916,35 @@
     "display_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 2,
-      "start_iso": "2026-07-10T18:00:00+08:00",
-      "end_iso": "2026-07-12T18:00:00+08:00",
-      "display_range": "7月10日比赛日 - 7月11日比赛日",
-      "range": "北京时间 07-10 18:00 - 07-12 18:00",
+      "start_iso": "2026-07-11T18:00:00+08:00",
+      "end_iso": "2026-07-13T18:00:00+08:00",
+      "display_range": "7月11日比赛日 - 7月12日比赛日",
+      "range": "北京时间 07-11 18:00 - 07-13 18:00",
       "match_days": [
-        {
-          "date": "2026-07-10",
-          "title": "7月10日比赛日",
-          "range": "北京时间 07-10 18:00 - 07-11 18:00",
-          "start_iso": "2026-07-10T18:00:00+08:00",
-          "end_iso": "2026-07-11T18:00:00+08:00"
-        },
         {
           "date": "2026-07-11",
           "title": "7月11日比赛日",
           "range": "北京时间 07-11 18:00 - 07-12 18:00",
           "start_iso": "2026-07-11T18:00:00+08:00",
           "end_iso": "2026-07-12T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-12",
+          "title": "7月12日比赛日",
+          "range": "北京时间 07-12 18:00 - 07-13 18:00",
+          "start_iso": "2026-07-12T18:00:00+08:00",
+          "end_iso": "2026-07-13T18:00:00+08:00"
         }
       ]
     },
     "structure_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 21,
-      "start_iso": "2026-07-10T18:00:00+08:00",
-      "end_iso": "2026-07-31T18:00:00+08:00",
-      "display_range": "7月10日比赛日 - 7月30日比赛日",
-      "range": "北京时间 07-10 18:00 - 07-31 18:00",
+      "start_iso": "2026-07-11T18:00:00+08:00",
+      "end_iso": "2026-08-01T18:00:00+08:00",
+      "display_range": "7月11日比赛日 - 7月31日比赛日",
+      "range": "北京时间 07-11 18:00 - 08-01 18:00",
       "match_days": [
-        {
-          "date": "2026-07-10",
-          "title": "7月10日比赛日",
-          "range": "北京时间 07-10 18:00 - 07-11 18:00",
-          "start_iso": "2026-07-10T18:00:00+08:00",
-          "end_iso": "2026-07-11T18:00:00+08:00"
-        },
         {
           "date": "2026-07-11",
           "title": "7月11日比赛日",
@@ -4771,23 +4084,30 @@
           "range": "北京时间 07-30 18:00 - 07-31 18:00",
           "start_iso": "2026-07-30T18:00:00+08:00",
           "end_iso": "2026-07-31T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-31",
+          "title": "7月31日比赛日",
+          "range": "北京时间 07-31 18:00 - 08-01 18:00",
+          "start_iso": "2026-07-31T18:00:00+08:00",
+          "end_iso": "2026-08-01T18:00:00+08:00"
         }
       ]
     },
     "china_match_days": [
-      {
-        "date": "2026-07-10",
-        "title": "7月10日比赛日",
-        "range": "北京时间 07-10 18:00 - 07-11 18:00",
-        "start_iso": "2026-07-10T18:00:00+08:00",
-        "end_iso": "2026-07-11T18:00:00+08:00"
-      },
       {
         "date": "2026-07-11",
         "title": "7月11日比赛日",
         "range": "北京时间 07-11 18:00 - 07-12 18:00",
         "start_iso": "2026-07-11T18:00:00+08:00",
         "end_iso": "2026-07-12T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-12",
+        "title": "7月12日比赛日",
+        "range": "北京时间 07-12 18:00 - 07-13 18:00",
+        "start_iso": "2026-07-12T18:00:00+08:00",
+        "end_iso": "2026-07-13T18:00:00+08:00"
       }
     ],
     "data_sources": {
@@ -4799,12 +4119,11 @@
     "source": {
       "fifa": {
         "name": "FIFA official calendar API",
-        "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-07-10&to=2026-08-01&language=en&count=500&idCompetition=17&idSeason=285023"
+        "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-07-11&to=2026-08-02&language=en&count=500&idCompetition=17&idSeason=285023"
       },
       "verification": {
         "name": "ESPN public FIFA World Cup scoreboard",
         "urls": [
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260709&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260710&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260711&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260712&limit=100",
@@ -4827,7 +4146,8 @@
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260729&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260730&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260731&limit=100",
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260801&limit=100"
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260801&limit=100",
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260802&limit=100"
         ]
       },
       "injury": {
@@ -4838,7 +4158,6 @@
       "odds": {
         "name": "ESPN odds feed",
         "urls": [
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260709&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260710&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260711&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260712&limit=100",
@@ -4861,164 +4180,24 @@
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260729&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260730&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260731&limit=100",
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260801&limit=100"
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260801&limit=100",
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260802&limit=100"
         ]
       }
     },
     "warnings": [],
     "unverified_fifa_matches": [],
     "structure_unverified_fifa_matches": [
-      "W99 vs W100",
       "RU101 vs RU102",
       "W101 vs W102"
     ],
-    "fixture_count": 3,
-    "fifa_fixture_count": 3,
-    "raw_fifa_fixture_count": 7,
+    "fixture_count": 2,
+    "fifa_fixture_count": 2,
+    "raw_fifa_fixture_count": 6,
     "structure_fixture_count": 4,
-    "structure_fifa_fixture_count": 7,
-    "odds_available_count": 2,
+    "structure_fifa_fixture_count": 6,
+    "odds_available_count": 0,
     "matches": [
-      {
-        "id": "400021538",
-        "fifa_match_id": "400021538",
-        "match_name": "西班牙 vs 比利时",
-        "match_name_en": "Spain vs Belgium",
-        "kickoff_utc": "2026-07-10T19:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Quarter-final",
-        "stage_name": "Quarter-final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 98,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 1
-        },
-        "teams": {
-          "home": {
-            "name": "西班牙",
-            "name_en": "Spain",
-            "abbreviation": "ESP",
-            "id_team": "164",
-            "id_country": "ESP",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "score": 2,
-            "tactics": "4-2-3-1",
-            "country_code": "ESP",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "flag_emoji": "🇪🇸"
-          },
-          "away": {
-            "name": "比利时",
-            "name_en": "Belgium",
-            "abbreviation": "BEL",
-            "id_team": "459",
-            "id_country": "BEL",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "score": 1,
-            "tactics": "4-2-3-1",
-            "country_code": "BEL",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "flag_emoji": "🇧🇪"
-          }
-        },
-        "venue": {
-          "name": "Los Angeles Stadium",
-          "city": "Los Angeles",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021538"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760511"
-          }
-        },
-        "espn_event_id": "760511",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "西班牙",
-            "team_en": "Spain",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Merino puts Spain through to semifinals",
-                "description": "HL - Merino puts Spain through to semifinals   CAP - Spain knock Belgium out of the World Cup with an 88th-minute winner from Mikel Merino.",
-                "published": "2026-07-11T00:10:17Z",
-                "url": "https://www.espn.com/video/clip/_/id/49329398/merino-puts-spain-semifinals"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-11T02:50:46Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49330344/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-10T23:30:47Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328835/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "比利时",
-            "team_en": "Belgium",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Merino puts Spain through to semifinals",
-                "description": "HL - Merino puts Spain through to semifinals   CAP - Spain knock Belgium out of the World Cup with an 88th-minute winner from Mikel Merino.",
-                "published": "2026-07-11T00:10:17Z",
-                "url": "https://www.espn.com/video/clip/_/id/49329398/merino-puts-spain-semifinals"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-11T02:50:46Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49330344/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-10T23:30:47Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328835/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      },
       {
         "id": "400021539",
         "fifa_match_id": "400021539",
@@ -5034,9 +4213,9 @@
         "group": "",
         "match_number": 99,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 3
         },
         "teams": {
           "home": {
@@ -5046,8 +4225,8 @@
             "id_team": "464",
             "id_country": "NOR",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "score": null,
-            "tactics": null,
+            "score": 1,
+            "tactics": "4-1-2-3",
             "country_code": "NOR",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
             "flag_emoji": "🇳🇴"
@@ -5059,8 +4238,8 @@
             "id_team": "448",
             "id_country": "ENG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": null,
-            "tactics": null,
+            "score": 2,
+            "tactics": "4-2-3-1",
             "country_code": "ENG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
             "flag_emoji": ""
@@ -5094,26 +4273,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+290",
-            "draw": "+265",
-            "away": "-110"
-          },
-          "implied_probability": {
-            "home_win": 25.64,
-            "draw": 27.4,
-            "away_win": 52.38
-          },
-          "normalized_probability": {
-            "home_win": 24.32,
-            "draw": 25.99,
-            "away_win": 49.69
-          },
-          "overround": 5.42,
-          "details": "ENG -110"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -5123,10 +4285,10 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
-                "title": "England given World Cup boost as Marc Guéhi, Declan Rice return to training ahead of Norway clash",
-                "description": "Marc Guéhi and Declan Rice handed England a fitness boost as they both trained ahead of the World Cup quarter-final with Norway in Miami.",
-                "published": "2026-07-11T00:44:29Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328075/england-marc-guehi-declan-rice-back-training-ahead-norway-world-cup-clash"
+                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "published": "2026-07-12T00:02:25Z",
+                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
               }
             ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -5138,10 +4300,10 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
-                "title": "England given World Cup boost as Marc Guéhi, Declan Rice return to training ahead of Norway clash",
-                "description": "Marc Guéhi and Declan Rice handed England a fitness boost as they both trained ahead of the World Cup quarter-final with Norway in Miami.",
-                "published": "2026-07-11T00:44:29Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328075/england-marc-guehi-declan-rice-back-training-ahead-norway-world-cup-clash"
+                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "published": "2026-07-12T00:02:25Z",
+                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
               }
             ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -5163,9 +4325,9 @@
         "group": "",
         "match_number": 100,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 2,
+          "result_type": 3
         },
         "teams": {
           "home": {
@@ -5175,8 +4337,8 @@
             "id_team": "202",
             "id_country": "ARG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": null,
-            "tactics": null,
+            "score": 3,
+            "tactics": "4-1-3-2",
             "country_code": "ARG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
             "flag_emoji": "🇦🇷"
@@ -5188,8 +4350,8 @@
             "id_team": "475",
             "id_country": "SUI",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "score": null,
-            "tactics": null,
+            "score": 1,
+            "tactics": "4-2-3-1",
             "country_code": "SUI",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
             "flag_emoji": "🇨🇭"
@@ -5223,26 +4385,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-145",
-            "draw": "+255",
-            "away": "+450"
-          },
-          "implied_probability": {
-            "home_win": 59.18,
-            "draw": 28.17,
-            "away_win": 18.18
-          },
-          "normalized_probability": {
-            "home_win": 56.08,
-            "draw": 26.69,
-            "away_win": 17.23
-          },
-          "overround": 5.53,
-          "details": "ARG -145"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -5264,146 +4409,6 @@
     ],
     "fixtures": [
       {
-        "id": "400021538",
-        "fifa_match_id": "400021538",
-        "match_name": "西班牙 vs 比利时",
-        "match_name_en": "Spain vs Belgium",
-        "kickoff_utc": "2026-07-10T19:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Quarter-final",
-        "stage_name": "Quarter-final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 98,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 1
-        },
-        "teams": {
-          "home": {
-            "name": "西班牙",
-            "name_en": "Spain",
-            "abbreviation": "ESP",
-            "id_team": "164",
-            "id_country": "ESP",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "score": 2,
-            "tactics": "4-2-3-1",
-            "country_code": "ESP",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "flag_emoji": "🇪🇸"
-          },
-          "away": {
-            "name": "比利时",
-            "name_en": "Belgium",
-            "abbreviation": "BEL",
-            "id_team": "459",
-            "id_country": "BEL",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "score": 1,
-            "tactics": "4-2-3-1",
-            "country_code": "BEL",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "flag_emoji": "🇧🇪"
-          }
-        },
-        "venue": {
-          "name": "Los Angeles Stadium",
-          "city": "Los Angeles",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021538"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760511"
-          }
-        },
-        "espn_event_id": "760511",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "西班牙",
-            "team_en": "Spain",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Merino puts Spain through to semifinals",
-                "description": "HL - Merino puts Spain through to semifinals   CAP - Spain knock Belgium out of the World Cup with an 88th-minute winner from Mikel Merino.",
-                "published": "2026-07-11T00:10:17Z",
-                "url": "https://www.espn.com/video/clip/_/id/49329398/merino-puts-spain-semifinals"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-11T02:50:46Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49330344/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-10T23:30:47Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328835/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "比利时",
-            "team_en": "Belgium",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Merino puts Spain through to semifinals",
-                "description": "HL - Merino puts Spain through to semifinals   CAP - Spain knock Belgium out of the World Cup with an 88th-minute winner from Mikel Merino.",
-                "published": "2026-07-11T00:10:17Z",
-                "url": "https://www.espn.com/video/clip/_/id/49329398/merino-puts-spain-semifinals"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-11T02:50:46Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49330344/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-10T23:30:47Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328835/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      },
-      {
         "id": "400021539",
         "fifa_match_id": "400021539",
         "match_name": "挪威 vs 英格兰",
@@ -5418,9 +4423,9 @@
         "group": "",
         "match_number": 99,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 3
         },
         "teams": {
           "home": {
@@ -5430,8 +4435,8 @@
             "id_team": "464",
             "id_country": "NOR",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "score": null,
-            "tactics": null,
+            "score": 1,
+            "tactics": "4-1-2-3",
             "country_code": "NOR",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
             "flag_emoji": "🇳🇴"
@@ -5443,8 +4448,8 @@
             "id_team": "448",
             "id_country": "ENG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": null,
-            "tactics": null,
+            "score": 2,
+            "tactics": "4-2-3-1",
             "country_code": "ENG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
             "flag_emoji": ""
@@ -5478,26 +4483,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+290",
-            "draw": "+265",
-            "away": "-110"
-          },
-          "implied_probability": {
-            "home_win": 25.64,
-            "draw": 27.4,
-            "away_win": 52.38
-          },
-          "normalized_probability": {
-            "home_win": 24.32,
-            "draw": 25.99,
-            "away_win": 49.69
-          },
-          "overround": 5.42,
-          "details": "ENG -110"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -5507,10 +4495,10 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
-                "title": "England given World Cup boost as Marc Guéhi, Declan Rice return to training ahead of Norway clash",
-                "description": "Marc Guéhi and Declan Rice handed England a fitness boost as they both trained ahead of the World Cup quarter-final with Norway in Miami.",
-                "published": "2026-07-11T00:44:29Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328075/england-marc-guehi-declan-rice-back-training-ahead-norway-world-cup-clash"
+                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "published": "2026-07-12T00:02:25Z",
+                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
               }
             ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -5522,10 +4510,10 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
-                "title": "England given World Cup boost as Marc Guéhi, Declan Rice return to training ahead of Norway clash",
-                "description": "Marc Guéhi and Declan Rice handed England a fitness boost as they both trained ahead of the World Cup quarter-final with Norway in Miami.",
-                "published": "2026-07-11T00:44:29Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328075/england-marc-guehi-declan-rice-back-training-ahead-norway-world-cup-clash"
+                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "published": "2026-07-12T00:02:25Z",
+                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
               }
             ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -5547,9 +4535,9 @@
         "group": "",
         "match_number": 100,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 2,
+          "result_type": 3
         },
         "teams": {
           "home": {
@@ -5559,8 +4547,8 @@
             "id_team": "202",
             "id_country": "ARG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": null,
-            "tactics": null,
+            "score": 3,
+            "tactics": "4-1-3-2",
             "country_code": "ARG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
             "flag_emoji": "🇦🇷"
@@ -5572,8 +4560,8 @@
             "id_team": "475",
             "id_country": "SUI",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "score": null,
-            "tactics": null,
+            "score": 1,
+            "tactics": "4-2-3-1",
             "country_code": "SUI",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
             "flag_emoji": "🇨🇭"
@@ -5607,26 +4595,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-145",
-            "draw": "+255",
-            "away": "+450"
-          },
-          "implied_probability": {
-            "home_win": 59.18,
-            "draw": 28.17,
-            "away_win": 18.18
-          },
-          "normalized_probability": {
-            "home_win": 56.08,
-            "draw": 26.69,
-            "away_win": 17.23
-          },
-          "overround": 5.53,
-          "details": "ARG -145"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -5648,146 +4619,6 @@
     ],
     "structure_matches": [
       {
-        "id": "400021538",
-        "fifa_match_id": "400021538",
-        "match_name": "西班牙 vs 比利时",
-        "match_name_en": "Spain vs Belgium",
-        "kickoff_utc": "2026-07-10T19:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Quarter-final",
-        "stage_name": "Quarter-final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 98,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 1
-        },
-        "teams": {
-          "home": {
-            "name": "西班牙",
-            "name_en": "Spain",
-            "abbreviation": "ESP",
-            "id_team": "164",
-            "id_country": "ESP",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "score": 2,
-            "tactics": "4-2-3-1",
-            "country_code": "ESP",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "flag_emoji": "🇪🇸"
-          },
-          "away": {
-            "name": "比利时",
-            "name_en": "Belgium",
-            "abbreviation": "BEL",
-            "id_team": "459",
-            "id_country": "BEL",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "score": 1,
-            "tactics": "4-2-3-1",
-            "country_code": "BEL",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-            "flag_emoji": "🇧🇪"
-          }
-        },
-        "venue": {
-          "name": "Los Angeles Stadium",
-          "city": "Los Angeles",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021538"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760511"
-          }
-        },
-        "espn_event_id": "760511",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "西班牙",
-            "team_en": "Spain",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Merino puts Spain through to semifinals",
-                "description": "HL - Merino puts Spain through to semifinals   CAP - Spain knock Belgium out of the World Cup with an 88th-minute winner from Mikel Merino.",
-                "published": "2026-07-11T00:10:17Z",
-                "url": "https://www.espn.com/video/clip/_/id/49329398/merino-puts-spain-semifinals"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-11T02:50:46Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49330344/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-10T23:30:47Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328835/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "比利时",
-            "team_en": "Belgium",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Merino puts Spain through to semifinals",
-                "description": "HL - Merino puts Spain through to semifinals   CAP - Spain knock Belgium out of the World Cup with an 88th-minute winner from Mikel Merino.",
-                "published": "2026-07-11T00:10:17Z",
-                "url": "https://www.espn.com/video/clip/_/id/49329398/merino-puts-spain-semifinals"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-11T02:50:46Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49330344/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              },
-              {
-                "source": "ESPN World Cup news",
-                "title": "Belgium ran out of 'lady luck' in World Cup exit, Garcia says",
-                "description": "Belgium manager Rudy Garcia bemoaned the fact that lady luck wasn't on his team's side in the Red Devils' 2-1 World Cup quarterfinal defeat to Spain.",
-                "published": "2026-07-10T23:30:47Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328835/belgium-ran-lady-luck-world-cup-exit-garcia-says"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      },
-      {
         "id": "400021539",
         "fifa_match_id": "400021539",
         "match_name": "挪威 vs 英格兰",
@@ -5802,9 +4633,9 @@
         "group": "",
         "match_number": 99,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 3
         },
         "teams": {
           "home": {
@@ -5814,8 +4645,8 @@
             "id_team": "464",
             "id_country": "NOR",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "score": null,
-            "tactics": null,
+            "score": 1,
+            "tactics": "4-1-2-3",
             "country_code": "NOR",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
             "flag_emoji": "🇳🇴"
@@ -5827,8 +4658,8 @@
             "id_team": "448",
             "id_country": "ENG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": null,
-            "tactics": null,
+            "score": 2,
+            "tactics": "4-2-3-1",
             "country_code": "ENG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
             "flag_emoji": ""
@@ -5862,26 +4693,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+290",
-            "draw": "+265",
-            "away": "-110"
-          },
-          "implied_probability": {
-            "home_win": 25.64,
-            "draw": 27.4,
-            "away_win": 52.38
-          },
-          "normalized_probability": {
-            "home_win": 24.32,
-            "draw": 25.99,
-            "away_win": 49.69
-          },
-          "overround": 5.42,
-          "details": "ENG -110"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -5891,10 +4705,10 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
-                "title": "England given World Cup boost as Marc Guéhi, Declan Rice return to training ahead of Norway clash",
-                "description": "Marc Guéhi and Declan Rice handed England a fitness boost as they both trained ahead of the World Cup quarter-final with Norway in Miami.",
-                "published": "2026-07-11T00:44:29Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328075/england-marc-guehi-declan-rice-back-training-ahead-norway-world-cup-clash"
+                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "published": "2026-07-12T00:02:25Z",
+                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
               }
             ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -5906,10 +4720,10 @@
             "records": [
               {
                 "source": "ESPN World Cup news",
-                "title": "England given World Cup boost as Marc Guéhi, Declan Rice return to training ahead of Norway clash",
-                "description": "Marc Guéhi and Declan Rice handed England a fitness boost as they both trained ahead of the World Cup quarter-final with Norway in Miami.",
-                "published": "2026-07-11T00:44:29Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49328075/england-marc-guehi-declan-rice-back-training-ahead-norway-world-cup-clash"
+                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
+                "published": "2026-07-12T00:02:25Z",
+                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
               }
             ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -5931,9 +4745,9 @@
         "group": "",
         "match_number": 100,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 2,
+          "result_type": 3
         },
         "teams": {
           "home": {
@@ -5943,8 +4757,8 @@
             "id_team": "202",
             "id_country": "ARG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": null,
-            "tactics": null,
+            "score": 3,
+            "tactics": "4-1-3-2",
             "country_code": "ARG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
             "flag_emoji": "🇦🇷"
@@ -5956,8 +4770,8 @@
             "id_team": "475",
             "id_country": "SUI",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "score": null,
-            "tactics": null,
+            "score": 1,
+            "tactics": "4-2-3-1",
             "country_code": "SUI",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
             "flag_emoji": "🇨🇭"
@@ -5991,26 +4805,9 @@
           "method": "team-pair and kickoff-time cross-check"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-145",
-            "draw": "+255",
-            "away": "+450"
-          },
-          "implied_probability": {
-            "home_win": 59.18,
-            "draw": 28.17,
-            "away_win": 18.18
-          },
-          "normalized_probability": {
-            "home_win": 56.08,
-            "draw": 26.69,
-            "away_win": 17.23
-          },
-          "overround": 5.53,
-          "details": "ARG -145"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -6110,26 +4907,123 @@
           "moneyline_american": {
             "home": "+135",
             "draw": "+225",
-            "away": "+215"
+            "away": "+220"
           },
           "implied_probability": {
             "home_win": 42.55,
             "draw": 30.77,
-            "away_win": 31.75
+            "away_win": 31.25
           },
           "normalized_probability": {
-            "home_win": 40.5,
-            "draw": 29.28,
-            "away_win": 30.21
+            "home_win": 40.69,
+            "draw": 29.42,
+            "away_win": 29.88
           },
-          "overround": 5.07,
+          "overround": 4.57,
           "details": "FRA +135"
+        }
+      },
+      {
+        "id": "400021540",
+        "fifa_match_id": "400021540",
+        "match_name": "英格兰 vs 阿根廷",
+        "match_name_en": "England vs Argentina",
+        "kickoff_utc": "2026-07-15T19:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Semi-final",
+        "stage_name": "Semi-final",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 102,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "teams": {
+          "home": {
+            "name": "英格兰",
+            "name_en": "England",
+            "abbreviation": "ENG",
+            "id_team": "448",
+            "id_country": "ENG",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+            "score": null,
+            "tactics": null,
+            "country_code": "ENG",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+            "flag_emoji": ""
+          },
+          "away": {
+            "name": "阿根廷",
+            "name_en": "Argentina",
+            "abbreviation": "ARG",
+            "id_team": "202",
+            "id_country": "ARG",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+            "score": null,
+            "tactics": null,
+            "country_code": "ARG",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+            "flag_emoji": "🇦🇷"
+          }
+        },
+        "venue": {
+          "name": "Atlanta Stadium",
+          "city": "Atlanta",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021540"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760515"
+          }
+        },
+        "espn_event_id": "760515",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "+180",
+            "draw": "+205",
+            "away": "+175"
+          },
+          "implied_probability": {
+            "home_win": 35.71,
+            "draw": 32.79,
+            "away_win": 36.36
+          },
+          "normalized_probability": {
+            "home_win": 34.06,
+            "draw": 31.27,
+            "away_win": 34.68
+          },
+          "overround": 4.86,
+          "details": "ARG +175"
         }
       }
     ],
     "daily_log": [
       {
-        "time": "2026-07-11T03:37:44Z",
+        "time": "2026-07-12T03:52:18Z",
         "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
         "status": "completed"
       }
@@ -6138,48 +5032,48 @@
   "display_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 2,
-    "start_iso": "2026-07-10T18:00:00+08:00",
-    "end_iso": "2026-07-12T18:00:00+08:00",
-    "display_range": "7月10日比赛日 - 7月11日比赛日",
-    "range": "北京时间 07-10 18:00 - 07-12 18:00",
+    "start_iso": "2026-07-11T18:00:00+08:00",
+    "end_iso": "2026-07-13T18:00:00+08:00",
+    "display_range": "7月11日比赛日 - 7月12日比赛日",
+    "range": "北京时间 07-11 18:00 - 07-13 18:00",
     "match_days": [
-      {
-        "date": "2026-07-10",
-        "title": "7月10日比赛日",
-        "range": "北京时间 07-10 18:00 - 07-11 18:00",
-        "start_iso": "2026-07-10T18:00:00+08:00",
-        "end_iso": "2026-07-11T18:00:00+08:00"
-      },
       {
         "date": "2026-07-11",
         "title": "7月11日比赛日",
         "range": "北京时间 07-11 18:00 - 07-12 18:00",
         "start_iso": "2026-07-11T18:00:00+08:00",
         "end_iso": "2026-07-12T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-12",
+        "title": "7月12日比赛日",
+        "range": "北京时间 07-12 18:00 - 07-13 18:00",
+        "start_iso": "2026-07-12T18:00:00+08:00",
+        "end_iso": "2026-07-13T18:00:00+08:00"
       }
     ]
   },
   "china_match_days": [
-    {
-      "date": "2026-07-10",
-      "title": "7月10日比赛日",
-      "range": "北京时间 07-10 18:00 - 07-11 18:00",
-      "start_iso": "2026-07-10T18:00:00+08:00",
-      "end_iso": "2026-07-11T18:00:00+08:00"
-    },
     {
       "date": "2026-07-11",
       "title": "7月11日比赛日",
       "range": "北京时间 07-11 18:00 - 07-12 18:00",
       "start_iso": "2026-07-11T18:00:00+08:00",
       "end_iso": "2026-07-12T18:00:00+08:00"
+    },
+    {
+      "date": "2026-07-12",
+      "title": "7月12日比赛日",
+      "range": "北京时间 07-12 18:00 - 07-13 18:00",
+      "start_iso": "2026-07-12T18:00:00+08:00",
+      "end_iso": "2026-07-13T18:00:00+08:00"
     }
   ],
   "usage": {
-    "input_tokens": 16903,
-    "output_tokens": 7506,
-    "total_tokens": 24409,
-    "cost_estimate": 0.24409
+    "input_tokens": 12424,
+    "output_tokens": 7695,
+    "total_tokens": 20119,
+    "cost_estimate": 0.20119
   },
   "analysis_model": "deepseek-v4-pro",
   "model": {
@@ -6193,12 +5087,12 @@
   },
   "daily_log": [
     {
-      "time": "2026-07-11T03:37:44Z",
+      "time": "2026-07-12T03:52:18Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     },
     {
-      "time": "2026-07-11T03:51:25Z",
+      "time": "2026-07-12T04:06:07Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     }
