@@ -1,537 +1,35 @@
 {
   "schema_version": 3,
   "stage": "analysis",
-  "generated_at": "2026-07-12T04:06:07Z",
+  "generated_at": "2026-07-13T04:06:58Z",
   "analysis": {
-    "generated_at": "2026-07-12T03:52:18Z",
-    "summary": "本窗口分析两场世界杯四分之一决赛：挪威对英格兰，阿根廷对瑞士。基于长期实力和阵容评估，预测英格兰和阿根廷晋级，但缺乏赔率和实时伤病数据，不确定性较高。",
-    "matches": [
-      {
-        "id": "400021539",
-        "fifa_match_id": "400021539",
-        "match_name": "挪威 vs 英格兰",
-        "match_name_en": "Norway vs England",
-        "kickoff_utc": "2026-07-11T21:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Quarter-final",
-        "stage_name": "Quarter-final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 99,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 3
-        },
-        "teams": {
-          "home": {
-            "name": "挪威",
-            "name_en": "Norway",
-            "abbreviation": "NOR",
-            "id_team": "464",
-            "id_country": "NOR",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "score": 1,
-            "tactics": "4-1-2-3",
-            "country_code": "NOR",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "flag_emoji": "🇳🇴"
-          },
-          "away": {
-            "name": "英格兰",
-            "name_en": "England",
-            "abbreviation": "ENG",
-            "id_team": "448",
-            "id_country": "ENG",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": 2,
-            "tactics": "4-2-3-1",
-            "country_code": "ENG",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "flag_emoji": ""
-          }
-        },
-        "venue": {
-          "name": "Miami Stadium",
-          "city": "Miami",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021539"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760512"
-          }
-        },
-        "espn_event_id": "760512",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "挪威",
-            "team_en": "Norway",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "published": "2026-07-12T00:02:25Z",
-                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "英格兰",
-            "team_en": "England",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "published": "2026-07-12T00:02:25Z",
-                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        },
-        "match_id": "400021539",
-        "win_draw_loss": {
-          "home_win": 22,
-          "draw": 28,
-          "away_win": 50
-        },
-        "xg_prediction": {
-          "home": 0.9,
-          "away": 1.7
-        },
-        "predicted_score": {
-          "home": 1,
-          "away": 2
-        },
-        "score_options": [
-          {
-            "score": "1-2",
-            "rank": 1,
-            "reason": "英格兰整体实力占优，挪威依赖哈兰德个人能力，但难敌英格兰多点进攻。"
-          },
-          {
-            "score": "1-1",
-            "rank": 2,
-            "reason": "挪威反击高效，英格兰可能久攻不下，平局进入加时。"
-          },
-          {
-            "score": "0-2",
-            "rank": 3,
-            "reason": "英格兰防守稳固，挪威进攻哑火。"
-          }
-        ],
-        "method_factors": {
-          "market_signal": "赔率数据不可用",
-          "fifa_rank_prior": "FIFA排名不可用；长期实力：英格兰历史强队，挪威中上游但拥有顶级射手",
-          "recent_form": "近期状态未知；两队均进入八强，表明状态良好",
-          "group_context": "无小组赛，四分之一决赛单场淘汰",
-          "injury_rotation": "伤病情况未知",
-          "weather_venue": "迈阿密体育场，天气未知",
-          "tactical_key": "挪威4-1-2-3阵型依赖哈兰德；英格兰4-2-3-1控制中场，边路突破",
-          "uncertainty": "高不确定性：缺乏赔率和伤病数据"
-        },
-        "matchup_graph": {
-          "nodes": [
-            {
-              "id": "home_attack",
-              "label": "主队进攻",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 80,
-              "note": "哈兰德领衔，个人能力突出"
-            },
-            {
-              "id": "home_midfield",
-              "label": "主队中场/转换",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 60,
-              "note": "厄德高组织，但拦截能力一般"
-            },
-            {
-              "id": "home_defense",
-              "label": "主队防守",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 50,
-              "note": "防线经验不足，易被打反击"
-            },
-            {
-              "id": "away_attack",
-              "label": "客队进攻",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 85,
-              "note": "凯恩、萨卡等攻击点多"
-            },
-            {
-              "id": "away_midfield",
-              "label": "客队中场/转换",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 75,
-              "note": "贝林厄姆控制力强，攻守均衡"
-            },
-            {
-              "id": "away_defense",
-              "label": "客队防守",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 70,
-              "note": "斯通斯领衔，防空与地面俱佳"
-            }
-          ],
-          "edges": [
-            {
-              "from": "home_attack",
-              "to": "away_defense",
-              "label": "哈兰德 vs 英格兰防线",
-              "impact": "high",
-              "direction": "home_to_away",
-              "note": "挪威主要得分手段，英格兰需重点盯防"
-            },
-            {
-              "from": "away_attack",
-              "to": "home_defense",
-              "label": "英格兰多样进攻 vs 挪威薄弱防线",
-              "impact": "high",
-              "direction": "away_to_home",
-              "note": "英格兰边中结合，挪威防线压力大"
-            },
-            {
-              "from": "home_midfield",
-              "to": "away_midfield",
-              "label": "中场控制权争夺",
-              "impact": "medium",
-              "direction": "balanced",
-              "note": "厄德高 vs 贝林厄姆，控球与转换关键"
-            }
-          ],
-          "summary": "英格兰整体实力占优，挪威依靠哈兰德个人能力制造威胁，但防线漏洞可能被英格兰利用。",
-          "advantage_side": "away",
-          "key_battle": "哈兰德 vs 英格兰中卫组合",
-          "risk_trigger": "挪威若打出高效反击，可能拖入加时"
-        },
-        "tactical_matchup": "挪威4-1-2-3主打防守反击，英格兰4-2-3-1控球压迫。英格兰中场优势明显，边路进攻丰富。",
-        "injury_adjustment": {
-          "home": "伤病情况未知",
-          "away": "伤病情况未知",
-          "summary": "无关键伤病信息，双方主力预计出战"
-        },
-        "risk_analysis": "英格兰纸面实力占优，但挪威拥有顶级终结者，冷门风险中等。缺乏赔率数据，预测不确定性较高。",
-        "upset_probability": 22,
-        "odds_comparison": {
-          "market_implied": {
-            "home_win": 0,
-            "draw": 0,
-            "away_win": 0
-          },
-          "model_edge": {
-            "home_win": 22,
-            "draw": 28,
-            "away_win": 50
-          },
-          "deviation_analysis": "市场赔率不可用，无法比较偏差。模型基于长期实力和阵容评估。"
-        },
-        "confidence": "medium"
-      },
-      {
-        "id": "400021537",
-        "fifa_match_id": "400021537",
-        "match_name": "阿根廷 vs 瑞士",
-        "match_name_en": "Argentina vs Switzerland",
-        "kickoff_utc": "2026-07-12T01:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Quarter-final",
-        "stage_name": "Quarter-final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 100,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 2,
-          "result_type": 3
-        },
-        "teams": {
-          "home": {
-            "name": "阿根廷",
-            "name_en": "Argentina",
-            "abbreviation": "ARG",
-            "id_team": "202",
-            "id_country": "ARG",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": 3,
-            "tactics": "4-1-3-2",
-            "country_code": "ARG",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "flag_emoji": "🇦🇷"
-          },
-          "away": {
-            "name": "瑞士",
-            "name_en": "Switzerland",
-            "abbreviation": "SUI",
-            "id_team": "475",
-            "id_country": "SUI",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "score": 1,
-            "tactics": "4-2-3-1",
-            "country_code": "SUI",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "flag_emoji": "🇨🇭"
-          }
-        },
-        "venue": {
-          "name": "Kansas City Stadium",
-          "city": "Kansas City",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021537"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760513"
-          }
-        },
-        "espn_event_id": "760513",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "阿根廷",
-            "team_en": "Argentina",
-            "status": "unknown",
-            "records": [],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "瑞士",
-            "team_en": "Switzerland",
-            "status": "unknown",
-            "records": [],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        },
-        "match_id": "400021537",
-        "win_draw_loss": {
-          "home_win": 60,
-          "draw": 25,
-          "away_win": 15
-        },
-        "xg_prediction": {
-          "home": 2.1,
-          "away": 0.7
-        },
-        "predicted_score": {
-          "home": 2,
-          "away": 0
-        },
-        "score_options": [
-          {
-            "score": "2-0",
-            "rank": 1,
-            "reason": "阿根廷整体实力强劲，梅西领衔攻击线，瑞士难破防线。"
-          },
-          {
-            "score": "3-1",
-            "rank": 2,
-            "reason": "瑞士可能通过定位球破门，但阿根廷进攻多点开花。"
-          },
-          {
-            "score": "1-0",
-            "rank": 3,
-            "reason": "瑞士防守顽强，阿根廷小胜过关。"
-          }
-        ],
-        "method_factors": {
-          "market_signal": "赔率数据不可用",
-          "fifa_rank_prior": "FIFA排名不可用；长期实力：阿根廷世界冠军，瑞士稳定中上游",
-          "recent_form": "近期状态未知；两队均晋级八强，状态良好",
-          "group_context": "无小组赛，四分之一决赛单场淘汰",
-          "injury_rotation": "伤病情况未知",
-          "weather_venue": "堪萨斯城体育场，天气未知",
-          "tactical_key": "阿根廷4-1-3-2阵型强调中场控制与梅西的创造力；瑞士4-2-3-1注重防守与边路反击",
-          "uncertainty": "中高不确定性：缺乏赔率数据，但阿根廷实力明显占优"
-        },
-        "matchup_graph": {
-          "nodes": [
-            {
-              "id": "home_attack",
-              "label": "主队进攻",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 90,
-              "note": "梅西、阿尔瓦雷斯，创造力与终结兼备"
-            },
-            {
-              "id": "home_midfield",
-              "label": "主队中场/转换",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 85,
-              "note": "恩佐、麦卡利斯特控制节奏，攻防转换快"
-            },
-            {
-              "id": "home_defense",
-              "label": "主队防守",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 75,
-              "note": "经验丰富，整体协防好"
-            },
-            {
-              "id": "away_attack",
-              "label": "客队进攻",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 65,
-              "note": "恩博洛速度，沙奇里远射，但缺乏稳定输出"
-            },
-            {
-              "id": "away_midfield",
-              "label": "客队中场/转换",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 70,
-              "note": "扎卡组织，防守型中场拦截"
-            },
-            {
-              "id": "away_defense",
-              "label": "客队防守",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 75,
-              "note": "阿坎吉领衔，纪律性强"
-            }
-          ],
-          "edges": [
-            {
-              "from": "home_attack",
-              "to": "away_defense",
-              "label": "阿根廷攻击群 vs 瑞士严密防线",
-              "impact": "high",
-              "direction": "home_to_away",
-              "note": "梅西的突破和分球是撕开瑞士防线的关键"
-            },
-            {
-              "from": "away_attack",
-              "to": "home_defense",
-              "label": "瑞士快速反击 vs 阿根廷防线回追",
-              "impact": "medium",
-              "direction": "away_to_home",
-              "note": "瑞士可能利用阿根廷压上后的空当"
-            },
-            {
-              "from": "home_midfield",
-              "to": "away_midfield",
-              "label": "中场控制权",
-              "impact": "medium",
-              "direction": "balanced",
-              "note": "阿根廷技术占优，瑞士身体对抗强"
-            }
-          ],
-          "summary": "阿根廷整体实力明显占优，瑞士防守稳固但进攻威胁有限。",
-          "advantage_side": "home",
-          "key_battle": "梅西 vs 扎卡的中场对决",
-          "risk_trigger": "瑞士若先进球，可能全线退守，增加阿根廷破门难度"
-        },
-        "tactical_matchup": "阿根廷4-1-3-2通过中场人数优势掌控比赛，梅西自由人角色创造威胁。瑞士4-2-3-1双后腰保护防线，依靠两翼反击。",
-        "injury_adjustment": {
-          "home": "伤病情况未知",
-          "away": "伤病情况未知",
-          "summary": "无关键伤病报告，双方主力预计出战"
-        },
-        "risk_analysis": "阿根廷晋级热门，但瑞士曾在大赛中制造冷门。缺乏实时数据，预测基于传统实力对比。",
-        "upset_probability": 15,
-        "odds_comparison": {
-          "market_implied": {
-            "home_win": 0,
-            "draw": 0,
-            "away_win": 0
-          },
-          "model_edge": {
-            "home_win": 60,
-            "draw": 25,
-            "away_win": 15
-          },
-          "deviation_analysis": "市场赔率不可用，无法比较偏差。模型基于长期实力和阵容评估。"
-        },
-        "confidence": "medium"
-      }
-    ],
-    "risk_overview": "两场比赛均存在冷门可能，挪威的哈兰德和瑞士的防守韧性是主要风险点。",
-    "data_quality": "数据来源与FIFA和ESPN验证，但赔率和伤病信息不完整，预测置信度中等。",
+    "generated_at": "2026-07-13T03:55:07Z",
+    "summary": "本分析窗口内无可用比赛数据。",
+    "matches": [],
+    "risk_overview": "无比赛，无风险。",
+    "data_quality": "数据源：FIFA、ESPN已验证，但当前窗口无异动比赛。",
     "tournament_structure": {
       "stage": "knockout",
       "focus_window": {
         "timezone": "Asia/Shanghai",
         "china_match_days": [
           {
-            "date": "2026-07-11",
-            "title": "7月11日比赛日",
-            "range": "北京时间 07-11 18:00 - 07-12 18:00",
-            "start_iso": "2026-07-11T18:00:00+08:00",
-            "end_iso": "2026-07-12T18:00:00+08:00"
-          },
-          {
             "date": "2026-07-12",
             "title": "7月12日比赛日",
             "range": "北京时间 07-12 18:00 - 07-13 18:00",
             "start_iso": "2026-07-12T18:00:00+08:00",
             "end_iso": "2026-07-13T18:00:00+08:00"
+          },
+          {
+            "date": "2026-07-13",
+            "title": "7月13日比赛日",
+            "range": "北京时间 07-13 18:00 - 07-14 18:00",
+            "start_iso": "2026-07-13T18:00:00+08:00",
+            "end_iso": "2026-07-14T18:00:00+08:00"
           }
         ]
       },
-      "highlight_match_ids": [
-        "400021537",
-        "400021539"
-      ],
+      "highlight_match_ids": [],
       "groups": null,
       "bracket": {
         "round_of_32": [
@@ -1424,150 +922,72 @@
             "placeholder": true
           },
           {
-            "match_id": "400021539",
+            "match_id": "placeholder-M99",
             "match_number": 99,
             "round_key": "quarter_finals",
-            "stage": "Quarter-final",
-            "stage_name": "Quarter-final",
-            "round_name": "",
-            "phase": "",
-            "group": "Quarter-final",
-            "match_name": "挪威 vs 英格兰",
+            "stage": "quarter_finals",
+            "group": "淘汰赛",
+            "match_name": "胜者 M93 vs 胜者 M94",
             "teams": {
               "home": {
-                "name": "挪威",
-                "name_en": "Norway",
-                "abbreviation": "NOR",
-                "id_team": "464",
-                "id_country": "NOR",
-                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-                "score": 1,
-                "tactics": "4-1-2-3",
-                "country_code": "NOR",
-                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-                "flag_emoji": "🇳🇴"
+                "name": "胜者 M93",
+                "name_en": "胜者 M93",
+                "country_code": "",
+                "flag_url": "",
+                "flag_emoji": "",
+                "placeholder": true
               },
               "away": {
-                "name": "英格兰",
-                "name_en": "England",
-                "abbreviation": "ENG",
-                "id_team": "448",
-                "id_country": "ENG",
-                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-                "score": 2,
-                "tactics": "4-2-3-1",
-                "country_code": "ENG",
-                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-                "flag_emoji": ""
+                "name": "胜者 M94",
+                "name_en": "胜者 M94",
+                "country_code": "",
+                "flag_url": "",
+                "flag_emoji": "",
+                "placeholder": true
               }
             },
-            "kickoff_utc": "2026-07-11T21:00:00Z",
-            "kickoff_beijing": "2026-07-12T05:00:00+08:00",
-            "kickoff_display": "北京时间 07-12 05:00",
-            "match_day": {
-              "date": "2026-07-11",
-              "title": "7月11日比赛日",
-              "range": "北京时间 07-11 18:00 - 07-12 18:00",
-              "start_iso": "2026-07-11T18:00:00+08:00",
-              "end_iso": "2026-07-12T18:00:00+08:00"
-            },
-            "win_draw_loss": {
-              "home_win": 22,
-              "draw": 28,
-              "away_win": 50
-            },
-            "score_options": [
-              {
-                "score": "1-2",
-                "rank": 1,
-                "reason": "英格兰整体实力占优，挪威依赖哈兰德个人能力，但难敌英格兰多点进攻。"
-              },
-              {
-                "score": "1-1",
-                "rank": 2,
-                "reason": "挪威反击高效，英格兰可能久攻不下，平局进入加时。"
-              },
-              {
-                "score": "0-2",
-                "rank": 3,
-                "reason": "英格兰防守稳固，挪威进攻哑火。"
-              }
-            ],
-            "current_window": true,
-            "placeholder": false
+            "kickoff_utc": null,
+            "kickoff_beijing": null,
+            "kickoff_display": "北京时间 待定",
+            "match_day": {},
+            "win_draw_loss": null,
+            "score_options": [],
+            "current_window": false,
+            "placeholder": true
           },
           {
-            "match_id": "400021537",
+            "match_id": "placeholder-M100",
             "match_number": 100,
             "round_key": "quarter_finals",
-            "stage": "Quarter-final",
-            "stage_name": "Quarter-final",
-            "round_name": "",
-            "phase": "",
-            "group": "Quarter-final",
-            "match_name": "阿根廷 vs 瑞士",
+            "stage": "quarter_finals",
+            "group": "淘汰赛",
+            "match_name": "胜者 M95 vs 胜者 M96",
             "teams": {
               "home": {
-                "name": "阿根廷",
-                "name_en": "Argentina",
-                "abbreviation": "ARG",
-                "id_team": "202",
-                "id_country": "ARG",
-                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-                "score": 3,
-                "tactics": "4-1-3-2",
-                "country_code": "ARG",
-                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-                "flag_emoji": "🇦🇷"
+                "name": "胜者 M95",
+                "name_en": "胜者 M95",
+                "country_code": "",
+                "flag_url": "",
+                "flag_emoji": "",
+                "placeholder": true
               },
               "away": {
-                "name": "瑞士",
-                "name_en": "Switzerland",
-                "abbreviation": "SUI",
-                "id_team": "475",
-                "id_country": "SUI",
-                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-                "score": 1,
-                "tactics": "4-2-3-1",
-                "country_code": "SUI",
-                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-                "flag_emoji": "🇨🇭"
+                "name": "胜者 M96",
+                "name_en": "胜者 M96",
+                "country_code": "",
+                "flag_url": "",
+                "flag_emoji": "",
+                "placeholder": true
               }
             },
-            "kickoff_utc": "2026-07-12T01:00:00Z",
-            "kickoff_beijing": "2026-07-12T09:00:00+08:00",
-            "kickoff_display": "北京时间 07-12 09:00",
-            "match_day": {
-              "date": "2026-07-11",
-              "title": "7月11日比赛日",
-              "range": "北京时间 07-11 18:00 - 07-12 18:00",
-              "start_iso": "2026-07-11T18:00:00+08:00",
-              "end_iso": "2026-07-12T18:00:00+08:00"
-            },
-            "win_draw_loss": {
-              "home_win": 60,
-              "draw": 25,
-              "away_win": 15
-            },
-            "score_options": [
-              {
-                "score": "2-0",
-                "rank": 1,
-                "reason": "阿根廷整体实力强劲，梅西领衔攻击线，瑞士难破防线。"
-              },
-              {
-                "score": "3-1",
-                "rank": 2,
-                "reason": "瑞士可能通过定位球破门，但阿根廷进攻多点开花。"
-              },
-              {
-                "score": "1-0",
-                "rank": 3,
-                "reason": "瑞士防守顽强，阿根廷小胜过关。"
-              }
-            ],
-            "current_window": true,
-            "placeholder": false
+            "kickoff_utc": null,
+            "kickoff_beijing": null,
+            "kickoff_display": "北京时间 待定",
+            "match_day": {},
+            "win_draw_loss": null,
+            "score_options": [],
+            "current_window": false,
+            "placeholder": true
           }
         ],
         "semi_finals": [
@@ -1718,18 +1138,11 @@
       "structure_window": {
         "timezone": "Asia/Shanghai",
         "match_day_count": 21,
-        "start_iso": "2026-07-11T18:00:00+08:00",
-        "end_iso": "2026-08-01T18:00:00+08:00",
-        "display_range": "7月11日比赛日 - 7月31日比赛日",
-        "range": "北京时间 07-11 18:00 - 08-01 18:00",
+        "start_iso": "2026-07-12T18:00:00+08:00",
+        "end_iso": "2026-08-02T18:00:00+08:00",
+        "display_range": "7月12日比赛日 - 8月1日比赛日",
+        "range": "北京时间 07-12 18:00 - 08-02 18:00",
         "match_days": [
-          {
-            "date": "2026-07-11",
-            "title": "7月11日比赛日",
-            "range": "北京时间 07-11 18:00 - 07-12 18:00",
-            "start_iso": "2026-07-11T18:00:00+08:00",
-            "end_iso": "2026-07-12T18:00:00+08:00"
-          },
           {
             "date": "2026-07-12",
             "title": "7月12日比赛日",
@@ -1869,536 +1282,41 @@
             "range": "北京时间 07-31 18:00 - 08-01 18:00",
             "start_iso": "2026-07-31T18:00:00+08:00",
             "end_iso": "2026-08-01T18:00:00+08:00"
+          },
+          {
+            "date": "2026-08-01",
+            "title": "8月1日比赛日",
+            "range": "北京时间 08-01 18:00 - 08-02 18:00",
+            "start_iso": "2026-08-01T18:00:00+08:00",
+            "end_iso": "2026-08-02T18:00:00+08:00"
           }
         ]
       }
     }
   },
-  "matches": [
-    {
-      "id": "400021539",
-      "fifa_match_id": "400021539",
-      "match_name": "挪威 vs 英格兰",
-      "match_name_en": "Norway vs England",
-      "kickoff_utc": "2026-07-11T21:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Quarter-final",
-      "stage_name": "Quarter-final",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 99,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 1,
-        "result_type": 3
-      },
-      "teams": {
-        "home": {
-          "name": "挪威",
-          "name_en": "Norway",
-          "abbreviation": "NOR",
-          "id_team": "464",
-          "id_country": "NOR",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-          "score": 1,
-          "tactics": "4-1-2-3",
-          "country_code": "NOR",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-          "flag_emoji": "🇳🇴"
-        },
-        "away": {
-          "name": "英格兰",
-          "name_en": "England",
-          "abbreviation": "ENG",
-          "id_team": "448",
-          "id_country": "ENG",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-          "score": 2,
-          "tactics": "4-2-3-1",
-          "country_code": "ENG",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-          "flag_emoji": ""
-        }
-      },
-      "venue": {
-        "name": "Miami Stadium",
-        "city": "Miami",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021539"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760512"
-        }
-      },
-      "espn_event_id": "760512",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "挪威",
-          "team_en": "Norway",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-              "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-              "published": "2026-07-12T00:02:25Z",
-              "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "英格兰",
-          "team_en": "England",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-              "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-              "published": "2026-07-12T00:02:25Z",
-              "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      },
-      "match_id": "400021539",
-      "win_draw_loss": {
-        "home_win": 22,
-        "draw": 28,
-        "away_win": 50
-      },
-      "xg_prediction": {
-        "home": 0.9,
-        "away": 1.7
-      },
-      "predicted_score": {
-        "home": 1,
-        "away": 2
-      },
-      "score_options": [
-        {
-          "score": "1-2",
-          "rank": 1,
-          "reason": "英格兰整体实力占优，挪威依赖哈兰德个人能力，但难敌英格兰多点进攻。"
-        },
-        {
-          "score": "1-1",
-          "rank": 2,
-          "reason": "挪威反击高效，英格兰可能久攻不下，平局进入加时。"
-        },
-        {
-          "score": "0-2",
-          "rank": 3,
-          "reason": "英格兰防守稳固，挪威进攻哑火。"
-        }
-      ],
-      "method_factors": {
-        "market_signal": "赔率数据不可用",
-        "fifa_rank_prior": "FIFA排名不可用；长期实力：英格兰历史强队，挪威中上游但拥有顶级射手",
-        "recent_form": "近期状态未知；两队均进入八强，表明状态良好",
-        "group_context": "无小组赛，四分之一决赛单场淘汰",
-        "injury_rotation": "伤病情况未知",
-        "weather_venue": "迈阿密体育场，天气未知",
-        "tactical_key": "挪威4-1-2-3阵型依赖哈兰德；英格兰4-2-3-1控制中场，边路突破",
-        "uncertainty": "高不确定性：缺乏赔率和伤病数据"
-      },
-      "matchup_graph": {
-        "nodes": [
-          {
-            "id": "home_attack",
-            "label": "主队进攻",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 80,
-            "note": "哈兰德领衔，个人能力突出"
-          },
-          {
-            "id": "home_midfield",
-            "label": "主队中场/转换",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 60,
-            "note": "厄德高组织，但拦截能力一般"
-          },
-          {
-            "id": "home_defense",
-            "label": "主队防守",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 50,
-            "note": "防线经验不足，易被打反击"
-          },
-          {
-            "id": "away_attack",
-            "label": "客队进攻",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 85,
-            "note": "凯恩、萨卡等攻击点多"
-          },
-          {
-            "id": "away_midfield",
-            "label": "客队中场/转换",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 75,
-            "note": "贝林厄姆控制力强，攻守均衡"
-          },
-          {
-            "id": "away_defense",
-            "label": "客队防守",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 70,
-            "note": "斯通斯领衔，防空与地面俱佳"
-          }
-        ],
-        "edges": [
-          {
-            "from": "home_attack",
-            "to": "away_defense",
-            "label": "哈兰德 vs 英格兰防线",
-            "impact": "high",
-            "direction": "home_to_away",
-            "note": "挪威主要得分手段，英格兰需重点盯防"
-          },
-          {
-            "from": "away_attack",
-            "to": "home_defense",
-            "label": "英格兰多样进攻 vs 挪威薄弱防线",
-            "impact": "high",
-            "direction": "away_to_home",
-            "note": "英格兰边中结合，挪威防线压力大"
-          },
-          {
-            "from": "home_midfield",
-            "to": "away_midfield",
-            "label": "中场控制权争夺",
-            "impact": "medium",
-            "direction": "balanced",
-            "note": "厄德高 vs 贝林厄姆，控球与转换关键"
-          }
-        ],
-        "summary": "英格兰整体实力占优，挪威依靠哈兰德个人能力制造威胁，但防线漏洞可能被英格兰利用。",
-        "advantage_side": "away",
-        "key_battle": "哈兰德 vs 英格兰中卫组合",
-        "risk_trigger": "挪威若打出高效反击，可能拖入加时"
-      },
-      "tactical_matchup": "挪威4-1-2-3主打防守反击，英格兰4-2-3-1控球压迫。英格兰中场优势明显，边路进攻丰富。",
-      "injury_adjustment": {
-        "home": "伤病情况未知",
-        "away": "伤病情况未知",
-        "summary": "无关键伤病信息，双方主力预计出战"
-      },
-      "risk_analysis": "英格兰纸面实力占优，但挪威拥有顶级终结者，冷门风险中等。缺乏赔率数据，预测不确定性较高。",
-      "upset_probability": 22,
-      "odds_comparison": {
-        "market_implied": {
-          "home_win": 0,
-          "draw": 0,
-          "away_win": 0
-        },
-        "model_edge": {
-          "home_win": 22,
-          "draw": 28,
-          "away_win": 50
-        },
-        "deviation_analysis": "市场赔率不可用，无法比较偏差。模型基于长期实力和阵容评估。"
-      },
-      "confidence": "medium"
-    },
-    {
-      "id": "400021537",
-      "fifa_match_id": "400021537",
-      "match_name": "阿根廷 vs 瑞士",
-      "match_name_en": "Argentina vs Switzerland",
-      "kickoff_utc": "2026-07-12T01:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Quarter-final",
-      "stage_name": "Quarter-final",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 100,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 2,
-        "result_type": 3
-      },
-      "teams": {
-        "home": {
-          "name": "阿根廷",
-          "name_en": "Argentina",
-          "abbreviation": "ARG",
-          "id_team": "202",
-          "id_country": "ARG",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-          "score": 3,
-          "tactics": "4-1-3-2",
-          "country_code": "ARG",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-          "flag_emoji": "🇦🇷"
-        },
-        "away": {
-          "name": "瑞士",
-          "name_en": "Switzerland",
-          "abbreviation": "SUI",
-          "id_team": "475",
-          "id_country": "SUI",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-          "score": 1,
-          "tactics": "4-2-3-1",
-          "country_code": "SUI",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-          "flag_emoji": "🇨🇭"
-        }
-      },
-      "venue": {
-        "name": "Kansas City Stadium",
-        "city": "Kansas City",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021537"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760513"
-        }
-      },
-      "espn_event_id": "760513",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "阿根廷",
-          "team_en": "Argentina",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "瑞士",
-          "team_en": "Switzerland",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      },
-      "match_id": "400021537",
-      "win_draw_loss": {
-        "home_win": 60,
-        "draw": 25,
-        "away_win": 15
-      },
-      "xg_prediction": {
-        "home": 2.1,
-        "away": 0.7
-      },
-      "predicted_score": {
-        "home": 2,
-        "away": 0
-      },
-      "score_options": [
-        {
-          "score": "2-0",
-          "rank": 1,
-          "reason": "阿根廷整体实力强劲，梅西领衔攻击线，瑞士难破防线。"
-        },
-        {
-          "score": "3-1",
-          "rank": 2,
-          "reason": "瑞士可能通过定位球破门，但阿根廷进攻多点开花。"
-        },
-        {
-          "score": "1-0",
-          "rank": 3,
-          "reason": "瑞士防守顽强，阿根廷小胜过关。"
-        }
-      ],
-      "method_factors": {
-        "market_signal": "赔率数据不可用",
-        "fifa_rank_prior": "FIFA排名不可用；长期实力：阿根廷世界冠军，瑞士稳定中上游",
-        "recent_form": "近期状态未知；两队均晋级八强，状态良好",
-        "group_context": "无小组赛，四分之一决赛单场淘汰",
-        "injury_rotation": "伤病情况未知",
-        "weather_venue": "堪萨斯城体育场，天气未知",
-        "tactical_key": "阿根廷4-1-3-2阵型强调中场控制与梅西的创造力；瑞士4-2-3-1注重防守与边路反击",
-        "uncertainty": "中高不确定性：缺乏赔率数据，但阿根廷实力明显占优"
-      },
-      "matchup_graph": {
-        "nodes": [
-          {
-            "id": "home_attack",
-            "label": "主队进攻",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 90,
-            "note": "梅西、阿尔瓦雷斯，创造力与终结兼备"
-          },
-          {
-            "id": "home_midfield",
-            "label": "主队中场/转换",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 85,
-            "note": "恩佐、麦卡利斯特控制节奏，攻防转换快"
-          },
-          {
-            "id": "home_defense",
-            "label": "主队防守",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 75,
-            "note": "经验丰富，整体协防好"
-          },
-          {
-            "id": "away_attack",
-            "label": "客队进攻",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 65,
-            "note": "恩博洛速度，沙奇里远射，但缺乏稳定输出"
-          },
-          {
-            "id": "away_midfield",
-            "label": "客队中场/转换",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 70,
-            "note": "扎卡组织，防守型中场拦截"
-          },
-          {
-            "id": "away_defense",
-            "label": "客队防守",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 75,
-            "note": "阿坎吉领衔，纪律性强"
-          }
-        ],
-        "edges": [
-          {
-            "from": "home_attack",
-            "to": "away_defense",
-            "label": "阿根廷攻击群 vs 瑞士严密防线",
-            "impact": "high",
-            "direction": "home_to_away",
-            "note": "梅西的突破和分球是撕开瑞士防线的关键"
-          },
-          {
-            "from": "away_attack",
-            "to": "home_defense",
-            "label": "瑞士快速反击 vs 阿根廷防线回追",
-            "impact": "medium",
-            "direction": "away_to_home",
-            "note": "瑞士可能利用阿根廷压上后的空当"
-          },
-          {
-            "from": "home_midfield",
-            "to": "away_midfield",
-            "label": "中场控制权",
-            "impact": "medium",
-            "direction": "balanced",
-            "note": "阿根廷技术占优，瑞士身体对抗强"
-          }
-        ],
-        "summary": "阿根廷整体实力明显占优，瑞士防守稳固但进攻威胁有限。",
-        "advantage_side": "home",
-        "key_battle": "梅西 vs 扎卡的中场对决",
-        "risk_trigger": "瑞士若先进球，可能全线退守，增加阿根廷破门难度"
-      },
-      "tactical_matchup": "阿根廷4-1-3-2通过中场人数优势掌控比赛，梅西自由人角色创造威胁。瑞士4-2-3-1双后腰保护防线，依靠两翼反击。",
-      "injury_adjustment": {
-        "home": "伤病情况未知",
-        "away": "伤病情况未知",
-        "summary": "无关键伤病报告，双方主力预计出战"
-      },
-      "risk_analysis": "阿根廷晋级热门，但瑞士曾在大赛中制造冷门。缺乏实时数据，预测基于传统实力对比。",
-      "upset_probability": 15,
-      "odds_comparison": {
-        "market_implied": {
-          "home_win": 0,
-          "draw": 0,
-          "away_win": 0
-        },
-        "model_edge": {
-          "home_win": 60,
-          "draw": 25,
-          "away_win": 15
-        },
-        "deviation_analysis": "市场赔率不可用，无法比较偏差。模型基于长期实力和阵容评估。"
-      },
-      "confidence": "medium"
-    }
-  ],
+  "matches": [],
   "tournament_structure": {
     "stage": "knockout",
     "focus_window": {
       "timezone": "Asia/Shanghai",
       "china_match_days": [
         {
-          "date": "2026-07-11",
-          "title": "7月11日比赛日",
-          "range": "北京时间 07-11 18:00 - 07-12 18:00",
-          "start_iso": "2026-07-11T18:00:00+08:00",
-          "end_iso": "2026-07-12T18:00:00+08:00"
-        },
-        {
           "date": "2026-07-12",
           "title": "7月12日比赛日",
           "range": "北京时间 07-12 18:00 - 07-13 18:00",
           "start_iso": "2026-07-12T18:00:00+08:00",
           "end_iso": "2026-07-13T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-13",
+          "title": "7月13日比赛日",
+          "range": "北京时间 07-13 18:00 - 07-14 18:00",
+          "start_iso": "2026-07-13T18:00:00+08:00",
+          "end_iso": "2026-07-14T18:00:00+08:00"
         }
       ]
     },
-    "highlight_match_ids": [
-      "400021537",
-      "400021539"
-    ],
+    "highlight_match_ids": [],
     "groups": null,
     "bracket": {
       "round_of_32": [
@@ -3291,150 +2209,72 @@
           "placeholder": true
         },
         {
-          "match_id": "400021539",
+          "match_id": "placeholder-M99",
           "match_number": 99,
           "round_key": "quarter_finals",
-          "stage": "Quarter-final",
-          "stage_name": "Quarter-final",
-          "round_name": "",
-          "phase": "",
-          "group": "Quarter-final",
-          "match_name": "挪威 vs 英格兰",
+          "stage": "quarter_finals",
+          "group": "淘汰赛",
+          "match_name": "胜者 M93 vs 胜者 M94",
           "teams": {
             "home": {
-              "name": "挪威",
-              "name_en": "Norway",
-              "abbreviation": "NOR",
-              "id_team": "464",
-              "id_country": "NOR",
-              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-              "score": 1,
-              "tactics": "4-1-2-3",
-              "country_code": "NOR",
-              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-              "flag_emoji": "🇳🇴"
+              "name": "胜者 M93",
+              "name_en": "胜者 M93",
+              "country_code": "",
+              "flag_url": "",
+              "flag_emoji": "",
+              "placeholder": true
             },
             "away": {
-              "name": "英格兰",
-              "name_en": "England",
-              "abbreviation": "ENG",
-              "id_team": "448",
-              "id_country": "ENG",
-              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-              "score": 2,
-              "tactics": "4-2-3-1",
-              "country_code": "ENG",
-              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-              "flag_emoji": ""
+              "name": "胜者 M94",
+              "name_en": "胜者 M94",
+              "country_code": "",
+              "flag_url": "",
+              "flag_emoji": "",
+              "placeholder": true
             }
           },
-          "kickoff_utc": "2026-07-11T21:00:00Z",
-          "kickoff_beijing": "2026-07-12T05:00:00+08:00",
-          "kickoff_display": "北京时间 07-12 05:00",
-          "match_day": {
-            "date": "2026-07-11",
-            "title": "7月11日比赛日",
-            "range": "北京时间 07-11 18:00 - 07-12 18:00",
-            "start_iso": "2026-07-11T18:00:00+08:00",
-            "end_iso": "2026-07-12T18:00:00+08:00"
-          },
-          "win_draw_loss": {
-            "home_win": 22,
-            "draw": 28,
-            "away_win": 50
-          },
-          "score_options": [
-            {
-              "score": "1-2",
-              "rank": 1,
-              "reason": "英格兰整体实力占优，挪威依赖哈兰德个人能力，但难敌英格兰多点进攻。"
-            },
-            {
-              "score": "1-1",
-              "rank": 2,
-              "reason": "挪威反击高效，英格兰可能久攻不下，平局进入加时。"
-            },
-            {
-              "score": "0-2",
-              "rank": 3,
-              "reason": "英格兰防守稳固，挪威进攻哑火。"
-            }
-          ],
-          "current_window": true,
-          "placeholder": false
+          "kickoff_utc": null,
+          "kickoff_beijing": null,
+          "kickoff_display": "北京时间 待定",
+          "match_day": {},
+          "win_draw_loss": null,
+          "score_options": [],
+          "current_window": false,
+          "placeholder": true
         },
         {
-          "match_id": "400021537",
+          "match_id": "placeholder-M100",
           "match_number": 100,
           "round_key": "quarter_finals",
-          "stage": "Quarter-final",
-          "stage_name": "Quarter-final",
-          "round_name": "",
-          "phase": "",
-          "group": "Quarter-final",
-          "match_name": "阿根廷 vs 瑞士",
+          "stage": "quarter_finals",
+          "group": "淘汰赛",
+          "match_name": "胜者 M95 vs 胜者 M96",
           "teams": {
             "home": {
-              "name": "阿根廷",
-              "name_en": "Argentina",
-              "abbreviation": "ARG",
-              "id_team": "202",
-              "id_country": "ARG",
-              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-              "score": 3,
-              "tactics": "4-1-3-2",
-              "country_code": "ARG",
-              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-              "flag_emoji": "🇦🇷"
+              "name": "胜者 M95",
+              "name_en": "胜者 M95",
+              "country_code": "",
+              "flag_url": "",
+              "flag_emoji": "",
+              "placeholder": true
             },
             "away": {
-              "name": "瑞士",
-              "name_en": "Switzerland",
-              "abbreviation": "SUI",
-              "id_team": "475",
-              "id_country": "SUI",
-              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-              "score": 1,
-              "tactics": "4-2-3-1",
-              "country_code": "SUI",
-              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-              "flag_emoji": "🇨🇭"
+              "name": "胜者 M96",
+              "name_en": "胜者 M96",
+              "country_code": "",
+              "flag_url": "",
+              "flag_emoji": "",
+              "placeholder": true
             }
           },
-          "kickoff_utc": "2026-07-12T01:00:00Z",
-          "kickoff_beijing": "2026-07-12T09:00:00+08:00",
-          "kickoff_display": "北京时间 07-12 09:00",
-          "match_day": {
-            "date": "2026-07-11",
-            "title": "7月11日比赛日",
-            "range": "北京时间 07-11 18:00 - 07-12 18:00",
-            "start_iso": "2026-07-11T18:00:00+08:00",
-            "end_iso": "2026-07-12T18:00:00+08:00"
-          },
-          "win_draw_loss": {
-            "home_win": 60,
-            "draw": 25,
-            "away_win": 15
-          },
-          "score_options": [
-            {
-              "score": "2-0",
-              "rank": 1,
-              "reason": "阿根廷整体实力强劲，梅西领衔攻击线，瑞士难破防线。"
-            },
-            {
-              "score": "3-1",
-              "rank": 2,
-              "reason": "瑞士可能通过定位球破门，但阿根廷进攻多点开花。"
-            },
-            {
-              "score": "1-0",
-              "rank": 3,
-              "reason": "瑞士防守顽强，阿根廷小胜过关。"
-            }
-          ],
-          "current_window": true,
-          "placeholder": false
+          "kickoff_utc": null,
+          "kickoff_beijing": null,
+          "kickoff_display": "北京时间 待定",
+          "match_day": {},
+          "win_draw_loss": null,
+          "score_options": [],
+          "current_window": false,
+          "placeholder": true
         }
       ],
       "semi_finals": [
@@ -3585,18 +2425,11 @@
     "structure_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 21,
-      "start_iso": "2026-07-11T18:00:00+08:00",
-      "end_iso": "2026-08-01T18:00:00+08:00",
-      "display_range": "7月11日比赛日 - 7月31日比赛日",
-      "range": "北京时间 07-11 18:00 - 08-01 18:00",
+      "start_iso": "2026-07-12T18:00:00+08:00",
+      "end_iso": "2026-08-02T18:00:00+08:00",
+      "display_range": "7月12日比赛日 - 8月1日比赛日",
+      "range": "北京时间 07-12 18:00 - 08-02 18:00",
       "match_days": [
-        {
-          "date": "2026-07-11",
-          "title": "7月11日比赛日",
-          "range": "北京时间 07-11 18:00 - 07-12 18:00",
-          "start_iso": "2026-07-11T18:00:00+08:00",
-          "end_iso": "2026-07-12T18:00:00+08:00"
-        },
         {
           "date": "2026-07-12",
           "title": "7月12日比赛日",
@@ -3736,6 +2569,13 @@
           "range": "北京时间 07-31 18:00 - 08-01 18:00",
           "start_iso": "2026-07-31T18:00:00+08:00",
           "end_iso": "2026-08-01T18:00:00+08:00"
+        },
+        {
+          "date": "2026-08-01",
+          "title": "8月1日比赛日",
+          "range": "北京时间 08-01 18:00 - 08-02 18:00",
+          "start_iso": "2026-08-01T18:00:00+08:00",
+          "end_iso": "2026-08-02T18:00:00+08:00"
         }
       ]
     }
@@ -3743,18 +2583,11 @@
   "structure_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 21,
-    "start_iso": "2026-07-11T18:00:00+08:00",
-    "end_iso": "2026-08-01T18:00:00+08:00",
-    "display_range": "7月11日比赛日 - 7月31日比赛日",
-    "range": "北京时间 07-11 18:00 - 08-01 18:00",
+    "start_iso": "2026-07-12T18:00:00+08:00",
+    "end_iso": "2026-08-02T18:00:00+08:00",
+    "display_range": "7月12日比赛日 - 8月1日比赛日",
+    "range": "北京时间 07-12 18:00 - 08-02 18:00",
     "match_days": [
-      {
-        "date": "2026-07-11",
-        "title": "7月11日比赛日",
-        "range": "北京时间 07-11 18:00 - 07-12 18:00",
-        "start_iso": "2026-07-11T18:00:00+08:00",
-        "end_iso": "2026-07-12T18:00:00+08:00"
-      },
       {
         "date": "2026-07-12",
         "title": "7月12日比赛日",
@@ -3894,21 +2727,28 @@
         "range": "北京时间 07-31 18:00 - 08-01 18:00",
         "start_iso": "2026-07-31T18:00:00+08:00",
         "end_iso": "2026-08-01T18:00:00+08:00"
+      },
+      {
+        "date": "2026-08-01",
+        "title": "8月1日比赛日",
+        "range": "北京时间 08-01 18:00 - 08-02 18:00",
+        "start_iso": "2026-08-01T18:00:00+08:00",
+        "end_iso": "2026-08-02T18:00:00+08:00"
       }
     ]
   },
   "research": {
     "schema_version": 3,
     "stage": "research",
-    "generated_at": "2026-07-12T03:52:18Z",
+    "generated_at": "2026-07-13T03:55:07Z",
     "window": {
-      "start_date": "2026-07-11",
+      "start_date": "2026-07-12",
       "days": 3,
       "timezone": "UTC",
       "mode": "derived from China match-day display window"
     },
     "structure_utc_window": {
-      "start_date": "2026-07-11",
+      "start_date": "2026-07-12",
       "days": 22,
       "timezone": "UTC",
       "mode": "derived from China match-day structure window"
@@ -3916,42 +2756,35 @@
     "display_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 2,
-      "start_iso": "2026-07-11T18:00:00+08:00",
-      "end_iso": "2026-07-13T18:00:00+08:00",
-      "display_range": "7月11日比赛日 - 7月12日比赛日",
-      "range": "北京时间 07-11 18:00 - 07-13 18:00",
+      "start_iso": "2026-07-12T18:00:00+08:00",
+      "end_iso": "2026-07-14T18:00:00+08:00",
+      "display_range": "7月12日比赛日 - 7月13日比赛日",
+      "range": "北京时间 07-12 18:00 - 07-14 18:00",
       "match_days": [
-        {
-          "date": "2026-07-11",
-          "title": "7月11日比赛日",
-          "range": "北京时间 07-11 18:00 - 07-12 18:00",
-          "start_iso": "2026-07-11T18:00:00+08:00",
-          "end_iso": "2026-07-12T18:00:00+08:00"
-        },
         {
           "date": "2026-07-12",
           "title": "7月12日比赛日",
           "range": "北京时间 07-12 18:00 - 07-13 18:00",
           "start_iso": "2026-07-12T18:00:00+08:00",
           "end_iso": "2026-07-13T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-13",
+          "title": "7月13日比赛日",
+          "range": "北京时间 07-13 18:00 - 07-14 18:00",
+          "start_iso": "2026-07-13T18:00:00+08:00",
+          "end_iso": "2026-07-14T18:00:00+08:00"
         }
       ]
     },
     "structure_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 21,
-      "start_iso": "2026-07-11T18:00:00+08:00",
-      "end_iso": "2026-08-01T18:00:00+08:00",
-      "display_range": "7月11日比赛日 - 7月31日比赛日",
-      "range": "北京时间 07-11 18:00 - 08-01 18:00",
+      "start_iso": "2026-07-12T18:00:00+08:00",
+      "end_iso": "2026-08-02T18:00:00+08:00",
+      "display_range": "7月12日比赛日 - 8月1日比赛日",
+      "range": "北京时间 07-12 18:00 - 08-02 18:00",
       "match_days": [
-        {
-          "date": "2026-07-11",
-          "title": "7月11日比赛日",
-          "range": "北京时间 07-11 18:00 - 07-12 18:00",
-          "start_iso": "2026-07-11T18:00:00+08:00",
-          "end_iso": "2026-07-12T18:00:00+08:00"
-        },
         {
           "date": "2026-07-12",
           "title": "7月12日比赛日",
@@ -4091,23 +2924,30 @@
           "range": "北京时间 07-31 18:00 - 08-01 18:00",
           "start_iso": "2026-07-31T18:00:00+08:00",
           "end_iso": "2026-08-01T18:00:00+08:00"
+        },
+        {
+          "date": "2026-08-01",
+          "title": "8月1日比赛日",
+          "range": "北京时间 08-01 18:00 - 08-02 18:00",
+          "start_iso": "2026-08-01T18:00:00+08:00",
+          "end_iso": "2026-08-02T18:00:00+08:00"
         }
       ]
     },
     "china_match_days": [
-      {
-        "date": "2026-07-11",
-        "title": "7月11日比赛日",
-        "range": "北京时间 07-11 18:00 - 07-12 18:00",
-        "start_iso": "2026-07-11T18:00:00+08:00",
-        "end_iso": "2026-07-12T18:00:00+08:00"
-      },
       {
         "date": "2026-07-12",
         "title": "7月12日比赛日",
         "range": "北京时间 07-12 18:00 - 07-13 18:00",
         "start_iso": "2026-07-12T18:00:00+08:00",
         "end_iso": "2026-07-13T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-13",
+        "title": "7月13日比赛日",
+        "range": "北京时间 07-13 18:00 - 07-14 18:00",
+        "start_iso": "2026-07-13T18:00:00+08:00",
+        "end_iso": "2026-07-14T18:00:00+08:00"
       }
     ],
     "data_sources": {
@@ -4119,12 +2959,11 @@
     "source": {
       "fifa": {
         "name": "FIFA official calendar API",
-        "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-07-11&to=2026-08-02&language=en&count=500&idCompetition=17&idSeason=285023"
+        "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-07-12&to=2026-08-03&language=en&count=500&idCompetition=17&idSeason=285023"
       },
       "verification": {
         "name": "ESPN public FIFA World Cup scoreboard",
         "urls": [
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260710&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260711&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260712&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260713&limit=100",
@@ -4147,7 +2986,8 @@
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260730&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260731&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260801&limit=100",
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260802&limit=100"
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260802&limit=100",
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260803&limit=100"
         ]
       },
       "injury": {
@@ -4158,7 +2998,6 @@
       "odds": {
         "name": "ESPN odds feed",
         "urls": [
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260710&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260711&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260712&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260713&limit=100",
@@ -4181,7 +3020,8 @@
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260730&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260731&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260801&limit=100",
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260802&limit=100"
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260802&limit=100",
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260803&limit=100"
         ]
       }
     },
@@ -4191,641 +3031,15 @@
       "RU101 vs RU102",
       "W101 vs W102"
     ],
-    "fixture_count": 2,
-    "fifa_fixture_count": 2,
-    "raw_fifa_fixture_count": 6,
-    "structure_fixture_count": 4,
-    "structure_fifa_fixture_count": 6,
+    "fixture_count": 0,
+    "fifa_fixture_count": 0,
+    "raw_fifa_fixture_count": 5,
+    "structure_fixture_count": 2,
+    "structure_fifa_fixture_count": 4,
     "odds_available_count": 0,
-    "matches": [
-      {
-        "id": "400021539",
-        "fifa_match_id": "400021539",
-        "match_name": "挪威 vs 英格兰",
-        "match_name_en": "Norway vs England",
-        "kickoff_utc": "2026-07-11T21:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Quarter-final",
-        "stage_name": "Quarter-final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 99,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 3
-        },
-        "teams": {
-          "home": {
-            "name": "挪威",
-            "name_en": "Norway",
-            "abbreviation": "NOR",
-            "id_team": "464",
-            "id_country": "NOR",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "score": 1,
-            "tactics": "4-1-2-3",
-            "country_code": "NOR",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "flag_emoji": "🇳🇴"
-          },
-          "away": {
-            "name": "英格兰",
-            "name_en": "England",
-            "abbreviation": "ENG",
-            "id_team": "448",
-            "id_country": "ENG",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": 2,
-            "tactics": "4-2-3-1",
-            "country_code": "ENG",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "flag_emoji": ""
-          }
-        },
-        "venue": {
-          "name": "Miami Stadium",
-          "city": "Miami",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021539"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760512"
-          }
-        },
-        "espn_event_id": "760512",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "挪威",
-            "team_en": "Norway",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "published": "2026-07-12T00:02:25Z",
-                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "英格兰",
-            "team_en": "England",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "published": "2026-07-12T00:02:25Z",
-                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      },
-      {
-        "id": "400021537",
-        "fifa_match_id": "400021537",
-        "match_name": "阿根廷 vs 瑞士",
-        "match_name_en": "Argentina vs Switzerland",
-        "kickoff_utc": "2026-07-12T01:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Quarter-final",
-        "stage_name": "Quarter-final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 100,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 2,
-          "result_type": 3
-        },
-        "teams": {
-          "home": {
-            "name": "阿根廷",
-            "name_en": "Argentina",
-            "abbreviation": "ARG",
-            "id_team": "202",
-            "id_country": "ARG",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": 3,
-            "tactics": "4-1-3-2",
-            "country_code": "ARG",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "flag_emoji": "🇦🇷"
-          },
-          "away": {
-            "name": "瑞士",
-            "name_en": "Switzerland",
-            "abbreviation": "SUI",
-            "id_team": "475",
-            "id_country": "SUI",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "score": 1,
-            "tactics": "4-2-3-1",
-            "country_code": "SUI",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "flag_emoji": "🇨🇭"
-          }
-        },
-        "venue": {
-          "name": "Kansas City Stadium",
-          "city": "Kansas City",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021537"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760513"
-          }
-        },
-        "espn_event_id": "760513",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "阿根廷",
-            "team_en": "Argentina",
-            "status": "unknown",
-            "records": [],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "瑞士",
-            "team_en": "Switzerland",
-            "status": "unknown",
-            "records": [],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      }
-    ],
-    "fixtures": [
-      {
-        "id": "400021539",
-        "fifa_match_id": "400021539",
-        "match_name": "挪威 vs 英格兰",
-        "match_name_en": "Norway vs England",
-        "kickoff_utc": "2026-07-11T21:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Quarter-final",
-        "stage_name": "Quarter-final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 99,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 3
-        },
-        "teams": {
-          "home": {
-            "name": "挪威",
-            "name_en": "Norway",
-            "abbreviation": "NOR",
-            "id_team": "464",
-            "id_country": "NOR",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "score": 1,
-            "tactics": "4-1-2-3",
-            "country_code": "NOR",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "flag_emoji": "🇳🇴"
-          },
-          "away": {
-            "name": "英格兰",
-            "name_en": "England",
-            "abbreviation": "ENG",
-            "id_team": "448",
-            "id_country": "ENG",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": 2,
-            "tactics": "4-2-3-1",
-            "country_code": "ENG",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "flag_emoji": ""
-          }
-        },
-        "venue": {
-          "name": "Miami Stadium",
-          "city": "Miami",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021539"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760512"
-          }
-        },
-        "espn_event_id": "760512",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "挪威",
-            "team_en": "Norway",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "published": "2026-07-12T00:02:25Z",
-                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "英格兰",
-            "team_en": "England",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "published": "2026-07-12T00:02:25Z",
-                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      },
-      {
-        "id": "400021537",
-        "fifa_match_id": "400021537",
-        "match_name": "阿根廷 vs 瑞士",
-        "match_name_en": "Argentina vs Switzerland",
-        "kickoff_utc": "2026-07-12T01:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Quarter-final",
-        "stage_name": "Quarter-final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 100,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 2,
-          "result_type": 3
-        },
-        "teams": {
-          "home": {
-            "name": "阿根廷",
-            "name_en": "Argentina",
-            "abbreviation": "ARG",
-            "id_team": "202",
-            "id_country": "ARG",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": 3,
-            "tactics": "4-1-3-2",
-            "country_code": "ARG",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "flag_emoji": "🇦🇷"
-          },
-          "away": {
-            "name": "瑞士",
-            "name_en": "Switzerland",
-            "abbreviation": "SUI",
-            "id_team": "475",
-            "id_country": "SUI",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "score": 1,
-            "tactics": "4-2-3-1",
-            "country_code": "SUI",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "flag_emoji": "🇨🇭"
-          }
-        },
-        "venue": {
-          "name": "Kansas City Stadium",
-          "city": "Kansas City",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021537"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760513"
-          }
-        },
-        "espn_event_id": "760513",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "阿根廷",
-            "team_en": "Argentina",
-            "status": "unknown",
-            "records": [],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "瑞士",
-            "team_en": "Switzerland",
-            "status": "unknown",
-            "records": [],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      }
-    ],
+    "matches": [],
+    "fixtures": [],
     "structure_matches": [
-      {
-        "id": "400021539",
-        "fifa_match_id": "400021539",
-        "match_name": "挪威 vs 英格兰",
-        "match_name_en": "Norway vs England",
-        "kickoff_utc": "2026-07-11T21:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Quarter-final",
-        "stage_name": "Quarter-final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 99,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 3
-        },
-        "teams": {
-          "home": {
-            "name": "挪威",
-            "name_en": "Norway",
-            "abbreviation": "NOR",
-            "id_team": "464",
-            "id_country": "NOR",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "score": 1,
-            "tactics": "4-1-2-3",
-            "country_code": "NOR",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-            "flag_emoji": "🇳🇴"
-          },
-          "away": {
-            "name": "英格兰",
-            "name_en": "England",
-            "abbreviation": "ENG",
-            "id_team": "448",
-            "id_country": "ENG",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": 2,
-            "tactics": "4-2-3-1",
-            "country_code": "ENG",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "flag_emoji": ""
-          }
-        },
-        "venue": {
-          "name": "Miami Stadium",
-          "city": "Miami",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021539"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760512"
-          }
-        },
-        "espn_event_id": "760512",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "挪威",
-            "team_en": "Norway",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "published": "2026-07-12T00:02:25Z",
-                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "英格兰",
-            "team_en": "England",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "description": "Pain in Oslo as Norway go out of the World Cup after losing to England",
-                "published": "2026-07-12T00:02:25Z",
-                "url": "https://www.espn.com/video/clip/_/id/49338341/pain-oslo-norway-go-world-cup-losing-england"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      },
-      {
-        "id": "400021537",
-        "fifa_match_id": "400021537",
-        "match_name": "阿根廷 vs 瑞士",
-        "match_name_en": "Argentina vs Switzerland",
-        "kickoff_utc": "2026-07-12T01:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Quarter-final",
-        "stage_name": "Quarter-final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 100,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 2,
-          "result_type": 3
-        },
-        "teams": {
-          "home": {
-            "name": "阿根廷",
-            "name_en": "Argentina",
-            "abbreviation": "ARG",
-            "id_team": "202",
-            "id_country": "ARG",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": 3,
-            "tactics": "4-1-3-2",
-            "country_code": "ARG",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "flag_emoji": "🇦🇷"
-          },
-          "away": {
-            "name": "瑞士",
-            "name_en": "Switzerland",
-            "abbreviation": "SUI",
-            "id_team": "475",
-            "id_country": "SUI",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "score": 1,
-            "tactics": "4-2-3-1",
-            "country_code": "SUI",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-            "flag_emoji": "🇨🇭"
-          }
-        },
-        "venue": {
-          "name": "Kansas City Stadium",
-          "city": "Kansas City",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021537"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760513"
-          }
-        },
-        "espn_event_id": "760513",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "阿根廷",
-            "team_en": "Argentina",
-            "status": "unknown",
-            "records": [],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "瑞士",
-            "team_en": "Switzerland",
-            "status": "unknown",
-            "records": [],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      },
       {
         "id": "400021541",
         "fifa_match_id": "400021541",
@@ -4906,20 +3120,20 @@
           "provider": "DraftKings",
           "moneyline_american": {
             "home": "+135",
-            "draw": "+225",
-            "away": "+220"
+            "draw": "+215",
+            "away": "+225"
           },
           "implied_probability": {
             "home_win": 42.55,
-            "draw": 30.77,
-            "away_win": 31.25
+            "draw": 31.75,
+            "away_win": 30.77
           },
           "normalized_probability": {
-            "home_win": 40.69,
-            "draw": 29.42,
-            "away_win": 29.88
+            "home_win": 40.5,
+            "draw": 30.21,
+            "away_win": 29.28
           },
-          "overround": 4.57,
+          "overround": 5.07,
           "details": "FRA +135"
         }
       },
@@ -5002,28 +3216,28 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+180",
-            "draw": "+205",
-            "away": "+175"
+            "home": "+160",
+            "draw": "+195",
+            "away": "+205"
           },
           "implied_probability": {
-            "home_win": 35.71,
-            "draw": 32.79,
-            "away_win": 36.36
+            "home_win": 38.46,
+            "draw": 33.9,
+            "away_win": 32.79
           },
           "normalized_probability": {
-            "home_win": 34.06,
-            "draw": 31.27,
-            "away_win": 34.68
+            "home_win": 36.58,
+            "draw": 32.24,
+            "away_win": 31.18
           },
-          "overround": 4.86,
-          "details": "ARG +175"
+          "overround": 5.15,
+          "details": "ENG +160"
         }
       }
     ],
     "daily_log": [
       {
-        "time": "2026-07-12T03:52:18Z",
+        "time": "2026-07-13T03:55:07Z",
         "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
         "status": "completed"
       }
@@ -5032,48 +3246,48 @@
   "display_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 2,
-    "start_iso": "2026-07-11T18:00:00+08:00",
-    "end_iso": "2026-07-13T18:00:00+08:00",
-    "display_range": "7月11日比赛日 - 7月12日比赛日",
-    "range": "北京时间 07-11 18:00 - 07-13 18:00",
+    "start_iso": "2026-07-12T18:00:00+08:00",
+    "end_iso": "2026-07-14T18:00:00+08:00",
+    "display_range": "7月12日比赛日 - 7月13日比赛日",
+    "range": "北京时间 07-12 18:00 - 07-14 18:00",
     "match_days": [
-      {
-        "date": "2026-07-11",
-        "title": "7月11日比赛日",
-        "range": "北京时间 07-11 18:00 - 07-12 18:00",
-        "start_iso": "2026-07-11T18:00:00+08:00",
-        "end_iso": "2026-07-12T18:00:00+08:00"
-      },
       {
         "date": "2026-07-12",
         "title": "7月12日比赛日",
         "range": "北京时间 07-12 18:00 - 07-13 18:00",
         "start_iso": "2026-07-12T18:00:00+08:00",
         "end_iso": "2026-07-13T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-13",
+        "title": "7月13日比赛日",
+        "range": "北京时间 07-13 18:00 - 07-14 18:00",
+        "start_iso": "2026-07-13T18:00:00+08:00",
+        "end_iso": "2026-07-14T18:00:00+08:00"
       }
     ]
   },
   "china_match_days": [
-    {
-      "date": "2026-07-11",
-      "title": "7月11日比赛日",
-      "range": "北京时间 07-11 18:00 - 07-12 18:00",
-      "start_iso": "2026-07-11T18:00:00+08:00",
-      "end_iso": "2026-07-12T18:00:00+08:00"
-    },
     {
       "date": "2026-07-12",
       "title": "7月12日比赛日",
       "range": "北京时间 07-12 18:00 - 07-13 18:00",
       "start_iso": "2026-07-12T18:00:00+08:00",
       "end_iso": "2026-07-13T18:00:00+08:00"
+    },
+    {
+      "date": "2026-07-13",
+      "title": "7月13日比赛日",
+      "range": "北京时间 07-13 18:00 - 07-14 18:00",
+      "start_iso": "2026-07-13T18:00:00+08:00",
+      "end_iso": "2026-07-14T18:00:00+08:00"
     }
   ],
   "usage": {
-    "input_tokens": 12424,
-    "output_tokens": 7695,
-    "total_tokens": 20119,
-    "cost_estimate": 0.20119
+    "input_tokens": 7417,
+    "output_tokens": 562,
+    "total_tokens": 7979,
+    "cost_estimate": 0.07979
   },
   "analysis_model": "deepseek-v4-pro",
   "model": {
@@ -5087,12 +3301,12 @@
   },
   "daily_log": [
     {
-      "time": "2026-07-12T03:52:18Z",
+      "time": "2026-07-13T03:55:07Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     },
     {
-      "time": "2026-07-12T04:06:07Z",
+      "time": "2026-07-13T04:06:58Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     }
