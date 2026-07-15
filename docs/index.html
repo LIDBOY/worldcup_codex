@@ -213,7 +213,11 @@
     .bracket-node-card .mini-score-tab b { display: block; margin-top: 3px; color: #edf7ff; font-size: 18px; }
     .bracket-node-card .mini-score-tab.active { border-color: rgba(246, 189, 39, .82); color: #ffd64a; box-shadow: 0 0 14px rgba(246, 189, 39, .22); }
     .bracket-node-divider { height: 1px; margin: 10px 0 8px; background: linear-gradient(90deg, transparent, rgba(104, 190, 255, .32), transparent); }
-    .bracket-node-pending { display: grid; place-items: center; min-height: 46px; border: 1px dashed rgba(104, 190, 255, .28); border-radius: 8px; color: #a8bbd4; background: rgba(4, 14, 24, .55); }
+    .bracket-node-pending, .bracket-node-scheduled { display: grid; place-items: center; min-height: 46px; border: 1px dashed rgba(104, 190, 255, .28); border-radius: 8px; color: #a8bbd4; background: rgba(4, 14, 24, .55); }
+    .bracket-node-scheduled { border-style: solid; color: #73c8ff; background: rgba(28, 112, 174, .12); }
+    .bracket-real-result { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; margin-top: 8px; border: 1px solid rgba(61, 219, 142, .46); border-radius: 8px; color: #65e5a3; background: rgba(20, 122, 78, .14); box-shadow: 0 0 14px rgba(61, 219, 142, .1); }
+    .bracket-real-result span { font-size: 11px; font-weight: 900; }
+    .bracket-real-result strong { margin: 0; color: #effff6; font-size: 20px; }
     .bracket-wdl-mini { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; margin-top: 7px; font-size: 12px; font-weight: 850; text-align: center; }
     .bracket-wdl-mini span.home { color: var(--green); }
     .bracket-wdl-mini span.draw { color: var(--yellow); }
@@ -287,7 +291,11 @@
       white-space: nowrap;
       font-weight: 750;
     }
+    .scoreboard-mode { width: fit-content; margin: 2px auto 12px; border: 1px solid rgba(83, 171, 255, .38); border-radius: 999px; padding: 6px 12px; color: #8fcfff; background: rgba(21, 91, 151, .14); font-size: 12px; font-weight: 900; }
+    .scoreboard-mode.actual-result { border-color: rgba(61, 219, 142, .5); color: #65e5a3; background: rgba(20, 122, 78, .16); box-shadow: 0 0 16px rgba(61, 219, 142, .1); }
     .scoreboard { display: grid; grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr); align-items: center; gap: 12px; text-align: center; }
+    .scoreboard.actual-result .score-side strong { color: #65e5a3; text-shadow: 0 0 20px rgba(61, 219, 142, .18); }
+    .prediction-review-label { margin: 18px 0 10px; border-left: 3px solid #ffd64a; padding-left: 10px; color: #ffe184; font-size: 13px; font-weight: 900; }
     .score-side > .score-team-name { display: flex; justify-content: center; color: var(--text); font-size: 18px; font-weight: 760; overflow-wrap: anywhere; }
     .score-side strong { display: block; margin-top: 6px; font-size: clamp(42px, 12vw, 62px); line-height: .95; color: #ffd11e; }
     .score-separator { color: var(--muted); font-size: 34px; font-weight: 600; }
@@ -485,10 +493,10 @@
   <main class="page">
     <header class="hero night-card">
       <h1><span class="hero-ball">⚽</span><span>2026 世界杯 · 预测分析</span></h1>
-      <span class="range-pill">7月14日比赛日 - 7月15日比赛日 · 北京时间 07-14 18:00 - 07-16 18:00</span>
+      <span class="range-pill">7月15日比赛日 - 7月16日比赛日 · 北京时间 07-15 18:00 - 07-17 18:00</span>
       <div class="hero-meta">
         <div><span class="meta-icon">▦</span>比赛阶段<strong>淘汰赛</strong></div>
-        <div><span class="meta-icon">◷</span>生成时间<strong>北京时间 07-15 12:11</strong></div>
+        <div><span class="meta-icon">◷</span>生成时间<strong>北京时间 07-15 22:54</strong></div>
         <div><span class="meta-icon">◎</span>总比赛场次<strong>31 场</strong></div>
         <div><span class="meta-icon">◇</span>分析模型<strong>deepseek-v4-pro</strong></div>
         <div><span class="meta-icon">⬡</span>渲染模型<strong>deepseek-v4-flash</strong></div>
@@ -501,7 +509,7 @@
       <div class="structure-title-row">
         <div>
           <h2>淘汰赛对阵树</h2>
-          <p class="muted compact">结构图基于 FIFA 官方赛程与 ESPN 第二来源校验；当前两个中国比赛日内 2 场已高亮。</p>
+          <p class="muted compact">结构图基于 FIFA 官方赛程与 ESPN 第二来源校验；当前两个中国比赛日内 1 场已高亮。</p>
         </div>
         <div class="structure-count">结构赛程 31 场</div>
       </div>
@@ -513,179 +521,179 @@
         <section class="bracket-round bracket-round-round_of_32">
           <h3>32强</h3>
           <div class="bracket-node-list">
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M73">
+      <article class="bracket-node round-round_of_32" data-match-id="400021518">
         <span class="bracket-match-number">M73</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M73</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/rsa.png" alt="南非 国旗" loading="lazy"><span>南非</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/can.png" alt="加拿大 国旗" loading="lazy"><span>加拿大</span></span></strong>
+          <time>06-29 03:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>0 : 1</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M74">
+      <article class="bracket-node round-round_of_32" data-match-id="400021513">
         <span class="bracket-match-number">M74</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M74</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/ger.png" alt="德国 国旗" loading="lazy"><span>德国</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/par.png" alt="巴拉圭 国旗" loading="lazy"><span>巴拉圭</span></span></strong>
+          <time>06-30 04:30</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>1 : 1</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M75">
+      <article class="bracket-node round-round_of_32" data-match-id="400021522">
         <span class="bracket-match-number">M75</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M75</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/ned.png" alt="荷兰 国旗" loading="lazy"><span>荷兰</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/mar.png" alt="摩洛哥 国旗" loading="lazy"><span>摩洛哥</span></span></strong>
+          <time>06-30 09:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>1 : 1</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M76">
+      <article class="bracket-node round-round_of_32" data-match-id="400021516">
         <span class="bracket-match-number">M76</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M76</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/bra.png" alt="巴西 国旗" loading="lazy"><span>巴西</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/jpn.png" alt="日本 国旗" loading="lazy"><span>日本</span></span></strong>
+          <time>06-30 01:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>2 : 1</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M77">
+      <article class="bracket-node round-round_of_32" data-match-id="400021523">
         <span class="bracket-match-number">M77</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M77</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/fra.png" alt="法国 国旗" loading="lazy"><span>法国</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/swe.png" alt="瑞典 国旗" loading="lazy"><span>瑞典</span></span></strong>
+          <time>07-01 05:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>3 : 0</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M78">
+      <article class="bracket-node round-round_of_32" data-match-id="400021514">
         <span class="bracket-match-number">M78</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M78</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/civ.png" alt="科特迪瓦 国旗" loading="lazy"><span>科特迪瓦</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/nor.png" alt="挪威 国旗" loading="lazy"><span>挪威</span></span></strong>
+          <time>07-01 01:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>1 : 2</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M79">
+      <article class="bracket-node round-round_of_32" data-match-id="400021520">
         <span class="bracket-match-number">M79</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M79</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="墨西哥 国旗" loading="lazy"><span>墨西哥</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/ecu.png" alt="厄瓜多尔 国旗" loading="lazy"><span>厄瓜多尔</span></span></strong>
+          <time>07-01 10:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>2 : 0</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M80">
+      <article class="bracket-node round-round_of_32" data-match-id="400021512">
         <span class="bracket-match-number">M80</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M80</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/eng.png" alt="英格兰 国旗" loading="lazy"><span>英格兰</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/rdc.png" alt="刚果民主共和国 国旗" loading="lazy"><span>刚果民主共和国</span></span></strong>
+          <time>07-02 00:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>2 : 1</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M81">
+      <article class="bracket-node round-round_of_32" data-match-id="400021524">
         <span class="bracket-match-number">M81</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M81</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/usa.png" alt="美国 国旗" loading="lazy"><span>美国</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/bih.png" alt="波黑 国旗" loading="lazy"><span>波黑</span></span></strong>
+          <time>07-02 08:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>2 : 0</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M82">
+      <article class="bracket-node round-round_of_32" data-match-id="400021525">
         <span class="bracket-match-number">M82</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M82</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/bel.png" alt="比利时 国旗" loading="lazy"><span>比利时</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/sen.png" alt="塞内加尔 国旗" loading="lazy"><span>塞内加尔</span></span></strong>
+          <time>07-02 04:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>3 : 2</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M83">
+      <article class="bracket-node round-round_of_32" data-match-id="400021526">
         <span class="bracket-match-number">M83</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M83</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/por.png" alt="葡萄牙 国旗" loading="lazy"><span>葡萄牙</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/cro.png" alt="克罗地亚 国旗" loading="lazy"><span>克罗地亚</span></span></strong>
+          <time>07-03 07:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>2 : 1</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M84">
+      <article class="bracket-node round-round_of_32" data-match-id="400021519">
         <span class="bracket-match-number">M84</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M84</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/esp.png" alt="西班牙 国旗" loading="lazy"><span>西班牙</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/aut.png" alt="奥地利 国旗" loading="lazy"><span>奥地利</span></span></strong>
+          <time>07-03 03:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>3 : 0</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M85">
+      <article class="bracket-node round-round_of_32" data-match-id="400021527">
         <span class="bracket-match-number">M85</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M85</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/sui.png" alt="瑞士 国旗" loading="lazy"><span>瑞士</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/alg.png" alt="阿尔及利亚 国旗" loading="lazy"><span>阿尔及利亚</span></span></strong>
+          <time>07-03 11:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>2 : 0</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M86">
+      <article class="bracket-node round-round_of_32" data-match-id="400021521">
         <span class="bracket-match-number">M86</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M86</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="阿根廷 国旗" loading="lazy"><span>阿根廷</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/cpv.png" alt="佛得角 国旗" loading="lazy"><span>佛得角</span></span></strong>
+          <time>07-04 06:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>3 : 2</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M87">
+      <article class="bracket-node round-round_of_32" data-match-id="400021517">
         <span class="bracket-match-number">M87</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M87</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="哥伦比亚 国旗" loading="lazy"><span>哥伦比亚</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/gha.png" alt="加纳 国旗" loading="lazy"><span>加纳</span></span></strong>
+          <time>07-04 09:30</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>1 : 0</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_32 placeholder" data-match-id="placeholder-M88">
+      <article class="bracket-node round-round_of_32" data-match-id="400021515">
         <span class="bracket-match-number">M88</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M88</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>待定</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/aus.png" alt="澳大利亚 国旗" loading="lazy"><span>澳大利亚</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/egy.png" alt="埃及 国旗" loading="lazy"><span>埃及</span></span></strong>
+          <time>07-04 02:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>1 : 1</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     </div>
@@ -694,91 +702,91 @@
         <section class="bracket-round bracket-round-round_of_16">
           <h3>16强</h3>
           <div class="bracket-node-list">
-      <article class="bracket-node round-round_of_16 placeholder" data-match-id="placeholder-M89">
+      <article class="bracket-node round-round_of_16" data-match-id="400021533">
         <span class="bracket-match-number">M89</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M89</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M73</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M74</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/par.png" alt="巴拉圭 国旗" loading="lazy"><span>巴拉圭</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/fra.png" alt="法国 国旗" loading="lazy"><span>法国</span></span></strong>
+          <time>07-05 05:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>0 : 1</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_16 placeholder" data-match-id="placeholder-M90">
+      <article class="bracket-node round-round_of_16" data-match-id="400021530">
         <span class="bracket-match-number">M90</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M90</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M75</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M76</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/can.png" alt="加拿大 国旗" loading="lazy"><span>加拿大</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/mar.png" alt="摩洛哥 国旗" loading="lazy"><span>摩洛哥</span></span></strong>
+          <time>07-05 01:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>0 : 3</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_16 placeholder" data-match-id="placeholder-M91">
+      <article class="bracket-node round-round_of_16" data-match-id="400021532">
         <span class="bracket-match-number">M91</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M91</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M77</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M78</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/bra.png" alt="巴西 国旗" loading="lazy"><span>巴西</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/nor.png" alt="挪威 国旗" loading="lazy"><span>挪威</span></span></strong>
+          <time>07-06 04:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>1 : 2</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_16 placeholder" data-match-id="placeholder-M92">
+      <article class="bracket-node round-round_of_16" data-match-id="400021531">
         <span class="bracket-match-number">M92</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M92</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M79</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M80</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/mex.png" alt="墨西哥 国旗" loading="lazy"><span>墨西哥</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/eng.png" alt="英格兰 国旗" loading="lazy"><span>英格兰</span></span></strong>
+          <time>07-06 09:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>2 : 3</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_16 placeholder" data-match-id="placeholder-M93">
+      <article class="bracket-node round-round_of_16" data-match-id="400021529">
         <span class="bracket-match-number">M93</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M93</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M81</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M82</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/por.png" alt="葡萄牙 国旗" loading="lazy"><span>葡萄牙</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/esp.png" alt="西班牙 国旗" loading="lazy"><span>西班牙</span></span></strong>
+          <time>07-07 03:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>0 : 1</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_16 placeholder" data-match-id="placeholder-M94">
+      <article class="bracket-node round-round_of_16" data-match-id="400021534">
         <span class="bracket-match-number">M94</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M94</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M83</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M84</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/usa.png" alt="美国 国旗" loading="lazy"><span>美国</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/bel.png" alt="比利时 国旗" loading="lazy"><span>比利时</span></span></strong>
+          <time>07-07 08:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>1 : 4</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_16 placeholder" data-match-id="placeholder-M95">
+      <article class="bracket-node round-round_of_16" data-match-id="400021528">
         <span class="bracket-match-number">M95</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M95</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M85</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M86</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="阿根廷 国旗" loading="lazy"><span>阿根廷</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/egy.png" alt="埃及 国旗" loading="lazy"><span>埃及</span></span></strong>
+          <time>07-08 00:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>3 : 2</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-round_of_16 placeholder" data-match-id="placeholder-M96">
+      <article class="bracket-node round-round_of_16" data-match-id="400021535">
         <span class="bracket-match-number">M96</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M96</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M87</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M88</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/sui.png" alt="瑞士 国旗" loading="lazy"><span>瑞士</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/col.png" alt="哥伦比亚 国旗" loading="lazy"><span>哥伦比亚</span></span></strong>
+          <time>07-08 04:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>0 : 0</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     </div>
@@ -787,47 +795,47 @@
         <section class="bracket-round bracket-round-quarter_finals">
           <h3>8强</h3>
           <div class="bracket-node-list">
-      <article class="bracket-node round-quarter_finals placeholder" data-match-id="placeholder-M97">
+      <article class="bracket-node round-quarter_finals" data-match-id="400021536">
         <span class="bracket-match-number">M97</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M97</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M89</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M90</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/fra.png" alt="法国 国旗" loading="lazy"><span>法国</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/mar.png" alt="摩洛哥 国旗" loading="lazy"><span>摩洛哥</span></span></strong>
+          <time>07-10 04:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>2 : 0</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-quarter_finals placeholder" data-match-id="placeholder-M98">
+      <article class="bracket-node round-quarter_finals" data-match-id="400021538">
         <span class="bracket-match-number">M98</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M98</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M91</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M92</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/esp.png" alt="西班牙 国旗" loading="lazy"><span>西班牙</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/bel.png" alt="比利时 国旗" loading="lazy"><span>比利时</span></span></strong>
+          <time>07-11 03:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>2 : 1</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-quarter_finals placeholder" data-match-id="placeholder-M99">
+      <article class="bracket-node round-quarter_finals" data-match-id="400021539">
         <span class="bracket-match-number">M99</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M99</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M93</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M94</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/nor.png" alt="挪威 国旗" loading="lazy"><span>挪威</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/eng.png" alt="英格兰 国旗" loading="lazy"><span>英格兰</span></span></strong>
+          <time>07-12 05:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>1 : 2</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
-      <article class="bracket-node round-quarter_finals placeholder" data-match-id="placeholder-M100">
+      <article class="bracket-node round-quarter_finals" data-match-id="400021537">
         <span class="bracket-match-number">M100</span>
         <div class="bracket-node-card">
           <div class="bracket-node-top"><span>M100</span></div>
-          <strong><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M95</span></span><em>vs</em><span class="team-inline"><span class="team-flag small placeholder" aria-hidden="true"></span><span>胜者 M96</span></span></strong>
-          <time>待定</time>
-          <div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>
-          <div class="bracket-wdl-mini"><div class="bracket-status">待定</div></div>
+          <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="阿根廷 国旗" loading="lazy"><span>阿根廷</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/sui.png" alt="瑞士 国旗" loading="lazy"><span>瑞士</span></span></strong>
+          <time>07-12 09:00</time>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>3 : 1</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     </div>
@@ -836,14 +844,14 @@
         <section class="bracket-round bracket-round-semi_finals">
           <h3>4强</h3>
           <div class="bracket-node-list">
-      <article class="bracket-node round-semi_finals current-window" data-match-id="400021541">
+      <article class="bracket-node round-semi_finals" data-match-id="400021541">
         <span class="bracket-match-number">M101</span>
         <div class="bracket-node-card">
-          <div class="bracket-node-top"><span>M101</span><span class="window-badge">当前窗口</span></div>
+          <div class="bracket-node-top"><span>M101</span></div>
           <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/fra.png" alt="法国 国旗" loading="lazy"><span>法国</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/esp.png" alt="西班牙 国旗" loading="lazy"><span>西班牙</span></span></strong>
           <time>07-15 03:00</time>
-          <div class="bracket-mini-title">前3预测比分</div><div class="mini-score-wrap"><span>前3预测比分</span><div class="mini-score-tabs"><span class="mini-score-tab active">主推荐 <b>0-2</b></span><span class="mini-score-tab">Top 2 <b>1-2</b></span><span class="mini-score-tab">Top 3 <b>0-1</b></span></div></div>
-          <div class="bracket-wdl-mini"><span class="home">胜 0%</span><span class="draw">平 0%</span><span class="away">负 100%</span></div>
+          <div class="bracket-node-divider"></div><div class="bracket-real-result"><span>完赛</span><strong>0 : 2</strong></div>
+          <div class="bracket-wdl-mini"><div class="bracket-status completed">官方真实赛果</div></div>
         </div>
       </article>
     
@@ -854,7 +862,7 @@
           <strong><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/eng.png" alt="英格兰 国旗" loading="lazy"><span>英格兰</span></span><em>vs</em><span class="team-inline"><img class="team-flag small" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="阿根廷 国旗" loading="lazy"><span>阿根廷</span></span></strong>
           <time>07-16 03:00</time>
           <div class="bracket-mini-title">前3预测比分</div><div class="mini-score-wrap"><span>前3预测比分</span><div class="mini-score-tabs"><span class="mini-score-tab active">主推荐 <b>1-1</b></span><span class="mini-score-tab">Top 2 <b>2-1</b></span><span class="mini-score-tab">Top 3 <b>1-2</b></span></div></div>
-          <div class="bracket-wdl-mini"><span class="home">胜 35%</span><span class="draw">平 30%</span><span class="away">负 35%</span></div>
+          <div class="bracket-wdl-mini"><span class="home">胜 34%</span><span class="draw">平 33%</span><span class="away">负 33%</span></div>
         </div>
       </article>
     </div>
@@ -891,21 +899,21 @@
     <section class="usage-panel night-card">
       <h2>Token / Cost</h2>
       <div class="usage-grid">
-        <div class="usage-card input"><span>输入 TOKEN</span><strong>49642</strong></div>
-        <div class="usage-card output"><span>输出 TOKEN</span><strong>15554</strong></div>
-        <div class="usage-card total"><span>总 TOKEN</span><strong>65196</strong></div>
-        <div class="usage-card cost"><span>预计成本</span><strong>0.651960</strong></div>
+        <div class="usage-card input"><span>输入 TOKEN</span><strong>210475</strong></div>
+        <div class="usage-card output"><span>输出 TOKEN</span><strong>11160</strong></div>
+        <div class="usage-card total"><span>总 TOKEN</span><strong>221635</strong></div>
+        <div class="usage-card cost"><span>预计成本</span><strong>2.216350</strong></div>
       </div>
     </section>
 
     <section class="overview night-card">
       <h2>总览</h2>
-      <p>世界杯半决赛日：法国与西班牙的较量已果，西班牙2-0完胜；英格兰与阿根廷的焦点战即将在亚特兰大上演，双方势均力敌，平局与一球胜负皆有可能。</p>
+      <p>2026世界杯半决赛焦点战，英格兰与阿根廷争夺决赛席位。两队阵容齐整，实力极为接近。市场隐含概率显示英格兰主胜略高（35.75%），但平局和客胜概率也都在32%左右，反映出极高的不确定性。根据模型分析，本场很可能以平局进入加时或点球，常规时间最可能比分为1-1。英格兰的快速转换与阿根廷的明星进攻将是胜负手，整体风险等级高。</p>
     </section>
 
     <section class="overview night-card">
       <h2>风险概览</h2>
-      <p>已结束的法国vs西班牙无风险；英格兰vs阿根廷属顶尖对决，预测分布均匀，可能出现单球决胜或点球大战，谨慎对待投注选项。</p>
+      <p>本场世界杯半决赛双方实力相当，任何赛果均有可能。市场赔率未显示明显倾向，建议关注临场首发和动态。若打平进入加时，偶然性更大，整体风险等级高。</p>
     </section>
 
     <section class="legend night-card">
@@ -916,105 +924,6 @@
       <span><a href="latest.json">查看 data/latest.json</a></span>
     </section>
     
-    <section class="match-day" data-match-day="2026-07-14">
-      <div class="section-head">
-        <div>
-          <h2>7月14日比赛日</h2>
-          <p class="muted compact">北京时间 07-14 18:00 - 07-15 18:00，按北京时间升序排列</p>
-        </div>
-        <div class="day-count">1 场</div>
-      </div>
-      <section class="match-grid">
-      <article class="match-card">
-        <div class="match-topline">
-          <h3 class="match-title-teams"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/fra.png" alt="法国 国旗" loading="lazy"><span>法国</span></span><span class="versus">vs</span><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/esp.png" alt="西班牙 国旗" loading="lazy"><span>西班牙</span></span></h3>
-          <time datetime="2026-07-15T03:00:00+08:00">北京时间 07-15 03:00</time>
-        </div>
-        <div class="scoreboard">
-          <div class="score-side">
-            <span class="score-team-name"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/fra.png" alt="法国 国旗" loading="lazy"><span>法国</span></span></span>
-            <strong>0</strong>
-          </div>
-          <div class="score-separator">:</div>
-          <div class="score-side away-side">
-            <span class="score-team-name"><span class="team-inline reverse"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/esp.png" alt="西班牙 国旗" loading="lazy"><span>西班牙</span></span></span>
-            <strong>2</strong>
-          </div>
-        </div>
-        <div class="probability-panel">
-          
-      <div class="prob-heading">主胜 / 平 / 客胜概率</div>
-      <div class="prob-labels">
-        <span><i class="dot home"></i>主胜 0%</span>
-        <span><i class="dot draw"></i>平局 0%</span>
-        <span><i class="dot away"></i>客胜 100%</span>
-      </div>
-      <div class="prob-stack" aria-hidden="true">
-        <span class="seg home" style="width:0.000%"></span>
-        <span class="seg draw" style="width:0.000%"></span>
-        <span class="seg away" style="width:100.000%"></span>
-      </div>
-      <div class="prob-values">
-        <span>0%</span>
-        <span>0%</span>
-        <span>100%</span>
-      </div>
-    
-        </div>
-        <div class="metric-grid">
-          <span><b>xG</b>法国 0.30</span>
-          <span><b>xG</b>西班牙 1.80</span>
-          <span><b>爆冷概率</b>0%</span>
-          <span><b>赔率</b>unavailable</span>
-        </div>
-        
-        <section class="score-options" data-score-tabs>
-          <h4>前3预测比分</h4>
-          <div class="score-tab-labels" role="tablist"><button class="score-tab active" type="button" role="tab" aria-selected="true" data-score-tab="score-400021541-1"><span>主推荐</span><strong>0-2</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021541-2"><span>Top 2</span><strong>1-2</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021541-3"><span>Top 3</span><strong>0-1</strong></button></div>
-          <div class="score-tab-panels"><article class="score-tab-panel active" role="tabpanel" data-score-panel="score-400021541-1"><h5>主推荐 · 0-2</h5><p>西班牙全程控球压制，法国无明显破门良机。</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021541-2"><h5>Top 2 · 1-2</h5><p>法国若利用定位球扳回一城，仍难阻西班牙整体优势。</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021541-3"><h5>Top 3 · 0-1</h5><p>西班牙保守领先，一球小胜亦有可能。</p></article></div>
-        </section>
-    
-        
-        <details class="matchup-panel" open>
-          <summary>对战结构图</summary>
-          <div class="graph-summary-grid">
-            <span><b>优势方</b>客队</span>
-            <span><b>关键对位</b>中场控球权争夺</span>
-            <span><b>风险触发点</b>无，比赛已结束</span>
-          </div>
-          <p class="graph-summary">西班牙全面占优，通过中场控制和精准进攻完胜法国。</p>
-          <div class="graph-node-grid">
-            <section><h5>主队结构</h5><article class="graph-node home"><div><strong>主队进攻</strong><span>强度 70/100</span></div><p>姆巴佩领衔的反击线速度极快，但本场被有效限制。</p></article><article class="graph-node home"><div><strong>主队中场/转换</strong><span>强度 80/100</span></div><p>坎特和楚阿梅尼未能控制中场，出球困难。</p></article><article class="graph-node home"><div><strong>主队防守</strong><span>强度 75/100</span></div><p>防线整体表现尚可，但被渗透性传球打穿。</p></article></section>
-            <section><h5>客队结构</h5><article class="graph-node away"><div><strong>客队进攻</strong><span>强度 88/100</span></div><p>佩德里、莫拉塔领衔的前场多点开花，效率极高。</p></article><article class="graph-node away"><div><strong>客队中场/转换</strong><span>强度 90/100</span></div><p>布斯克茨、加维等掌控节奏，传球成功率极高。</p></article><article class="graph-node away"><div><strong>客队防守</strong><span>强度 85/100</span></div><p>稳固的防线在高压下零封法国。</p></article></section>
-          </div>
-          <div class="graph-edge-list">
-            <h5>关键关系</h5>
-            <article class="graph-edge impact-high"><div><strong>渗透 vs 链式防守</strong><span>高</span></div><p>西班牙的短传渗透屡次打穿法国防线。</p><small>away_attack → home_defense · away_to_home</small></article><article class="graph-edge impact-high"><div><strong>控球 vs 拦截</strong><span>高</span></div><p>西班牙中场绝对控制，法国难以取得球权。</p><small>away_midfield → home_midfield · away_to_home</small></article><article class="graph-edge impact-low"><div><strong>速度 vs 站位</strong><span>低</span></div><p>法国零星反击被西班牙防线轻松化解。</p><small>home_attack → away_defense · home_to_away</small></article>
-          </div>
-        </details>
-    
-        
-        <details class="factor-panel" open>
-          <summary>分析因子</summary>
-          <div class="factor-grid"><section class="factor-item"><h5>市场信号</h5><p>赔率数据不可用。</p></section><section class="factor-item"><h5>FIFA 实力先验</h5><p>两队均为世界顶级强队，长期实力接近，西班牙略占技术优势。</p></section><section class="factor-item"><h5>近期状态</h5><p>近期状态均佳，西班牙传控体系成熟，法国反击效率下滑。</p></section><section class="factor-item"><h5>小组形势</h5><p>半决赛，胜者晋级决赛。</p></section><section class="factor-item"><h5>伤停/轮换</h5><p>伤病情况未知。</p></section><section class="factor-item"><h5>天气/场地</h5><p>天气及场地情况未知。</p></section><section class="factor-item"><h5>战术关键</h5><p>西班牙高位控球vs法国快速转换，法国中场拦截不足致失控。</p></section><section class="factor-item"><h5>不确定性</h5><p>比赛已结束，无不确定性。</p></section></div>
-        </details>
-    
-        <div class="analysis-block">
-          <section><h4>战术分析</h4><p>西班牙经典的4-3-3传控体系完全克制了法国的4-2-3-1，后者缺乏中场衔接，反击无从发起。</p></section>
-          <section><h4>风险分析</h4><p class="risk-text">比赛已结束，无风险。</p></section>
-          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class="muted compact">伤病情况未知 伤病情况未知 无已知伤病影响比赛。</p></section>
-          <section><h4>赔率对比</h4><p>真实赔率源未提供 moneyline，显示 unavailable。</p></section>
-        </div>
-        <div class="match-footer">
-          <span>置信度 <b class="confidence high">高</b></span>
-          <span>比赛 ID: 400021541</span>
-          <a class="source-link" href="https://www.espn.com/soccer/match/_/gameId/760514" rel="noopener" target="_blank">来源</a>
-        </div>
-        <p class="venue-line">Dallas Stadium - Dallas - USA</p>
-      </article>
-    </section>
-    </section>
-            
     <section class="match-day" data-match-day="2026-07-15">
       <div class="section-head">
         <div>
@@ -1029,7 +938,8 @@
           <h3 class="match-title-teams"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/eng.png" alt="英格兰 国旗" loading="lazy"><span>英格兰</span></span><span class="versus">vs</span><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/arg.png" alt="阿根廷 国旗" loading="lazy"><span>阿根廷</span></span></h3>
           <time datetime="2026-07-16T03:00:00+08:00">北京时间 07-16 03:00</time>
         </div>
-        <div class="scoreboard">
+        <div class="scoreboard-mode predicted-result">未开赛 · 预测比分</div>
+        <div class="scoreboard predicted-result">
           <div class="score-side">
             <span class="score-team-name"><span class="team-inline"><img class="team-flag" src="https://a.espncdn.com/i/teamlogos/countries/500/eng.png" alt="英格兰 国旗" loading="lazy"><span>英格兰</span></span></span>
             <strong>1</strong>
@@ -1040,37 +950,38 @@
             <strong>1</strong>
           </div>
         </div>
+        
         <div class="probability-panel">
           
       <div class="prob-heading">主胜 / 平 / 客胜概率</div>
       <div class="prob-labels">
-        <span><i class="dot home"></i>主胜 35%</span>
-        <span><i class="dot draw"></i>平局 30%</span>
-        <span><i class="dot away"></i>客胜 35%</span>
+        <span><i class="dot home"></i>主胜 34%</span>
+        <span><i class="dot draw"></i>平局 33%</span>
+        <span><i class="dot away"></i>客胜 33%</span>
       </div>
       <div class="prob-stack" aria-hidden="true">
-        <span class="seg home" style="width:35.000%"></span>
-        <span class="seg draw" style="width:30.000%"></span>
-        <span class="seg away" style="width:35.000%"></span>
+        <span class="seg home" style="width:34.000%"></span>
+        <span class="seg draw" style="width:33.000%"></span>
+        <span class="seg away" style="width:33.000%"></span>
       </div>
       <div class="prob-values">
-        <span>35%</span>
-        <span>30%</span>
-        <span>35%</span>
+        <span>34%</span>
+        <span>33%</span>
+        <span>33%</span>
       </div>
     
         </div>
         <div class="metric-grid">
           <span><b>xG</b>英格兰 1.20</span>
           <span><b>xG</b>阿根廷 1.10</span>
-          <span><b>爆冷概率</b>10%</span>
-          <span><b>赔率</b>主胜 35.12% / 平 33.27% / 客胜 31.61%</span>
+          <span><b>爆冷概率</b>33%</span>
+          <span><b>赔率</b>主胜 35.75% / 平 32.67% / 客胜 31.58%</span>
         </div>
         
         <section class="score-options" data-score-tabs>
           <h4>前3预测比分</h4>
           <div class="score-tab-labels" role="tablist"><button class="score-tab active" type="button" role="tab" aria-selected="true" data-score-tab="score-400021540-1"><span>主推荐</span><strong>1-1</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021540-2"><span>Top 2</span><strong>2-1</strong></button><button class="score-tab" type="button" role="tab" aria-selected="false" data-score-tab="score-400021540-3"><span>Top 3</span><strong>1-2</strong></button></div>
-          <div class="score-tab-panels"><article class="score-tab-panel active" role="tabpanel" data-score-panel="score-400021540-1"><h5>主推荐 · 1-1</h5><p>双方进攻端均有王牌，防守稳固，大概率握手言和。</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021540-2"><h5>Top 2 · 2-1</h5><p>英格兰若发挥主场氛围与边路速度，可险胜。</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021540-3"><h5>Top 3 · 1-2</h5><p>阿根廷凭梅西灵光一现及团队防守，有望客胜。</p></article></div>
+          <div class="score-tab-panels"><article class="score-tab-panel active" role="tabpanel" data-score-panel="score-400021540-1"><h5>主推荐 · 1-1</h5><p>两队防守稳固且进攻谨慎，半决赛可能出现胶着平局</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021540-2"><h5>Top 2 · 2-1</h5><p>英格兰利用主场之势和边路冲击，率先破门后艰难保胜</p></article><article class="score-tab-panel" role="tabpanel" data-score-panel="score-400021540-3"><h5>Top 3 · 1-2</h5><p>阿根廷凭借球星灵光一现和高效反击，在客场取得险胜</p></article></div>
         </section>
     
         
@@ -1079,39 +990,50 @@
           <div class="graph-summary-grid">
             <span><b>优势方</b>均衡</span>
             <span><b>关键对位</b>梅西 vs 英格兰防线</span>
-            <span><b>风险触发点</b>开场过早失球可能导致战术失衡，强强对话中先丢球一方极为被动。</span>
+            <span><b>风险触发点</b>过早失球可能迫使一方冒险，导致比赛局面失控。</span>
           </div>
-          <p class="graph-summary">两队攻守能力极端接近，胜负手可能在于定位球或瞬间灵感。</p>
+          <p class="graph-summary">核心矛盾在于英格兰的快速转换能否击穿阿根廷防线，同时阿根廷的明星进攻能否破解英格兰的密集防守。中场对抗或将决定比赛走向。</p>
           <div class="graph-node-grid">
-            <section><h5>主队结构</h5><article class="graph-node home"><div><strong>主队进攻</strong><span>强度 85/100</span></div><p>凯恩、萨卡、福登等组成的攻击群速度快、冲击力强。</p></article><article class="graph-node home"><div><strong>主队中场/转换</strong><span>强度 82/100</span></div><p>赖斯与贝林厄姆负责攻守转换，创造力稍显不足。</p></article><article class="graph-node home"><div><strong>主队防守</strong><span>强度 80/100</span></div><p>斯通斯领导的后防线经验丰富，但移动速度可能被针对。</p></article></section>
-            <section><h5>客队结构</h5><article class="graph-node away"><div><strong>客队进攻</strong><span>强度 90/100</span></div><p>梅西仍是绝对核心，阿尔瓦雷斯和迪马利亚可提供致命一击。</p></article><article class="graph-node away"><div><strong>客队中场/转换</strong><span>强度 85/100</span></div><p>德保罗、麦卡利斯特等擅长控球与绞杀。</p></article><article class="graph-node away"><div><strong>客队防守</strong><span>强度 78/100</span></div><p>以奥塔门迪为首，组织严密，但边路可能被速度扯开。</p></article></section>
+            <section><h5>主队结构</h5><article class="graph-node home"><div><strong>主队进攻</strong><span>强度 85/100</span></div><p>英格兰锋线速度快，冲击力强，但终结能力有时不稳</p></article><article class="graph-node home"><div><strong>主队中场/转换</strong><span>强度 80/100</span></div><p>英格兰中场组织能力不俗，但面对高压可能出球困难</p></article><article class="graph-node home"><div><strong>主队防守</strong><span>强度 78/100</span></div><p>英格兰后防线经验丰富，但面对阿根廷灵活进攻可能吃力</p></article></section>
+            <section><h5>客队结构</h5><article class="graph-node away"><div><strong>客队进攻</strong><span>强度 88/100</span></div><p>阿根廷进攻线星光熠熠，个人突破和团队配合均可制造杀机</p></article><article class="graph-node away"><div><strong>客队中场/转换</strong><span>强度 82/100</span></div><p>阿根廷中场控球和传递能力强，但拦截硬度稍弱</p></article><article class="graph-node away"><div><strong>客队防守</strong><span>强度 80/100</span></div><p>阿根廷防守体系稳健，但边路可能被英格兰速度针对</p></article></section>
           </div>
           <div class="graph-edge-list">
             <h5>关键关系</h5>
-            <article class="graph-edge impact-high"><div><strong>边路冲击 vs 防守宽度</strong><span>高</span></div><p>英格兰的萨卡、拉什福德将频繁冲击阿根廷边后卫。</p><small>home_attack → away_defense · home_to_away</small></article><article class="graph-edge impact-high"><div><strong>梅西串联 vs 多人包夹</strong><span>高</span></div><p>如何限制梅西的拿球与突破是英格兰防线最大课题。</p><small>away_attack → home_defense · away_to_home</small></article><article class="graph-edge impact-medium"><div><strong>物理对抗 vs 技术控制</strong><span>中</span></div><p>贝林厄姆与德保罗的直接对话将影响节奏。</p><small>home_midfield → away_midfield · balanced</small></article>
+            <article class="graph-edge impact-high"><div><strong>英格兰快速冲击考验阿根廷防线</strong><span>高</span></div><p>英格兰边路速度将是对阿根廷防守的最大威胁</p><small>home_attack → away_defense · home_to_away</small></article><article class="graph-edge impact-high"><div><strong>阿根廷豪华攻击群直面英格兰后防</strong><span>高</span></div><p>阿根廷锋线个人能力突出，可能打破英格兰防线缺口</p><small>away_attack → home_defense · away_to_home</small></article><article class="graph-edge impact-medium"><div><strong>中场控制权争夺</strong><span>中</span></div><p>两队都会力求控球，中场绞杀将决定比赛节奏</p><small>home_midfield → away_midfield · balanced</small></article>
           </div>
         </details>
     
         
         <details class="factor-panel" open>
           <summary>分析因子</summary>
-          <div class="factor-grid"><section class="factor-item"><h5>市场信号</h5><p>DraftKings资金线：主胜+170，平+185，客胜+200；市场轻微倾向主队，但差值极小。</p></section><section class="factor-item"><h5>FIFA 实力先验</h5><p>英格兰与阿根廷均为FIFA排名前五的传统劲旅，近年大赛成绩稳定。</p></section><section class="factor-item"><h5>近期状态</h5><p>英格兰2024欧洲杯表现强势，阿根廷为卫冕冠军，近战均保持不败。</p></section><section class="factor-item"><h5>小组形势</h5><p>半决赛，胜者挺进决赛，双方战意极强。</p></section><section class="factor-item"><h5>伤停/轮换</h5><p>伤病情况未知，预计主力阵容齐整。</p></section><section class="factor-item"><h5>天气/场地</h5><p>亚特兰大体育场，天气未知。</p></section><section class="factor-item"><h5>战术关键</h5><p>中场争夺与梅西的个人发挥将成为破局关键。</p></section><section class="factor-item"><h5>不确定性</h5><p>高水平对决，任何微小细节都可能改变走势，不确定性高。</p></section></div>
+          <div class="factor-grid"><section class="factor-item"><h5>市场信号</h5><p>市场隐含概率接近，英格兰主胜略高但无明显优势</p></section><section class="factor-item"><h5>FIFA 实力先验</h5><p>两队均为顶级强队，FIFA排名接近，长期实力相当</p></section><section class="factor-item"><h5>近期状态</h5><p>英格兰近期击败挪威，阿根廷击败瑞士，均展现出强队韧性</p></section><section class="factor-item"><h5>小组形势</h5><p>半决赛单场淘汰，压力巨大，胜者晋级决赛</p></section><section class="factor-item"><h5>伤停/轮换</h5><p>双方伤停情况未知，假设全主力出战</p></section><section class="factor-item"><h5>天气/场地</h5><p>亚特兰大体育场，天气未知</p></section><section class="factor-item"><h5>战术关键</h5><p>英格兰可能依靠控制中场和快速反击，阿根廷则依赖明星球员个人能力</p></section><section class="factor-item"><h5>不确定性</h5><p>双方实力接近，结果高度不确定</p></section></div>
         </details>
     
         <div class="analysis-block">
-          <section><h4>战术分析</h4><p>预计英格兰将依靠年轻活力与边路速度冲击阿根廷防线，而阿根廷将凭借梅西的创造力与整体控球寻求致命渗透。</p></section>
-          <section><h4>风险分析</h4><p class="risk-text">强强对话，平局概率较高，任何一方小胜均不意外；若出现红牌或关键失误，可能打破均势。</p></section>
-          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class="muted compact">伤病情况未知 伤病情况未知 双方均无明确伤病报告，可派出最强阵。</p></section>
-          <section><h4>赔率对比</h4><p>ENG +170: 主胜 35.12% / 平 33.27% / 客胜 31.61%. 模型较市场更看好客队阿根廷，平局概率略微看低，但总体差异在合理区间。</p></section>
+          <section><h4>战术分析</h4><p>英格兰可能采用4-2-3-1，利用边路快速冲击和凯恩的支点作用；阿根廷预计以4-1-3-2应对，强调梅西的回撤组织与前锋的双人反击。双方在中场的争夺将异常激烈。</p></section>
+          <section><h4>风险分析</h4><p class="risk-text">本场为半决赛，双方都会极为谨慎。市场赔率波动小，但赛事重大可能影响球员心理。若正常时间内无法分出胜负，加时赛和点球风险上升。</p></section>
+          <section><h4>伤停信息</h4><p>主队: unknown; 客队: unknown</p><p class="muted compact">未知，假定全员健康 未知，假定全员健康 目前无重大伤停报告，两队均可强阵出击</p></section>
+          <section><h4>赔率对比</h4><p>ENG +165: 主胜 35.75% / 平 32.67% / 客胜 31.58%. 模型预测与市场接近，平局概率略高，反映对常规时间内分出胜负的谨慎态度。市场主胜赔率稍热，但模型认为平局和客胜概率不应被低估。</p></section>
         </div>
         <div class="match-footer">
-          <span>置信度 <b class="confidence medium">中</b></span>
+          <span>置信度 <b class="confidence low">低</b></span>
           <span>比赛 ID: 400021540</span>
           <a class="source-link" href="https://www.espn.com/soccer/match/_/gameId/760515" rel="noopener" target="_blank">来源</a>
         </div>
         <p class="venue-line">Atlanta Stadium - Atlanta - USA</p>
       </article>
     </section>
+    </section>
+            
+    <section class="match-day" data-match-day="2026-07-16">
+      <div class="section-head">
+        <div>
+          <h2>7月16日比赛日</h2>
+          <p class="muted compact">北京时间 07-16 18:00 - 07-17 18:00，按北京时间升序排列</p>
+        </div>
+        <div class="day-count">0 场</div>
+      </div>
+      <section class="match-grid"><div class="empty">该中国比赛日暂无通过 FIFA + ESPN 双源校验的世界杯比赛。</div></section>
     </section>
             
     <footer class="page-footer">
