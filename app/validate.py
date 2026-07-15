@@ -211,6 +211,38 @@ def validate_teams_flag_fields(teams: Any, prefix: str, errors: list[str]) -> No
     for side in ("home", "away"):
         validate_team_flag_fields(teams.get(side), f"{prefix}.{side}", errors)
 
+
+def valid_result_score(value: Any) -> bool:
+    return isinstance(value, int) and not isinstance(value, bool) and value >= 0
+
+
+def validate_result(result: Any, prefix: str, errors: list[str]) -> None:
+    if not isinstance(result, dict):
+        errors.append(f"{prefix} must be an object")
+        return
+    completed = result.get("completed")
+    if not isinstance(completed, bool):
+        errors.append(f"{prefix}.completed must be a boolean")
+        return
+    status = result.get("status")
+    if status not in {"scheduled", "in_progress", "completed"}:
+        errors.append(f"{prefix}.status must be scheduled, in_progress, or completed")
+    home = result.get("home_score")
+    away = result.get("away_score")
+    display = result.get("display")
+    if completed:
+        if status != "completed":
+            errors.append(f"{prefix}.status must be completed when completed is true")
+        if not valid_result_score(home) or not valid_result_score(away):
+            errors.append(f"{prefix} completed result requires non-negative integer home_score/away_score")
+        elif display != f"{home}-{away}":
+            errors.append(f"{prefix}.display must match the completed score")
+        if not isinstance(result.get("source"), str) or not result.get("source"):
+            errors.append(f"{prefix}.source is required for a completed result")
+    elif home is not None or away is not None or display is not None:
+        errors.append(f"{prefix} scheduled/in-progress result must not carry a final score")
+
+
 def validate_structure_score_options(options: Any, prefix: str, errors: list[str]) -> None:
     if not isinstance(options, list) or len(options) != 3:
         errors.append(f"{prefix} must contain exactly 3 score tab options")
@@ -251,12 +283,15 @@ def validate_structure_node(
         errors.append(f"{prefix}.teams is required")
     else:
         validate_teams_flag_fields(node.get("teams"), f"{prefix}.teams", errors)
+    validate_result(node.get("result"), f"{prefix}.result", errors)
     if node.get("match_number") in (None, ""):
         errors.append(f"{prefix}.match_number is required")
     if "round_key" not in node:
         errors.append(f"{prefix}.round_key is required")
     if not isinstance(node.get("placeholder"), bool):
         errors.append(f"{prefix}.placeholder must be a boolean")
+    elif node.get("placeholder") and isinstance(node.get("result"), dict) and node["result"].get("completed"):
+        errors.append(f"{prefix} placeholder node must not carry a completed result")
     if not isinstance(node.get("kickoff_display"), str) or "北京时间" not in node.get("kickoff_display", ""):
         errors.append(f"{prefix}.kickoff_display must use Beijing time")
     current = bool(node.get("current_window"))
@@ -382,6 +417,7 @@ def validate_tournament_structure(data: dict[str, Any], matches: Any, render: An
 
 def validate_match(match: dict[str, Any], index: int, errors: list[str]) -> None:
     validate_teams_flag_fields(match.get("teams"), f"matches[{index}].teams", errors)
+    validate_result(match.get("result"), f"matches[{index}].result", errors)
     validate_probabilities(match, index, errors)
     validate_score_options(match, index, errors)
     validate_method_factors(match, index, errors)
@@ -485,6 +521,27 @@ def validate(data: dict[str, Any]) -> tuple[bool, list[str]]:
                 errors.append("render must not display forbidden probability text")
         if "UTC" in render or "Z</time>" in render:
             errors.append("render must not visibly display UTC time")
+        if isinstance(matches, list):
+            has_completed = any(
+                isinstance(match, dict)
+                and isinstance(match.get("result"), dict)
+                and match["result"].get("completed") is True
+                for match in matches
+            )
+            has_scheduled = any(
+                isinstance(match, dict)
+                and isinstance(match.get("result"), dict)
+                and match["result"].get("completed") is False
+                for match in matches
+            )
+            if has_completed:
+                for fragment in ("完赛 · 真实比分", "赛前预测", "actual-result"):
+                    if fragment not in render:
+                        errors.append(f"render must include completed-result fragment {fragment}")
+            if has_scheduled:
+                for fragment in ("未开赛 · 预测比分", "predicted-result"):
+                    if fragment not in render:
+                        errors.append(f"render must include scheduled-result fragment {fragment}")
 
     return not errors, errors
 

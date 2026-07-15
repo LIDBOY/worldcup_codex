@@ -36,7 +36,8 @@ FIFA_SEARCH_KEY = os.getenv(
 
 DEFAULT_LEAGUE = os.getenv("WORLDCUP_ESPN_LEAGUE", "fifa.world")
 DEFAULT_DAYS = int(os.getenv("WORLDCUP_WINDOW_DAYS", "2"))
-STRUCTURE_MATCH_DAYS = int(os.getenv("WORLDCUP_STRUCTURE_MATCH_DAYS", "21"))
+STRUCTURE_MATCH_DAYS = int(os.getenv("WORLDCUP_STRUCTURE_MATCH_DAYS", "45"))
+TOURNAMENT_START_DATE = dt.date.fromisoformat(os.getenv("WORLDCUP_TOURNAMENT_START", "2026-06-11"))
 REQUEST_TIMEOUT = int(os.getenv("WORLDCUP_REQUEST_TIMEOUT", "25"))
 DEEPSEEK_REQUEST_TIMEOUT = int(os.getenv("DEEPSEEK_REQUEST_TIMEOUT", "180"))
 INJURY_LOOKBACK_DAYS = int(os.getenv("WORLDCUP_INJURY_LOOKBACK_DAYS", "180"))
@@ -279,6 +280,15 @@ def china_match_day_window(day_count: int = DEFAULT_DAYS, start_date: dt.date | 
     }
 
 
+def tournament_structure_window(display_window: dict[str, Any]) -> dict[str, Any]:
+    display_start = dt.datetime.fromisoformat(display_window["start_iso"])
+    display_end = dt.datetime.fromisoformat(display_window["end_iso"])
+    first_date = min(TOURNAMENT_START_DATE, display_start.date())
+    first_start = dt.datetime.combine(first_date, dt.time(MATCH_DAY_START_HOUR), SHANGHAI_TZ)
+    required_days = max(1, (display_end.date() - first_start.date()).days + 1)
+    return china_match_day_window(max(STRUCTURE_MATCH_DAYS, required_days), first_date)
+
+
 def fifa_fetch_span_for_china_window(window: dict[str, Any]) -> tuple[dt.date, int]:
     start = dt.datetime.fromisoformat(window["start_iso"])
     end = dt.datetime.fromisoformat(window["end_iso"])
@@ -462,6 +472,85 @@ def team_flag_metadata(*codes: Any, flag_url_value: Any = None) -> dict[str, str
         "flag_emoji": flag_emoji_from_code(country_code),
     }
 
+
+def non_negative_score(value: Any) -> int | None:
+    if isinstance(value, bool) or value is None:
+        return None
+    if isinstance(value, int):
+        return value if value >= 0 else None
+    text = str(value).strip()
+    if not re.fullmatch(r"\d+", text):
+        return None
+    return int(text)
+
+
+def match_status_completed(status: Any) -> bool:
+    if isinstance(status, dict):
+        if status.get("completed") is True:
+            return True
+        match_status = non_negative_score(status.get("match_status"))
+        officiality_status = non_negative_score(status.get("officiality_status"))
+        result_type = non_negative_score(status.get("result_type"))
+        if match_status == 0 and (officiality_status or 0) > 0 and (result_type or 0) > 0:
+            return True
+        values = [
+            status.get("state"),
+            status.get("name"),
+            status.get("detail"),
+            status.get("description"),
+            status.get("match_status"),
+            status.get("officiality_status"),
+            status.get("result_type"),
+        ]
+        return any(match_status_completed(value) for value in values if value is not None)
+    normalized = re.sub(r"[^a-z0-9]+", " ", str(status or "").lower()).strip()
+    if not normalized:
+        return False
+    return normalized in {
+        "post",
+        "complete",
+        "completed",
+        "finished",
+        "final",
+        "status final",
+        "played",
+        "full time",
+        "fulltime",
+        "after extra time",
+        "after penalties",
+    }
+
+
+def match_result_status(status: Any) -> str:
+    if match_status_completed(status):
+        return "completed"
+    values = status.values() if isinstance(status, dict) else [status]
+    normalized = " ".join(str(value or "").lower() for value in values)
+    if any(token in normalized for token in ("in progress", "inprogress", "live", "half time", "halftime")):
+        return "in_progress"
+    return "scheduled"
+
+
+def normalize_match_result(
+    status: Any,
+    home_score: Any,
+    away_score: Any,
+    source: str,
+) -> dict[str, Any]:
+    completed = match_status_completed(status)
+    home = non_negative_score(home_score) if completed else None
+    away = non_negative_score(away_score) if completed else None
+    valid = completed and home is not None and away is not None
+    return {
+        "status": "completed" if valid else match_result_status(status),
+        "completed": bool(valid),
+        "home_score": home if valid else None,
+        "away_score": away if valid else None,
+        "display": f"{home}-{away}" if valid else None,
+        "source": source,
+    }
+
+
 def team_from_fifa(raw: dict[str, Any], placeholder: str | None = None) -> dict[str, Any]:
     name_en = localized(raw.get("TeamName"), raw.get("ShortClubName") or placeholder or "Unknown team")
     if not name_en or name_en == "Unknown team":
@@ -512,6 +601,11 @@ def transform_fifa_match(item: dict[str, Any]) -> dict[str, Any]:
     kickoff = parse_date(item["Date"]) if item.get("Date") else utc_now()
     stadium = item.get("Stadium") or {}
     match_id = str(item.get("IdMatch") or stable_id(item))
+    status = {
+        "match_status": item.get("MatchStatus"),
+        "officiality_status": item.get("OfficialityStatus"),
+        "result_type": item.get("ResultType"),
+    }
     return {
         "id": match_id,
         "fifa_match_id": match_id,
@@ -526,11 +620,13 @@ def transform_fifa_match(item: dict[str, Any]) -> dict[str, Any]:
         "phase": localized(item.get("PhaseName") or item.get("Phase") or item.get("StageType")),
         "group": localized(item.get("GroupName")),
         "match_number": item.get("MatchNumber"),
-        "status": {
-            "match_status": item.get("MatchStatus"),
-            "officiality_status": item.get("OfficialityStatus"),
-            "result_type": item.get("ResultType"),
-        },
+        "status": status,
+        "result": normalize_match_result(
+            status,
+            home.get("score"),
+            away.get("score"),
+            "FIFA official calendar API",
+        ),
         "teams": {"home": home, "away": away},
         "venue": {
             "name": localized(stadium.get("Name")),
@@ -553,11 +649,28 @@ def espn_date_url(day: dt.date) -> str:
     return f"{ESPN_SCOREBOARD}?dates={day:%Y%m%d}&limit=100"
 
 
+def espn_range_url(start: dt.date, end: dt.date) -> str:
+    return f"{ESPN_SCOREBOARD}?dates={start:%Y%m%d}-{end:%Y%m%d}&limit=200"
+
+
 def fetch_espn_events(start: dt.date, days: int) -> tuple[list[dict[str, Any]], list[str], list[str]]:
     events: dict[str, dict[str, Any]] = {}
-    urls: list[str] = []
+    count = max(days, 1)
+    end = start + dt.timedelta(days=count - 1)
+    range_value = f"{start:%Y%m%d}-{end:%Y%m%d}"
+    urls: list[str] = [espn_range_url(start, end)]
     warnings: list[str] = []
-    for offset in range(max(days, 1)):
+    try:
+        payload = request_json(ESPN_SCOREBOARD, params={"dates": range_value, "limit": "200"})
+        for event in payload.get("events", []) or []:
+            event_id = str(event.get("id") or stable_id(event))
+            events[event_id] = event
+        return list(events.values()), urls, warnings
+    except RuntimeError as exc:
+        warnings.append(f"ESPN range request failed; using daily fallback: {exc}")
+
+    urls = []
+    for offset in range(count):
         day = start + dt.timedelta(days=offset)
         params = {"dates": f"{day:%Y%m%d}", "limit": "100"}
         urls.append(espn_date_url(day))
@@ -676,9 +789,11 @@ def transform_espn_event(event: dict[str, Any]) -> dict[str, Any] | None:
             "abbreviation": abbreviation,
             "id_team": team.get("id"),
             "logo": first_logo_from_espn(team),
+            "score": raw.get("score"),
             **metadata,
         }
 
+    status = competition.get("status") or event.get("status") or {}
     return {
         "id": event_id,
         "kickoff_utc": iso_utc(parse_date(event["date"])) if event.get("date") else None,
@@ -686,6 +801,13 @@ def transform_espn_event(event: dict[str, Any]) -> dict[str, Any] | None:
             "home": espn_team(home_raw),
             "away": espn_team(away_raw),
         },
+        "status": status,
+        "result": normalize_match_result(
+            status.get("type") if isinstance(status, dict) else status,
+            home_raw.get("score"),
+            away_raw.get("score"),
+            "ESPN public FIFA World Cup scoreboard",
+        ),
         "odds": extract_odds(competition),
         "source": {
             "name": "ESPN public FIFA World Cup scoreboard",
@@ -731,6 +853,49 @@ def merge_match_teams(base: dict[str, Any] | None, incoming: dict[str, Any] | No
         "away": merge_team_metadata(base.get("away"), incoming.get("away")),
     }
 
+
+def merge_match_result(
+    primary: dict[str, Any] | None,
+    secondary: dict[str, Any] | None,
+) -> dict[str, Any]:
+    primary = dict(primary or {})
+    secondary = dict(secondary or {})
+    primary_completed = primary.get("completed") is True
+    secondary_completed = secondary.get("completed") is True
+
+    if primary_completed:
+        merged = primary
+        if secondary_completed:
+            same_score = (
+                primary.get("home_score") == secondary.get("home_score")
+                and primary.get("away_score") == secondary.get("away_score")
+            )
+            merged["verification"] = "confirmed" if same_score else "conflict"
+            if not same_score:
+                merged["secondary_display"] = secondary.get("display")
+                merged["secondary_source"] = secondary.get("source")
+        else:
+            merged["verification"] = "unavailable"
+        return merged
+
+    if secondary_completed:
+        merged = secondary
+        merged["verification"] = "secondary_only"
+        merged["primary_status"] = primary.get("status") or "unknown"
+        return merged
+
+    merged = primary or {
+        "status": "scheduled",
+        "completed": False,
+        "home_score": None,
+        "away_score": None,
+        "display": None,
+        "source": None,
+    }
+    merged["verification"] = "unavailable"
+    return merged
+
+
 def find_espn_match(fifa_match: dict[str, Any], espn_matches: list[dict[str, Any]]) -> dict[str, Any] | None:
     fifa_key = team_pair_key(fifa_match)
     fifa_time = parse_date(fifa_match["kickoff_utc"])
@@ -767,6 +932,8 @@ def verify_fifa_matches(
         }
         item["odds"] = espn_match["odds"]
         item["teams"] = merge_match_teams(fifa_match.get("teams"), espn_match.get("teams"))
+        item["result"] = merge_match_result(fifa_match.get("result"), espn_match.get("result"))
+        item["source_verification"]["result"] = item["result"].get("verification")
         verified.append(item)
     return verified, unverified
 
@@ -904,9 +1071,7 @@ def attach_injuries(matches: list[dict[str, Any]], espn_articles: list[dict[str,
 def run_research(output: Path = FIXTURES_PATH, start: dt.date | None = None, days: int = DEFAULT_DAYS) -> dict[str, Any]:
     display_window = china_match_day_window(days, start)
     display_start_date, display_fetch_days = fifa_fetch_span_for_china_window(display_window)
-    structure_start = dt.date.fromisoformat(display_window["match_days"][0]["date"])
-    structure_days = max(days, STRUCTURE_MATCH_DAYS)
-    structure_window = china_match_day_window(structure_days, structure_start)
+    structure_window = tournament_structure_window(display_window)
     structure_start_date, structure_fetch_days = fifa_fetch_span_for_china_window(structure_window)
 
     fifa_matches_all, fifa_url, fifa_warnings = fetch_fifa_matches(structure_start_date, structure_fetch_days)
@@ -1206,6 +1371,7 @@ def merge_analysis_matches(analysis: dict[str, Any], research_payload: dict[str,
             merged_item["odds"] = source.get("odds", {"available": False})
             merged_item["source_verification"] = source.get("source_verification", {})
             merged_item["sources"] = source.get("sources", {})
+            merged_item["result"] = dict(source.get("result") or {})
         merged.append(merged_item)
     return merged
 
@@ -1744,6 +1910,15 @@ def bracket_placeholder_node(match_number: int, round_key: str) -> dict[str, Any
         "match_day": {},
         "win_draw_loss": None,
         "score_options": [],
+        "result": {
+            "status": "scheduled",
+            "completed": False,
+            "home_score": None,
+            "away_score": None,
+            "display": None,
+            "source": None,
+            "verification": "unavailable",
+        },
         "current_window": False,
         "placeholder": True,
     }
@@ -1817,8 +1992,10 @@ def structure_match_node(
     highlight_ids: set[str],
 ) -> dict[str, Any]:
     match_id = match_id_of(match)
-    source = {**match, **current_by_id.get(match_id, {})}
+    current = current_by_id.get(match_id, {})
+    source = {**match, **current}
     source["teams"] = merge_match_teams(match.get("teams"), (current_by_id.get(match_id, {}) or {}).get("teams"))
+    source["result"] = merge_match_result(match.get("result"), current.get("result"))
     teams = source.get("teams") or {}
     kickoff = source.get("kickoff_utc")
     match_day = source.get("match_day") or (match_day_info(kickoff) if kickoff else {})
@@ -1841,6 +2018,7 @@ def structure_match_node(
         "match_day": match_day,
         "win_draw_loss": source.get("win_draw_loss") if is_current else None,
         "score_options": ordered_score_options(source) if is_current else [],
+        "result": source.get("result"),
         "current_window": is_current,
         "placeholder": False,
     }
@@ -2023,10 +2201,38 @@ def bracket_node_time(node: dict[str, Any]) -> str:
     return text or "待定"
 
 
+def completed_result_scores(value: Any) -> tuple[int, int] | None:
+    if not isinstance(value, dict) or value.get("completed") is not True:
+        return None
+    home = non_negative_score(value.get("home_score"))
+    away = non_negative_score(value.get("away_score"))
+    if home is None or away is None:
+        return None
+    return home, away
+
+
+def bracket_result_html(node: dict[str, Any]) -> str:
+    scores = completed_result_scores(node.get("result"))
+    if scores:
+        return (
+            '<div class="bracket-real-result">'
+            '<span>完赛</span>'
+            f'<strong>{scores[0]} : {scores[1]}</strong>'
+            '</div>'
+        )
+    if node.get("placeholder"):
+        return '<div class="bracket-node-pending">待定</div>'
+    return '<div class="bracket-node-scheduled">未开赛</div>'
+
+
 def bracket_wdl_html(node: dict[str, Any]) -> str:
     wdl = node.get("win_draw_loss")
     if not isinstance(wdl, dict):
-        return '<div class="bracket-status">待定</div>'
+        if completed_result_scores(node.get("result")):
+            return '<div class="bracket-status completed">官方真实赛果</div>'
+        if node.get("placeholder"):
+            return '<div class="bracket-status">待定</div>'
+        return '<div class="bracket-status scheduled">赛程已确认</div>'
     return "".join(
         [
             f'<span class="home">胜 {pct(wdl.get("home_win", 0))}</span>',
@@ -2044,6 +2250,15 @@ def placeholder_bracket_node(match_number: int, home_label: str, away_label: str
         "teams": {"home": {"name": home_label}, "away": {"name": away_label}},
         "kickoff_display": "北京时间 待定",
         "score_options": [],
+        "result": {
+            "status": "scheduled",
+            "completed": False,
+            "home_score": None,
+            "away_score": None,
+            "display": None,
+            "source": None,
+            "verification": "unavailable",
+        },
         "current_window": False,
         "placeholder": True,
     }
@@ -2086,8 +2301,10 @@ def bracket_with_placeholders(bracket: dict[str, Any]) -> dict[str, list[dict[st
 def bracket_score_tabs_html(node: dict[str, Any]) -> str:
     options = ordered_score_options(node.get("score_options") or [])
     if len(options) < 3:
-        return '<div class="bracket-node-divider"></div><div class="bracket-node-pending">待定</div>'
-    return f'<div class="bracket-mini-title">前3预测比分</div>{mini_score_tabs_html(options)}'
+        return f'<div class="bracket-node-divider"></div>{bracket_result_html(node)}'
+    result = bracket_result_html(node) if completed_result_scores(node.get("result")) else ""
+    title = "赛前预测 · 前3预测比分" if result else "前3预测比分"
+    return f'{result}<div class="bracket-mini-title">{title}</div>{mini_score_tabs_html(options)}'
 
 
 def bracket_structure_node_html(node: dict[str, Any], round_key: str) -> str:
@@ -2237,9 +2454,10 @@ def score_options_html(match: dict[str, Any]) -> str:
                 reason=html_escape(option.get("reason", "unknown")),
             )
         )
+    heading = "赛前预测 · 前3预测比分" if completed_result_scores(match.get("result")) else "前3预测比分"
     return f"""
         <section class="score-options" data-score-tabs>
-          <h4>前3预测比分</h4>
+          <h4>{heading}</h4>
           <div class="score-tab-labels" role="tablist">{''.join(buttons)}</div>
           <div class="score-tab-panels">{''.join(panels)}</div>
         </section>
@@ -2357,7 +2575,18 @@ def match_card(match: dict[str, Any]) -> str:
     teams = match.get("teams") or {}
     home = teams.get("home") or {}
     away = teams.get("away") or {}
-    score = match.get("predicted_score") or {}
+    predicted_score = match.get("predicted_score") or {}
+    actual_scores = completed_result_scores(match.get("result"))
+    if actual_scores:
+        score = {"home": actual_scores[0], "away": actual_scores[1]}
+        score_mode = "actual-result"
+        score_label = "完赛 · 真实比分"
+        prediction_context = '<div class="prediction-review-label">赛前预测 · 复盘对照</div>'
+    else:
+        score = predicted_score
+        score_mode = "predicted-result"
+        score_label = "未开赛 · 预测比分"
+        prediction_context = ""
     xg = match.get("xg_prediction") or {}
     confidence = confidence_text(match.get("confidence"))
     kickoff_display = match.get("kickoff_display") or format_beijing_time(match.get("kickoff_utc"))
@@ -2380,7 +2609,8 @@ def match_card(match: dict[str, Any]) -> str:
           <h3 class="match-title-teams">{home_inline}<span class="versus">vs</span>{team_inline_html(away)}</h3>
           <time datetime="{kickoff_iso}">{html_escape(kickoff_display)}</time>
         </div>
-        <div class="scoreboard">
+        <div class="scoreboard-mode {score_mode}">{score_label}</div>
+        <div class="scoreboard {score_mode}">
           <div class="score-side">
             <span class="score-team-name">{home_inline}</span>
             <strong>{html_escape(score.get("home", 0))}</strong>
@@ -2391,6 +2621,7 @@ def match_card(match: dict[str, Any]) -> str:
             <strong>{html_escape(score.get("away", 0))}</strong>
           </div>
         </div>
+        {prediction_context}
         <div class="probability-panel">
           {probability_segments(match)}
         </div>
@@ -2675,7 +2906,11 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
     .bracket-node-card .mini-score-tab b {{ display: block; margin-top: 3px; color: #edf7ff; font-size: 18px; }}
     .bracket-node-card .mini-score-tab.active {{ border-color: rgba(246, 189, 39, .82); color: #ffd64a; box-shadow: 0 0 14px rgba(246, 189, 39, .22); }}
     .bracket-node-divider {{ height: 1px; margin: 10px 0 8px; background: linear-gradient(90deg, transparent, rgba(104, 190, 255, .32), transparent); }}
-    .bracket-node-pending {{ display: grid; place-items: center; min-height: 46px; border: 1px dashed rgba(104, 190, 255, .28); border-radius: 8px; color: #a8bbd4; background: rgba(4, 14, 24, .55); }}
+    .bracket-node-pending, .bracket-node-scheduled {{ display: grid; place-items: center; min-height: 46px; border: 1px dashed rgba(104, 190, 255, .28); border-radius: 8px; color: #a8bbd4; background: rgba(4, 14, 24, .55); }}
+    .bracket-node-scheduled {{ border-style: solid; color: #73c8ff; background: rgba(28, 112, 174, .12); }}
+    .bracket-real-result {{ display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; margin-top: 8px; border: 1px solid rgba(61, 219, 142, .46); border-radius: 8px; color: #65e5a3; background: rgba(20, 122, 78, .14); box-shadow: 0 0 14px rgba(61, 219, 142, .1); }}
+    .bracket-real-result span {{ font-size: 11px; font-weight: 900; }}
+    .bracket-real-result strong {{ margin: 0; color: #effff6; font-size: 20px; }}
     .bracket-wdl-mini {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; margin-top: 7px; font-size: 12px; font-weight: 850; text-align: center; }}
     .bracket-wdl-mini span.home {{ color: var(--green); }}
     .bracket-wdl-mini span.draw {{ color: var(--yellow); }}
@@ -2749,7 +2984,11 @@ def build_legacy_agent_html(payload: dict[str, Any]) -> str:
       white-space: nowrap;
       font-weight: 750;
     }}
+    .scoreboard-mode {{ width: fit-content; margin: 2px auto 12px; border: 1px solid rgba(83, 171, 255, .38); border-radius: 999px; padding: 6px 12px; color: #8fcfff; background: rgba(21, 91, 151, .14); font-size: 12px; font-weight: 900; }}
+    .scoreboard-mode.actual-result {{ border-color: rgba(61, 219, 142, .5); color: #65e5a3; background: rgba(20, 122, 78, .16); box-shadow: 0 0 16px rgba(61, 219, 142, .1); }}
     .scoreboard {{ display: grid; grid-template-columns: minmax(0, 1fr) 42px minmax(0, 1fr); align-items: center; gap: 12px; text-align: center; }}
+    .scoreboard.actual-result .score-side strong {{ color: #65e5a3; text-shadow: 0 0 20px rgba(61, 219, 142, .18); }}
+    .prediction-review-label {{ margin: 18px 0 10px; border-left: 3px solid #ffd64a; padding-left: 10px; color: #ffe184; font-size: 13px; font-weight: 900; }}
     .score-side > .score-team-name {{ display: flex; justify-content: center; color: var(--text); font-size: 18px; font-weight: 760; overflow-wrap: anywhere; }}
     .score-side strong {{ display: block; margin-top: 6px; font-size: clamp(42px, 12vw, 62px); line-height: .95; color: #ffd11e; }}
     .score-separator {{ color: var(--muted); font-size: 34px; font-weight: 600; }}
