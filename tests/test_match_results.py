@@ -210,6 +210,14 @@ class MatchResultMergeTests(unittest.TestCase):
         self.assertTrue(node["result"]["completed"])
         self.assertEqual(node["result"]["display"], "2-1")
 
+    def test_structure_node_preserves_existing_result_verification(self):
+        match = pipeline.transform_fifa_match(fifa_item("Finished", 2, 1))
+        match["result"]["verification"] = "confirmed"
+
+        node = pipeline.structure_match_node(match, {}, set())
+
+        self.assertEqual(node["result"]["verification"], "confirmed")
+
     def test_placeholder_node_has_no_completed_result(self):
         node = pipeline.bracket_placeholder_node(89, "round_of_16")
 

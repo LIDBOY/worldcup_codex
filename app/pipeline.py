@@ -875,7 +875,7 @@ def merge_match_result(
                 merged["secondary_display"] = secondary.get("display")
                 merged["secondary_source"] = secondary.get("source")
         else:
-            merged["verification"] = "unavailable"
+            merged["verification"] = merged.get("verification") or "unavailable"
         return merged
 
     if secondary_completed:
