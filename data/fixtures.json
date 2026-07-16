@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "stage": "research",
-  "generated_at": "2026-07-15T15:00:33Z",
+  "generated_at": "2026-07-16T03:32:30Z",
   "window": {
     "start_date": "2026-07-15",
     "days": 3,
@@ -410,16 +410,13 @@
   },
   "warnings": [],
   "unverified_fifa_matches": [],
-  "structure_unverified_fifa_matches": [
-    "France vs RU102",
-    "Spain vs W102"
-  ],
+  "structure_unverified_fifa_matches": [],
   "fixture_count": 1,
   "fifa_fixture_count": 1,
   "raw_fifa_fixture_count": 104,
-  "structure_fixture_count": 102,
+  "structure_fixture_count": 104,
   "structure_fifa_fixture_count": 104,
-  "odds_available_count": 1,
+  "odds_available_count": 0,
   "matches": [
     {
       "id": "400021540",
@@ -436,18 +433,18 @@
       "group": "",
       "match_number": 102,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "result": {
-        "status": "scheduled",
-        "completed": false,
-        "home_score": null,
-        "away_score": null,
-        "display": null,
+        "status": "completed",
+        "completed": true,
+        "home_score": 1,
+        "away_score": 2,
+        "display": "1-2",
         "source": "FIFA official calendar API",
-        "verification": "unavailable"
+        "verification": "confirmed"
       },
       "teams": {
         "home": {
@@ -457,8 +454,8 @@
           "id_team": "448",
           "id_country": "ENG",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-          "score": "0",
-          "tactics": null,
+          "score": "1",
+          "tactics": "4-2-3-1",
           "country_code": "ENG",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
           "flag_emoji": ""
@@ -470,8 +467,8 @@
           "id_team": "202",
           "id_country": "ARG",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-          "score": "0",
-          "tactics": null,
+          "score": "2",
+          "tactics": "4-4-2",
           "country_code": "ARG",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
           "flag_emoji": "🇦🇷"
@@ -503,43 +500,42 @@
           "ESPN public FIFA World Cup scoreboard"
         ],
         "method": "team-pair and kickoff-time cross-check",
-        "result": "unavailable"
+        "result": "confirmed"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+165",
-          "draw": "+190",
-          "away": "+200"
-        },
-        "implied_probability": {
-          "home_win": 37.74,
-          "draw": 34.48,
-          "away_win": 33.33
-        },
-        "normalized_probability": {
-          "home_win": 35.75,
-          "draw": 32.67,
-          "away_win": 31.58
-        },
-        "overround": 5.55,
-        "details": "ENG +165"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "英格兰",
           "team_en": "England",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+              "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+              "published": "2026-07-15T23:20:23Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "阿根廷",
           "team_en": "Argentina",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+              "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+              "published": "2026-07-15T23:20:23Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -561,18 +557,18 @@
       "group": "",
       "match_number": 102,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "result": {
-        "status": "scheduled",
-        "completed": false,
-        "home_score": null,
-        "away_score": null,
-        "display": null,
+        "status": "completed",
+        "completed": true,
+        "home_score": 1,
+        "away_score": 2,
+        "display": "1-2",
         "source": "FIFA official calendar API",
-        "verification": "unavailable"
+        "verification": "confirmed"
       },
       "teams": {
         "home": {
@@ -582,8 +578,8 @@
           "id_team": "448",
           "id_country": "ENG",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-          "score": "0",
-          "tactics": null,
+          "score": "1",
+          "tactics": "4-2-3-1",
           "country_code": "ENG",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
           "flag_emoji": ""
@@ -595,8 +591,8 @@
           "id_team": "202",
           "id_country": "ARG",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-          "score": "0",
-          "tactics": null,
+          "score": "2",
+          "tactics": "4-4-2",
           "country_code": "ARG",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
           "flag_emoji": "🇦🇷"
@@ -628,43 +624,42 @@
           "ESPN public FIFA World Cup scoreboard"
         ],
         "method": "team-pair and kickoff-time cross-check",
-        "result": "unavailable"
+        "result": "confirmed"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+165",
-          "draw": "+190",
-          "away": "+200"
-        },
-        "implied_probability": {
-          "home_win": 37.74,
-          "draw": 34.48,
-          "away_win": 33.33
-        },
-        "normalized_probability": {
-          "home_win": 35.75,
-          "draw": 32.67,
-          "away_win": 31.58
-        },
-        "overround": 5.55,
-        "details": "ENG +165"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "英格兰",
           "team_en": "England",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+              "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+              "published": "2026-07-15T23:20:23Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "阿根廷",
           "team_en": "Argentina",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+              "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+              "published": "2026-07-15T23:20:23Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       }
@@ -9776,18 +9771,18 @@
       "group": "",
       "match_number": 102,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "result": {
-        "status": "scheduled",
-        "completed": false,
-        "home_score": null,
-        "away_score": null,
-        "display": null,
+        "status": "completed",
+        "completed": true,
+        "home_score": 1,
+        "away_score": 2,
+        "display": "1-2",
         "source": "FIFA official calendar API",
-        "verification": "unavailable"
+        "verification": "confirmed"
       },
       "teams": {
         "home": {
@@ -9797,8 +9792,8 @@
           "id_team": "448",
           "id_country": "ENG",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-          "score": "0",
-          "tactics": null,
+          "score": "1",
+          "tactics": "4-2-3-1",
           "country_code": "ENG",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
           "flag_emoji": ""
@@ -9810,8 +9805,8 @@
           "id_team": "202",
           "id_country": "ARG",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-          "score": "0",
-          "tactics": null,
+          "score": "2",
+          "tactics": "4-4-2",
           "country_code": "ARG",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
           "flag_emoji": "🇦🇷"
@@ -9843,6 +9838,128 @@
           "ESPN public FIFA World Cup scoreboard"
         ],
         "method": "team-pair and kickoff-time cross-check",
+        "result": "confirmed"
+      },
+      "odds": {
+        "available": false,
+        "source": "ESPN odds feed",
+        "reason": "moneyline odds unavailable"
+      },
+      "injuries": {
+        "home": {
+          "team": "英格兰",
+          "team_en": "England",
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+              "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+              "published": "2026-07-15T23:20:23Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+            }
+          ],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "阿根廷",
+          "team_en": "Argentina",
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+              "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+              "published": "2026-07-15T23:20:23Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+            }
+          ],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    },
+    {
+      "id": "400021542",
+      "fifa_match_id": "400021542",
+      "match_name": "法国 vs 英格兰",
+      "match_name_en": "France vs England",
+      "kickoff_utc": "2026-07-18T21:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Bronze final",
+      "stage_name": "Bronze final",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 103,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "result": {
+        "status": "scheduled",
+        "completed": false,
+        "home_score": null,
+        "away_score": null,
+        "display": null,
+        "source": "FIFA official calendar API",
+        "verification": "unavailable"
+      },
+      "teams": {
+        "home": {
+          "name": "法国",
+          "name_en": "France",
+          "abbreviation": "FRA",
+          "id_team": "478",
+          "id_country": "FRA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+          "score": "0",
+          "tactics": null,
+          "country_code": "FRA",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+          "flag_emoji": "🇫🇷"
+        },
+        "away": {
+          "name": "英格兰",
+          "name_en": "England",
+          "abbreviation": "ENG",
+          "id_team": "448",
+          "id_country": "ENG",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+          "score": "0",
+          "tactics": null,
+          "country_code": "ENG",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+          "flag_emoji": ""
+        }
+      },
+      "venue": {
+        "name": "Miami Stadium",
+        "city": "Miami",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021542"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760516"
+        }
+      },
+      "espn_event_id": "760516",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check",
         "result": "unavailable"
       },
       "odds": {
@@ -9850,44 +9967,135 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+165",
-          "draw": "+190",
-          "away": "+200"
+          "home": "+100",
+          "draw": "+275",
+          "away": "+265"
         },
         "implied_probability": {
-          "home_win": 37.74,
-          "draw": 34.48,
-          "away_win": 33.33
+          "home_win": 50.0,
+          "draw": 26.67,
+          "away_win": 27.4
         },
         "normalized_probability": {
-          "home_win": 35.75,
-          "draw": 32.67,
-          "away_win": 31.58
+          "home_win": 48.05,
+          "draw": 25.63,
+          "away_win": 26.33
         },
-        "overround": 5.55,
-        "details": "ENG +165"
+        "overround": 4.06,
+        "details": "FRA +100"
+      }
+    },
+    {
+      "id": "400021543",
+      "fifa_match_id": "400021543",
+      "match_name": "西班牙 vs 阿根廷",
+      "match_name_en": "Spain vs Argentina",
+      "kickoff_utc": "2026-07-19T19:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Final",
+      "stage_name": "Final",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 104,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
       },
-      "injuries": {
+      "result": {
+        "status": "scheduled",
+        "completed": false,
+        "home_score": null,
+        "away_score": null,
+        "display": null,
+        "source": "FIFA official calendar API",
+        "verification": "unavailable"
+      },
+      "teams": {
         "home": {
-          "team": "英格兰",
-          "team_en": "England",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          "name": "西班牙",
+          "name_en": "Spain",
+          "abbreviation": "ESP",
+          "id_team": "164",
+          "id_country": "ESP",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+          "score": "0",
+          "tactics": null,
+          "country_code": "ESP",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+          "flag_emoji": "🇪🇸"
         },
         "away": {
-          "team": "阿根廷",
-          "team_en": "Argentina",
-          "status": "unknown",
-          "records": [],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          "name": "阿根廷",
+          "name_en": "Argentina",
+          "abbreviation": "ARG",
+          "id_team": "202",
+          "id_country": "ARG",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+          "score": "0",
+          "tactics": null,
+          "country_code": "ARG",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+          "flag_emoji": "🇦🇷"
         }
+      },
+      "venue": {
+        "name": "New York/New Jersey Stadium",
+        "city": "New Jersey",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021543"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760517"
+        }
+      },
+      "espn_event_id": "760517",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check",
+        "result": "unavailable"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+130",
+          "draw": "+195",
+          "away": "+255"
+        },
+        "implied_probability": {
+          "home_win": 43.48,
+          "draw": 33.9,
+          "away_win": 28.17
+        },
+        "normalized_probability": {
+          "home_win": 41.19,
+          "draw": 32.12,
+          "away_win": 26.69
+        },
+        "overround": 5.55,
+        "details": "ESP +130"
       }
     }
   ],
   "daily_log": [
     {
-      "time": "2026-07-15T15:00:33Z",
+      "time": "2026-07-16T03:32:30Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     }
