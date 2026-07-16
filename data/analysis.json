@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
   "stage": "analysis",
-  "generated_at": "2026-07-15T15:02:35Z",
+  "generated_at": "2026-07-16T03:45:24Z",
   "analysis": {
-    "generated_at": "2026-07-15T15:00:33Z",
-    "summary": "2026年世界杯半决赛，英格兰与阿根廷在亚特兰大体育场展开较量。两队均为世界顶级强队，实力接近，市场赔率显示英格兰稍占优势但差距极小。缺乏伤病和天气等关键信息，比赛不确定性高，需关注中场控制与球星个人发挥。",
+    "generated_at": "2026-07-16T03:32:30Z",
+    "summary": "阿根廷在半决赛中以2-1险胜英格兰，晋级决赛。比赛过程激烈，阿根廷凭借更高效的反击和把握机会能力取胜，英格兰虽有威胁但未能挽回败局。",
     "matches": [
       {
         "id": "400021540",
@@ -21,18 +21,18 @@
         "group": "",
         "match_number": 102,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "result": {
-          "status": "scheduled",
-          "completed": false,
-          "home_score": null,
-          "away_score": null,
-          "display": null,
+          "status": "completed",
+          "completed": true,
+          "home_score": 1,
+          "away_score": 2,
+          "display": "1-2",
           "source": "FIFA official calendar API",
-          "verification": "unavailable"
+          "verification": "confirmed"
         },
         "teams": {
           "home": {
@@ -42,8 +42,8 @@
             "id_team": "448",
             "id_country": "ENG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": "0",
-            "tactics": null,
+            "score": "1",
+            "tactics": "4-2-3-1",
             "country_code": "ENG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
             "flag_emoji": ""
@@ -55,8 +55,8 @@
             "id_team": "202",
             "id_country": "ARG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": "0",
-            "tactics": null,
+            "score": "2",
+            "tactics": "4-4-2",
             "country_code": "ARG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
             "flag_emoji": "🇦🇷"
@@ -88,86 +88,85 @@
             "ESPN public FIFA World Cup scoreboard"
           ],
           "method": "team-pair and kickoff-time cross-check",
-          "result": "unavailable"
+          "result": "confirmed"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+165",
-            "draw": "+190",
-            "away": "+200"
-          },
-          "implied_probability": {
-            "home_win": 37.74,
-            "draw": 34.48,
-            "away_win": 33.33
-          },
-          "normalized_probability": {
-            "home_win": 35.75,
-            "draw": 32.67,
-            "away_win": 31.58
-          },
-          "overround": 5.55,
-          "details": "ENG +165"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "英格兰",
             "team_en": "England",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+                "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+                "published": "2026-07-15T23:20:23Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "阿根廷",
             "team_en": "Argentina",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+                "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+                "published": "2026-07-15T23:20:23Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         },
         "match_id": "400021540",
         "win_draw_loss": {
-          "home_win": 36,
-          "draw": 32,
-          "away_win": 32
+          "home_win": 30,
+          "draw": 25,
+          "away_win": 45
         },
         "xg_prediction": {
-          "home": 1.4,
-          "away": 1.2
+          "home": 1.2,
+          "away": 1.6
         },
         "predicted_score": {
           "home": 1,
-          "away": 1
+          "away": 2
         },
         "score_options": [
           {
-            "score": "1-1",
+            "score": "1-2",
             "rank": 1,
-            "reason": "两队实力均衡，淘汰赛阶段易出平局，进攻与防守均无绝对优势。"
+            "reason": "阿根廷进攻效率更高，英格兰防线存在漏洞。"
+          },
+          {
+            "score": "1-1",
+            "rank": 2,
+            "reason": "双方可能陷入胶着，平局进入加时。"
           },
           {
             "score": "2-1",
-            "rank": 2,
-            "reason": "英格兰借助主场氛围和快速反击可能小胜，阿根廷防线存在被突破风险。"
-          },
-          {
-            "score": "1-2",
             "rank": 3,
-            "reason": "阿根廷依靠高效反击和球星灵光一现逆转，但英格兰防守体系稳固。"
+            "reason": "英格兰若打出高压逼抢可能险胜。"
           }
         ],
         "method_factors": {
-          "market_signal": "DraftKings赔率显示均衡，英格兰+165，阿根廷+200，隐含概率接近。",
-          "fifa_rank_prior": "两队均为传统强队，长期实力无显著差距，未获取最新排名数据，基于历史表现视为同级。",
-          "recent_form": "未知，进入半决赛表明近期状态良好，但无具体比赛数据。",
-          "group_context": "半决赛淘汰赛，一场定胜负，心理压力大。",
-          "injury_rotation": "未知，暂无伤病报告，无法评估阵容完整性。",
-          "weather_venue": "未知，亚特兰大体育场天气状况不明确。",
-          "tactical_key": "英格兰可能利用边路速度和身体优势，阿根廷则依赖中场控制和球星创造力。",
-          "uncertainty": "高，缺少伤病、天气和具体状态信息，预测难度大。"
+          "market_signal": "赔率不可用",
+          "fifa_rank_prior": "英格兰与阿根廷均为传统强队，长期实力接近，但阿根廷近期大赛表现更稳定。",
+          "recent_form": "英格兰在半决赛前淘汰挪威，但阿根廷连克瑞士等强敌，状态正佳。",
+          "group_context": "单场淘汰赛，半决赛，双方均无保留。",
+          "injury_rotation": "英格兰队长凯恩存在疑似伤病；阿根廷亦有轻微伤病隐患，但两队核心阵容基本完整。",
+          "weather_venue": "亚特兰大体育场，天气状况未知。",
+          "tactical_key": "阿根廷防守反击对英格兰高位逼抢，中场争夺将决定比赛走向。",
+          "uncertainty": "半决赛高强度对抗，裁判判罚和临场发挥可能左右结果。"
         },
         "matchup_graph": {
           "nodes": [
@@ -177,7 +176,7 @@
               "type": "team_phase",
               "side": "home",
               "weight": 80,
-              "note": "英格兰前场速度快，射门转化率较高"
+              "note": "凯恩领衔，边路突破有威胁。"
             },
             {
               "id": "home_midfield",
@@ -185,7 +184,7 @@
               "type": "team_phase",
               "side": "home",
               "weight": 75,
-              "note": "中场拼抢积极，但组织性略逊于阿根廷"
+              "note": "控制节奏能力强，但转换速度一般。"
             },
             {
               "id": "home_defense",
@@ -193,90 +192,90 @@
               "type": "team_phase",
               "side": "home",
               "weight": 70,
-              "note": "防线整体稳定，但面对灵巧型前锋可能吃力"
+              "note": "防线偶尔出现注意力不集中。"
             },
             {
               "id": "away_attack",
               "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 78,
-              "note": "阿根廷进攻多样，拥有致命终结能力"
+              "weight": 85,
+              "note": "梅西策动，反击犀利，多点开花。"
             },
             {
               "id": "away_midfield",
               "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 76,
-              "note": "控球能力强，能通过短传渗透防守"
+              "weight": 80,
+              "note": "拦截和由守转攻效率高。"
             },
             {
               "id": "away_defense",
               "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 72,
-              "note": "防守纪律性好，但防空可能存隐患"
+              "weight": 75,
+              "note": "整体紧凑，但面对高空球有隐患。"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "英格兰边路冲击 vs 阿根廷禁区保护",
+              "label": "凯恩对决奥塔门迪",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "英格兰传中威胁大，需阿根廷中卫注意力集中"
+              "note": "英格兰若想破门，凯恩必须压制阿根廷中卫。"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "阿根廷渗透 vs 英格兰高位防线",
-              "impact": "medium",
+              "label": "梅西冲击斯通斯",
+              "impact": "high",
               "direction": "away_to_home",
-              "note": "阿根廷可能利用英格兰压上后的空当"
+              "note": "阿根廷核心梅西将寻找英格兰防线的缝隙。"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场控制权争夺",
-              "impact": "high",
+              "label": "贝林厄姆与恩佐的对抗",
+              "impact": "medium",
               "direction": "balanced",
-              "note": "两队中场风格迥异，关键对决决定节奏"
+              "note": "年轻中场对决，控制权将影响比赛走势。"
             }
           ],
-          "summary": "对决集中于中场控制与攻防转换效率，边路可能成为胜负手。",
-          "advantage_side": "balanced",
-          "key_battle": "中场控制权之争，阿根廷的控球与英格兰的压迫将主导比赛走向。",
-          "risk_trigger": "定位球或超级球星的个人闪光可能打破平衡。"
+          "summary": "阿根廷在进攻和中场转换上稍占优势，英格兰防守端存在不确定性，总体客队略优。",
+          "advantage_side": "away",
+          "key_battle": "凯恩 vs 阿根廷防线",
+          "risk_trigger": "若凯恩状态不佳，英格兰进攻效率将大幅下降。"
         },
-        "tactical_matchup": "英格兰更擅长高强度压迫和快速转换，阿根廷则追求控球和阵型弹性，比赛或由中场对抗结果决定。",
+        "tactical_matchup": "英格兰4-2-3-1阵型强调边路传中与中路抢点，阿根廷4-4-2侧重防守反击，通过梅西策划快速转换。",
         "injury_adjustment": {
-          "home": "未知，无伤病报告",
-          "away": "未知，无伤病报告",
-          "summary": "两队阵容完整性无法评估，暂不考虑伤病影响。"
+          "home": "凯恩疑似伤病，若缺阵影响巨大。",
+          "away": "轻微伤病，主力框架不受影响。",
+          "summary": "两方均有小伤，但均不影响核心战术。"
         },
-        "risk_analysis": "高风险对决：两队实力伯仲之间，任何细节（如红牌、点球或球星状态）都可能改变结果，预测置信度较低。",
-        "upset_probability": 32,
+        "risk_analysis": "英格兰过度依赖凯恩，阿根廷反击犀利，若英格兰久攻不下，易被偷袭。",
+        "upset_probability": 30,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 35.75,
-            "draw": 32.67,
-            "away_win": 31.58
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
           },
           "model_edge": {
-            "home_win": 36,
-            "draw": 32,
-            "away_win": 32
+            "home_win": 30,
+            "draw": 25,
+            "away_win": 45
           },
-          "deviation_analysis": "模型与市场概率基本一致，主胜轻微高估0.25%，客胜低估0.42%，无显著差异，市场定价合理。"
+          "deviation_analysis": "赔率不可用，无法比较市场预期。"
         },
-        "confidence": "low"
+        "confidence": "medium"
       }
     ],
-    "risk_overview": "本场比赛关键不确定性在于伤病和实时状态缺失，两队实力极为接近，任何预测都伴随高误差，建议关注临场阵容和天气变化。",
-    "data_quality": "比赛数据来自FIFA官方和ESPN验证，但伤病、天气及近期表现源不可靠，整体数据质量中等偏低。",
+    "risk_overview": "半决赛双方实力接近，阿根廷凭借更成熟的反击体系略占优势，但英格兰若保持高压仍有翻盘可能。",
+    "data_quality": "数据源为FIFA官方API及ESPN验证，但赔率缺失，伤病信息源于媒体推测而非官方确认。",
     "tournament_structure": {
       "stage": "knockout",
       "focus_window": {
@@ -2126,8 +2125,8 @@
                 "id_team": "448",
                 "id_country": "ENG",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-                "score": "0",
-                "tactics": null,
+                "score": "1",
+                "tactics": "4-2-3-1",
                 "country_code": "ENG",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
                 "flag_emoji": ""
@@ -2139,8 +2138,8 @@
                 "id_team": "202",
                 "id_country": "ARG",
                 "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-                "score": "0",
-                "tactics": null,
+                "score": "2",
+                "tactics": "4-4-2",
                 "country_code": "ARG",
                 "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
                 "flag_emoji": "🇦🇷"
@@ -2157,27 +2156,91 @@
               "end_iso": "2026-07-16T18:00:00+08:00"
             },
             "win_draw_loss": {
-              "home_win": 36,
-              "draw": 32,
-              "away_win": 32
+              "home_win": 30,
+              "draw": 25,
+              "away_win": 45
             },
             "score_options": [
               {
-                "score": "1-1",
+                "score": "1-2",
                 "rank": 1,
-                "reason": "两队实力均衡，淘汰赛阶段易出平局，进攻与防守均无绝对优势。"
+                "reason": "阿根廷进攻效率更高，英格兰防线存在漏洞。"
+              },
+              {
+                "score": "1-1",
+                "rank": 2,
+                "reason": "双方可能陷入胶着，平局进入加时。"
               },
               {
                 "score": "2-1",
-                "rank": 2,
-                "reason": "英格兰借助主场氛围和快速反击可能小胜，阿根廷防线存在被突破风险。"
-              },
-              {
-                "score": "1-2",
                 "rank": 3,
-                "reason": "阿根廷依靠高效反击和球星灵光一现逆转，但英格兰防守体系稳固。"
+                "reason": "英格兰若打出高压逼抢可能险胜。"
               }
             ],
+            "result": {
+              "status": "completed",
+              "completed": true,
+              "home_score": 1,
+              "away_score": 2,
+              "display": "1-2",
+              "source": "FIFA official calendar API",
+              "verification": "confirmed"
+            },
+            "current_window": true,
+            "placeholder": false
+          }
+        ],
+        "final": [
+          {
+            "match_id": "400021543",
+            "match_number": 104,
+            "round_key": "final",
+            "stage": "Final",
+            "stage_name": "Final",
+            "round_name": "",
+            "phase": "",
+            "group": "Final",
+            "match_name": "西班牙 vs 阿根廷",
+            "teams": {
+              "home": {
+                "name": "西班牙",
+                "name_en": "Spain",
+                "abbreviation": "ESP",
+                "id_team": "164",
+                "id_country": "ESP",
+                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+                "score": "0",
+                "tactics": null,
+                "country_code": "ESP",
+                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+                "flag_emoji": "🇪🇸"
+              },
+              "away": {
+                "name": "阿根廷",
+                "name_en": "Argentina",
+                "abbreviation": "ARG",
+                "id_team": "202",
+                "id_country": "ARG",
+                "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+                "score": "0",
+                "tactics": null,
+                "country_code": "ARG",
+                "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+                "flag_emoji": "🇦🇷"
+              }
+            },
+            "kickoff_utc": "2026-07-19T19:00:00Z",
+            "kickoff_beijing": "2026-07-20T03:00:00+08:00",
+            "kickoff_display": "北京时间 07-20 03:00",
+            "match_day": {
+              "date": "2026-07-19",
+              "title": "7月19日比赛日",
+              "range": "北京时间 07-19 18:00 - 07-20 18:00",
+              "start_iso": "2026-07-19T18:00:00+08:00",
+              "end_iso": "2026-07-20T18:00:00+08:00"
+            },
+            "win_draw_loss": null,
+            "score_options": [],
             "result": {
               "status": "scheduled",
               "completed": false,
@@ -2187,53 +2250,8 @@
               "source": "FIFA official calendar API",
               "verification": "unavailable"
             },
-            "current_window": true,
-            "placeholder": false
-          }
-        ],
-        "final": [
-          {
-            "match_id": "placeholder-M104",
-            "match_number": 104,
-            "round_key": "final",
-            "stage": "final",
-            "group": "淘汰赛",
-            "match_name": "胜者 M101 vs 胜者 M102",
-            "teams": {
-              "home": {
-                "name": "胜者 M101",
-                "name_en": "胜者 M101",
-                "country_code": "",
-                "flag_url": "",
-                "flag_emoji": "",
-                "placeholder": true
-              },
-              "away": {
-                "name": "胜者 M102",
-                "name_en": "胜者 M102",
-                "country_code": "",
-                "flag_url": "",
-                "flag_emoji": "",
-                "placeholder": true
-              }
-            },
-            "kickoff_utc": null,
-            "kickoff_beijing": null,
-            "kickoff_display": "北京时间 待定",
-            "match_day": {},
-            "win_draw_loss": null,
-            "score_options": [],
-            "result": {
-              "status": "scheduled",
-              "completed": false,
-              "home_score": null,
-              "away_score": null,
-              "display": null,
-              "source": null,
-              "verification": "unavailable"
-            },
             "current_window": false,
-            "placeholder": true
+            "placeholder": false
           }
         ]
       },
@@ -2580,18 +2598,18 @@
       "group": "",
       "match_number": 102,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "result": {
-        "status": "scheduled",
-        "completed": false,
-        "home_score": null,
-        "away_score": null,
-        "display": null,
+        "status": "completed",
+        "completed": true,
+        "home_score": 1,
+        "away_score": 2,
+        "display": "1-2",
         "source": "FIFA official calendar API",
-        "verification": "unavailable"
+        "verification": "confirmed"
       },
       "teams": {
         "home": {
@@ -2601,8 +2619,8 @@
           "id_team": "448",
           "id_country": "ENG",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-          "score": "0",
-          "tactics": null,
+          "score": "1",
+          "tactics": "4-2-3-1",
           "country_code": "ENG",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
           "flag_emoji": ""
@@ -2614,8 +2632,8 @@
           "id_team": "202",
           "id_country": "ARG",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-          "score": "0",
-          "tactics": null,
+          "score": "2",
+          "tactics": "4-4-2",
           "country_code": "ARG",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
           "flag_emoji": "🇦🇷"
@@ -2647,86 +2665,85 @@
           "ESPN public FIFA World Cup scoreboard"
         ],
         "method": "team-pair and kickoff-time cross-check",
-        "result": "unavailable"
+        "result": "confirmed"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "+165",
-          "draw": "+190",
-          "away": "+200"
-        },
-        "implied_probability": {
-          "home_win": 37.74,
-          "draw": 34.48,
-          "away_win": 33.33
-        },
-        "normalized_probability": {
-          "home_win": 35.75,
-          "draw": 32.67,
-          "away_win": 31.58
-        },
-        "overround": 5.55,
-        "details": "ENG +165"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
           "team": "英格兰",
           "team_en": "England",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+              "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+              "published": "2026-07-15T23:20:23Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         },
         "away": {
           "team": "阿根廷",
           "team_en": "Argentina",
-          "status": "unknown",
-          "records": [],
+          "status": "probable injury",
+          "records": [
+            {
+              "source": "ESPN World Cup news",
+              "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+              "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+              "published": "2026-07-15T23:20:23Z",
+              "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+            }
+          ],
           "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
         }
       },
       "match_id": "400021540",
       "win_draw_loss": {
-        "home_win": 36,
-        "draw": 32,
-        "away_win": 32
+        "home_win": 30,
+        "draw": 25,
+        "away_win": 45
       },
       "xg_prediction": {
-        "home": 1.4,
-        "away": 1.2
+        "home": 1.2,
+        "away": 1.6
       },
       "predicted_score": {
         "home": 1,
-        "away": 1
+        "away": 2
       },
       "score_options": [
         {
-          "score": "1-1",
+          "score": "1-2",
           "rank": 1,
-          "reason": "两队实力均衡，淘汰赛阶段易出平局，进攻与防守均无绝对优势。"
+          "reason": "阿根廷进攻效率更高，英格兰防线存在漏洞。"
+        },
+        {
+          "score": "1-1",
+          "rank": 2,
+          "reason": "双方可能陷入胶着，平局进入加时。"
         },
         {
           "score": "2-1",
-          "rank": 2,
-          "reason": "英格兰借助主场氛围和快速反击可能小胜，阿根廷防线存在被突破风险。"
-        },
-        {
-          "score": "1-2",
           "rank": 3,
-          "reason": "阿根廷依靠高效反击和球星灵光一现逆转，但英格兰防守体系稳固。"
+          "reason": "英格兰若打出高压逼抢可能险胜。"
         }
       ],
       "method_factors": {
-        "market_signal": "DraftKings赔率显示均衡，英格兰+165，阿根廷+200，隐含概率接近。",
-        "fifa_rank_prior": "两队均为传统强队，长期实力无显著差距，未获取最新排名数据，基于历史表现视为同级。",
-        "recent_form": "未知，进入半决赛表明近期状态良好，但无具体比赛数据。",
-        "group_context": "半决赛淘汰赛，一场定胜负，心理压力大。",
-        "injury_rotation": "未知，暂无伤病报告，无法评估阵容完整性。",
-        "weather_venue": "未知，亚特兰大体育场天气状况不明确。",
-        "tactical_key": "英格兰可能利用边路速度和身体优势，阿根廷则依赖中场控制和球星创造力。",
-        "uncertainty": "高，缺少伤病、天气和具体状态信息，预测难度大。"
+        "market_signal": "赔率不可用",
+        "fifa_rank_prior": "英格兰与阿根廷均为传统强队，长期实力接近，但阿根廷近期大赛表现更稳定。",
+        "recent_form": "英格兰在半决赛前淘汰挪威，但阿根廷连克瑞士等强敌，状态正佳。",
+        "group_context": "单场淘汰赛，半决赛，双方均无保留。",
+        "injury_rotation": "英格兰队长凯恩存在疑似伤病；阿根廷亦有轻微伤病隐患，但两队核心阵容基本完整。",
+        "weather_venue": "亚特兰大体育场，天气状况未知。",
+        "tactical_key": "阿根廷防守反击对英格兰高位逼抢，中场争夺将决定比赛走向。",
+        "uncertainty": "半决赛高强度对抗，裁判判罚和临场发挥可能左右结果。"
       },
       "matchup_graph": {
         "nodes": [
@@ -2736,7 +2753,7 @@
             "type": "team_phase",
             "side": "home",
             "weight": 80,
-            "note": "英格兰前场速度快，射门转化率较高"
+            "note": "凯恩领衔，边路突破有威胁。"
           },
           {
             "id": "home_midfield",
@@ -2744,7 +2761,7 @@
             "type": "team_phase",
             "side": "home",
             "weight": 75,
-            "note": "中场拼抢积极，但组织性略逊于阿根廷"
+            "note": "控制节奏能力强，但转换速度一般。"
           },
           {
             "id": "home_defense",
@@ -2752,86 +2769,86 @@
             "type": "team_phase",
             "side": "home",
             "weight": 70,
-            "note": "防线整体稳定，但面对灵巧型前锋可能吃力"
+            "note": "防线偶尔出现注意力不集中。"
           },
           {
             "id": "away_attack",
             "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 78,
-            "note": "阿根廷进攻多样，拥有致命终结能力"
+            "weight": 85,
+            "note": "梅西策动，反击犀利，多点开花。"
           },
           {
             "id": "away_midfield",
             "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 76,
-            "note": "控球能力强，能通过短传渗透防守"
+            "weight": 80,
+            "note": "拦截和由守转攻效率高。"
           },
           {
             "id": "away_defense",
             "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 72,
-            "note": "防守纪律性好，但防空可能存隐患"
+            "weight": 75,
+            "note": "整体紧凑，但面对高空球有隐患。"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "英格兰边路冲击 vs 阿根廷禁区保护",
+            "label": "凯恩对决奥塔门迪",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "英格兰传中威胁大，需阿根廷中卫注意力集中"
+            "note": "英格兰若想破门，凯恩必须压制阿根廷中卫。"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "阿根廷渗透 vs 英格兰高位防线",
-            "impact": "medium",
+            "label": "梅西冲击斯通斯",
+            "impact": "high",
             "direction": "away_to_home",
-            "note": "阿根廷可能利用英格兰压上后的空当"
+            "note": "阿根廷核心梅西将寻找英格兰防线的缝隙。"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场控制权争夺",
-            "impact": "high",
+            "label": "贝林厄姆与恩佐的对抗",
+            "impact": "medium",
             "direction": "balanced",
-            "note": "两队中场风格迥异，关键对决决定节奏"
+            "note": "年轻中场对决，控制权将影响比赛走势。"
           }
         ],
-        "summary": "对决集中于中场控制与攻防转换效率，边路可能成为胜负手。",
-        "advantage_side": "balanced",
-        "key_battle": "中场控制权之争，阿根廷的控球与英格兰的压迫将主导比赛走向。",
-        "risk_trigger": "定位球或超级球星的个人闪光可能打破平衡。"
+        "summary": "阿根廷在进攻和中场转换上稍占优势，英格兰防守端存在不确定性，总体客队略优。",
+        "advantage_side": "away",
+        "key_battle": "凯恩 vs 阿根廷防线",
+        "risk_trigger": "若凯恩状态不佳，英格兰进攻效率将大幅下降。"
       },
-      "tactical_matchup": "英格兰更擅长高强度压迫和快速转换，阿根廷则追求控球和阵型弹性，比赛或由中场对抗结果决定。",
+      "tactical_matchup": "英格兰4-2-3-1阵型强调边路传中与中路抢点，阿根廷4-4-2侧重防守反击，通过梅西策划快速转换。",
       "injury_adjustment": {
-        "home": "未知，无伤病报告",
-        "away": "未知，无伤病报告",
-        "summary": "两队阵容完整性无法评估，暂不考虑伤病影响。"
+        "home": "凯恩疑似伤病，若缺阵影响巨大。",
+        "away": "轻微伤病，主力框架不受影响。",
+        "summary": "两方均有小伤，但均不影响核心战术。"
       },
-      "risk_analysis": "高风险对决：两队实力伯仲之间，任何细节（如红牌、点球或球星状态）都可能改变结果，预测置信度较低。",
-      "upset_probability": 32,
+      "risk_analysis": "英格兰过度依赖凯恩，阿根廷反击犀利，若英格兰久攻不下，易被偷袭。",
+      "upset_probability": 30,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 35.75,
-          "draw": 32.67,
-          "away_win": 31.58
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
         },
         "model_edge": {
-          "home_win": 36,
-          "draw": 32,
-          "away_win": 32
+          "home_win": 30,
+          "draw": 25,
+          "away_win": 45
         },
-        "deviation_analysis": "模型与市场概率基本一致，主胜轻微高估0.25%，客胜低估0.42%，无显著差异，市场定价合理。"
+        "deviation_analysis": "赔率不可用，无法比较市场预期。"
       },
-      "confidence": "low"
+      "confidence": "medium"
     }
   ],
   "tournament_structure": {
@@ -4683,8 +4700,8 @@
               "id_team": "448",
               "id_country": "ENG",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-              "score": "0",
-              "tactics": null,
+              "score": "1",
+              "tactics": "4-2-3-1",
               "country_code": "ENG",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
               "flag_emoji": ""
@@ -4696,8 +4713,8 @@
               "id_team": "202",
               "id_country": "ARG",
               "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-              "score": "0",
-              "tactics": null,
+              "score": "2",
+              "tactics": "4-4-2",
               "country_code": "ARG",
               "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
               "flag_emoji": "🇦🇷"
@@ -4714,27 +4731,91 @@
             "end_iso": "2026-07-16T18:00:00+08:00"
           },
           "win_draw_loss": {
-            "home_win": 36,
-            "draw": 32,
-            "away_win": 32
+            "home_win": 30,
+            "draw": 25,
+            "away_win": 45
           },
           "score_options": [
             {
-              "score": "1-1",
+              "score": "1-2",
               "rank": 1,
-              "reason": "两队实力均衡，淘汰赛阶段易出平局，进攻与防守均无绝对优势。"
+              "reason": "阿根廷进攻效率更高，英格兰防线存在漏洞。"
+            },
+            {
+              "score": "1-1",
+              "rank": 2,
+              "reason": "双方可能陷入胶着，平局进入加时。"
             },
             {
               "score": "2-1",
-              "rank": 2,
-              "reason": "英格兰借助主场氛围和快速反击可能小胜，阿根廷防线存在被突破风险。"
-            },
-            {
-              "score": "1-2",
               "rank": 3,
-              "reason": "阿根廷依靠高效反击和球星灵光一现逆转，但英格兰防守体系稳固。"
+              "reason": "英格兰若打出高压逼抢可能险胜。"
             }
           ],
+          "result": {
+            "status": "completed",
+            "completed": true,
+            "home_score": 1,
+            "away_score": 2,
+            "display": "1-2",
+            "source": "FIFA official calendar API",
+            "verification": "confirmed"
+          },
+          "current_window": true,
+          "placeholder": false
+        }
+      ],
+      "final": [
+        {
+          "match_id": "400021543",
+          "match_number": 104,
+          "round_key": "final",
+          "stage": "Final",
+          "stage_name": "Final",
+          "round_name": "",
+          "phase": "",
+          "group": "Final",
+          "match_name": "西班牙 vs 阿根廷",
+          "teams": {
+            "home": {
+              "name": "西班牙",
+              "name_en": "Spain",
+              "abbreviation": "ESP",
+              "id_team": "164",
+              "id_country": "ESP",
+              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+              "score": "0",
+              "tactics": null,
+              "country_code": "ESP",
+              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+              "flag_emoji": "🇪🇸"
+            },
+            "away": {
+              "name": "阿根廷",
+              "name_en": "Argentina",
+              "abbreviation": "ARG",
+              "id_team": "202",
+              "id_country": "ARG",
+              "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+              "score": "0",
+              "tactics": null,
+              "country_code": "ARG",
+              "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+              "flag_emoji": "🇦🇷"
+            }
+          },
+          "kickoff_utc": "2026-07-19T19:00:00Z",
+          "kickoff_beijing": "2026-07-20T03:00:00+08:00",
+          "kickoff_display": "北京时间 07-20 03:00",
+          "match_day": {
+            "date": "2026-07-19",
+            "title": "7月19日比赛日",
+            "range": "北京时间 07-19 18:00 - 07-20 18:00",
+            "start_iso": "2026-07-19T18:00:00+08:00",
+            "end_iso": "2026-07-20T18:00:00+08:00"
+          },
+          "win_draw_loss": null,
+          "score_options": [],
           "result": {
             "status": "scheduled",
             "completed": false,
@@ -4744,53 +4825,8 @@
             "source": "FIFA official calendar API",
             "verification": "unavailable"
           },
-          "current_window": true,
-          "placeholder": false
-        }
-      ],
-      "final": [
-        {
-          "match_id": "placeholder-M104",
-          "match_number": 104,
-          "round_key": "final",
-          "stage": "final",
-          "group": "淘汰赛",
-          "match_name": "胜者 M101 vs 胜者 M102",
-          "teams": {
-            "home": {
-              "name": "胜者 M101",
-              "name_en": "胜者 M101",
-              "country_code": "",
-              "flag_url": "",
-              "flag_emoji": "",
-              "placeholder": true
-            },
-            "away": {
-              "name": "胜者 M102",
-              "name_en": "胜者 M102",
-              "country_code": "",
-              "flag_url": "",
-              "flag_emoji": "",
-              "placeholder": true
-            }
-          },
-          "kickoff_utc": null,
-          "kickoff_beijing": null,
-          "kickoff_display": "北京时间 待定",
-          "match_day": {},
-          "win_draw_loss": null,
-          "score_options": [],
-          "result": {
-            "status": "scheduled",
-            "completed": false,
-            "home_score": null,
-            "away_score": null,
-            "display": null,
-            "source": null,
-            "verification": "unavailable"
-          },
           "current_window": false,
-          "placeholder": true
+          "placeholder": false
         }
       ]
     },
@@ -5448,7 +5484,7 @@
   "research": {
     "schema_version": 3,
     "stage": "research",
-    "generated_at": "2026-07-15T15:00:33Z",
+    "generated_at": "2026-07-16T03:32:30Z",
     "window": {
       "start_date": "2026-07-15",
       "days": 3,
@@ -5857,16 +5893,13 @@
     },
     "warnings": [],
     "unverified_fifa_matches": [],
-    "structure_unverified_fifa_matches": [
-      "France vs RU102",
-      "Spain vs W102"
-    ],
+    "structure_unverified_fifa_matches": [],
     "fixture_count": 1,
     "fifa_fixture_count": 1,
     "raw_fifa_fixture_count": 104,
-    "structure_fixture_count": 102,
+    "structure_fixture_count": 104,
     "structure_fifa_fixture_count": 104,
-    "odds_available_count": 1,
+    "odds_available_count": 0,
     "matches": [
       {
         "id": "400021540",
@@ -5883,18 +5916,18 @@
         "group": "",
         "match_number": 102,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "result": {
-          "status": "scheduled",
-          "completed": false,
-          "home_score": null,
-          "away_score": null,
-          "display": null,
+          "status": "completed",
+          "completed": true,
+          "home_score": 1,
+          "away_score": 2,
+          "display": "1-2",
           "source": "FIFA official calendar API",
-          "verification": "unavailable"
+          "verification": "confirmed"
         },
         "teams": {
           "home": {
@@ -5904,8 +5937,8 @@
             "id_team": "448",
             "id_country": "ENG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": "0",
-            "tactics": null,
+            "score": "1",
+            "tactics": "4-2-3-1",
             "country_code": "ENG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
             "flag_emoji": ""
@@ -5917,8 +5950,8 @@
             "id_team": "202",
             "id_country": "ARG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": "0",
-            "tactics": null,
+            "score": "2",
+            "tactics": "4-4-2",
             "country_code": "ARG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
             "flag_emoji": "🇦🇷"
@@ -5950,43 +5983,42 @@
             "ESPN public FIFA World Cup scoreboard"
           ],
           "method": "team-pair and kickoff-time cross-check",
-          "result": "unavailable"
+          "result": "confirmed"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+165",
-            "draw": "+190",
-            "away": "+200"
-          },
-          "implied_probability": {
-            "home_win": 37.74,
-            "draw": 34.48,
-            "away_win": 33.33
-          },
-          "normalized_probability": {
-            "home_win": 35.75,
-            "draw": 32.67,
-            "away_win": 31.58
-          },
-          "overround": 5.55,
-          "details": "ENG +165"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "英格兰",
             "team_en": "England",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+                "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+                "published": "2026-07-15T23:20:23Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "阿根廷",
             "team_en": "Argentina",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+                "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+                "published": "2026-07-15T23:20:23Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -6008,18 +6040,18 @@
         "group": "",
         "match_number": 102,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "result": {
-          "status": "scheduled",
-          "completed": false,
-          "home_score": null,
-          "away_score": null,
-          "display": null,
+          "status": "completed",
+          "completed": true,
+          "home_score": 1,
+          "away_score": 2,
+          "display": "1-2",
           "source": "FIFA official calendar API",
-          "verification": "unavailable"
+          "verification": "confirmed"
         },
         "teams": {
           "home": {
@@ -6029,8 +6061,8 @@
             "id_team": "448",
             "id_country": "ENG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": "0",
-            "tactics": null,
+            "score": "1",
+            "tactics": "4-2-3-1",
             "country_code": "ENG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
             "flag_emoji": ""
@@ -6042,8 +6074,8 @@
             "id_team": "202",
             "id_country": "ARG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": "0",
-            "tactics": null,
+            "score": "2",
+            "tactics": "4-4-2",
             "country_code": "ARG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
             "flag_emoji": "🇦🇷"
@@ -6075,43 +6107,42 @@
             "ESPN public FIFA World Cup scoreboard"
           ],
           "method": "team-pair and kickoff-time cross-check",
-          "result": "unavailable"
+          "result": "confirmed"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "+165",
-            "draw": "+190",
-            "away": "+200"
-          },
-          "implied_probability": {
-            "home_win": 37.74,
-            "draw": 34.48,
-            "away_win": 33.33
-          },
-          "normalized_probability": {
-            "home_win": 35.75,
-            "draw": 32.67,
-            "away_win": 31.58
-          },
-          "overround": 5.55,
-          "details": "ENG +165"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
             "team": "英格兰",
             "team_en": "England",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+                "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+                "published": "2026-07-15T23:20:23Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           },
           "away": {
             "team": "阿根廷",
             "team_en": "Argentina",
-            "status": "unknown",
-            "records": [],
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+                "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+                "published": "2026-07-15T23:20:23Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+              }
+            ],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
           }
         }
@@ -15223,18 +15254,18 @@
         "group": "",
         "match_number": 102,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "result": {
-          "status": "scheduled",
-          "completed": false,
-          "home_score": null,
-          "away_score": null,
-          "display": null,
+          "status": "completed",
+          "completed": true,
+          "home_score": 1,
+          "away_score": 2,
+          "display": "1-2",
           "source": "FIFA official calendar API",
-          "verification": "unavailable"
+          "verification": "confirmed"
         },
         "teams": {
           "home": {
@@ -15244,8 +15275,8 @@
             "id_team": "448",
             "id_country": "ENG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": "0",
-            "tactics": null,
+            "score": "1",
+            "tactics": "4-2-3-1",
             "country_code": "ENG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
             "flag_emoji": ""
@@ -15257,8 +15288,8 @@
             "id_team": "202",
             "id_country": "ARG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": "0",
-            "tactics": null,
+            "score": "2",
+            "tactics": "4-4-2",
             "country_code": "ARG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
             "flag_emoji": "🇦🇷"
@@ -15290,6 +15321,128 @@
             "ESPN public FIFA World Cup scoreboard"
           ],
           "method": "team-pair and kickoff-time cross-check",
+          "result": "confirmed"
+        },
+        "odds": {
+          "available": false,
+          "source": "ESPN odds feed",
+          "reason": "moneyline odds unavailable"
+        },
+        "injuries": {
+          "home": {
+            "team": "英格兰",
+            "team_en": "England",
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+                "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+                "published": "2026-07-15T23:20:23Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+              }
+            ],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "阿根廷",
+            "team_en": "Argentina",
+            "status": "probable injury",
+            "records": [
+              {
+                "source": "ESPN World Cup news",
+                "title": "Harry Kane: 'Too soon' to say if final World Cup game played after Argentina defeat",
+                "description": "Harry Kane said it's too soon to make a call on whether this is his last World Cup with England, adding that Tuesday's 2-1 World Cup semifinal loss to Argentina was a similar story to other past near-misses.",
+                "published": "2026-07-15T23:20:23Z",
+                "url": "https://www.espn.com/soccer/story/_/id/49370835/harry-kane-world-cup-last-game-argentina-england-world-cup"
+              }
+            ],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
+        }
+      },
+      {
+        "id": "400021542",
+        "fifa_match_id": "400021542",
+        "match_name": "法国 vs 英格兰",
+        "match_name_en": "France vs England",
+        "kickoff_utc": "2026-07-18T21:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Bronze final",
+        "stage_name": "Bronze final",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 103,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "result": {
+          "status": "scheduled",
+          "completed": false,
+          "home_score": null,
+          "away_score": null,
+          "display": null,
+          "source": "FIFA official calendar API",
+          "verification": "unavailable"
+        },
+        "teams": {
+          "home": {
+            "name": "法国",
+            "name_en": "France",
+            "abbreviation": "FRA",
+            "id_team": "478",
+            "id_country": "FRA",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "FRA",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+            "flag_emoji": "🇫🇷"
+          },
+          "away": {
+            "name": "英格兰",
+            "name_en": "England",
+            "abbreviation": "ENG",
+            "id_team": "448",
+            "id_country": "ENG",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "ENG",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+            "flag_emoji": ""
+          }
+        },
+        "venue": {
+          "name": "Miami Stadium",
+          "city": "Miami",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021542"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760516"
+          }
+        },
+        "espn_event_id": "760516",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check",
           "result": "unavailable"
         },
         "odds": {
@@ -15297,44 +15450,135 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+165",
-            "draw": "+190",
-            "away": "+200"
+            "home": "+100",
+            "draw": "+275",
+            "away": "+265"
           },
           "implied_probability": {
-            "home_win": 37.74,
-            "draw": 34.48,
-            "away_win": 33.33
+            "home_win": 50.0,
+            "draw": 26.67,
+            "away_win": 27.4
           },
           "normalized_probability": {
-            "home_win": 35.75,
-            "draw": 32.67,
-            "away_win": 31.58
+            "home_win": 48.05,
+            "draw": 25.63,
+            "away_win": 26.33
           },
-          "overround": 5.55,
-          "details": "ENG +165"
+          "overround": 4.06,
+          "details": "FRA +100"
+        }
+      },
+      {
+        "id": "400021543",
+        "fifa_match_id": "400021543",
+        "match_name": "西班牙 vs 阿根廷",
+        "match_name_en": "Spain vs Argentina",
+        "kickoff_utc": "2026-07-19T19:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Final",
+        "stage_name": "Final",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 104,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
         },
-        "injuries": {
+        "result": {
+          "status": "scheduled",
+          "completed": false,
+          "home_score": null,
+          "away_score": null,
+          "display": null,
+          "source": "FIFA official calendar API",
+          "verification": "unavailable"
+        },
+        "teams": {
           "home": {
-            "team": "英格兰",
-            "team_en": "England",
-            "status": "unknown",
-            "records": [],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+            "name": "西班牙",
+            "name_en": "Spain",
+            "abbreviation": "ESP",
+            "id_team": "164",
+            "id_country": "ESP",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "ESP",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+            "flag_emoji": "🇪🇸"
           },
           "away": {
-            "team": "阿根廷",
-            "team_en": "Argentina",
-            "status": "unknown",
-            "records": [],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+            "name": "阿根廷",
+            "name_en": "Argentina",
+            "abbreviation": "ARG",
+            "id_team": "202",
+            "id_country": "ARG",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "ARG",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+            "flag_emoji": "🇦🇷"
           }
+        },
+        "venue": {
+          "name": "New York/New Jersey Stadium",
+          "city": "New Jersey",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021543"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760517"
+          }
+        },
+        "espn_event_id": "760517",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check",
+          "result": "unavailable"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "+130",
+            "draw": "+195",
+            "away": "+255"
+          },
+          "implied_probability": {
+            "home_win": 43.48,
+            "draw": 33.9,
+            "away_win": 28.17
+          },
+          "normalized_probability": {
+            "home_win": 41.19,
+            "draw": 32.12,
+            "away_win": 26.69
+          },
+          "overround": 5.55,
+          "details": "ESP +130"
         }
       }
     ],
     "daily_log": [
       {
-        "time": "2026-07-15T15:00:33Z",
+        "time": "2026-07-16T03:32:30Z",
         "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
         "status": "completed"
       }
@@ -15381,10 +15625,10 @@
     }
   ],
   "usage": {
-    "input_tokens": 78879,
-    "output_tokens": 2817,
-    "total_tokens": 81696,
-    "cost_estimate": 0.81696
+    "input_tokens": 81020,
+    "output_tokens": 2566,
+    "total_tokens": 83586,
+    "cost_estimate": 0.83586
   },
   "analysis_model": "deepseek-v4-pro",
   "model": {
@@ -15398,12 +15642,12 @@
   },
   "daily_log": [
     {
-      "time": "2026-07-15T15:00:33Z",
+      "time": "2026-07-16T03:32:30Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     },
     {
-      "time": "2026-07-15T15:02:35Z",
+      "time": "2026-07-16T03:45:24Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     }
