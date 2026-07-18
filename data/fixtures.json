@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
   "stage": "research",
-  "generated_at": "2026-07-17T03:33:12Z",
+  "generated_at": "2026-07-18T03:27:02Z",
   "window": {
-    "start_date": "2026-07-16",
+    "start_date": "2026-07-17",
     "days": 3,
     "timezone": "UTC",
     "mode": "derived from China match-day display window"
@@ -17,24 +17,24 @@
   "display_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 2,
-    "start_iso": "2026-07-16T18:00:00+08:00",
-    "end_iso": "2026-07-18T18:00:00+08:00",
-    "display_range": "7月16日比赛日 - 7月17日比赛日",
-    "range": "北京时间 07-16 18:00 - 07-18 18:00",
+    "start_iso": "2026-07-17T18:00:00+08:00",
+    "end_iso": "2026-07-19T18:00:00+08:00",
+    "display_range": "7月17日比赛日 - 7月18日比赛日",
+    "range": "北京时间 07-17 18:00 - 07-19 18:00",
     "match_days": [
-      {
-        "date": "2026-07-16",
-        "title": "7月16日比赛日",
-        "range": "北京时间 07-16 18:00 - 07-17 18:00",
-        "start_iso": "2026-07-16T18:00:00+08:00",
-        "end_iso": "2026-07-17T18:00:00+08:00"
-      },
       {
         "date": "2026-07-17",
         "title": "7月17日比赛日",
         "range": "北京时间 07-17 18:00 - 07-18 18:00",
         "start_iso": "2026-07-17T18:00:00+08:00",
         "end_iso": "2026-07-18T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-18",
+        "title": "7月18日比赛日",
+        "range": "北京时间 07-18 18:00 - 07-19 18:00",
+        "start_iso": "2026-07-18T18:00:00+08:00",
+        "end_iso": "2026-07-19T18:00:00+08:00"
       }
     ]
   },
@@ -365,18 +365,18 @@
   },
   "china_match_days": [
     {
-      "date": "2026-07-16",
-      "title": "7月16日比赛日",
-      "range": "北京时间 07-16 18:00 - 07-17 18:00",
-      "start_iso": "2026-07-16T18:00:00+08:00",
-      "end_iso": "2026-07-17T18:00:00+08:00"
-    },
-    {
       "date": "2026-07-17",
       "title": "7月17日比赛日",
       "range": "北京时间 07-17 18:00 - 07-18 18:00",
       "start_iso": "2026-07-17T18:00:00+08:00",
       "end_iso": "2026-07-18T18:00:00+08:00"
+    },
+    {
+      "date": "2026-07-18",
+      "title": "7月18日比赛日",
+      "range": "北京时间 07-18 18:00 - 07-19 18:00",
+      "start_iso": "2026-07-18T18:00:00+08:00",
+      "end_iso": "2026-07-19T18:00:00+08:00"
     }
   ],
   "data_sources": {
@@ -411,14 +411,262 @@
   "warnings": [],
   "unverified_fifa_matches": [],
   "structure_unverified_fifa_matches": [],
-  "fixture_count": 0,
-  "fifa_fixture_count": 0,
+  "fixture_count": 1,
+  "fifa_fixture_count": 1,
   "raw_fifa_fixture_count": 104,
   "structure_fixture_count": 104,
   "structure_fifa_fixture_count": 104,
-  "odds_available_count": 0,
-  "matches": [],
-  "fixtures": [],
+  "odds_available_count": 1,
+  "matches": [
+    {
+      "id": "400021542",
+      "fifa_match_id": "400021542",
+      "match_name": "法国 vs 英格兰",
+      "match_name_en": "France vs England",
+      "kickoff_utc": "2026-07-18T21:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Bronze final",
+      "stage_name": "Bronze final",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 103,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "result": {
+        "status": "scheduled",
+        "completed": false,
+        "home_score": null,
+        "away_score": null,
+        "display": null,
+        "source": "FIFA official calendar API",
+        "verification": "unavailable"
+      },
+      "teams": {
+        "home": {
+          "name": "法国",
+          "name_en": "France",
+          "abbreviation": "FRA",
+          "id_team": "478",
+          "id_country": "FRA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+          "score": "0",
+          "tactics": null,
+          "country_code": "FRA",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+          "flag_emoji": "🇫🇷"
+        },
+        "away": {
+          "name": "英格兰",
+          "name_en": "England",
+          "abbreviation": "ENG",
+          "id_team": "448",
+          "id_country": "ENG",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+          "score": "0",
+          "tactics": null,
+          "country_code": "ENG",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+          "flag_emoji": ""
+        }
+      },
+      "venue": {
+        "name": "Miami Stadium",
+        "city": "Miami",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021542"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760516"
+        }
+      },
+      "espn_event_id": "760516",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check",
+        "result": "unavailable"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "-110",
+          "draw": "+285",
+          "away": "+270"
+        },
+        "implied_probability": {
+          "home_win": 52.38,
+          "draw": 25.97,
+          "away_win": 27.03
+        },
+        "normalized_probability": {
+          "home_win": 49.71,
+          "draw": 24.65,
+          "away_win": 25.65
+        },
+        "overround": 5.38,
+        "details": "FRA -110"
+      },
+      "injuries": {
+        "home": {
+          "team": "法国",
+          "team_en": "France",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "英格兰",
+          "team_en": "England",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "400021542",
+      "fifa_match_id": "400021542",
+      "match_name": "法国 vs 英格兰",
+      "match_name_en": "France vs England",
+      "kickoff_utc": "2026-07-18T21:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Bronze final",
+      "stage_name": "Bronze final",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 103,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "result": {
+        "status": "scheduled",
+        "completed": false,
+        "home_score": null,
+        "away_score": null,
+        "display": null,
+        "source": "FIFA official calendar API",
+        "verification": "unavailable"
+      },
+      "teams": {
+        "home": {
+          "name": "法国",
+          "name_en": "France",
+          "abbreviation": "FRA",
+          "id_team": "478",
+          "id_country": "FRA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+          "score": "0",
+          "tactics": null,
+          "country_code": "FRA",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+          "flag_emoji": "🇫🇷"
+        },
+        "away": {
+          "name": "英格兰",
+          "name_en": "England",
+          "abbreviation": "ENG",
+          "id_team": "448",
+          "id_country": "ENG",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+          "score": "0",
+          "tactics": null,
+          "country_code": "ENG",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+          "flag_emoji": ""
+        }
+      },
+      "venue": {
+        "name": "Miami Stadium",
+        "city": "Miami",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021542"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760516"
+        }
+      },
+      "espn_event_id": "760516",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check",
+        "result": "unavailable"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "-110",
+          "draw": "+285",
+          "away": "+270"
+        },
+        "implied_probability": {
+          "home_win": 52.38,
+          "draw": 25.97,
+          "away_win": 27.03
+        },
+        "normalized_probability": {
+          "home_win": 49.71,
+          "draw": 24.65,
+          "away_win": 25.65
+        },
+        "overround": 5.38,
+        "details": "FRA -110"
+      },
+      "injuries": {
+        "home": {
+          "team": "法国",
+          "team_en": "France",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "英格兰",
+          "team_en": "England",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      }
+    }
+  ],
   "structure_matches": [
     {
       "id": "400021443",
@@ -9705,6 +9953,22 @@
         },
         "overround": 5.38,
         "details": "FRA -110"
+      },
+      "injuries": {
+        "home": {
+          "team": "法国",
+          "team_en": "France",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "英格兰",
+          "team_en": "England",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
       }
     },
     {
@@ -9796,28 +10060,28 @@
         "source": "ESPN odds feed",
         "provider": "DraftKings",
         "moneyline_american": {
-          "home": "+130",
-          "draw": "+195",
+          "home": "+125",
+          "draw": "+200",
           "away": "+255"
         },
         "implied_probability": {
-          "home_win": 43.48,
-          "draw": 33.9,
+          "home_win": 44.44,
+          "draw": 33.33,
           "away_win": 28.17
         },
         "normalized_probability": {
-          "home_win": 41.19,
-          "draw": 32.12,
-          "away_win": 26.69
+          "home_win": 41.95,
+          "draw": 31.46,
+          "away_win": 26.59
         },
-        "overround": 5.55,
-        "details": "ESP +130"
+        "overround": 5.95,
+        "details": "ESP +125"
       }
     }
   ],
   "daily_log": [
     {
-      "time": "2026-07-17T03:33:12Z",
+      "time": "2026-07-18T03:27:02Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     }
