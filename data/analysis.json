@@ -1,35 +1,306 @@
 {
   "schema_version": 3,
   "stage": "analysis",
-  "generated_at": "2026-07-17T03:45:07Z",
+  "generated_at": "2026-07-18T03:40:14Z",
   "analysis": {
-    "generated_at": "2026-07-17T03:45:00Z",
-    "summary": "当前分析窗口（北京时间7月16日18:00至7月18日18:00）内，暂无世界杯赛事安排，因此无比赛分析。",
-    "matches": [],
-    "risk_overview": "无赛事数据，无风险评估。",
-    "data_quality": "数据来源（FIFA、ESPN、伤停、赔率）已交叉验证，但由于分析窗口内无比赛，无数据质量问题。",
+    "generated_at": "2026-07-18T03:27:02Z",
+    "summary": "2026年世界杯季军争夺战，法国队与英格兰队在迈阿密打响。两队均在半决赛中遗憾出局，此役为荣誉而战，法国队稍被市场看好，但三四名决赛素来具有开放性，双方可能轮换阵容，不确定性较高。",
+    "matches": [
+      {
+        "id": "400021542",
+        "fifa_match_id": "400021542",
+        "match_name": "法国 vs 英格兰",
+        "match_name_en": "France vs England",
+        "kickoff_utc": "2026-07-18T21:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Bronze final",
+        "stage_name": "Bronze final",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 103,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "result": {
+          "status": "scheduled",
+          "completed": false,
+          "home_score": null,
+          "away_score": null,
+          "display": null,
+          "source": "FIFA official calendar API",
+          "verification": "unavailable"
+        },
+        "teams": {
+          "home": {
+            "name": "法国",
+            "name_en": "France",
+            "abbreviation": "FRA",
+            "id_team": "478",
+            "id_country": "FRA",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "FRA",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+            "flag_emoji": "🇫🇷"
+          },
+          "away": {
+            "name": "英格兰",
+            "name_en": "England",
+            "abbreviation": "ENG",
+            "id_team": "448",
+            "id_country": "ENG",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "ENG",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+            "flag_emoji": ""
+          }
+        },
+        "venue": {
+          "name": "Miami Stadium",
+          "city": "Miami",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021542"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760516"
+          }
+        },
+        "espn_event_id": "760516",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check",
+          "result": "unavailable"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "-110",
+            "draw": "+285",
+            "away": "+270"
+          },
+          "implied_probability": {
+            "home_win": 52.38,
+            "draw": 25.97,
+            "away_win": 27.03
+          },
+          "normalized_probability": {
+            "home_win": 49.71,
+            "draw": 24.65,
+            "away_win": 25.65
+          },
+          "overround": 5.38,
+          "details": "FRA -110"
+        },
+        "injuries": {
+          "home": {
+            "team": "法国",
+            "team_en": "France",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "英格兰",
+            "team_en": "England",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
+        },
+        "match_id": "400021542",
+        "win_draw_loss": {
+          "home_win": 49.71,
+          "draw": 24.65,
+          "away_win": 25.64
+        },
+        "xg_prediction": {
+          "home": 1.5,
+          "away": 1.3
+        },
+        "predicted_score": {
+          "home": 2,
+          "away": 1
+        },
+        "score_options": [
+          {
+            "score": "2-1",
+            "rank": 1,
+            "reason": "法国进攻稍占优势，预计小胜"
+          },
+          {
+            "score": "1-1",
+            "rank": 2,
+            "reason": "双方势均力敌，常规时间可能平局"
+          },
+          {
+            "score": "2-2",
+            "rank": 3,
+            "reason": "三四名决赛常出现高比分对攻"
+          }
+        ],
+        "method_factors": {
+          "market_signal": "法国-110轻度优势，市场倾向法国小胜",
+          "fifa_rank_prior": "法国长周期实力强于英格兰，但未提供具体排名",
+          "recent_form": "法国半决赛0-2负西班牙，英格兰1-2负阿根廷，均需重整士气",
+          "group_context": "三四名决赛，无分组压力，荣誉之战",
+          "injury_rotation": "伤情未知，两队可能轮换部分球员",
+          "weather_venue": "迈阿密体育场，天气炎热潮湿，可能影响体能",
+          "tactical_key": "法国可能依靠姆巴佩速度，英格兰侧重定位球",
+          "uncertainty": "三四名决赛战意不明，轮换可能性增加不确定性"
+        },
+        "matchup_graph": {
+          "nodes": [
+            {
+              "id": "home_attack",
+              "label": "主队进攻",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 85,
+              "note": "姆巴佩领衔的锋线速度快，突破能力强"
+            },
+            {
+              "id": "home_midfield",
+              "label": "主队中场/转换",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 82,
+              "note": "琼阿梅尼、卡马文加提供拦截和转换"
+            },
+            {
+              "id": "home_defense",
+              "label": "主队防守",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 75,
+              "note": "后防线偶有漏洞，尤其应对高空球"
+            },
+            {
+              "id": "away_attack",
+              "label": "客队进攻",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 80,
+              "note": "凯恩支点作用明显，定位球威胁大"
+            },
+            {
+              "id": "away_midfield",
+              "label": "客队中场/转换",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 83,
+              "note": "贝林厄姆、赖斯攻守兼备"
+            },
+            {
+              "id": "away_defense",
+              "label": "客队防守",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 78,
+              "note": "防守体系较稳，但速度偏慢"
+            }
+          ],
+          "edges": [
+            {
+              "from": "home_attack",
+              "to": "away_defense",
+              "label": "姆巴佩冲击英格兰防线",
+              "impact": "high",
+              "direction": "home_to_away",
+              "note": "法国锋线速度优势明显，可能利用身后空间"
+            },
+            {
+              "from": "away_attack",
+              "to": "home_defense",
+              "label": "凯恩支点作用",
+              "impact": "medium",
+              "direction": "away_to_home",
+              "note": "英格兰定位球和传中威胁，法国防空存疑"
+            },
+            {
+              "from": "home_midfield",
+              "to": "away_midfield",
+              "label": "中场控制权争夺",
+              "impact": "low",
+              "direction": "balanced",
+              "note": "双方中场实力接近，预计均势"
+            }
+          ],
+          "summary": "法国进攻端略占优势，但英格兰整体均衡，胜负关键在边路攻防",
+          "advantage_side": "home",
+          "key_battle": "姆巴佩与凯恩的直接对话将决定比赛走向",
+          "risk_trigger": "若法国轮换过度，防线可能抵挡不住英格兰的反击"
+        },
+        "tactical_matchup": "法国队预计采用4-2-3-1阵型，依靠边路速度冲击英格兰防线；英格兰同样以4-2-3-1应战，注重中场控制和定位球战术，双方可能展开对攻。",
+        "injury_adjustment": {
+          "home": "伤情未知",
+          "away": "伤情未知",
+          "summary": "两队伤病情况不明，暂不计入影响"
+        },
+        "risk_analysis": "三四名决赛存在轮换风险，天气炎热且战意不明，市场对法国的支持可能过度，需防平局或小比分意外。",
+        "upset_probability": 50,
+        "odds_comparison": {
+          "market_implied": {
+            "home_win": 52.38,
+            "draw": 25.97,
+            "away_win": 27.03
+          },
+          "model_edge": {
+            "home_win": 49.71,
+            "draw": 24.65,
+            "away_win": 25.64
+          },
+          "deviation_analysis": "市场高估法国胜率，模型认为双方更均衡，主场优势被过分强调"
+        },
+        "confidence": "medium"
+      }
+    ],
+    "risk_overview": "三四名决赛战意不明，轮换风险高，天气炎热可能影响发挥，建议谨慎投注",
+    "data_quality": "FIFA官方赛程及ESPN数据源，赛前赔率来自DraftKings，伤情未知",
     "tournament_structure": {
       "stage": "knockout",
       "focus_window": {
         "timezone": "Asia/Shanghai",
         "china_match_days": [
           {
-            "date": "2026-07-16",
-            "title": "7月16日比赛日",
-            "range": "北京时间 07-16 18:00 - 07-17 18:00",
-            "start_iso": "2026-07-16T18:00:00+08:00",
-            "end_iso": "2026-07-17T18:00:00+08:00"
-          },
-          {
             "date": "2026-07-17",
             "title": "7月17日比赛日",
             "range": "北京时间 07-17 18:00 - 07-18 18:00",
             "start_iso": "2026-07-17T18:00:00+08:00",
             "end_iso": "2026-07-18T18:00:00+08:00"
+          },
+          {
+            "date": "2026-07-18",
+            "title": "7月18日比赛日",
+            "range": "北京时间 07-18 18:00 - 07-19 18:00",
+            "start_iso": "2026-07-18T18:00:00+08:00",
+            "end_iso": "2026-07-19T18:00:00+08:00"
           }
         ]
       },
-      "highlight_match_ids": [],
+      "highlight_match_ids": [
+        "400021542"
+      ],
       "groups": null,
       "bracket": {
         "round_of_32": [
@@ -2292,29 +2563,300 @@
       }
     }
   },
-  "matches": [],
+  "matches": [
+    {
+      "id": "400021542",
+      "fifa_match_id": "400021542",
+      "match_name": "法国 vs 英格兰",
+      "match_name_en": "France vs England",
+      "kickoff_utc": "2026-07-18T21:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Bronze final",
+      "stage_name": "Bronze final",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 103,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "result": {
+        "status": "scheduled",
+        "completed": false,
+        "home_score": null,
+        "away_score": null,
+        "display": null,
+        "source": "FIFA official calendar API",
+        "verification": "unavailable"
+      },
+      "teams": {
+        "home": {
+          "name": "法国",
+          "name_en": "France",
+          "abbreviation": "FRA",
+          "id_team": "478",
+          "id_country": "FRA",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+          "score": "0",
+          "tactics": null,
+          "country_code": "FRA",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+          "flag_emoji": "🇫🇷"
+        },
+        "away": {
+          "name": "英格兰",
+          "name_en": "England",
+          "abbreviation": "ENG",
+          "id_team": "448",
+          "id_country": "ENG",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+          "score": "0",
+          "tactics": null,
+          "country_code": "ENG",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+          "flag_emoji": ""
+        }
+      },
+      "venue": {
+        "name": "Miami Stadium",
+        "city": "Miami",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021542"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760516"
+        }
+      },
+      "espn_event_id": "760516",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check",
+        "result": "unavailable"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "-110",
+          "draw": "+285",
+          "away": "+270"
+        },
+        "implied_probability": {
+          "home_win": 52.38,
+          "draw": 25.97,
+          "away_win": 27.03
+        },
+        "normalized_probability": {
+          "home_win": 49.71,
+          "draw": 24.65,
+          "away_win": 25.65
+        },
+        "overround": 5.38,
+        "details": "FRA -110"
+      },
+      "injuries": {
+        "home": {
+          "team": "法国",
+          "team_en": "France",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "英格兰",
+          "team_en": "England",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      },
+      "match_id": "400021542",
+      "win_draw_loss": {
+        "home_win": 49.71,
+        "draw": 24.65,
+        "away_win": 25.64
+      },
+      "xg_prediction": {
+        "home": 1.5,
+        "away": 1.3
+      },
+      "predicted_score": {
+        "home": 2,
+        "away": 1
+      },
+      "score_options": [
+        {
+          "score": "2-1",
+          "rank": 1,
+          "reason": "法国进攻稍占优势，预计小胜"
+        },
+        {
+          "score": "1-1",
+          "rank": 2,
+          "reason": "双方势均力敌，常规时间可能平局"
+        },
+        {
+          "score": "2-2",
+          "rank": 3,
+          "reason": "三四名决赛常出现高比分对攻"
+        }
+      ],
+      "method_factors": {
+        "market_signal": "法国-110轻度优势，市场倾向法国小胜",
+        "fifa_rank_prior": "法国长周期实力强于英格兰，但未提供具体排名",
+        "recent_form": "法国半决赛0-2负西班牙，英格兰1-2负阿根廷，均需重整士气",
+        "group_context": "三四名决赛，无分组压力，荣誉之战",
+        "injury_rotation": "伤情未知，两队可能轮换部分球员",
+        "weather_venue": "迈阿密体育场，天气炎热潮湿，可能影响体能",
+        "tactical_key": "法国可能依靠姆巴佩速度，英格兰侧重定位球",
+        "uncertainty": "三四名决赛战意不明，轮换可能性增加不确定性"
+      },
+      "matchup_graph": {
+        "nodes": [
+          {
+            "id": "home_attack",
+            "label": "主队进攻",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 85,
+            "note": "姆巴佩领衔的锋线速度快，突破能力强"
+          },
+          {
+            "id": "home_midfield",
+            "label": "主队中场/转换",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 82,
+            "note": "琼阿梅尼、卡马文加提供拦截和转换"
+          },
+          {
+            "id": "home_defense",
+            "label": "主队防守",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 75,
+            "note": "后防线偶有漏洞，尤其应对高空球"
+          },
+          {
+            "id": "away_attack",
+            "label": "客队进攻",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 80,
+            "note": "凯恩支点作用明显，定位球威胁大"
+          },
+          {
+            "id": "away_midfield",
+            "label": "客队中场/转换",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 83,
+            "note": "贝林厄姆、赖斯攻守兼备"
+          },
+          {
+            "id": "away_defense",
+            "label": "客队防守",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 78,
+            "note": "防守体系较稳，但速度偏慢"
+          }
+        ],
+        "edges": [
+          {
+            "from": "home_attack",
+            "to": "away_defense",
+            "label": "姆巴佩冲击英格兰防线",
+            "impact": "high",
+            "direction": "home_to_away",
+            "note": "法国锋线速度优势明显，可能利用身后空间"
+          },
+          {
+            "from": "away_attack",
+            "to": "home_defense",
+            "label": "凯恩支点作用",
+            "impact": "medium",
+            "direction": "away_to_home",
+            "note": "英格兰定位球和传中威胁，法国防空存疑"
+          },
+          {
+            "from": "home_midfield",
+            "to": "away_midfield",
+            "label": "中场控制权争夺",
+            "impact": "low",
+            "direction": "balanced",
+            "note": "双方中场实力接近，预计均势"
+          }
+        ],
+        "summary": "法国进攻端略占优势，但英格兰整体均衡，胜负关键在边路攻防",
+        "advantage_side": "home",
+        "key_battle": "姆巴佩与凯恩的直接对话将决定比赛走向",
+        "risk_trigger": "若法国轮换过度，防线可能抵挡不住英格兰的反击"
+      },
+      "tactical_matchup": "法国队预计采用4-2-3-1阵型，依靠边路速度冲击英格兰防线；英格兰同样以4-2-3-1应战，注重中场控制和定位球战术，双方可能展开对攻。",
+      "injury_adjustment": {
+        "home": "伤情未知",
+        "away": "伤情未知",
+        "summary": "两队伤病情况不明，暂不计入影响"
+      },
+      "risk_analysis": "三四名决赛存在轮换风险，天气炎热且战意不明，市场对法国的支持可能过度，需防平局或小比分意外。",
+      "upset_probability": 50,
+      "odds_comparison": {
+        "market_implied": {
+          "home_win": 52.38,
+          "draw": 25.97,
+          "away_win": 27.03
+        },
+        "model_edge": {
+          "home_win": 49.71,
+          "draw": 24.65,
+          "away_win": 25.64
+        },
+        "deviation_analysis": "市场高估法国胜率，模型认为双方更均衡，主场优势被过分强调"
+      },
+      "confidence": "medium"
+    }
+  ],
   "tournament_structure": {
     "stage": "knockout",
     "focus_window": {
       "timezone": "Asia/Shanghai",
       "china_match_days": [
         {
-          "date": "2026-07-16",
-          "title": "7月16日比赛日",
-          "range": "北京时间 07-16 18:00 - 07-17 18:00",
-          "start_iso": "2026-07-16T18:00:00+08:00",
-          "end_iso": "2026-07-17T18:00:00+08:00"
-        },
-        {
           "date": "2026-07-17",
           "title": "7月17日比赛日",
           "range": "北京时间 07-17 18:00 - 07-18 18:00",
           "start_iso": "2026-07-17T18:00:00+08:00",
           "end_iso": "2026-07-18T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-18",
+          "title": "7月18日比赛日",
+          "range": "北京时间 07-18 18:00 - 07-19 18:00",
+          "start_iso": "2026-07-18T18:00:00+08:00",
+          "end_iso": "2026-07-19T18:00:00+08:00"
         }
       ]
     },
-    "highlight_match_ids": [],
+    "highlight_match_ids": [
+      "400021542"
+    ],
     "groups": null,
     "bracket": {
       "round_of_32": [
@@ -4904,9 +5446,9 @@
   "research": {
     "schema_version": 3,
     "stage": "research",
-    "generated_at": "2026-07-17T03:33:12Z",
+    "generated_at": "2026-07-18T03:27:02Z",
     "window": {
-      "start_date": "2026-07-16",
+      "start_date": "2026-07-17",
       "days": 3,
       "timezone": "UTC",
       "mode": "derived from China match-day display window"
@@ -4920,24 +5462,24 @@
     "display_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 2,
-      "start_iso": "2026-07-16T18:00:00+08:00",
-      "end_iso": "2026-07-18T18:00:00+08:00",
-      "display_range": "7月16日比赛日 - 7月17日比赛日",
-      "range": "北京时间 07-16 18:00 - 07-18 18:00",
+      "start_iso": "2026-07-17T18:00:00+08:00",
+      "end_iso": "2026-07-19T18:00:00+08:00",
+      "display_range": "7月17日比赛日 - 7月18日比赛日",
+      "range": "北京时间 07-17 18:00 - 07-19 18:00",
       "match_days": [
-        {
-          "date": "2026-07-16",
-          "title": "7月16日比赛日",
-          "range": "北京时间 07-16 18:00 - 07-17 18:00",
-          "start_iso": "2026-07-16T18:00:00+08:00",
-          "end_iso": "2026-07-17T18:00:00+08:00"
-        },
         {
           "date": "2026-07-17",
           "title": "7月17日比赛日",
           "range": "北京时间 07-17 18:00 - 07-18 18:00",
           "start_iso": "2026-07-17T18:00:00+08:00",
           "end_iso": "2026-07-18T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-18",
+          "title": "7月18日比赛日",
+          "range": "北京时间 07-18 18:00 - 07-19 18:00",
+          "start_iso": "2026-07-18T18:00:00+08:00",
+          "end_iso": "2026-07-19T18:00:00+08:00"
         }
       ]
     },
@@ -5268,18 +5810,18 @@
     },
     "china_match_days": [
       {
-        "date": "2026-07-16",
-        "title": "7月16日比赛日",
-        "range": "北京时间 07-16 18:00 - 07-17 18:00",
-        "start_iso": "2026-07-16T18:00:00+08:00",
-        "end_iso": "2026-07-17T18:00:00+08:00"
-      },
-      {
         "date": "2026-07-17",
         "title": "7月17日比赛日",
         "range": "北京时间 07-17 18:00 - 07-18 18:00",
         "start_iso": "2026-07-17T18:00:00+08:00",
         "end_iso": "2026-07-18T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-18",
+        "title": "7月18日比赛日",
+        "range": "北京时间 07-18 18:00 - 07-19 18:00",
+        "start_iso": "2026-07-18T18:00:00+08:00",
+        "end_iso": "2026-07-19T18:00:00+08:00"
       }
     ],
     "data_sources": {
@@ -5314,14 +5856,262 @@
     "warnings": [],
     "unverified_fifa_matches": [],
     "structure_unverified_fifa_matches": [],
-    "fixture_count": 0,
-    "fifa_fixture_count": 0,
+    "fixture_count": 1,
+    "fifa_fixture_count": 1,
     "raw_fifa_fixture_count": 104,
     "structure_fixture_count": 104,
     "structure_fifa_fixture_count": 104,
-    "odds_available_count": 0,
-    "matches": [],
-    "fixtures": [],
+    "odds_available_count": 1,
+    "matches": [
+      {
+        "id": "400021542",
+        "fifa_match_id": "400021542",
+        "match_name": "法国 vs 英格兰",
+        "match_name_en": "France vs England",
+        "kickoff_utc": "2026-07-18T21:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Bronze final",
+        "stage_name": "Bronze final",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 103,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "result": {
+          "status": "scheduled",
+          "completed": false,
+          "home_score": null,
+          "away_score": null,
+          "display": null,
+          "source": "FIFA official calendar API",
+          "verification": "unavailable"
+        },
+        "teams": {
+          "home": {
+            "name": "法国",
+            "name_en": "France",
+            "abbreviation": "FRA",
+            "id_team": "478",
+            "id_country": "FRA",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "FRA",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+            "flag_emoji": "🇫🇷"
+          },
+          "away": {
+            "name": "英格兰",
+            "name_en": "England",
+            "abbreviation": "ENG",
+            "id_team": "448",
+            "id_country": "ENG",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "ENG",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+            "flag_emoji": ""
+          }
+        },
+        "venue": {
+          "name": "Miami Stadium",
+          "city": "Miami",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021542"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760516"
+          }
+        },
+        "espn_event_id": "760516",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check",
+          "result": "unavailable"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "-110",
+            "draw": "+285",
+            "away": "+270"
+          },
+          "implied_probability": {
+            "home_win": 52.38,
+            "draw": 25.97,
+            "away_win": 27.03
+          },
+          "normalized_probability": {
+            "home_win": 49.71,
+            "draw": 24.65,
+            "away_win": 25.65
+          },
+          "overround": 5.38,
+          "details": "FRA -110"
+        },
+        "injuries": {
+          "home": {
+            "team": "法国",
+            "team_en": "France",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "英格兰",
+            "team_en": "England",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
+        }
+      }
+    ],
+    "fixtures": [
+      {
+        "id": "400021542",
+        "fifa_match_id": "400021542",
+        "match_name": "法国 vs 英格兰",
+        "match_name_en": "France vs England",
+        "kickoff_utc": "2026-07-18T21:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Bronze final",
+        "stage_name": "Bronze final",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 103,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "result": {
+          "status": "scheduled",
+          "completed": false,
+          "home_score": null,
+          "away_score": null,
+          "display": null,
+          "source": "FIFA official calendar API",
+          "verification": "unavailable"
+        },
+        "teams": {
+          "home": {
+            "name": "法国",
+            "name_en": "France",
+            "abbreviation": "FRA",
+            "id_team": "478",
+            "id_country": "FRA",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "FRA",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+            "flag_emoji": "🇫🇷"
+          },
+          "away": {
+            "name": "英格兰",
+            "name_en": "England",
+            "abbreviation": "ENG",
+            "id_team": "448",
+            "id_country": "ENG",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "ENG",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+            "flag_emoji": ""
+          }
+        },
+        "venue": {
+          "name": "Miami Stadium",
+          "city": "Miami",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021542"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760516"
+          }
+        },
+        "espn_event_id": "760516",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check",
+          "result": "unavailable"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "-110",
+            "draw": "+285",
+            "away": "+270"
+          },
+          "implied_probability": {
+            "home_win": 52.38,
+            "draw": 25.97,
+            "away_win": 27.03
+          },
+          "normalized_probability": {
+            "home_win": 49.71,
+            "draw": 24.65,
+            "away_win": 25.65
+          },
+          "overround": 5.38,
+          "details": "FRA -110"
+        },
+        "injuries": {
+          "home": {
+            "team": "法国",
+            "team_en": "France",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "英格兰",
+            "team_en": "England",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
+        }
+      }
+    ],
     "structure_matches": [
       {
         "id": "400021443",
@@ -14608,6 +15398,22 @@
           },
           "overround": 5.38,
           "details": "FRA -110"
+        },
+        "injuries": {
+          "home": {
+            "team": "法国",
+            "team_en": "France",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "英格兰",
+            "team_en": "England",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
         }
       },
       {
@@ -14699,28 +15505,28 @@
           "source": "ESPN odds feed",
           "provider": "DraftKings",
           "moneyline_american": {
-            "home": "+130",
-            "draw": "+195",
+            "home": "+125",
+            "draw": "+200",
             "away": "+255"
           },
           "implied_probability": {
-            "home_win": 43.48,
-            "draw": 33.9,
+            "home_win": 44.44,
+            "draw": 33.33,
             "away_win": 28.17
           },
           "normalized_probability": {
-            "home_win": 41.19,
-            "draw": 32.12,
-            "away_win": 26.69
+            "home_win": 41.95,
+            "draw": 31.46,
+            "away_win": 26.59
           },
-          "overround": 5.55,
-          "details": "ESP +130"
+          "overround": 5.95,
+          "details": "ESP +125"
         }
       }
     ],
     "daily_log": [
       {
-        "time": "2026-07-17T03:33:12Z",
+        "time": "2026-07-18T03:27:02Z",
         "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
         "status": "completed"
       }
@@ -14729,48 +15535,48 @@
   "display_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 2,
-    "start_iso": "2026-07-16T18:00:00+08:00",
-    "end_iso": "2026-07-18T18:00:00+08:00",
-    "display_range": "7月16日比赛日 - 7月17日比赛日",
-    "range": "北京时间 07-16 18:00 - 07-18 18:00",
+    "start_iso": "2026-07-17T18:00:00+08:00",
+    "end_iso": "2026-07-19T18:00:00+08:00",
+    "display_range": "7月17日比赛日 - 7月18日比赛日",
+    "range": "北京时间 07-17 18:00 - 07-19 18:00",
     "match_days": [
-      {
-        "date": "2026-07-16",
-        "title": "7月16日比赛日",
-        "range": "北京时间 07-16 18:00 - 07-17 18:00",
-        "start_iso": "2026-07-16T18:00:00+08:00",
-        "end_iso": "2026-07-17T18:00:00+08:00"
-      },
       {
         "date": "2026-07-17",
         "title": "7月17日比赛日",
         "range": "北京时间 07-17 18:00 - 07-18 18:00",
         "start_iso": "2026-07-17T18:00:00+08:00",
         "end_iso": "2026-07-18T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-18",
+        "title": "7月18日比赛日",
+        "range": "北京时间 07-18 18:00 - 07-19 18:00",
+        "start_iso": "2026-07-18T18:00:00+08:00",
+        "end_iso": "2026-07-19T18:00:00+08:00"
       }
     ]
   },
   "china_match_days": [
-    {
-      "date": "2026-07-16",
-      "title": "7月16日比赛日",
-      "range": "北京时间 07-16 18:00 - 07-17 18:00",
-      "start_iso": "2026-07-16T18:00:00+08:00",
-      "end_iso": "2026-07-17T18:00:00+08:00"
-    },
     {
       "date": "2026-07-17",
       "title": "7月17日比赛日",
       "range": "北京时间 07-17 18:00 - 07-18 18:00",
       "start_iso": "2026-07-17T18:00:00+08:00",
       "end_iso": "2026-07-18T18:00:00+08:00"
+    },
+    {
+      "date": "2026-07-18",
+      "title": "7月18日比赛日",
+      "range": "北京时间 07-18 18:00 - 07-19 18:00",
+      "start_iso": "2026-07-18T18:00:00+08:00",
+      "end_iso": "2026-07-19T18:00:00+08:00"
     }
   ],
   "usage": {
-    "input_tokens": 78477,
-    "output_tokens": 1294,
-    "total_tokens": 79771,
-    "cost_estimate": 0.79771
+    "input_tokens": 80328,
+    "output_tokens": 3775,
+    "total_tokens": 84103,
+    "cost_estimate": 0.84103
   },
   "analysis_model": "deepseek-v4-pro",
   "model": {
@@ -14784,12 +15590,12 @@
   },
   "daily_log": [
     {
-      "time": "2026-07-17T03:33:12Z",
+      "time": "2026-07-18T03:27:02Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     },
     {
-      "time": "2026-07-17T03:45:07Z",
+      "time": "2026-07-18T03:40:14Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     }
