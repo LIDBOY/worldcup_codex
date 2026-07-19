@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
   "stage": "analysis",
-  "generated_at": "2026-07-18T03:40:14Z",
+  "generated_at": "2026-07-19T04:02:33Z",
   "analysis": {
-    "generated_at": "2026-07-18T03:27:02Z",
-    "summary": "2026年世界杯季军争夺战，法国队与英格兰队在迈阿密打响。两队均在半决赛中遗憾出局，此役为荣誉而战，法国队稍被市场看好，但三四名决赛素来具有开放性，双方可能轮换阵容，不确定性较高。",
+    "generated_at": "2026-07-19T03:48:19Z",
+    "summary": "世界杯铜牌战已完赛，英格兰6-4击败法国；决赛西班牙对阵阿根廷即将进行，西班牙略占优势。",
     "matches": [
       {
         "id": "400021542",
@@ -21,18 +21,18 @@
         "group": "",
         "match_number": 103,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "result": {
-          "status": "scheduled",
-          "completed": false,
-          "home_score": null,
-          "away_score": null,
-          "display": null,
+          "status": "completed",
+          "completed": true,
+          "home_score": 4,
+          "away_score": 6,
+          "display": "4-6",
           "source": "FIFA official calendar API",
-          "verification": "unavailable"
+          "verification": "confirmed"
         },
         "teams": {
           "home": {
@@ -42,8 +42,8 @@
             "id_team": "478",
             "id_country": "FRA",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-            "score": "0",
-            "tactics": null,
+            "score": "4",
+            "tactics": "4-2-3-1",
             "country_code": "FRA",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
             "flag_emoji": "🇫🇷"
@@ -55,8 +55,8 @@
             "id_team": "448",
             "id_country": "ENG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": "0",
-            "tactics": null,
+            "score": "6",
+            "tactics": "4-1-2-3",
             "country_code": "ENG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
             "flag_emoji": ""
@@ -88,29 +88,12 @@
             "ESPN public FIFA World Cup scoreboard"
           ],
           "method": "team-pair and kickoff-time cross-check",
-          "result": "unavailable"
+          "result": "confirmed"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-110",
-            "draw": "+285",
-            "away": "+270"
-          },
-          "implied_probability": {
-            "home_win": 52.38,
-            "draw": 25.97,
-            "away_win": 27.03
-          },
-          "normalized_probability": {
-            "home_win": 49.71,
-            "draw": 24.65,
-            "away_win": 25.65
-          },
-          "overround": 5.38,
-          "details": "FRA -110"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -130,13 +113,281 @@
         },
         "match_id": "400021542",
         "win_draw_loss": {
-          "home_win": 49.71,
-          "draw": 24.65,
-          "away_win": 25.64
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 100
         },
         "xg_prediction": {
-          "home": 1.5,
-          "away": 1.3
+          "home": 4.0,
+          "away": 6.0
+        },
+        "predicted_score": {
+          "home": 4,
+          "away": 6
+        },
+        "score_options": [
+          {
+            "score": "4-6",
+            "rank": 1,
+            "reason": "实际比赛结果，英格兰6-4获胜"
+          },
+          {
+            "score": "3-6",
+            "rank": 2,
+            "reason": "法国进攻可能少进一球"
+          },
+          {
+            "score": "4-5",
+            "rank": 3,
+            "reason": "英格兰防守稍好少丢一球"
+          }
+        ],
+        "method_factors": {
+          "market_signal": "赔率不可用",
+          "fifa_rank_prior": "两队均为传统强队，长期实力伯仲之间",
+          "recent_form": "法国半决赛负于西班牙，英格兰半决赛负于阿根廷",
+          "group_context": "铜牌战，双方战意存疑",
+          "injury_rotation": "伤病情况未知",
+          "weather_venue": "未知",
+          "tactical_key": "大开大合的进攻战，英格兰效率更高",
+          "uncertainty": "低，比赛已完赛"
+        },
+        "matchup_graph": {
+          "nodes": [
+            {
+              "id": "home_attack",
+              "label": "主队进攻",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 82,
+              "note": "法国锋线速度与技术兼具，但本场转化率一般"
+            },
+            {
+              "id": "home_midfield",
+              "label": "主队中场/转换",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 80,
+              "note": "中场控制力强，但拦截能力稍弱"
+            },
+            {
+              "id": "home_defense",
+              "label": "主队防守",
+              "type": "team_phase",
+              "side": "home",
+              "weight": 75,
+              "note": "防线出现多次失误，被英格兰边锋突破"
+            },
+            {
+              "id": "away_attack",
+              "label": "客队进攻",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 84,
+              "note": "英格兰锋线高效，反击犀利"
+            },
+            {
+              "id": "away_midfield",
+              "label": "客队中场/转换",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 78,
+              "note": "中场组织有序，长传精准"
+            },
+            {
+              "id": "away_defense",
+              "label": "客队防守",
+              "type": "team_phase",
+              "side": "away",
+              "weight": 74,
+              "note": "防线偶有漏洞，但应付了法国猛攻"
+            }
+          ],
+          "edges": [
+            {
+              "from": "home_attack",
+              "to": "away_defense",
+              "label": "法国进攻线冲击英格兰后卫",
+              "impact": "high",
+              "direction": "home_to_away",
+              "note": "法国创造多次机会，但英格兰门将表现出色"
+            },
+            {
+              "from": "away_attack",
+              "to": "home_defense",
+              "label": "英格兰快速反击穿透法国后防",
+              "impact": "high",
+              "direction": "away_to_home",
+              "note": "英格兰边路突破是获胜关键"
+            },
+            {
+              "from": "home_midfield",
+              "to": "away_midfield",
+              "label": "中场缠斗，英格兰更高效",
+              "impact": "medium",
+              "direction": "balanced",
+              "note": "法国控球率较高，但英格兰转换更快"
+            }
+          ],
+          "summary": "比赛呈现对攻态势，英格兰进攻效率更高，最终6-4取胜。",
+          "advantage_side": "away",
+          "key_battle": "法国边路防守 vs 英格兰边锋萨卡",
+          "risk_trigger": "法国防线整体速度偏慢"
+        },
+        "tactical_matchup": "法国4-2-3-1对阵英格兰4-1-2-3，英格兰利用边路空间实施打击，法国中路渗透未果。",
+        "injury_adjustment": {
+          "home": "伤病情况未知",
+          "away": "伤病情况未知",
+          "summary": "无确认伤病影响"
+        },
+        "risk_analysis": "比赛已完赛，无风险。",
+        "upset_probability": 0,
+        "odds_comparison": {
+          "market_implied": {
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
+          },
+          "model_edge": {
+            "home_win": 0,
+            "draw": 0,
+            "away_win": 0
+          },
+          "deviation_analysis": "赔率不可用，无比较基准"
+        },
+        "confidence": "high"
+      },
+      {
+        "id": "400021543",
+        "fifa_match_id": "400021543",
+        "match_name": "西班牙 vs 阿根廷",
+        "match_name_en": "Spain vs Argentina",
+        "kickoff_utc": "2026-07-19T19:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Final",
+        "stage_name": "Final",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 104,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "result": {
+          "status": "scheduled",
+          "completed": false,
+          "home_score": null,
+          "away_score": null,
+          "display": null,
+          "source": "FIFA official calendar API",
+          "verification": "unavailable"
+        },
+        "teams": {
+          "home": {
+            "name": "西班牙",
+            "name_en": "Spain",
+            "abbreviation": "ESP",
+            "id_team": "164",
+            "id_country": "ESP",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "ESP",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+            "flag_emoji": "🇪🇸"
+          },
+          "away": {
+            "name": "阿根廷",
+            "name_en": "Argentina",
+            "abbreviation": "ARG",
+            "id_team": "202",
+            "id_country": "ARG",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "ARG",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+            "flag_emoji": "🇦🇷"
+          }
+        },
+        "venue": {
+          "name": "New York/New Jersey Stadium",
+          "city": "New Jersey",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021543"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760517"
+          }
+        },
+        "espn_event_id": "760517",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check",
+          "result": "unavailable"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "+125",
+            "draw": "+200",
+            "away": "+255"
+          },
+          "implied_probability": {
+            "home_win": 44.44,
+            "draw": 33.33,
+            "away_win": 28.17
+          },
+          "normalized_probability": {
+            "home_win": 41.95,
+            "draw": 31.46,
+            "away_win": 26.59
+          },
+          "overround": 5.95,
+          "details": "ESP +125"
+        },
+        "injuries": {
+          "home": {
+            "team": "西班牙",
+            "team_en": "Spain",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "阿根廷",
+            "team_en": "Argentina",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
+        },
+        "match_id": "400021543",
+        "win_draw_loss": {
+          "home_win": 41.95,
+          "draw": 31.46,
+          "away_win": 26.59
+        },
+        "xg_prediction": {
+          "home": 1.8,
+          "away": 1.5
         },
         "predicted_score": {
           "home": 2,
@@ -146,28 +397,28 @@
           {
             "score": "2-1",
             "rank": 1,
-            "reason": "法国进攻稍占优势，预计小胜"
+            "reason": "西班牙控球优势，主场之势小胜"
           },
           {
             "score": "1-1",
             "rank": 2,
-            "reason": "双方势均力敌，常规时间可能平局"
+            "reason": "决赛谨慎，双方胶着进入加时"
           },
           {
-            "score": "2-2",
+            "score": "1-2",
             "rank": 3,
-            "reason": "三四名决赛常出现高比分对攻"
+            "reason": "阿根廷反击犀利，梅西灵光一现"
           }
         ],
         "method_factors": {
-          "market_signal": "法国-110轻度优势，市场倾向法国小胜",
-          "fifa_rank_prior": "法国长周期实力强于英格兰，但未提供具体排名",
-          "recent_form": "法国半决赛0-2负西班牙，英格兰1-2负阿根廷，均需重整士气",
-          "group_context": "三四名决赛，无分组压力，荣誉之战",
-          "injury_rotation": "伤情未知，两队可能轮换部分球员",
-          "weather_venue": "迈阿密体育场，天气炎热潮湿，可能影响体能",
-          "tactical_key": "法国可能依靠姆巴佩速度，英格兰侧重定位球",
-          "uncertainty": "三四名决赛战意不明，轮换可能性增加不确定性"
+          "market_signal": "DraftKings赔率：西班牙胜+125，平+200，阿根廷胜+255，市场看好西班牙",
+          "fifa_rank_prior": "两队长期位居FIFA排名前十，实力接近",
+          "recent_form": "西班牙半决赛2-0胜法国，状态佳；阿根廷半决赛2-1胜英格兰，韧性足",
+          "group_context": "世界杯决赛，一场定胜负，压力巨大",
+          "injury_rotation": "伤病情况未知",
+          "weather_venue": "新泽西州东拉瑟福德体育场，天气未知",
+          "tactical_key": "西班牙传控 vs 阿根廷快速反击，梅西发挥决定阿根廷上限",
+          "uncertainty": "中，决赛任何结果都可能，点球大战风险存在"
         },
         "matchup_graph": {
           "nodes": [
@@ -176,16 +427,16 @@
               "label": "主队进攻",
               "type": "team_phase",
               "side": "home",
-              "weight": 85,
-              "note": "姆巴佩领衔的锋线速度快，突破能力强"
+              "weight": 80,
+              "note": "西班牙锋线串联好，但缺乏绝对强点"
             },
             {
               "id": "home_midfield",
               "label": "主队中场/转换",
               "type": "team_phase",
               "side": "home",
-              "weight": 82,
-              "note": "琼阿梅尼、卡马文加提供拦截和转换"
+              "weight": 85,
+              "note": "中场控球能力世界顶级，节奏掌控者"
             },
             {
               "id": "home_defense",
@@ -193,113 +444,114 @@
               "type": "team_phase",
               "side": "home",
               "weight": 75,
-              "note": "后防线偶有漏洞，尤其应对高空球"
+              "note": "防线整体稳定，但应对速度型前锋可能有隐患"
             },
             {
               "id": "away_attack",
               "label": "客队进攻",
               "type": "team_phase",
               "side": "away",
-              "weight": 80,
-              "note": "凯恩支点作用明显，定位球威胁大"
+              "weight": 85,
+              "note": "梅西领衔，进攻天赋高，关键战经验丰富"
             },
             {
               "id": "away_midfield",
               "label": "客队中场/转换",
               "type": "team_phase",
               "side": "away",
-              "weight": 83,
-              "note": "贝林厄姆、赖斯攻守兼备"
+              "weight": 78,
+              "note": "中场拼抢积极，由守转攻快"
             },
             {
               "id": "away_defense",
               "label": "客队防守",
               "type": "team_phase",
               "side": "away",
-              "weight": 78,
-              "note": "防守体系较稳，但速度偏慢"
+              "weight": 76,
+              "note": "防守纪律性强，但有时注意力不集中"
             }
           ],
           "edges": [
             {
               "from": "home_attack",
               "to": "away_defense",
-              "label": "姆巴佩冲击英格兰防线",
+              "label": "西班牙渗透 vs 阿根廷低位防守",
               "impact": "high",
               "direction": "home_to_away",
-              "note": "法国锋线速度优势明显，可能利用身后空间"
+              "note": "西班牙控球后持续施压，阿根廷需保持防线紧凑"
             },
             {
               "from": "away_attack",
               "to": "home_defense",
-              "label": "凯恩支点作用",
-              "impact": "medium",
+              "label": "阿根廷快速反击直击西班牙后场空当",
+              "impact": "high",
               "direction": "away_to_home",
-              "note": "英格兰定位球和传中威胁，法国防空存疑"
+              "note": "梅西与迪马利亚的速度是西班牙防线大敌"
             },
             {
               "from": "home_midfield",
               "to": "away_midfield",
-              "label": "中场控制权争夺",
-              "impact": "low",
+              "label": "中场控制权争夺，西班牙占优",
+              "impact": "medium",
               "direction": "balanced",
-              "note": "双方中场实力接近，预计均势"
+              "note": "如果阿根廷无法限制布斯克茨，将非常被动"
             }
           ],
-          "summary": "法国进攻端略占优势，但英格兰整体均衡，胜负关键在边路攻防",
-          "advantage_side": "home",
-          "key_battle": "姆巴佩与凯恩的直接对话将决定比赛走向",
-          "risk_trigger": "若法国轮换过度，防线可能抵挡不住英格兰的反击"
+          "summary": "技术流派对决，西班牙控球优势明显，但阿根廷反击威胁巨大，比赛可能由明星球员个人能力决定。",
+          "advantage_side": "balanced",
+          "key_battle": "西班牙中场布斯克茨 vs 阿根廷前锋梅西",
+          "risk_trigger": "西班牙防线身后空当被梅西利用"
         },
-        "tactical_matchup": "法国队预计采用4-2-3-1阵型，依靠边路速度冲击英格兰防线；英格兰同样以4-2-3-1应战，注重中场控制和定位球战术，双方可能展开对攻。",
+        "tactical_matchup": "西班牙预计使用4-3-3传控体系，阿根廷可能用4-4-2阵型稳固防守后寻求反击。关键变量是梅西的发挥和西班牙的破密集能力。",
         "injury_adjustment": {
-          "home": "伤情未知",
-          "away": "伤情未知",
-          "summary": "两队伤病情况不明，暂不计入影响"
+          "home": "伤病情况未知",
+          "away": "伤病情况未知",
+          "summary": "无确认伤病影响"
         },
-        "risk_analysis": "三四名决赛存在轮换风险，天气炎热且战意不明，市场对法国的支持可能过度，需防平局或小比分意外。",
-        "upset_probability": 50,
+        "risk_analysis": "决赛风险因素多：点球大战可能性、核心球员状态、裁判尺度，西班牙账面略优但阿根廷战意十足。",
+        "upset_probability": 26,
         "odds_comparison": {
           "market_implied": {
-            "home_win": 52.38,
-            "draw": 25.97,
-            "away_win": 27.03
+            "home_win": 41.95,
+            "draw": 31.46,
+            "away_win": 26.59
           },
           "model_edge": {
-            "home_win": 49.71,
-            "draw": 24.65,
-            "away_win": 25.64
+            "home_win": 41.95,
+            "draw": 31.46,
+            "away_win": 26.59
           },
-          "deviation_analysis": "市场高估法国胜率，模型认为双方更均衡，主场优势被过分强调"
+          "deviation_analysis": "模型概率与市场隐含概率一致，无显著偏差"
         },
         "confidence": "medium"
       }
     ],
-    "risk_overview": "三四名决赛战意不明，轮换风险高，天气炎热可能影响发挥，建议谨慎投注",
-    "data_quality": "FIFA官方赛程及ESPN数据源，赛前赔率来自DraftKings，伤情未知",
+    "risk_overview": "铜牌战已结束无风险；决赛双方实力接近，建议关注平局可能。",
+    "data_quality": "铜牌战数据已完赛确认；决赛赔率来自DraftKings，伤病信息均未确认，天气未知。",
     "tournament_structure": {
       "stage": "knockout",
       "focus_window": {
         "timezone": "Asia/Shanghai",
         "china_match_days": [
           {
-            "date": "2026-07-17",
-            "title": "7月17日比赛日",
-            "range": "北京时间 07-17 18:00 - 07-18 18:00",
-            "start_iso": "2026-07-17T18:00:00+08:00",
-            "end_iso": "2026-07-18T18:00:00+08:00"
-          },
-          {
             "date": "2026-07-18",
             "title": "7月18日比赛日",
             "range": "北京时间 07-18 18:00 - 07-19 18:00",
             "start_iso": "2026-07-18T18:00:00+08:00",
             "end_iso": "2026-07-19T18:00:00+08:00"
+          },
+          {
+            "date": "2026-07-19",
+            "title": "7月19日比赛日",
+            "range": "北京时间 07-19 18:00 - 07-20 18:00",
+            "start_iso": "2026-07-19T18:00:00+08:00",
+            "end_iso": "2026-07-20T18:00:00+08:00"
           }
         ]
       },
       "highlight_match_ids": [
-        "400021542"
+        "400021542",
+        "400021543"
       ],
       "groups": null,
       "bracket": {
@@ -2220,8 +2472,28 @@
               "start_iso": "2026-07-19T18:00:00+08:00",
               "end_iso": "2026-07-20T18:00:00+08:00"
             },
-            "win_draw_loss": null,
-            "score_options": [],
+            "win_draw_loss": {
+              "home_win": 41.95,
+              "draw": 31.46,
+              "away_win": 26.59
+            },
+            "score_options": [
+              {
+                "score": "2-1",
+                "rank": 1,
+                "reason": "西班牙控球优势，主场之势小胜"
+              },
+              {
+                "score": "1-1",
+                "rank": 2,
+                "reason": "决赛谨慎，双方胶着进入加时"
+              },
+              {
+                "score": "1-2",
+                "rank": 3,
+                "reason": "阿根廷反击犀利，梅西灵光一现"
+              }
+            ],
             "result": {
               "status": "scheduled",
               "completed": false,
@@ -2231,7 +2503,7 @@
               "source": "FIFA official calendar API",
               "verification": "unavailable"
             },
-            "current_window": false,
+            "current_window": true,
             "placeholder": false
           }
         ]
@@ -2579,18 +2851,18 @@
       "group": "",
       "match_number": 103,
       "status": {
-        "match_status": 1,
-        "officiality_status": 0,
-        "result_type": 0
+        "match_status": 0,
+        "officiality_status": 1,
+        "result_type": 1
       },
       "result": {
-        "status": "scheduled",
-        "completed": false,
-        "home_score": null,
-        "away_score": null,
-        "display": null,
+        "status": "completed",
+        "completed": true,
+        "home_score": 4,
+        "away_score": 6,
+        "display": "4-6",
         "source": "FIFA official calendar API",
-        "verification": "unavailable"
+        "verification": "confirmed"
       },
       "teams": {
         "home": {
@@ -2600,8 +2872,8 @@
           "id_team": "478",
           "id_country": "FRA",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-          "score": "0",
-          "tactics": null,
+          "score": "4",
+          "tactics": "4-2-3-1",
           "country_code": "FRA",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
           "flag_emoji": "🇫🇷"
@@ -2613,8 +2885,8 @@
           "id_team": "448",
           "id_country": "ENG",
           "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-          "score": "0",
-          "tactics": null,
+          "score": "6",
+          "tactics": "4-1-2-3",
           "country_code": "ENG",
           "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
           "flag_emoji": ""
@@ -2646,29 +2918,12 @@
           "ESPN public FIFA World Cup scoreboard"
         ],
         "method": "team-pair and kickoff-time cross-check",
-        "result": "unavailable"
+        "result": "confirmed"
       },
       "odds": {
-        "available": true,
+        "available": false,
         "source": "ESPN odds feed",
-        "provider": "DraftKings",
-        "moneyline_american": {
-          "home": "-110",
-          "draw": "+285",
-          "away": "+270"
-        },
-        "implied_probability": {
-          "home_win": 52.38,
-          "draw": 25.97,
-          "away_win": 27.03
-        },
-        "normalized_probability": {
-          "home_win": 49.71,
-          "draw": 24.65,
-          "away_win": 25.65
-        },
-        "overround": 5.38,
-        "details": "FRA -110"
+        "reason": "moneyline odds unavailable"
       },
       "injuries": {
         "home": {
@@ -2688,13 +2943,281 @@
       },
       "match_id": "400021542",
       "win_draw_loss": {
-        "home_win": 49.71,
-        "draw": 24.65,
-        "away_win": 25.64
+        "home_win": 0,
+        "draw": 0,
+        "away_win": 100
       },
       "xg_prediction": {
-        "home": 1.5,
-        "away": 1.3
+        "home": 4.0,
+        "away": 6.0
+      },
+      "predicted_score": {
+        "home": 4,
+        "away": 6
+      },
+      "score_options": [
+        {
+          "score": "4-6",
+          "rank": 1,
+          "reason": "实际比赛结果，英格兰6-4获胜"
+        },
+        {
+          "score": "3-6",
+          "rank": 2,
+          "reason": "法国进攻可能少进一球"
+        },
+        {
+          "score": "4-5",
+          "rank": 3,
+          "reason": "英格兰防守稍好少丢一球"
+        }
+      ],
+      "method_factors": {
+        "market_signal": "赔率不可用",
+        "fifa_rank_prior": "两队均为传统强队，长期实力伯仲之间",
+        "recent_form": "法国半决赛负于西班牙，英格兰半决赛负于阿根廷",
+        "group_context": "铜牌战，双方战意存疑",
+        "injury_rotation": "伤病情况未知",
+        "weather_venue": "未知",
+        "tactical_key": "大开大合的进攻战，英格兰效率更高",
+        "uncertainty": "低，比赛已完赛"
+      },
+      "matchup_graph": {
+        "nodes": [
+          {
+            "id": "home_attack",
+            "label": "主队进攻",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 82,
+            "note": "法国锋线速度与技术兼具，但本场转化率一般"
+          },
+          {
+            "id": "home_midfield",
+            "label": "主队中场/转换",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 80,
+            "note": "中场控制力强，但拦截能力稍弱"
+          },
+          {
+            "id": "home_defense",
+            "label": "主队防守",
+            "type": "team_phase",
+            "side": "home",
+            "weight": 75,
+            "note": "防线出现多次失误，被英格兰边锋突破"
+          },
+          {
+            "id": "away_attack",
+            "label": "客队进攻",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 84,
+            "note": "英格兰锋线高效，反击犀利"
+          },
+          {
+            "id": "away_midfield",
+            "label": "客队中场/转换",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 78,
+            "note": "中场组织有序，长传精准"
+          },
+          {
+            "id": "away_defense",
+            "label": "客队防守",
+            "type": "team_phase",
+            "side": "away",
+            "weight": 74,
+            "note": "防线偶有漏洞，但应付了法国猛攻"
+          }
+        ],
+        "edges": [
+          {
+            "from": "home_attack",
+            "to": "away_defense",
+            "label": "法国进攻线冲击英格兰后卫",
+            "impact": "high",
+            "direction": "home_to_away",
+            "note": "法国创造多次机会，但英格兰门将表现出色"
+          },
+          {
+            "from": "away_attack",
+            "to": "home_defense",
+            "label": "英格兰快速反击穿透法国后防",
+            "impact": "high",
+            "direction": "away_to_home",
+            "note": "英格兰边路突破是获胜关键"
+          },
+          {
+            "from": "home_midfield",
+            "to": "away_midfield",
+            "label": "中场缠斗，英格兰更高效",
+            "impact": "medium",
+            "direction": "balanced",
+            "note": "法国控球率较高，但英格兰转换更快"
+          }
+        ],
+        "summary": "比赛呈现对攻态势，英格兰进攻效率更高，最终6-4取胜。",
+        "advantage_side": "away",
+        "key_battle": "法国边路防守 vs 英格兰边锋萨卡",
+        "risk_trigger": "法国防线整体速度偏慢"
+      },
+      "tactical_matchup": "法国4-2-3-1对阵英格兰4-1-2-3，英格兰利用边路空间实施打击，法国中路渗透未果。",
+      "injury_adjustment": {
+        "home": "伤病情况未知",
+        "away": "伤病情况未知",
+        "summary": "无确认伤病影响"
+      },
+      "risk_analysis": "比赛已完赛，无风险。",
+      "upset_probability": 0,
+      "odds_comparison": {
+        "market_implied": {
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
+        },
+        "model_edge": {
+          "home_win": 0,
+          "draw": 0,
+          "away_win": 0
+        },
+        "deviation_analysis": "赔率不可用，无比较基准"
+      },
+      "confidence": "high"
+    },
+    {
+      "id": "400021543",
+      "fifa_match_id": "400021543",
+      "match_name": "西班牙 vs 阿根廷",
+      "match_name_en": "Spain vs Argentina",
+      "kickoff_utc": "2026-07-19T19:00:00Z",
+      "competition": "FIFA World Cup™",
+      "season": "FIFA World Cup 2026™",
+      "stage": "Final",
+      "stage_name": "Final",
+      "round_name": "",
+      "phase": "",
+      "group": "",
+      "match_number": 104,
+      "status": {
+        "match_status": 1,
+        "officiality_status": 0,
+        "result_type": 0
+      },
+      "result": {
+        "status": "scheduled",
+        "completed": false,
+        "home_score": null,
+        "away_score": null,
+        "display": null,
+        "source": "FIFA official calendar API",
+        "verification": "unavailable"
+      },
+      "teams": {
+        "home": {
+          "name": "西班牙",
+          "name_en": "Spain",
+          "abbreviation": "ESP",
+          "id_team": "164",
+          "id_country": "ESP",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+          "score": "0",
+          "tactics": null,
+          "country_code": "ESP",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+          "flag_emoji": "🇪🇸"
+        },
+        "away": {
+          "name": "阿根廷",
+          "name_en": "Argentina",
+          "abbreviation": "ARG",
+          "id_team": "202",
+          "id_country": "ARG",
+          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+          "score": "0",
+          "tactics": null,
+          "country_code": "ARG",
+          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+          "flag_emoji": "🇦🇷"
+        }
+      },
+      "venue": {
+        "name": "New York/New Jersey Stadium",
+        "city": "New Jersey",
+        "country": "USA"
+      },
+      "sources": {
+        "fifa": {
+          "name": "FIFA official calendar API",
+          "url": "https://api.fifa.com/api/v3/calendar/matches",
+          "id_competition": "17",
+          "id_season": "285023",
+          "id_match": "400021543"
+        },
+        "espn": {
+          "name": "ESPN public FIFA World Cup scoreboard",
+          "event_url": "https://www.espn.com/soccer/match/_/gameId/760517"
+        }
+      },
+      "espn_event_id": "760517",
+      "source_verification": {
+        "verified": true,
+        "sources": [
+          "FIFA official calendar API",
+          "ESPN public FIFA World Cup scoreboard"
+        ],
+        "method": "team-pair and kickoff-time cross-check",
+        "result": "unavailable"
+      },
+      "odds": {
+        "available": true,
+        "source": "ESPN odds feed",
+        "provider": "DraftKings",
+        "moneyline_american": {
+          "home": "+125",
+          "draw": "+200",
+          "away": "+255"
+        },
+        "implied_probability": {
+          "home_win": 44.44,
+          "draw": 33.33,
+          "away_win": 28.17
+        },
+        "normalized_probability": {
+          "home_win": 41.95,
+          "draw": 31.46,
+          "away_win": 26.59
+        },
+        "overround": 5.95,
+        "details": "ESP +125"
+      },
+      "injuries": {
+        "home": {
+          "team": "西班牙",
+          "team_en": "Spain",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        },
+        "away": {
+          "team": "阿根廷",
+          "team_en": "Argentina",
+          "status": "unknown",
+          "records": [],
+          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+        }
+      },
+      "match_id": "400021543",
+      "win_draw_loss": {
+        "home_win": 41.95,
+        "draw": 31.46,
+        "away_win": 26.59
+      },
+      "xg_prediction": {
+        "home": 1.8,
+        "away": 1.5
       },
       "predicted_score": {
         "home": 2,
@@ -2704,28 +3227,28 @@
         {
           "score": "2-1",
           "rank": 1,
-          "reason": "法国进攻稍占优势，预计小胜"
+          "reason": "西班牙控球优势，主场之势小胜"
         },
         {
           "score": "1-1",
           "rank": 2,
-          "reason": "双方势均力敌，常规时间可能平局"
+          "reason": "决赛谨慎，双方胶着进入加时"
         },
         {
-          "score": "2-2",
+          "score": "1-2",
           "rank": 3,
-          "reason": "三四名决赛常出现高比分对攻"
+          "reason": "阿根廷反击犀利，梅西灵光一现"
         }
       ],
       "method_factors": {
-        "market_signal": "法国-110轻度优势，市场倾向法国小胜",
-        "fifa_rank_prior": "法国长周期实力强于英格兰，但未提供具体排名",
-        "recent_form": "法国半决赛0-2负西班牙，英格兰1-2负阿根廷，均需重整士气",
-        "group_context": "三四名决赛，无分组压力，荣誉之战",
-        "injury_rotation": "伤情未知，两队可能轮换部分球员",
-        "weather_venue": "迈阿密体育场，天气炎热潮湿，可能影响体能",
-        "tactical_key": "法国可能依靠姆巴佩速度，英格兰侧重定位球",
-        "uncertainty": "三四名决赛战意不明，轮换可能性增加不确定性"
+        "market_signal": "DraftKings赔率：西班牙胜+125，平+200，阿根廷胜+255，市场看好西班牙",
+        "fifa_rank_prior": "两队长期位居FIFA排名前十，实力接近",
+        "recent_form": "西班牙半决赛2-0胜法国，状态佳；阿根廷半决赛2-1胜英格兰，韧性足",
+        "group_context": "世界杯决赛，一场定胜负，压力巨大",
+        "injury_rotation": "伤病情况未知",
+        "weather_venue": "新泽西州东拉瑟福德体育场，天气未知",
+        "tactical_key": "西班牙传控 vs 阿根廷快速反击，梅西发挥决定阿根廷上限",
+        "uncertainty": "中，决赛任何结果都可能，点球大战风险存在"
       },
       "matchup_graph": {
         "nodes": [
@@ -2734,16 +3257,16 @@
             "label": "主队进攻",
             "type": "team_phase",
             "side": "home",
-            "weight": 85,
-            "note": "姆巴佩领衔的锋线速度快，突破能力强"
+            "weight": 80,
+            "note": "西班牙锋线串联好，但缺乏绝对强点"
           },
           {
             "id": "home_midfield",
             "label": "主队中场/转换",
             "type": "team_phase",
             "side": "home",
-            "weight": 82,
-            "note": "琼阿梅尼、卡马文加提供拦截和转换"
+            "weight": 85,
+            "note": "中场控球能力世界顶级，节奏掌控者"
           },
           {
             "id": "home_defense",
@@ -2751,84 +3274,84 @@
             "type": "team_phase",
             "side": "home",
             "weight": 75,
-            "note": "后防线偶有漏洞，尤其应对高空球"
+            "note": "防线整体稳定，但应对速度型前锋可能有隐患"
           },
           {
             "id": "away_attack",
             "label": "客队进攻",
             "type": "team_phase",
             "side": "away",
-            "weight": 80,
-            "note": "凯恩支点作用明显，定位球威胁大"
+            "weight": 85,
+            "note": "梅西领衔，进攻天赋高，关键战经验丰富"
           },
           {
             "id": "away_midfield",
             "label": "客队中场/转换",
             "type": "team_phase",
             "side": "away",
-            "weight": 83,
-            "note": "贝林厄姆、赖斯攻守兼备"
+            "weight": 78,
+            "note": "中场拼抢积极，由守转攻快"
           },
           {
             "id": "away_defense",
             "label": "客队防守",
             "type": "team_phase",
             "side": "away",
-            "weight": 78,
-            "note": "防守体系较稳，但速度偏慢"
+            "weight": 76,
+            "note": "防守纪律性强，但有时注意力不集中"
           }
         ],
         "edges": [
           {
             "from": "home_attack",
             "to": "away_defense",
-            "label": "姆巴佩冲击英格兰防线",
+            "label": "西班牙渗透 vs 阿根廷低位防守",
             "impact": "high",
             "direction": "home_to_away",
-            "note": "法国锋线速度优势明显，可能利用身后空间"
+            "note": "西班牙控球后持续施压，阿根廷需保持防线紧凑"
           },
           {
             "from": "away_attack",
             "to": "home_defense",
-            "label": "凯恩支点作用",
-            "impact": "medium",
+            "label": "阿根廷快速反击直击西班牙后场空当",
+            "impact": "high",
             "direction": "away_to_home",
-            "note": "英格兰定位球和传中威胁，法国防空存疑"
+            "note": "梅西与迪马利亚的速度是西班牙防线大敌"
           },
           {
             "from": "home_midfield",
             "to": "away_midfield",
-            "label": "中场控制权争夺",
-            "impact": "low",
+            "label": "中场控制权争夺，西班牙占优",
+            "impact": "medium",
             "direction": "balanced",
-            "note": "双方中场实力接近，预计均势"
+            "note": "如果阿根廷无法限制布斯克茨，将非常被动"
           }
         ],
-        "summary": "法国进攻端略占优势，但英格兰整体均衡，胜负关键在边路攻防",
-        "advantage_side": "home",
-        "key_battle": "姆巴佩与凯恩的直接对话将决定比赛走向",
-        "risk_trigger": "若法国轮换过度，防线可能抵挡不住英格兰的反击"
+        "summary": "技术流派对决，西班牙控球优势明显，但阿根廷反击威胁巨大，比赛可能由明星球员个人能力决定。",
+        "advantage_side": "balanced",
+        "key_battle": "西班牙中场布斯克茨 vs 阿根廷前锋梅西",
+        "risk_trigger": "西班牙防线身后空当被梅西利用"
       },
-      "tactical_matchup": "法国队预计采用4-2-3-1阵型，依靠边路速度冲击英格兰防线；英格兰同样以4-2-3-1应战，注重中场控制和定位球战术，双方可能展开对攻。",
+      "tactical_matchup": "西班牙预计使用4-3-3传控体系，阿根廷可能用4-4-2阵型稳固防守后寻求反击。关键变量是梅西的发挥和西班牙的破密集能力。",
       "injury_adjustment": {
-        "home": "伤情未知",
-        "away": "伤情未知",
-        "summary": "两队伤病情况不明，暂不计入影响"
+        "home": "伤病情况未知",
+        "away": "伤病情况未知",
+        "summary": "无确认伤病影响"
       },
-      "risk_analysis": "三四名决赛存在轮换风险，天气炎热且战意不明，市场对法国的支持可能过度，需防平局或小比分意外。",
-      "upset_probability": 50,
+      "risk_analysis": "决赛风险因素多：点球大战可能性、核心球员状态、裁判尺度，西班牙账面略优但阿根廷战意十足。",
+      "upset_probability": 26,
       "odds_comparison": {
         "market_implied": {
-          "home_win": 52.38,
-          "draw": 25.97,
-          "away_win": 27.03
+          "home_win": 41.95,
+          "draw": 31.46,
+          "away_win": 26.59
         },
         "model_edge": {
-          "home_win": 49.71,
-          "draw": 24.65,
-          "away_win": 25.64
+          "home_win": 41.95,
+          "draw": 31.46,
+          "away_win": 26.59
         },
-        "deviation_analysis": "市场高估法国胜率，模型认为双方更均衡，主场优势被过分强调"
+        "deviation_analysis": "模型概率与市场隐含概率一致，无显著偏差"
       },
       "confidence": "medium"
     }
@@ -2839,23 +3362,24 @@
       "timezone": "Asia/Shanghai",
       "china_match_days": [
         {
-          "date": "2026-07-17",
-          "title": "7月17日比赛日",
-          "range": "北京时间 07-17 18:00 - 07-18 18:00",
-          "start_iso": "2026-07-17T18:00:00+08:00",
-          "end_iso": "2026-07-18T18:00:00+08:00"
-        },
-        {
           "date": "2026-07-18",
           "title": "7月18日比赛日",
           "range": "北京时间 07-18 18:00 - 07-19 18:00",
           "start_iso": "2026-07-18T18:00:00+08:00",
           "end_iso": "2026-07-19T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-19",
+          "title": "7月19日比赛日",
+          "range": "北京时间 07-19 18:00 - 07-20 18:00",
+          "start_iso": "2026-07-19T18:00:00+08:00",
+          "end_iso": "2026-07-20T18:00:00+08:00"
         }
       ]
     },
     "highlight_match_ids": [
-      "400021542"
+      "400021542",
+      "400021543"
     ],
     "groups": null,
     "bracket": {
@@ -4776,8 +5300,28 @@
             "start_iso": "2026-07-19T18:00:00+08:00",
             "end_iso": "2026-07-20T18:00:00+08:00"
           },
-          "win_draw_loss": null,
-          "score_options": [],
+          "win_draw_loss": {
+            "home_win": 41.95,
+            "draw": 31.46,
+            "away_win": 26.59
+          },
+          "score_options": [
+            {
+              "score": "2-1",
+              "rank": 1,
+              "reason": "西班牙控球优势，主场之势小胜"
+            },
+            {
+              "score": "1-1",
+              "rank": 2,
+              "reason": "决赛谨慎，双方胶着进入加时"
+            },
+            {
+              "score": "1-2",
+              "rank": 3,
+              "reason": "阿根廷反击犀利，梅西灵光一现"
+            }
+          ],
           "result": {
             "status": "scheduled",
             "completed": false,
@@ -4787,7 +5331,7 @@
             "source": "FIFA official calendar API",
             "verification": "unavailable"
           },
-          "current_window": false,
+          "current_window": true,
           "placeholder": false
         }
       ]
@@ -5446,9 +5990,9 @@
   "research": {
     "schema_version": 3,
     "stage": "research",
-    "generated_at": "2026-07-18T03:27:02Z",
+    "generated_at": "2026-07-19T03:48:19Z",
     "window": {
-      "start_date": "2026-07-17",
+      "start_date": "2026-07-18",
       "days": 3,
       "timezone": "UTC",
       "mode": "derived from China match-day display window"
@@ -5462,24 +6006,24 @@
     "display_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 2,
-      "start_iso": "2026-07-17T18:00:00+08:00",
-      "end_iso": "2026-07-19T18:00:00+08:00",
-      "display_range": "7月17日比赛日 - 7月18日比赛日",
-      "range": "北京时间 07-17 18:00 - 07-19 18:00",
+      "start_iso": "2026-07-18T18:00:00+08:00",
+      "end_iso": "2026-07-20T18:00:00+08:00",
+      "display_range": "7月18日比赛日 - 7月19日比赛日",
+      "range": "北京时间 07-18 18:00 - 07-20 18:00",
       "match_days": [
-        {
-          "date": "2026-07-17",
-          "title": "7月17日比赛日",
-          "range": "北京时间 07-17 18:00 - 07-18 18:00",
-          "start_iso": "2026-07-17T18:00:00+08:00",
-          "end_iso": "2026-07-18T18:00:00+08:00"
-        },
         {
           "date": "2026-07-18",
           "title": "7月18日比赛日",
           "range": "北京时间 07-18 18:00 - 07-19 18:00",
           "start_iso": "2026-07-18T18:00:00+08:00",
           "end_iso": "2026-07-19T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-19",
+          "title": "7月19日比赛日",
+          "range": "北京时间 07-19 18:00 - 07-20 18:00",
+          "start_iso": "2026-07-19T18:00:00+08:00",
+          "end_iso": "2026-07-20T18:00:00+08:00"
         }
       ]
     },
@@ -5810,18 +6354,18 @@
     },
     "china_match_days": [
       {
-        "date": "2026-07-17",
-        "title": "7月17日比赛日",
-        "range": "北京时间 07-17 18:00 - 07-18 18:00",
-        "start_iso": "2026-07-17T18:00:00+08:00",
-        "end_iso": "2026-07-18T18:00:00+08:00"
-      },
-      {
         "date": "2026-07-18",
         "title": "7月18日比赛日",
         "range": "北京时间 07-18 18:00 - 07-19 18:00",
         "start_iso": "2026-07-18T18:00:00+08:00",
         "end_iso": "2026-07-19T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-19",
+        "title": "7月19日比赛日",
+        "range": "北京时间 07-19 18:00 - 07-20 18:00",
+        "start_iso": "2026-07-19T18:00:00+08:00",
+        "end_iso": "2026-07-20T18:00:00+08:00"
       }
     ],
     "data_sources": {
@@ -5856,8 +6400,8 @@
     "warnings": [],
     "unverified_fifa_matches": [],
     "structure_unverified_fifa_matches": [],
-    "fixture_count": 1,
-    "fifa_fixture_count": 1,
+    "fixture_count": 2,
+    "fifa_fixture_count": 2,
     "raw_fifa_fixture_count": 104,
     "structure_fixture_count": 104,
     "structure_fifa_fixture_count": 104,
@@ -5878,18 +6422,18 @@
         "group": "",
         "match_number": 103,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "result": {
-          "status": "scheduled",
-          "completed": false,
-          "home_score": null,
-          "away_score": null,
-          "display": null,
+          "status": "completed",
+          "completed": true,
+          "home_score": 4,
+          "away_score": 6,
+          "display": "4-6",
           "source": "FIFA official calendar API",
-          "verification": "unavailable"
+          "verification": "confirmed"
         },
         "teams": {
           "home": {
@@ -5899,8 +6443,8 @@
             "id_team": "478",
             "id_country": "FRA",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-            "score": "0",
-            "tactics": null,
+            "score": "4",
+            "tactics": "4-2-3-1",
             "country_code": "FRA",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
             "flag_emoji": "🇫🇷"
@@ -5912,8 +6456,8 @@
             "id_team": "448",
             "id_country": "ENG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": "0",
-            "tactics": null,
+            "score": "6",
+            "tactics": "4-1-2-3",
             "country_code": "ENG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
             "flag_emoji": ""
@@ -5945,29 +6489,12 @@
             "ESPN public FIFA World Cup scoreboard"
           ],
           "method": "team-pair and kickoff-time cross-check",
-          "result": "unavailable"
+          "result": "confirmed"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-110",
-            "draw": "+285",
-            "away": "+270"
-          },
-          "implied_probability": {
-            "home_win": 52.38,
-            "draw": 25.97,
-            "away_win": 27.03
-          },
-          "normalized_probability": {
-            "home_win": 49.71,
-            "draw": 24.65,
-            "away_win": 25.65
-          },
-          "overround": 5.38,
-          "details": "FRA -110"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -5980,6 +6507,129 @@
           "away": {
             "team": "英格兰",
             "team_en": "England",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
+        }
+      },
+      {
+        "id": "400021543",
+        "fifa_match_id": "400021543",
+        "match_name": "西班牙 vs 阿根廷",
+        "match_name_en": "Spain vs Argentina",
+        "kickoff_utc": "2026-07-19T19:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Final",
+        "stage_name": "Final",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 104,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "result": {
+          "status": "scheduled",
+          "completed": false,
+          "home_score": null,
+          "away_score": null,
+          "display": null,
+          "source": "FIFA official calendar API",
+          "verification": "unavailable"
+        },
+        "teams": {
+          "home": {
+            "name": "西班牙",
+            "name_en": "Spain",
+            "abbreviation": "ESP",
+            "id_team": "164",
+            "id_country": "ESP",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "ESP",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+            "flag_emoji": "🇪🇸"
+          },
+          "away": {
+            "name": "阿根廷",
+            "name_en": "Argentina",
+            "abbreviation": "ARG",
+            "id_team": "202",
+            "id_country": "ARG",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "ARG",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+            "flag_emoji": "🇦🇷"
+          }
+        },
+        "venue": {
+          "name": "New York/New Jersey Stadium",
+          "city": "New Jersey",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021543"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760517"
+          }
+        },
+        "espn_event_id": "760517",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check",
+          "result": "unavailable"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "+125",
+            "draw": "+200",
+            "away": "+255"
+          },
+          "implied_probability": {
+            "home_win": 44.44,
+            "draw": 33.33,
+            "away_win": 28.17
+          },
+          "normalized_probability": {
+            "home_win": 41.95,
+            "draw": 31.46,
+            "away_win": 26.59
+          },
+          "overround": 5.95,
+          "details": "ESP +125"
+        },
+        "injuries": {
+          "home": {
+            "team": "西班牙",
+            "team_en": "Spain",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "阿根廷",
+            "team_en": "Argentina",
             "status": "unknown",
             "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -6003,18 +6653,18 @@
         "group": "",
         "match_number": 103,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "result": {
-          "status": "scheduled",
-          "completed": false,
-          "home_score": null,
-          "away_score": null,
-          "display": null,
+          "status": "completed",
+          "completed": true,
+          "home_score": 4,
+          "away_score": 6,
+          "display": "4-6",
           "source": "FIFA official calendar API",
-          "verification": "unavailable"
+          "verification": "confirmed"
         },
         "teams": {
           "home": {
@@ -6024,8 +6674,8 @@
             "id_team": "478",
             "id_country": "FRA",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-            "score": "0",
-            "tactics": null,
+            "score": "4",
+            "tactics": "4-2-3-1",
             "country_code": "FRA",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
             "flag_emoji": "🇫🇷"
@@ -6037,8 +6687,8 @@
             "id_team": "448",
             "id_country": "ENG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": "0",
-            "tactics": null,
+            "score": "6",
+            "tactics": "4-1-2-3",
             "country_code": "ENG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
             "flag_emoji": ""
@@ -6070,29 +6720,12 @@
             "ESPN public FIFA World Cup scoreboard"
           ],
           "method": "team-pair and kickoff-time cross-check",
-          "result": "unavailable"
+          "result": "confirmed"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-110",
-            "draw": "+285",
-            "away": "+270"
-          },
-          "implied_probability": {
-            "home_win": 52.38,
-            "draw": 25.97,
-            "away_win": 27.03
-          },
-          "normalized_probability": {
-            "home_win": 49.71,
-            "draw": 24.65,
-            "away_win": 25.65
-          },
-          "overround": 5.38,
-          "details": "FRA -110"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -6105,6 +6738,129 @@
           "away": {
             "team": "英格兰",
             "team_en": "England",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
+        }
+      },
+      {
+        "id": "400021543",
+        "fifa_match_id": "400021543",
+        "match_name": "西班牙 vs 阿根廷",
+        "match_name_en": "Spain vs Argentina",
+        "kickoff_utc": "2026-07-19T19:00:00Z",
+        "competition": "FIFA World Cup™",
+        "season": "FIFA World Cup 2026™",
+        "stage": "Final",
+        "stage_name": "Final",
+        "round_name": "",
+        "phase": "",
+        "group": "",
+        "match_number": 104,
+        "status": {
+          "match_status": 1,
+          "officiality_status": 0,
+          "result_type": 0
+        },
+        "result": {
+          "status": "scheduled",
+          "completed": false,
+          "home_score": null,
+          "away_score": null,
+          "display": null,
+          "source": "FIFA official calendar API",
+          "verification": "unavailable"
+        },
+        "teams": {
+          "home": {
+            "name": "西班牙",
+            "name_en": "Spain",
+            "abbreviation": "ESP",
+            "id_team": "164",
+            "id_country": "ESP",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "ESP",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
+            "flag_emoji": "🇪🇸"
+          },
+          "away": {
+            "name": "阿根廷",
+            "name_en": "Argentina",
+            "abbreviation": "ARG",
+            "id_team": "202",
+            "id_country": "ARG",
+            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+            "score": "0",
+            "tactics": null,
+            "country_code": "ARG",
+            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
+            "flag_emoji": "🇦🇷"
+          }
+        },
+        "venue": {
+          "name": "New York/New Jersey Stadium",
+          "city": "New Jersey",
+          "country": "USA"
+        },
+        "sources": {
+          "fifa": {
+            "name": "FIFA official calendar API",
+            "url": "https://api.fifa.com/api/v3/calendar/matches",
+            "id_competition": "17",
+            "id_season": "285023",
+            "id_match": "400021543"
+          },
+          "espn": {
+            "name": "ESPN public FIFA World Cup scoreboard",
+            "event_url": "https://www.espn.com/soccer/match/_/gameId/760517"
+          }
+        },
+        "espn_event_id": "760517",
+        "source_verification": {
+          "verified": true,
+          "sources": [
+            "FIFA official calendar API",
+            "ESPN public FIFA World Cup scoreboard"
+          ],
+          "method": "team-pair and kickoff-time cross-check",
+          "result": "unavailable"
+        },
+        "odds": {
+          "available": true,
+          "source": "ESPN odds feed",
+          "provider": "DraftKings",
+          "moneyline_american": {
+            "home": "+125",
+            "draw": "+200",
+            "away": "+255"
+          },
+          "implied_probability": {
+            "home_win": 44.44,
+            "draw": 33.33,
+            "away_win": 28.17
+          },
+          "normalized_probability": {
+            "home_win": 41.95,
+            "draw": 31.46,
+            "away_win": 26.59
+          },
+          "overround": 5.95,
+          "details": "ESP +125"
+        },
+        "injuries": {
+          "home": {
+            "team": "西班牙",
+            "team_en": "Spain",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "阿根廷",
+            "team_en": "Argentina",
             "status": "unknown",
             "records": [],
             "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
@@ -15308,18 +16064,18 @@
         "group": "",
         "match_number": 103,
         "status": {
-          "match_status": 1,
-          "officiality_status": 0,
-          "result_type": 0
+          "match_status": 0,
+          "officiality_status": 1,
+          "result_type": 1
         },
         "result": {
-          "status": "scheduled",
-          "completed": false,
-          "home_score": null,
-          "away_score": null,
-          "display": null,
+          "status": "completed",
+          "completed": true,
+          "home_score": 4,
+          "away_score": 6,
+          "display": "4-6",
           "source": "FIFA official calendar API",
-          "verification": "unavailable"
+          "verification": "confirmed"
         },
         "teams": {
           "home": {
@@ -15329,8 +16085,8 @@
             "id_team": "478",
             "id_country": "FRA",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-            "score": "0",
-            "tactics": null,
+            "score": "4",
+            "tactics": "4-2-3-1",
             "country_code": "FRA",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
             "flag_emoji": "🇫🇷"
@@ -15342,8 +16098,8 @@
             "id_team": "448",
             "id_country": "ENG",
             "logo": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-            "score": "0",
-            "tactics": null,
+            "score": "6",
+            "tactics": "4-1-2-3",
             "country_code": "ENG",
             "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
             "flag_emoji": ""
@@ -15375,29 +16131,12 @@
             "ESPN public FIFA World Cup scoreboard"
           ],
           "method": "team-pair and kickoff-time cross-check",
-          "result": "unavailable"
+          "result": "confirmed"
         },
         "odds": {
-          "available": true,
+          "available": false,
           "source": "ESPN odds feed",
-          "provider": "DraftKings",
-          "moneyline_american": {
-            "home": "-110",
-            "draw": "+285",
-            "away": "+270"
-          },
-          "implied_probability": {
-            "home_win": 52.38,
-            "draw": 25.97,
-            "away_win": 27.03
-          },
-          "normalized_probability": {
-            "home_win": 49.71,
-            "draw": 24.65,
-            "away_win": 25.65
-          },
-          "overround": 5.38,
-          "details": "FRA -110"
+          "reason": "moneyline odds unavailable"
         },
         "injuries": {
           "home": {
@@ -15521,12 +16260,28 @@
           },
           "overround": 5.95,
           "details": "ESP +125"
+        },
+        "injuries": {
+          "home": {
+            "team": "西班牙",
+            "team_en": "Spain",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          },
+          "away": {
+            "team": "阿根廷",
+            "team_en": "Argentina",
+            "status": "unknown",
+            "records": [],
+            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
+          }
         }
       }
     ],
     "daily_log": [
       {
-        "time": "2026-07-18T03:27:02Z",
+        "time": "2026-07-19T03:48:19Z",
         "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
         "status": "completed"
       }
@@ -15535,48 +16290,48 @@
   "display_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 2,
-    "start_iso": "2026-07-17T18:00:00+08:00",
-    "end_iso": "2026-07-19T18:00:00+08:00",
-    "display_range": "7月17日比赛日 - 7月18日比赛日",
-    "range": "北京时间 07-17 18:00 - 07-19 18:00",
+    "start_iso": "2026-07-18T18:00:00+08:00",
+    "end_iso": "2026-07-20T18:00:00+08:00",
+    "display_range": "7月18日比赛日 - 7月19日比赛日",
+    "range": "北京时间 07-18 18:00 - 07-20 18:00",
     "match_days": [
-      {
-        "date": "2026-07-17",
-        "title": "7月17日比赛日",
-        "range": "北京时间 07-17 18:00 - 07-18 18:00",
-        "start_iso": "2026-07-17T18:00:00+08:00",
-        "end_iso": "2026-07-18T18:00:00+08:00"
-      },
       {
         "date": "2026-07-18",
         "title": "7月18日比赛日",
         "range": "北京时间 07-18 18:00 - 07-19 18:00",
         "start_iso": "2026-07-18T18:00:00+08:00",
         "end_iso": "2026-07-19T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-19",
+        "title": "7月19日比赛日",
+        "range": "北京时间 07-19 18:00 - 07-20 18:00",
+        "start_iso": "2026-07-19T18:00:00+08:00",
+        "end_iso": "2026-07-20T18:00:00+08:00"
       }
     ]
   },
   "china_match_days": [
-    {
-      "date": "2026-07-17",
-      "title": "7月17日比赛日",
-      "range": "北京时间 07-17 18:00 - 07-18 18:00",
-      "start_iso": "2026-07-17T18:00:00+08:00",
-      "end_iso": "2026-07-18T18:00:00+08:00"
-    },
     {
       "date": "2026-07-18",
       "title": "7月18日比赛日",
       "range": "北京时间 07-18 18:00 - 07-19 18:00",
       "start_iso": "2026-07-18T18:00:00+08:00",
       "end_iso": "2026-07-19T18:00:00+08:00"
+    },
+    {
+      "date": "2026-07-19",
+      "title": "7月19日比赛日",
+      "range": "北京时间 07-19 18:00 - 07-20 18:00",
+      "start_iso": "2026-07-19T18:00:00+08:00",
+      "end_iso": "2026-07-20T18:00:00+08:00"
     }
   ],
   "usage": {
-    "input_tokens": 80328,
-    "output_tokens": 3775,
-    "total_tokens": 84103,
-    "cost_estimate": 0.84103
+    "input_tokens": 81896,
+    "output_tokens": 4546,
+    "total_tokens": 86442,
+    "cost_estimate": 0.86442
   },
   "analysis_model": "deepseek-v4-pro",
   "model": {
@@ -15590,12 +16345,12 @@
   },
   "daily_log": [
     {
-      "time": "2026-07-18T03:27:02Z",
+      "time": "2026-07-19T03:48:19Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     },
     {
-      "time": "2026-07-18T03:40:14Z",
+      "time": "2026-07-19T04:02:33Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     }
