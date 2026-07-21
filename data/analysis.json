@@ -1,305 +1,35 @@
 {
   "schema_version": 3,
   "stage": "analysis",
-  "generated_at": "2026-07-20T04:12:57Z",
+  "generated_at": "2026-07-21T03:52:54Z",
   "analysis": {
-    "generated_at": "2026-07-20T03:59:30Z",
-    "summary": "2026年世界杯决赛，西班牙凭借稳定的控球和防守反击1-0击败阿根廷，夺得冠军。阿根廷后防伤病成为转折。",
-    "matches": [
-      {
-        "id": "400021543",
-        "fifa_match_id": "400021543",
-        "match_name": "西班牙 vs 阿根廷",
-        "match_name_en": "Spain vs Argentina",
-        "kickoff_utc": "2026-07-19T19:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Final",
-        "stage_name": "Final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 104,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 3
-        },
-        "result": {
-          "status": "completed",
-          "completed": true,
-          "home_score": 1,
-          "away_score": 0,
-          "display": "1-0",
-          "source": "FIFA official calendar API",
-          "verification": "confirmed"
-        },
-        "teams": {
-          "home": {
-            "name": "西班牙",
-            "name_en": "Spain",
-            "abbreviation": "ESP",
-            "id_team": "164",
-            "id_country": "ESP",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "score": "1",
-            "tactics": "4-1-2-3",
-            "country_code": "ESP",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "flag_emoji": "🇪🇸"
-          },
-          "away": {
-            "name": "阿根廷",
-            "name_en": "Argentina",
-            "abbreviation": "ARG",
-            "id_team": "202",
-            "id_country": "ARG",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": "0",
-            "tactics": "4-4-2",
-            "country_code": "ARG",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "flag_emoji": "🇦🇷"
-          }
-        },
-        "venue": {
-          "name": "New York/New Jersey Stadium",
-          "city": "New Jersey",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021543"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760517"
-          }
-        },
-        "espn_event_id": "760517",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check",
-          "result": "confirmed"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "西班牙",
-            "team_en": "Spain",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Argentina lose Martínez, Romero to injury in World Cup final vs. Spain",
-                "description": "Argentina lost center backs Lisandro Martínez and Cristian Romero to injury in Sunday's World Cup final against Spain.",
-                "published": "2026-07-19T21:14:24Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49402754/argentina-lisandro-martinez-forced-injured-world-cup-final-vs-spain"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "阿根廷",
-            "team_en": "Argentina",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Argentina lose Martínez, Romero to injury in World Cup final vs. Spain",
-                "description": "Argentina lost center backs Lisandro Martínez and Cristian Romero to injury in Sunday's World Cup final against Spain.",
-                "published": "2026-07-19T21:14:24Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49402754/argentina-lisandro-martinez-forced-injured-world-cup-final-vs-spain"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        },
-        "match_id": "400021543",
-        "win_draw_loss": {
-          "home_win": 40,
-          "draw": 30,
-          "away_win": 30
-        },
-        "xg_prediction": {
-          "home": 1.1,
-          "away": 0.8
-        },
-        "predicted_score": {
-          "home": 1,
-          "away": 0
-        },
-        "score_options": [
-          {
-            "score": "1-0",
-            "rank": 1,
-            "reason": "西班牙控球占优，阿根廷防守残阵，一球小胜"
-          },
-          {
-            "score": "0-0",
-            "rank": 2,
-            "reason": "决赛压力下双方谨慎，可能进入加时"
-          },
-          {
-            "score": "2-1",
-            "rank": 3,
-            "reason": "西班牙进攻高效，阿根廷反击犀利，对攻战"
-          }
-        ],
-        "method_factors": {
-          "market_signal": "赔率数据不可用",
-          "fifa_rank_prior": "西班牙作为2024年欧洲杯冠军，国际排名靠前，但阿根廷是卫冕冠军，两队长期实力相当",
-          "recent_form": "西班牙半决赛2-0胜法国，阿根廷半决赛2-1胜英格兰，均展现强劲状态",
-          "group_context": "西班牙小组头名晋级，淘汰赛连克奥地利、葡萄牙、比利时、法国；阿根廷小组头名，淘汰赛击败佛得角、埃及、瑞士、英格兰",
-          "injury_rotation": "阿根廷赛中两人中卫受伤（马丁内斯和罗梅罗），可能影响防守",
-          "weather_venue": "场地在纽约/新泽西体育场，天气未知",
-          "tactical_key": "西班牙4-1-2-3控球 vs 阿根廷4-4-2快速反击，中场争夺关键",
-          "uncertainty": "决赛双方实力接近，临场发挥和伤病影响较大"
-        },
-        "matchup_graph": {
-          "nodes": [
-            {
-              "id": "home_attack",
-              "label": "主队进攻",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 95,
-              "note": "西班牙传控渗透能力强，锋线终结稳定"
-            },
-            {
-              "id": "home_midfield",
-              "label": "主队中场/转换",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 85,
-              "note": "中场控制力强，但面对阿根廷快速转换有风险"
-            },
-            {
-              "id": "home_defense",
-              "label": "主队防守",
-              "type": "team_phase",
-              "side": "home",
-              "weight": 80,
-              "note": "防线组织严密，但可能被快速反击打穿"
-            },
-            {
-              "id": "away_attack",
-              "label": "客队进攻",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 88,
-              "note": "梅西领衔的锋线反击致命，定位球有威胁"
-            },
-            {
-              "id": "away_midfield",
-              "label": "客队中场/转换",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 80,
-              "note": "中场硬度足够，但控制力略逊于西班牙"
-            },
-            {
-              "id": "away_defense",
-              "label": "客队防守",
-              "type": "team_phase",
-              "side": "away",
-              "weight": 75,
-              "note": "两名主力中卫伤退，替补组合稳定性存疑"
-            }
-          ],
-          "edges": [
-            {
-              "from": "home_attack",
-              "to": "away_defense",
-              "label": "西班牙控球渗透 vs 阿根廷残阵防守",
-              "impact": "high",
-              "direction": "home_to_away",
-              "note": "西班牙将利用阿根廷中卫组合的默契不足展开围攻"
-            },
-            {
-              "from": "away_attack",
-              "to": "home_defense",
-              "label": "阿根廷快速反击 vs 西班牙高位防线",
-              "impact": "medium",
-              "direction": "away_to_home",
-              "note": "阿根廷依靠梅西和速度型前锋打身后，西班牙需注意回追"
-            },
-            {
-              "from": "home_midfield",
-              "to": "away_midfield",
-              "label": "中场控制权争夺",
-              "impact": "low",
-              "direction": "balanced",
-              "note": "西班牙中场技术占优，阿根廷更多依靠压迫和抢断"
-            }
-          ],
-          "summary": "西班牙整体实力占优，但阿根廷反击威胁巨大。阿根廷防线伤病可能成为突破口。",
-          "advantage_side": "home",
-          "key_battle": "西班牙中场控制 vs 阿根廷快速转换",
-          "risk_trigger": "阿根廷防守伤病或西班牙无法破密集防守"
-        },
-        "tactical_matchup": "西班牙4-1-2-3传控体系对阵阿根廷4-4-2防守反击，中场人数占优但需避免被反击打穿",
-        "injury_adjustment": {
-          "home": "西班牙无主要伤病",
-          "away": "阿根廷两名主力中卫受伤离场，防线实力受损",
-          "summary": "阿根廷防守遭重大打击，可能影响比赛走势"
-        },
-        "risk_analysis": "阿根廷防守端因伤病出现漏洞，西班牙若无法尽早破门，可能被反击惩罚。双方均有加时赛经验。",
-        "upset_probability": 30,
-        "odds_comparison": {
-          "market_implied": {
-            "home_win": 0,
-            "draw": 0,
-            "away_win": 0
-          },
-          "model_edge": {
-            "home_win": 0,
-            "draw": 0,
-            "away_win": 0
-          },
-          "deviation_analysis": "赔率数据不可用，无法比较市场与模型偏差"
-        },
-        "confidence": "medium"
-      }
-    ],
-    "risk_overview": "主要风险在于阿根廷防守端因伤病出现的漏洞，以及西班牙可能无法将控球转化为足够进球。",
-    "data_quality": "数据来源可靠，FIFA赛程和ESPN伤病报告确认，赔率不可用。",
+    "generated_at": "2026-07-21T03:39:50Z",
+    "summary": "当前分析窗口内无比赛数据。",
+    "matches": [],
+    "risk_overview": "无比赛，无风险。",
+    "data_quality": "数据来源FIFA官方API与ESPN验证，结构数据完整。",
     "tournament_structure": {
       "stage": "knockout",
       "focus_window": {
         "timezone": "Asia/Shanghai",
         "china_match_days": [
           {
-            "date": "2026-07-19",
-            "title": "7月19日比赛日",
-            "range": "北京时间 07-19 18:00 - 07-20 18:00",
-            "start_iso": "2026-07-19T18:00:00+08:00",
-            "end_iso": "2026-07-20T18:00:00+08:00"
-          },
-          {
             "date": "2026-07-20",
             "title": "7月20日比赛日",
             "range": "北京时间 07-20 18:00 - 07-21 18:00",
             "start_iso": "2026-07-20T18:00:00+08:00",
             "end_iso": "2026-07-21T18:00:00+08:00"
+          },
+          {
+            "date": "2026-07-21",
+            "title": "7月21日比赛日",
+            "range": "北京时间 07-21 18:00 - 07-22 18:00",
+            "start_iso": "2026-07-21T18:00:00+08:00",
+            "end_iso": "2026-07-22T18:00:00+08:00"
           }
         ]
       },
-      "highlight_match_ids": [
-        "400021543"
-      ],
+      "highlight_match_ids": [],
       "groups": null,
       "bracket": {
         "round_of_32": [
@@ -2219,28 +1949,8 @@
               "start_iso": "2026-07-19T18:00:00+08:00",
               "end_iso": "2026-07-20T18:00:00+08:00"
             },
-            "win_draw_loss": {
-              "home_win": 40,
-              "draw": 30,
-              "away_win": 30
-            },
-            "score_options": [
-              {
-                "score": "1-0",
-                "rank": 1,
-                "reason": "西班牙控球占优，阿根廷防守残阵，一球小胜"
-              },
-              {
-                "score": "0-0",
-                "rank": 2,
-                "reason": "决赛压力下双方谨慎，可能进入加时"
-              },
-              {
-                "score": "2-1",
-                "rank": 3,
-                "reason": "西班牙进攻高效，阿根廷反击犀利，对攻战"
-              }
-            ],
+            "win_draw_loss": null,
+            "score_options": [],
             "result": {
               "status": "completed",
               "completed": true,
@@ -2250,7 +1960,7 @@
               "source": "FIFA official calendar API",
               "verification": "confirmed"
             },
-            "current_window": true,
+            "current_window": false,
             "placeholder": false
           }
         ]
@@ -2582,299 +2292,29 @@
       }
     }
   },
-  "matches": [
-    {
-      "id": "400021543",
-      "fifa_match_id": "400021543",
-      "match_name": "西班牙 vs 阿根廷",
-      "match_name_en": "Spain vs Argentina",
-      "kickoff_utc": "2026-07-19T19:00:00Z",
-      "competition": "FIFA World Cup™",
-      "season": "FIFA World Cup 2026™",
-      "stage": "Final",
-      "stage_name": "Final",
-      "round_name": "",
-      "phase": "",
-      "group": "",
-      "match_number": 104,
-      "status": {
-        "match_status": 0,
-        "officiality_status": 1,
-        "result_type": 3
-      },
-      "result": {
-        "status": "completed",
-        "completed": true,
-        "home_score": 1,
-        "away_score": 0,
-        "display": "1-0",
-        "source": "FIFA official calendar API",
-        "verification": "confirmed"
-      },
-      "teams": {
-        "home": {
-          "name": "西班牙",
-          "name_en": "Spain",
-          "abbreviation": "ESP",
-          "id_team": "164",
-          "id_country": "ESP",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-          "score": "1",
-          "tactics": "4-1-2-3",
-          "country_code": "ESP",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-          "flag_emoji": "🇪🇸"
-        },
-        "away": {
-          "name": "阿根廷",
-          "name_en": "Argentina",
-          "abbreviation": "ARG",
-          "id_team": "202",
-          "id_country": "ARG",
-          "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-          "score": "0",
-          "tactics": "4-4-2",
-          "country_code": "ARG",
-          "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-          "flag_emoji": "🇦🇷"
-        }
-      },
-      "venue": {
-        "name": "New York/New Jersey Stadium",
-        "city": "New Jersey",
-        "country": "USA"
-      },
-      "sources": {
-        "fifa": {
-          "name": "FIFA official calendar API",
-          "url": "https://api.fifa.com/api/v3/calendar/matches",
-          "id_competition": "17",
-          "id_season": "285023",
-          "id_match": "400021543"
-        },
-        "espn": {
-          "name": "ESPN public FIFA World Cup scoreboard",
-          "event_url": "https://www.espn.com/soccer/match/_/gameId/760517"
-        }
-      },
-      "espn_event_id": "760517",
-      "source_verification": {
-        "verified": true,
-        "sources": [
-          "FIFA official calendar API",
-          "ESPN public FIFA World Cup scoreboard"
-        ],
-        "method": "team-pair and kickoff-time cross-check",
-        "result": "confirmed"
-      },
-      "odds": {
-        "available": false,
-        "source": "ESPN odds feed",
-        "reason": "moneyline odds unavailable"
-      },
-      "injuries": {
-        "home": {
-          "team": "西班牙",
-          "team_en": "Spain",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Argentina lose Martínez, Romero to injury in World Cup final vs. Spain",
-              "description": "Argentina lost center backs Lisandro Martínez and Cristian Romero to injury in Sunday's World Cup final against Spain.",
-              "published": "2026-07-19T21:14:24Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49402754/argentina-lisandro-martinez-forced-injured-world-cup-final-vs-spain"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        },
-        "away": {
-          "team": "阿根廷",
-          "team_en": "Argentina",
-          "status": "probable injury",
-          "records": [
-            {
-              "source": "ESPN World Cup news",
-              "title": "Argentina lose Martínez, Romero to injury in World Cup final vs. Spain",
-              "description": "Argentina lost center backs Lisandro Martínez and Cristian Romero to injury in Sunday's World Cup final against Spain.",
-              "published": "2026-07-19T21:14:24Z",
-              "url": "https://www.espn.com/soccer/story/_/id/49402754/argentina-lisandro-martinez-forced-injured-world-cup-final-vs-spain"
-            }
-          ],
-          "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-        }
-      },
-      "match_id": "400021543",
-      "win_draw_loss": {
-        "home_win": 40,
-        "draw": 30,
-        "away_win": 30
-      },
-      "xg_prediction": {
-        "home": 1.1,
-        "away": 0.8
-      },
-      "predicted_score": {
-        "home": 1,
-        "away": 0
-      },
-      "score_options": [
-        {
-          "score": "1-0",
-          "rank": 1,
-          "reason": "西班牙控球占优，阿根廷防守残阵，一球小胜"
-        },
-        {
-          "score": "0-0",
-          "rank": 2,
-          "reason": "决赛压力下双方谨慎，可能进入加时"
-        },
-        {
-          "score": "2-1",
-          "rank": 3,
-          "reason": "西班牙进攻高效，阿根廷反击犀利，对攻战"
-        }
-      ],
-      "method_factors": {
-        "market_signal": "赔率数据不可用",
-        "fifa_rank_prior": "西班牙作为2024年欧洲杯冠军，国际排名靠前，但阿根廷是卫冕冠军，两队长期实力相当",
-        "recent_form": "西班牙半决赛2-0胜法国，阿根廷半决赛2-1胜英格兰，均展现强劲状态",
-        "group_context": "西班牙小组头名晋级，淘汰赛连克奥地利、葡萄牙、比利时、法国；阿根廷小组头名，淘汰赛击败佛得角、埃及、瑞士、英格兰",
-        "injury_rotation": "阿根廷赛中两人中卫受伤（马丁内斯和罗梅罗），可能影响防守",
-        "weather_venue": "场地在纽约/新泽西体育场，天气未知",
-        "tactical_key": "西班牙4-1-2-3控球 vs 阿根廷4-4-2快速反击，中场争夺关键",
-        "uncertainty": "决赛双方实力接近，临场发挥和伤病影响较大"
-      },
-      "matchup_graph": {
-        "nodes": [
-          {
-            "id": "home_attack",
-            "label": "主队进攻",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 95,
-            "note": "西班牙传控渗透能力强，锋线终结稳定"
-          },
-          {
-            "id": "home_midfield",
-            "label": "主队中场/转换",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 85,
-            "note": "中场控制力强，但面对阿根廷快速转换有风险"
-          },
-          {
-            "id": "home_defense",
-            "label": "主队防守",
-            "type": "team_phase",
-            "side": "home",
-            "weight": 80,
-            "note": "防线组织严密，但可能被快速反击打穿"
-          },
-          {
-            "id": "away_attack",
-            "label": "客队进攻",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 88,
-            "note": "梅西领衔的锋线反击致命，定位球有威胁"
-          },
-          {
-            "id": "away_midfield",
-            "label": "客队中场/转换",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 80,
-            "note": "中场硬度足够，但控制力略逊于西班牙"
-          },
-          {
-            "id": "away_defense",
-            "label": "客队防守",
-            "type": "team_phase",
-            "side": "away",
-            "weight": 75,
-            "note": "两名主力中卫伤退，替补组合稳定性存疑"
-          }
-        ],
-        "edges": [
-          {
-            "from": "home_attack",
-            "to": "away_defense",
-            "label": "西班牙控球渗透 vs 阿根廷残阵防守",
-            "impact": "high",
-            "direction": "home_to_away",
-            "note": "西班牙将利用阿根廷中卫组合的默契不足展开围攻"
-          },
-          {
-            "from": "away_attack",
-            "to": "home_defense",
-            "label": "阿根廷快速反击 vs 西班牙高位防线",
-            "impact": "medium",
-            "direction": "away_to_home",
-            "note": "阿根廷依靠梅西和速度型前锋打身后，西班牙需注意回追"
-          },
-          {
-            "from": "home_midfield",
-            "to": "away_midfield",
-            "label": "中场控制权争夺",
-            "impact": "low",
-            "direction": "balanced",
-            "note": "西班牙中场技术占优，阿根廷更多依靠压迫和抢断"
-          }
-        ],
-        "summary": "西班牙整体实力占优，但阿根廷反击威胁巨大。阿根廷防线伤病可能成为突破口。",
-        "advantage_side": "home",
-        "key_battle": "西班牙中场控制 vs 阿根廷快速转换",
-        "risk_trigger": "阿根廷防守伤病或西班牙无法破密集防守"
-      },
-      "tactical_matchup": "西班牙4-1-2-3传控体系对阵阿根廷4-4-2防守反击，中场人数占优但需避免被反击打穿",
-      "injury_adjustment": {
-        "home": "西班牙无主要伤病",
-        "away": "阿根廷两名主力中卫受伤离场，防线实力受损",
-        "summary": "阿根廷防守遭重大打击，可能影响比赛走势"
-      },
-      "risk_analysis": "阿根廷防守端因伤病出现漏洞，西班牙若无法尽早破门，可能被反击惩罚。双方均有加时赛经验。",
-      "upset_probability": 30,
-      "odds_comparison": {
-        "market_implied": {
-          "home_win": 0,
-          "draw": 0,
-          "away_win": 0
-        },
-        "model_edge": {
-          "home_win": 0,
-          "draw": 0,
-          "away_win": 0
-        },
-        "deviation_analysis": "赔率数据不可用，无法比较市场与模型偏差"
-      },
-      "confidence": "medium"
-    }
-  ],
+  "matches": [],
   "tournament_structure": {
     "stage": "knockout",
     "focus_window": {
       "timezone": "Asia/Shanghai",
       "china_match_days": [
         {
-          "date": "2026-07-19",
-          "title": "7月19日比赛日",
-          "range": "北京时间 07-19 18:00 - 07-20 18:00",
-          "start_iso": "2026-07-19T18:00:00+08:00",
-          "end_iso": "2026-07-20T18:00:00+08:00"
-        },
-        {
           "date": "2026-07-20",
           "title": "7月20日比赛日",
           "range": "北京时间 07-20 18:00 - 07-21 18:00",
           "start_iso": "2026-07-20T18:00:00+08:00",
           "end_iso": "2026-07-21T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-21",
+          "title": "7月21日比赛日",
+          "range": "北京时间 07-21 18:00 - 07-22 18:00",
+          "start_iso": "2026-07-21T18:00:00+08:00",
+          "end_iso": "2026-07-22T18:00:00+08:00"
         }
       ]
     },
-    "highlight_match_ids": [
-      "400021543"
-    ],
+    "highlight_match_ids": [],
     "groups": null,
     "bracket": {
       "round_of_32": [
@@ -4794,28 +4234,8 @@
             "start_iso": "2026-07-19T18:00:00+08:00",
             "end_iso": "2026-07-20T18:00:00+08:00"
           },
-          "win_draw_loss": {
-            "home_win": 40,
-            "draw": 30,
-            "away_win": 30
-          },
-          "score_options": [
-            {
-              "score": "1-0",
-              "rank": 1,
-              "reason": "西班牙控球占优，阿根廷防守残阵，一球小胜"
-            },
-            {
-              "score": "0-0",
-              "rank": 2,
-              "reason": "决赛压力下双方谨慎，可能进入加时"
-            },
-            {
-              "score": "2-1",
-              "rank": 3,
-              "reason": "西班牙进攻高效，阿根廷反击犀利，对攻战"
-            }
-          ],
+          "win_draw_loss": null,
+          "score_options": [],
           "result": {
             "status": "completed",
             "completed": true,
@@ -4825,7 +4245,7 @@
             "source": "FIFA official calendar API",
             "verification": "confirmed"
           },
-          "current_window": true,
+          "current_window": false,
           "placeholder": false
         }
       ]
@@ -5484,9 +4904,9 @@
   "research": {
     "schema_version": 3,
     "stage": "research",
-    "generated_at": "2026-07-20T03:59:30Z",
+    "generated_at": "2026-07-21T03:39:50Z",
     "window": {
-      "start_date": "2026-07-19",
+      "start_date": "2026-07-20",
       "days": 3,
       "timezone": "UTC",
       "mode": "derived from China match-day display window"
@@ -5500,24 +4920,24 @@
     "display_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 2,
-      "start_iso": "2026-07-19T18:00:00+08:00",
-      "end_iso": "2026-07-21T18:00:00+08:00",
-      "display_range": "7月19日比赛日 - 7月20日比赛日",
-      "range": "北京时间 07-19 18:00 - 07-21 18:00",
+      "start_iso": "2026-07-20T18:00:00+08:00",
+      "end_iso": "2026-07-22T18:00:00+08:00",
+      "display_range": "7月20日比赛日 - 7月21日比赛日",
+      "range": "北京时间 07-20 18:00 - 07-22 18:00",
       "match_days": [
-        {
-          "date": "2026-07-19",
-          "title": "7月19日比赛日",
-          "range": "北京时间 07-19 18:00 - 07-20 18:00",
-          "start_iso": "2026-07-19T18:00:00+08:00",
-          "end_iso": "2026-07-20T18:00:00+08:00"
-        },
         {
           "date": "2026-07-20",
           "title": "7月20日比赛日",
           "range": "北京时间 07-20 18:00 - 07-21 18:00",
           "start_iso": "2026-07-20T18:00:00+08:00",
           "end_iso": "2026-07-21T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-21",
+          "title": "7月21日比赛日",
+          "range": "北京时间 07-21 18:00 - 07-22 18:00",
+          "start_iso": "2026-07-21T18:00:00+08:00",
+          "end_iso": "2026-07-22T18:00:00+08:00"
         }
       ]
     },
@@ -5848,18 +5268,18 @@
     },
     "china_match_days": [
       {
-        "date": "2026-07-19",
-        "title": "7月19日比赛日",
-        "range": "北京时间 07-19 18:00 - 07-20 18:00",
-        "start_iso": "2026-07-19T18:00:00+08:00",
-        "end_iso": "2026-07-20T18:00:00+08:00"
-      },
-      {
         "date": "2026-07-20",
         "title": "7月20日比赛日",
         "range": "北京时间 07-20 18:00 - 07-21 18:00",
         "start_iso": "2026-07-20T18:00:00+08:00",
         "end_iso": "2026-07-21T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-21",
+        "title": "7月21日比赛日",
+        "range": "北京时间 07-21 18:00 - 07-22 18:00",
+        "start_iso": "2026-07-21T18:00:00+08:00",
+        "end_iso": "2026-07-22T18:00:00+08:00"
       }
     ],
     "data_sources": {
@@ -5894,260 +5314,14 @@
     "warnings": [],
     "unverified_fifa_matches": [],
     "structure_unverified_fifa_matches": [],
-    "fixture_count": 1,
-    "fifa_fixture_count": 1,
+    "fixture_count": 0,
+    "fifa_fixture_count": 0,
     "raw_fifa_fixture_count": 104,
     "structure_fixture_count": 104,
     "structure_fifa_fixture_count": 104,
     "odds_available_count": 0,
-    "matches": [
-      {
-        "id": "400021543",
-        "fifa_match_id": "400021543",
-        "match_name": "西班牙 vs 阿根廷",
-        "match_name_en": "Spain vs Argentina",
-        "kickoff_utc": "2026-07-19T19:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Final",
-        "stage_name": "Final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 104,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 3
-        },
-        "result": {
-          "status": "completed",
-          "completed": true,
-          "home_score": 1,
-          "away_score": 0,
-          "display": "1-0",
-          "source": "FIFA official calendar API",
-          "verification": "confirmed"
-        },
-        "teams": {
-          "home": {
-            "name": "西班牙",
-            "name_en": "Spain",
-            "abbreviation": "ESP",
-            "id_team": "164",
-            "id_country": "ESP",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "score": "1",
-            "tactics": "4-1-2-3",
-            "country_code": "ESP",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "flag_emoji": "🇪🇸"
-          },
-          "away": {
-            "name": "阿根廷",
-            "name_en": "Argentina",
-            "abbreviation": "ARG",
-            "id_team": "202",
-            "id_country": "ARG",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": "0",
-            "tactics": "4-4-2",
-            "country_code": "ARG",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "flag_emoji": "🇦🇷"
-          }
-        },
-        "venue": {
-          "name": "New York/New Jersey Stadium",
-          "city": "New Jersey",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021543"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760517"
-          }
-        },
-        "espn_event_id": "760517",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check",
-          "result": "confirmed"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "西班牙",
-            "team_en": "Spain",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Argentina lose Martínez, Romero to injury in World Cup final vs. Spain",
-                "description": "Argentina lost center backs Lisandro Martínez and Cristian Romero to injury in Sunday's World Cup final against Spain.",
-                "published": "2026-07-19T21:14:24Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49402754/argentina-lisandro-martinez-forced-injured-world-cup-final-vs-spain"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "阿根廷",
-            "team_en": "Argentina",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Argentina lose Martínez, Romero to injury in World Cup final vs. Spain",
-                "description": "Argentina lost center backs Lisandro Martínez and Cristian Romero to injury in Sunday's World Cup final against Spain.",
-                "published": "2026-07-19T21:14:24Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49402754/argentina-lisandro-martinez-forced-injured-world-cup-final-vs-spain"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      }
-    ],
-    "fixtures": [
-      {
-        "id": "400021543",
-        "fifa_match_id": "400021543",
-        "match_name": "西班牙 vs 阿根廷",
-        "match_name_en": "Spain vs Argentina",
-        "kickoff_utc": "2026-07-19T19:00:00Z",
-        "competition": "FIFA World Cup™",
-        "season": "FIFA World Cup 2026™",
-        "stage": "Final",
-        "stage_name": "Final",
-        "round_name": "",
-        "phase": "",
-        "group": "",
-        "match_number": 104,
-        "status": {
-          "match_status": 0,
-          "officiality_status": 1,
-          "result_type": 3
-        },
-        "result": {
-          "status": "completed",
-          "completed": true,
-          "home_score": 1,
-          "away_score": 0,
-          "display": "1-0",
-          "source": "FIFA official calendar API",
-          "verification": "confirmed"
-        },
-        "teams": {
-          "home": {
-            "name": "西班牙",
-            "name_en": "Spain",
-            "abbreviation": "ESP",
-            "id_team": "164",
-            "id_country": "ESP",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "score": "1",
-            "tactics": "4-1-2-3",
-            "country_code": "ESP",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/esp.png",
-            "flag_emoji": "🇪🇸"
-          },
-          "away": {
-            "name": "阿根廷",
-            "name_en": "Argentina",
-            "abbreviation": "ARG",
-            "id_team": "202",
-            "id_country": "ARG",
-            "logo": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "score": "0",
-            "tactics": "4-4-2",
-            "country_code": "ARG",
-            "flag_url": "https://a.espncdn.com/i/teamlogos/countries/500/arg.png",
-            "flag_emoji": "🇦🇷"
-          }
-        },
-        "venue": {
-          "name": "New York/New Jersey Stadium",
-          "city": "New Jersey",
-          "country": "USA"
-        },
-        "sources": {
-          "fifa": {
-            "name": "FIFA official calendar API",
-            "url": "https://api.fifa.com/api/v3/calendar/matches",
-            "id_competition": "17",
-            "id_season": "285023",
-            "id_match": "400021543"
-          },
-          "espn": {
-            "name": "ESPN public FIFA World Cup scoreboard",
-            "event_url": "https://www.espn.com/soccer/match/_/gameId/760517"
-          }
-        },
-        "espn_event_id": "760517",
-        "source_verification": {
-          "verified": true,
-          "sources": [
-            "FIFA official calendar API",
-            "ESPN public FIFA World Cup scoreboard"
-          ],
-          "method": "team-pair and kickoff-time cross-check",
-          "result": "confirmed"
-        },
-        "odds": {
-          "available": false,
-          "source": "ESPN odds feed",
-          "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "西班牙",
-            "team_en": "Spain",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Argentina lose Martínez, Romero to injury in World Cup final vs. Spain",
-                "description": "Argentina lost center backs Lisandro Martínez and Cristian Romero to injury in Sunday's World Cup final against Spain.",
-                "published": "2026-07-19T21:14:24Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49402754/argentina-lisandro-martinez-forced-injured-world-cup-final-vs-spain"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "阿根廷",
-            "team_en": "Argentina",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Argentina lose Martínez, Romero to injury in World Cup final vs. Spain",
-                "description": "Argentina lost center backs Lisandro Martínez and Cristian Romero to injury in Sunday's World Cup final against Spain.",
-                "published": "2026-07-19T21:14:24Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49402754/argentina-lisandro-martinez-forced-injured-world-cup-final-vs-spain"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
-        }
-      }
-    ],
+    "matches": [],
+    "fixtures": [],
     "structure_matches": [
       {
         "id": "400021443",
@@ -15507,44 +14681,12 @@
           "available": false,
           "source": "ESPN odds feed",
           "reason": "moneyline odds unavailable"
-        },
-        "injuries": {
-          "home": {
-            "team": "西班牙",
-            "team_en": "Spain",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Argentina lose Martínez, Romero to injury in World Cup final vs. Spain",
-                "description": "Argentina lost center backs Lisandro Martínez and Cristian Romero to injury in Sunday's World Cup final against Spain.",
-                "published": "2026-07-19T21:14:24Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49402754/argentina-lisandro-martinez-forced-injured-world-cup-final-vs-spain"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          },
-          "away": {
-            "team": "阿根廷",
-            "team_en": "Argentina",
-            "status": "probable injury",
-            "records": [
-              {
-                "source": "ESPN World Cup news",
-                "title": "Argentina lose Martínez, Romero to injury in World Cup final vs. Spain",
-                "description": "Argentina lost center backs Lisandro Martínez and Cristian Romero to injury in Sunday's World Cup final against Spain.",
-                "published": "2026-07-19T21:14:24Z",
-                "url": "https://www.espn.com/soccer/story/_/id/49402754/argentina-lisandro-martinez-forced-injured-world-cup-final-vs-spain"
-              }
-            ],
-            "source_policy": "confirmed injury requires FIFA official article; probable injury requires media article; otherwise unknown"
-          }
         }
       }
     ],
     "daily_log": [
       {
-        "time": "2026-07-20T03:59:30Z",
+        "time": "2026-07-21T03:39:50Z",
         "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
         "status": "completed"
       }
@@ -15553,48 +14695,48 @@
   "display_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 2,
-    "start_iso": "2026-07-19T18:00:00+08:00",
-    "end_iso": "2026-07-21T18:00:00+08:00",
-    "display_range": "7月19日比赛日 - 7月20日比赛日",
-    "range": "北京时间 07-19 18:00 - 07-21 18:00",
+    "start_iso": "2026-07-20T18:00:00+08:00",
+    "end_iso": "2026-07-22T18:00:00+08:00",
+    "display_range": "7月20日比赛日 - 7月21日比赛日",
+    "range": "北京时间 07-20 18:00 - 07-22 18:00",
     "match_days": [
-      {
-        "date": "2026-07-19",
-        "title": "7月19日比赛日",
-        "range": "北京时间 07-19 18:00 - 07-20 18:00",
-        "start_iso": "2026-07-19T18:00:00+08:00",
-        "end_iso": "2026-07-20T18:00:00+08:00"
-      },
       {
         "date": "2026-07-20",
         "title": "7月20日比赛日",
         "range": "北京时间 07-20 18:00 - 07-21 18:00",
         "start_iso": "2026-07-20T18:00:00+08:00",
         "end_iso": "2026-07-21T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-21",
+        "title": "7月21日比赛日",
+        "range": "北京时间 07-21 18:00 - 07-22 18:00",
+        "start_iso": "2026-07-21T18:00:00+08:00",
+        "end_iso": "2026-07-22T18:00:00+08:00"
       }
     ]
   },
   "china_match_days": [
-    {
-      "date": "2026-07-19",
-      "title": "7月19日比赛日",
-      "range": "北京时间 07-19 18:00 - 07-20 18:00",
-      "start_iso": "2026-07-19T18:00:00+08:00",
-      "end_iso": "2026-07-20T18:00:00+08:00"
-    },
     {
       "date": "2026-07-20",
       "title": "7月20日比赛日",
       "range": "北京时间 07-20 18:00 - 07-21 18:00",
       "start_iso": "2026-07-20T18:00:00+08:00",
       "end_iso": "2026-07-21T18:00:00+08:00"
+    },
+    {
+      "date": "2026-07-21",
+      "title": "7月21日比赛日",
+      "range": "北京时间 07-21 18:00 - 07-22 18:00",
+      "start_iso": "2026-07-21T18:00:00+08:00",
+      "end_iso": "2026-07-22T18:00:00+08:00"
     }
   ],
   "usage": {
-    "input_tokens": 80674,
-    "output_tokens": 3547,
-    "total_tokens": 84221,
-    "cost_estimate": 0.84221
+    "input_tokens": 78288,
+    "output_tokens": 472,
+    "total_tokens": 78760,
+    "cost_estimate": 0.7876
   },
   "analysis_model": "deepseek-v4-pro",
   "model": {
@@ -15608,12 +14750,12 @@
   },
   "daily_log": [
     {
-      "time": "2026-07-20T03:59:30Z",
+      "time": "2026-07-21T03:39:50Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     },
     {
-      "time": "2026-07-20T04:12:57Z",
+      "time": "2026-07-21T03:52:54Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     }
