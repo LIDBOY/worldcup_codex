@@ -1,31 +1,31 @@
 {
   "schema_version": 3,
   "stage": "analysis",
-  "generated_at": "2026-07-24T03:51:01Z",
+  "generated_at": "2026-07-25T03:44:59Z",
   "analysis": {
-    "generated_at": "2026-07-24T03:38:43Z",
-    "summary": "当前比赛窗口（7月23日至24日）无待分析比赛。所有比赛已结束，世界杯赛事周期为6月11日至7月19日。",
+    "generated_at": "2026-07-25T03:33:44Z",
+    "summary": "当前分析窗口（北京时间7月24日18:00至7月26日18:00）内无未进行的比赛，所有世界杯比赛已于7月19日结束。无法提供分析。",
     "matches": [],
-    "risk_overview": "无比赛，无风险分析。",
-    "data_quality": "FIFA官方赛程、ESPN核实数据均为已完场比赛，无误。但当前窗口无比赛数据。",
+    "risk_overview": "无比赛，无风险分析",
+    "data_quality": "数据源：FIFA官方日历API，ESPN比分板。已验证的历史比赛数据完整，但当前窗口无赛事。赔率和伤病数据不可用。",
     "tournament_structure": {
       "stage": "knockout",
       "focus_window": {
         "timezone": "Asia/Shanghai",
         "china_match_days": [
           {
-            "date": "2026-07-23",
-            "title": "7月23日比赛日",
-            "range": "北京时间 07-23 18:00 - 07-24 18:00",
-            "start_iso": "2026-07-23T18:00:00+08:00",
-            "end_iso": "2026-07-24T18:00:00+08:00"
-          },
-          {
             "date": "2026-07-24",
             "title": "7月24日比赛日",
             "range": "北京时间 07-24 18:00 - 07-25 18:00",
             "start_iso": "2026-07-24T18:00:00+08:00",
             "end_iso": "2026-07-25T18:00:00+08:00"
+          },
+          {
+            "date": "2026-07-25",
+            "title": "7月25日比赛日",
+            "range": "北京时间 07-25 18:00 - 07-26 18:00",
+            "start_iso": "2026-07-25T18:00:00+08:00",
+            "end_iso": "2026-07-26T18:00:00+08:00"
           }
         ]
       },
@@ -1967,11 +1967,11 @@
       },
       "structure_window": {
         "timezone": "Asia/Shanghai",
-        "match_day_count": 45,
+        "match_day_count": 46,
         "start_iso": "2026-06-11T18:00:00+08:00",
-        "end_iso": "2026-07-26T18:00:00+08:00",
-        "display_range": "6月11日比赛日 - 7月25日比赛日",
-        "range": "北京时间 06-11 18:00 - 07-26 18:00",
+        "end_iso": "2026-07-27T18:00:00+08:00",
+        "display_range": "6月11日比赛日 - 7月26日比赛日",
+        "range": "北京时间 06-11 18:00 - 07-27 18:00",
         "match_days": [
           {
             "date": "2026-06-11",
@@ -2287,6 +2287,13 @@
             "range": "北京时间 07-25 18:00 - 07-26 18:00",
             "start_iso": "2026-07-25T18:00:00+08:00",
             "end_iso": "2026-07-26T18:00:00+08:00"
+          },
+          {
+            "date": "2026-07-26",
+            "title": "7月26日比赛日",
+            "range": "北京时间 07-26 18:00 - 07-27 18:00",
+            "start_iso": "2026-07-26T18:00:00+08:00",
+            "end_iso": "2026-07-27T18:00:00+08:00"
           }
         ]
       }
@@ -2299,18 +2306,18 @@
       "timezone": "Asia/Shanghai",
       "china_match_days": [
         {
-          "date": "2026-07-23",
-          "title": "7月23日比赛日",
-          "range": "北京时间 07-23 18:00 - 07-24 18:00",
-          "start_iso": "2026-07-23T18:00:00+08:00",
-          "end_iso": "2026-07-24T18:00:00+08:00"
-        },
-        {
           "date": "2026-07-24",
           "title": "7月24日比赛日",
           "range": "北京时间 07-24 18:00 - 07-25 18:00",
           "start_iso": "2026-07-24T18:00:00+08:00",
           "end_iso": "2026-07-25T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-25",
+          "title": "7月25日比赛日",
+          "range": "北京时间 07-25 18:00 - 07-26 18:00",
+          "start_iso": "2026-07-25T18:00:00+08:00",
+          "end_iso": "2026-07-26T18:00:00+08:00"
         }
       ]
     },
@@ -4252,11 +4259,11 @@
     },
     "structure_window": {
       "timezone": "Asia/Shanghai",
-      "match_day_count": 45,
+      "match_day_count": 46,
       "start_iso": "2026-06-11T18:00:00+08:00",
-      "end_iso": "2026-07-26T18:00:00+08:00",
-      "display_range": "6月11日比赛日 - 7月25日比赛日",
-      "range": "北京时间 06-11 18:00 - 07-26 18:00",
+      "end_iso": "2026-07-27T18:00:00+08:00",
+      "display_range": "6月11日比赛日 - 7月26日比赛日",
+      "range": "北京时间 06-11 18:00 - 07-27 18:00",
       "match_days": [
         {
           "date": "2026-06-11",
@@ -4572,17 +4579,24 @@
           "range": "北京时间 07-25 18:00 - 07-26 18:00",
           "start_iso": "2026-07-25T18:00:00+08:00",
           "end_iso": "2026-07-26T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-26",
+          "title": "7月26日比赛日",
+          "range": "北京时间 07-26 18:00 - 07-27 18:00",
+          "start_iso": "2026-07-26T18:00:00+08:00",
+          "end_iso": "2026-07-27T18:00:00+08:00"
         }
       ]
     }
   },
   "structure_window": {
     "timezone": "Asia/Shanghai",
-    "match_day_count": 45,
+    "match_day_count": 46,
     "start_iso": "2026-06-11T18:00:00+08:00",
-    "end_iso": "2026-07-26T18:00:00+08:00",
-    "display_range": "6月11日比赛日 - 7月25日比赛日",
-    "range": "北京时间 06-11 18:00 - 07-26 18:00",
+    "end_iso": "2026-07-27T18:00:00+08:00",
+    "display_range": "6月11日比赛日 - 7月26日比赛日",
+    "range": "北京时间 06-11 18:00 - 07-27 18:00",
     "match_days": [
       {
         "date": "2026-06-11",
@@ -4898,56 +4912,63 @@
         "range": "北京时间 07-25 18:00 - 07-26 18:00",
         "start_iso": "2026-07-25T18:00:00+08:00",
         "end_iso": "2026-07-26T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-26",
+        "title": "7月26日比赛日",
+        "range": "北京时间 07-26 18:00 - 07-27 18:00",
+        "start_iso": "2026-07-26T18:00:00+08:00",
+        "end_iso": "2026-07-27T18:00:00+08:00"
       }
     ]
   },
   "research": {
     "schema_version": 3,
     "stage": "research",
-    "generated_at": "2026-07-24T03:38:43Z",
+    "generated_at": "2026-07-25T03:33:44Z",
     "window": {
-      "start_date": "2026-07-23",
+      "start_date": "2026-07-24",
       "days": 3,
       "timezone": "UTC",
       "mode": "derived from China match-day display window"
     },
     "structure_utc_window": {
       "start_date": "2026-06-11",
-      "days": 46,
+      "days": 47,
       "timezone": "UTC",
       "mode": "derived from China match-day structure window"
     },
     "display_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 2,
-      "start_iso": "2026-07-23T18:00:00+08:00",
-      "end_iso": "2026-07-25T18:00:00+08:00",
-      "display_range": "7月23日比赛日 - 7月24日比赛日",
-      "range": "北京时间 07-23 18:00 - 07-25 18:00",
+      "start_iso": "2026-07-24T18:00:00+08:00",
+      "end_iso": "2026-07-26T18:00:00+08:00",
+      "display_range": "7月24日比赛日 - 7月25日比赛日",
+      "range": "北京时间 07-24 18:00 - 07-26 18:00",
       "match_days": [
-        {
-          "date": "2026-07-23",
-          "title": "7月23日比赛日",
-          "range": "北京时间 07-23 18:00 - 07-24 18:00",
-          "start_iso": "2026-07-23T18:00:00+08:00",
-          "end_iso": "2026-07-24T18:00:00+08:00"
-        },
         {
           "date": "2026-07-24",
           "title": "7月24日比赛日",
           "range": "北京时间 07-24 18:00 - 07-25 18:00",
           "start_iso": "2026-07-24T18:00:00+08:00",
           "end_iso": "2026-07-25T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-25",
+          "title": "7月25日比赛日",
+          "range": "北京时间 07-25 18:00 - 07-26 18:00",
+          "start_iso": "2026-07-25T18:00:00+08:00",
+          "end_iso": "2026-07-26T18:00:00+08:00"
         }
       ]
     },
     "structure_window": {
       "timezone": "Asia/Shanghai",
-      "match_day_count": 45,
+      "match_day_count": 46,
       "start_iso": "2026-06-11T18:00:00+08:00",
-      "end_iso": "2026-07-26T18:00:00+08:00",
-      "display_range": "6月11日比赛日 - 7月25日比赛日",
-      "range": "北京时间 06-11 18:00 - 07-26 18:00",
+      "end_iso": "2026-07-27T18:00:00+08:00",
+      "display_range": "6月11日比赛日 - 7月26日比赛日",
+      "range": "北京时间 06-11 18:00 - 07-27 18:00",
       "match_days": [
         {
           "date": "2026-06-11",
@@ -5263,23 +5284,30 @@
           "range": "北京时间 07-25 18:00 - 07-26 18:00",
           "start_iso": "2026-07-25T18:00:00+08:00",
           "end_iso": "2026-07-26T18:00:00+08:00"
+        },
+        {
+          "date": "2026-07-26",
+          "title": "7月26日比赛日",
+          "range": "北京时间 07-26 18:00 - 07-27 18:00",
+          "start_iso": "2026-07-26T18:00:00+08:00",
+          "end_iso": "2026-07-27T18:00:00+08:00"
         }
       ]
     },
     "china_match_days": [
-      {
-        "date": "2026-07-23",
-        "title": "7月23日比赛日",
-        "range": "北京时间 07-23 18:00 - 07-24 18:00",
-        "start_iso": "2026-07-23T18:00:00+08:00",
-        "end_iso": "2026-07-24T18:00:00+08:00"
-      },
       {
         "date": "2026-07-24",
         "title": "7月24日比赛日",
         "range": "北京时间 07-24 18:00 - 07-25 18:00",
         "start_iso": "2026-07-24T18:00:00+08:00",
         "end_iso": "2026-07-25T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-25",
+        "title": "7月25日比赛日",
+        "range": "北京时间 07-25 18:00 - 07-26 18:00",
+        "start_iso": "2026-07-25T18:00:00+08:00",
+        "end_iso": "2026-07-26T18:00:00+08:00"
       }
     ],
     "data_sources": {
@@ -5291,12 +5319,12 @@
     "source": {
       "fifa": {
         "name": "FIFA official calendar API",
-        "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-06-11&to=2026-07-27&language=en&count=500&idCompetition=17&idSeason=285023"
+        "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-06-11&to=2026-07-28&language=en&count=500&idCompetition=17&idSeason=285023"
       },
       "verification": {
         "name": "ESPN public FIFA World Cup scoreboard",
         "urls": [
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260610-20260727&limit=200"
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260610-20260728&limit=200"
         ]
       },
       "injury": {
@@ -5307,7 +5335,7 @@
       "odds": {
         "name": "ESPN odds feed",
         "urls": [
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260610-20260727&limit=200"
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260610-20260728&limit=200"
         ]
       }
     },
@@ -14686,7 +14714,7 @@
     ],
     "daily_log": [
       {
-        "time": "2026-07-24T03:38:43Z",
+        "time": "2026-07-25T03:33:44Z",
         "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
         "status": "completed"
       }
@@ -14695,48 +14723,48 @@
   "display_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 2,
-    "start_iso": "2026-07-23T18:00:00+08:00",
-    "end_iso": "2026-07-25T18:00:00+08:00",
-    "display_range": "7月23日比赛日 - 7月24日比赛日",
-    "range": "北京时间 07-23 18:00 - 07-25 18:00",
+    "start_iso": "2026-07-24T18:00:00+08:00",
+    "end_iso": "2026-07-26T18:00:00+08:00",
+    "display_range": "7月24日比赛日 - 7月25日比赛日",
+    "range": "北京时间 07-24 18:00 - 07-26 18:00",
     "match_days": [
-      {
-        "date": "2026-07-23",
-        "title": "7月23日比赛日",
-        "range": "北京时间 07-23 18:00 - 07-24 18:00",
-        "start_iso": "2026-07-23T18:00:00+08:00",
-        "end_iso": "2026-07-24T18:00:00+08:00"
-      },
       {
         "date": "2026-07-24",
         "title": "7月24日比赛日",
         "range": "北京时间 07-24 18:00 - 07-25 18:00",
         "start_iso": "2026-07-24T18:00:00+08:00",
         "end_iso": "2026-07-25T18:00:00+08:00"
+      },
+      {
+        "date": "2026-07-25",
+        "title": "7月25日比赛日",
+        "range": "北京时间 07-25 18:00 - 07-26 18:00",
+        "start_iso": "2026-07-25T18:00:00+08:00",
+        "end_iso": "2026-07-26T18:00:00+08:00"
       }
     ]
   },
   "china_match_days": [
-    {
-      "date": "2026-07-23",
-      "title": "7月23日比赛日",
-      "range": "北京时间 07-23 18:00 - 07-24 18:00",
-      "start_iso": "2026-07-23T18:00:00+08:00",
-      "end_iso": "2026-07-24T18:00:00+08:00"
-    },
     {
       "date": "2026-07-24",
       "title": "7月24日比赛日",
       "range": "北京时间 07-24 18:00 - 07-25 18:00",
       "start_iso": "2026-07-24T18:00:00+08:00",
       "end_iso": "2026-07-25T18:00:00+08:00"
+    },
+    {
+      "date": "2026-07-25",
+      "title": "7月25日比赛日",
+      "range": "北京时间 07-25 18:00 - 07-26 18:00",
+      "start_iso": "2026-07-25T18:00:00+08:00",
+      "end_iso": "2026-07-26T18:00:00+08:00"
     }
   ],
   "usage": {
-    "input_tokens": 78288,
-    "output_tokens": 239,
-    "total_tokens": 78527,
-    "cost_estimate": 0.78527
+    "input_tokens": 78379,
+    "output_tokens": 831,
+    "total_tokens": 79210,
+    "cost_estimate": 0.7921
   },
   "analysis_model": "deepseek-v4-pro",
   "model": {
@@ -14750,12 +14778,12 @@
   },
   "daily_log": [
     {
-      "time": "2026-07-24T03:38:43Z",
+      "time": "2026-07-25T03:33:44Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     },
     {
-      "time": "2026-07-24T03:51:01Z",
+      "time": "2026-07-25T03:44:59Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     }
