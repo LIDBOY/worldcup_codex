@@ -1,31 +1,31 @@
 {
   "schema_version": 3,
   "stage": "analysis",
-  "generated_at": "2026-08-05T03:41:17Z",
+  "generated_at": "2026-08-06T03:47:07Z",
   "analysis": {
-    "generated_at": "2026-08-05T03:31:44Z",
-    "summary": "当前比赛窗口（8月4日-8月5日）无经核实的比赛数据，所有比赛均未通过验证，无法进行分析。",
+    "generated_at": "2026-08-06T03:35:18Z",
+    "summary": "目前该时段（8月5日-6日，北京时间）没有已核实的世足赛比赛数据。所有比赛数据均来自FIFA官方日历和ESPN比分板，但因ESPN接口受限，所有比分板请求均被拒绝，且缺失伤病和赔率数据。无法生成分析。",
     "matches": [],
-    "risk_overview": "由于缺乏比赛数据，无法评估风险。建议等待数据更新。",
-    "data_quality": "ESPN和FIFA数据源均无法获取有效比赛数据，所有比赛标记为未核实。",
+    "risk_overview": "无比赛，无风险。",
+    "data_quality": "FIFA官方日历API可用，但未返回该时段的具体比赛详情；ESPN比分板及新闻API均返回403禁止访问，无法获取比赛结果、伤病和赔率数据；本报告无法提供有效分析。",
     "tournament_structure": {
       "stage": "group",
       "focus_window": {
         "timezone": "Asia/Shanghai",
         "china_match_days": [
           {
-            "date": "2026-08-04",
-            "title": "8月4日比赛日",
-            "range": "北京时间 08-04 18:00 - 08-05 18:00",
-            "start_iso": "2026-08-04T18:00:00+08:00",
-            "end_iso": "2026-08-05T18:00:00+08:00"
-          },
-          {
             "date": "2026-08-05",
             "title": "8月5日比赛日",
             "range": "北京时间 08-05 18:00 - 08-06 18:00",
             "start_iso": "2026-08-05T18:00:00+08:00",
             "end_iso": "2026-08-06T18:00:00+08:00"
+          },
+          {
+            "date": "2026-08-06",
+            "title": "8月6日比赛日",
+            "range": "北京时间 08-06 18:00 - 08-07 18:00",
+            "start_iso": "2026-08-06T18:00:00+08:00",
+            "end_iso": "2026-08-07T18:00:00+08:00"
           }
         ]
       },
@@ -34,11 +34,11 @@
       "bracket": null,
       "structure_window": {
         "timezone": "Asia/Shanghai",
-        "match_day_count": 57,
+        "match_day_count": 58,
         "start_iso": "2026-06-11T18:00:00+08:00",
-        "end_iso": "2026-08-07T18:00:00+08:00",
-        "display_range": "6月11日比赛日 - 8月6日比赛日",
-        "range": "北京时间 06-11 18:00 - 08-07 18:00",
+        "end_iso": "2026-08-08T18:00:00+08:00",
+        "display_range": "6月11日比赛日 - 8月7日比赛日",
+        "range": "北京时间 06-11 18:00 - 08-08 18:00",
         "match_days": [
           {
             "date": "2026-06-11",
@@ -438,6 +438,13 @@
             "range": "北京时间 08-06 18:00 - 08-07 18:00",
             "start_iso": "2026-08-06T18:00:00+08:00",
             "end_iso": "2026-08-07T18:00:00+08:00"
+          },
+          {
+            "date": "2026-08-07",
+            "title": "8月7日比赛日",
+            "range": "北京时间 08-07 18:00 - 08-08 18:00",
+            "start_iso": "2026-08-07T18:00:00+08:00",
+            "end_iso": "2026-08-08T18:00:00+08:00"
           }
         ]
       }
@@ -450,18 +457,18 @@
       "timezone": "Asia/Shanghai",
       "china_match_days": [
         {
-          "date": "2026-08-04",
-          "title": "8月4日比赛日",
-          "range": "北京时间 08-04 18:00 - 08-05 18:00",
-          "start_iso": "2026-08-04T18:00:00+08:00",
-          "end_iso": "2026-08-05T18:00:00+08:00"
-        },
-        {
           "date": "2026-08-05",
           "title": "8月5日比赛日",
           "range": "北京时间 08-05 18:00 - 08-06 18:00",
           "start_iso": "2026-08-05T18:00:00+08:00",
           "end_iso": "2026-08-06T18:00:00+08:00"
+        },
+        {
+          "date": "2026-08-06",
+          "title": "8月6日比赛日",
+          "range": "北京时间 08-06 18:00 - 08-07 18:00",
+          "start_iso": "2026-08-06T18:00:00+08:00",
+          "end_iso": "2026-08-07T18:00:00+08:00"
         }
       ]
     },
@@ -470,11 +477,11 @@
     "bracket": null,
     "structure_window": {
       "timezone": "Asia/Shanghai",
-      "match_day_count": 57,
+      "match_day_count": 58,
       "start_iso": "2026-06-11T18:00:00+08:00",
-      "end_iso": "2026-08-07T18:00:00+08:00",
-      "display_range": "6月11日比赛日 - 8月6日比赛日",
-      "range": "北京时间 06-11 18:00 - 08-07 18:00",
+      "end_iso": "2026-08-08T18:00:00+08:00",
+      "display_range": "6月11日比赛日 - 8月7日比赛日",
+      "range": "北京时间 06-11 18:00 - 08-08 18:00",
       "match_days": [
         {
           "date": "2026-06-11",
@@ -874,17 +881,24 @@
           "range": "北京时间 08-06 18:00 - 08-07 18:00",
           "start_iso": "2026-08-06T18:00:00+08:00",
           "end_iso": "2026-08-07T18:00:00+08:00"
+        },
+        {
+          "date": "2026-08-07",
+          "title": "8月7日比赛日",
+          "range": "北京时间 08-07 18:00 - 08-08 18:00",
+          "start_iso": "2026-08-07T18:00:00+08:00",
+          "end_iso": "2026-08-08T18:00:00+08:00"
         }
       ]
     }
   },
   "structure_window": {
     "timezone": "Asia/Shanghai",
-    "match_day_count": 57,
+    "match_day_count": 58,
     "start_iso": "2026-06-11T18:00:00+08:00",
-    "end_iso": "2026-08-07T18:00:00+08:00",
-    "display_range": "6月11日比赛日 - 8月6日比赛日",
-    "range": "北京时间 06-11 18:00 - 08-07 18:00",
+    "end_iso": "2026-08-08T18:00:00+08:00",
+    "display_range": "6月11日比赛日 - 8月7日比赛日",
+    "range": "北京时间 06-11 18:00 - 08-08 18:00",
     "match_days": [
       {
         "date": "2026-06-11",
@@ -1284,56 +1298,63 @@
         "range": "北京时间 08-06 18:00 - 08-07 18:00",
         "start_iso": "2026-08-06T18:00:00+08:00",
         "end_iso": "2026-08-07T18:00:00+08:00"
+      },
+      {
+        "date": "2026-08-07",
+        "title": "8月7日比赛日",
+        "range": "北京时间 08-07 18:00 - 08-08 18:00",
+        "start_iso": "2026-08-07T18:00:00+08:00",
+        "end_iso": "2026-08-08T18:00:00+08:00"
       }
     ]
   },
   "research": {
     "schema_version": 3,
     "stage": "research",
-    "generated_at": "2026-08-05T03:31:44Z",
+    "generated_at": "2026-08-06T03:35:18Z",
     "window": {
-      "start_date": "2026-08-04",
+      "start_date": "2026-08-05",
       "days": 3,
       "timezone": "UTC",
       "mode": "derived from China match-day display window"
     },
     "structure_utc_window": {
       "start_date": "2026-06-11",
-      "days": 58,
+      "days": 59,
       "timezone": "UTC",
       "mode": "derived from China match-day structure window"
     },
     "display_window": {
       "timezone": "Asia/Shanghai",
       "match_day_count": 2,
-      "start_iso": "2026-08-04T18:00:00+08:00",
-      "end_iso": "2026-08-06T18:00:00+08:00",
-      "display_range": "8月4日比赛日 - 8月5日比赛日",
-      "range": "北京时间 08-04 18:00 - 08-06 18:00",
+      "start_iso": "2026-08-05T18:00:00+08:00",
+      "end_iso": "2026-08-07T18:00:00+08:00",
+      "display_range": "8月5日比赛日 - 8月6日比赛日",
+      "range": "北京时间 08-05 18:00 - 08-07 18:00",
       "match_days": [
-        {
-          "date": "2026-08-04",
-          "title": "8月4日比赛日",
-          "range": "北京时间 08-04 18:00 - 08-05 18:00",
-          "start_iso": "2026-08-04T18:00:00+08:00",
-          "end_iso": "2026-08-05T18:00:00+08:00"
-        },
         {
           "date": "2026-08-05",
           "title": "8月5日比赛日",
           "range": "北京时间 08-05 18:00 - 08-06 18:00",
           "start_iso": "2026-08-05T18:00:00+08:00",
           "end_iso": "2026-08-06T18:00:00+08:00"
+        },
+        {
+          "date": "2026-08-06",
+          "title": "8月6日比赛日",
+          "range": "北京时间 08-06 18:00 - 08-07 18:00",
+          "start_iso": "2026-08-06T18:00:00+08:00",
+          "end_iso": "2026-08-07T18:00:00+08:00"
         }
       ]
     },
     "structure_window": {
       "timezone": "Asia/Shanghai",
-      "match_day_count": 57,
+      "match_day_count": 58,
       "start_iso": "2026-06-11T18:00:00+08:00",
-      "end_iso": "2026-08-07T18:00:00+08:00",
-      "display_range": "6月11日比赛日 - 8月6日比赛日",
-      "range": "北京时间 06-11 18:00 - 08-07 18:00",
+      "end_iso": "2026-08-08T18:00:00+08:00",
+      "display_range": "6月11日比赛日 - 8月7日比赛日",
+      "range": "北京时间 06-11 18:00 - 08-08 18:00",
       "match_days": [
         {
           "date": "2026-06-11",
@@ -1733,23 +1754,30 @@
           "range": "北京时间 08-06 18:00 - 08-07 18:00",
           "start_iso": "2026-08-06T18:00:00+08:00",
           "end_iso": "2026-08-07T18:00:00+08:00"
+        },
+        {
+          "date": "2026-08-07",
+          "title": "8月7日比赛日",
+          "range": "北京时间 08-07 18:00 - 08-08 18:00",
+          "start_iso": "2026-08-07T18:00:00+08:00",
+          "end_iso": "2026-08-08T18:00:00+08:00"
         }
       ]
     },
     "china_match_days": [
-      {
-        "date": "2026-08-04",
-        "title": "8月4日比赛日",
-        "range": "北京时间 08-04 18:00 - 08-05 18:00",
-        "start_iso": "2026-08-04T18:00:00+08:00",
-        "end_iso": "2026-08-05T18:00:00+08:00"
-      },
       {
         "date": "2026-08-05",
         "title": "8月5日比赛日",
         "range": "北京时间 08-05 18:00 - 08-06 18:00",
         "start_iso": "2026-08-05T18:00:00+08:00",
         "end_iso": "2026-08-06T18:00:00+08:00"
+      },
+      {
+        "date": "2026-08-06",
+        "title": "8月6日比赛日",
+        "range": "北京时间 08-06 18:00 - 08-07 18:00",
+        "start_iso": "2026-08-06T18:00:00+08:00",
+        "end_iso": "2026-08-07T18:00:00+08:00"
       }
     ],
     "data_sources": {
@@ -1761,7 +1789,7 @@
     "source": {
       "fifa": {
         "name": "FIFA official calendar API",
-        "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-06-11&to=2026-08-08&language=en&count=500&idCompetition=17&idSeason=285023"
+        "url": "https://api.fifa.com/api/v3/calendar/matches?from=2026-06-11&to=2026-08-09&language=en&count=500&idCompetition=17&idSeason=285023"
       },
       "verification": {
         "name": "ESPN public FIFA World Cup scoreboard",
@@ -1825,7 +1853,8 @@
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260805&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260806&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260807&limit=100",
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260808&limit=100"
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260808&limit=100",
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260809&limit=100"
         ]
       },
       "injury": {
@@ -1895,73 +1924,75 @@
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260805&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260806&limit=100",
           "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260807&limit=100",
-          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260808&limit=100"
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260808&limit=100",
+          "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260809&limit=100"
         ]
       }
     },
     "warnings": [
-      "ESPN range request failed; using daily fallback: failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260610-20260808&limit=200: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260610-20260808&limit=200: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;62352f17&#46;1785900507&#46;7fd8873\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;62352f17&#46;1785900507&#46;7fd8873</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260610&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260610&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;76352f17&#46;1785900510&#46;a347946\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;76352f17&#46;1785900510&#46;a347946</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260611&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260611&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;57352f17&#46;1785900513&#46;17ba3c4f\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;57352f17&#46;1785900513&#46;17ba3c4f</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260612&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260612&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;76352f17&#46;1785900517&#46;a349912\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;76352f17&#46;1785900517&#46;a349912</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260613&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260613&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;7b352f17&#46;1785900520&#46;311a41c9\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;7b352f17&#46;1785900520&#46;311a41c9</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260614&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260614&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;53352f17&#46;1785900523&#46;318bd985\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;53352f17&#46;1785900523&#46;318bd985</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260615&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260615&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;7b352f17&#46;1785900526&#46;311a6127\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;7b352f17&#46;1785900526&#46;311a6127</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260616&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260616&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;7b352f17&#46;1785900530&#46;311a6efd\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;7b352f17&#46;1785900530&#46;311a6efd</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260617&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260617&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;72352f17&#46;1785900533&#46;83e861e\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;72352f17&#46;1785900533&#46;83e861e</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260618&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260618&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;76352f17&#46;1785900536&#46;a35074c\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;76352f17&#46;1785900536&#46;a35074c</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260619&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260619&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;62352f17&#46;1785900539&#46;7fdfe34\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;62352f17&#46;1785900539&#46;7fdfe34</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260620&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260620&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;59352f17&#46;1785900543&#46;218c95fd\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;59352f17&#46;1785900543&#46;218c95fd</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260621&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260621&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;44352f17&#46;1785900546&#46;6fab449\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;44352f17&#46;1785900546&#46;6fab449</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260622&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260622&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;53352f17&#46;1785900549&#46;318c3c27\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;53352f17&#46;1785900549&#46;318c3c27</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260623&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260623&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;67352f17&#46;1785900552&#46;1998b672\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;67352f17&#46;1785900552&#46;1998b672</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260624&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260624&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;67352f17&#46;1785900556&#46;1998c466\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;67352f17&#46;1785900556&#46;1998c466</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260625&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260625&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;54352f17&#46;1785900559&#46;820ac28\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;54352f17&#46;1785900559&#46;820ac28</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260626&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260626&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;44352f17&#46;1785900562&#46;6fae398\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;44352f17&#46;1785900562&#46;6fae398</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260627&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260627&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;7d352f17&#46;1785900565&#46;d9edb5\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;7d352f17&#46;1785900565&#46;d9edb5</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260628&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260628&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;51352f17&#46;1785900569&#46;19477a2f\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;51352f17&#46;1785900569&#46;19477a2f</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260629&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260629&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;51352f17&#46;1785900572&#46;19478842\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;51352f17&#46;1785900572&#46;19478842</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260630&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260630&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;67352f17&#46;1785900575&#46;1999133a\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;67352f17&#46;1785900575&#46;1999133a</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260701&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260701&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;49352f17&#46;1785900578&#46;1cec832b\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;49352f17&#46;1785900578&#46;1cec832b</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260702&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260702&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;7b352f17&#46;1785900581&#46;311b8621\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;7b352f17&#46;1785900581&#46;311b8621</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260703&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260703&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;53352f17&#46;1785900585&#46;318cc45b\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;53352f17&#46;1785900585&#46;318cc45b</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260704&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260704&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;51352f17&#46;1785900588&#46;1947cc7b\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;51352f17&#46;1785900588&#46;1947cc7b</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260705&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260705&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;67352f17&#46;1785900591&#46;199955de\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;67352f17&#46;1785900591&#46;199955de</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260706&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260706&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;76352f17&#46;1785900594&#46;a3660fe\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;76352f17&#46;1785900594&#46;a3660fe</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260707&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260707&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;44352f17&#46;1785900598&#46;6fb4fd8\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;44352f17&#46;1785900598&#46;6fb4fd8</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260708&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260708&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;51352f17&#46;1785900601&#46;19480204\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;51352f17&#46;1785900601&#46;19480204</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260709&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260709&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;67352f17&#46;1785900604&#46;1999947d\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;67352f17&#46;1785900604&#46;1999947d</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260710&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260710&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;59352f17&#46;1785900607&#46;218ddab0\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;59352f17&#46;1785900607&#46;218ddab0</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260711&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260711&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;54352f17&#46;1785900610&#46;8217ad1\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;54352f17&#46;1785900610&#46;8217ad1</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260712&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260712&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;76352f17&#46;1785900614&#46;a36c3d7\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;76352f17&#46;1785900614&#46;a36c3d7</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260713&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260713&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;76352f17&#46;1785900617&#46;a36d530\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;76352f17&#46;1785900617&#46;a36d530</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260714&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260714&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;72352f17&#46;1785900620&#46;83fcd95\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;72352f17&#46;1785900620&#46;83fcd95</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260715&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260715&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;58352f17&#46;1785900623&#46;8a5ee52\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;58352f17&#46;1785900623&#46;8a5ee52</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260716&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260716&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;6b352f17&#46;1785900627&#46;2fdabe0e\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;6b352f17&#46;1785900627&#46;2fdabe0e</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260717&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260717&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;54352f17&#46;1785900630&#46;821ca9a\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;54352f17&#46;1785900630&#46;821ca9a</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260718&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260718&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;59352f17&#46;1785900633&#46;218e521d\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;59352f17&#46;1785900633&#46;218e521d</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260719&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260719&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;57352f17&#46;1785900636&#46;17bc23c4\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;57352f17&#46;1785900636&#46;17bc23c4</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260720&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260720&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;7b352f17&#46;1785900640&#46;311cb4d1\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;7b352f17&#46;1785900640&#46;311cb4d1</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260721&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260721&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;49352f17&#46;1785900643&#46;1cedbd98\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;49352f17&#46;1785900643&#46;1cedbd98</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260722&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260722&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;7b352f17&#46;1785900646&#46;311cd5ba\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;7b352f17&#46;1785900646&#46;311cd5ba</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260723&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260723&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;49352f17&#46;1785900649&#46;1ceddeac\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;49352f17&#46;1785900649&#46;1ceddeac</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260724&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260724&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;62352f17&#46;1785900652&#46;7ff8f8e\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;62352f17&#46;1785900652&#46;7ff8f8e</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260725&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260725&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;57352f17&#46;1785900656&#46;17bc7162\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;57352f17&#46;1785900656&#46;17bc7162</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260726&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260726&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;51352f17&#46;1785900659&#46;19490071\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;51352f17&#46;1785900659&#46;19490071</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260727&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260727&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;53352f17&#46;1785900662&#46;318e21b3\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;53352f17&#46;1785900662&#46;318e21b3</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260728&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260728&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;7b352f17&#46;1785900665&#46;311d4b19\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;7b352f17&#46;1785900665&#46;311d4b19</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260729&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260729&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;62352f17&#46;1785900669&#46;7ffc7b4\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;62352f17&#46;1785900669&#46;7ffc7b4</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260730&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260730&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;44352f17&#46;1785900672&#46;6fc4317\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;44352f17&#46;1785900672&#46;6fc4317</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260731&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260731&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;6b352f17&#46;1785900675&#46;2fdba378\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;6b352f17&#46;1785900675&#46;2fdba378</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260801&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260801&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;44352f17&#46;1785900678&#46;6fc59cc\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;44352f17&#46;1785900678&#46;6fc59cc</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260802&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260802&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;49352f17&#46;1785900682&#46;1cee8d02\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;49352f17&#46;1785900682&#46;1cee8d02</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260803&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260803&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;7b352f17&#46;1785900685&#46;311db526\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;7b352f17&#46;1785900685&#46;311db526</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260804&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260804&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;54352f17&#46;1785900688&#46;822a5ac\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;54352f17&#46;1785900688&#46;822a5ac</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260805&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260805&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;54352f17&#46;1785900691&#46;822b372\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;54352f17&#46;1785900691&#46;822b372</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260806&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260806&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;67352f17&#46;1785900695&#46;199b3dd9\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;67352f17&#46;1785900695&#46;199b3dd9</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260807&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260807&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;49352f17&#46;1785900698&#46;1ceedc79\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;49352f17&#46;1785900698&#46;1ceedc79</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260808&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260808&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;54352f17&#46;1785900701&#46;822df0f\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;54352f17&#46;1785900701&#46;822df0f</P>\n</BODY>\n</HTML>\n",
-      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/news?limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/news?limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;news&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;44352f17&#46;1785900704&#46;6fcaa40\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;44352f17&#46;1785900704&#46;6fcaa40</P>\n</BODY>\n</HTML>\n"
+      "ESPN range request failed; using daily fallback: failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260610-20260809&limit=200: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260610-20260809&limit=200: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987117&#46;35ff2205\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987117&#46;35ff2205</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260610&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260610&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987120&#46;35ff73da\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987120&#46;35ff73da</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260611&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260611&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987123&#46;35ffc465\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987123&#46;35ffc465</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260612&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260612&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d2b2d717&#46;1785987127&#46;a2cc0442\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d2b2d717&#46;1785987127&#46;a2cc0442</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260613&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260613&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d2b2d717&#46;1785987130&#46;a2cc4bf7\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d2b2d717&#46;1785987130&#46;a2cc4bf7</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260614&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260614&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d2b2d717&#46;1785987133&#46;a2cc9711\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d2b2d717&#46;1785987133&#46;a2cc9711</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260615&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260615&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d2b2d717&#46;1785987136&#46;a2ccddaa\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d2b2d717&#46;1785987136&#46;a2ccddaa</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260616&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260616&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987139&#46;3601556b\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987139&#46;3601556b</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260617&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260617&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987143&#46;3601a6c5\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987143&#46;3601a6c5</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260618&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260618&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d2b2d717&#46;1785987146&#46;a2cdb234\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d2b2d717&#46;1785987146&#46;a2cdb234</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260619&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260619&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987149&#46;360246d7\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987149&#46;360246d7</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260620&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260620&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987152&#46;36029686\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987152&#46;36029686</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260621&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260621&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d2b2d717&#46;1785987155&#46;a2ce8286\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d2b2d717&#46;1785987155&#46;a2ce8286</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260622&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260622&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987159&#46;36033820\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987159&#46;36033820</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260623&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260623&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987162&#46;36038487\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987162&#46;36038487</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260624&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260624&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987165&#46;3603d635\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987165&#46;3603d635</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260625&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260625&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987168&#46;36042650\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987168&#46;36042650</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260626&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260626&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987171&#46;360476ef\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987171&#46;360476ef</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260627&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260627&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d2b2d717&#46;1785987175&#46;a2d01ea1\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d2b2d717&#46;1785987175&#46;a2d01ea1</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260628&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260628&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987178&#46;360516d2\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987178&#46;360516d2</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260629&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260629&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d2b2d717&#46;1785987181&#46;a2d0a215\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d2b2d717&#46;1785987181&#46;a2d0a215</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260630&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260630&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987184&#46;3605b534\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987184&#46;3605b534</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260701&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260701&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d2b2d717&#46;1785987187&#46;a2d12848\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d2b2d717&#46;1785987187&#46;a2d12848</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260702&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260702&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d2b2d717&#46;1785987191&#46;a2d16e29\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d2b2d717&#46;1785987191&#46;a2d16e29</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260703&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260703&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d2b2d717&#46;1785987194&#46;a2d1b375\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d2b2d717&#46;1785987194&#46;a2d1b375</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260704&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260704&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;57352f17&#46;1785987197&#46;1c0af8cc\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;57352f17&#46;1785987197&#46;1c0af8cc</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260705&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260705&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;49352f17&#46;1785987200&#46;22706673\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;49352f17&#46;1785987200&#46;22706673</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260706&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260706&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;7d352f17&#46;1785987204&#46;55c41da\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;7d352f17&#46;1785987204&#46;55c41da</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260707&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260707&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;62352f17&#46;1785987207&#46;c2bea37\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;62352f17&#46;1785987207&#46;c2bea37</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260708&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260708&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;7b352f17&#46;1785987210&#46;36415179\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;7b352f17&#46;1785987210&#46;36415179</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260709&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260709&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;72352f17&#46;1785987213&#46;c6bff66\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;72352f17&#46;1785987213&#46;c6bff66</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260710&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260710&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;6b352f17&#46;1785987217&#46;353a4eab\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;6b352f17&#46;1785987217&#46;353a4eab</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260711&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260711&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;6b352f17&#46;1785987220&#46;353a600f\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;6b352f17&#46;1785987220&#46;353a600f</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260712&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260712&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;57352f17&#46;1785987223&#46;1c0b5c12\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;57352f17&#46;1785987223&#46;1c0b5c12</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260713&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260713&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;44352f17&#46;1785987227&#46;a826a0d\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;44352f17&#46;1785987227&#46;a826a0d</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260714&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260714&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;57352f17&#46;1785987230&#46;1c0b78fc\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;57352f17&#46;1785987230&#46;1c0b78fc</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260715&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260715&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;57352f17&#46;1785987233&#46;1c0b86a4\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;57352f17&#46;1785987233&#46;1c0b86a4</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260716&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260716&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;62352f17&#46;1785987236&#46;c2c7201\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;62352f17&#46;1785987236&#46;c2c7201</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260717&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260717&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;59352f17&#46;1785987240&#46;284742c5\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;59352f17&#46;1785987240&#46;284742c5</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260718&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260718&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;62352f17&#46;1785987243&#46;c2c919d\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;62352f17&#46;1785987243&#46;c2c919d</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260719&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260719&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;62352f17&#46;1785987246&#46;c2ca1f0\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;62352f17&#46;1785987246&#46;c2ca1f0</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260720&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260720&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;62352f17&#46;1785987250&#46;c2cb37b\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;62352f17&#46;1785987250&#46;c2cb37b</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260721&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260721&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;57352f17&#46;1785987253&#46;1c0be11e\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;57352f17&#46;1785987253&#46;1c0be11e</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260722&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260722&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;49352f17&#46;1785987256&#46;2271a957\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;49352f17&#46;1785987256&#46;2271a957</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260723&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260723&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;44352f17&#46;1785987259&#46;a82d71c\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;44352f17&#46;1785987259&#46;a82d71c</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260724&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260724&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d2b2d717&#46;1785987263&#46;a2d7521c\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d2b2d717&#46;1785987263&#46;a2d7521c</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260725&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260725&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d2b2d717&#46;1785987266&#46;a2d795fe\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d2b2d717&#46;1785987266&#46;a2d795fe</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260726&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260726&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987269&#46;360e0315\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987269&#46;360e0315</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260727&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260727&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987272&#46;360e5053\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987272&#46;360e5053</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260728&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260728&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d2b2d717&#46;1785987275&#46;a2d86953\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d2b2d717&#46;1785987275&#46;a2d86953</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260729&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260729&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;d9b2d717&#46;1785987279&#46;360ef183\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;d9b2d717&#46;1785987279&#46;360ef183</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260730&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260730&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;71e2117&#46;1785987282&#46;54314f9e\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;71e2117&#46;1785987282&#46;54314f9e</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260731&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260731&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;71e2117&#46;1785987285&#46;5431b509\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;71e2117&#46;1785987285&#46;5431b509</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260801&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260801&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;61e2117&#46;1785987288&#46;8b48e6b9\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;61e2117&#46;1785987288&#46;8b48e6b9</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260802&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260802&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;61e2117&#46;1785987292&#46;8b494ed5\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;61e2117&#46;1785987292&#46;8b494ed5</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260803&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260803&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;61e2117&#46;1785987295&#46;8b49b943\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;61e2117&#46;1785987295&#46;8b49b943</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260804&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260804&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;61e2117&#46;1785987298&#46;8b4a21c4\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;61e2117&#46;1785987298&#46;8b4a21c4</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260805&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260805&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;61e2117&#46;1785987301&#46;8b4a88e1\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;61e2117&#46;1785987301&#46;8b4a88e1</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260806&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260806&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;62352f17&#46;1785987305&#46;c2dbd64\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;62352f17&#46;1785987305&#46;c2dbd64</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260807&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260807&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;6d352f17&#46;1785987308&#46;664507c\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;6d352f17&#46;1785987308&#46;664507c</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260808&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260808&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;64352f17&#46;1785987311&#46;f995190\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;64352f17&#46;1785987311&#46;f995190</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260809&limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=20260809&limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;scoreboard&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;64352f17&#46;1785987315&#46;f996620\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;64352f17&#46;1785987315&#46;f996620</P>\n</BODY>\n</HTML>\n",
+      "failed to fetch https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/news?limit=100: HTTP 403 from https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/news?limit=100: <HTML><HEAD>\n<TITLE>Access Denied</TITLE>\n</HEAD><BODY>\n<H1>Access Denied</H1>\n \nYou don't have permission to access \"http&#58;&#47;&#47;site&#46;api&#46;espn&#46;com&#47;apis&#47;site&#47;v2&#47;sports&#47;soccer&#47;fifa&#46;world&#47;news&#63;\" on this server.<P>\nReference&#32;&#35;18&#46;49352f17&#46;1785987318&#46;2273059d\n<P>https&#58;&#47;&#47;errors&#46;edgesuite&#46;net&#47;18&#46;49352f17&#46;1785987318&#46;2273059d</P>\n</BODY>\n</HTML>\n"
     ],
     "unverified_fifa_matches": [],
     "structure_unverified_fifa_matches": [
@@ -2081,7 +2112,7 @@
     "structure_matches": [],
     "daily_log": [
       {
-        "time": "2026-08-05T03:31:44Z",
+        "time": "2026-08-06T03:35:18Z",
         "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
         "status": "completed"
       }
@@ -2090,48 +2121,48 @@
   "display_window": {
     "timezone": "Asia/Shanghai",
     "match_day_count": 2,
-    "start_iso": "2026-08-04T18:00:00+08:00",
-    "end_iso": "2026-08-06T18:00:00+08:00",
-    "display_range": "8月4日比赛日 - 8月5日比赛日",
-    "range": "北京时间 08-04 18:00 - 08-06 18:00",
+    "start_iso": "2026-08-05T18:00:00+08:00",
+    "end_iso": "2026-08-07T18:00:00+08:00",
+    "display_range": "8月5日比赛日 - 8月6日比赛日",
+    "range": "北京时间 08-05 18:00 - 08-07 18:00",
     "match_days": [
-      {
-        "date": "2026-08-04",
-        "title": "8月4日比赛日",
-        "range": "北京时间 08-04 18:00 - 08-05 18:00",
-        "start_iso": "2026-08-04T18:00:00+08:00",
-        "end_iso": "2026-08-05T18:00:00+08:00"
-      },
       {
         "date": "2026-08-05",
         "title": "8月5日比赛日",
         "range": "北京时间 08-05 18:00 - 08-06 18:00",
         "start_iso": "2026-08-05T18:00:00+08:00",
         "end_iso": "2026-08-06T18:00:00+08:00"
+      },
+      {
+        "date": "2026-08-06",
+        "title": "8月6日比赛日",
+        "range": "北京时间 08-06 18:00 - 08-07 18:00",
+        "start_iso": "2026-08-06T18:00:00+08:00",
+        "end_iso": "2026-08-07T18:00:00+08:00"
       }
     ]
   },
   "china_match_days": [
-    {
-      "date": "2026-08-04",
-      "title": "8月4日比赛日",
-      "range": "北京时间 08-04 18:00 - 08-05 18:00",
-      "start_iso": "2026-08-04T18:00:00+08:00",
-      "end_iso": "2026-08-05T18:00:00+08:00"
-    },
     {
       "date": "2026-08-05",
       "title": "8月5日比赛日",
       "range": "北京时间 08-05 18:00 - 08-06 18:00",
       "start_iso": "2026-08-05T18:00:00+08:00",
       "end_iso": "2026-08-06T18:00:00+08:00"
+    },
+    {
+      "date": "2026-08-06",
+      "title": "8月6日比赛日",
+      "range": "北京时间 08-06 18:00 - 08-07 18:00",
+      "start_iso": "2026-08-06T18:00:00+08:00",
+      "end_iso": "2026-08-07T18:00:00+08:00"
     }
   ],
   "usage": {
-    "input_tokens": 30207,
-    "output_tokens": 477,
-    "total_tokens": 30684,
-    "cost_estimate": 0.30684
+    "input_tokens": 30809,
+    "output_tokens": 609,
+    "total_tokens": 31418,
+    "cost_estimate": 0.31418
   },
   "analysis_model": "deepseek-v4-pro",
   "model": {
@@ -2145,12 +2176,12 @@
   },
   "daily_log": [
     {
-      "time": "2026-08-05T03:31:44Z",
+      "time": "2026-08-06T03:35:18Z",
       "stage": "08:15 automatic FIFA schedule + injury + odds research, with tournament structure context",
       "status": "completed"
     },
     {
-      "time": "2026-08-05T03:41:17Z",
+      "time": "2026-08-06T03:47:07Z",
       "stage": "08:30 deepseek-v4-pro analysis",
       "status": "completed"
     }
